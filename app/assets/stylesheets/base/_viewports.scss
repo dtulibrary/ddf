@@ -1,0 +1,39 @@
+//
+//VIEWPORT DIMENSIONS
+//
+
+//px
+$desktop:          1024px; //and above
+
+$ipad_landscape:   1024px;
+$ipad_portrait:    768px;
+
+$iphone_landscape: 480px;
+$iphone_portrait:  320px;
+
+//em
+$desktop_ems:          64em; //and above
+
+$ipad_landscape_ems:   64em;
+$ipad_portrait_ems:    48em;
+
+$iphone_landscape_ems: 30em;
+$iphone_portrait_ems:  20em;
+
+
+@mixin respond-to($viewport) {
+  @media only screen and (max-width: $viewport) { @content }
+}
+
+//alias for respond-to
+@mixin below-viewport($viewport) {
+  @media only screen and (max-width: $viewport) { @content }
+}
+
+@mixin above-viewport($viewport) {
+  @media only screen and (min-width: $viewport) { @content }
+}
+
+@mixin in-viewport-range($viewport1, $viewport2) {
+  @media only screen and (min-width: $viewport1) and (max-width: $viewport2) { @content }
+}

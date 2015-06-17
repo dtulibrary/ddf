@@ -1,0 +1,94 @@
+//
+//TYPOGRAPHY
+//
+$base__font-size:   17px;
+$base__line-height: 30px;
+
+$em: $base__font-size / 1em;  // Shorthand for outputting ems
+
+@function calc-em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}
+
+//
+// GRID
+//
+$column: 48px;
+$gutter: 24px;
+
+$column: $base__font-size * 3;
+$gutter: $column / 2;
+
+$cols1: ( 1 * ($column + $gutter) - $gutter) / $em;
+$cols2: ( 2 * ($column + $gutter) - $gutter) / $em;
+$cols3: ( 3 * ($column + $gutter) - $gutter) / $em;
+$cols4: ( 4 * ($column + $gutter) - $gutter) / $em;
+$cols5: ( 5 * ($column + $gutter) - $gutter) / $em;
+$cols6: ( 6 * ($column + $gutter) - $gutter) / $em;
+$cols7: ( 7 * ($column + $gutter) - $gutter) / $em;
+$cols8: ( 8 * ($column + $gutter) - $gutter) / $em;
+$cols9: ( 9 * ($column + $gutter) - $gutter) / $em;
+$cols10: (10 * ($column + $gutter) - $gutter) / $em;
+$cols11: (11 * ($column + $gutter) - $gutter) / $em;
+$cols12: (12 * ($column + $gutter) - $gutter) / $em;
+$cols13: (13 * ($column + $gutter) - $gutter) / $em;
+$cols14: (14 * ($column + $gutter) - $gutter) / $em;
+$cols15: (15 * ($column + $gutter) - $gutter) / $em;
+$cols16: (16 * ($column + $gutter) - $gutter) / $em;
+
+@function cols($cols:1) {
+  @return ($cols * ($column + $gutter) - $gutter) / $em;
+}
+
+/* grid cell floating
+--------------------------------------------- */
+.row > *[class^="col"] { float: left; }
+
+/* groups with self-clearing floats
+--------------------------------------------- */
+.group:after,
+.row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+//
+// LAYOUT BUILDING BLOCKS
+//
+/* Apply a natural box layout model to all elements
+  http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+------------------------------------------------------ */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin centered { margin: 0 auto; }
+
+.col-half, .col-50 { width: 50%; }
+
+.col-30 { width: 30%; }
+.col-40 { width: 40%; }
+.col-60 { width: 60%; }
+.col-70 { width: 70%; }
+
+//
+//RESPONSIVE IMAGES
+//
+img { width: 100%; }
+
+//
+//COLORS
+//
+$body-background:  #fdfdfd;
+$link-hover-color: #F14A00;
+$red-dark:         #712300;
+$red-medium:       #D74200;
+$red-nav:          #DD3333;
+
+
+

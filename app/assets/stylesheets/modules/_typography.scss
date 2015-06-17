@@ -1,0 +1,59 @@
+@import "../base/all";
+
+$serif: Georgia;
+$sans:  'Helvetica Neue';
+
+body {
+  font-family: $sans;
+  font-size: $base__font-size;
+  line-height: $base__line-height;
+
+  background: $body-background;
+
+  @include respond-to($ipad_portrait) { font-size: 1.15rem; }
+  @include respond-to($iphone_landscape) {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+  }
+}
+
+/* vertical rhythm
+--------------------------------------------- */
+p, ul, ol {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+article[role="main"] { margin-bottom: 6em; }
+
+/* lists
+--------------------------------------------- */
+ul, ol { padding-left: 0; }
+ul li, ol li { margin-bottom: .7em; }
+ul li { list-style-type: circle; }
+
+ul.text,
+ol.text { @include respond-to($iphone_landscape) { margin-left: 1em; } }
+
+/* links
+http://www.smashingmagazine.com/2010/02/13/the-definitive-guide-to-styling-web-links/
+--------------------------------------------- */
+a:link    { color: #000; }
+a:visited { color: #555; }
+a:hover,
+a:visited:hover,
+a:focus,
+a:active { color: $link-hover-color; }
+
+h1.logo { }
+
+
+input[type=search] {
+  //display: block;
+  width: 80%;
+
+  padding: .5em;            /* Overridden by padding: 1px; */
+  border: 2px solid #bbb;  /* Overridden by border: 2px inset; */
+  background: #eee;          /* Overridden by background-color: white; */
+  line-height: 1.5;
+}
