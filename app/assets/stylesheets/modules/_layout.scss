@@ -34,8 +34,14 @@ Some examples of classes for responsive breakpoints */
   }
 }
 
+ul.menu-items-list { margin: 0; }
+ul.menu-items-list li {
+  padding: 0 .3em;
+  margin: 0;
+}
+
 ul.horizontal li { display: inline-block; }
-ul.right { float: right; }
+.pull-right { float: right; }
 
 header {
   background: #eee;
