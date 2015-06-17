@@ -1,7 +1,7 @@
 @import "../base/all";
 
 .wrapper {
-  width: $cols14;
+  width: $cols15;
   @include centered;
   @include respond-to($cols13+$cols4) { width: 85%; }
   @include respond-to($ipad_portrait) { width: 90%; }
@@ -46,5 +46,6 @@ ul.horizontal li { display: inline-block; }
 header {
   background: #eee;
   padding: 1em 0 .5em 0;
+  margin-bottom: 2em;
 }
 

@@ -9,6 +9,7 @@ body {
   line-height: $base__line-height;
 
   background: $body-background;
+  color: #333333;
   border-top: 3px solid #D23F43;
 
 /*
@@ -55,6 +56,7 @@ h1.logo {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: .1em;
+  color: rgba(52, 73, 94, 1); //Pickled Bluewood
   @include respond-to($iphone_landscape) {
     font-size: 1.2em;
   }
@@ -73,10 +75,10 @@ form.search fieldset {
 }
 
 form.search fieldset input[type="search"] {
-  width: 75%;
+  width: 70%;
   padding: 12px 14px;
   font-size: 18px;
-  border: 1px solid #ddd;
+  border: 1px solid #bbb;
   //background: #f5f5f5;
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
@@ -90,23 +92,61 @@ form.search fieldset button[type="submit"] {
   //font-size: 18px;
   color: #fff;
   border: none;
-  background: #999;
+  background: #2d89ef;
   border-radius: 4px;
 }
 form.search fieldset button[type="submit"]:hover,
-form.search fieldset button[type="submit"]:focus {
-  background: #777;
+form.search fieldset button[type="submit"]:focus  { background: #2164AF; }
+form.search fieldset button[type="submit"]:active { background: #2164AF; }
+
+form.search fieldset button[type="submit"] i { font-size: 1.25em; }
+
+ul.facets-list>li { list-style-type: none; }
+
+ul.facet-items-list { margin: 0 .5em 0 1em; }
+
+ul.facet-items-list>li {
+  font-size: .9em;
+  list-style-type: none;
+  padding: 0 .3em;
+  margin: 0.5em 0;
 }
-form.search fieldset button[type="submit"]:active {
-  background: #666;
+
+ul.facet-items-list>li:last-child {
+  margin-bottom: 1em;
 }
 
-form.search fieldset button[type="submit"] i {
-  font-size: 1.25em;
+ul.facet-items-list>li a {
+  display: block;
+  text-decoration: none;
 }
 
+ul.facet-items-list>li:hover { background: #eee; }
 
+em.number-of-items {
+  color: #777;
+  @include respond-to($ipad_landscape) {
+    float: none;
+    display: block;
+  }
+}
 
+h1.facet-heading {
+  font-size: 1em;
+  line-height: 1.25em;
+  background: #eff4ff;
+  padding: .5em 1em;
+  //text-transform: uppercase;
+}
+
+h1.facet-heading span.close {
+  font-size: 1.4em;
+    @include respond-to($ipad_landscape) {
+    float: none;
+    display: block;
+    margin: .5em 0 0 0;
+  }
+}
 
 
 
