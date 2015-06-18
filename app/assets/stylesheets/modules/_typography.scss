@@ -1,7 +1,8 @@
 @import "../base/all";
 
-$serif: Georgia;
+$serif: 'Crimson Text', Georgia, serif;
 $sans:  'Helvetica Neue';
+$headline:  'Exo 2', sans-serif;
 
 body {
   font-family: $sans;
@@ -50,9 +51,11 @@ a:visited:hover,
 a:focus,
 a:active { color: $link-hover-color; }
 
+nav.upper { font-size: .9em; }
+
 h1.logo {
-  font-family: $serif;
-  font-size: 1.5em;
+  font-family: $headline;
+  font-size: 1.4em;
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: .1em;
@@ -66,7 +69,8 @@ h1.logo em {
   display: block;
   text-transform: none;
   letter-spacing: 0;
-  margin-bottom: .125em;
+  font-weight: normal;
+  font-family: $serif;
 }
 
 form.search fieldset {
@@ -141,12 +145,53 @@ h1.facet-heading {
 
 h1.facet-heading span.close {
   font-size: 1.4em;
-    @include respond-to($ipad_landscape) {
+  @include respond-to($ipad_landscape) {
     float: none;
     display: block;
     margin: .5em 0 0 0;
   }
 }
 
+ol.search-results-list li { margin-bottom: 2em; }
 
+h1.result-heading {
+  font-family: $headline;
+  font-size: 1.2em;
+
+  //font-family: $serif;
+  //font-size: 1.5em;
+  //font-weight: normal;
+
+
+  line-height: 1.125em;
+  //font-weight: 600;
+}
+
+.dl-horizontal dt {
+  clear: left;
+  float: left;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
+  color: #777;
+  margin-bottom: .25em;
+  @include respond-to($ipad_landscape) {
+    display: block;
+    float: none;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.dl-horizontal dd {
+  margin-left: 180px;
+  margin-bottom: .25em;
+  @include respond-to($ipad_landscape) {
+    display: block;
+    margin-left: 0;
+    margin-bottom: .7em;
+  }
+}
 
