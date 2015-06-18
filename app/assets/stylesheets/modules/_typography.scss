@@ -20,7 +20,6 @@ body {
     line-height: 1.7rem;
   }
   */
-
 }
 
 /* vertical rhythm
@@ -152,19 +151,29 @@ h1.facet-heading span.close {
   }
 }
 
-ol.search-results-list li { margin-bottom: 2em; }
+ol.search-results-list li {
+  margin-bottom: 2em;
+  list-style-type: none;
+  counter-increment: step-counter;
+}
+
+ol.search-results-list li::before {
+    font-family: $headline;
+    content: counter(step-counter);
+    //margin-right: 5px;
+    font-size: 80%;
+    background-color: rgb(200,200,200);
+    color: #fff;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
 
 h1.result-heading {
   font-family: $headline;
   font-size: 1.2em;
-
-  //font-family: $serif;
-  //font-size: 1.5em;
-  //font-weight: normal;
-
-
   line-height: 1.125em;
-  //font-weight: 600;
+  margin: .25em 0 1em 0;
 }
 
 .dl-horizontal dt {
