@@ -111,28 +111,18 @@ ul.facet-items-list { margin: 0 .5em 0 1em; }
 ul.facet-items-list>li {
   font-size: .9em;
   list-style-type: none;
-  padding: 0 .3em;
-  margin: 0.5em 0;
+  padding: .1em .3em;
+  margin: 0.25em 0;
 }
-
-ul.facet-items-list>li:last-child {
-  margin-bottom: 1em;
-}
+ul.facet-items-list>li:last-child { margin-bottom: 1em; }
+ul.facet-items-list>li:hover { background: #eee; }
 
 ul.facet-items-list>li a {
   display: block;
   text-decoration: none;
 }
 
-ul.facet-items-list>li:hover { background: #eee; }
-
-em.number-of-items {
-  color: #777;
-  @include respond-to($ipad_landscape) {
-    float: none;
-    display: block;
-  }
-}
+em.number-of-items { color: #777; }
 
 h1.facet-heading {
   font-size: 1em;
@@ -142,14 +132,7 @@ h1.facet-heading {
   //text-transform: uppercase;
 }
 
-h1.facet-heading span.close {
-  font-size: 1.4em;
-  @include respond-to($ipad_landscape) {
-    float: none;
-    display: block;
-    margin: .5em 0 0 0;
-  }
-}
+h1.facet-heading span.close { font-size: 1.4em; }
 
 ol.search-results-list li {
   margin-bottom: 2em;

@@ -79,10 +79,7 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $em;
 .col-60 { width: 60%; }
 .col-70 { width: 68%; }
 
-.grid > *[class^="col"] {
-  padding: 0 calc-em(12px);
-}
-
+.grid > *[class^="col"] { padding: 0 calc-em(12px); }
 
 //
 //RESPONSIVE IMAGES
