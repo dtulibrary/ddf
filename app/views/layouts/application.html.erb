@@ -7,5 +7,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-  <%= yield %>
+
+<body class="<%= render_body_class %>">
+  <%= render :partial => 'shared/header_navbar' %>
+  <%= render partial: 'shared/ajax_modal' %>
+
+  <div id="" class="">
+    <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+    <%= yield %>
+  </div>
+
+  <%= render :partial => 'shared/footer' %>
+</body>
+
 </html>

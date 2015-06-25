@@ -1,4 +1,28 @@
 LAUNCH POSTRGES:
 pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 
+WHERE RBENV STORES ITS GEMS:
+/Users/abbottjam/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems
 
+OVERRIDING BOOTSTRAP'S CSS:
+Some good points:
+http://stackoverflow.com/questions/8084964/how-to-overwrite-styling-in-twitter-bootstrap
+http://stackoverflow.com/questions/20721248/best-way-to-override-bootstrap-css
+
+"The Right Way":
+https://bootstrapbay.com/blog/customize-bootstrap/
+
+Actually, it's customizable!
+http://getbootstrap.com/customize/
+
+This file:
+Den hedder _variables.css (under bootstrap-sass gem directory): /assets/stylesheets/bootstrap/_variables.scss
+
+This is Monaco — world's best font for code:
+()[] |Il1 0O
+
+!default in SASS:
+https://robots.thoughtbot.com/sass-default
+
+Intro to functional JS:
+http://www.sitepoint.com/introduction-functional-javascript/

@@ -1,8 +1,8 @@
-<body>
+<body class="<%= render_body_class %>">
   <header>
     <div class="wrapper row">
       <nav class="upper row">
-        <ul class="menu-items-list horizontal pull-right">
+        <ul class="menu-items-list horizontal align-right">
           <li><a href="">History</a></li> |
           <li><a href="">Danish</a></li>
         </ul>
@@ -13,12 +13,16 @@
       </h1>
       <div class="row">
 
+      <%= render 'search_form' %>
+
+<!--
         <form action="/" class="search">
           <fieldset>
             <input type="search" placeholder="Search publications, authors, or topics" />
             <button type="submit" value="Go"><i class="fa fa-search"></i></button>
           </fieldset>
         </form>
+-->
 
       </div>
     </header>
@@ -29,39 +33,39 @@
           <li>
             <h1 class="facet-heading group">
               Type
-              <span class="close pull-right">
+              <span class="close align-right">
                 <a href=""><i class="fa fa-arrow-circle-down"></i></a>
               </span>
             </h1>
             <ul class="facet-items-list">
               <li class="group">
-                <a href="">Journal Article<em class="number-of-items pull-right">1231234</em></a>
+                <a href="">Journal Article<em class="number-of-items align-right">1231234</em></a>
               </li>
               <li class="group">
-                <a href="">Book Chapter<em class="number-of-items pull-right">12312</em></a>
+                <a href="">Book Chapter<em class="number-of-items align-right">12312</em></a>
               </li>
               <li class="group">
-                <a href="">Conference Paper<em class="number-of-items pull-right">12</em></a>
+                <a href="">Conference Paper<em class="number-of-items align-right">12</em></a>
               </li>
             </ul>
           </li>
           <li>
             <h1 class="facet-heading group">
               Publication Year
-              <span class="close pull-right">
+              <span class="close align-right">
                 <a href=""><i class="fa fa-arrow-circle-right"></i></a>
               </span>
             </h1>
 <!--
             <ul class="facet-items-list">
               <li class="group">
-                <a href="">Journal Article<em class="number-of-items pull-right">1231234</em></a>
+                <a href="">Journal Article<em class="number-of-items align-right">1231234</em></a>
               </li>
               <li class="group">
-                <a href="">Book Chapter<em class="number-of-items pull-right">12312</em></a>
+                <a href="">Book Chapter<em class="number-of-items align-right">12312</em></a>
               </li>
               <li class="group">
-                <a href="">Conference Paper<em class="number-of-items pull-right">12</em></a>
+                <a href="">Conference Paper<em class="number-of-items align-right">12</em></a>
               </li>
             </ul>
           -->
@@ -69,19 +73,19 @@
         <li>
           <h1 class="facet-heading group">
             Research Insitution
-            <span class="close pull-right">
+            <span class="close align-right">
               <a href=""><i class="fa fa-arrow-circle-down"></i></a>
             </span>
           </h1>
           <ul class="facet-items-list">
             <li class="group">
-              <a href="">University of Copenhagen<em class="number-of-items pull-right">1231234</em></a>
+              <a href="">University of Copenhagen<em class="number-of-items align-right">1231234</em></a>
             </li>
             <li class="group">
-              <a href="">Aarhus University<em class="number-of-items pull-right">12312</em></a>
+              <a href="">Aarhus University<em class="number-of-items align-right">12312</em></a>
             </li>
             <li class="group">
-              <a href="">Technical University of Denmark<em class="number-of-items pull-right">126,205</em></a>
+              <a href="">Technical University of Denmark<em class="number-of-items align-right">126,205</em></a>
             </li>
           </ul>
         </li>
@@ -158,6 +162,5 @@
       -->
     </div>
   </div>
-
 </body>
 
