@@ -1,4 +1,4 @@
-<body class="<%= render_body_class %>">
+<!--
   <header>
     <div class="wrapper row">
       <nav class="upper row">
@@ -13,49 +13,48 @@
       </h1>
       <div class="row">
 
-      <%= render 'search_form' %>
+        <%# render 'search_form' %>
 
-<!--
         <form action="/" class="search">
           <fieldset>
             <input type="search" placeholder="Search publications, authors, or topics" />
             <button type="submit" value="Go"><i class="fa fa-search"></i></button>
           </fieldset>
         </form>
+
+    </div>
+  </header>
 -->
 
-      </div>
-    </header>
-
-    <div class="wrapper row tablet-l grid">
-      <div class="col-30">
-        <ul class="facets-list">
-          <li>
-            <h1 class="facet-heading group">
-              Type
-              <span class="close align-right">
-                <a href=""><i class="fa fa-arrow-circle-down"></i></a>
-              </span>
-            </h1>
-            <ul class="facet-items-list">
-              <li class="group">
-                <a href="">Journal Article<em class="number-of-items align-right">1231234</em></a>
-              </li>
-              <li class="group">
-                <a href="">Book Chapter<em class="number-of-items align-right">12312</em></a>
-              </li>
-              <li class="group">
-                <a href="">Conference Paper<em class="number-of-items align-right">12</em></a>
-              </li>
-            </ul>
+<div class="wrapper row tablet-l grid">
+  <div class="col-30">
+    <ul class="facets-list">
+      <li>
+        <h1 class="facet-heading group">
+          Type
+          <span class="close align-right">
+            <a href=""><i class="fa fa-arrow-circle-down"></i></a>
+          </span>
+        </h1>
+        <ul class="facet-items-list">
+          <li class="group">
+            <a href="">Journal Article<em class="number-of-items align-right">1231234</em></a>
           </li>
-          <li>
-            <h1 class="facet-heading group">
-              Publication Year
-              <span class="close align-right">
-                <a href=""><i class="fa fa-arrow-circle-right"></i></a>
-              </span>
-            </h1>
+          <li class="group">
+            <a href="">Book Chapter<em class="number-of-items align-right">12312</em></a>
+          </li>
+          <li class="group">
+            <a href="">Conference Paper<em class="number-of-items align-right">12</em></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h1 class="facet-heading group">
+          Publication Year
+          <span class="close align-right">
+            <a href=""><i class="fa fa-arrow-circle-right"></i></a>
+          </span>
+        </h1>
 <!--
             <ul class="facet-items-list">
               <li class="group">
@@ -91,76 +90,6 @@
         </li>
       </ul>
     </div>
-
-    <div class="col-70">
-      <ol class="search-results-list">
-        <li>
-          <h1 class="result-heading">
-            <a href="">Social network models for enhancing reference based search engine rankings</a>
-          </h1>
-
-          <dl class="document-metadata dl-horizontal dl-invert">
-            <dt class="blacklight-author_ts">Authors:</dt>
-            <dd class="blacklight-author_ts">Korfiatis, Nikolaos ; Sicilia, Miguel-Angel ; Hess, Claudia ; Stein, Klaus ; Schlieder, Christoph</dd>
-
-            <dt class="blacklight-format">Type:</dt>
-            <dd class="blacklight-format">Book chapter</dd>
-
-            <dt class="blacklight-journal_title_ts">Published in:</dt>
-            <dd class="blacklight-journal_title_ts">Social Information Retrieval Systems, 2007</dd>
-
-            <dt class="blacklight-research_area_ss">Main Research Area:</dt>
-            <dd class="blacklight-research_area_ss">Social science</dd>
-
-            <dt class="blacklight-source_ss">Research Institution:</dt>
-            <dd class="blacklight-source_ss">Copenhagen Business School</dd>
-
-            <dt>Availability</dt>
-            <dd><a href="/en/catalog/1674132885">GET IT</a></dd>
-          </dl>
-
-        </li>
-        <li>
-          <h1 class="result-heading">
-            <a href="">Innovation during the Supplier Selection Process</a>
-          </h1>
-
-          <dl class="document-metadata dl-horizontal dl-invert">
-            <dt class="blacklight-author_ts">Authors:</dt>
-            <dd class="blacklight-author_ts">Pilkington, Alan ; Pedraza, Isabel</dd>
-
-            <dt class="blacklight-format">Type:</dt>
-            <dd class="blacklight-format">Conference paper</dd>
-
-            <dt class="blacklight-journal_title_ts">Published in:</dt>
-            <dd class="blacklight-journal_title_ts">2014 Ieee International Conference on Management of Innovation and Technology (icmit), 2014, p. 262-267</dd>
-
-            <dt class="blacklight-abstract_ts">Abstract:</dt>
-            <dd class="blacklight-abstract_ts">Established ideas on supplier selection have not moved much from the original premise of how to choose between bidders. Whilst we have added many different tools and refinements to choose between alternative suppliers, its nature has not evolved. We move the original selection process approach forward by reporting a novel practice from the car industry where the first stage is to allow bidders to propose alternative technological solutions. After identifying the deserted technological solution, ...</dd>
-
-            <dt class="blacklight-research_area_ss">Main Research Area:</dt>
-            <dd class="blacklight-research_area_ss">Social science</dd>
-
-            <dt class="blacklight-source_ss">Research Institution:</dt>
-            <dd class="blacklight-source_ss">Copenhagen Business School</dd>
-
-          </li>
-          <li></li>
-        </ol>
-
-
-      <!--
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent purus arcu, sagittis ac elementum quis, pulvinar et dui. Aliquam quis leo vitae neque sagittis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla orci neque, dignissim nec dapibus quis, suscipit vitae quam. Nam laoreet arcu vitae urna commodo, at luctus lectus tempor. Morbi nec velit sed dolor accumsan rutrum vitae a nisl. Sed facilisis faucibus purus. Ut sit amet lorem maximus, rutrum orci nec, tincidunt mi. Nunc eget rhoncus nulla. Phasellus tristique risus a orci egestas, eget volutpat metus placerat. Morbi velit tortor, rhoncus et nulla in, venenatis faucibus ipsum. Vivamus pharetra dolor vel finibus feugiat. In dui velit, pulvinar quis blandit at, venenatis vel nibh. Pellentesque vulputate risus a eros tincidunt auctor. Nam in cursus felis.
-        </p>
-        <p>
-          Aenean scelerisque eget magna ut gravida. Nullam feugiat venenatis diam, bibendum accumsan massa consectetur sed. Etiam cursus maximus turpis, molestie lobortis orci. Etiam eget sodales nisi. Praesent viverra augue sed metus ultrices, nec posuere diam posuere. Aenean convallis dolor ut leo faucibus fringilla. Etiam venenatis a turpis sed semper. Integer lobortis, tellus at vehicula rutrum, quam elit lacinia risus, blandit mollis libero tortor ut libero. Nullam semper, ex at placerat rutrum, lorem massa accumsan ipsum, sit amet convallis arcu arcu sit amet libero. Nulla facilisi.
-        </p>
-        <p>
-          Phasellus posuere nunc id elementum suscipit. In quis libero sed eros dignissim euismod. Vivamus urna nisi, sollicitudin a ullamcorper nec, faucibus eu sapien. Maecenas fringilla convallis neque, sit amet vulputate nulla aliquet vitae. Integer vehicula, magna a malesuada vehicula, leo mi ornare felis, in dapibus lorem quam nec eros. Praesent vel efficitur ex. Aliquam porta enim ut aliquam elementum. Aenean pellentesque leo a libero finibus, sit amet mollis dolor tincidunt. Cras pretium viverra lectus, commodo tristique lectus interdum vel. Nunc vel feugiat augue. Phasellus tempor sed felis sed fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        </p>
-      -->
-    </div>
   </div>
-</body>
+
 

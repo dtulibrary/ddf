@@ -1,7 +1,7 @@
 @import "../base/all";
 
-$serif: 'Crimson Text', Georgia, serif;
-$sans:  'Helvetica Neue';
+$sans:      'Open Sans', 'Helvetica Neue', sans-serif;
+$serif:     'Crimson Text', Georgia, serif;
 $headline:  'Exo 2', sans-serif;
 
 body {
@@ -11,7 +11,7 @@ body {
 
   background: $body-background;
   color: #333333;
-  border-top: 3px solid #D23F43;
+  border-top: 3px solid $crimson;
 
 /*
   @include respond-to($ipad_portrait) { font-size: 1.15rem; }
@@ -48,17 +48,19 @@ a:visited { color: #555; }
 a:hover,
 a:visited:hover,
 a:focus,
-a:active { color: $link-hover-color; }
+a:active { color: red; }
 
 nav.upper { font-size: .9em; }
 
 h1.logo {
   font-family: $headline;
-  font-size: 1.4em;
+  font-size: calc-em(27px);
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: .1em;
   color: rgba(52, 73, 94, 1); //Pickled Bluewood
+  margin: 2em 0 0 0;
   @include respond-to($iphone_landscape) {
     font-size: 1.2em;
   }
@@ -72,6 +74,7 @@ h1.logo em {
   font-family: $serif;
 }
 
+/* PROTOTYPE START */
 form.search fieldset {
   border: 0;
   padding: 0;
@@ -133,57 +136,39 @@ h1.facet-heading {
 }
 
 h1.facet-heading span.close { font-size: 1.4em; }
+/* PROTOTYPE END */
 
-ol.search-results-list li {
-  margin-bottom: 2em;
-  list-style-type: none;
-  counter-increment: step-counter;
+
+
+dl.dl-invert dt[class^="blacklight-"] {
+  font-weight: bold;
 }
 
-ol.search-results-list li::before {
-    font-family: $headline;
-    content: counter(step-counter);
-    //margin-right: 5px;
-    font-size: 80%;
-    background-color: rgb(200,200,200);
-    color: #fff;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 3px;
-}
 
-h1.result-heading {
+div.documentHeader > h5.index_title {
   font-family: $headline;
-  font-size: 1.2em;
-  line-height: 1.125em;
-  margin: .25em 0 1em 0;
+  font-size: calc-em(20px);
+  line-height: calc-em(23px);
+}
+div.documentHeader > h5.index_title a:link {
+  text-decoration: underline;
+  padding: .1em .3em .3em .3em;
+  color: #2B3A42;
+}
+div.documentHeader > h5.index_title a:hover {
+  text-decoration: none;
+  background: #EFEFEF;
+  color: #FF530D;
 }
 
-.dl-horizontal dt {
-  clear: left;
-  float: left;
-  overflow: hidden;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 160px;
-  color: #777;
-  margin-bottom: .25em;
-  @include respond-to($ipad_landscape) {
-    display: block;
-    float: none;
-    text-align: left;
-    margin-bottom: 0;
-  }
-}
+nav[role="main"]  { padding: .5em 0; }
+nav[role="main"] > ul { margin: 0; }
+nav[role="main"] > ul.menu-items-list { margin-top: .5em; }
+nav[role="main"] { font-size: .9em; }
+nav[role="main"] li.home { font-size: calc-em(30px); }
 
-.dl-horizontal dd {
-  margin-left: 180px;
-  margin-bottom: .25em;
-  @include respond-to($ipad_landscape) {
-    display: block;
-    margin-left: 0;
-    margin-bottom: .7em;
-  }
+ul.menu-items-list li {
+  padding: 0 .3em;
+  margin: 0;
 }
 

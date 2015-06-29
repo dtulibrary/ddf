@@ -26,3 +26,8 @@ https://robots.thoughtbot.com/sass-default
 
 Intro to functional JS:
 http://www.sitepoint.com/introduction-functional-javascript/
+
+Xray-rails reveals which files are being rendered in your view
+https://changelog.com/xray-rails-reveals-which-files-are-being-rendered-in-your-view/
+cmd+shift+x.
+Fuck yeah.

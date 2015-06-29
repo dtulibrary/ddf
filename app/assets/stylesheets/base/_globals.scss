@@ -1,6 +1,7 @@
 //
 //TYPOGRAPHY
 //
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext);
 
@@ -45,7 +46,8 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $em;
 
 /* grid cell floating
 --------------------------------------------- */
-.row > *[class^="col"] { float: left; }
+// .row > *[class^="col"] { float: left; }
+.block > *[class^="col"] { float: left; }
 
 /* groups with self-clearing floats
 --------------------------------------------- */
@@ -90,10 +92,11 @@ img { width: 100%; }
 //COLORS
 //
 $body-background:  #fdfdfd;
-$link-hover-color: #F14A00;
-$red-dark:         #712300;
-$red-medium:       #D74200;
-$red-nav:          #DD3333;
-
-
-
+$crimson: #D23F43;
+// The rest is this scheme:
+// https://color.adobe.com/Birdfolio-Blues-color-theme-1945976/
+$blue-1: #2B3A42;
+$blue-2: #3F5765;
+$blue-3: #BDD4DE;
+$blue-4: #EFEFEF;
+$orange: #FF530D;
