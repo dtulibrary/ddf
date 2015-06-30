@@ -31,3 +31,65 @@ Xray-rails reveals which files are being rendered in your view
 https://changelog.com/xray-rails-reveals-which-files-are-being-rendered-in-your-view/
 cmd+shift+x.
 Fuck yeah.
+
+WHAT BOOTSTRAP'S CLASSES DECLARE:
+
+.container
+
+1) Sizes (fixed, in px):
+.container {
+  width: 1170px;
+}
+.container {
+  width: 970px;
+}
+.container {
+  width: 750px;
+}
+
+2) Padding (15px on each side):
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+3) Clearfix:
+.container::before, .container::after {
+  content: " ";
+  display: table;
+}
+.container::after {
+  clear: both;
+}
+
+.row
+
+1) Margins (-15px on each size):
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+2) Clearfix:
+.row::before, .row::after {
+  content: " ";
+  display: table;
+}
+.row::after {
+  clear: both;
+}
+
+
+From docs (http://getbootstrap.com/css/):
+— Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding.
+— Use rows to create horizontal groups of columns.
+— Content should be placed within columns, and only columns may be immediate children of rows.
+
+So: (.container | .container-fluid) > .row > .col-**-* > <your content>
+
+
+
+
+

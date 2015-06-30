@@ -60,13 +60,14 @@ h1.logo {
   line-height: 1em;
   letter-spacing: .1em;
   color: rgba(52, 73, 94, 1); //Pickled Bluewood
-  margin: 2em 0 0 0;
+  margin: .5em 0 .7em 0;
   @include respond-to($iphone_landscape) {
     font-size: 1.2em;
   }
 }
 
 h1.logo em {
+  font-size: calc-em(18px);
   display: block;
   text-transform: none;
   letter-spacing: 0;
