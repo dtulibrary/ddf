@@ -36,6 +36,8 @@ gem 'json', '1.8.2'
 # gem 'capistrano-rails', group: :development
 
 gem 'blacklight', '~> 5.7.1'
+gem 'capistrano', '~> 2.0'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +51,8 @@ group :development, :test do
 
   # I can see stuff
   gem 'xray-rails'
+
+  gem 'jettywrapper'
 end
 
 
