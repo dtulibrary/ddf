@@ -142,19 +142,20 @@ h1.facet-heading span.close { font-size: 1.4em; }
 
 
 dl.dl-invert dt[class^="blacklight-"] {
-  font-weight: bold;
+  font-weight: 600;
+  color: #333;
 }
-
 
 div.documentHeader > h5.index_title {
   font-family: $headline;
   font-size: calc-em(20px);
-  line-height: calc-em(23px);
+  line-height: calc-em(22px);
+  margin: .25em 0 .125em 0;
 }
 div.documentHeader > h5.index_title a:link {
   text-decoration: underline;
   padding: .1em .3em .3em .3em;
-  color: #2B3A42;
+  color: $link-color;
 }
 div.documentHeader > h5.index_title a:hover {
   text-decoration: none;

@@ -81,6 +81,16 @@ WHAT BOOTSTRAP'S CLASSES DECLARE:
   clear: both;
 }
 
+.col-**-*
+
+1) Padding (15px on each side):
+{
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
 
 From docs (http://getbootstrap.com/css/):
 — Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding.
