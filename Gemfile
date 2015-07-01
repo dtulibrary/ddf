@@ -40,7 +40,7 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 
   gem 'sprockets', '~> 2.8'
-  gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer', '0.12.1', platforms: :ruby
   #gem 'libv8', '3.16.14.7'
 
   gem 'autoprefixer-rails'
