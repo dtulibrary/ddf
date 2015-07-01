@@ -41,7 +41,7 @@ group :assets do
 
   gem 'sprockets', '~> 2.8'
   gem 'therubyracer', '0.12.1', platforms: :ruby
-  #gem 'libv8', '3.16.14.7'
+  gem 'libv8', '3.16.14.7'
 
   gem 'autoprefixer-rails'
 end
