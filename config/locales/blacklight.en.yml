@@ -1,3 +1,9 @@
 en:
   blacklight:
     application_name: 'Blacklight'
+    search:
+      fields:
+        facet:
+          journal_title_facet: 'Journal Title'
+          pub_date_tsort: 'Publication Date'
+          author_facet: 'Author'

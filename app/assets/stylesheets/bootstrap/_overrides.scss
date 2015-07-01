@@ -21,3 +21,21 @@ dt, dd {
   padding: .7em 0;
 }
 #documents .document:last-child { border-bottom: 0; }
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+    //background: #bbb;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+    //background: #ccc;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+    //background: #eee;
+  }
+}
+

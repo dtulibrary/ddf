@@ -174,3 +174,91 @@ ul.menu-items-list li {
   margin: 0;
 }
 
+#sidebar h4 {
+  font-weight: 600;
+  color: $blue-1;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+
+#sidebar .panel-default > .panel-heading {
+  background-color: $blue-4;
+  border-color: #ddd;
+  color: #333333;
+}
+
+
+ul.facet-values {
+  font-size: 17px; //TODO
+}
+
+#sidebar ul.facet-values li {
+ //display: block; Good luck overriding display: table-row;
+}
+
+ul.facet-values li span.facet-label a.facet_select {
+  text-decoration: underline;
+}
+
+ul.facet-values li:hover,
+ul.facet-values li:hover span.facet-label a.facet_select,
+ul.facet-values li:hover span.facet-count {
+  background: $blue-4;
+  color: $link-color;
+  text-decoration: underline;
+}
+
+ul.facet-values li a:link {
+  text-decoration: none;
+}
+
+ul.facet-values span.facet-count {
+  font-style: italic;
+  color: #888;
+}
+
+div.panel-heading h5.panel-title { font-weight: 600; }
+
+span.facet-label span.selected {
+  background: $blue-2;
+  color: #fff;
+}
+
+span.selected+a.remove {
+  background: $blue-1;
+  color: $orange;
+}
+
+span.selected+a.remove .glyphicon {
+  right: 5px;
+  top: 2px;
+  //display: inline-block;
+  //margin-left: .5em;
+  font-size: .9em;
+}
+
+span.constraint-value,
+#appliedParams span.constraint-value:hover {
+  background: $blue-2;
+  color: #fff;
+  border: 1px solid $blue-1;
+  font-size: .8em;
+}
+
+span.constraint-value+a.remove {
+ background: $blue-1;
+ color: $orange;
+ border: 1px solid $blue-1;
+}
+
+span.constraint-value,
+span.constraint-value+a.remove {
+  font-size: .8em;
+}
+
+#appliedParams span.constraints-label {
+  font-size: .8em;
+  font-weight: 600;
+}
+
