@@ -1,13 +1,23 @@
+html {
+  font-size: 18px;
+  line-height: 27px;
+} //https://css-tricks.com/rems-ems/
+
 body {
   background: $body-bg;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-base;
-  line-height: $line-height-computed;
+  font-family: $sans;
+  font-size: 1rem;
+  line-height: 1.5; // 27/18
+} //http://webtypography.net/2.2.1
+
+dt, dd {
+  //line-height: 1.42857;
+  line-height: inherit;
 }
 
 #documents .document {
-    border-bottom: 2px dotted #ccc;
-    //margin-top: 1em;
-    padding: .7em 0;
+  border-bottom: 2px dotted #ccc;
+  //margin-top: 1em;
+  padding: .7em 0;
 }
 #documents .document:last-child { border-bottom: 0; }
