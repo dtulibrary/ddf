@@ -39,6 +39,7 @@ gem 'autoprefixer-rails'
 
 group :assets do
   gem 'therubyracer', '0.12.1', platforms: :ruby
+  gem 'libv8', '3.16.14.7'
 end
 
 group :development, :test do
