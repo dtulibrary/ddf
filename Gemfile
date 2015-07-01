@@ -38,7 +38,7 @@ gem 'capistrano', '~> 2.0'
 gem 'autoprefixer-rails'
 
 group :assets do
-  gem 'therubyracer',  platforms: :ruby
+  gem 'therubyracer', '0.12.1', platforms: :ruby
 end
 
 group :development, :test do
