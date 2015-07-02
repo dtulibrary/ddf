@@ -8,6 +8,7 @@ gem 'pg'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+gem 'sass-rails', '~> 5.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -33,16 +34,10 @@ gem 'blacklight', '~> 5.7.1'
 gem 'capistrano', '~> 2.0'
 
 group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 5.0'
-
-  # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier', '>= 1.3.0'
-
   gem 'sprockets', '~> 2.8'
   gem 'therubyracer', '0.12.1', platforms: :ruby
   gem 'libv8', '3.16.14.7'
-
   gem 'autoprefixer-rails'
 end
 
@@ -61,6 +56,5 @@ group :development, :test do
 
   gem 'jettywrapper'
 end
-
 
 gem 'rsolr', '~> 1.0.6'
