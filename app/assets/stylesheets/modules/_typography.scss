@@ -54,13 +54,13 @@ nav.upper { font-size: .9em; }
 
 h1.logo {
   font-family: $headline;
-  font-size: calc-em(27px);
+  font-size: calc-em(25px);
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: .1em;
   color: rgba(52, 73, 94, 1); //Pickled Bluewood
-  margin: .5em 0 .7em 0;
+  margin: 0 0 .7em 0;
   @include respond-to($iphone_landscape) {
     font-size: 1.2em;
   }
@@ -206,7 +206,7 @@ ul.facet-values li:hover span.facet-label a.facet_select,
 ul.facet-values li:hover span.facet-count {
   background: $blue-4;
   color: $link-color;
-  text-decoration: underline;
+  //text-decoration: underline;
 }
 
 ul.facet-values li a:link {
@@ -221,14 +221,25 @@ ul.facet-values span.facet-count {
 div.panel-heading h5.panel-title { font-weight: 600; }
 
 span.facet-label span.selected {
-  background: $blue-2;
+  background: $label-dark;
+  color: #000;
+}
+
+/*
+ul.facet-values span.facet-label span.selected:hover {
+  text-decoration: none;
+}
+*/
+
+span.selected+a.remove {
+  background: $label-dark;
+  color: $action-red;
+}
+span.selected+a.remove:hover {
+  background: $action-red;
   color: #fff;
 }
 
-span.selected+a.remove {
-  background: $blue-1;
-  color: $orange;
-}
 
 span.selected+a.remove .glyphicon {
   right: 5px;
@@ -240,25 +251,41 @@ span.selected+a.remove .glyphicon {
 
 span.constraint-value,
 #appliedParams span.constraint-value:hover {
-  background: $blue-2;
-  color: #fff;
+  background: $label-light;
+  color: #000;
   border: 1px solid $blue-1;
   font-size: .8em;
 }
 
 span.constraint-value+a.remove {
- background: $blue-1;
- color: $orange;
+ background: $label-dark;
+ color: $action-red;
  border: 1px solid $blue-1;
 }
+
 
 span.constraint-value,
 span.constraint-value+a.remove {
   font-size: .8em;
 }
 
+#appliedParams.constraints-container {
+    background: #fff;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0;
+    padding: .7em 0;
+  }
+
 #appliedParams span.constraints-label {
-  font-size: .8em;
-  font-weight: 600;
+  display: block;
+  font-size: calc-em(15px);
+  font-weight: bold;
 }
 
+a#startOverLink {
+  font-size: calc-em(15px);
+  font-weight: bold;
+  text-decoration: underline;
+  color: link-color;
+}
