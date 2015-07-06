@@ -1,6 +1,8 @@
 html {
   font-size: 18px;
   line-height: 27px;
+  @include respond-to($ipad_portrait) { font-size: 17px; }
+  @include respond-to($iphone_landscape) { font-size: 16px; }
 } //https://css-tricks.com/rems-ems/
 
 body {
@@ -27,15 +29,17 @@ dt, dd {
 
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
-    //background: #bbb;
+    background: #bbb;
+    font-size: .9rem;
   }
   @media (min-width: $screen-md-min) {
     width: $container-md;
-    //background: #ccc;
+    background: #ccc;
+    font-size: calc-em(16px);
   }
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
-    //background: #eee;
+    background: #eee;
   }
 }
 

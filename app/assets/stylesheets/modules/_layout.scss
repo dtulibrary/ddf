@@ -82,6 +82,8 @@ button#search {
   height: auto;
   line-height: auto;
   padding: 10px 12px;
+  @include respond-to($ipad_portrait) { font-size: 17px; }
+  @include respond-to($iphone_landscape) { font-size: 16px; }
 
 /*
   -webkit-box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
