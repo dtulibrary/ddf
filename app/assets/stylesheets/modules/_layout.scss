@@ -39,7 +39,7 @@ ul.horizontal li { display: inline-block; }
 .align-left  { float: left; }
 .align-right { float: right; }
 
-header {
+body > header {
   background: $bluewood;
   padding: 0;
   margin-bottom: 2em;
@@ -49,6 +49,13 @@ header {
   padding: .7em 0 .3em 0;
 }
 
+// TODO
+body > footer {
+  background: $bluewood;
+  padding: 2em 0;
+  color: #fff;
+  font-size: .9rem;
+}
 
 form.search-query-form { padding-left: 0; }
 
@@ -97,4 +104,10 @@ div.debug {
 
 .container--searchbox {
   @include respond-to($ipad_portrait) { width: 90%; }
+}
+
+.container {
+  @include respond-to($ipad_portrait) {
+    padding-left: 3em; // FIXME
+  }
 }

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
+  get 'data-providers' => 'pages#data_providers'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
