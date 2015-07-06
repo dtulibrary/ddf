@@ -29,17 +29,15 @@ dt, dd {
 
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
-    background: #bbb;
-    font-size: .9rem;
+    //background: #bbb;
   }
   @media (min-width: $screen-md-min) {
     width: $container-md;
-    background: #ccc;
-    font-size: calc-em(16px);
+    //background: #ccc;
   }
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
-    background: #eee;
+    //background: #eee;
   }
 }
 

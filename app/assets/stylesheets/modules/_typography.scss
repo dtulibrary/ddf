@@ -59,7 +59,8 @@ h1.logo {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: .1em;
-  color: rgba(52, 73, 94, 1); //Pickled Bluewood
+  color: $bluewood;
+  color: #fff;
   margin: 0 0 .7em 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
@@ -73,6 +74,7 @@ h1.logo em {
   letter-spacing: 0;
   font-weight: normal;
   font-family: $serif;
+  color: $orange;
 }
 
 /* PROTOTYPE START */
@@ -186,7 +188,6 @@ ul.menu-items-list li {
   color: #333333;
 }
 
-
 ul.facet-values {
   font-size: 17px; //TODO
 }
@@ -280,3 +281,9 @@ a#startOverLink {
 }
 
 a#startOverLink:hover { background: $orange; }
+
+nav[role="main"] > ul { color: $blue-3; }
+nav[role="main"] > ul li a:link { color: $blue-4; }
+nav[role="main"] > ul li a:visited { color: $blue-4; }
+nav[role="main"] > ul li a:hover { color: $orange; }
+nav[role="main"] > ul li a:active { color: $orange; }

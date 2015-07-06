@@ -40,19 +40,19 @@ ul.horizontal li { display: inline-block; }
 .align-right { float: right; }
 
 header {
-  background: #EFEFEF;
-  padding: .25em 0;
+  background: $bluewood;
+  padding: 0;
   margin-bottom: 2em;
 }
-
-form.search-query-form {
-  padding-left: 0;
+.header__wrapper {
+  background: $blue-4;
+  padding: .7em 0 .3em 0;
 }
 
-form.search-query-form div.input-group {
-  width: 100%;
-  //font-size: 1em;
-}
+
+form.search-query-form { padding-left: 0; }
+
+form.search-query-form div.input-group { width: 100%; }
 
 input.form-control {
   display: block;
@@ -62,7 +62,7 @@ input.form-control {
   line-height: auto;
   color: #333333;
   padding: 10px 12px;
-  border: 1px solid $blue-1;
+  border: 1px solid $blue-2;
   //background: #f5f5f5;
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
@@ -70,11 +70,6 @@ input.form-control {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-/*
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  */
 }
 
 button#search {
@@ -84,12 +79,6 @@ button#search {
   padding: 10px 12px;
   @include respond-to($ipad_portrait) { font-size: 17px; }
   @include respond-to($iphone_landscape) { font-size: 16px; }
-
-/*
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  box-shadow: 0px 5px 5px 0px rgba(153,153,153,1);
-  */
 }
 
 .snap-to-grid {
@@ -104,4 +93,8 @@ div.debug {
   text-align: center;
   font-family: 'Monaco';
   font-size: .9em;
+}
+
+.container--searchbox {
+  @include respond-to($ipad_portrait) { width: 90%; }
 }
