@@ -5,5 +5,7 @@ en:
       fields:
         facet:
           journal_title_facet: 'Journal Title'
-          pub_date_tsort: 'Publication Date'
+          pub_date_tsort: 'Publication Year'
           author_facet: 'Author'
+          research_area_ss: 'Research Area'
+

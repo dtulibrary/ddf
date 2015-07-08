@@ -13,7 +13,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       :qt => '/ddf_publ',
       :rows => 10
-    }
+  }
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
     # items to show per page, each number in the array represent another option to choose from.
@@ -29,7 +29,7 @@ class CatalogController < ApplicationController
       # :fl => '*',
       # :rows => 1
       # :q => '{!raw f=id v=$id}'
-    }
+  }
     # solr field configuration for search results/index views
     config.index.title_field = 'title_ts'
     config.index.display_type_field = 'format'
@@ -67,14 +67,17 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
     # config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
-    config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
-      :num_segments => 3,
-      :assumed_boundaries => [1900, Time.now.year + 2],
-    }
-    # config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
+    # config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
+    #   :num_segments => 3,
+    #   :assumed_boundaries => [1900, Time.now.year + 2],
+    # }
+
+    # config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :limit => 10
+
     config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
-    # config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
     config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
+    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :limit => 10
+
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
@@ -82,15 +85,26 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     # The ordering of the field names is the order of the display
+
+
+    # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
+    # Way to go:
     config.add_index_field 'author_ts', :separator => ' ; '
-    # config.add_index_field 'format', :helper_method => :render_format_field_index
-    # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
-    config.add_index_field 'doi_ss'
+    config.add_index_field 'format', :label => 'Type'
+    # config.add_index_field 'doi_ss'
+    config.add_index_field 'journal_title_ts', :label => 'Published in'
+    config.add_index_field 'abstract_ts', :label => 'Abstract'
+    config.add_index_field 'research_area_ss', :label => 'Research Area'
+
+
+    # :helper_methods result in errors, so don't use'em:
+    #
     # config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
+    # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
+
     # TODO: Enable this when research area codes are available
     #config.add_index_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field
     config.add_index_field 'series_title_ts'
-    config.add_index_field 'research_area_ss'
     # config.add_index_field 'source_ss', :helper_method => :render_source_field
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
@@ -102,7 +116,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'doi_ss'
     config.add_show_field 'isbn_ss'
     config.add_show_field 'issn_ss'
+
+    # UGH?
     # config.add_show_field 'abstract_ts', :helper_method => :snip_abstract
+
     config.add_show_field 'conf_title_ts'
     config.add_show_field 'language_ss'
     # TODO: Enable this when research area codes are available
@@ -132,9 +149,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
 
-    config.add_sort_field 'score desc, pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'year'
-    config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-    config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
-  end
+config.add_sort_field 'score desc, pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'relevance'
+config.add_sort_field 'pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'year'
+config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
+config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
+end
 end
