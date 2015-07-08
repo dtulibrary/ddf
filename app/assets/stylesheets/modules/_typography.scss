@@ -147,11 +147,19 @@ dl.dl-invert dt[class^="blacklight-"] {
   color: #333;
 }
 
+.dl-horizontal dd[class^="blacklight-"] {
+  margin-bottom: .4em;
+}
+
+.dl-horizontal {
+  margin-bottom: 1.25em;
+}
+
 div.documentHeader > h5.index_title {
   font-family: $headline;
   font-size: calc-em(20px);
   line-height: calc-em(22px);
-  margin: .25em 0 .5em 0;
+  margin: .25em 0 .7em 0;
   @include respond-to($ipad_portrait) { margin: .25em 0 0 0; }
 }
 div.documentHeader > h5.index_title a:link {
