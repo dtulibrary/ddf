@@ -147,13 +147,8 @@ dl.dl-invert dt[class^="blacklight-"] {
   color: #333;
 }
 
-.dl-horizontal dd[class^="blacklight-"] {
-  margin-bottom: .4em;
-}
-
-.dl-horizontal {
-  margin-bottom: 1.25em;
-}
+.dl-horizontal { margin-bottom: 1.25em; }
+.dl-horizontal dd[class^="blacklight-"] { margin-bottom: .4em; }
 
 div.documentHeader > h5.index_title {
   font-family: $headline;

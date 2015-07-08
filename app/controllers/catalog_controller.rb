@@ -86,7 +86,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     # The ordering of the field names is the order of the display
 
-
+    # ALL INDEX FIELDS:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
     # Way to go:
     config.add_index_field 'author_ts', :separator => ' ; '
