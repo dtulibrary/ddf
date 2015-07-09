@@ -51,6 +51,7 @@ body > header {
 
 // TODO
 body > footer {
+  clear: both;
   background: $bluewood;
   padding: 2em 0;
   color: #fff;
@@ -93,7 +94,8 @@ button#search {
   padding-right: 15px;
 }
 
-div.debug {
+div.debug { background: #eee; }
+div.debug-params {
   padding: 1em 0;
   background: rgba(0,0,0, .9);
   color: #2EFA05;
@@ -110,4 +112,21 @@ div.debug {
   @include respond-to($ipad_portrait) {
     padding-left: 3em; // FIXME
   }
+}
+
+[class^="multicol-"] {
+  margin-bottom: 2em;
+  margin: 0 auto;
+}
+.multicol-3 { -moz-column-count: 3; }
+.multicol-2 { -moz-column-count: 2; }
+.multicol-1 {
+  @include respond-to($screen-md-min) {
+    -moz-column-count: 1;
+  }
+}
+
+.page-leadin {
+  margin-bottom: 1em;
+  border-bottom: 2px dotted $blue-3;
 }

@@ -302,15 +302,21 @@ a#startOverLink {
 }
 a#startOverLink:hover { background: $orange; }
 
-h1.page-title {
+h1.page-heading {
   font-family: $headline;
 
-  font-size: calc-em(30px);
+  //background: #eee;
+
+  font-size: calc-em(27px);
   line-height: calc-em(30px);
-  margin: .5em 0;
+  margin: 0 0 .5em 0;
   color: $bluewood;
 
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .07em;
+}
+
+p.top-cta {
+  margin-top: .8em;
 }
