@@ -72,8 +72,10 @@ class CatalogController < ApplicationController
     #   :assumed_boundaries => [1900, Time.now.year + 2],
     # }
 
-    # config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :limit => 10
 
+
+    # ALL FACET FIELDS:
+    config.add_facet_field 'format', :label => 'Type'
     config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
     config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
     config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :limit => 10
@@ -86,9 +88,14 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     # The ordering of the field names is the order of the display
 
-    # ALL INDEX FIELDS:
+    # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
-    # Way to go:
+    #
+    # :helper_methods result in errors, so don't use'em:
+    # config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
+    # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
+
+    # ALL INDEX FIELDS:
     config.add_index_field 'author_ts', :separator => ' ; '
     config.add_index_field 'format', :label => 'Type'
     # config.add_index_field 'doi_ss'
@@ -97,10 +104,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'research_area_ss', :label => 'Research Area'
 
 
-    # :helper_methods result in errors, so don't use'em:
-    #
-    # config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
-    # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
 
     # TODO: Enable this when research area codes are available
     #config.add_index_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field
