@@ -96,7 +96,7 @@ class CatalogController < ApplicationController
     # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
 
     # ALL INDEX FIELDS:
-    config.add_index_field 'author_ts', :separator => ' ; '
+    config.add_index_field 'author_ts', :label => 'Authors', :separator => ' ; '
     config.add_index_field 'format', :label => 'Type'
     # config.add_index_field 'doi_ss'
     config.add_index_field 'journal_title_ts', :label => 'Published in'

@@ -318,5 +318,23 @@ h1.page-heading {
 }
 
 p.top-cta {
-  margin-top: .8em;
+  margin-top: .5em;
+}
+
+a.btn-info:link,
+a.btn-info:visited,
+a.btn-info:hover,
+a.btn-info:visited:hover { color: #fff; }
+a.btn-info:active        { color: #eee; }
+
+ul.data-providers-list li { list-style-type: none; }
+
+h1.data-provider-heading {
+  font-family: $headline;
+  font-size: calc-em(20px);
+  line-height: calc-em(20px);
+  margin: .5em 0;
+  color: $bluewood;
+  font-weight: 700;
+  //letter-spacing: .07em;
 }
