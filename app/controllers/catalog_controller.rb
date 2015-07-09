@@ -72,13 +72,29 @@ class CatalogController < ApplicationController
     #   :assumed_boundaries => [1900, Time.now.year + 2],
     # }
 
-
+    # PLANNED FACET FIELDS:
+    #
+    # Type
+    # Publication Year
+    # Submission Year
+    # Research Institution
+    # Research Area
+    # Scientific Level
+    # Peer Review Status
+    # Author
+    # Publication Channel
 
     # ALL FACET FIELDS:
     config.add_facet_field 'format', :label => 'Type'
+    # config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
+    config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
+      :num_segments => 3,
+      :assumed_boundaries => [1900, Time.now.year + 2],
+    }
+    config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
+    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
     config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
     config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
-    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :limit => 10
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
