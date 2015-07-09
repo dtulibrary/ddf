@@ -319,6 +319,7 @@ h1.page-heading {
 
 p.top-cta {
   margin-top: .5em;
+  @include respond-to($screen-md-min) { float: none; }
 }
 
 a.btn-info:link,
