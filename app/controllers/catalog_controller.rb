@@ -6,7 +6,7 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
 
-  # before_filter :set_locale
+  before_filter :set_locale
 
   configure_blacklight do |config|
     # Ensure I18n load paths are loaded
