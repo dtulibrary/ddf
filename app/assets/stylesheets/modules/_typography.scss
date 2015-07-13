@@ -226,7 +226,9 @@ ul.facet-values span.facet-count {
 }
 
 div.panel-heading h5.panel-title { font-weight: 600; }
-div.panel-heading h5.panel-title a:hover { text-decoration: none; }
+div.panel-heading h5.panel-title a:hover,
+div.panel-heading h5.panel-title a:active,
+div.panel-heading h5.panel-title a:visited { text-decoration: none; }
 
 span.facet-label span.selected {
   background: $label-dark;
