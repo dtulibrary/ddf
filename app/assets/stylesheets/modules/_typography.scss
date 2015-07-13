@@ -192,12 +192,20 @@ ul.menu-items-list li {
   color: #333333;
 }
 
-ul.facet-values {
-  font-size: 17px; //TODO
+#sidebar .panel-default > .panel-heading:hover,
+#sidebar .panel-default > .panel-heading:active {
+  background-color: darken($blue-4, 5%);
 }
 
 #sidebar ul.facet-values li {
  //display: block; Good luck overriding display: table-row;
+ font-size: calc-em(15px);
+ //line-height: 1.6em;
+}
+
+#sidebar ul.facet-values li a {
+  //display: inline-block;
+  //padding-top: .5em;
 }
 
 ul.facet-values li span.facet-label a.facet_select { text-decoration: underline; }
@@ -218,6 +226,7 @@ ul.facet-values span.facet-count {
 }
 
 div.panel-heading h5.panel-title { font-weight: 600; }
+div.panel-heading h5.panel-title a:hover { text-decoration: none; }
 
 span.facet-label span.selected {
   background: $label-dark;
@@ -304,14 +313,10 @@ a#startOverLink:hover { background: $orange; }
 
 h1.page-heading {
   font-family: $headline;
-
-  //background: #eee;
-
   font-size: calc-em(27px);
   line-height: calc-em(30px);
   margin: 0 0 .5em 0;
   color: $bluewood;
-
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: .07em;
@@ -338,4 +343,9 @@ h1.data-provider-heading {
   color: $bluewood;
   font-weight: 700;
   //letter-spacing: .07em;
+}
+
+div.facet-limit {
+
+
 }
