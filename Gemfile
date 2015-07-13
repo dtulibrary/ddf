@@ -31,6 +31,8 @@ gem 'json', '1.8.2'
 # gem 'capistrano-rails', group: :development
 
 gem 'blacklight', '~> 5.7.1'
+gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
+
 gem 'capistrano', '~> 2.0'
 
 group :assets do

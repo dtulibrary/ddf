@@ -347,7 +347,29 @@ h1.data-provider-heading {
   //letter-spacing: .07em;
 }
 
-div.facet-limit {
+form.range_limit input.form-control {
+    border: 1px solid $blue-1;
+    border-radius: 0;
+    background: $blue-4;
+    color: $orange;
+    font-size: 15px;
+    height: auto;
+    padding: 5px 0;
+    text-align: center;
+}
 
+form.range_limit input.submit {
+  border: 1px solid $blue-1;
+  color: #fff;
+  background: $blue-2;
+  font-weight: bold;
+}
 
+form.range_limit input.submit:hover {
+  background: darken($blue-2, 5%);
+  color: $orange;
+}
+
+div.flot-text canvas.flot-overlay {
+  font-size: 15px; //FIXME
 }
