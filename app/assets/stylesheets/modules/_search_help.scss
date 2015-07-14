@@ -1,0 +1,16 @@
+#search-syntax {
+  border: 1px solid #d4d4d4;
+  position: absolute;
+  width: 755px;
+  z-index: 2000;
+  display: none;
+  margin: 44px 25px 5px 0px;
+  padding: 5px 2px;
+  thead, tbody {
+    background-color: #fff;
+  }
+
+  td {
+    cursor: pointer;
+  }
+}

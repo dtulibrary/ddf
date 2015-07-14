@@ -60,7 +60,8 @@ body > footer {
 
 form.search-query-form { padding-left: 0; }
 
-form.search-query-form div.input-group { width: 100%; }
+// TODO: Create RWD breakpoints for this and adjacent button:
+form.search-query-form div.input-group { width: 80%; }
 
 input.form-control {
   display: block;
@@ -80,7 +81,10 @@ input.form-control {
   border-radius: 4px;
 }
 
+// TODO: Eliminate left margin, adjust border-radius to desktop, tablet, & mobile views:
 button#search {
+  margin-left: -5px;
+
   font-size: 18px;
   height: auto;
   line-height: auto;
@@ -148,3 +152,15 @@ figure.logo-container {
   left: -10px;
   z-index: 3;
 }
+
+div.text-field-with-icons .icons {
+  background: inherit;
+  z-index: 3;
+  border-radius: 5px 0 0 5px;
+  display: inline-block;
+  float: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+

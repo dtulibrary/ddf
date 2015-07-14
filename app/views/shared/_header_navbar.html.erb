@@ -4,11 +4,16 @@
         <ul class="horizontal pull-left snap-to-grid">
           <li class="home"><a href="/"><i class="fa fa-home"></i></a></li>
         </ul>
-        <ul class="menu-items-list horizontal pull-right snap-to-grid">
-          <li><a href="">History</a></li> |
-          <li><a href="">Danish</a></li>
-        </ul>
-      </nav>
+
+        <ul class="locales-list horizontal pull-right snap-to-grid">
+         <% if I18n.locale == I18n.default_locale %>
+          <%= link_to t('blacklight.language_switcher'), :locale => :da %>
+         <% else %>
+          <%= link_to t('blacklight.language_switcher'), :locale => :en %>
+         <% end %>
+       </ul>
+       <%= render :partial=>'/user_util_links' %>
+     </nav>
     </div>
 
     <div class="container logo-container">
@@ -17,23 +22,19 @@
          <h1 class="logo logo-main">
           <em>Danish National</em>
           Research Database
-        </h1>
-        <%# render 'search_form' %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="header__wrapper">
-    <div class="container container--searchbox">
-      <div class="row">
-        <div class="col-md-10">
-          <%= render 'search_form' %>
+         </h1>
+         <%# render 'search_form' %>
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="header__wrapper">
+      <div class="container container--searchbox">
+        <div class="row">
+          <div class="col-md-10">
+            <%= render_search_bar %>
+          </div>
+        </div>
+      </div>
+    </div>
 </header>
-
-
