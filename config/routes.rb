@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do
   # root :to => "catalog#index"
   # blacklight_for :catalog
   # root to: "catalog#index"
@@ -58,4 +59,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  end
 end

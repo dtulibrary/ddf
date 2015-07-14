@@ -1,65 +1,76 @@
-en:
+da:
+  views:
+    pagination:
+      next: Næste
+      previous: Tidligere
+    pagination_compact:
+      next: Næste
+      previous: Tidligere
   blacklight:
-    application_name: 'Danish National Research Database-Den Danske Forskningsdatabase'
+    application_name: 'Den Danske Forskningsdatabase-Danish National Research Database'
     entry_name:
         default: 'entry'
     search:
       documents:
           counter: '%{counter}. '
       entry_pagination_info:
-        one: '<strong>1 of 1</strong>'
-        other: '<strong>%{current}</strong> of <strong>%{total}</strong>'
+        one: '<strong>1 af 1</strong>'
+        other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
       facets:
-        more: 'more »'
+        more: 'mere »'
         label: '%{label}:'
         count: '%{number}'
+        sort:
+          count: 'Numerisk Sortering'
+          index: 'A-Z Sortering'
+        count: '%{number}'
+        selected:
+          remove: '[slet]'
+          pub_date_tsort: Udgivelsesår
+      fields:
       filters:
-        title: 'You searched for:'
+        title: 'Du søgte efter:'
         label: '%{label}:'
+        remove:
+          value: 'Slet begrænsning %{value}'
+          label_value: 'Slet begrænsning %{label}: %{value}'
       form:
-        logo_label: 'Danish National Research Database'
+        logo_label: 'Den Danske Forskningsdatabase'
       index:
           label: '%{label}:'
       pagination_info:
+        single_item_found: '<strong>1</strong> %{entry_name} blev fundet'
         no_items_found: ' '
-        single_item_found: '<strong>1</strong> %{entry_name} found'
         pages:
-          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
-          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
+          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
       per_page:
-        label: '%{count}<span class="sr-only"> per page</span>'
-        button_label: '%{count} per page'
-        title: 'Number of results to display per page'
-        submit: 'Update'
-      sort:
-        label: 'Sort by %{field}'
-        submit: 'sort results'
+        label: '%{count}<span class="sr-only">per Side</span>'
+        button_label: '%{count} per side'
       show:
           title: '%{document_title} - %{application_name}'
           label: '%{label}:'
-      title: '%{application_name} Search Results'
+      title: '%{application_name} Søgeresultater'
       zero_results:
-        title: "No results found for your search"
-        modify_search: "Click evt.on question mark in the search box for more help"
-        use_fewer_keywords: '' 
-        search_fields: "You searched by %{search_fields}"
-        search_everything: "Try searching everything"
+
+        title: "Søgningen gav intet resultat. "
+        modify_search: "Klik evt. på spørgsmålstegnet i søgeboksen for yderligere hjælp. "
+        use_fewer_keywords: ''
     footer:
-      text_html: "Copyright &copy; 1998-%{year} Denmark's Electronic Research Library &mdash; Danish Agency for Libraries and Media<br>in cooperation with the Ministry of Culture, Ministry of Science, Technology and Innovation and Ministry of Education"
+      text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"    
     application_name: 'kenkyu'
     loremipsum_del1: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent purus arcu, sagittis ac elementum quis, pulvinar et dui. Aliquam quis leo vitae neque sagittis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla orci neque, dignissim nec dapibus quis, suscipit vitae quam. Nam laoreet arcu vitae urna commodo, at luctus lectus tempor. Morbi nec velit sed dolor accumsan rutrum vitae a nisl. Sed facilisis faucibus purus. Ut sit amet lorem maximus, rutrum orci nec, tincidunt mi. Nunc eget rhoncus nulla. Phasellus tristique risus a orci egestas, eget volutpat metus placerat. Morbi velit tortor, rhoncus et nulla in, venenatis faucibus ipsum. Vivamus pharetra dolor vel finibus feugiat. In dui velit, pulvinar quis blandit at, venenatis vel nibh. Pellentesque vulputate risus a eros tincidunt auctor. Nam in cursus felis.'
     loremipsum_del2: ' Aenean scelerisque eget magna ut gravida. Nullam feugiat venenatis diam, bibendum accumsan massa consectetur sed. Etiam cursus maximus turpis, molestie lobortis orci. Etiam eget sodales nisi. Praesent viverra augue sed metus ultrices, nec posuere diam posuere. Aenean convallis dolor ut leo faucibus fringilla. Etiam venenatis a turpis sed semper. Integer lobortis, tellus at vehicula rutrum, quam elit lacinia risus, blandit mollis libero tortor ut libero. Nullam semper, ex at placerat rutrum, lorem massa accumsan ipsum, sit amet convallis arcu arcu sit amet libero. Nulla facilisi.'
     loremipsum_del3: ' Phasellus posuere nunc id elementum suscipit. In quis libero sed eros dignissim euismod. Vivamus urna nisi, sollicitudin a ullamcorper nec, faucibus eu sapien. Maecenas fringilla convallis neque, sit amet vulputate nulla aliquet vitae. Integer vehicula, magna a malesuada vehicula, leo mi ornare felis, in dapibus lorem quam nec eros. Praesent vel efficitur ex. Aliquam porta enim ut aliquam elementum. Aenean pellentesque leo a libero finibus, sit amet mollis dolor tincidunt. Cras pretium viverra lectus, commodo tristique lectus interdum vel. Nunc vel feugiat augue. Phasellus tempor sed felis sed fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus.' 
     search_history:
       clear:
-        action_title: 'Clear Search History'
-        action_confirm: 'Clear your search history?'
-        success: 'Cleared your search history.'
-        failure: 'There was a problem clearing your search history.'
-      title: 'Search History'
-      no_history: 'You have no search history'
-      recent: 'Your recent searches'
-      forget: 'forget'
-      save: 'save'
-    search_results: 'Search Results'
-    
+        action_title: 'Rens Søgehistorik'
+        action_confirm: 'Rens din søgehistorik?'
+        success: 'Din søgehistorik blev renset.'
+        failure: 'Der opstod problemer,da din søgehistorik var renset .'
+      title: 'Søgehistorik'
+      no_history: 'Du har ingen søgehistorik'
+      recent: 'Dine seneste søgninger'
+      forget: 'glem'
+      save: 'gem'
+    search_results: 'Søgeresultater'

@@ -1,0 +1,157 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+da:
+  blacklight:
+    application_name: Den Danske Forskningsdatabase-Danish National Research Database
+    back_to_search: Tilbage til Søgning
+    footer:
+      text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"    
+    header_links:
+        search_history: Historik
+    language_switcher: English
+    range_limit: 
+      submit_limit: Begræns
+      remove_limit: Slet
+      range_begin: Begynd
+      range_end: Slut
+    search:
+      entry_pagination_info:
+        one: '<strong>1 af 1</strong>'
+        other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
+      fields:
+        index:
+          abstract_ts: Abstrakt
+          affiliation_ts: Tilhørsforhold
+          author_ts: Forfattere
+          conf_title_ts: Konference
+          doi_ss: DOI
+          format: Type
+          isbn_ss: ISBN
+          issn_ss: ISSN
+          journal_title_ts: Udgivet i
+          language_ss: Sprog
+          publisher_ts: Udgiver
+          research_area_ss: Hovedforskningsområde
+          series_title_ts: Serie
+          source_ss: Forskningsinstitution
+        facet:
+          author_facet: Forfatter
+          format_orig_s: Type
+          journal_title_facet: Tidskriftets Titel
+          pub_date_tsort: Udgivelsesår
+          research_area_ss: Hovedforskningsområde 
+          source_ss: Forskningsinstitution
+        show:
+          abstract_ts: Abstrakt
+          affiliation_ts: Tilhørsforhold
+          author_ts: Forfattere
+          conf_title_ts: Konference
+          doi_ss: DOI
+          format: Type
+          isbn_ss: ISBN
+          issn_ss: ISSN
+          journal_title_ts: Udgivet i
+          language_ss: Sprog
+          publisher_ts: Udgiver
+          research_area_ss: Hovedforskningsområde
+          series_title_ts: Serie
+          source_ss: Forskningsinstitution  
+      filters:
+        title: "Du søgte efter:"
+        pub_date_tsort: Udgivelsesår
+      form:
+        logo_label: Den Danske Forskningsdatabase
+        q: Søg...
+        submit: Søg ...
+      sort:
+        label: Sorter efter relevans
+      start_over: Start forfra
+      rss_feed: 'RSS for results'
+      atom_feed: 'Atom for results'
+
+  mxd_type_labels:
+    dja: Tidsskrift-artikel
+    djl: Tidsskrift-brev til redaktøren
+    djc: Tidsskrift-kommentar
+    djr: Tidsskrifts-review article
+    djb: Tidsskrifts-anmeldelse
+    dna: Avis-artikel
+    db:  Bog
+    dba: Bog-kapitel
+    dbp: Bog-forord, leksikonartikel
+    dr:  Rapport
+    dra: Rapport-kapitel
+    dcp: Konference-paper
+    dca: Konference-abstract
+    dco: Konference-plakat
+    dct: Konference-foredrag
+    dw:  Arbejdspapir, (pr)eprint
+    dln: Undervisning-noter
+    dl:  Undervisning-forelæsning
+    dp:  Patent
+    dtd: Afhandling-Doktor
+    dtp: Afhandling-Ph.D.
+    dtm: Afhandling- Kandidat
+    dts: Studenterrapport
+    dso: Software
+    dd:  Datasæt
+    drt: Radio/Tv-udsendelse
+    dx:  Exhibition catalogue
+    do:  Andet
+  research_area_labels:
+    Humanities: Humaniora
+    Social science: 'Samfundsvidenskab'
+    Medical science: 'Sundhedsvidenskab'
+    Science/technology: 'Teknik/naturvidenskab'
+  source_labels:
+    orbit: Danmarks Tekniske Universitet
+    rdb_ku: Københavns Universitet
+    rdb_itu: IT Universitet i København
+    rdb_au: Aarhus Universitet
+    rdb_cbs: Copenhagen Business School
+    rdb_ruc: Roskilde Universitet
+    rdb_sdu: Syddansk Universitet
+    rdb_vbn: Aalborg Universitet
+  kenkyu:
+    search:
+      form:
+        clear_icon_text_hover: Slet søgetermerne
+        question_icon_text_hover: Vis Søgetips
+      help:
+        example: Eksempel
+        finds_records: Finder dokumenter
+        water: water
+        containing_word: "som indeholder ordet 'water'."
+        water_supplies: water supplies
+        containing_phrase: "som indeholder tekststrengen 'water supplies'."
+        author: "forfatter:"
+        phrase_author_field: "som indeholder tekststrengen 'Doe, John' i feltet: Forfatter."
+        title: "titel:"
+        containing_ieee: "som indeholder ordet 'IEEE' i feltet: Titel."
+        more_help: "Brug for mere hjælp?"
+        search_how: Søgetips
+    tools: 
+      getit: Publikationen tilgængelig hos
+      mendeley: Save to Mendeley
+      metrics: Metrikker
+      availability: Tilgængelig hos
+  

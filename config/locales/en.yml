@@ -20,4 +20,123 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  blacklight:
+    application_name: Danish National Research Database-Den Danske Forskningsdatabase
+    language_switcher: Danish
+    search:
+      fields:
+        index:
+          abstract_ts: Abstract
+          affiliation_ts: Affiliations
+          author_ts: Authors
+          conf_title_ts: Conference
+          doi_ss: DOI
+          format: Type
+          isbn_ss: ISBN
+          issn_ss: ISSN
+          journal_title_ts: Published in
+          language_ss: Language
+          publisher_ts: Publisher
+          research_area_ss: Main Research Area
+          series_title_ts: Series
+          source_ss: Research Institution
+        facet:
+          author_facet: Author
+          format_orig_s: Type
+          journal_title_facet: Journal Titel
+          pub_date_tsort: Publication Year
+          research_area_ss: Main Research Area
+          source_ss: Research Institution
+        show:
+          abstract_ts: Abstract
+          affiliation_ts: Affiliations
+          author_ts: Authors
+          conf_title_ts: Conference
+          doi_ss: DOI
+          format: Type
+          isbn_ss: ISBN
+          issn_ss: ISSN
+          journal_title_ts: Published in
+          language_ss: Language
+          publisher_ts: Publisher
+          research_area_ss: Main Research Area
+          series_title_ts: Series
+          source_ss: Research Institution
+      form:
+        logo_label: Danish National Research Database
+      start_over: Start Over
+      rss_feed: 'RSS for results'
+      atom_feed: 'Atom for results'
+    
+  mxd_type_labels:
+    dja: Journal article
+    djl: Letter to the editor
+    djc: Journal comment
+    djr: Journal review article
+    djb: Journal book review
+    dna: Newspaper article
+    db:  Book
+    dba: Book chapter
+    dbp: Book preface, encycl. entry
+    dr:  Report
+    dra: Report chapter
+    dcp: Conference paper
+    dca: Conference abstract
+    dco: Conference poster
+    dct: Conference talk
+    dw:  Working paper, (pr)eprint
+    dln: Lecture notes
+    dl:  Lecture
+    dp:  Patent
+    dtd: Thesis Doctoral
+    dtp: Thesis PhD
+    dtm: Thesis Master
+    dts: Student report
+    dso: Software
+    dd:  Data set
+    drt: Radio/TV broadcast
+    dx:  Exhibition catalogue
+    do:  Other
+  research_area_labels:
+    hum: Humanities
+    med: Medical science
+    sci: Science/technology
+    soc: Social science
+  source_labels:
+    orbit: Technical University of Denmark
+    rdb_ku: University of Copenhagen
+    rdb_itu: IT University of Copenhagen
+    rdb_au: Aarhus University
+    rdb_cbs: Copenhagen Business School
+    rdb_ruc: Roskilde University
+    rdb_sdu: University of Southern Denmark
+    rdb_vbn: Aalborg University
+  kenkyu:
+    research_area_labels:
+      hum: Humanities
+      med: Medical science
+      sci: Science/technology
+      soc: Social science
+    search:
+      form:
+        clear_icon_text_hover: Clear search field
+        question_icon_text_hover: Show search help
+      help:
+        example: Example
+        finds_records: Finds records
+        water: water
+        containing_word: "containing the word 'water'."
+        water_supplies: water supplies
+        containing_phrase: "containing the phrase 'water supplies'."
+        author: "author:"
+        phrase_author_field: "containing the prase 'Doe, John' in the author field."
+        title: "title:"
+        containing_ieee: "containing the word 'IEEE' in the title field."
+        more_help: "Need more help?"
+        search_how: How to search
+    tools:
+      getit: Publication available at
+      mendeley: Save to Mendeley
+      metrics: Metrics
+      availability: Availability
+      get: 'GET IT' 
