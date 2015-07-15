@@ -60,8 +60,10 @@ body > footer {
 
 form.search-query-form { padding-left: 0; }
 
-// TODO: Create RWD breakpoints for this and adjacent button:
-form.search-query-form div.input-group { width: 80%; }
+form.search-query-form div.input-group {
+  width: 80%;
+  @include respond-to($ipad_portrait) { width: 100%; }
+}
 
 input.form-control {
   display: block;
@@ -71,26 +73,33 @@ input.form-control {
   line-height: auto;
   color: #333333;
   padding: 10px 12px;
-  border: 1px solid $blue-2;
-  //background: #f5f5f5;
+  border: 1px solid #2e6da4; // same border color as adjacent button
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  // -webkit-border-radius: 4px;
+  // -moz-border-radius: 4px;
+  // border-radius: 4px;
+  border-radius: 0;
 }
 
-// TODO: Eliminate left margin, adjust border-radius to desktop, tablet, & mobile views:
 button#search {
   margin-left: -5px;
-
   font-size: 18px;
   height: auto;
   line-height: auto;
   padding: 10px 12px;
-  @include respond-to($ipad_portrait) { font-size: 17px; }
+  @include respond-to($ipad_portrait) {
+    font-size: 17px;
+    display: block;
+    margin: 1em auto -.5em auto;
+  }
   @include respond-to($iphone_landscape) { font-size: 16px; }
+
+  @include above-viewport($ipad_portrait) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
 }
 
 .snap-to-grid {
