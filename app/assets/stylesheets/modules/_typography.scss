@@ -112,13 +112,34 @@ h1.facet-heading {
 h1.facet-heading span.close { font-size: 1.4em; }
 /* PROTOTYPE END */
 
-dl.dl-invert dt[class^="blacklight-"] {
+dl.document-metadata { margin-bottom: 1.25em; }
+dl.document-metadata dt[class^="blacklight-"],
+dl.document-metadata dt[class^="ddf-index"] {
   font-weight: 600;
   color: #333;
+  //width: 160px;
+  width: 180px;
+  //background: #aaa;
 }
-
-.dl-horizontal { margin-bottom: 1.25em; }
-.dl-horizontal dd[class^="blacklight-"] { margin-bottom: .4em; }
+dl.document-metadata dd[class^="blacklight-"],
+dl.document-metadata dd[class^="ddf-index"] {
+  margin-bottom: .4em;
+  //margin-left: 180px;
+  margin-left: 190px;
+}
+dl.document-metadata dd[class^="ddf-index"] a { padding: .1em; }
+dl.document-metadata dd[class^="ddf-index"] a:link,
+dl.document-metadata dd[class^="ddf-index"] a:visited {
+  color: $orange;
+  text-decoration: underline;
+}
+dl.document-metadata dd[class^="ddf-index"] a:hover,
+dl.document-metadata dd[class^="ddf-index"] a:visited:hover,
+dl.document-metadata dd[class^="ddf-index"] a:active {
+  background: $orange;
+  color: #fff;
+  text-decoration: none;
+}
 
 div.documentHeader > h5.index_title {
   font-family: $headline;
