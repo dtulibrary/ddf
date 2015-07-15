@@ -1,0 +1,32 @@
+<!-- debug
+<ul class="login-links-list align-right admin">
+  <li><a href="">Log out</a></li>
+  <li><a href="">Edit profile</a></li>
+</ul>
+ -->
+
+<% if has_user_authentication_provider? %>
+  <ul class="login-links-list align-right admin">
+
+    <li><a href="">Log out</a></li>
+    <li><a href="">Edit profile</a></li>
+
+    <% if current_user %>
+      <li>
+        <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path %>
+      </li>
+      <% unless current_user.to_s.blank? -%>
+        <li>
+          <%= link_to current_user, edit_user_registration_path %>
+        </li>
+      <% end %>
+
+    <% else %>
+
+      <li>
+        <%= link_to t('blacklight.header_links.login'), new_user_session_path %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+

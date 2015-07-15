@@ -1,18 +1,19 @@
   <header>
     <div class="container">
       <nav role="main" class="row">
-        <ul class="horizontal pull-left snap-to-grid">
-          <li class="home"><a href="/"><i class="fa fa-home"></i></a></li>
+        <ul class="horizontal pull-left snap-to-grid admin home">
+          <li><a href="/"><i class="fa fa-home"></i></a></li>
         </ul>
 
-        <ul class="locales-list horizontal pull-right snap-to-grid">
+        <ul class="locales-list horizontal pull-right snap-to-grid admin">
          <% if I18n.locale == I18n.default_locale %>
           <%= link_to t('blacklight.language_switcher'), :locale => :da %>
          <% else %>
           <%= link_to t('blacklight.language_switcher'), :locale => :en %>
          <% end %>
        </ul>
-       <%= render :partial=>'/user_util_links' %>
+       <%# render :partial=>'/user_util_links' %>
+       <%= render :partial=>'/user_login_links' %>
      </nav>
     </div>
 
@@ -31,8 +32,12 @@
     <div class="header__wrapper">
       <div class="container container--searchbox">
         <div class="row">
-          <div class="col-md-10">
+          <div class="col-md-8">
             <%= render_search_bar %>
+          </div>
+
+          <div class="col-md-4 search-options-container">
+            <%= render :partial=>'/user_search_links' %>
           </div>
         </div>
       </div>

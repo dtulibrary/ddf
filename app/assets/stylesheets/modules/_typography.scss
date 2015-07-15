@@ -138,36 +138,46 @@ div.documentHeader > h5.index_title a:hover {
   color: #FF530D;
 }
 
-nav[role="main"]  { padding: .5em 0; }
-nav[role="main"] > ul { margin: 0; }
-nav[role="main"] > ul.locales-list,
-nav[role="main"] > div.navbar-right ul { margin-top: .5em; }
-nav[role="main"] { font-size: .9em; }
-nav[role="main"] li.home { font-size: calc-em(30px); }
+nav[role="main"]  {
+  padding: .5em 0;
+  margin-bottom: 1em;
+}
+nav[role="main"] > ul.admin {
+  margin: 0;
+  margin-top: .7em;
+  font-size: .9em;
+}
+nav[role="main"] ul.home {
+  font-size: calc-em(30px);
+  margin-top: -5px;
+}
 
-div.navbar-right ul { margin-right: 1em; }
-div.navbar-right ul li, ul.locales-list li {
+// div.navbar-right ul { margin-right: 1em; }
+nav[role="main"] > ul.admin li {
+  display: inline-block;
   padding: 0 .3em;
   margin: 0;
 }
-div.navbar-right ul a {
-  padding: .12em 0;
+nav[role="main"] > ul.admin a {
+  //padding: .12em 0;
+  padding: 0;
+  margin: 0;
 }
-div.navbar-right ul a:link,
-div.navbar-right ul a:visited,
-div.navbar-right ul a:hover,
-div.navbar-right ul a:visited:hover,
-div.navbar-right ul a:active {
+nav[role="main"] > ul.admin a:link,
+nav[role="main"] > ul.admin a:visited,
+nav[role="main"] > ul.admin a:hover,
+nav[role="main"] > ul.admin a:visited:hover,
+nav[role="main"] > ul.admin a:active {
   background: inherit;
 }
-div.navbar-right ul a:hover { text-decoration: underline; }
+nav[role="main"] > ul.admin a:hover { text-decoration: underline; }
 
-div.navbar-right a:link, ul.locales-list a:link    { color: #fff; }
-div.navbar-right a:visited, ul.locales-list a:visited { color: #fff; }
-div.navbar-right a:hover, ul.locales-list a:hover,
-div.navbar-right a:visited:hover, ul.locales-list a:visited:hover,
-div.navbar-right a:focus, ul.locales-list a:focus,
-div.navbar-right a:active, ul.locales-list a:active { color:  $orange; }
+nav[role="main"] > ul.admin a:link    { color: #fff; }
+nav[role="main"] > ul.admin a:visited { color: #fff; }
+nav[role="main"] > ul.admin a:hover,
+nav[role="main"] > ul.admin a:visited:hover,
+nav[role="main"] > ul.admin a:focus,
+nav[role="main"] > ul.admin a:active { color:  $orange; }
 
 #sidebar h4 {
   font-weight: 600;
@@ -338,14 +348,14 @@ h1.data-provider-heading {
 }
 
 form.range_limit input.form-control {
-    border: 1px solid $blue-1;
-    border-radius: 0;
-    background: $blue-4;
-    color: $orange;
-    font-size: 15px;
-    height: auto;
-    padding: 5px 0;
-    text-align: center;
+  border: 1px solid $blue-1;
+  border-radius: 0;
+  background: $blue-4;
+  color: $orange;
+  font-size: 15px;
+  height: auto;
+  padding: 5px 0;
+  text-align: center;
 }
 
 form.range_limit input.submit {
@@ -363,3 +373,24 @@ form.range_limit input.submit:hover {
 div.flot-text canvas.flot-overlay {
   font-size: 15px; //FIXME
 }
+
+
+div.search-options-container {
+  padding-top: 1.25em;
+  @include respond-to($ipad_portrait) { padding: .3em 0 0 0; }
+}
+ul.search-options-list {
+  font-size: calc-em(14px);
+  margin: 0;
+  @include respond-to($screen-md-min) {
+    float: none;
+    text-align: center;
+  }
+}
+ul.search-options-list li { display: inline-block; }
+ul.search-options-list li:not(:last-child) { margin-right: .5em; }
+
+a.btn-danger:link,
+a.btn-danger:hover,
+a.btn-danger:visited:hover,
+a.btn-danger:active { color: #fff; }
