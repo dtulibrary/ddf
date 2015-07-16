@@ -127,17 +127,16 @@ dl.document-metadata dd[class^="ddf-index"] {
   //margin-left: 180px;
   margin-left: 190px;
 }
-dl.document-metadata dd[class^="ddf-index"] a { padding: .1em; }
+dl.document-metadata dd[class^="ddf-index"] a { font-weight: 600; }
 dl.document-metadata dd[class^="ddf-index"] a:link,
 dl.document-metadata dd[class^="ddf-index"] a:visited {
-  color: $orange;
+  color: $link-color;
   text-decoration: underline;
 }
 dl.document-metadata dd[class^="ddf-index"] a:hover,
 dl.document-metadata dd[class^="ddf-index"] a:visited:hover,
 dl.document-metadata dd[class^="ddf-index"] a:active {
-  background: $orange;
-  color: #fff;
+  color: $orange;
   text-decoration: none;
 }
 
@@ -188,17 +187,16 @@ nav[role="main"] > ul.admin a:link,
 nav[role="main"] > ul.admin a:visited,
 nav[role="main"] > ul.admin a:hover,
 nav[role="main"] > ul.admin a:visited:hover,
-nav[role="main"] > ul.admin a:active {
-  background: inherit;
-}
-nav[role="main"] > ul.admin a:hover { text-decoration: underline; }
+nav[role="main"] > ul.admin a:active { background: inherit; }
+
+nav[role="main"] > ul.admin a:hover  { text-decoration: underline; }
 
 nav[role="main"] > ul.admin a:link    { color: #fff; }
 nav[role="main"] > ul.admin a:visited { color: #fff; }
 nav[role="main"] > ul.admin a:hover,
 nav[role="main"] > ul.admin a:visited:hover,
 nav[role="main"] > ul.admin a:focus,
-nav[role="main"] > ul.admin a:active { color:  $orange; }
+nav[role="main"] > ul.admin a:active  { color:  $orange; }
 
 #sidebar h4 {
   font-weight: 600;
