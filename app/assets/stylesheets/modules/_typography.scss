@@ -425,6 +425,7 @@ a.btn-danger:active { color: #fff; }
 
 ul.search-widgets-list {
   margin: 0;
+  margin-top: .3em;
   @include respond-to($screen-lg-min) {
     float: none;
     margin-top: 1em;
