@@ -4,32 +4,31 @@
 require 'i18n'
 class CatalogController < ApplicationController
 
-  include Blacklight::Catalog
+    include Blacklight::Catalog
 
-  before_filter :set_locale
+    before_filter :set_locale
 
-  configure_blacklight do |config|
+    configure_blacklight do |config|
     # Ensure I18n load paths are loaded
     Dir[Rails.root + 'config/locales/**/*.{rb,yml}'].each { |path| I18n.load_path << path }
 
-
-    ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
+    # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :qt => '/ddf_publ',
       :rows => 10
   }
     # solr path which will be added to solr base url before the other solr params.
-    #config.solr_path = 'select'
+    # config.solr_path = 'select'
     # items to show per page, each number in the array represent another option to choose from.
     config.per_page = [10,20,50]
 
-    ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
-    ## parameters included in the Blacklight-jetty document requestHandler.
+    # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
+    # parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-       :qt => '/ddf_publ_document',
-       :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
-      ## These are hard-coded in the blacklight 'document' requestHandler
+     :qt => '/ddf_publ_document',
+     :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
+      # These are hard-coded in the blacklight 'document' requestHandler
       # :fl => '*',
       # :rows => 1
       # :q => '{!raw f=id v=$id}'
@@ -93,7 +92,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
     config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
       :num_segments => 3,
-      :assumed_boundaries => [1900, Time.now.year + 2],
+      :assumed_boundaries => [1900, Time.now.year + 2]
   }
   config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
   config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10

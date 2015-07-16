@@ -1,6 +1,11 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  #TODO: faked for /views/catalog/_save_and_export_widget.html.erb
+  def show_feature?(key)
+    true
+  end
+
   def render_format_field_facet value
     t "mxd_type_labels.#{value}"
   end

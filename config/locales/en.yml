@@ -111,7 +111,7 @@ en:
     rdb_ruc: Roskilde University
     rdb_sdu: University of Southern Denmark
     rdb_vbn: Aalborg University
-  kenkyu:
+  ddf:
     research_area_labels:
       hum: Humanities
       med: Medical science
@@ -136,7 +136,12 @@ en:
         search_how: How to search
     tools:
       getit: Publication available at
-      mendeley: Save to Mendeley
       metrics: Metrics
       availability: Availability
       get: 'GET IT'
+
+      cite_and_export: "Cite and export"
+      save_and_export: "Save and export"
+      mendeley: "Save to Mendeley"
+      bibtex: "Export to BibTeX"
+      ris: "Export to RIS"

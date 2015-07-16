@@ -422,3 +422,19 @@ a.btn-danger:link,
 a.btn-danger:hover,
 a.btn-danger:visited:hover,
 a.btn-danger:active { color: #fff; }
+
+ul.search-widgets-list {
+  margin: 0;
+  @include respond-to($screen-lg-min) {
+    float: none;
+    margin-top: 1em;
+  }
+}
+ul.search-widgets-list > li { display: inline-block; }
+ul.search-widgets-list > li:not(:last-child) { margin-right: .5em; }
+ul.search-widgets-list ul.dropdown-menu li { display: block; }
+
+ul.search-widgets-list > li a {
+  color: $link-color;
+  //font-weight: 600;
+}

@@ -1,0 +1,22 @@
+<div id="sortAndPerPage" class="clearfix">
+  <%= render :partial => "paginate_compact", :object => @response %>
+  <ul class="search-widgets-list align-right">
+    <li><%= render :partial => 'save_and_export_widget' %></li>
+    <li><%= render :partial => 'sort_widget' %></li>
+    <li><%= render :partial => 'per_page_widget' %></li>
+    <li><%= render :partial => 'view_type_group' %></li>
+  </ul>
+</div>
+
+<!-- TOSHOKAN VERSION
+<% unless @document_list.empty? %>
+  <div id="sortAndPerPage">
+    <div class="page_links">
+      <%# render :partial => "paginate_compact", :object => @response %>
+    </div>
+    <%# render :partial => 'sort_widget' %>
+    <%# render :partial => 'per_page_widget' %>
+    <%# render :partial => 'save_and_export_widget' %>
+  </div>
+<% end %>
+ -->
