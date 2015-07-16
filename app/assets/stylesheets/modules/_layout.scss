@@ -163,7 +163,7 @@ figure.logo-container {
   z-index: 3;
 }
 
-div.text-field-with-icons .icons {
+ul.search-icons-list {
   background: inherit;
   z-index: 3;
   border-radius: 5px 0 0 5px;
@@ -173,3 +173,4 @@ div.text-field-with-icons .icons {
   top: 5px;
   right: 10px;
 }
+ul.search-icons-list li { display: inline-block; }

@@ -10,10 +10,25 @@
   -->
 
     <div class="input-group">
-      <div class="icons">
-        <a title="<%= t ('ddf.search.form.question_icon_text_hover') %>" id="toggle-search-syntax" href="#"><i class="glyphicon glyphicon-question-sign"></i></a>
-        <a title="<%= t ('ddf.search.form.clear_icon_text_hover') %>" id="search-clear" href="#"><i class="glyphicon glyphicon-remove-circle"></i></a>
-      </div>
+      <ul class="search-icons-list">
+        <li>
+          <a title="<%= t ('ddf.search.form.question_icon_text_hover') %>" id="toggle-search-syntax" href="#">
+            <i class="glyphicon glyphicon-question-sign"></i>
+          </a>
+        </li>
+        <li>
+          <a title="<%= t ('ddf.search.form.clear_icon_text_hover') %>" id="search-clear" href="#">
+            <i class="glyphicon glyphicon-remove-circle"></i>
+          </a>
+        </li>
+
+        <!--  ADD BEHAVIOR TO THIS: -->
+        <li>
+          <a title="<%= t ('ddf.search.form.more_options_icon_text_hover') %>" id="more-options" href="#">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+          </a>
+        </li>
+      </ul>
 
       <label for="q" class="sr-only"><%= t('blacklight.search.form.q') %></label>
       <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q form-control", :id => "q", :autofocus => should_autofocus_on_search_box? %>
@@ -27,3 +42,10 @@
 <% end %>
 <%= render 'catalog/search_help' %>
 
+<!-- Power search links from Toshokan (under icons-list li's):
+<a title="Show search help" id="toggle-search-syntax" href="#"><i class="icon-question-circle"></i></a>
+<a title="Clear search field" id="search-clear" href="#"><i class="icon-times"></i></a>
+<a title="Undo clear" id="undo-clear" href="#" class="hide"><i class="icon-repeat"></i></a>
+<a title="More options" id="more-options" href="#"><i class="icon-chevron-down"></i></a>
+<a title="Less options" id="less-options" href="#" class="hide"><i class="icon-chevron-up"></i></a>
+-->

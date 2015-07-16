@@ -121,6 +121,7 @@ en:
       form:
         clear_icon_text_hover: Clear search field
         question_icon_text_hover: Show search help
+        more_options_icon_text_hover: More options
       help:
         example: Example
         finds_records: Finds records

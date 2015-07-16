@@ -99,9 +99,9 @@ From docs (http://getbootstrap.com/css/):
 
 So: (.container | .container-fluid) > .row > .col-**-* > <your content>
 
-TODO
-Make Save & Export functional (in index view)
-Add last function to "power usage assistance" (in main search bar)
+TODO 16.07.2015:
+Make Save & Export functional for all 3 options (in index view)
+Add missing functions (which ones?) to "power usage assistance" (in main search bar)
 
 TOSHOKAN:
 <div id="save_and_export-dropdown" class="dropdown pull-right  hidden-phone">
