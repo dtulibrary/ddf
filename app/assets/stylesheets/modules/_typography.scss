@@ -112,20 +112,29 @@ h1.facet-heading {
 h1.facet-heading span.close { font-size: 1.4em; }
 /* PROTOTYPE END */
 
-dl.document-metadata { margin-bottom: 1.25em; }
+dl.document-metadata {
+  margin-bottom: 1.25em;
+  //possible to accommodate longer fields by decreasing font size, though effect not as good:
+  //font-size: .9rem;
+}
+
 dl.document-metadata dt[class^="blacklight-"],
 dl.document-metadata dt[class^="ddf-index"] {
   font-weight: 600;
   color: #333;
-  //width: 160px;
-  width: 180px;
+  //width: 160px; -> the default
+  //width: 180px; -> to accommodate longer fields
+  // the proper way to override width:
+  //@include above-viewport($ipad_portrait) { width: 180px; }
   //background: #aaa;
 }
 dl.document-metadata dd[class^="blacklight-"],
 dl.document-metadata dd[class^="ddf-index"] {
   margin-bottom: .4em;
-  //margin-left: 180px;
-  margin-left: 190px;
+  //margin-left: 180px; -> the default
+  //margin-left: 190px; -> to accommodate longer fields
+  // the proper way to override left margin:
+  //@include above-viewport($ipad_portrait) { margin-left: 190px; }
 }
 dl.document-metadata dd[class^="ddf-index"] a { font-weight: 600; }
 dl.document-metadata dd[class^="ddf-index"] a:link,

@@ -37,7 +37,7 @@ en:
           journal_title_ts: Published in
           language_ss: Language
           publisher_ts: Publisher
-          research_area_ss: Main Research Area
+          research_area_ss: Research Area
           series_title_ts: Series
           source_ss: Research Institution
         facet:
@@ -45,7 +45,7 @@ en:
           format_orig_s: Type
           journal_title_facet: Journal Titel
           pub_date_tsort: Publication Year
-          research_area_ss: Main Research Area
+          research_area_ss: Research Area
           source_ss: Research Institution
         show:
           abstract_ts: Abstract
@@ -59,7 +59,7 @@ en:
           journal_title_ts: Published in
           language_ss: Language
           publisher_ts: Publisher
-          research_area_ss: Main Research Area
+          research_area_ss: Research Area
           series_title_ts: Series
           source_ss: Research Institution
       form:
@@ -67,7 +67,7 @@ en:
       start_over: Start Over
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
-    
+
   mxd_type_labels:
     dja: Journal article
     djl: Letter to the editor
@@ -139,4 +139,4 @@ en:
       mendeley: Save to Mendeley
       metrics: Metrics
       availability: Availability
-      get: 'GET IT' 
+      get: 'GET IT'
