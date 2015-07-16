@@ -99,7 +99,92 @@ From docs (http://getbootstrap.com/css/):
 
 So: (.container | .container-fluid) > .row > .col-**-* > <your content>
 
+TODO
+Make Save & Export functional (in index view)
+Add last function to "power usage assistance" (in main search bar)
+
+TOSHOKAN:
+<div id="save_and_export-dropdown" class="dropdown pull-right  hidden-phone">
+  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+    <span class="icon-share-square-o"></span>
+    Save and export
+    <span class="caret"></span>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li role="presentation">
+      <a class="save-to-mendeley-api" href="#" role="menuitem">
+        <i class="icon-mendeley"></i>
+        Save to Mendeley
+      </a>
+    </li>
+
+    <li role="presentation">
+      <a href="/en/catalog.ris?q=protein+synthesis&amp;search_field=all_fields" role="menuitem">
+        <i class="icon-file-text-o"></i>
+        Export to RIS
+      </a>
+    </li>
+
+    <li role="presentation">
+      <a href="/en/catalog.bib?q=protein+synthesis&amp;search_field=all_fields" role="menuitem">
+        <i class="icon-file-text-o"></i>
+        Export to BibTeX
+      </a>
+    </li>
+  </ul>
+</div>
+
+DDF:
+<div id="save_and_export-dropdown" class="dropdown hidden-phone">
+  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+    <span class="icon-share-square-o"></span>
+    Save and export
+    <span class="caret"></span>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li role="presentation">
+      <a class="save-to-mendeley-api" role="menuitem" href="#">
+        <i class="icon-mendeley"></i>
+        Save to Mendeley
+      </a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" href="/en/catalog.ris?q=protein+synthesis">
+        <i class="icon-file-text-o"></i>
+        Export to RIS
+      </a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" href="/en/catalog.bib?q=protein+synthesis">
+        <i class="icon-file-text-o"></i>
+        Export to BibTeX
+      </a>
+    </li>
+  </ul>
+</div>
+
+ALL UNIFORM.
 
 
-
-
+    <li role="presentation">
+      <a class="save-to-mendeley-api" href="#" role="menuitem">
+        <i class="icon-mendeley"></i>
+        Save to Mendeley
+      </a>
+    </li>
+    <li role="presentation">
+      <a class="save-to-mendeley-api" role="menuitem" href="#">
+        <i class="icon-mendeley"></i>
+        Save to Mendeley
+      </a>
+    </li>
+    <li role="presentation">
+      <a class="save-to-mendeley-api" role="menuitem" href="#">
+        <i class="icon-mendeley"></i>
+        Save to Mendeley
+      </a>
+    </li>
