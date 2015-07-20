@@ -326,8 +326,18 @@ div.document h1[itemprop="name"] {
 }
 
 div.search-widgets a.btn,
-div.page_links a.next,
-div.page_links a.previous { text-decoration: underline; }
+div.page_links a[rel="next"]:link,
+div.page_links a[rel="prev"]:link          { text-decoration: underline; }
+
+div.page_links a[rel="next"]:visited,
+div.page_links a[rel="prev"]:visited       { text-decoration: underline; }
+
+div.page_links a[rel="next"]:hover,
+div.page_links a[rel="prev"]:hover         { text-decoration: none; }
+
+div.page_links a[rel="next"]:visited:hover,
+div.page_links a[rel="prev"]:visited:hover { text-decoration: none; }
+
 
 a#startOverLink {
   font-size: calc-em(15px);

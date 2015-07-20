@@ -108,16 +108,6 @@ button#search {
   padding-right: 15px;
 }
 
-div.debug { background: #eee; }
-div.debug-params {
-  padding: 1em 0;
-  background: rgba(0,0,0, .9);
-  color: #2EFA05;
-  text-align: center;
-  font-family: 'Monaco';
-  font-size: .9em;
-}
-
 .container--searchbox {
   @include respond-to($ipad_portrait) { width: 90%; }
 }

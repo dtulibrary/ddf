@@ -1,6 +1,14 @@
 @import "viewports";
 
 .debug { background: #ccc; }
+div.debug-params {
+  padding: 1em 0;
+  background: rgba(0,0,0, .9);
+  color: #2EFA05;
+  text-align: center;
+  font-family: 'Monaco';
+  font-size: .9em;
+}
 
 div.viewport {
   background: rgba(0,0,0, .5);
@@ -17,7 +25,6 @@ div.viewport p {
   //margin: 0;
   color: #fff;
 }
-.wrapper, .measure, .upper { border: 0px dotted #000; }
 
 @media screen and (min-width: $ipad_landscape) and (min-width: $desktop) { .viewport p:after { content: "DESKTOP"; } }
 @media screen and (min-width: $ipad_portrait) and (max-width: $ipad_landscape) { .viewport p:after { content: "IPAD LANDSCAPE"; } }

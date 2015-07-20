@@ -27,9 +27,8 @@
       return false;
     });
 
-    $("#toggle-search-options").click(function () {
-      toggleSearchSyntax();
-      $("#q").focus();
+    $("#more-options").click(function () {
+      toggleSearchOptions();
       return false;
     });
 
@@ -61,7 +60,21 @@
       return false;
     });
 
-   
+    $("#q").keydown(function (event) {
+      if ($.ui.keyCode.SPACE == event.which && event.ctrlKey) {
+        toggleSearchSyntax();
+        return false;
+      } else if (syntaxVisible) {
+        if ($.ui.keyCode.ESCAPE == event.which) {
+          toggleSearchSyntax();
+          return false;
+        }
+      }
+
+      if (undo.enabled) {
+        disableUndo();
+      }
+    });
 
     function enableUndo() {
       undo.text = $("#q").val();
@@ -126,5 +139,5 @@
     }
 
   });
-  
+
 })(jQuery);

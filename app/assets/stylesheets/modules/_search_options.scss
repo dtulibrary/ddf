@@ -1,0 +1,65 @@
+//@import 'toshokan_defaults';
+
+#search-options {
+  border: 1px solid #d4d4d4;
+  position: absolute;
+  background: #fff;
+  z-index: 2000;
+  display: none;
+
+  tr {
+    td {
+      border-top: none;
+
+      &.bordered {
+        border-top: 1px solid #d4d4d4;
+      }
+    }
+
+    &.search_history {
+      td {
+        &.entry {
+          &:hover {
+            background: whitesmoke;
+          }
+
+          a {
+            text-decoration: none;
+            color: #000;
+            height: 100%;
+            width: 100%;
+            display: block;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .constraint {
+        display: inline;
+        margin-right: 0.5em;
+        padding-left: 0;
+      }
+    }
+  }
+
+  tr.search-history-links {
+    td {
+      text-align: right;
+      //color: $dtu-red-light;
+    }
+    .disabled {
+      a, i {
+        //color: $dtu-gray;
+        cursor: default;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    //color: $dtu-red-light;
+    margin-right: 1em;
+  }
+}
