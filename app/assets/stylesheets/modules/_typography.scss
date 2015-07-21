@@ -463,7 +463,9 @@ ul.document-actions-list {
 ul.document-actions-list li {
   display: inline-block;
   margin: 0;
-  padding: 0 .1em;
+  padding: 0 .07em;
 }
+ul.document-actions-list li:first-child { padding-left: .5em; }
+ul.document-actions-list li:last-child { padding-right: .5em; }
 
-ul.document-actions-list li a { color: $blue-1; }
+ul.document-actions-list li a { color: $blue-2; }
