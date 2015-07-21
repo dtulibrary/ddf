@@ -449,3 +449,21 @@ ul.search-widgets-list > li a {
   color: $link-color;
   //font-weight: 600;
 }
+
+ul.document-actions-list {
+  display: inline-block;
+  margin: 0;
+  padding: .2em 0 .2em 0;
+  font-size: calc-em(12px);
+  background: $blue-4;
+  //background: rgba(0,0,0, .07);
+  text-align: center;
+  vertical-align: middle;
+}
+ul.document-actions-list li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 .1em;
+}
+
+ul.document-actions-list li a { color: $blue-1; }
