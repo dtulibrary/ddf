@@ -386,26 +386,35 @@ h1.data-provider-heading {
 }
 
 form.range_limit input.form-control {
-  border: 1px solid $blue-1;
+  border: 1px solid $blue-2;
   border-radius: 0;
-  background: $blue-4;
-  color: $orange;
+  //background: lighten($blue-4, 3%);
+  color: $blue-1;
+  font-weight: 600;
   font-size: 15px;
   height: auto;
   padding: 5px 0;
   text-align: center;
+  -moz-box-shadow:     inset 0 0 3px $blue-3;
+  -webkit-box-shadow:  inset 0 0 3px $blue-3;
+  box-shadow:          inset 0 0 3px $blue-3;
+}
+form.range_limit input.form-control:focus {
+  //background: lighten($blue-4, 3%);
+  border: 2px solid #2e6da4;
 }
 
 form.range_limit input.submit {
-  border: 1px solid $blue-1;
+  border: 1px solid #2e6da4;
+  background: #337ab7;
   color: #fff;
-  background: $blue-2;
   font-weight: bold;
+  // background-color: #337ab7;
+  // border-color: #2e6da4;
 }
 
 form.range_limit input.submit:hover {
-  background: darken($blue-2, 5%);
-  color: $orange;
+  background: darken(#2e6da4, 7%);
 }
 
 div.flot-text canvas.flot-overlay {
@@ -445,10 +454,17 @@ ul.search-widgets-list > li { display: inline-block; }
 ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
 ul.search-widgets-list ul.dropdown-menu li { display: block; }
 
-ul.search-widgets-list > li a {
-  color: $link-color;
-  //font-weight: 600;
-}
+ul.search-widgets-list > li a { color: $link-color; }
+ul.search-widgets-list > li a.btn,
+ul.search-widgets-list > li a.btn:hover,
+ul.search-widgets-list > li button,
+ul.search-widgets-list > li button:hover { border: 1px solid $blue-2; }
+
+ul.search-widgets-list > li a.btn,
+ul.search-widgets-list > li a.btn:visited,
+ul.search-widgets-list > li a.btn:hover,
+ul.search-widgets-list > li a.btn:visited:hover,
+ul.search-widgets-list > li a.btn:active{ color: $link-color; }
 
 ul.document-actions-list {
   display: inline-block;
@@ -458,7 +474,8 @@ ul.document-actions-list {
   background: $blue-4;
   //background: rgba(0,0,0, .07);
   text-align: center;
-  vertical-align: middle;
+  //vertical-align: middle;
+  border-radius: 3px;
 }
 ul.document-actions-list li {
   display: inline-block;
