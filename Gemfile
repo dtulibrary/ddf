@@ -35,6 +35,13 @@ gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
 
 gem 'capistrano', '~> 2.0'
 
+gem 'dalli'
+gem 'bibtex-ruby'
+gem 'citeproc-ruby'
+gem 'csl-styles'
+gem 'netaddr'
+gem 'openurl'
+
 group :assets do
   gem 'uglifier', '>= 1.3.0'
   gem 'sprockets', '~> 2.8'

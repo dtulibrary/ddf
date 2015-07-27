@@ -132,4 +132,22 @@ module CatalogHelper
   def current_per_page
     (@response.rows if @response and @response.rows > 0) || params.fetch(:per_page, default_per_page).to_i
   end
+
+
+  # 23.07.2015: Here or in BlacklightHelper?
+  # def render_index_doc_actions(document, options={})
+  #   render_cite_action(document, options={})
+  #   render_export_action(document, options={})
+  # end
+
+  # def render_cite_action(document, options={})
+  #   if !document.citation_styles.blank?
+  #     render('tags/cite_button', {:document => document, :bookmark => bookmark, :tags => tags, :return_url => return_url})
+  #   end
+  # end
+
+  # def render_export_action(document, options={})
+  #   'bar'
+  # end
+
 end

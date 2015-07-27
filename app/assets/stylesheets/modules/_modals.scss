@@ -1,0 +1,95 @@
+div.modal-dialog {
+  font-size: calc-em(16px);
+  line-height: calc-em(25px);
+}
+
+div.modal-body h4 {
+  font-family: $headline;
+  font-size: calc-em(22px);
+  line-height: calc-em(19px);
+  margin: .5em 0;
+}
+
+div.modal-body h5 {
+  font-family: $sans;
+  font-size: calc-em(17px);
+  font-weight: 700;
+  margin: 1em 0 .3em 0;
+}
+
+.modal-header {
+  background: $orange;
+  color: #fff;
+  border-radius: 5px 5px 0px 0px;
+  position: relative;
+}
+.modal-header h3 { margin: .3em 0 .1em 0; }
+
+.modal-header button.close {
+  position: absolute;
+  top: 30%;
+  right: 25px;
+  color: #fff;
+  opacity: 70;
+}
+.modal-header button.close:hover {
+  opacity: 100;
+  color: #000;
+}
+
+
+// DIDN'T TOUCH THIS:
+  #modal-request-scan {
+    .request-metadata {
+      .dl-horizontal {
+        dt {
+          width: 100px;
+        }
+        dd {
+          margin-left: 120px;
+        }
+      }
+    }
+    .request-price {
+      .dl-horizontal {
+        dt {
+          width: 220px;
+        }
+        dd {
+          margin-left: 240px;
+        }
+      }
+    }
+    div {
+      margin-bottom: 25px;
+    }
+  }
+
+  #nal-locations-modal {
+
+    input {
+      margin: 0px 0.5em 0px 0px;
+    }
+
+    #nal-map {
+      height: 400px;
+
+      img {
+        max-width: none;
+      }
+    }
+  }
+
+  #dtu-locations-modal {
+    .modal-header {
+      &:after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+    }
+
+    #dtu-map {
+      height: 400px;
+    }
+  }

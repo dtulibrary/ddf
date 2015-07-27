@@ -11,15 +11,40 @@
     <span class="document-counter">
       <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
     </span>
-    <%= link_to_document document, :label=>document_show_link_field(document), :counter => counter %>
+    <%= link_to_document document, :label => document_show_link_field(document), :counter => counter %>
+
+    <!-- render the below list here: -->
+    <!-- <div style="display:table-cell; white-space:nowrap; text-align:right"> -->
+      <%# render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
+    <!-- </div> -->
+
+    <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
 
     <ul class="document-actions-list">
+    <!--
       <li>
         <a href="" alt="Bookmark"><i class="glyphicon glyphicon-star-empty"></i></a>
       </li>
       <li>
         <a href="" alt="Tags"><i class="glyphicon glyphicon-tags"></i></a>
       </li>
+    -->
+
+<!--
+    23.07.2015
+    Tried moving the logic to:
+
+    1) helpers/catalog_helper.rb. =>
+    Cannot find the global "document" variable.
+
+    2) helpers/blacklight_helper.rb. =>
+    /Users/abbottjam/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/blacklight-5.7.2/lib/blacklight/solr_helper.rb:49:in `<module:SolrHelper>': uninitialized constant Blacklight::SolrHelper::Deprecation (NameError)
+
+     <%# if (!document.citation_styles.blank?) %>
+      <%# render 'tags/cite_button',
+        {:document => document, :bookmark => bookmark, :tags => tags, :return_url => return_url} %>
+     <%# end %>
+ -->
       <li>
         <a href="" alt="Cite"><i class="fa fa-quote-right"></i></i></a>
       </li>
@@ -30,6 +55,6 @@
   </h5>
 
   <% # bookmark functions for items/docs -%>
-  <%= render_index_doc_actions document, :wrapping_class => "index-document-functions col-sm-3 col-lg-2" %>
+  <%# render_index_doc_actions document, :wrapping_class => "index-document-functions col-sm-3 col-lg-2" %>
 </div>
 
