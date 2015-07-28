@@ -1,8 +1,8 @@
 html {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 27px;
-  @include respond-to($ipad_portrait) { font-size: 17px; }
-  @include respond-to($iphone_landscape) { font-size: 16px; }
+  @include respond-to($ipad_portrait) { font-size: 15px; }
+  @include respond-to($iphone_landscape) { font-size: 14px; }
 } //https://css-tricks.com/rems-ems/
 
 body {

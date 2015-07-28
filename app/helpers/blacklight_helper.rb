@@ -28,12 +28,8 @@ module BlacklightHelper
 
   # TODO
   def render_index_doc_actions(document, options={})
-    # return_url = request.url
-    # if params && params[:return_url]
-    #   return_url = params[:return_url]
-    # end
-
-    return_url = (params && params[:return_url]) ? params[:return_url] : request.url
+    url = request.url
+    return_url = (params && params[:url]) ? params[:url] : url
 
     actions = []
     actions << content_tag("li", render_cite_action(document, options={}))

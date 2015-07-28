@@ -20,17 +20,15 @@
 
     <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
 
-    <ul class="document-actions-list">
-    <!--
-      <li>
-        <a href="" alt="Bookmark"><i class="glyphicon glyphicon-star-empty"></i></a>
-      </li>
-      <li>
-        <a href="" alt="Tags"><i class="glyphicon glyphicon-tags"></i></a>
-      </li>
-    -->
-
 <!--
+  <ul class="document-actions-list">
+    <li>
+      <a href="" alt="Bookmark"><i class="glyphicon glyphicon-star-empty"></i></a>
+    </li>
+    <li>
+      <a href="" alt="Tags"><i class="glyphicon glyphicon-tags"></i></a>
+    </li>
+
     23.07.2015
     Tried moving the logic to:
 
@@ -44,7 +42,7 @@
       <%# render 'tags/cite_button',
         {:document => document, :bookmark => bookmark, :tags => tags, :return_url => return_url} %>
      <%# end %>
- -->
+
       <li>
         <a href="" alt="Cite"><i class="fa fa-quote-right"></i></i></a>
       </li>
@@ -52,6 +50,7 @@
         <a href="" alt="Save & Export"><i class="glyphicon glyphicon-export"></i></a>
       </li>
     </ul>
+-->
   </h5>
 
   <% # bookmark functions for items/docs -%>
