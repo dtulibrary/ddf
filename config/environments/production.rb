@@ -78,9 +78,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 
-ActiveSupport::Dependencies.autoload_paths << File::join( Rails.root, 'lib/document')
-ActiveSupport::Dependencies.explicitly_unloadable_constants << 'References'
-
 if File.exists? File.dirname(__FILE__) + '/../application.local.rb'
   require File.dirname(__FILE__) + '/../application.local.rb'
 end
