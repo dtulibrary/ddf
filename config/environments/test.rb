@@ -40,3 +40,10 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
+
+ActiveSupport::Dependencies.autoload_paths << File::join( Rails.root, 'lib/document')
+ActiveSupport::Dependencies.explicitly_unloadable_constants << 'References'
+
+if File.exists? File.dirname(__FILE__) + '/../application.local.rb'
+  require File.dirname(__FILE__) + '/../application.local.rb'
+end
