@@ -89,7 +89,7 @@ button#search {
   font-size: 18px;
   height: auto;
   line-height: auto;
-  padding: 10px 12px;
+  padding: 8.5px 12px;
   @include respond-to($ipad_portrait) {
     font-size: 17px;
     display: block;

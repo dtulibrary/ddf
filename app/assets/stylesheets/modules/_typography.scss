@@ -498,3 +498,11 @@ ul.export_menu li {
   margin: .3em 0;
   padding: 0 .3em;
 }
+
+// DAMN! Did you see that?
+div[id$="-dropdown"] ul.dropdown-menu > li {
+  display: block;
+  margin: .7em 0;
+  padding: 0 .7em;
+}
+div[id$="-dropdown"] ul.dropdown-menu > li > a { padding: 0; }
