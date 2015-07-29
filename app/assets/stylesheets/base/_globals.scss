@@ -86,7 +86,10 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $em;
 //
 //RESPONSIVE IMAGES
 //
-img { width: 100%; }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 //
 //COLORS
