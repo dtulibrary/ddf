@@ -149,19 +149,19 @@ dl.document-metadata dd[class^="ddf-index"] a:active {
   text-decoration: none;
 }
 
-div.documentHeader > h5.index_title {
+h5.index_title {
   font-family: $headline;
   font-size: calc-em(20px);
   line-height: calc-em(22px);
   margin: .25em 0 .7em 0;
   @include respond-to($ipad_portrait) { margin: .25em 0 0 0; }
 }
-div.documentHeader > h5.index_title a:link {
+h5.index_title a:link {
   text-decoration: underline;
   padding: .1em .3em .3em .3em;
   color: $link-color;
 }
-div.documentHeader > h5.index_title a:hover {
+h5.index_title a:hover {
   text-decoration: none;
   background: #EFEFEF;
   color: #FF530D;
@@ -468,22 +468,22 @@ ul.search-widgets-list > li a.btn:active{ color: $link-color; }
 
 ul.document-actions-list {
   display: inline-block;
-  margin: 0;
+  // display: table-cell; GRIMT!
+  margin: .4em 0 0 0;
   padding: .2em 0 .2em 0;
-  font-size: calc-em(12px);
+  font-size: calc-em(15px);
   background: $blue-4;
-  //background: rgba(0,0,0, .07);
   text-align: center;
-  //vertical-align: middle;
   border-radius: 3px;
+  @include respond-to($ipad_portrait) { margin: 1em 0 1em 1em; }
 }
 ul.document-actions-list li {
   display: inline-block;
   margin: 0;
-  padding: 0 .07em;
+  padding: 0 .2em;
 }
-ul.document-actions-list > li:first-child { padding-left: .5em; }
-ul.document-actions-list > li:last-child { padding-right: .5em; }
+ul.document-actions-list > li:first-child { padding-left: .7em; }
+ul.document-actions-list > li:last-child { padding-right: .7em; }
 
 ul.document-actions-list li a { color: $blue-2; }
 
@@ -506,3 +506,8 @@ div[id$="-dropdown"] ul.dropdown-menu > li {
   padding: 0 .7em;
 }
 div[id$="-dropdown"] ul.dropdown-menu > li > a { padding: 0; }
+
+// GRIMT!
+// div.documentHeader {
+//   display: table-row;
+// }

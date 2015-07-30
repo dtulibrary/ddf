@@ -1,0 +1,45 @@
+<table id="search-options" class="table table-hover" role="menu" aria-labelledby="more-options">
+  <tbody>
+
+
+
+      <tr class="search-history-links">
+        <td>
+          <span>
+            <%= link_to save_search_history_path(search_session['id']), :title => t('ddf.mylibrary.save'), :id => "search-summary-save" do %>
+               <i class="icon-star-o"></i><%= t('ddf.mylibrary.save') %>
+            <%- end -%>
+          </span>
+          <span>
+            <%= link_to alert_search_history_path(search_session['id']), :title => t('ddf.mylibrary.alert'), :id => "search-summary-alert" do %>
+              <i class="icon-bell"></i>
+              <%= t('ddf.mylibrary.alert') %>
+            <%- end -%>
+          </span>
+        </td>
+      </tr>
+
+
+
+    <tr class="search_history">
+      <td class="bordered"><i class="icon-clock-o"></i> <b>Recent History:</b></td>
+    </tr>
+    <% @search_history.limit(10).each do |entry| %>
+      <tr class="search_history">
+        <td class="entry">
+          <%= link_to_search_history_item(entry.query_params, "<i class='icon-search invisible'></i>") %>
+        </td>
+      </tr>
+    <%- end -%>
+
+
+
+      <tr class="search-history-links">
+        <td class="bordered">
+          <i class="icon-clock-o"></i> <%= link_to "Complete history", search_history_path %></td>
+      </tr>
+
+
+
+  </tbody>
+</table>

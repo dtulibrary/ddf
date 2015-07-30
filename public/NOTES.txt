@@ -188,3 +188,6 @@ ALL UNIFORM.
         Save to Mendeley
       </a>
     </li>
+
+How Rails 4 auto-loads files in /lib:
+http://stackoverflow.com/questions/19098663/auto-loading-lib-files-in-rails-4
