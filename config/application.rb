@@ -26,17 +26,6 @@ module Ddf
     config.eager_load_paths += %W(#{config.root}/lib/document)
     config.railties_order = [:main_app, Blacklight::Engine, :all]
 
-    # WHY U NO WORK FOR ME??
-    config.autoload_paths += %W(#{config.root}/lib/blacklight/catalog)
-    config.eager_load_paths += %W(#{config.root}/lib/blacklight/catalog)
-
-    # OR U??
-    # config.autoload_paths << Rails.root.join('lib')
-
-    # MAYBE U??
-    config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
-
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'

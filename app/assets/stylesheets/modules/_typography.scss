@@ -458,7 +458,7 @@ ul.search-widgets-list > li a { color: $link-color; }
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li button,
-ul.search-widgets-list > li button:hover { border: 1px solid $blue-2; }
+ul.search-widgets-list > li button:hover { border: 1px solid $blue-3; }
 
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:visited,
@@ -487,27 +487,38 @@ ul.document-actions-list > li:last-child { padding-right: .7em; }
 
 ul.document-actions-list li a { color: $blue-2; }
 
+ul.document-actions-list li a:hover { color: $orange; }
+ul.document-actions-list li a:active { color: $orange; }
+
 span.export_dropdown { position: relative; }
 span.export_dropdown ul.export_menu {
   position: absolute;
-  left: 10px;
+  left: 5px;
+  top: 17px;
   font-family: $sans;
 }
 ul.export_menu li {
   display: block;
   margin: .3em 0;
-  padding: 0 .3em;
+}
+
+ul.export_menu li a {
+  display: block;
+  padding: .2em .3em;
 }
 
 // DAMN! Did you see that?
 div[id$="-dropdown"] ul.dropdown-menu > li {
   display: block;
-  margin: .7em 0;
-  padding: 0 .7em;
+  margin: .3em 0;
 }
-div[id$="-dropdown"] ul.dropdown-menu > li > a { padding: 0; }
+div[id$="-dropdown"] ul.dropdown-menu > li > a {
+  display: block;
+  padding: .3em .5em .3em .9em;
+}
+div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
 
-// GRIMT!
-// div.documentHeader {
-//   display: table-row;
-// }
+div[id$="-dropdown"] span.glyphicon {
+  //display: inline-block;
+  padding-right: .4em;
+}
