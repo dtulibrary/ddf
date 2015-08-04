@@ -149,7 +149,7 @@ da:
         title: "titel:"
         containing_ieee: "som indeholder ordet 'IEEE' i feltet: Titel."
         more_help: "Brug for mere hjælp?"
-        search_how: Søgetips
+        search_how: Avanceret søgning
     tools:
       getit: Publikationen tilgængelig hos
       mendeley: Save to Mendeley

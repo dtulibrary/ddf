@@ -8,9 +8,48 @@
     <% end -%>
   <% end -%>
 
-  <dt class="ddf-index-key"><%= t('ddf.tools.availability') %></dt>
-  <dd class="ddf-index-value"><%= link_to 'GET IT', catalog_path(document.id) %></dd>
+  <div class="availability-panel">
+    <dt class="ddf-index-key"><%= t('ddf.tools.availability') %></dt>
+
+    <dd class="ddf-index-value">
+      <ul class="institutions-list">
+      <!-- TODO:
+        1) Refactor this loop to controller to show ';' if length > 1
+        2) Include title attrs on hover
+      -->
+        <% (document['backlink_ss'] || []).each do |link| %>
+          <li><%= link_to t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank' %></li>
+        <% end %>
+      </ul>
+      <%= link_to (content_tag('i', '', :class => 'glyphicon glyphicon-link')), catalog_path(document.id), :class => 'details-link align-right' %>
+    </dd>
+  </div>
+
 </dl>
 
+<!-- KENKYU START
+<div class="panel panel-default show-tools">
+  <div class="panel-heading">
+    <div class="panel-title"><%# t'ddf.tools.getit' %></div>
+  </div>
+  <div class="panel-body">
+    <%# (document['backlink_ss'] || []).each do |link| %>
+      <div><%# link_to t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank' %></div>
+    <%# end %>
+  </div>
+</div>
 
+<div class="panel panel-default show-tools">
+  <div class="panel-heading">
+    <div class="panel-title"><%# t'ddf.tools.metrics' %></div>
+  </div>
+  <div class="panel-body">
+    <div class='altmetric-embed' data-badge-type='donut' data-badge-popover='left'>
+      <%# altmetric_badge(@document)%></div>
+  </div>
+</div>
+
+<script type='text/javascript'
+src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+KENKYU END -->
 

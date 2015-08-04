@@ -43,7 +43,7 @@ en:
         facet:
           author_facet: Author
           format_orig_s: Type
-          journal_title_facet: Journal Titel
+          journal_title_facet: Journal Title
           pub_date_tsort: Publication Year
           research_area_ss: Research Area
           source_ss: Research Institution
@@ -134,7 +134,7 @@ en:
         title: "title:"
         containing_ieee: "containing the word 'IEEE' in the title field."
         more_help: "Need more help?"
-        search_how: How to search
+        search_how: Advanced search tutorial
     tools:
       getit: Publication available at
       metrics: Metrics

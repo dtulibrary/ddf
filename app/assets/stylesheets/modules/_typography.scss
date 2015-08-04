@@ -139,6 +139,7 @@ dl.document-metadata dd[class^="ddf-index"] {
 dl.document-metadata dd[class^="ddf-index"] a { font-weight: 600; }
 dl.document-metadata dd[class^="ddf-index"] a:link,
 dl.document-metadata dd[class^="ddf-index"] a:visited {
+  font-weight: 400;
   color: $link-color;
   text-decoration: underline;
 }
@@ -521,4 +522,8 @@ div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
 div[id$="-dropdown"] span.glyphicon {
   //display: inline-block;
   padding-right: .4em;
+}
+
+table#search-syntax tr.info a {
+  text-decoration: underline;
 }
