@@ -97,7 +97,7 @@ class CatalogController < ApplicationController
   config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
   config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
   config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
-  config.add_facet_field 'format', :label => 'Type'
+  config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -175,9 +175,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
 
-config.add_sort_field 'score desc, pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'relevance'
-config.add_sort_field 'pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'year'
-config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
-end
+    config.add_sort_field 'score desc, pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'relevance'
+    config.add_sort_field 'pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'year'
+    # config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
+    config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
+  end
 end
