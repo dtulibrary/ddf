@@ -166,9 +166,9 @@ ul.search-icons-list {
 ul.search-icons-list li { display: inline-block; }
 
 div.availability-panel {
-  background: $blue-4;
+  background: lighten($blue-3, 17%);
   margin-top: 1em;
-  padding: .7em .5em .5em 0;
+  padding: .6em 2em .4em 0;
   border-radius: 4px;
   position: relative;
 }
@@ -177,12 +177,14 @@ div.availability-panel ul.institutions-list {
   display: inline-block;
   margin: 0;
   padding: 0;
+  @include respond-to($iphone_landscape) { display: block; }
 }
 
 div.availability-panel ul.institutions-list li {
   display: inline-block;
   margin: 0;
   padding: 0;
+  @include respond-to($iphone_landscape) { margin: .1em 0 .1em .1em; }
 }
 
 a.details-link {

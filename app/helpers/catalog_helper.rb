@@ -133,10 +133,13 @@ module CatalogHelper
     (@response.rows if @response and @response.rows > 0) || params.fetch(:per_page, default_per_page).to_i
   end
 
+  #TODO: Clean up _index_default.html.erb with this
   def render_institutions_list(document)
-    (document['backlink_ss'] || []).each do |link|
-      #<li><%= link_to t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank' %></li>
+    list = (document['backlink_ss'] || []).map do |link|
+      content_tag :li do
+        # render partial(link) here
+      end
     end
+    list.join('; ').html_safe
   end
-
 end

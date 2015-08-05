@@ -518,12 +518,12 @@ div[id$="-dropdown"] ul.dropdown-menu > li > a {
   padding: .3em .5em .3em .9em;
 }
 div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
+div[id$="-dropdown"] span.glyphicon { padding-right: .4em; }
 
-div[id$="-dropdown"] span.glyphicon {
-  //display: inline-block;
-  padding-right: .4em;
-}
+table#search-syntax tr.info a { text-decoration: underline; }
 
-table#search-syntax tr.info a {
-  text-decoration: underline;
+ul.institutions-list i.fa-external-link-square {
+  padding-right: .5em;
+  vertical-align: top;
+  font-size: .9em;
 }
