@@ -10,6 +10,8 @@ da:
     application_name: 'Den Danske Forskningsdatabase-Danish National Research Database'
     national: 'Den Danske'
     research_database: 'Forskningsdatabase'
+    tools:
+      cite: 'Citer'
 
     entry_name:
         default: 'entry'
