@@ -208,10 +208,11 @@ nav[role="main"] > ul.admin a:visited:hover,
 nav[role="main"] > ul.admin a:focus,
 nav[role="main"] > ul.admin a:active  { color:  $orange; }
 
-#sidebar h4 {
+div.top-panel-heading h4 {
   font-weight: 600;
   color: $blue-1;
   text-transform: uppercase;
+  font-size: calc-em(18px);
   letter-spacing: .07em;
 }
 

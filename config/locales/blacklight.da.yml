@@ -8,6 +8,9 @@ da:
       previous: Tidligere
   blacklight:
     application_name: 'Den Danske Forskningsdatabase-Danish National Research Database'
+    national: 'Den Danske'
+    research_database: 'Forskningsdatabase'
+
     entry_name:
         default: 'entry'
     search:
@@ -27,6 +30,7 @@ da:
         selected:
           remove: '[slet]'
           pub_date_tsort: Udgivelsesår
+        title: 'Begræns din søgning'
       fields:
       filters:
         title: 'Du søgte efter:'
@@ -56,6 +60,12 @@ da:
         title: "Søgningen gav intet resultat. "
         modify_search: "Klik evt. på spørgsmålstegnet i søgeboksen for yderligere hjælp. "
         use_fewer_keywords: ''
+      sort:
+        criteria:
+          relevance: 'relevans'
+          year: 'år'
+          title: 'titel'
+
     footer:
       text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"
     application_name: 'ddf'

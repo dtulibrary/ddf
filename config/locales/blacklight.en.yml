@@ -1,6 +1,8 @@
 en:
   blacklight:
     application_name: 'Danish National Research Database-Den Danske Forskningsdatabase'
+    national: 'Danish National'
+    research_database: 'Research Database'
     entry_name:
         default: 'entry'
     search:
@@ -13,6 +15,7 @@ en:
         more: 'more »'
         label: '%{label}:'
         count: '%{number}'
+        title: 'Limit your search'
       filters:
         title: 'You searched for:'
         label: '%{label}:'
@@ -34,6 +37,10 @@ en:
       sort:
         label: 'Sort by %{field}'
         submit: 'sort results'
+        criteria:
+          relevance: 'relevance'
+          year: 'year'
+          title: 'title'
       show:
           title: '%{document_title} - %{application_name}'
           label: '%{label}:'

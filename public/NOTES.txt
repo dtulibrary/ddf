@@ -191,3 +191,14 @@ ALL UNIFORM.
 
 How Rails 4 auto-loads files in /lib:
 http://stackoverflow.com/questions/19098663/auto-loading-lib-files-in-rails-4
+
+TRANSLATION PATTERN:
+For UI elements:
+<th><%= t('ddf.search.help.more_help')%></th>
+
+For global / shared elements:
+ <% if I18n.locale == I18n.default_locale %>
+  <%= link_to t('blacklight.language_switcher'), :locale => :da %>
+ <% else %>
+  <%= link_to t('blacklight.language_switcher'), :locale => :en %>
+ <% end %>
