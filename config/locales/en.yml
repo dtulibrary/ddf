@@ -139,10 +139,9 @@ en:
       getit: Publication available at
       metrics: Metrics
       availability: Availability
-      get: 'GET IT'
-
       cite_and_export: "Cite and export"
       save_and_export: "Save and export"
       mendeley: "Save to Mendeley"
       bibtex: "Export to BibTeX"
       ris: "Export to RIS"
+      cite: "Cite"

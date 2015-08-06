@@ -155,4 +155,9 @@ da:
       mendeley: Save to Mendeley
       metrics: Metrikker
       availability: Tilgængelig hos
-
+      cite_and_export: "Citer og exporter"
+      save_and_export: "Gem og exporter"
+      mendeley: "Gem til Mendeley"
+      bibtex: "Exporter til BibTeX"
+      ris: "Exporter til RIS"
+      cite: "Citer"

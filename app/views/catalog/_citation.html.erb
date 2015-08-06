@@ -4,7 +4,7 @@
 
 	<% document.citation_styles.each do |style| %>
 
-		<h5><%= t("toshokan.citation.#{style}") %></h5>
+		<h5><%= t("ddf.citation.#{style}") %></h5>
 	  <%= document.send(:export_as_citation_txt, style).html_safe %>
 
 	<% end %>

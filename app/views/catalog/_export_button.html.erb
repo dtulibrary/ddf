@@ -7,19 +7,19 @@
   <ul class="dropdown-menu pull-right export_menu">
     <% if show_feature?(:mendeley) %>
       <li class="mendeley">
-        <%= link_to content_tag('i', '', :class => 'icon-mendeley') + t('toshokan.tools.mendeley'), '#', :class => 'save-to-mendeley-api', :data => {:document => document.id } %>
+        <%= link_to content_tag('i', '', :class => 'icon-mendeley') + t('ddf.tools.mendeley'), '#', :class => 'save-to-mendeley-api', :data => {:document => document.id } %>
       </li>
     <% end %>
 
     <% if document.export_formats && document.export_formats.keys.include?( :bib ) %>
       <li class="bibtex">
-        <%= link_to content_tag('i', '', :class => 'icon-file-text-o') + t('toshokan.tools.bibtex'), catalog_path(document, :format => 'bib') %>
+        <%= link_to content_tag('i', '', :class => 'icon-file-text-o') + t('ddf.tools.bibtex'), catalog_path(document, :format => 'bib') %>
       </li>
     <% end %>
 
     <% if document.export_formats && document.export_formats.keys.include?( :ris ) %>
       <li class="endnote">
-        <%= link_to content_tag('i', '', :class => 'icon-file-text-o') + t('toshokan.tools.ris'), catalog_path(document, :format => 'ris') %>
+        <%= link_to content_tag('i', '', :class => 'icon-file-text-o') + t('ddf.tools.ris'), catalog_path(document, :format => 'ris') %>
       </li>
     <% end %>
 
