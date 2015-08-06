@@ -6,13 +6,19 @@
   for bookmarks control depends on size.
   -%>
 
-  <h5 class="index_title col-sm-9 col-lg-10">
+  <h5 class="index_title">
     <% counter = document_counter_with_offset(document_counter) %>
     <span class="document-counter">
       <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
     </span>
     <%= link_to_document document, :label => document_show_link_field(document), :counter => counter %>
+
   </h5>
-  <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
+
+  <div class="document-actions-container">
+    <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
+  </div>
+
+  <%# render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
 </div>
 

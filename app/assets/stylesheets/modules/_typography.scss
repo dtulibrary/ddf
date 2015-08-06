@@ -130,7 +130,7 @@ dl.document-metadata dt[class^="ddf-index"] {
 }
 dl.document-metadata dd[class^="blacklight-"],
 dl.document-metadata dd[class^="ddf-index"] {
-  margin-bottom: .4em;
+  margin-bottom: .3em;
   //margin-left: 180px; -> the default
   //margin-left: 190px; -> to accommodate longer fields
   // the proper way to override left margin:
@@ -470,14 +470,12 @@ ul.search-widgets-list > li a.btn:active{ color: $link-color; }
 
 ul.document-actions-list {
   display: inline-block;
-  // display: table-cell; GRIMT!
-  margin: .4em 0 0 0;
+  margin: 0;
   padding: .2em 0 .2em 0;
   font-size: calc-em(15px);
   background: $blue-4;
   text-align: center;
   border-radius: 3px;
-  @include respond-to($ipad_portrait) { margin: 1em 0 1em 1em; }
 }
 ul.document-actions-list li {
   display: inline-block;
@@ -528,4 +526,28 @@ ul.institutions-list i.fa-external-link-square {
   vertical-align: top;
   font-size: .9em;
   //color: lighten($link-color, 20%);
+}
+
+div.documentHeader {
+  display: table;
+  padding: 0 1em;
+  margin-bottom: .5em;
+  @include respond-to($iphone_landscape) { margin-bottom: 0; }
+}
+div.documentHeader h5.index_title {
+  display: table-cell;
+  padding-right: .5em;
+  @include respond-to($iphone_landscape) {
+    display: block;
+    padding-right: 0;
+  }
+}
+div.document-actions-container  {
+  display: table-cell;
+  width: 70px;
+  min-width: 70px;
+  @include respond-to($iphone_landscape) {
+    display: block;
+    margin: 1em 0;
+  }
 }
