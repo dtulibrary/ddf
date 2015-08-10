@@ -193,12 +193,25 @@ How Rails 4 auto-loads files in /lib:
 http://stackoverflow.com/questions/19098663/auto-loading-lib-files-in-rails-4
 
 TRANSLATION PATTERN:
-For UI elements:
 <th><%= t('ddf.search.help.more_help')%></th>
 
-For global / shared elements:
- <% if I18n.locale == I18n.default_locale %>
-  <%= link_to t('blacklight.language_switcher'), :locale => :da %>
- <% else %>
-  <%= link_to t('blacklight.language_switcher'), :locale => :en %>
- <% end %>
+BEM:
+.block {}
+.block__element {}
+.block--modifier {}
+
+    .block represents the higher level of an abstraction or component.
+    .block__element represents a descendent of .block that helps form .block as a whole.
+    .block--modifier represents a different state or version of .block.
+
+The reason for double rather than single hyphens and underscores is so that your block itself can be hyphen delimited, for example:
+
+.site-search {} /* Block */
+.site-search__field {} /* Element */
+.site-search--full {} /* Modifier */
+
+(http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+
+
+
+

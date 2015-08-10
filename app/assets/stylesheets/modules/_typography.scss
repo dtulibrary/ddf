@@ -150,19 +150,19 @@ dl.document-metadata dd[class^="ddf-index"] a:active {
   text-decoration: none;
 }
 
-h5.index_title {
+h5.index {
   font-family: $headline;
   font-size: calc-em(20px);
   line-height: calc-em(22px);
   margin: .25em 0 .7em 0;
   @include respond-to($ipad_portrait) { margin: .25em 0 0 0; }
 }
-h5.index_title a:link {
+h5.index a:link {
   text-decoration: underline;
   padding: .1em .3em .3em .3em;
   color: $link-color;
 }
-h5.index_title a:hover {
+h5.index a:hover {
   text-decoration: none;
   background: #EFEFEF;
   color: #FF530D;
@@ -305,13 +305,14 @@ span.constraint-value+a.remove { font-size: .8em; }
   border: 0;
   border-radius: 4px;
   box-shadow: 0;
-  padding: .7em 0;
+  padding: .5em 0;
 }
 
 #appliedParams span.constraints-label {
   display: block;
   font-size: calc-em(15px);
   font-weight: bold;
+  margin: 1em 0 .5em 0;
 }
 
 nav[role="main"] > ul { color: $blue-3; }
@@ -320,8 +321,11 @@ nav[role="main"] > ul li a:visited { color: $blue-4; }
 nav[role="main"] > ul li a:hover { color: $orange; }
 nav[role="main"] > ul li a:active { color: $orange; }
 
-div.document h1[itemprop="name"] {
-  font-size: calc-em(25px);
+div.document h1[itemprop="name"],
+div.document h1.show {
+  font-family: $headline;
+  font-weight: 400;
+  font-size: calc-em(23px);
   line-height: calc-em(22px);
   margin: .5em 0;
   color: $bluewood;
@@ -339,7 +343,6 @@ div.page_links a[rel="prev"]:hover         { text-decoration: none; }
 
 div.page_links a[rel="next"]:visited:hover,
 div.page_links a[rel="prev"]:visited:hover { text-decoration: none; }
-
 
 a#startOverLink {
   font-size: calc-em(15px);
@@ -446,7 +449,7 @@ a.btn-danger:active { color: #fff; }
 
 ul.search-widgets-list {
   margin: 0;
-  margin-top: .3em;
+  margin-top: .1em;
   @include respond-to($screen-lg-min) {
     float: none;
     margin-top: 1em;
@@ -534,7 +537,9 @@ div.documentHeader {
   margin-bottom: .5em;
   @include respond-to($iphone_landscape) { margin-bottom: 0; }
 }
-div.documentHeader h5.index_title {
+div.documentHeader--show { margin-bottom: 1em; }
+
+div.documentHeader .doctitle {
   display: table-cell;
   padding-right: .5em;
   @include respond-to($iphone_landscape) {
@@ -551,3 +556,5 @@ div.document-actions-container  {
     margin: 1em 0;
   }
 }
+
+

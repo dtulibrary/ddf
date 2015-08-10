@@ -1,0 +1,36 @@
+<div class="docdetails panel">
+
+  <div class="availability-panel availability-panel--show">
+    <h2 class="panel-heading">
+      Available at
+      <i class="fa fa-file"></i>
+    </h2>
+    <ul class="institutions-list">
+      <% (@document['backlink_ss'] || []).each do |link| %>
+        <li>
+          <%= link_to((t("source_labels.#{get_backlink_origin link}") + ' <i class="fa fa-external-link-square"></i>').html_safe, link, :target => '_blank') %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="panel-heading">
+      Metrics
+      <i class="fa fa-pie-chart"></i>
+    </h2>
+
+    <p>Metrix!</p>
+  </div>
+
+  <div>
+    <h2 class="panel-heading">
+      Open access
+      <i class="glyphicon glyphicon-education"></i>
+    </h2>
+
+    <p>Access or not?</p>
+  </div>
+
+</div>
+

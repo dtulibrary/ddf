@@ -172,6 +172,12 @@ div.availability-panel {
   border-radius: 4px;
   position: relative;
 }
+div.availability-panel--show {
+  background: inherit;
+  margin-top: 0;
+  padding: 0;
+  border-radius: 0;
+}
 
 div.availability-panel ul.institutions-list {
   display: inline-block;
@@ -186,6 +192,9 @@ div.availability-panel ul.institutions-list li {
   padding: 0;
   @include respond-to($iphone_landscape) { margin: .1em 0 .1em .1em; }
 }
+div.availability-panel--show ul.institutions-list li {
+  margin-bottom: .3em;
+}
 
 a.details-link {
   display: block;
@@ -194,3 +203,36 @@ a.details-link {
   top: -9px;
   right: 10px;
 }
+
+div.docdetails div {
+  border-top: 2px dashed $blue-3;
+  border-bottom: 2px dashed $blue-3;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+}
+
+div.docdetails h2.panel-heading {
+  margin: 0 0 1em 0;
+  padding: 1em 0;
+  font-size: calc-em(17px);
+  line-height: calc-em(22px);
+  background: lighten($blue-3, 17%);
+  font-weight: 700;
+  position: relative;
+}
+
+div.docdetails h2.panel-heading i {
+  font-size: calc-em(27px);
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  color: rgba(0,0,0, .6);
+  color: $blue-2;
+}
+
+div.availability-panel--show ul.institutions-list i {
+  color: $blue-2;
+}
+
+div.availability-panel--show ul.institutions-list a:hover,
+div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
