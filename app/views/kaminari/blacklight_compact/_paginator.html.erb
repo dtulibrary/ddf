@@ -20,12 +20,12 @@
   <%= paginator.render do -%>
     <ul class="index-view__pagination">
       <li><%= prev_page_tag %> |</li>
-      <li><span class="page_entries"><%= page_entries_info %></span> |</li>
+      <li><%= page_entries_info %> |</li>
       <li><%= next_page_tag %></li>
     </ul>
   <% end -%>
 <% else -%>
     <ul class="index-view__pagination">
-      <li><span class="page_entries"><%= page_entries_info %></span></li>
+      <li><%= page_entries_info %></li>
     </ul>
 <% end -%>

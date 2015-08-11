@@ -285,22 +285,7 @@ span.selected+a.remove .glyphicon {
   font-size: .9em;
 }
 
-span.constraint-value,
-#appliedParams span.constraint-value:hover {
-  background: $label-light;
-  color: #000;
-  border: 1px solid $blue-1;
-  font-size: .8em;
-}
-span.constraint-value+a.remove {
- background: $label-dark;
- color: $action-red;
- border: 1px solid $blue-1;
-}
-span.constraint-value,
-span.constraint-value+a.remove { font-size: .8em; }
-
-#appliedParams.constraints-container {
+div.applied-filters-container {
   background: #fff;
   border: 0;
   border-radius: 4px;
@@ -308,9 +293,8 @@ span.constraint-value+a.remove { font-size: .8em; }
   padding: .5em 0;
 }
 
-#appliedParams span.constraints-label {
-  display: block;
-  font-size: calc-em(15px);
+h3.constraints {
+  font-size: calc-em(16px);
   font-weight: bold;
   margin: 1em 0 .5em 0;
   font-style: italic;
@@ -559,17 +543,11 @@ div.document-actions-container  {
   }
 }
 
-ul.show-view__resets {
-  margin: 0;
-}
 ul.show-view__resets li {
   display: inline-block;
   margin: 0;
-  position: relative;
 }
-ul.show-view__resets li:not(:last-child) {
-  margin-right: .5em;
-}
+ul.show-view__resets li:not(:last-child) { margin-right: .5em; }
 
 ul.show-view__resets li i {
   display: inline-block;
@@ -579,9 +557,37 @@ ul.show-view__resets li i {
   top: 3px;
   left: -1px;
 }
+li.destructive i { color: $action-red; }
 
-li.destructive i {
-  color: $action-red;
+ul.applied-filters-list {
+  margin: 1em 0 .5em .2em;
+  padding: 0;
 }
 
+ul.applied-filters-list li {
+  margin-bottom: .5em;
+  padding: 0;
+}
 
+li.applied-filter { font-size: calc-em(14px); }
+
+li.applied-filter span.constraint {
+  background: $label-light;
+  color: $blue-1;
+  border: 1px solid $blue-3;
+  padding: 5px 7px;
+  font-size: inherit;
+}
+li.applied-filter a.remove {
+ background: $label-dark;
+ color: $action-red;
+ border: 1px solid $blue-3;
+ font-size: inherit;
+ padding: 6px 7px 3px 7px;
+}
+
+li.applied-filter a.remove:hover {
+ background: $action-red;
+ border: 1px solid $action-red;
+ color: #fff;
+}

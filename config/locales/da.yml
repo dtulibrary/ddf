@@ -22,7 +22,7 @@
 da:
   blacklight:
     application_name: Den Danske Forskningsdatabase-Danish National Research Database
-    back_to_search: Tilbage til Søgning
+    latest_search: Sidste Søgning
     footer:
       text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"
     header_links:

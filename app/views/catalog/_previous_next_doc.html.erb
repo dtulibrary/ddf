@@ -10,11 +10,11 @@
     <ul class="align-right show-view__resets">
       <li>
         <i class="glyphicon glyphicon-list"></i>
-        <%= link_back_to_catalog(label: 'Latest Search') %>
+        <%= link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
       </li>
       <li class="destructive">
         <i class="glyphicon glyphicon-remove-sign"></i>
-        <%=link_to "#{t('blacklight.search.start_over')}", start_over_path(current_search_session.try(:query_params) || {}) %>
+        <%= link_to "#{t('blacklight.search.start_over')}", start_over_path(current_search_session.try(:query_params) || {}) %>
       </li>
     </ul>
   </nav>
