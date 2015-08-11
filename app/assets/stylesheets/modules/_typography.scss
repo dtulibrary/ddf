@@ -313,6 +313,8 @@ span.constraint-value+a.remove { font-size: .8em; }
   font-size: calc-em(15px);
   font-weight: bold;
   margin: 1em 0 .5em 0;
+  font-style: italic;
+  color: $blue-2;
 }
 
 nav[role="main"] > ul { color: $blue-3; }
@@ -331,28 +333,28 @@ div.document h1.show {
   color: $bluewood;
 }
 
-div.search-widgets a.btn,
-div.page_links a[rel="next"]:link,
-div.page_links a[rel="prev"]:link          { text-decoration: underline; }
+// div.search-widgets a.btn,
+// div.page_links a[rel="next"]:link,
+// div.page_links a[rel="prev"]:link          { text-decoration: underline; }
 
-div.page_links a[rel="next"]:visited,
-div.page_links a[rel="prev"]:visited       { text-decoration: underline; }
+// div.page_links a[rel="next"]:visited,
+// div.page_links a[rel="prev"]:visited       { text-decoration: underline; }
 
-div.page_links a[rel="next"]:hover,
-div.page_links a[rel="prev"]:hover         { text-decoration: none; }
+// div.page_links a[rel="next"]:hover,
+// div.page_links a[rel="prev"]:hover         { text-decoration: none; }
 
-div.page_links a[rel="next"]:visited:hover,
-div.page_links a[rel="prev"]:visited:hover { text-decoration: none; }
+// div.page_links a[rel="next"]:visited:hover,
+// div.page_links a[rel="prev"]:visited:hover { text-decoration: none; }
 
 a#startOverLink {
-  font-size: calc-em(15px);
-  font-weight: bold;
-  text-decoration: underline;
-  color: link-color;
-  background: $action-red;
-  color: #fff;
-  text-decoration: none;
-  //margin-top: -10px;
+  // //font-size: calc-em(15px);
+  // font-weight: bold;
+  // text-decoration: underline;
+  // color: link-color;
+  // background: $action-red;
+  // color: #fff;
+  // text-decoration: none;
+  // //margin-top: -10px;
 }
 a#startOverLink:hover { background: $orange; }
 
@@ -449,7 +451,7 @@ a.btn-danger:active { color: #fff; }
 
 ul.search-widgets-list {
   margin: 0;
-  margin-top: .1em;
+  display: inline-block;
   @include respond-to($screen-lg-min) {
     float: none;
     margin-top: 1em;
@@ -555,6 +557,31 @@ div.document-actions-container  {
     display: block;
     margin: 1em 0;
   }
+}
+
+ul.show-view__resets {
+  margin: 0;
+}
+ul.show-view__resets li {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+ul.show-view__resets li:not(:last-child) {
+  margin-right: .5em;
+}
+
+ul.show-view__resets li i {
+  display: inline-block;
+  //display: none;
+  font-size: calc-em(18px);
+  position: relative;
+  top: 3px;
+  left: -1px;
+}
+
+li.destructive i {
+  color: $action-red;
 }
 
 

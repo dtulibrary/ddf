@@ -236,3 +236,42 @@ div.availability-panel--show ul.institutions-list i { color: $blue-2; }
 
 div.availability-panel--show ul.institutions-list a:hover,
 div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
+
+//nav[class$="-view"]
+nav.show-view,
+nav.index-view {
+  margin-bottom: 1em;
+  border-bottom: 1px solid $blue-3;
+  padding: 0 .5em 1em .5em;
+}
+
+nav.show-view ul {
+  @include respond-to($iphone_landscape) {
+    display: block;
+    margin-bottom: 1em;
+    float: none;
+  }
+}
+
+div#sortAndPerPage {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul[class$="__pagination"],
+ul[class$="__pagination"] li,
+ul[class$="__resets"],
+ul[class$="__resets"] li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: calc-em(16px);
+}
+ul.index-view__pagination { margin-top: .4em; }
+
+
+ul[class$="__pagination"] li a,
+ul[class$="__resets"] li a {
+  text-decoration: underline;
+}

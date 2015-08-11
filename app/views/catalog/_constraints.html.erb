@@ -1,0 +1,13 @@
+<% if query_has_constraints? %>
+  <div id="appliedParams" class="clearfix constraints-container">
+    <ul class="align-right index-view__resets">
+      <li class="destructive">
+        <i class="glyphicon glyphicon-remove-sign"></i>
+        <%=link_to t('blacklight.search.start_over'), start_over_path %>
+      </li>
+    </ul>
+    <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
+    <%= render_constraints(params) %>
+  </div>
+<% end %>
+
