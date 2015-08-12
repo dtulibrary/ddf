@@ -228,17 +228,16 @@ div.top-panel-heading h4 {
 }
 
 #sidebar ul.facet-values li {
- //display: block; Good luck overriding display: table-row;
- font-size: calc-em(15px);
- //line-height: 1.6em;
+  font-size: calc-em(15px);
+  //display: block; //must do this because it's set to display: table in the original
+  margin-bottom: .3em; //...and
 }
 
-#sidebar ul.facet-values li a {
-  //display: inline-block;
-  //padding-top: .5em;
+ul.facet-values li span.facet-label a.facet_select {
+  display: block;
+  text-decoration: underline;
+  line-height: 1.25em;
 }
-
-ul.facet-values li span.facet-label a.facet_select { text-decoration: underline; }
 
 ul.facet-values li:hover,
 ul.facet-values li:hover span.facet-label a.facet_select,
@@ -247,8 +246,6 @@ ul.facet-values li:hover span.facet-count {
   color: $link-color;
   //text-decoration: underline;
 }
-
-ul.facet-values li a:link { text-decoration: none; }
 
 ul.facet-values span.facet-count {
   font-style: italic;
@@ -316,31 +313,6 @@ div.document h1.show {
   margin: .5em 0;
   color: $bluewood;
 }
-
-// div.search-widgets a.btn,
-// div.page_links a[rel="next"]:link,
-// div.page_links a[rel="prev"]:link          { text-decoration: underline; }
-
-// div.page_links a[rel="next"]:visited,
-// div.page_links a[rel="prev"]:visited       { text-decoration: underline; }
-
-// div.page_links a[rel="next"]:hover,
-// div.page_links a[rel="prev"]:hover         { text-decoration: none; }
-
-// div.page_links a[rel="next"]:visited:hover,
-// div.page_links a[rel="prev"]:visited:hover { text-decoration: none; }
-
-a#startOverLink {
-  // //font-size: calc-em(15px);
-  // font-weight: bold;
-  // text-decoration: underline;
-  // color: link-color;
-  // background: $action-red;
-  // color: #fff;
-  // text-decoration: none;
-  // //margin-top: -10px;
-}
-a#startOverLink:hover { background: $orange; }
 
 h1.page-heading {
   font-family: $headline;
@@ -543,13 +515,9 @@ div.document-actions-container  {
   }
 }
 
-ul.show-view__resets li {
-  display: inline-block;
-  margin: 0;
-}
-ul.show-view__resets li:not(:last-child) { margin-right: .5em; }
+ul[class$="__resets"] li:not(:last-child) { margin-right: .5em; }
 
-ul.show-view__resets li i {
+ul[class$="__resets"] li i {
   display: inline-block;
   //display: none;
   font-size: calc-em(18px);
@@ -564,9 +532,10 @@ ul.applied-filters-list {
   padding: 0;
 }
 
-ul.applied-filters-list li {
-  margin-bottom: .5em;
-  padding: 0;
+ul.applied-filters-list li { padding: 0; }
+ul.applied-filters-list li:not(:last-child) {
+  margin-right: .5em;
+  margin-bottom: 1em;
 }
 
 li.applied-filter { font-size: calc-em(14px); }
