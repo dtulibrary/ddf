@@ -1,0 +1,43 @@
+<div id="content" class="col-md-12">
+
+  <div class="page-leadin page-leadin--search group">
+
+    <div class="col-md-8">
+      <h1 class="search-page-heading"><%=t('blacklight.search_history.title')%></h1>
+    </div>
+
+    <div class="col-md-4">
+      <%- unless @searches.blank? -%>
+        <nav class="align-right">
+          <ul class="history-view__resets">
+            <li>
+              <i class="glyphicon glyphicon-list"></i>
+              <%# link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
+              <a href="/">Latest Search</a>
+            </li>
+
+            <li class="destructive">
+              <i class="glyphicon glyphicon-remove-sign"></i>
+              <%= link_to t('blacklight.search_history.clear.action_title'), clear_search_history_path, :method => :delete, :data => { :confirm => t('blacklight.search_history.clear.action_confirm') } %>
+            </li>
+          </ul>
+        </nav>
+      <%- end -%>
+    </div>
+  </div>
+
+  <%- if @searches.blank? -%>
+    <h3 class="search-help search-help--large no-history"><%= t('blacklight.search_history.no_history') %>.</h3>
+  <%- else -%>
+    <h3 class="search-help search-help--large"><%=t('blacklight.search_history.recent')%>:</h3>
+
+    <ul class="search-queries-list">
+      <%- @searches.each_with_index do |search, index| -%>
+        <%= content_tag :li, :id => "document_#{index + 1}" do %>
+          <%= link_to_previous_search(search.query_params) %>
+          <i class="glyphicon glyphicon-link" aria-hidden="true"></i>
+        <% end %>
+      <%- end -%>
+    </table>
+  <%- end -%>
+</div>
