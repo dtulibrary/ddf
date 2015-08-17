@@ -212,8 +212,13 @@ The reason for double rather than single hyphens and underscores is so that your
 
 (http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
-Det Centrale Ministerium for Hygge, Gode Sommerminder, & Opskrifter på Rabarberkompot
-The Central Ministry for Hygge, Good Summer Memories, & Recipes for Rhubarb Compote
+Det Centrale Kontor for Hygge, Gode Sommerminder, & Opskrifter på Rabarberkompot
+The Central Office for Hygge, Good Summer Memories, & Recipes for Rhubarb Compote
 
-ERROR:
-search term: protein synthesis; author (via facet): Holm, Lars
+
+17 Aug 2015. TODOs:
+COinS & Zotero & Export to Mendeley
+
+On to the next stage:
+IA for the static pages, start with footer (card sort) and About page
+

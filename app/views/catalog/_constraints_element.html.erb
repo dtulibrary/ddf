@@ -10,7 +10,7 @@
   <li class="btn-group applied-filter <%= options[:classes].join(" ") if options[:classes] %>">
     <span class="constraint btn">
       <% unless label.blank? %>
-        <span class="filterName"><%= label %></span>
+        <span class="filterName"><em><%= label %>:</em></span>
       <% end %>
       <% unless value.blank? %>
         <span class="filterValue"><%= value %></span>

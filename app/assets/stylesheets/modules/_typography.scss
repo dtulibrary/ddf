@@ -242,7 +242,7 @@ ul.facet-values li span.facet-label a.facet_select {
 ul.facet-values li:hover,
 ul.facet-values li:hover span.facet-label a.facet_select,
 ul.facet-values li:hover span.facet-count {
-  background: $blue-4;
+  background: $label-light;
   color: $link-color;
   //text-decoration: underline;
 }
@@ -534,10 +534,8 @@ ul.applied-filters-list {
 }
 
 ul.applied-filters-list li { padding: 0; }
-ul.applied-filters-list li:not(:last-child) {
-  margin-right: .5em;
-  margin-bottom: 1em;
-}
+ul.applied-filters-list li { margin-bottom: 1em; }
+ul.applied-filters-list li:not(:last-child) { margin-right: .5em; }
 
 li.applied-filter { font-size: calc-em(14px); }
 

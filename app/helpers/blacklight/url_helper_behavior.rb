@@ -9,8 +9,8 @@ module Blacklight::UrlHelperBehavior
   # documents
   def url_for_document doc, options = {}
     if respond_to?(:blacklight_config) and
-        blacklight_config.show.route and
-        (!doc.respond_to?(:to_model) or doc.to_model.is_a? SolrDocument)
+      blacklight_config.show.route and
+      (!doc.respond_to?(:to_model) or doc.to_model.is_a? SolrDocument)
       route = blacklight_config.show.route.merge(action: :show, id: doc).merge(options)
       route[:controller] = controller_name if route[:controller] == :current
       route
@@ -54,7 +54,7 @@ module Blacklight::UrlHelperBehavior
 
   ##
   # Current search context parameters
-  def search_session_params counter 
+  def search_session_params counter
     { :'data-counter' => counter, :'data-search_id' => current_search_session.try(:id) }
   end
   deprecation_deprecate :search_session_params
@@ -70,11 +70,11 @@ module Blacklight::UrlHelperBehavior
     if document.nil?
       return {}
     end
-  
+
     { :data => {:'context-href' => track_solr_document_path(document, per_page: params.fetch(:per_page, search_session['per_page']), counter: counter, search_id: current_search_session.try(:id))}}
   end
   protected :session_tracking_params
-  
+
 
   #
   # link based helpers ->
@@ -106,7 +106,7 @@ module Blacklight::UrlHelperBehavior
   def link_back_to_catalog(opts={:label=>nil})
     scope = opts.delete(:route_set) || self
     query_params = current_search_session.try(:query_params) || {}
-    
+
     if search_session['counter']
       per_page = (search_session['per_page'] || default_per_page).to_i
       counter = search_session['counter'].to_i
@@ -134,15 +134,19 @@ module Blacklight::UrlHelperBehavior
   # Search History and Saved Searches display
   def link_to_previous_search(params)
     link_to(render_search_to_s(params), search_action_path(params))
+    # TODO
+    # byebug
+    # Men den bruger både søgeparams og facets ?
+    # link_to(t("blacklight.search.fields.index.#{params[:key]}"), search_action_path(params))
   end
 
   # @overload params_for_search(source_params, params_to_merge)
   #   Merge the source params with the params_to_merge hash
-  #   @param [Hash] Hash 
+  #   @param [Hash] Hash
   #   @param [Hash] Hash to merge into above
   # @overload params_for_search(params_to_merge)
-  #   Merge the current search parameters with the 
-  #      parameters provided. 
+  #   Merge the current search parameters with the
+  #      parameters provided.
   #   @param [Hash] Hash to merge into the parameters
   # @overload params_for_search
   #   Returns the current search parameters after being sanitized by #sanitize_search_params
@@ -213,7 +217,7 @@ module Blacklight::UrlHelperBehavior
     if facet_config.single and not p[:f][field].empty?
       p[:f][field] = []
     end
-    
+
     p[:f][field].push(value)
 
     if item and item.respond_to?(:fq) and item.fq
@@ -229,17 +233,17 @@ module Blacklight::UrlHelperBehavior
   # on a facet value. Add on the facet params to existing
   # search constraints. Remove any paginator-specific request
   # params, or other request params that should be removed
-  # for a 'fresh' display. 
+  # for a 'fresh' display.
   # Change the action to 'index' to send them back to
-  # catalog/index with their new facet choice. 
+  # catalog/index with their new facet choice.
   def add_facet_params_and_redirect(field, item)
     new_params = add_facet_params(field, item)
 
     # Delete any request params from facet-specific action, needed
-    # to redir to index action properly. 
+    # to redir to index action properly.
     new_params.except! *Blacklight::Solr::FacetPaginator.request_keys.values
 
-    new_params 
+    new_params
   end
 
   # copies the current params (or whatever is passed in as the 3rd arg)
@@ -264,15 +268,15 @@ module Blacklight::UrlHelperBehavior
     p.delete(:f) if p[:f].empty?
     p
   end
-  
-  # A URL to refworks export, with an embedded callback URL to this app. 
-  # the callback URL is to bookmarks#export, which delivers a list of 
+
+  # A URL to refworks export, with an embedded callback URL to this app.
+  # the callback URL is to bookmarks#export, which delivers a list of
   # user's bookmarks in 'refworks marc txt' format -- we tell refworks
-  # to expect that format. 
+  # to expect that format.
   def bookmarks_export_url(format, params = {})
     bookmarks_url(params.merge(format: format, encrypted_user_id: encrypt_user_id(current_or_guest_user.id) ))
   end
-  
+
   # This method should move to BlacklightMarc in Blacklight 6.x
   def refworks_export_url params = {}
     if params.is_a? ::SolrDocument or (params.nil? and instance_variable_defined? :@document)
@@ -290,6 +294,14 @@ module Blacklight::UrlHelperBehavior
   if ::Rails.version < "4.0"
     def asset_url *args
       "#{request.protocol}#{request.host_with_port}#{asset_path(*args)}"
+    end
+  end
+
+  def render_locale_switcher(*locales)
+    if I18n.locale.eql? locales[0]
+      link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[1])
+    else
+      link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[0])
     end
   end
 end

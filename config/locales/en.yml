@@ -26,6 +26,7 @@ en:
     latest_search: Latest Search
     search:
       fields:
+        default: "Search terms"
         index:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -141,8 +142,9 @@ en:
         more_help: "Need more help?"
         search_how: Advanced search tutorial
     tools:
-      getit: Publication available at
+      available_at: "Available at"
       metrics: Metrics
+      open_access: "Open Acess"
       availability: Availability
       cite_and_export: "Cite and export"
       save_and_export: "Save and export"

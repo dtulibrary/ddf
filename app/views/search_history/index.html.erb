@@ -12,8 +12,7 @@
           <ul class="history-view__resets">
             <li>
               <i class="glyphicon glyphicon-list"></i>
-              <%# link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
-              <a href="/">Latest Search</a>
+              <%= link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
             </li>
 
             <li class="destructive">
@@ -34,8 +33,9 @@
     <ul class="search-queries-list">
       <%- @searches.each_with_index do |search, index| -%>
         <%= content_tag :li, :id => "document_#{index + 1}" do %>
+          <!-- TODO: translate search parameter names -->
           <%= link_to_previous_search(search.query_params) %>
-          <i class="glyphicon glyphicon-link" aria-hidden="true"></i>
+          <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
         <% end %>
       <%- end -%>
     </table>

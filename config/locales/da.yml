@@ -38,6 +38,7 @@ da:
         one: '<strong>1 af 1</strong>'
         other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
       fields:
+        default: Søgeord
         index:
           abstract_ts: Abstrakt
           affiliation_ts: Tilhørsforhold
@@ -155,9 +156,10 @@ da:
         more_help: "Brug for mere hjælp?"
         search_how: Avanceret søgning
     tools:
-      getit: Publikationen tilgængelig hos
-      mendeley: Save to Mendeley
+      available_at: "Tilgængelig hos"
       metrics: Metrikker
+      open_access: "Open Acess"
+      mendeley: Save to Mendeley
       availability: Tilgængelig hos
       cite_and_export: "Citer og exporter"
       save_and_export: "Gem og exporter"

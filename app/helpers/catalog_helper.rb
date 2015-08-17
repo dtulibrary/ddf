@@ -32,22 +32,32 @@ module CatalogHelper
 
   def get_backlink_origin link
     case link
-    when /^https?:\/\/orbit.dtu.dk/
+    when /^https?:\/\/orbit\.dtu\.dk/
       'orbit'
-    when /^https?:\/\/pure.au.dk/
+    when /^https?:\/\/pure\.au\.dk/
       'rdb_au'
-    when /^https?:\/\/forskning.ku.dk/
+    when /^https?:\/\/forskning\.ku\.dk/
       'rdb_ku'
-    when /^https?:\/\/pure.itu.dk/
+    when /^https?:\/\/pure\.itu\.dk/
       'rdb_itu'
-    when /^https?:\/\/research.cbs.dk/
+    when /^https?:\/\/research\.cbs\.dk/
       'rdb_cbs'
-    when /^https?:\/\/vbn.aau.dk/
+    when /^https?:\/\/vbn\.aau\.dk/
       'rdb_vbn'
-    when /^https?:\/\/rucforsk.ruc.dk/
+    when /^https?:\/\/rucforsk\.ruc\.dk/
       'rdb_ruc'
-    when /^https?:\/\/findresearcher.sdu.dk/
+    when /^https?:\/\/findresearcher\.sdu\.dk/
       'rdb_sdu'
+    when /^https?:\/\/forskning\.regionh\.dk/
+      'rdb_sbi'
+    when /^https?:\/\/pure-\d{2}\.kb\.dk/
+      'rdb_ka'
+    when /^https?:\/\/research\.kadk\.dk/
+      'rdb_ark'
+    when /^https?:\/\/pure\.fak\.dk/
+      'rdb_fak'
+    else
+      raise "Couldn't find data provider for the url: #{link}"
     end
   end
 
