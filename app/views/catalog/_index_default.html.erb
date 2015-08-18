@@ -1,6 +1,5 @@
 <%# default partial to display solr document fields in catalog index view -%>
 <dl class="document-metadata dl-horizontal dl-invert">
-
   <% index_fields(document).each do |solr_fname, field| -%>
     <% if should_render_index_field? document, field %>
 	    <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_index_field_label document, :field => solr_fname %></dt>
@@ -17,7 +16,6 @@
         1) Refactor this loop to controller to show ';' if length > 1
         2) Include title attrs on hover
       -->
-
         <% (document['backlink_ss'] || []).each do |link| %>
           <li>
             <%= link_to((t("source_labels.#{get_backlink_origin link}") + ' <i class="fa fa-external-link-square"></i>').html_safe, link, :target => '_blank') %>
@@ -28,32 +26,4 @@
       <%= link_to (content_tag('i', '', :class => 'fa fa-file')), catalog_path(document.id), :class => 'details-link align-right' %>
     </dd>
   </div>
-
 </dl>
-
-<!-- KENKYU START
-<div class="panel panel-default show-tools">
-  <div class="panel-heading">
-    <div class="panel-title"><%# t'ddf.tools.getit' %></div>
-  </div>
-  <div class="panel-body">
-    <%# (document['backlink_ss'] || []).each do |link| %>
-      <div><%# link_to t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank' %></div>
-    <%# end %>
-  </div>
-</div>
-
-<div class="panel panel-default show-tools">
-  <div class="panel-heading">
-    <div class="panel-title"><%# t'ddf.tools.metrics' %></div>
-  </div>
-  <div class="panel-body">
-    <div class='altmetric-embed' data-badge-type='donut' data-badge-popover='left'>
-      <%# altmetric_badge(@document)%></div>
-  </div>
-</div>
-
-<script type='text/javascript'
-src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
-KENKYU END -->
-
