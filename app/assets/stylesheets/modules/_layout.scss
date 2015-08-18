@@ -236,7 +236,7 @@ div.docdetails h2.panel__block-heading i {
 
 div.docdetails div.panel__block-contents { padding: .3em .3em .7em .3em; }
 
-div.availability-panel--show ul.institutions-list i { color: $blue-2; }
+//div.availability-panel--show ul.institutions-list i { color: $blue-2; }
 
 div.availability-panel--show ul.institutions-list a:hover,
 div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
@@ -282,4 +282,4 @@ ul[class$="__resets"] li a {
   color: $link-color-auxiliary;
 }
 
-
+div.panel { border: 0; }

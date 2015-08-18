@@ -18,7 +18,8 @@
       -->
         <% (document['backlink_ss'] || []).each do |link| %>
           <li>
-            <%= link_to((t("source_labels.#{get_backlink_origin link}") + ' <i class="fa fa-external-link-square"></i>').html_safe, link, :target => '_blank') %>
+            <%= link_to(t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
+            <i class="fa fa-external-link-square"></i>
           </li>
         <% end %>
       </ul>

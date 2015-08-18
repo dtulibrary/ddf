@@ -206,9 +206,9 @@ BEM:
 
 The reason for double rather than single hyphens and underscores is so that your block itself can be hyphen delimited, for example:
 
-.site-search {} /* Block */
-.site-search__field {} /* Element */
-.site-search--full {} /* Modifier */
+.site-search {}         /* Block */
+.site-search__field {}  /* Element */
+.site-search--full {}   /* Modifier */
 
 (http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
@@ -225,3 +225,5 @@ COinS example:
 On to the next stage:
 IA for the static pages, start with footer (card sort) and About page
 
+https://commons.wikimedia.org/wiki/Open_Access
+Open Access downloadables.

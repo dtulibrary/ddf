@@ -385,21 +385,27 @@ div.flot-text canvas.flot-overlay {
   font-size: 15px; //FIXME
 }
 
-
 div.search-options-container {
   padding-top: 1.25em;
   @include respond-to($ipad_portrait) { padding: .3em 0 0 0; }
 }
-ul.search-options-list {
-  font-size: calc-em(14px);
+ul.search-extras-list {
+  font-size: calc-em(15px);
   margin: 0;
   @include respond-to($screen-md-min) {
     float: none;
     text-align: center;
   }
 }
-ul.search-options-list li { display: inline-block; }
-ul.search-options-list li:not(:last-child) { margin-right: .5em; }
+ul.search-extras-list li { display: inline-block; }
+ul.search-extras-list li:not(:last-child) { margin-right: .5em; }
+
+ul.search-extras-list li i {
+  position: relative;
+  font-size: calc-em(25px);
+  top: 5px;
+  padding-left: 2px;
+}
 
 a.btn-danger:link,
 a.btn-danger:hover,
@@ -486,8 +492,8 @@ table#search-syntax tr.info a { text-decoration: underline; }
 ul.institutions-list i.fa-external-link-square {
   padding-right: .5em;
   vertical-align: top;
-  font-size: .9em;
-  //color: lighten($link-color, 20%);
+  font-size: .85em;
+  color: rgba(0,0,0, .5);
 }
 
 div.documentHeader {

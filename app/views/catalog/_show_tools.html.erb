@@ -10,16 +10,18 @@
       <ul class="institutions-list">
         <% (@document['backlink_ss'] || []).each do |link| %>
           <li>
-            <%= link_to((t("source_labels.#{get_backlink_origin link}") + ' <i class="fa fa-external-link-square"></i>').html_safe, link, :target => '_blank') %>
+            <%= link_to(t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
+            <i class="fa fa-external-link-square"></i>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
 
+<!--
   <div class=" panel__block">
     <h2 class="panel__block-heading">
-      <%= t('ddf.tools.metrics') %>
+      <%# t('ddf.tools.metrics') %>
       <i class="fa fa-pie-chart"></i>
     </h2>
 
@@ -30,7 +32,7 @@
 
   <div class="panel__block">
     <h2 class="panel__block-heading">
-      <%= t('ddf.tools.open_acess') %>
+      <%# t('ddf.tools.open_acess') %>
       <i class="fa fa-unlock-alt"></i>
     </h2>
 
@@ -38,6 +40,6 @@
       <p>Access or not?</p>
     </div>
   </div>
-
-</div>
+ -->
+ </div>
 

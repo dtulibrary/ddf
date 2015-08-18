@@ -1,26 +1,7 @@
-<ul class="search-options-list align-right">
-  <% if render_bookmarks_control? %>
-  <li>
-    <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
-      <%= t('blacklight.header_links.bookmarks') %>
-      (<span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span>)
-    <% end %>
-  </li>
-  <% end %>
-
-  <% if has_user_authentication_provider? and current_user %>
-    <li>
-      <%= link_to t('blacklight.header_links.saved_searches'), saved_searches_path %>
-    </li>
-  <% end %>
-
-  <!-- debug
-    <li><a href="">Saved Searches</a></li>
-    <li><a href="">Bookmarks</a></li>
-  -->
-
+<ul class="search-extras-list align-right">
   <li>
     <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
+    <i class="glyphicon glyphicon-time"></i>
   </li>
 </ul>
 
