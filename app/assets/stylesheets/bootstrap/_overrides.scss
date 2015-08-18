@@ -19,9 +19,9 @@ dt, dd {
 
 #documents .document {
   border-bottom: 2px dotted #ccc;
-  //margin-top: 1em;
-  padding: .7em 0;
+  padding: .8em 0 .2em 0;
 }
+#documents .document:first-child { padding-top: .4em; }
 #documents .document:last-child { border-bottom: 0; }
 
 .container {

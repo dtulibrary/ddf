@@ -207,6 +207,9 @@ a.details-link {
   top: -9px;
   right: 10px;
 }
+//color overrides:
+//dl.document-metadata dd[class^="ddf-index"] a.details-link { color: rgba(0,0,0, .3); }
+//dl.document-metadata dd[class^="ddf-index"] a.details-link:hover { color: $orange; }
 
 div.docdetails div.panel__block {
   border-top: 2px dashed $blue-3;
