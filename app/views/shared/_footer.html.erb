@@ -1,8 +1,44 @@
 <footer>
   <div class="container">
-   <p>
-     Copyright &copy; 1998-2015 Denmark's Electronic Research Library — Danish Agency for Libraries and Media
-     in cooperation with the Ministry of Culture, Ministry of Science, Technology and Innovation and Ministry of Education.
-   </p>
+    <h1 class="footer-heading">
+      Sitemap
+      <i class="fa fa-sitemap"></i>
+    </h1>
+    <ul class="sitemap">
+      <li class="sitemap__section">
+        <a href="">Search</a>
+        <ul>
+          <li><a href="">Tutorial</a></li>
+          <li><a href="">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="sitemap__section">
+        <a href="">About</a>
+        <ul>
+          <li><a href="">Data formats</a></li>
+          <li><a href="">Data providers</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
+
+  <div role="contentinfo">
+
+   <div class="container">
+     <p class="copyright">
+       <em>Copyright &copy;</em>
+       <!-- <strong class="ddf">Denmark's Electronic Research Library</strong> -->
+       <strong class="ddf">1998&ndash;2015.</strong>
+       In cooperation with:
+       <ul class="stakeholder-logos-list row">
+         <li><%= image_tag("footer/deff_en.jpg") %></li>
+         <li><%= image_tag("footer/ufm_en.png") %></li>
+         <li><%= image_tag("footer/uvm_en.png") %></li>
+         <li><%= image_tag("footer/kum_en.jpg") %></li>
+       </ul>
+     </p>
+   </div>
+
+ </div>
 </footer>

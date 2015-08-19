@@ -215,7 +215,6 @@ The reason for double rather than single hyphens and underscores is so that your
 Det Centrale Kontor for Hygge, Gode Sommerminder, & Opskrifter på Rabarberkompot
 The Central Office for Hygge, Good Summer Memories, & Recipes for Rhubarb Compote
 
-
 17 Aug 2015. TODOs:
 COinS & Zotero & Export to Mendeley
 
@@ -227,3 +226,11 @@ IA for the static pages, start with footer (card sort) and About page
 
 https://commons.wikimedia.org/wiki/Open_Access
 Open Access downloadables.
+
+18 Aug 2015
+Karun combines these two for his algorithm:
+g(stack search algorithm)
+g(tfidf)
+
+All .png files (transparent) in footer:
+http://www.deff.dk/

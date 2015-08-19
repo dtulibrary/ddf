@@ -609,3 +609,82 @@ a.details-link:visited { color: $link-color-auxiliary; }
 
 ul.institutions-list a:hover,
 ul.institutions-list a:visited:hover { color: $orange; }
+
+ul.sitemap { margin-bottom: 1em; }
+ul.sitemap li {
+  list-style-type: none;
+  margin-bottom: .1em;
+}
+
+ul.sitemap a {
+  display: block;
+  color: #fff;
+  padding: .3em;
+  border-bottom: 1px dashed $blue-1;
+  vertical-align: text-bottom;
+}
+ul.sitemap a:hover {
+  background: lighten($blue-1, 10%);
+  color: #fff;
+  border-bottom: 1px dashed $orange;
+  text-decoration: none;
+}
+li.sitemap__section > a { font-weight: bold; }
+
+li.sitemap__section {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2em;
+  @include respond-to($ipad_portrait) { display: block; }
+}
+
+li.sitemap__section > ul {
+  margin-top: .1em;
+  margin-left: 1em;
+  margin-bottom: .7em;
+}
+
+h1.footer-heading {
+  font-size: calc-em(20px);
+  font-family: $headline;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: $blue-4;
+  margin: 0 0 .7em 0;
+}
+h1.footer-heading i {
+  font-size: calc-em(23px);
+  position: relative;
+  top: 2px;
+}
+
+strong.ddf { font-weight: 600; }
+
+div[role="contentinfo"] {
+  background: $blue-4;
+  padding: 1.5em 0 0 0;
+  color: $blue-1;
+}
+
+p.copyright { text-align: center; }
+
+ul.stakeholder-logos-list {
+  margin-top: 2em;
+  margin-bottom: -1em;
+  text-align: center;
+}
+
+ul.stakeholder-logos-list li {
+  display: inline-block;
+  text-align: center;
+  width: 18%;
+  margin: 0 2em 2em 2em;
+  @include respond-to($screen-md-min) { width: 30%; }
+  @include respond-to($iphone_portrait) { width: 60%; }
+}
+
+ul.stakeholder-logos-list li img {
+  width: 100%;
+  vertical-align: bottom;
+}
