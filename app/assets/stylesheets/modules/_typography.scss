@@ -169,6 +169,11 @@ nav.global ul.home {
   margin-top: -5px;
 }
 
+nav.global i.glyphicon-home {
+  font-size: calc-em(13px);
+}
+
+
 // div.navbar-right ul { margin-right: 1em; }
 nav.global > ul.admin li {
   display: inline-block;
@@ -700,6 +705,8 @@ ul.site-sections-list {
   text-align: right;
   margin: 0;
   color: #fff;
+  font-size: calc-em(17.5px);
+  @include respond-to($ipad_portrait) { text-align: center; }
 }
 
 ul.site-sections-list li {
@@ -708,19 +715,29 @@ ul.site-sections-list li {
   //margin-top: 1.25em;
   margin: 0;
   //margin-bottom: 2em;
+  vertical-align: text-top; //WOW!!!
 }
-ul.site-sections-list li:not(:last-child) { margin-right: 1.25em; }
+ul.site-sections-list li:not(:last-child) {
+  margin-right: 1.25em;
+  @include respond-to($iphone_landscape) { margin-right: 0; }
+}
+
 ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
 
 ul.site-sections-list li a {
   display: block;
   margin: .5em 0 .5em 0;
   padding: .3em;
+  font-family: $headline;
+  line-height: 1.25em;
   //background: lighten($bluewood, 30%);
 }
 ul.site-sections-list li a:hover {
   color: #fff;
   text-decoration: none;
+}
+ul.site-sections-list li br {
+  @include above-viewport($iphone_landscape) { display: none; }
 }
 
 ul.site-sections-list li i {
