@@ -53,7 +53,7 @@ body > header {
 // TODO
 body > footer {
   clear: both;
-  background: $blue-1;
+  background: $bluewood;
   padding: 2em 0 0 0;
   font-size: .9rem;
   margin-top: 1em;
@@ -196,9 +196,7 @@ div.availability-panel ul.institutions-list li {
   padding: 0;
   @include respond-to($iphone_landscape) { margin: .1em 0 .1em .1em; }
 }
-div.availability-panel--show ul.institutions-list li {
-  margin-bottom: .3em;
-}
+div.availability-panel--show ul.institutions-list li { margin-bottom: .3em; }
 
 a.details-link {
   display: block;

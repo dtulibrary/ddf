@@ -385,7 +385,7 @@ ul.search-extras-list {
   }
 }
 ul.search-extras-list li { display: inline-block; }
-ul.search-extras-list li:not(:last-child) { margin-right: .5em; }
+//ul.search-extras-list li:not(:last-child) { margin-right: .5em; }
 
 ul.search-extras-list li i {
   position: relative;
@@ -624,7 +624,7 @@ ul.sitemap a {
   vertical-align: text-bottom;
 }
 ul.sitemap a:hover {
-  background: lighten($blue-1, 10%);
+  background: lighten($bluewood, 10%);
   color: #fff;
   border-bottom: 1px dashed $orange;
   text-decoration: none;
@@ -688,3 +688,6 @@ ul.stakeholder-logos-list li img {
   width: 100%;
   vertical-align: bottom;
 }
+
+ul.icon-labels li > a { color: $link-color; }
+ul.icon-labels li > i { color: $link-color-auxiliary; }
