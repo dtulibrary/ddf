@@ -62,7 +62,7 @@ h1.logo {
   letter-spacing: .1em;
   color: $bluewood;
   color: #fff;
-  margin: 0 0 .7em 0;
+  margin: .4em 0 .7em 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
   }
@@ -155,45 +155,45 @@ h5.index a:hover {
   color: #FF530D;
 }
 
-nav[role="main"]  {
+nav.global  {
   padding: .5em 0;
   margin-bottom: 1em;
 }
-nav[role="main"] > ul.admin {
+nav.global > ul.admin {
   margin: 0;
   margin-top: .7em;
   font-size: .9em;
 }
-nav[role="main"] ul.home {
+nav.global ul.home {
   font-size: calc-em(30px);
   margin-top: -5px;
 }
 
 // div.navbar-right ul { margin-right: 1em; }
-nav[role="main"] > ul.admin li {
+nav.global > ul.admin li {
   display: inline-block;
   padding: 0 .3em;
   margin: 0;
 }
-nav[role="main"] > ul.admin a {
+nav.global > ul.admin a {
   //padding: .12em 0;
   padding: 0;
   margin: 0;
 }
-nav[role="main"] > ul.admin a:link,
-nav[role="main"] > ul.admin a:visited,
-nav[role="main"] > ul.admin a:hover,
-nav[role="main"] > ul.admin a:visited:hover,
-nav[role="main"] > ul.admin a:active { background: inherit; }
+nav.global > ul.admin a:link,
+nav.global > ul.admin a:visited,
+nav.global > ul.admin a:hover,
+nav.global > ul.admin a:visited:hover,
+nav.global > ul.admin a:active { background: inherit; }
 
-nav[role="main"] > ul.admin a:hover  { text-decoration: underline; }
+nav.global > ul.admin a:hover  { text-decoration: underline; }
 
-nav[role="main"] > ul.admin a:link    { color: #fff; }
-nav[role="main"] > ul.admin a:visited { color: #fff; }
-nav[role="main"] > ul.admin a:hover,
-nav[role="main"] > ul.admin a:visited:hover,
-nav[role="main"] > ul.admin a:focus,
-nav[role="main"] > ul.admin a:active  { color:  $orange; }
+nav.global > ul.admin a:link    { color: #fff; }
+nav.global > ul.admin a:visited { color: #fff; }
+nav.global > ul.admin a:hover,
+nav.global > ul.admin a:visited:hover,
+nav.global > ul.admin a:focus,
+nav.global > ul.admin a:active  { color:  $orange; }
 
 div.top-panel-heading h4 {
   font-weight: 600;
@@ -286,11 +286,11 @@ h3.search-help {
 }
 h3.search-help--large { font-size: calc-em(18px); }
 
-nav[role="main"] > ul { color: $blue-3; }
-nav[role="main"] > ul li a:link { color: $blue-4; }
-nav[role="main"] > ul li a:visited { color: $blue-4; }
-nav[role="main"] > ul li a:hover { color: $orange; }
-nav[role="main"] > ul li a:active { color: $orange; }
+nav.global > ul { color: $blue-3; }
+nav.global > ul li a:link { color: $blue-4; }
+nav.global > ul li a:visited { color: $blue-4; }
+nav.global > ul li a:hover { color: $orange; }
+nav.global > ul li a:active { color: $orange; }
 
 div.document h1[itemprop="name"],
 div.document h1.show {
@@ -385,14 +385,6 @@ ul.search-extras-list {
   }
 }
 ul.search-extras-list li { display: inline-block; }
-//ul.search-extras-list li:not(:last-child) { margin-right: .5em; }
-
-ul.search-extras-list li i {
-  position: relative;
-  font-size: calc-em(25px);
-  top: 5px;
-  padding-left: 2px;
-}
 
 a.btn-danger:link,
 a.btn-danger:hover,
@@ -690,4 +682,49 @@ ul.stakeholder-logos-list li img {
 }
 
 ul.icon-labels li > a { color: $link-color; }
-ul.icon-labels li > i { color: $link-color-auxiliary; }
+ul.icon-labels li > i {
+  position: relative;
+  font-size: calc-em(25px);
+  top: 5px;
+  padding-left: 2px;
+  color: $link-color-auxiliary;
+}
+ul.icon-labels__topnav li > a { color: #fff; }
+ul.icon-labels__topnav li > i {
+  font-size: calc-em(21px);
+  top: 3px;
+  color: $blue-3;
+}
+
+ul.site-sections-list {
+  text-align: right;
+  margin: 0;
+  color: #fff;
+}
+
+ul.site-sections-list li {
+  display: inline-block;
+  padding: .3em;
+  //margin-top: 1.25em;
+  margin: 0;
+  //margin-bottom: 2em;
+}
+ul.site-sections-list li:not(:last-child) { margin-right: 1.25em; }
+ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
+
+ul.site-sections-list li a {
+  display: block;
+  margin: .5em 0 .5em 0;
+  padding: .3em;
+  //background: lighten($bluewood, 30%);
+}
+ul.site-sections-list li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.site-sections-list li i {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}

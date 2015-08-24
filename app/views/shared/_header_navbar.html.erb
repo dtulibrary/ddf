@@ -1,6 +1,6 @@
   <header>
     <div class="container">
-      <nav role="main" class="row">
+      <nav class="global row">
         <ul class="horizontal pull-left snap-to-grid admin home">
           <li><a href="/"><i class="fa fa-home"></i></a></li>
         </ul>
@@ -8,32 +8,61 @@
         <ul class="locales-list horizontal pull-right snap-to-grid admin">
           <%= render_locale_switcher(:en, :da) %>
         </ul>
-       <%= render :partial=>'/user_login_links' %>
-     </nav>
+        <%= render :partial=>'/user_login_links' %>
+      </nav>
     </div>
 
     <div class="container logo-container">
       <div class="row">
-        <div class="col-md-10">
+
+        <div class="col-md-5">
          <h1 class="logo logo-main">
           <em><%= t('blacklight.national')%></em>
           <%= t('blacklight.research_database')%>
-         </h1>
+        </h1>
+      </div>
+
+
+      <div class="col-md-7">
+
+        <ul class="site-sections-list icon-labels icon-labels__topnav">
+          <li>
+            <i class="glyphicon glyphicon-search"></i>
+            <a href="">Search</a>
+
+          </li>
+          <li>
+            <i class="glyphicon glyphicon-lock"></i>
+            <a href="">Open Access</a>
+
+          </li>
+          <li>
+            <i class="glyphicon glyphicon-education"></i>
+            <a href="">Eliteforsk Award</a>
+
+          </li>
+          <li>
+            <i class="glyphicon glyphicon-info-sign"></i>
+            <a href="">About</a>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="header__wrapper">
+    <div class="container container--searchbox">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render_search_bar %>
+        </div>
+
+        <div class="col-md-4 search-options-container">
+          <%= render :partial=>'/user_search_links' %>
         </div>
       </div>
     </div>
-
-    <div class="header__wrapper">
-      <div class="container container--searchbox">
-        <div class="row">
-          <div class="col-md-8">
-            <%= render_search_bar %>
-          </div>
-
-          <div class="col-md-4 search-options-container">
-            <%= render :partial=>'/user_search_links' %>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 </header>
