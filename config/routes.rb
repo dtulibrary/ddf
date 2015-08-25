@@ -9,7 +9,20 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
-  get 'data-providers' => 'pages#data_providers'
+
+  # SEARCH
+  # get '/search', to: redirect('/catalog')
+  get '/search', to: redirect('/')
+  get 'search/tutorial' => 'pages#tutorial'
+  get 'search/faq' => 'pages#faq'
+
+  # ABOUT
+  get 'about' => 'pages#about'
+  get 'about/data-formats' => 'pages#data_formats'
+  get 'about/data-providers' => 'pages#data_providers'
+  get 'about/contact' => 'pages#contact'
+
+  # OTHER
   get 'pattern-library' => 'pages#pattern_library'
 
   # Example of regular route:

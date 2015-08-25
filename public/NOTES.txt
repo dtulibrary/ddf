@@ -234,3 +234,10 @@ g(tfidf)
 
 All .png files (transparent) in footer:
 http://www.deff.dk/
+
+Multi-select editing with Sublime:
+http://sweetme.at/2013/10/01/multi-select-editing-with-sublime-text/
+CTRL+CMD+G
+
+Use Ctrl + M to jump between open+close brackets in Sublime Text
+https://twitter.com/wesbos/status/624229106821902336

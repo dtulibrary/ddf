@@ -62,7 +62,7 @@ h1.logo {
   letter-spacing: .125em;
   color: $bluewood;
   color: #fff;
-  margin: .5em 0 .7em 0;
+  margin: .4em 0 .7em 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
   }
@@ -715,7 +715,6 @@ ul.site-sections-list li {
   margin: 0;
   //margin-bottom: 2em;
   vertical-align: text-top; //WOW!!!
-  @include respond-to($iphone_landscape) { height: 6em; }
 }
 ul.site-sections-list li:not(:last-child) {
   margin-right: 1.25em;
@@ -726,11 +725,15 @@ ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
 
 ul.site-sections-list li a {
   display: block;
-  margin: .5em 0 .5em 0;
-  padding: .3em;
+  margin: .5em 0 0 0;
+  padding: .3em .3em 1em .3em;
   font-family: $headline;
   line-height: 1.25em;
   color: $blue-3;
+  @include respond-to($iphone_landscape) {
+    height: 3.5em;
+    //padding-bottom: 1em;
+  }
 }
 ul.site-sections-list li:hover a {
   color: #fff;
@@ -746,6 +749,6 @@ ul.site-sections-list li i {
   text-align: center;
 }
 
-li#search { background: lighten($bluewood, 15%); }
-li#search i,
-li#search a { color: #fff; }
+// li#search { background: lighten($bluewood, 15%); }
+// li#search i,
+// li#search a { color: #fff; }
