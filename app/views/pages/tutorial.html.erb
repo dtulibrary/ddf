@@ -1,0 +1,173 @@
+<article class="static">
+
+  <div class="measure">
+    <h1>Search Tutorial</h1>
+
+    <p>Searching the database is done using the <a href="http://www.lucenetutorial.com/lucene-query-syntax.html">Lucene Query Syntax</a>. The available search parameters are:</p>
+  </div>
+
+  <div class="measure-large">
+    <table id="search-parameters" class="one-col-emphasis">
+     <thead>
+       <tr>
+         <th>Search Parameter</th>
+         <th>Prefix to use</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>Author</td>
+         <td>
+           <strong>au:</strong> or <strong>author:</strong> or <strong>authors:</strong>
+           <p class="search-explanation">Example: au:"Smith, Bob"</p>
+         </td>
+       </tr>
+       <tr>
+         <td>Editor</td>
+         <td>
+           <strong>ed:</strong> or <strong>editor:</strong> or <strong>editors:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>Affiliation</td>
+         <td>
+           <strong>af:</strong> or <strong>affiliation:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>Title</td>
+         <td>
+           <strong>ti:</strong> or <strong>title:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Journal title / abbreviated title  /  original title
+         </td>
+         <td>
+           <strong>jo:</strong> or <strong>journal:</strong> or <strong>journaltitle:</strong> or <strong>journal_title:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Abstract
+         </td>
+         <td>
+           <strong>ab:</strong> or <strong>abstr:</strong> or <strong>abstract:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           ISBN
+         </td>
+         <td>
+           <strong>isbn:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           ISSN
+         </td>
+         <td>
+           <strong>issn:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           DOI
+         </td>
+         <td>
+           <strong>doi:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Publication year
+         </td>
+         <td>
+           <strong>y:</strong> or <strong>year:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Publisher
+         </td>
+         <td>
+           <strong>pu:</strong> or <strong>pub:</strong> or <strong>publisher:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Volume
+         </td>
+         <td>
+           <strong>v:</strong> or <strong>vol:</strong> or <strong>volume:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Issue
+         </td>
+         <td>
+           <strong>i:</strong> or <strong>iss:</strong> or <strong>issue:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Page start
+         </td>
+         <td>
+           <strong>p:</strong> or <strong>page:</strong>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           Keyword
+         </td>
+         <td>
+           <strong>kw:</strong> or <strong>ke:</strong> or <strong>key:</strong> or <strong>keyword:</strong> or <strong>keywords:</strong> or <strong>su:</strong> or <strong>subj:</strong> or <strong>subject:</strong>
+
+           <p class="search-explanation">There are no controlled keywords in DDF — but searching for keywords might return highly relevant records.</p>
+         </td>
+       </tr>
+     </tbody>
+   </table>
+ </div>
+
+ <div class="measure">
+   <h2>Clustering of search combinations</h2>
+
+   <p>Use parentheses to cluster different search combinations/operators in advanced search strings. Example:</p>
+
+   <p class="search-example">(waste OR pollution) AND (denmark OR sweden)</p>
+
+   <h2>Phrase search</h2>
+   <p>Search for a phrase by enclosing the words in quotation marks:</p>
+
+   <p class="search-example">"neural circuit"</p>
+
+   <h2>Proximity searches</h2>
+   <p>You can specify search terms to be within a certain number of words apart. To do a proximity search use the tilde ~ symbol at the end of a Phrase. To search for emotional and individuals to be within 3 words of each other in a record, specify the search like this:</p>
+
+   <p class="search-example">"emotional individuals"~3</p>
+
+   <h2>Search operators</h2>
+   <p>AND is default if you do not type anything between multiple search terms. Search operators like AND OR must be all caps.</p>
+
+   <h2>Stemming</h2>
+   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term test you also retrieve hits on tests tested testing etc.</p>
+
+   <h2>Truncation and wild card matching</h2>
+   <p>In most cases truncation is not necessary because of the default  stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
+
+   <h2>Year range searches</h2>
+   <p>Search for records published between 2006 and 2008 like so:</p>
+
+   <p class="search-example">year:[2006 TO 2008]</p>
+
+   <p>Search results can be ranked on various parameters. The default is relevance, which gives a priority boost to the <em>title</em> data element.</p>
+
+   <p>To refine search results, the database offers a selection of facets, which allows for narrowing down on various parameters.</p>
+ </div>
+</article>
+

@@ -7,8 +7,16 @@
   @include respond-to($ipad_portrait) { width: 90%; }
 }
 .measure {
-  width: $cols8;
+  width: $cols10;
   @include centered;
+  //TODO:
+  @include respond-to($cols12) { width: 85%; }
+  @include respond-to($iphone_landscape) { width: 90%; }
+}
+.measure-large {
+  width: $cols13;
+  @include centered;
+  //TODO:
   @include respond-to($cols12) { width: 85%; }
   @include respond-to($iphone_landscape) { width: 90%; }
 }
@@ -288,3 +296,5 @@ div.pagination {
   margin-top: 0;
   margin-bottom: 1em;
 }
+
+article.static { margin-bottom: 3em; }

@@ -28,9 +28,7 @@ module BlacklightHelper
 
   # TODO
   def render_index_doc_actions(document, options={})
-    url = request.url
-    return_url = (params && params[:url]) ? params[:url] : url
-
+    return_url = params[:url] || request.url
     actions = []
     actions << content_tag("li", render_cite_action(document, options={}))
     actions << content_tag("li", render_export_action(document, :return_url => return_url))
@@ -45,8 +43,8 @@ module BlacklightHelper
   end
 
   def render_export_action(document, options={})
-    if show_feature?(:mendeley) && document[:format] != "journal"
-      render('catalog/export_button', :document => document, :return_url => :return_url)
+    if document[:format] != "journal"
+      render('catalog/export_button', :document => document, :return_url => options[:return_url])
     end
   end
 

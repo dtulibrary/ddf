@@ -27,6 +27,7 @@ en:
     search:
       fields:
         default: "Search terms"
+        format_orig_s: Type
         index:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -44,7 +45,6 @@ en:
           source_ss: Research Institution
         facet:
           author_facet: Author
-          format_orig_s: Type
           journal_title_facet: Journal Title
           pub_date_tsort: Publication Year
           research_area_ss: Research Area

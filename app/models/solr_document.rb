@@ -188,7 +188,7 @@ class SolrDocument
     format = openurl_format(self[:format])
 
     @context_object = OpenURL::ContextObject.new
-    @context_object.referrer.add_identifier('info:sid/findit.dtu.dk')
+    @context_object.referrer.add_identifier('info:sid/ddf')
     @context_object.referent.set_format(format)
     @context_object.referent.set_metadata('genre', genre)
 

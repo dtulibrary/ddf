@@ -35,21 +35,11 @@ class CatalogController < ApplicationController
   }
     # solr field configuration for search results/index views
     config.index.title_field = 'title_ts'
-    config.index.display_type_field = 'format'
-    config.index.source_id = 'source_ss'
-    config.index.affiliation_field = 'affiliation_ts'
-    config.index.doi_id = 'doi_ss'
 
     # solr field configuration for document/show views
     config.show.title_field = 'title_ts'
-    config.show.display_type_field = 'format'
-    config.show.affiliation_field = 'affiliation_ts'
-    config.show.source_id = 'source_ss'
-    config.show.conference_field = 'conf_title_ts'
-    config.show.publisher_field = 'publisher_ts'
-    config.show.isbn_id = 'isbn_ss'
-    config.show.issn_id = 'issn_ss'
-    config.show.doi_id = 'doi_ss'
+    # config.show.display_type_field = 'format'
+
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     #
@@ -116,42 +106,29 @@ class CatalogController < ApplicationController
 
     # ALL INDEX FIELDS:
     config.add_index_field 'author_ts', :label => 'Authors', :separator => ' ; '
-    config.add_index_field 'format', :label => 'Type' #, :helper_method => :render_format_field_index
+    config.add_index_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_format_field_index
     config.add_index_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
     # config.add_index_field 'doi_ss', :label => 'DOI'
     config.add_index_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
     config.add_index_field 'research_area_ss', :label => 'Research Area'
     config.add_index_field 'series_title_ts', :label => 'Series'
-    #
-    # THESE TWO OUTPUT HTML FOR SOME REASON:
-    # config.add_index_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field
-    # config.add_index_field 'source_ss', :label => 'Source', :helper_method => :render_source_field
 
-
-    # TODO: Enable this when research area codes are available
-    # config.add_index_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field
-    # config.add_index_field 'series_title_ts'
-    # config.add_index_field 'source_ss', :helper_method => :render_source_field
-    # solr fields to be displayed in the show (single result) view
-    # The ordering of the field names is the order of the display
+    # ALL SHOW FIELDS:
     config.add_show_field 'author_ts', :label => 'Authors', :separator => ' ; '
+    config.add_show_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_format_field_index
     config.add_show_field 'affiliation_ts', :label => 'Affiliation'
-    # config.add_show_field 'format', :helper_method => :render_format_field_index
-    # config.add_show_field 'journal_title_ts',:helper_method => :render_journal_info
-    config.add_show_field 'publisher_ts', :label => 'Publisher'
-    config.add_show_field 'doi_ss', :label => 'DOI'
-    config.add_show_field 'isbn_ss', :label => 'ISBN'
-    config.add_show_field 'issn_ss', :label => 'ISSN'
+    config.add_show_field 'language_ss', :label => 'Language' #TODO
 
-    # UGH?
-    # config.add_show_field 'abstract_ts', :helper_method => :snip_abstract
-
-    config.add_show_field 'conf_title_ts'
-    config.add_show_field 'language_ss', :label => 'Language'
     # TODO: Enable this when research area codes are available
     #config.add_show_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field
-    config.add_show_field 'series_title_ts'
     config.add_show_field 'research_area_ss', :label => 'Research Area'
+
+    # MAYBE LATER:
+    # config.add_show_field 'publisher_ts', :label => 'Publisher'
+    # config.add_show_field 'doi_ss', :label => 'DOI'
+    # config.add_show_field 'isbn_ss', :label => 'ISBN'
+    # config.add_show_field 'issn_ss', :label => 'ISSN'
+
     # config.add_show_field 'source_ss', :helper_method => :render_source_field
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
