@@ -710,7 +710,7 @@ ul.site-sections-list {
 
 ul.site-sections-list li {
   display: inline-block;
-  padding: .3em .3em .1em .3em;
+  padding: .3em 0 .1em 0;
   //margin-top: 1.25em;
   margin: 0;
   //margin-bottom: 2em;
@@ -718,7 +718,7 @@ ul.site-sections-list li {
 }
 ul.site-sections-list li:not(:last-child) {
   margin-right: 1.25em;
-  @include respond-to($iphone_landscape) { margin-right: 0; }
+  //@include respond-to($iphone_landscape) { margin-right: 0; }
 }
 
 ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }

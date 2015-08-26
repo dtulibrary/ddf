@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   get 'search/tutorial' => 'pages#tutorial'
   get 'search/faq' => 'pages#faq'
 
+  # OPEN ACCESS
+  get '/open-access' => 'pages#open_access'
+
+  # ELITEFORSK AWARD
+  get '/eliteforsk-award' => 'pages#eliteforsk_award'
+
   # ABOUT
   get 'about' => 'pages#about'
   get 'about/data-formats' => 'pages#data_formats'
