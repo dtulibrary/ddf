@@ -241,3 +241,6 @@ CTRL+CMD+G
 
 Use Ctrl + M to jump between open+close brackets in Sublime Text
 https://twitter.com/wesbos/status/624229106821902336
+
+Marking up organizations' addresses:
+http://html5doctor.com/microformats/#hcard-org
