@@ -43,6 +43,7 @@ gem 'citeproc-ruby'
 gem 'csl-styles'
 gem 'netaddr'
 gem 'openurl'
+gem 'sqlite3'
 
 group :assets do
   gem 'uglifier', '>= 1.3.0'

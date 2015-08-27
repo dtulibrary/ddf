@@ -6,7 +6,7 @@
 
   <ul class="dropdown-menu pull-right export_menu">
     <li class="mendeley">
-      <%= link_to content_tag('i', '', :class => 'icon-mendeley') + t('ddf.tools.mendeley'), '#', :class => 'save-to-mendeley-api', :data => {:document => document.id } %>
+      <%= link_to content_tag('i', '', :class => 'icon-mendeley') + t('ddf.tools.mendeley'), '#', :class => 'save-to-mendeley' %>
     </li>
 
     <% if document.export_formats && document.export_formats.keys.include?( :bib ) %>
