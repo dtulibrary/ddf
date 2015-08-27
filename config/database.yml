@@ -83,3 +83,6 @@ production:
   database: ddf_production
   username: ddf
   password: <%= ENV['DDF_DATABASE_PASSWORD'] %>
+
+<%= file = File.join("config", "database.local.yml")
+  IO.read(file) if File.exist?(file) %>

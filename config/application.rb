@@ -40,6 +40,3 @@ module Ddf
     config.solr_document = { :document_id => 'cluster_id_ss' }
   end
 end
-
-ActiveSupport::Dependencies.autoload_paths << File::join( Rails.root, 'lib/document')
-ActiveSupport::Dependencies.explicitly_unloadable_constants << 'References'
