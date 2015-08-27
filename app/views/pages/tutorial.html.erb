@@ -153,7 +153,7 @@
    </p>
 
    <h2>Proximity searches</h2>
-   <p>You can specify search terms to be within a certain number of words apart. To do a proximity search use the tilde ~ symbol at the end of a Phrase. To search for emotional and individuals to be within 3 words of each other in a record, specify the search like this:</p>
+   <p>You can specify search terms to be within a certain number of words apart. To do a proximity search use the tilde <strong>~</strong> symbol at the end of a phrase. To search for <strong>emotional</strong> and <strong>individuals</strong> within 3 words of each other in a record, specify the search like this:</p>
 
    <p class="search-example">
     "emotional individuals"~3
@@ -164,7 +164,7 @@
    <p>AND is default if you do not type anything between multiple search terms. Search operators like AND OR must be all caps.</p>
 
    <h2>Stemming</h2>
-   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term test you also retrieve hits on tests tested testing etc.</p>
+   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term <strong>test</strong> you also retrieve hits on <strong>tests</strong>, <strong>tested</strong>, <strong>testing</strong>, etc.</p>
 
    <h2>Truncation and wild card matching</h2>
    <p>In most cases truncation is not necessary because of the default  stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>

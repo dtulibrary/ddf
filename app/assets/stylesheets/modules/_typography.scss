@@ -816,3 +816,20 @@ table.one-col-emphasis tr:hover td {
   color: #339;
   background: #eff2ff;
 }
+
+article.static a:link {
+  color: $link-color;
+  //text-decoration: underline;
+  border-bottom: 1px dotted $blue-2;
+}
+article.static a:hover,
+article.static a:visited:hover {
+  color: $orange;
+  text-decoration: none;
+  background: $blue-4;
+}
+article.static a:visited { color: inherit; }
+
+ul.faq-list {
+  margin: 1.5em 0 2em 0;
+}
