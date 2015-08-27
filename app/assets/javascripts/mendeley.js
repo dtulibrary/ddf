@@ -14,7 +14,7 @@
          *      of single document on index and show pages.
          */
         $('.Z3988').addClass('Z3988-hidden').removeClass('Z3988');
-        closestDoc.addClass('Z3988').removeClass('Z3988-hidden');
+        closestDoc.find('.Z3988-hidden').addClass('Z3988').removeClass('Z3988-hidden');
       }
 
       // Append Mendeley script which triggers the web importer to open
