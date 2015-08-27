@@ -772,6 +772,14 @@ article.static h3 {}
 p.search-example {
   border: 1px solid $blue-3;
   padding: .5em;
+  position: relative;
+}
+
+p.search-example i.glyphicon {
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  color: $blue-2;
 }
 
 span.search-example {
@@ -779,9 +787,7 @@ span.search-example {
   padding: 0 .5em .2em .5em;
 }
 
-p.search-explanation {
-  margin: .5em 0;
-}
+p.search-explanation { margin: .5em 0 0 0; }
 
 span.search-result {
   //font-style: italic;
