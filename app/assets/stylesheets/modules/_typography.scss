@@ -830,6 +830,11 @@ article.static a:visited:hover {
 }
 article.static a:visited { color: inherit; }
 
-ul.faq-list {
-  margin: 1.5em 0 2em 0;
+ul.faq-list { margin: 1.5em 0 2em 0; }
+
+span.p-intro {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .07em;
 }
+
