@@ -756,13 +756,15 @@ ul.site-sections-list li i {
 article.static h1 {
   font-family: $headline;
   font-size: calc-em(30px);
+  margin: .3em 0 .7em 0;
   font-weight: 400;
   color: $bluewood;
 }
 
 article.static h2 {
   font-family: $headline;
-  font-size: calc-em(24px);
+  font-size: calc-em(23px);
+  margin: .1em 0 .3em 0;
   font-weight: 400;
   color: $bluewood;
 }
@@ -797,6 +799,7 @@ span.search-result {
 table.one-col-emphasis {
   text-align: left;
   border-collapse: collapse;
+  margin-bottom: 2em;
 }
 table.one-col-emphasis th {
   padding: 12px 15px;
@@ -838,3 +841,4 @@ span.p-intro {
   letter-spacing: .07em;
 }
 
+strong.name { font-weight: 600; }
