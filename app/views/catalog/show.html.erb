@@ -10,9 +10,9 @@
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
     </div>
+     <%= render :partial => 'openurl',  :locals => { :document => @document } %>
   </div>
 
- <%= render :partial => 'openurl',  :locals => { :document => @document } %>
 </div>
 
 <div id="sidebar" class="col-md-3 col-sm-4">
