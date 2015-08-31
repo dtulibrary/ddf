@@ -155,51 +155,33 @@ h5.index a:hover {
   color: #FF530D;
 }
 
-nav.global  {
-  padding: .5em 0;
-  margin-bottom: 1em;
-  @include respond-to($screen-lg-min) { margin-bottom: 0; }
-}
-nav.global > ul.admin {
-  margin: 0;
-  margin-top: .7em;
+ul.admin {
+  margin: .7em .5em 0 0;
   font-size: .9em;
+  float: right;
+  font-style: italic;
+  font-family: $headline;
 }
-nav.global ul.home {
-  font-size: calc-em(30px);
-  margin-top: -5px;
-}
-
-nav.global i.glyphicon-home {
-  font-size: calc-em(12px);
-}
-
-
-// div.navbar-right ul { margin-right: 1em; }
-nav.global > ul.admin li {
+ul.admin li {
   display: inline-block;
   padding: 0 .3em;
   margin: 0;
 }
-nav.global > ul.admin a {
-  //padding: .12em 0;
+ul.admin a {
   padding: 0;
   margin: 0;
 }
-nav.global > ul.admin a:link,
-nav.global > ul.admin a:visited,
-nav.global > ul.admin a:hover,
-nav.global > ul.admin a:visited:hover,
-nav.global > ul.admin a:active { background: inherit; }
+ul.admin a:link    { color: #fff; }
+ul.admin a:visited { color: #fff; }
+ul.admin a:hover,
+ul.admin a:visited:hover,
+ul.admin a:focus,
+ul.admin a:active  { color:  $orange; }
 
-nav.global > ul.admin a:hover  { text-decoration: underline; }
-
-nav.global > ul.admin a:link    { color: #fff; }
-nav.global > ul.admin a:visited { color: #fff; }
-nav.global > ul.admin a:hover,
-nav.global > ul.admin a:visited:hover,
-nav.global > ul.admin a:focus,
-nav.global > ul.admin a:active  { color:  $orange; }
+ul.admin .glyphicon-flag {
+  padding-right: .3em;
+  color: $blue-4;
+}
 
 div.top-panel-heading h4 {
   font-weight: 600;
@@ -705,7 +687,7 @@ ul.icon-labels__topnav li > i {
 ul.site-sections-list {
   text-align: right;
   margin: 0;
-  @include respond-to($screen-lg-min) { text-align: center; }
+  @include respond-to($iphone_landscape) { text-align: center; }
 }
 
 ul.site-sections-list li {
@@ -749,9 +731,29 @@ ul.site-sections-list li i {
   text-align: center;
 }
 
-// li#search { background: lighten($bluewood, 15%); }
-// li#search i,
-// li#search a { color: #fff; }
+body[class$="-pages-index"] li#search { background: lighten($bluewood, 15%); }
+body[class$="-pages-index"] li#search i,
+body[class$="-pages-index"] li#search a { color: #fff; }
+
+body[class$="search"] li#search { background: lighten($bluewood, 15%); }
+body[class$="search"] li#search i,
+body[class$="search"] li#search a { color: #fff; }
+
+body[class$="about"] li#about { background: lighten($bluewood, 15%); }
+body[class$="about"] li#about i,
+body[class$="about"] li#about a { color: #fff; }
+
+body[class*="data_formats"] li#data-formats { background: lighten($bluewood, 15%); }
+body[class*="data_formats"] li#data-formats i,
+body[class*="data_formats"] li#data-formats a { color: #fff; }
+
+body[class*="data_providers"] li#data-providers { background: lighten($bluewood, 15%); }
+body[class*="data_providers"] li#data-providers i,
+body[class*="data_providers"] li#data-providers a { color: #fff; }
+
+body[class*="contact"] li#contact { background: lighten($bluewood, 15%); }
+body[class*="contact"] li#contact i,
+body[class*="contact"] li#contact a { color: #fff; }
 
 article.static h1 {
   font-family: $headline;
@@ -842,5 +844,66 @@ span.p-intro {
 }
 
 strong.name { font-weight: 600; }
+address.adr { margin-left: 1em; }
 
-p.adr { margin-left: 1em; }
+div.upper-panel { margin-bottom: 1em; }
+
+h1.logo a:link,
+h1.logo a:hover,
+h1.logo a:visited,
+h1.logo a:visited:hover,
+h1.logo a:visited:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1.site-section {
+  font-family: $serif;
+  font-size: calc-em(30px);
+  font-style: italic;
+  margin: .1em 0 0 0;
+  color: $blue-1;
+}
+
+h1.site-section .glyphicon {
+  font-size: .7em;
+  color: rgba(0,0,0, .5);
+  color: $blue-2;
+}
+
+ul.subnav-items-list {
+  margin: .25em 0 0 0;
+  font-family: $headline;
+  text-align: right;
+  @include respond-to($iphone_landscape) {
+    text-align: left;
+    margin: .125em 0 0 0;
+  }
+}
+
+ul.subnav-items-list li {
+  margin: 0;
+  display: inline-block;
+  @include respond-to($iphone_landscape) { display: block; }
+  //border-radius: 4px;
+}
+ul.subnav-items-list li:not(:last-child) {
+  margin-right: 1em;
+  @include respond-to($iphone_landscape) { margin-right: 0; }
+}
+
+ul.subnav-items-list li a {
+  padding: .3em .2em;
+
+  @include respond-to($iphone_landscape) {
+    display: block;
+  }
+}
+
+ul.subnav-items-list li a:hover {
+  @include respond-to($iphone_landscape) {
+    background: darken($blue-4, 10%);
+    text-decoration: none;
+  }
+}
+

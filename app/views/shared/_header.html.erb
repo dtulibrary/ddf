@@ -1,49 +1,50 @@
-<div class="container">
-  <nav class="global row">
-    <ul class="horizontal pull-left snap-to-grid admin home">
-      <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-    </ul>
-
-    <ul class="locales-list horizontal pull-right snap-to-grid admin">
-      <%= render_locale_switcher(:en, :da) %>
-    </ul>
-    <%= render :partial=>'/user_login_links' %>
-  </nav>
-</div>
-
-<div class="container logo-container">
+<div class="container upper-panel">
   <div class="row">
-    <div class="col-md-5">
-      <h1 class="logo logo-main">
-        <em><%= t('blacklight.national')%></em>
-        <%= t('blacklight.research_database')%>
-      </h1>
-    </div>
-
-    <div class="col-md-7">
-      <ul class="site-sections-list icon-labels icon-labels__topnav">
-        <li id="search">
-          <i class="glyphicon glyphicon-search"></i>
-          <a href="/">Search</a>
-        </li>
-
-
-        <li id="open-access">
-          <i class="glyphicon glyphicon-lock"></i>
-          <a href="/open-access">Open<br /> Access</a>
-        </li>
-        <li id="eliteforsk-award">
-          <i class="glyphicon glyphicon-education"></i>
-          <a href="/eliteforsk-award">Eliteforsk<br /> Award</a>
-        </li>
-
-
-        <li id="about">
-          <i class="glyphicon glyphicon-info-sign"></i>
-          <a href="/about">About</a>
-        </li>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <ul class="locales-list horizontal admin">
+        <i class="glyphicon glyphicon-flag"></i>
+        <%= render_locale_switcher(:en, :da) %>
       </ul>
     </div>
   </div>
 </div>
-<!-- GLOBAL NAV ENDS HERE -->
+
+<nav role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="logo logo-main">
+          <a href="/">
+            <em><%= t('blacklight.national')%></em>
+            <%= t('blacklight.research_database')%>
+          </a>
+        </h1>
+      </div>
+
+      <div class="col-md-7">
+        <ul class="site-sections-list icon-labels icon-labels__topnav">
+          <li id="search">
+            <i class="glyphicon glyphicon-search"></i>
+            <a href="/">Search</a>
+          </li>
+
+
+          <li id="open-access">
+            <i class="glyphicon glyphicon-lock"></i>
+            <a href="/open-access">Open<br /> Access</a>
+          </li>
+          <li id="eliteforsk-award">
+            <i class="glyphicon glyphicon-education"></i>
+            <a href="/eliteforsk-award">Eliteforsk<br /> Award</a>
+          </li>
+
+
+          <li id="about">
+            <i class="glyphicon glyphicon-info-sign"></i>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
