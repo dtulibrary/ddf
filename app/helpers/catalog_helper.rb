@@ -25,6 +25,15 @@ module CatalogHelper
     args[:document]['research_area_ss'].collect {|s| t "research_area_labels.#{s}"}.join ' ; '
   end
 
+  def render_show_field_value(opts)
+    field = opts[:document][opts[:field]]
+    if field.is_a? Array
+      field.map {|s| t "source_labels.#{s}"}.join ' ; ' #TODO
+    else
+      t "source_labels.#{field}" #TODO
+    end
+  end
+
   def get_backlink_origin link
     case link
     when /^https?:\/\/orbit\.dtu\.dk/

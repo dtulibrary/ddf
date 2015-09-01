@@ -34,7 +34,7 @@ en:
           author_ts: Authors
           conf_title_ts: Conference
           doi_ss: DOI
-          format: Type
+          format_orig_s: Type
           isbn_ss: ISBN
           issn_ss: ISSN
           journal_title_ts: Published in
@@ -50,6 +50,7 @@ en:
           research_area_ss: Research Area
           source_ss: Research Institution
           isolanguage_ss: Language
+          access_condition_s: State
         show:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -144,11 +145,12 @@ en:
     rdb_fak: Royal Danish Defence College
     rdb_ka: Ministry of Culture
 
-  language_labels:
-    eng: English
-    dan: Danish
-    ger: German
-    und: Undetermined
+    published: Published
+    unknown: Unknown
+    submitted: Submitted
+    accepted: Accepted
+    in_press: "In press"
+    unpublished: Unpublished
 
   ddf:
     research_area_labels:

@@ -112,30 +112,26 @@ h1.facet-heading {
 h1.facet-heading span.close { font-size: 1.4em; }
 /* PROTOTYPE END */
 
-dl.document-metadata {
-  margin-bottom: 1.25em;
-  //possible to accommodate longer fields by decreasing font size, though effect not as good:
-  //font-size: .9rem;
-}
+#document { margin-bottom: 3em; }
 
-dl.document-metadata dt[class^="blacklight-"],
-dl.document-metadata dt[class^="ddf-index"] {
-  font-weight: 600;
-  color: #333;
-  //width: 160px; -> the default
-  //width: 180px; -> to accommodate longer fields
-  // the proper way to override width:
-  //@include above-viewport($ipad_portrait) { width: 180px; }
-  //background: #aaa;
-}
-dl.document-metadata dd[class^="blacklight-"],
-dl.document-metadata dd[class^="ddf-index"] {
-  margin-bottom: .3em;
-  //margin-left: 180px; -> the default
-  //margin-left: 190px; -> to accommodate longer fields
-  // the proper way to override left margin:
-  //@include above-viewport($ipad_portrait) { margin-left: 190px; }
-}
+// #documents dt[class^="blacklight-"], #documents dt[class^="ddf-index"],
+// #document dt[class^="blacklight-"], #document dt[class^="ddf-index"] {
+//   font-weight: 600;
+//   color: #333;
+//   //width: 160px; -> the default
+//   //width: 180px; -> to accommodate longer fields
+//   // the proper way to override width:
+//   //@include above-viewport($ipad_portrait) { width: 180px; }
+//   //background: #aaa;
+// }
+// #documents dd[class^="blacklight-"], #documents dd[class^="ddf-index"],
+// #document dd[class^="blacklight-"], #document dd[class^="ddf-index"] {
+//   margin-bottom: .3em;
+//   //margin-left: 180px; -> the default
+//   //margin-left: 190px; -> to accommodate longer fields
+//   // the proper way to override left margin:
+//   //@include above-viewport($ipad_portrait) { margin-left: 190px; }
+// }
 
 h5.index {
   font-family: $headline;

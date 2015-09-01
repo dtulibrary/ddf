@@ -45,7 +45,7 @@ da:
           author_ts: Forfattere
           conf_title_ts: Konference
           doi_ss: DOI
-          format: Type
+          format_orig_s: Type
           isbn_ss: ISBN
           issn_ss: ISSN
           journal_title_ts: Udgivet i
@@ -62,6 +62,7 @@ da:
           research_area_ss: Hovedforskningsområde
           source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
+          access_condition_s: Status
         show:
           abstract_ts: Abstrakt
           affiliation_ts: Tilhørsforhold
@@ -144,6 +145,14 @@ da:
     drt: Radio/Tv-udsendelse
     dx:  Exhibition catalogue
     do:  Andet
+
+    published: Publiceret
+    unknown: Ukendt
+    submitted: Indsendt
+    accepted: Accepteret
+    in_press: "I trykken"
+    unpublished: Upubliceret
+
   research_area_labels:
     Humanities: Humaniora
     Social science: 'Samfundsvidenskab'
@@ -162,6 +171,14 @@ da:
     rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
     rdb_fak: Forsvarsakademiet
     rdb_ka: Kulturministeriet
+
+    published: Publiceret
+    unknown: Ukendt
+    submitted: Indsendt
+    accepted: Accepteret
+    in_press: "I trykken"
+    unpublished: Upubliceret
+
   ddf:
     search:
       form:
