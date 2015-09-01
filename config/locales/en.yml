@@ -49,6 +49,7 @@ en:
           pub_date_tsort: Publication Year
           research_area_ss: Research Area
           source_ss: Research Institution
+          isolanguage_ss: Language
         show:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -71,6 +72,31 @@ en:
       atom_feed: 'Atom for results'
 
   mxd_type_labels:
+    eng: English
+    dan: Danish
+    ger: German
+    chi: Chinese
+    fre: French
+    spa: Spanish
+    ita: Italian
+    swe: Swedish
+    fin: Finnish
+    nor: Norwegian
+    rus: Russian
+    dut: Dutch
+    por: Portuguese
+    ice: Icelandic
+    tur: Turkish
+    vie: Vietnamese
+    gre: Greek
+    hun: Hungarian
+    pol: Polish
+    jpn: Japanese
+    lit: Lithuanian
+    cze: Czech
+    und: Undetermined
+    mul: Multiple languages
+
     dja: Journal article
     djl: Letter to the editor
     djc: Journal comment
@@ -117,6 +143,13 @@ en:
     rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
     rdb_fak: Royal Danish Defence College
     rdb_ka: Ministry of Culture
+
+  language_labels:
+    eng: English
+    dan: Danish
+    ger: German
+    und: Undetermined
+
   ddf:
     research_area_labels:
       hum: Humanities

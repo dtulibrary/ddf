@@ -88,6 +88,9 @@ class CatalogController < ApplicationController
   config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
   config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
   config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
+  config.add_facet_field 'isolanguage_ss', :label => I18n.t('blacklight.search.fields.facet.isolanguage_ss'), :helper_method => :render_format_field_facet
+  # config.add_facet_field 'pub_status', :label => I18n.t('blacklight.search.fields.facet.pub_status'), :helper_method => :render_format_field_facet
+
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -118,6 +121,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_format_field_index
     config.add_show_field 'affiliation_ts', :label => 'Affiliation'
     config.add_show_field 'language_ss', :label => 'Language' #TODO
+    config.add_show_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
+    config.add_show_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
 
     # TODO: Enable this when research area codes are available
     #config.add_show_field 'research_area_ss', :label => 'Research Area', :helper_method => :render_research_area_field

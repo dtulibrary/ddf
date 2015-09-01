@@ -61,6 +61,7 @@ da:
           pub_date_tsort: Udgivelsesår
           research_area_ss: Hovedforskningsområde
           source_ss: Forskningsinstitution
+          isolanguage_ss: Sprog
         show:
           abstract_ts: Abstrakt
           affiliation_ts: Tilhørsforhold
@@ -90,6 +91,31 @@ da:
       atom_feed: 'Atom for results'
 
   mxd_type_labels:
+    eng: Engelsk
+    dan: Dansk
+    ger: Tysk
+    chi: Kinesisk
+    fre: Fransk
+    spa: Spansk
+    ita: Italiensk
+    swe: Svensk
+    fin: Finsk
+    nor: Norsk
+    rus: Russisk
+    dut: Nederlandsk
+    por: Portugisisk
+    ice: Islandsk
+    tur: Tyrkisk
+    vie: Vietnamesisk
+    gre: Græsk
+    hun: Ungarsk
+    pol: Polsk
+    jpn: Japansk
+    lit: Litauisk
+    cze: Tjekkisk
+    und: Udefineret
+    mul: Flere sprog
+
     dja: Tidsskrift-artikel
     djl: Tidsskrift-brev til redaktøren
     djc: Tidsskrift-kommentar
