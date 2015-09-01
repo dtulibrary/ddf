@@ -296,3 +296,22 @@ div.pagination {
 }
 
 article.static { margin-bottom: 3em; }
+
+div.separator div[class^="col-"]:not(:last-child) {
+  border-right: 2px dashed rgba(0,0,0, .3);
+  @include respond-to($screen-md-min) {
+    border-right: 0;
+    border-bottom: 2px dashed rgba(0,0,0, .3);
+  }
+}
+
+div.separator div[class^="col-"]:not(:first-child) {
+  @include respond-to($screen-md-min) {
+    padding-top: 1.5em;
+  }
+}
+
+figure#deff {
+  width: 70%;
+  @include respond-to($screen-md-min) { width: $cols4; }
+}

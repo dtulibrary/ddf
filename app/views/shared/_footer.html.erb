@@ -24,21 +24,28 @@
   </div>
 
   <div role="contentinfo">
-
    <div class="container">
-     <p class="copyright">
-       <em>Copyright &copy;</em>
-       <!-- <strong class="ddf">Denmark's Electronic Research Library</strong> -->
-       <strong class="ddf">1998&ndash;2015.</strong>
-       In cooperation with:
-       <ul class="stakeholder-logos-list row">
-         <li><%= image_tag("footer/deff_en.png") %></li>
-         <li><%= image_tag("footer/fivu_en.png") %></li>
-         <li><%= image_tag("footer/uvm_en.png") %></li>
-         <li><%= image_tag("footer/kum_en.png") %></li>
-       </ul>
-     </p>
-   </div>
+     <div class="row separator">
+       <div class="col-md-4">
+         <p class="copyright">
+           <em>Copyright &copy;</em>
+           <!-- <strong class="ddf">Denmark's Electronic Research Library</strong> -->
+           <strong class="ddf">1998&ndash;2015.</strong>
+           <figure id="deff">
+            <%= image_tag("footer/deff_en.png") %>
+           </figure>
+         </p>
+       </div>
 
+       <div class="col-md-8">
+         <p>In cooperation with:</p>
+         <ul class="collaborator-logos-list row">
+           <li><%= image_tag("footer/fivu_en.png") %></li>
+           <li><%= image_tag("footer/uvm_en.png") %></li>
+           <li><%= image_tag("footer/kum_en.png") %></li>
+         </ul>
+       </div>
+     </div>
+   </div>
  </div>
 </footer>

@@ -244,3 +244,33 @@ https://twitter.com/wesbos/status/624229106821902336
 
 Marking up organizations' addresses:
 http://html5doctor.com/microformats/#hcard-org
+
+
+
+ul.collaborator-logos-list {
+  margin-top: 2em;
+  margin-bottom: -1em;
+  text-align: center;
+}
+
+ul.collaborator-logos-list li {
+  display: inline-block;
+  text-align: center;
+  width: 18%;
+  margin: 0 2em 2em 2em;
+  @include respond-to($screen-md-min) { width: 30%; }
+  @include respond-to($iphone_portrait) { width: 60%; }
+}
+
+ul.collaborator-logos-list li img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+       In cooperation with:
+       <ul class="stakeholder-logos-list row">
+         <li><%= image_tag("footer/deff_en.png") %></li>
+         <li><%= image_tag("footer/fivu_en.png") %></li>
+         <li><%= image_tag("footer/uvm_en.png") %></li>
+         <li><%= image_tag("footer/kum_en.png") %></li>
+       </ul>
