@@ -78,7 +78,6 @@ class CatalogController < ApplicationController
     # Publication Channel
 
     # ALL FACET FIELDS:
-    # config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
     config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
     config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
       :num_segments => 3,
@@ -117,6 +116,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'series_title_ts', :label => 'Series'
 
     # ALL SHOW FIELDS:
+    config.add_show_field 'subtitle_ts', :label => I18n.t('blacklight.search.fields.show.subtitle_ts" ')
     config.add_show_field 'author_ts', :label => 'Authors', :separator => ' ; '
     config.add_show_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_type
     config.add_show_field 'affiliation_ts', :label => 'Affiliation'
@@ -126,22 +126,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
 
     config.add_show_field 'research_area_ss', :label => 'Research Area'
-    config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.facet.access_condition_s'), :helper_method => :render_publishing_status
-    config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.facet.series_title_ts')
-    config.add_show_field 'review_status_s', :label => I18n.t('blacklight.search.fields.facet.review_status_s'), :helper_method => :render_review_status
+    config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.show.access_condition_s'), :helper_method => :render_publishing_status
+    config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.show.series_title_ts')
+    config.add_show_field 'review_status_s', :label => I18n.t('blacklight.search.fields.show.review_status_s'), :helper_method => :render_review_status
 
     #TODO: TEST IN VIEW
     config.add_show_field 'isbn_ss', :label => I18n.t('blacklight.search.fields.index.isbn_ss')
     config.add_show_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.index.isbn_ss')
 
-    config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.facet.scientific_level_s'), :helper_method => :render_scientific_level
+    # EXPERIMENT: Don't re-use labels from facets
+    config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
 
-
-    # MAYBE LATER:
-    # config.add_show_field 'publisher_ts', :label => 'Publisher'
-    # config.add_show_field 'doi_ss', :label => 'DOI'
-    # config.add_show_field 'isbn_ss', :label => 'ISBN'
-    # config.add_show_field 'issn_ss', :label => 'ISSN'
 
     # config.add_show_field 'source_ss', :helper_method => :render_source_field
     # "fielded" search configuration. Used by pulldown among other places.

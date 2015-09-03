@@ -80,6 +80,10 @@ da:
           research_area_ss: Hovedforskningsområde
           series_title_ts: Serie
           source_ss: Forskningsinstitution
+          subtitle_ts: Undertitel
+          access_condition_s: Status
+          scientific_level_s: Videnskabeligt Niveau
+          review_status_s: Review status
       filters:
         title: "Du søgte efter:"
         pub_date_tsort: Udgivelsesår
