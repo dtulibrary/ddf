@@ -51,6 +51,8 @@ en:
           source_ss: Research Institution
           isolanguage_ss: Language
           access_condition_s: State
+          review_status_s: Review status
+          scientific_level_s: Scientific level
         show:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -73,84 +75,96 @@ en:
       atom_feed: 'Atom for results'
 
   mxd_type_labels:
-    eng: English
-    dan: Danish
-    ger: German
-    chi: Chinese
-    fre: French
-    spa: Spanish
-    ita: Italian
-    swe: Swedish
-    fin: Finnish
-    nor: Norwegian
-    rus: Russian
-    dut: Dutch
-    por: Portuguese
-    ice: Icelandic
-    tur: Turkish
-    vie: Vietnamese
-    gre: Greek
-    hun: Hungarian
-    pol: Polish
-    jpn: Japanese
-    lit: Lithuanian
-    cze: Czech
-    und: Undetermined
-    mul: Multiple languages
-
-    dja: Journal article
-    djl: Letter to the editor
-    djc: Journal comment
-    djr: Journal review article
-    djb: Journal book review
-    dna: Newspaper article
-    db:  Book
-    dba: Book chapter
-    dbp: Book preface, encycl. entry
-    dr:  Report
-    dra: Report chapter
-    dcp: Conference paper
-    dca: Conference abstract
-    dco: Conference poster
-    dct: Conference talk
-    dw:  Working paper, (pr)eprint
-    dln: Lecture notes
-    dl:  Lecture
-    dp:  Patent
-    dtd: Thesis Doctoral
-    dtp: Thesis PhD
-    dtm: Thesis Master
-    dts: Student report
-    dso: Software
-    dd:  Data set
-    drt: Radio/TV broadcast
-    dx:  Exhibition catalogue
-    do:  Other
-  research_area_labels:
-    hum: Humanities
-    med: Medical science
-    sci: Science/technology
-    soc: Social science
-  source_labels:
-    orbit: Technical University of Denmark
-    rdb_ku: University of Copenhagen
-    rdb_itu: IT University of Copenhagen
-    rdb_au: Aarhus University
-    rdb_cbs: Copenhagen Business School
-    rdb_ruc: Roskilde University
-    rdb_sdu: University of Southern Denmark
-    rdb_vbn: Aalborg University
-    rdb_sbi: Capital Region of Denmark
-    rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
-    rdb_fak: Royal Danish Defence College
-    rdb_ka: Ministry of Culture
-
-    published: Published
-    unknown: Unknown
-    submitted: Submitted
-    accepted: Accepted
-    in_press: "In press"
-    unpublished: Unpublished
+    language_labels:
+      eng: English
+      dan: Danish
+      ger: German
+      chi: Chinese
+      fre: French
+      spa: Spanish
+      ita: Italian
+      swe: Swedish
+      fin: Finnish
+      nor: Norwegian
+      rus: Russian
+      dut: Dutch
+      por: Portuguese
+      ice: Icelandic
+      tur: Turkish
+      vie: Vietnamese
+      gre: Greek
+      hun: Hungarian
+      pol: Polish
+      jpn: Japanese
+      lit: Lithuanian
+      cze: Czech
+      und: Undetermined
+      mul: Multiple languages
+    publication_type_labels:
+      dja: Journal article
+      djl: Letter to the editor
+      djc: Journal comment
+      djr: Journal review article
+      djb: Journal book review
+      dna: Newspaper article
+      db:  Book
+      dba: Book chapter
+      dbp: Book preface, encycl. entry
+      dr:  Report
+      dra: Report chapter
+      dcp: Conference paper
+      dca: Conference abstract
+      dco: Conference poster
+      dct: Conference talk
+      dw:  Working paper, (pr)eprint
+      dln: Lecture notes
+      dl:  Lecture
+      dp:  Patent
+      dtd: Thesis Doctoral
+      dtp: Thesis PhD
+      dtm: Thesis Master
+      dts: Student report
+      dso: Software
+      dd:  Data set
+      drt: Radio/TV broadcast
+      dx:  Exhibition catalogue
+      do:  Other
+    research_area_labels:
+      hum: Humanities
+      med: Medical science
+      sci: Science/technology
+      soc: Social science
+    publishing_status_labels:
+      published: Published
+      unknown: Unknown
+      submitted: Submitted
+      accepted: Accepted
+      in_press: "In press"
+      unpublished: Unpublished
+    source_labels:
+      orbit: Technical University of Denmark
+      rdb_ku: University of Copenhagen
+      rdb_itu: IT University of Copenhagen
+      rdb_au: Aarhus University
+      rdb_cbs: Copenhagen Business School
+      rdb_ruc: Roskilde University
+      rdb_sdu: University of Southern Denmark
+      rdb_vbn: Aalborg University
+      rdb_sbi: Capital Region of Denmark
+      rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
+      rdb_fak: Royal Danish Defence College
+      rdb_ka: Ministry of Culture
+    review_status_labels:
+      peer_review: Peer Review
+      other_review: Other review
+      no_review: No review
+      undetermined: Undetermined
+    scientific_level_labels:
+      scientific: Scientific
+      educational: Educational
+      popular: Popular
+      administrative: Administrative
+      undetermined: Undetermined
 
   ddf:
     research_area_labels:

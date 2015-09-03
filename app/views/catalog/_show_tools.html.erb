@@ -10,7 +10,7 @@
       <ul class="institutions-list">
         <% (@document['backlink_ss'] || []).each do |link| %>
           <li>
-            <%= link_to(t("source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
+            <%= link_to(t("mxd_type_labels.source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
             <i class="fa fa-external-link-square"></i>
           </li>
         <% end %>

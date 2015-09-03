@@ -18,21 +18,83 @@ module CatalogHelper
   end
 
   def render_format_field_index args
-    t "mxd_type_labels.#{args[:document]['format_orig_s']}"
+    t "mxd_type_labels.publication_type_labels.#{args[:document]['format_orig_s']}"
   end
 
   def render_research_area_field args
     args[:document]['research_area_ss'].collect {|s| t "research_area_labels.#{s}"}.join ' ; '
   end
 
-  def render_show_field_value(opts)
+  def render_publishing_status(opts)
     field = opts[:document][opts[:field]]
     if field.is_a? Array
-      field.map {|s| t "source_labels.#{s}"}.join ' ; ' #TODO
+      field.map { |s| t "mxd_type_labels.publishing_status_labels.#{s}" }.join ' ; '
     else
-      t "source_labels.#{field}" #TODO
+      t "mxd_type_labels.publishing_status_labels.#{field}"
     end
   end
+
+  def render_language(opts)
+    field = opts[:document][opts[:field]]
+    if field.is_a? Array
+      field.map { |s| t "mxd_type_labels.language_labels.#{s}" }.join ' ; '
+    else
+      t "mxd_type_labels.language_labels.#{field}"
+    end
+  end
+
+  def render_type(opts)
+    field = opts[:document][opts[:field]]
+    if field.is_a? Array
+      field.map { |s| t "mxd_type_labels.publication_type_labels.#{s}" }.join ' ; '
+    else
+      t "mxd_type_labels.publication_type_labels.#{field}"
+    end
+  end
+
+  # Try toggling the comments on & off, watch what happens to translations
+  # of labels above. Also, the method body works in spite of being a duplication
+  # render_type() above.
+  def render_review_status(opts)
+    field = opts[:document][opts[:field]]
+    # binding.pry
+    if field.is_a? Array
+      field.map { |s| t "mxd_type_labels.review_status_labels.#{s}" }.join ' ; '
+    else
+      t "mxd_type_labels.review_status_labels.#{field}"
+    end
+  end
+
+  def render_scientific_level(opts)
+    field = opts[:document][opts[:field]]
+    # binding.pry
+    if field.is_a? Array
+      field.map { |s| t "mxd_type_labels.scientific_level_labels.#{s}" }.join ' ; '
+    else
+      t "mxd_type_labels.scientific_level_labels.#{field}"
+    end
+  end
+
+  # def render_series(opts)
+  #   field = opts[:document][opts[:field]]
+  #   if field.is_a? Array
+  #     field.map { |s| t "publishing_status_labels.#{s}" }.join ' ; '
+  #   else
+  #     t "publishing_status_labels.#{field}"
+  #   end
+  # end
+
+  # # ALTERNATIVE 1:
+  # def render_source_field_value(opts)
+  #   # ONLY USE THIS PATH IN THIS METHOD:
+  #   "source_labels.#{field}"
+  # end
+
+  # # ALTERNATIVE 2:
+  # def render_any_field_value(opts, path_to_translation) # PASS THE PATH IN ARGS:
+  #   "source_labels.#{field}"
+  # end
+
 
   def get_backlink_origin link
     case link

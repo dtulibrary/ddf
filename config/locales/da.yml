@@ -63,6 +63,8 @@ da:
           source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
           access_condition_s: Status
+          review_status_s: Review status
+          scientific_level_s: Videnskabeligt niveau
         show:
           abstract_ts: Abstrakt
           affiliation_ts: Tilhørsforhold
@@ -92,92 +94,97 @@ da:
       atom_feed: 'Atom for results'
 
   mxd_type_labels:
-    eng: Engelsk
-    dan: Dansk
-    ger: Tysk
-    chi: Kinesisk
-    fre: Fransk
-    spa: Spansk
-    ita: Italiensk
-    swe: Svensk
-    fin: Finsk
-    nor: Norsk
-    rus: Russisk
-    dut: Nederlandsk
-    por: Portugisisk
-    ice: Islandsk
-    tur: Tyrkisk
-    vie: Vietnamesisk
-    gre: Græsk
-    hun: Ungarsk
-    pol: Polsk
-    jpn: Japansk
-    lit: Litauisk
-    cze: Tjekkisk
-    und: Udefineret
-    mul: Flere sprog
+    language_labels:
+      eng: Engelsk
+      dan: Dansk
+      ger: Tysk
+      chi: Kinesisk
+      fre: Fransk
+      spa: Spansk
+      ita: Italiensk
+      swe: Svensk
+      fin: Finsk
+      nor: Norsk
+      rus: Russisk
+      dut: Nederlandsk
+      por: Portugisisk
+      ice: Islandsk
+      tur: Tyrkisk
+      vie: Vietnamesisk
+      gre: Græsk
+      hun: Ungarsk
+      pol: Polsk
+      jpn: Japansk
+      lit: Litauisk
+      cze: Tjekkisk
+      und: Udefineret
+      mul: Flere sprog
+    publication_type_labels:
+      dja: Tidsskrift-artikel
+      djl: Tidsskrift-brev til redaktøren
+      djc: Tidsskrift-kommentar
+      djr: Tidsskrifts-review article
+      djb: Tidsskrifts-anmeldelse
+      dna: Avis-artikel
+      db:  Bog
+      dba: Bog-kapitel
+      dbp: Bog-forord, leksikonartikel
+      dr:  Rapport
+      dra: Rapport-kapitel
+      dcp: Konference-paper
+      dca: Konference-abstract
+      dco: Konference-plakat
+      dct: Konference-foredrag
+      dw:  Arbejdspapir, (pr)eprint
+      dln: Undervisning-noter
+      dl:  Undervisning-forelæsning
+      dp:  Patent
+      dtd: Afhandling-Doktor
+      dtp: Afhandling-Ph.D.
+      dtm: Afhandling- Kandidat
+      dts: Studenterrapport
+      dso: Software
+      dd:  Datasæt
+      drt: Radio/Tv-udsendelse
+      dx:  Udstillingskatalog
+      do:  Andet
+    research_area_labels:
+      Humanities: Humaniora
+      Social science: 'Samfundsvidenskab'
+      Medical science: 'Sundhedsvidenskab'
+      Science/technology: 'Teknik/naturvidenskab'
+    publishing_status_labels:
+      published: Publiceret
+      unknown: Ukendt
+      submitted: Indsendt
+      accepted: Accepteret
+      in_press: "I trykken"
+      unpublished: Upubliceret
+    source_labels:
+      orbit: Danmarks Tekniske Universitet
+      rdb_ku: Københavns Universitet
+      rdb_itu: IT Universitet i København
+      rdb_au: Aarhus Universitet
+      rdb_cbs: Copenhagen Business School
+      rdb_ruc: Roskilde Universitet
+      rdb_sdu: Syddansk Universitet
+      rdb_vbn: Aalborg Universitet
+      rdb_sbi: Region Hovedstaden
+      rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
+      rdb_fak: Forsvarsakademiet
+      rdb_ka: Kulturministeriet
+    review_status_labels:
+      peer_review: Peer Review
+      other_review: Andet review
+      no_review: Intet review
+      undetermined: Ubestemt
+    scientific_level_labels:
+      scientific: Videnskabelig
+      educational: Undervisningsrettet
+      popular: Populærvidenskabelig
+      administrative: Administrativ
+      undetermined: Ubestemt
 
-    dja: Tidsskrift-artikel
-    djl: Tidsskrift-brev til redaktøren
-    djc: Tidsskrift-kommentar
-    djr: Tidsskrifts-review article
-    djb: Tidsskrifts-anmeldelse
-    dna: Avis-artikel
-    db:  Bog
-    dba: Bog-kapitel
-    dbp: Bog-forord, leksikonartikel
-    dr:  Rapport
-    dra: Rapport-kapitel
-    dcp: Konference-paper
-    dca: Konference-abstract
-    dco: Konference-plakat
-    dct: Konference-foredrag
-    dw:  Arbejdspapir, (pr)eprint
-    dln: Undervisning-noter
-    dl:  Undervisning-forelæsning
-    dp:  Patent
-    dtd: Afhandling-Doktor
-    dtp: Afhandling-Ph.D.
-    dtm: Afhandling- Kandidat
-    dts: Studenterrapport
-    dso: Software
-    dd:  Datasæt
-    drt: Radio/Tv-udsendelse
-    dx:  Exhibition catalogue
-    do:  Andet
-
-    published: Publiceret
-    unknown: Ukendt
-    submitted: Indsendt
-    accepted: Accepteret
-    in_press: "I trykken"
-    unpublished: Upubliceret
-
-  research_area_labels:
-    Humanities: Humaniora
-    Social science: 'Samfundsvidenskab'
-    Medical science: 'Sundhedsvidenskab'
-    Science/technology: 'Teknik/naturvidenskab'
-  source_labels:
-    orbit: Danmarks Tekniske Universitet
-    rdb_ku: Københavns Universitet
-    rdb_itu: IT Universitet i København
-    rdb_au: Aarhus Universitet
-    rdb_cbs: Copenhagen Business School
-    rdb_ruc: Roskilde Universitet
-    rdb_sdu: Syddansk Universitet
-    rdb_vbn: Aalborg Universitet
-    rdb_sbi: Region Hovedstaden
-    rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
-    rdb_fak: Forsvarsakademiet
-    rdb_ka: Kulturministeriet
-
-    published: Publiceret
-    unknown: Ukendt
-    submitted: Indsendt
-    accepted: Accepteret
-    in_press: "I trykken"
-    unpublished: Upubliceret
 
   ddf:
     search:

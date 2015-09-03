@@ -54,8 +54,8 @@ group :assets do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # Byebug is shit and Pry is the thing. Bye-bye, byebug!
+  gem 'pry', '~> 0.10.1'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
