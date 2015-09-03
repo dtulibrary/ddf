@@ -2,15 +2,41 @@ module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
   def render_format_field_facet value
-    t "mxd_type_labels.#{value}"
+    t "mxd_type_labels.publication_type_labels.#{value}"
   end
 
   def render_source_field_facet value
-    t "source_labels.#{value}"
+    t "mxd_type_labels.source_labels.#{value}"
   end
 
+  def render_language_field_facet value
+    t "mxd_type_labels.language_labels.#{value}"
+  end
+
+  def render_publication_status_facet(value)
+    t "mxd_type_labels.publishing_status_labels.#{value}"
+  end
+
+  # In the perfect world...
+  # def render_journal_title_facet(value)
+  # end
+
   def render_research_area_facet value
-    t "research_area_labels.#{value}"
+    case value
+    when 'Humanities'
+      str = 'hum'
+    when 'Medical science'
+      str = 'med'
+    when 'Science/technology'
+      str = 'sci'
+    when 'Social science'
+      str = 'soc'
+    end
+    t "mxd_type_labels.research_area_labels.#{str}"
+  end
+
+  def render_scientific_level_facet(value)
+     t "mxd_type_labels.scientific_level_labels.#{value}"
   end
 
   def render_source_field args

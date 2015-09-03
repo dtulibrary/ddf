@@ -198,6 +198,8 @@ div.top-panel-heading h4 {
   background-color: darken($blue-4, 5%);
 }
 
+ul.facet-values { margin: .25em 0 .5em 0; }
+
 #sidebar ul.facet-values li {
   font-size: calc-em(15px);
   //display: block; //must do this because it's set to display: table in the original

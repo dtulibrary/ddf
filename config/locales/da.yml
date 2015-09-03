@@ -153,10 +153,10 @@ da:
       dx:  Udstillingskatalog
       do:  Andet
     research_area_labels:
-      Humanities: Humaniora
-      Social science: 'Samfundsvidenskab'
-      Medical science: 'Sundhedsvidenskab'
-      Science/technology: 'Teknik/naturvidenskab'
+      hum: Humaniora
+      soc: 'Samfundsvidenskab'
+      med: 'Sundhedsvidenskab'
+      sci: 'Teknik/naturvidenskab'
     publishing_status_labels:
       published: Publiceret
       unknown: Ukendt
@@ -188,7 +188,6 @@ da:
       popular: Populærvidenskabelig
       administrative: Administrativ
       undetermined: Ubestemt
-
 
   ddf:
     search:

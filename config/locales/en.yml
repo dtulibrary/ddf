@@ -171,11 +171,6 @@ en:
       undetermined: Undetermined
 
   ddf:
-    research_area_labels:
-      hum: Humanities
-      med: Medical science
-      sci: Science/technology
-      soc: Social science
     search:
       form:
         clear_icon_text_hover: Clear search field
