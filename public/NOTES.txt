@@ -274,3 +274,7 @@ ul.collaborator-logos-list li img {
          <li><%= image_tag("footer/uvm_en.png") %></li>
          <li><%= image_tag("footer/kum_en.png") %></li>
        </ul>
+
+
+http://www.overfitted.com/blog/?p=302
+http://stackoverflow.com/questions/24494632/how-to-create-d3-graph-using-data-from-rails-database

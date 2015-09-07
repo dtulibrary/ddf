@@ -43,6 +43,9 @@ en:
           research_area_ss: Research Area
           series_title_ts: Series
           source_ss: Research Institution
+          pub_date_tis: Year
+          supervisor_ts: Supervisor
+          editor_ts: Editor
         facet:
           author_facet: Author
           journal_title_facet: Journal Title
@@ -72,6 +75,11 @@ en:
           access_condition_s: State
           scientific_level_s: Scientific Level
           review_status_s: Review status
+          pub_date_tis: Year
+          supervisor_ts: Supervisor
+          editor_ts: Editor
+          conf_title_ts: Conference
+
       form:
         logo_label: Danish National Research Database
       start_over: Start Over

@@ -101,6 +101,12 @@ module CatalogHelper
     end
   end
 
+  def debug_shite(opts)
+    field = opts[:document][opts[:field]]
+    # binding.pry
+  end
+
+
   # def render_series(opts)
   #   field = opts[:document][opts[:field]]
   #   if field.is_a? Array
