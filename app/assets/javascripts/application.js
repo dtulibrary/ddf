@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs//
-// Required by Blacklight
+//= require d3
+// Required by Blacklight:
 //= require blacklight/blacklight
-
 //= require_tree .
 
 
