@@ -139,21 +139,28 @@ function draw(dataset) {
     .value(function(d) { return d.hits; })
     .sort(null);
 
+  var tooltip = d3.select('#chart')
+    .append('div')
+    .attr('class', 'tooltip');
 
-  var tooltip = d3.select('#chart')            // NEW
-    .append('div')                             // NEW
-    .attr('class', 'tooltip');                 // NEW
+  tooltip.append('div')
+    .attr('class', 'label');
 
-  tooltip.append('div')                        // NEW
-    .attr('class', 'label');                   // NEW
+  tooltip.append('div')
+    .attr('class', 'hits');
 
-  tooltip.append('div')                        // NEW
-    .attr('class', 'hits');                   // NEW
-
-  tooltip.append('div')                        // NEW
+  tooltip.append('div')
     .attr('class', 'percent');
 
+  // The rest of the code below is wrapped inside this callback:
+  // d3.csv('weekdays.csv', function(error, dataset) {
+  //   dataset.forEach(function(d) {
+  //     d.count = +d.count;
+  //   });
+  //   HERE.
+  // });
 
+  // INSIDE CALLBACK START
   var path = svg.selectAll('path')
     .data(pie(dataset))
     .enter()
@@ -166,6 +173,7 @@ function draw(dataset) {
   path.on('mouseover', function(d) {
     var total = d3.sum(dataset.map(function(d) {
       return d.hits;
+      // alert(d.hits); doesn't get triggered
     }));
     var percent = Math.round(1000 * d.data.hits / total) / 10;
     tooltip.select('.label').html(d.data.label);
@@ -174,16 +182,16 @@ function draw(dataset) {
     tooltip.style('display', 'block');
   });
 
-  path.on('mouseout', function() {                              // NEW
-    tooltip.style('display', 'none');                           // NEW
+  path.on('mouseout', function() {
+    tooltip.style('display', 'none');
   });
 
 
   // OPTIONAL
-  // path.on('mousemove', function(d) {                            // NEW
-  //   tooltip.style('top', (d3.event.pageY + 10) + 'px')          // NEW
-  //     .style('left', (d3.event.pageX + 10) + 'px');             // NEW
-  // });                                                           // NEW
+  // path.on('mousemove', function(d) {
+  //   tooltip.style('top', (d3.event.pageY + 10) + 'px')
+  //     .style('left', (d3.event.pageX + 10) + 'px');
+  // });
 
 
   var legend = svg.selectAll('.legend')
@@ -209,5 +217,6 @@ function draw(dataset) {
     .attr('x', legendRectSize + legendSpacing)
     .attr('y', 15)
     .text(function(d) { return d; });
+  // INSIDE CALLBACK END
 
 }
