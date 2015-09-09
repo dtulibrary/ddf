@@ -278,3 +278,16 @@ ul.collaborator-logos-list li img {
 
 http://www.overfitted.com/blog/?p=302
 http://stackoverflow.com/questions/24494632/how-to-create-d3-graph-using-data-from-rails-database
+
+Traversals in JS vs jQuery:
+http://stackoverflow.com/questions/722668/traverse-all-the-nodes-of-a-json-object-tree-with-javascript
+http://api.jquery.com/jquery.each/
+
+Basic D3 chart:
+http://zeroviscosity.com/d3-js-step-by-step/step-1-a-basic-pie-chart
+
+Making a D3 chart responsive:
+http://eyeseast.github.io/visible-data/2013/08/28/responsive-charts-with-d3/
+
+http://bost.ocks.org/mike/bar/
+http://www.amazon.com/Cryptological-Mathematics-Mathematical-Association-Textbooks/dp/0883857197/ref=sr_1_1?s=books&ie=UTF8&qid=1441724016&sr=1-1&keywords=9780883857199

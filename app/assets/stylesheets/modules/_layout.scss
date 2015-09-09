@@ -315,3 +315,5 @@ figure#deff {
   width: 70%;
   @include respond-to($screen-md-min) { width: $cols4; }
 }
+
+#chart { text-align: center; }
