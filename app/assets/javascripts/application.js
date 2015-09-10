@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs//
+//= require jquery_ujs
+//
 //= require d3
+//
 // Required by Blacklight:
 //= require blacklight/blacklight
+//
 //= require_tree .
 
 

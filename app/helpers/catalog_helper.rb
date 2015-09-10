@@ -17,6 +17,10 @@ module CatalogHelper
     t "mxd_type_labels.publishing_status_labels.#{value}"
   end
 
+  def render_review_status_facet(value)
+    t "mxd_type_labels.review_status_labels.#{value}"
+  end
+
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end

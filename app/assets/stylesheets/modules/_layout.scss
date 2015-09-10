@@ -143,15 +143,7 @@ button#search {
   border-bottom: 2px dashed #ccc;
 }
 
-ul.data-providers-list li {
-  margin-bottom: 3em;
-  padding: .25em .5em;
-  border: 1px dotted $blue-3;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-  display: inline-block; //catch-all fallback
-}
+ul.data-providers-list li {}
 
 figure.logo-container {
   width: 15em;

@@ -40,7 +40,7 @@ en:
           journal_title_ts: Published in
           language_ss: Language
           publisher_ts: Publisher
-          research_area_ss: Research Area
+          research_area_ss: Main Research Area
           series_title_ts: Series
           source_ss: Research Institution
           pub_date_tis: Year
@@ -50,7 +50,7 @@ en:
           author_facet: Author
           journal_title_facet: Journal Title
           pub_date_tsort: Publication Year
-          research_area_ss: Research Area
+          research_area_ss: Main Research Area
           source_ss: Research Institution
           isolanguage_ss: Language
           access_condition_s: State
@@ -68,7 +68,7 @@ en:
           journal_title_ts: Published in
           language_ss: Language
           publisher_ts: Publisher
-          research_area_ss: Research Area
+          research_area_ss: Main Research Area
           series_title_ts: Series
           source_ss: Research Institution
           subtitle_ts: Subtitle

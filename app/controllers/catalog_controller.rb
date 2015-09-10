@@ -90,6 +90,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'isolanguage_ss', :label => I18n.t('blacklight.search.fields.facet.isolanguage_ss'), :helper_method => :render_language_field_facet
     config.add_facet_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.facet.access_condition_s'), :helper_method => :render_publication_status_facet
     config.add_facet_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.facet.scientific_level_s'), :helper_method => :render_scientific_level_facet
+    config.add_facet_field 'review_status_s', :label => I18n.t('blacklight.search.fields.facet.review_status_s'), :helper_method => :render_review_status_facet
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -114,11 +115,10 @@ class CatalogController < ApplicationController
     config.add_index_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
     config.add_index_field 'research_area_ss', :label => 'Research Area'
     config.add_index_field 'series_title_ts', :label => 'Series'
-
+    config.add_index_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.index.publisher_ts')
     config.add_index_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.index.pub_date_tis')
     config.add_index_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.index.supervisor_ts')
     config.add_index_field 'editor_ts', :label => I18n.t('blacklight.search.fields.index.editor_ts')
-
 
     # ALL SHOW FIELDS:
     config.add_show_field 'subtitle_ts', :label => I18n.t('blacklight.search.fields.show.subtitle_ts" ')
@@ -129,18 +129,16 @@ class CatalogController < ApplicationController
     config.add_show_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
     config.add_show_field 'doi_ss', :label => 'DOI'
     config.add_show_field 'abstract_ts', :label => 'Abstract'
-
     config.add_show_field 'research_area_ss', :label => 'Research Area'
     config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.show.access_condition_s'), :helper_method => :render_publishing_status
     config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.show.series_title_ts')
     config.add_show_field 'review_status_s', :label => I18n.t('blacklight.search.fields.show.review_status_s'), :helper_method => :render_review_status
-
-    config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
     config.add_show_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.show.supervisor_ts')
     config.add_show_field 'editor_ts', :label => I18n.t('blacklight.search.fields.show.editor_ts')
     config.add_show_field 'conf_title_ts', :label => I18n.t('blacklight.search.fields.show.conf_title_ts')
     config.add_show_field 'isbn_ss', :label => I18n.t('blacklight.search.fields.show.isbn_ss')
     config.add_show_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.show.publisher_ts')
+    config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
     config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
 
     # config.add_show_field 'source_ss', :helper_method => :render_source_field
