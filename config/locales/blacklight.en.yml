@@ -3,6 +3,23 @@ en:
     application_name: 'Danish National Research Database-Den Danske Forskningsdatabase'
     national: 'Danish National'
     research_database: 'Research Database'
+
+    navigation:
+      search_section:
+        search: Search
+      about_section:
+        about: About
+        search_get: "Search & Get"
+        data: Data
+        faq: FAQ
+        contact: Contact
+        indicators: Indicators
+        actuality: Actuality
+      oa_section:
+        open_access: "Open Access"
+      ef_section:
+        eliteforsk: "Eliteforsk Award"
+
     entry_name:
         default: 'entry'
     search:

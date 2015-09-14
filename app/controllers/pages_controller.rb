@@ -1,22 +1,14 @@
 class PagesController < ApplicationController
   def index; end
 
-  def data
-    respond_to do |format|
-      format.json { render :json => [1, 2, 3, 4, 5] }
-    end
-  end
+  # def data
+  #   respond_to do |format|
+  #     format.json { render :json => [1, 2, 3, 4, 5] }
+  #   end
+  # end
 
   # SEARCH
   def search
-    render :layout => 'search'
-  end
-
-  def tutorial
-    render :layout => 'search'
-  end
-
-  def faq
     render :layout => 'search'
   end
 
@@ -35,11 +27,15 @@ class PagesController < ApplicationController
     render :layout => 'about'
   end
 
-  def data_formats
+  def search_and_get
     render :layout => 'about'
   end
 
-  def data_providers
+  def data
+    render :layout => 'about'
+  end
+
+  def faq
     render :layout => 'about'
   end
 

@@ -10,6 +10,23 @@ da:
     application_name: 'Den Danske Forskningsdatabase-Danish National Research Database'
     national: 'Den Danske'
     research_database: 'Forskningsdatabase'
+
+    navigation:
+      search_section:
+        search: Søgning
+      about_section:
+        about: Om
+        search_get: "Søg og Få"
+        data: Data
+        faq: FAQ
+        contact: Kontakt
+        indicators: Indikatorer
+        actuality: Aktuelt
+      oa_section:
+        open_access: "Open Access"
+      ef_section:
+        eliteforsk: "Eliteforsk Pris"
+
     tools:
       cite: 'Citer'
 

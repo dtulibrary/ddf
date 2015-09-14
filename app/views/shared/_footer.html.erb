@@ -9,18 +9,23 @@
     </h1>
     <ul class="sitemap">
       <li class="sitemap__section">
-        <a href="/search">Search</a>
-        <ul>
-          <li><a href="/search/tutorial">Tutorial</a></li>
-          <li><a href="/search/faq">FAQ</a></li>
-        </ul>
+        <a href="/search"><%= t('blacklight.navigation.search_section.search') %></a>
       </li>
       <li class="sitemap__section">
-        <a href="/about">About</a>
+        <a href="/about"><%= t('blacklight.navigation.about_section.about') %></a>
         <ul>
-          <li><a href="/about/data-formats">Data formats</a></li>
-          <li><a href="/about/data-providers">Data providers</a></li>
-          <li><a href="/about/contact">Contact</a></li>
+          <li>
+            <a href="/about/search-and-get">Search <span class="amp">&amp;</span> Get </a>
+          </li>
+          <li>
+            <a href="/about/data">Data</a>
+          </li>
+          <li>
+            <a href="/about/faq">FAQ</a>
+          </li>
+          <li>
+            <a href="/about/contact">Contact</a>
+          </li>
         </ul>
       </li>
     </ul>

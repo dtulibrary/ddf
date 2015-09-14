@@ -769,8 +769,18 @@ article.static h2 {
   font-weight: 400;
   color: $bluewood;
 }
+article.static h2 a:hover {
+  background: inherit;
+  color: inherit;
+}
 
-article.static h3 {}
+article.static h3 {
+  font-family: $headline;
+  font-size: calc-em(20px);
+  margin: .1em 0 .3em 0;
+  font-weight: 500;
+  color: $bluewood;
+}
 
 p.search-example {
   border: 1px solid $blue-3;
@@ -922,5 +932,5 @@ rect { stroke-width: 2; }
   top: 95px;                                                      /* NEW */
   width: 80px;                                                    /* NEW */
   z-index: 10;                                                    /* NEW */
-}                                                                 /* NEW */
+  }                                                                 /* NEW */
 

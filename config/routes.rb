@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   # SEARCH
   # get '/search', to: redirect('/catalog')
   get '/search', to: redirect('/')
-  get 'search/tutorial' => 'pages#tutorial'
-  get 'search/faq' => 'pages#faq'
 
   # OPEN ACCESS
   get '/open-access' => 'pages#open_access'
@@ -25,8 +23,13 @@ Rails.application.routes.draw do
 
   # ABOUT
   get 'about' => 'pages#about'
-  get 'about/data-formats' => 'pages#data_formats'
-  get 'about/data-providers' => 'pages#data_providers'
+  get 'about/search-and-get' => 'pages#search_and_get'
+
+  # get 'about/indicators' => 'pages#indicators'
+  # get 'about/actuality' => 'pages#actuality'
+
+  get 'about/data' => 'pages#data'
+  get 'about/faq' => 'pages#faq'
   get 'about/contact' => 'pages#contact'
 
   # OTHER

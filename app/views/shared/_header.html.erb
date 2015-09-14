@@ -16,7 +16,7 @@
         <h1 class="logo logo-main">
           <a href="/">
             <em><%= t('blacklight.national')%></em>
-            <%= t('blacklight.research_database')%>
+            <%= t('blacklight.research_database') %>
           </a>
         </h1>
       </div>
@@ -25,7 +25,9 @@
         <ul class="site-sections-list icon-labels icon-labels__topnav">
           <li id="search">
             <i class="glyphicon glyphicon-search"></i>
-            <a href="/">Search</a>
+            <a href="/">
+              <%= t('blacklight.navigation.search_section.search') %>
+            </a>
           </li>
 
 <!--
@@ -41,7 +43,9 @@
 
           <li id="about">
             <i class="glyphicon glyphicon-info-sign"></i>
-            <a href="/about">About</a>
+            <a href="/about">
+              <%= t('blacklight.navigation.about_section.about') %>
+            </a>
           </li>
         </ul>
       </div>
