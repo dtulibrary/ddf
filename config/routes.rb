@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
-  get 'pages/data', :defaults => { :format => 'json' }
+  # For the visualization dataset. Use another URL (end path) than 'data':
+  # get 'pages/data', :defaults => { :format => 'json' }
 
   # SEARCH
   # get '/search', to: redirect('/catalog')
