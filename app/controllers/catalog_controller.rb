@@ -78,19 +78,19 @@ class CatalogController < ApplicationController
     # Publication Channel
 
     # ALL FACET FIELDS:
-    config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
+    config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
     config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
       :num_segments => 3,
       :assumed_boundaries => [1900, Time.now.year + 2]
     }
+    config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
     config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
     config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
-    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
-    config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
     config.add_facet_field 'isolanguage_ss', :label => I18n.t('blacklight.search.fields.facet.isolanguage_ss'), :helper_method => :render_language_field_facet
-    config.add_facet_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.facet.access_condition_s'), :helper_method => :render_publication_status_facet
     config.add_facet_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.facet.scientific_level_s'), :helper_method => :render_scientific_level_facet
+    config.add_facet_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.facet.access_condition_s'), :helper_method => :render_publication_status_facet
     config.add_facet_field 'review_status_s', :label => I18n.t('blacklight.search.fields.facet.review_status_s'), :helper_method => :render_review_status_facet
+    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

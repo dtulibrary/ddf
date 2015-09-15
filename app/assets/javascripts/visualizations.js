@@ -129,5 +129,5 @@
   // INSIDE CALLBACK END
 }
 
-$(document).ready(function() { draw(dataset); });
+//$(document).ready(function() { draw(dataset); });
 
