@@ -1,18 +1,3 @@
-$.ajax({
-  type: "GET",
-  contentType: "application/json; charset=utf-8",
-  // url: 'pages/data',
-  url: '/catalog.json?utf8=%E2%9C%93&locale=en&q=*:*&rows=1',
-  dataType: 'json',
-  success: function(data) {
-
-    // dataset = [
-    //   { label: 'Abulia', count: 10 },
-    //   { label: 'Betelgeuse', count: 20 },
-    //   { label: 'Cantaloupe', count: 30 },
-    //   { label: 'Dijkstra', count: 40 }
-    // ];
-
   dataset = [
     {"value":"dja","hits":367796,"label":"Journal article"},
     {"value":"dba","hits":88849,"label":"Book chapter"},
@@ -37,119 +22,43 @@ $.ajax({
     {"value":"dso","hits":173,"label":"Software"}
   ];
 
-   // $.each(data.response.facets, function() {
-   //  if (this.name == 'format_orig_s') {
-   //    draw(this.items)
-   //  }
-   // })
+  function draw(dataset) {
 
-  draw(dataset);
-  },
+    var width          = 720;
+    var height         = 720;
+    var radius         = Math.min(width, height) / 2;
+    var donutWidth     = 75;
+    var legendRectSize = 18;
+    var legendSpacing  = 6.5;
 
-   error: function(result) {
-     error();
-   }
-});
+    var color = d3.scale.category20c();
 
-// function draw(dataset) {
-//   var width          = 720;
-//   var height         = 720;
-//   var radius         = Math.min(width, height) / 2;
-//   var donutWidth     = 75;
-//   var legendRectSize = 18;
-//   var legendSpacing  = 6.5;
-
-//   var color = d3.scale.category20c();
-
-//   var svg = d3.select('#chart')
-//     .append('svg')
-//     .attr('width', width)
-//     .attr('height', height)
-//     .append('g')
-//     .attr('transform', 'translate(' + (width / 2) +
-//       ',' + (height / 2) + ')');
-
-//   var arc = d3.svg.arc()
-//     .innerRadius(radius - donutWidth)
-//     .outerRadius(radius);
-
-//   var pie = d3.layout.pie()
-//     .value(function(d) { return d.hits; })
-//     .sort(null);
-
-//   var path = svg.selectAll('path')
-//     .data(pie(dataset))
-//     .enter()
-//     .append('path')
-//     .attr('d', arc)
-//     .attr('fill', function(d, i) {
-//       return color(d.data.label);
-//     });
-
-//   var legend = svg.selectAll('.legend')
-//     .data(color.domain())
-//     .enter()
-//     .append('g')
-//     .attr('class', 'legend')
-//     .attr('transform', function(d, i) {
-//       var height = legendRectSize + legendSpacing;
-//       var offset =  height * color.domain().length / 2;
-//       var horz = -2 * legendRectSize;
-//       var vert = i * height - offset;
-//       return 'translate(' + horz + ',' + vert + ')';
-//     });
-
-//   legend.append('rect')
-//     .attr('width', legendRectSize)
-//     .attr('height', legendRectSize)
-//     .style('fill', color)
-//     .style('stroke', color);
-
-//   legend.append('text')
-//       .attr('x', legendRectSize + legendSpacing)
-//     //.attr('y', legendRectSize - legendSpacing)
-//     .attr('y', 15)
-//     .text(function(d) { return d; });
-// }
-
-
-function draw(dataset) {
-
-  var width          = 720;
-  var height         = 720;
-  var radius         = Math.min(width, height) / 2;
-  var donutWidth     = 75;
-  var legendRectSize = 18;
-  var legendSpacing  = 6.5;
-
-  var color = d3.scale.category20c();
-
-  var svg = d3.select('#chart')
+    var svg = d3.select('#chart')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
     .attr('transform', 'translate(' + (width / 2) +',' + (height / 2) + ')');
 
-  var arc = d3.svg.arc()
+    var arc = d3.svg.arc()
     .innerRadius(radius - donutWidth)
     .outerRadius(radius);
 
-  var pie = d3.layout.pie()
+    var pie = d3.layout.pie()
     .value(function(d) { return d.hits; })
     .sort(null);
 
-  var tooltip = d3.select('#chart')
+    var tooltip = d3.select('#chart')
     .append('div')
     .attr('class', 'tooltip');
 
-  tooltip.append('div')
+    tooltip.append('div')
     .attr('class', 'label');
 
-  tooltip.append('div')
+    tooltip.append('div')
     .attr('class', 'hits');
 
-  tooltip.append('div')
+    tooltip.append('div')
     .attr('class', 'percent');
 
   // The rest of the code below is wrapped inside this callback:
@@ -162,13 +71,13 @@ function draw(dataset) {
 
   // INSIDE CALLBACK START
   var path = svg.selectAll('path')
-    .data(pie(dataset))
-    .enter()
-    .append('path')
-    .attr('d', arc)
-    .attr('fill', function(d, i) {
-      return color(d.data.label);
-    });
+  .data(pie(dataset))
+  .enter()
+  .append('path')
+  .attr('d', arc)
+  .attr('fill', function(d, i) {
+    return color(d.data.label);
+  });
 
   path.on('mouseover', function(d) {
     var total = d3.sum(dataset.map(function(d) {
@@ -195,28 +104,30 @@ function draw(dataset) {
 
 
   var legend = svg.selectAll('.legend')
-    .data(color.domain())
-    .enter()
-    .append('g')
-    .attr('class', 'legend')
-    .attr('transform', function(d, i) {
-      var height = legendRectSize + legendSpacing;
-      var offset =  height * color.domain().length / 2;
-      var horz = -2 * legendRectSize;
-      var vert = i * height - offset;
-      return 'translate(' + horz + ',' + vert + ')';
-    });
+  .data(color.domain())
+  .enter()
+  .append('g')
+  .attr('class', 'legend')
+  .attr('transform', function(d, i) {
+    var height = legendRectSize + legendSpacing;
+    var offset =  height * color.domain().length / 2;
+    var horz = -2 * legendRectSize;
+    var vert = i * height - offset;
+    return 'translate(' + horz + ',' + vert + ')';
+  });
 
   legend.append('rect')
-    .attr('width', legendRectSize)
-    .attr('height', legendRectSize)
-    .style('fill', color)
-    .style('stroke', color);
+  .attr('width', legendRectSize)
+  .attr('height', legendRectSize)
+  .style('fill', color)
+  .style('stroke', color);
 
   legend.append('text')
-    .attr('x', legendRectSize + legendSpacing)
-    .attr('y', 15)
-    .text(function(d) { return d; });
+  .attr('x', legendRectSize + legendSpacing)
+  .attr('y', 15)
+  .text(function(d) { return d; });
   // INSIDE CALLBACK END
-
 }
+
+$(document).ready(function() { draw(dataset); });
+
