@@ -1,0 +1,20 @@
+<%= form_for @feedback_form do |f|  %>
+  <ul>
+    <li>
+      <%= f.label :name %>:
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :email %>:
+      <%= f.email_field :name %>
+    </li>
+    <li>
+      <%= f.label :message %>:
+      <%= f.text_area :message %>
+    </li>
+    <li class="hidden">
+      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+    </li>
+  </ul>
+  <%= f.submit 'Send message' %>
+<% end %>

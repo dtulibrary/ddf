@@ -47,4 +47,8 @@ class PagesController < ApplicationController
   def pattern_library
     render :layout => 'chrome'
   end
+
+  def feedback
+    render :layout => 'chrome'
+  end
 end
