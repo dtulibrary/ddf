@@ -62,7 +62,7 @@ h1.logo {
   letter-spacing: .125em;
   color: $bluewood;
   color: #fff;
-  margin: .4em 0 .7em 0;
+  margin: 0 0 0 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
   }
@@ -683,21 +683,33 @@ ul.icon-labels__topnav li > i {
 }
 
 ul.site-sections-list {
-  text-align: right;
+  //text-align: right;
+  float: right;
   margin: 0;
-  @include respond-to($iphone_landscape) { text-align: center; }
+  //margin-top: 1em;
+  @include respond-to($ipad_portrait) {
+    margin-top: 1em;
+  }
+  @include respond-to($iphone_landscape) {
+    float: none;
+    text-align: center;
+  }
 }
 
 ul.site-sections-list li {
   display: inline-block;
-  padding: .3em 0 .1em 0;
+  //padding: .3em .7em 0.7em;
   //margin-top: 1.25em;
   margin: 0;
   //margin-bottom: 2em;
   vertical-align: text-top; //WOW!!!
 }
 ul.site-sections-list li:not(:last-child) {
-  margin-right: 1.25em;
+  @include respond-to($iphone_landscape) {
+    margin-right: 1.25em;
+  }
+
+  //margin-right: 1.25em;
   //@include respond-to($iphone_landscape) { margin-right: 0; }
 }
 
@@ -705,28 +717,38 @@ ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
 
 ul.site-sections-list li a {
   display: block;
-  margin: .5em 0 0 0;
-  padding: .3em .3em 1em .3em;
+  height: 100%;
+  //margin: .5em 0 0 0;
+  padding: 0 .7em .7em .7em;
   font-family: $headline;
   line-height: 1.25em;
   color: $blue-3;
   @include respond-to($iphone_landscape) {
-    height: 3.5em;
-    //padding-bottom: 1em;
+    padding: 0 1em .1em 1em;
   }
 }
 ul.site-sections-list li:hover a {
   color: #fff;
   text-decoration: none;
 }
-ul.site-sections-list li br {
-  @include above-viewport($iphone_landscape) { display: none; }
-}
 
 ul.site-sections-list li i {
+  font-size: calc-em(16px);
   display: block;
-  margin: 0 auto;
+  margin: .5em auto .7em auto;
   text-align: center;
+
+  @include respond-to($iphone_landscape) {
+    font-size: calc-em(25px);
+  }
+
+}
+
+ul.site-sections-list li span.menu-item-title {
+  @include respond-to($iphone_landscape) {
+    display: none;
+  }
+
 }
 
 body[class$="-pages-index"] li#search { background: lighten($bluewood, 15%); }
@@ -866,26 +888,33 @@ h1.logo a:visited:active {
 }
 
 h1.site-section {
-  font-family: $serif;
-  font-size: calc-em(30px);
-  font-style: italic;
+  //font-family: $serif;
+  font-size: calc-em(18px);
+  font-weight: 600;
+  //font-style: italic;
   margin: .1em 0 0 0;
   color: $blue-1;
+  float: left;
+
+  @include respond-to($iphone_landscape) {
+    margin-bottom: .25em;
+    float: none;
+  }
 }
 
 h1.site-section .glyphicon {
-  font-size: .7em;
+  //font-size: .8em;
   color: rgba(0,0,0, .5);
   color: $blue-2;
+  padding-right: .125em;
 }
 
 ul.subnav-items-list {
-  margin: .25em 0 0 0;
+  margin: 0;
   font-family: $headline;
-  text-align: right;
-  @include respond-to($iphone_landscape) {
-    text-align: left;
-    margin: .125em 0 0 0;
+  //text-align: right;
+  @include above-viewport($iphone_landscape) {
+    float: right;
   }
 }
 
@@ -896,12 +925,13 @@ ul.subnav-items-list li {
   //border-radius: 4px;
 }
 ul.subnav-items-list li:not(:last-child) {
+  border-bottom: 2px dotted $blue-3;
   margin-right: 1em;
   @include respond-to($iphone_landscape) { margin-right: 0; }
 }
 
 ul.subnav-items-list li a {
-  padding: .3em .2em;
+  padding: .5em .2em;
 
   @include respond-to($iphone_landscape) {
     display: block;
@@ -910,7 +940,7 @@ ul.subnav-items-list li a {
 
 ul.subnav-items-list li a:hover {
   @include respond-to($iphone_landscape) {
-    background: darken($blue-4, 10%);
+    background: darken($blue-4, 3%);
     text-decoration: none;
   }
 }
@@ -930,5 +960,5 @@ rect { stroke-width: 2; }
   top: 95px;                                                      /* NEW */
   width: 80px;                                                    /* NEW */
   z-index: 10;                                                    /* NEW */
-}                                                                 /* NEW */
+  }                                                                 /* NEW */
 

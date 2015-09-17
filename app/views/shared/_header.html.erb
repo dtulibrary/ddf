@@ -24,27 +24,39 @@
       <div class="col-md-7">
         <ul class="site-sections-list icon-labels icon-labels__topnav">
           <li id="search">
-            <i class="glyphicon glyphicon-search"></i>
             <a href="/">
-              <%= t('blacklight.navigation.search_section.search') %>
+              <i class="glyphicon glyphicon-search"></i>
+              <span class="menu-item-title">
+                <%= t('blacklight.navigation.search_section.search') %>
+              </span>
             </a>
           </li>
 
-<!--
+
           <li id="open-access">
-            <i class="glyphicon glyphicon-lock"></i>
-            <a href="/open-access">Open<br /> Access</a>
+            <a href="/open-access">
+              <i class="glyphicon glyphicon-lock"></i>
+              <span class="menu-item-title">
+                <%= t('blacklight.navigation.oa_section.open_access') %>
+              </span>
+            </a>
           </li>
           <li id="eliteforsk-award">
-            <i class="glyphicon glyphicon-education"></i>
-            <a href="/eliteforsk-award">Eliteforsk<br /> Award</a>
+            <a href="/eliteforsk-award">
+              <i class="glyphicon glyphicon-education"></i>
+              <span class="menu-item-title">
+                <%= t('blacklight.navigation.ef_section.eliteforsk') %>
+              </span>
+            </a>
           </li>
--->
+
 
           <li id="about">
-            <i class="glyphicon glyphicon-info-sign"></i>
             <a href="/about">
-              <%= t('blacklight.navigation.about_section.about') %>
+              <i class="glyphicon glyphicon-info-sign"></i>
+              <span class="menu-item-title">
+                <%= t('blacklight.navigation.about_section.about') %>
+              </span>
             </a>
           </li>
         </ul>

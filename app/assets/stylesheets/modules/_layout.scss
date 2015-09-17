@@ -52,8 +52,7 @@ body > header {
 }
 .header__wrapper {
   background: $blue-4;
-  padding: .7em 0 .3em 0;
-  @include respond-to($ipad_portrait) { padding: .3em 0; }
+  padding: .5em 0;
 }
 
 // TODO
