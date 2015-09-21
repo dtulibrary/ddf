@@ -7,7 +7,7 @@ class FeedbackFormsController < ApplicationController
     begin
       @feedback_form = FeedbackForm.new(params[:feedback_form])
       @feedback_form.request = request
-      if @feedback_form.deliver!
+      if @feedback_form.deliver
         flash.now[:notice] = 'Thank you for your message!'
       else
         # binding.pry
