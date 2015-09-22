@@ -54,19 +54,14 @@ group :assets do
 end
 
 group :development, :test do
-  # Byebug is shit and Pry is the thing. Bye-bye, byebug!
-  gem 'pry', '~> 0.10.1'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  # I can see stuff
-  gem 'xray-rails'
-
   gem 'jettywrapper'
+
+  gem 'web-console', '~> 2.0'
+  gem 'xray-rails'
+  gem 'pry', '~> 0.10.1'
+  gem 'minitest'
+  gem 'capybara'
 end
 
 gem 'rsolr', '~> 1.0.6'

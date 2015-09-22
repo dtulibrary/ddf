@@ -308,3 +308,5 @@ To wipe out the asset pipeline cache, a brute force rm -rf tmp/* will suffice. T
 Finally, if you are experimenting with rake assets:precompile in your development environment (more on this in a later article), you’ll also want to rm -rf public/assets/* afterwards to clean that up.
 
 
+https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/
+http://edgeguides.rubyonrails.org/testing.html#test-helpers
