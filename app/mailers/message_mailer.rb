@@ -8,8 +8,4 @@ class MessageMailer < ApplicationMailer
 
     mail subject: "Message from #{message.name}"
   end
-
-  def new_message_stub(opts={})
-    mail subject: "Message from #{opts[:name]}"
-  end
 end
