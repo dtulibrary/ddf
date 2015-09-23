@@ -10,6 +10,9 @@ da:
     application_name: 'Den Danske Forskningsdatabase-Danish National Research Database'
     national: 'Den Danske'
     research_database: 'Forskningsdatabase'
+    elevator_pitch: "Omkring 1 million forskningspublikationer, indsamlet fra 12 danske universiteter og forskningsinstitutioners forskningsdatabaser."
+    news_tag: "Nyt"
+    news_content: "(Oktober 2015): Interface og søgeteknologi opgraderet"
 
     navigation:
       search_section:
