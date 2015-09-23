@@ -310,3 +310,6 @@ Finally, if you are experimenting with rake assets:precompile in your developmen
 
 https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/
 http://edgeguides.rubyonrails.org/testing.html#test-helpers
+
+Open link in new tab.
+<a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a>.

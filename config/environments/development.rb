@@ -43,6 +43,3 @@ end
 if File.exists? File.dirname(__FILE__) + '/../application.local.rb'
   require File.dirname(__FILE__) + '/../application.local.rb'
 end
-
-Rails.logger = Logger.new(STDOUT)
-# Rails.logger = Log4r::Logger.new("Application Log")

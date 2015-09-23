@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
       # binding.pry
 
-      MessageMailer.new_message(@message).deliver_now
+      MessageMailer.new_message(@message).deliver
       redirect_to contact_path, notice: "Your message has been sent."
     else
       flash[:alert] = "An error occurred while delivering this message."

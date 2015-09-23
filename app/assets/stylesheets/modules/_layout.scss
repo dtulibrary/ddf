@@ -62,6 +62,22 @@ body > footer {
   padding: 2em 0 0 0;
   font-size: .9rem;
   margin-top: 1em;
+  position: relative;
+}
+
+.sticky a {
+  display: block;
+  padding: 1em 2em;
+  color: $blue-1;
+}
+.sticky a:hover { color: $orange; }
+
+body > footer .sticky {
+  position: absolute;
+  top: -26px;
+  right: 50px;
+  background: $blue-3;
+  border-radius: 3px;
 }
 
 form.search-query-form { padding-left: 0; }
@@ -308,3 +324,7 @@ figure#deff {
 }
 
 #chart { text-align: center; }
+
+div.intro {
+  margin-bottom: 2em;
+}
