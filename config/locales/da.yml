@@ -62,12 +62,12 @@ da:
         facet:
           author_facet: Forfatter
           format_orig_s: Type
-          journal_title_facet: Tidskriftets Titel
+          journal_title_facet: Tidskriftets titel
           pub_date_tsort: Udgivelsesår
           research_area_ss: Hovedforskningsområde
           source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
-          access_condition_s: Status
+          access_condition_s: Publikations status
           review_status_s: Review status
           scientific_level_s: Videnskabeligt niveau
         show:
@@ -85,8 +85,8 @@ da:
           series_title_ts: Serie
           source_ss: Forskningsinstitution
           subtitle_ts: Undertitel
-          access_condition_s: Status
-          scientific_level_s: Videnskabeligt Niveau
+          access_condition_s: Publikations status
+          scientific_level_s: Videnskabeligt niveau
           review_status_s: Review status
           pub_date_tis: År
           supervisor_ts: Vejleder

@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   # get '/search', to: redirect('/catalog')
   get '/search', to: redirect('/')
   get '/catalog', to: redirect('/')
-  get '/:lang/catalog', to: redirect('/')
 
   # OPEN ACCESS
   get '/open-access' => 'pages#open_access'

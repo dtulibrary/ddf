@@ -53,8 +53,8 @@ en:
           research_area_ss: Main Research Area
           source_ss: Research Institution
           isolanguage_ss: Language
-          access_condition_s: State
-          review_status_s: Review status
+          access_condition_s: Publication State
+          review_status_s: Review Status
           scientific_level_s: Scientific level
         show:
           abstract_ts: Abstract
@@ -72,7 +72,7 @@ en:
           series_title_ts: Series
           source_ss: Research Institution
           subtitle_ts: Subtitle
-          access_condition_s: State
+          access_condition_s: Publication State
           scientific_level_s: Scientific Level
           review_status_s: Review status
           pub_date_tis: Year

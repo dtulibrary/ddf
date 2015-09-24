@@ -4,8 +4,8 @@
 
 <div id="content" class="col-md-9 col-sm-8">
   <% unless has_search_parameters? %>
-    <%# if there are no input/search related params, display the "home" partial -%>
-    <%= render 'home' %>
+    <%# if there are no input/search related params, redirect to main index page -%>
+    <%= render template: 'pages/index' %>
   <% else %>
     <%= render 'search_results' %>
   <% end %>
