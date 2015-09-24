@@ -188,13 +188,13 @@ en:
         example: Example
         finds_records: Finds records
         water: water
-        containing_word: "containing the word 'water'."
+        containing_word: "containing the word \"water\"."
         water_supplies: water supplies
-        containing_phrase: "containing the phrase 'water supplies'."
+        containing_phrase: "containing the phrase \"water supplies\"."
         author: "author:"
-        phrase_author_field: "containing the prase 'Doe, John' in the author field."
+        phrase_author_field: "containing the prase \"Doe, John\" in the author field."
         title: "title:"
-        containing_ieee: "containing the word 'IEEE' in the title field."
+        containing_ieee: "containing the word \"IEEE\" in the title field."
         more_help: "Need more help?"
         search_how: Advanced search tutorial
     tools:

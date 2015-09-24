@@ -208,13 +208,13 @@ da:
         example: Eksempel
         finds_records: Finder dokumenter
         water: water
-        containing_word: "som indeholder ordet 'water'."
+        containing_word: "som indeholder ordet \"water\"."
         water_supplies: water supplies
-        containing_phrase: "som indeholder tekststrengen 'water supplies'."
+        containing_phrase: "som indeholder tekststrengen \"water supplies\"."
         author: "forfatter:"
-        phrase_author_field: "som indeholder tekststrengen 'Doe, John' i feltet: Forfatter."
+        phrase_author_field: "som indeholder tekststrengen \"Doe, John\" i feltet: Forfatter."
         title: "titel:"
-        containing_ieee: "som indeholder ordet 'IEEE' i feltet: Titel."
+        containing_ieee: "som indeholder ordet \"IEEE\" i feltet: Titel."
         more_help: "Brug for mere hjælp?"
         search_how: Avanceret søgning
     tools:
