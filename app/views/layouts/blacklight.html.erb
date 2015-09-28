@@ -27,10 +27,11 @@
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+      <%= display_meta_tags %>
   </head>
 
   <body class="<%= render_body_class %>">
-    <%# render :partial => 'shared/debug' %>
+    <%= render :partial => 'shared/debug' %>
     <header>
       <%= render :partial => 'shared/header' %>
       <%= render :partial => 'shared/search' %>

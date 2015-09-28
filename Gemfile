@@ -65,3 +65,4 @@ group :development, :test do
 end
 
 gem 'rsolr', '~> 1.0.6'
+gem 'meta-tags'

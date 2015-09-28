@@ -175,4 +175,21 @@ class CatalogController < ApplicationController
     # config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
     config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
   end
+
+  def show
+    super()
+    # binding.pry
+    @doctitle = @document[:title_ts]
+    @author   = @document[:author_ts]
+    @pubdate  = @document[:pub_date_tis]
+  end
+
+  # NOT USED:
+  def citation_tag(tag, content)
+     "<meta name='citation_#{tag}' content='#{content}'>".html_safe
+  end
+
+  def citation_tags
+     citation_tag(:foo, "bar")
+  end
 end

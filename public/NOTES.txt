@@ -313,3 +313,9 @@ http://edgeguides.rubyonrails.org/testing.html#test-helpers
 
 Open link in new tab.
 <a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a>.
+
+CUSTOM META TAGS FOR VIEWS:
+http://nithinbekal.com/posts/rails-page-titles/
+This one uses a gem:
+http://cookieshq.co.uk/posts/easy-seo-metatags-with-rails-4/
+https://github.com/kpumuk/meta-tags
