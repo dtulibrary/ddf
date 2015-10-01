@@ -11,14 +11,18 @@
 <div class="container">
   <!--   <div id="chart"></div> -->
 
-  <ul class="chartlist">
-    <% @types.each do |facet| %>
+  <section>
+    <h1 class="chart-heading">Publications <em>by</em> type</h1>
+    <ul class="chartlist">
+      <% @types.each do |facet| %>
       <li>
-        <a href="/"><%= facet[:label] %></a>
+        <%= link_to_facet(facet) %>
         <span class="count"><%= facet[:count] %></span>
         <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
       </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
+  </section>
+
 </div>
 

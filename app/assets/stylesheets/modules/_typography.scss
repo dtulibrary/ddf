@@ -948,55 +948,16 @@ em.news-tag {
   font-weight: 700;
 }
 
-/* CHART LISTS */
-.chartlist {
-  float: left;
-  border-top: 1px solid #EEE;
-
-  width: 100%; //modified
+h1.chart-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $serif;
+  font-weight: 600;
+  font-size: calc-em(17px);
+  letter-spacing: .09em;
+  margin: 1em 0 2em 0;
+  color: $blue-2;
 }
-.chartlist li {
-  position: relative;
-  display: block;
-  border-bottom: 1px solid #EEE;
-  _zoom: 1;
-
-  margin: 0; //added
-}
-.chartlist li a {
-  display: block;
-  padding: 0.4em 4.5em 0.4em 0.5em;
-  position: relative;
-  z-index: 2;
-}
-
-.chartlist li a:hover { text-decoration: none;} //added
-
-.chartlist .count {
-  display: block;
-  position: absolute;
-  top: 15%; //modified
-  right: 0;
-  margin: 0 0.3em;
-  text-align: right;
-  color: #999;
-  font-weight: bold;
-  font-size: 0.875em;
-  line-height: 2em;
-
-  z-index: 2; //added
-}
-.chartlist .pct {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: #B8E4F5;
-  text-indent: -9999px;
-  overflow: hidden;
-  line-height: 2em;
-}
-.chartlist li:hover {
-  background: #EFEFEF;
+h1.chart-heading em {
+ text-transform: none;
 }

@@ -332,3 +332,6 @@ http://stackoverflow.com/questions/1068558/oo-design-in-rails-where-to-put-stuff
 
 Good example of Ruby mixins:
 http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html
+
+HOW FIX?
+http://stackoverflow.com/questions/31734769/connect-to-gmail-via-phpmailer
