@@ -27,6 +27,7 @@ class PagesController < ApplicationController
     # ]
 
     @types = publications_by_facet('format_orig_s')
+    @institutions = publications_by_facet('source_ss')
 
     # @meth = Blacklight.solr.public_methods
 

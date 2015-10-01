@@ -11,18 +11,37 @@
 <div class="container">
   <!--   <div id="chart"></div> -->
 
-  <section>
-    <h1 class="chart-heading">Publications <em>by</em> type</h1>
-    <ul class="chartlist">
-      <% @types.each do |facet| %>
-      <li>
-        <%= link_to_facet(facet) %>
-        <span class="count"><%= facet[:count] %></span>
-        <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
-      </li>
-      <% end %>
-    </ul>
-  </section>
+  <div class="row block">
+    <div class="">
+      <section>
+        <h1 class="chart-heading">Publications <em>by</em> Type</h1>
+        <ul class="chartlist">
+          <% @types.each do |facet| %>
+          <li>
+            <%= link_to_facet(facet) %>
+            <span class="count"><%= facet[:count] %></span>
+            <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
+          </li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+
+    <div class="">
+      <section>
+        <h1 class="chart-heading">Publications <em>by</em> Institution</h1>
+        <ul class="chartlist">
+          <% @institutions.each do |facet| %>
+          <li>
+            <%= link_to_facet(facet) %>
+            <span class="count"><%= facet[:count] %></span>
+            <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
+          </li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
 
 </div>
 

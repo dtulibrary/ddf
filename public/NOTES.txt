@@ -335,3 +335,20 @@ http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html
 
 HOW FIX?
 http://stackoverflow.com/questions/31734769/connect-to-gmail-via-phpmailer
+
+
+
+  <section>
+    <h1 class="chart-heading">Publications <em>by</em> Institution</h1>
+    <ul class="chartlist">
+      <% @institutions.each do |facet| %>
+      <li>
+        <%= link_to_facet(facet) %>
+        <span class="count"><%= facet[:count] %></span>
+        <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+
+Du er verdensbedste verdensmester! Du er en sej haj!

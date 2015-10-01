@@ -1,5 +1,9 @@
 module StatService
 
+# Must pass params to:
+# 1) translation of facet code
+# 2) link builder
+
   def publications_by_facet(facet)
     publication_attrs(to_hash(facet_values(facet)), facet)
   end
@@ -26,13 +30,23 @@ module StatService
     a = []
     hash.each do |k, v|
       h = {}
+      h.store(:name, facet)
       h.store(:code, k)
-      h.store(:label, t("mxd_type_labels.publication_type_labels.#{k}"))
+      h.store(:label, translate(facet, k))
       h.store(:count, v)
       h.store(:pct, relative_by(:total, v, facet))
       a << h
     end
     a
+  end
+
+  LABEL_TRANSLATIONS = {
+    'format_orig_s' => 'mxd_type_labels.publication_type_labels',
+    'source_ss' => 'mxd_type_labels.source_labels'
+  }
+
+  def translate(facet, code)
+    t([LABEL_TRANSLATIONS[facet], '.', code].join)
   end
 
   # def relative_by_max(value, facet)
