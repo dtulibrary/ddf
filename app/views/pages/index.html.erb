@@ -11,12 +11,12 @@
 <div class="container">
   <!--   <div id="chart"></div> -->
 
-  <ul>
+  <ul class="chartlist">
     <% @types.each do |facet| %>
       <li>
         <a href="/"><%= facet[:label] %></a>
         <span class="count"><%= facet[:count] %></span>
-        <span class="pct" style="width: 42%"><%= format_pct(facet[:pct]) %></span>
+        <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
       </li>
     <% end %>
   </ul>

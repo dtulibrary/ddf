@@ -947,3 +947,56 @@ em.news-tag {
   color: $orange;
   font-weight: 700;
 }
+
+/* CHART LISTS */
+.chartlist {
+  float: left;
+  border-top: 1px solid #EEE;
+
+  width: 100%; //modified
+}
+.chartlist li {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #EEE;
+  _zoom: 1;
+
+  margin: 0; //added
+}
+.chartlist li a {
+  display: block;
+  padding: 0.4em 4.5em 0.4em 0.5em;
+  position: relative;
+  z-index: 2;
+}
+
+.chartlist li a:hover { text-decoration: none;} //added
+
+.chartlist .count {
+  display: block;
+  position: absolute;
+  top: 15%; //modified
+  right: 0;
+  margin: 0 0.3em;
+  text-align: right;
+  color: #999;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 2em;
+
+  z-index: 2; //added
+}
+.chartlist .pct {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #B8E4F5;
+  text-indent: -9999px;
+  overflow: hidden;
+  line-height: 2em;
+}
+.chartlist li:hover {
+  background: #EFEFEF;
+}

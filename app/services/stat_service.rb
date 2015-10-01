@@ -29,7 +29,7 @@ module StatService
       h.store(:code, k)
       h.store(:label, t("mxd_type_labels.publication_type_labels.#{k}"))
       h.store(:count, v)
-      h.store(:pct, relative_by(:max, v, facet))
+      h.store(:pct, relative_by(:total, v, facet))
       a << h
     end
     a
