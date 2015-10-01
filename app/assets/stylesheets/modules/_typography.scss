@@ -683,10 +683,8 @@ ul.icon-labels__topnav li > i {
 }
 
 ul.site-sections-list {
-  //text-align: right;
   float: right;
   margin: 0;
-  //margin-top: 1em;
   @include respond-to($ipad_portrait) {
     margin-top: 1em;
   }
@@ -698,19 +696,13 @@ ul.site-sections-list {
 
 ul.site-sections-list li {
   display: inline-block;
-  //padding: .3em .7em 0.7em;
-  //margin-top: 1.25em;
   margin: 0;
-  //margin-bottom: 2em;
   vertical-align: text-top; //WOW!!!
 }
 ul.site-sections-list li:not(:last-child) {
   @include respond-to($iphone_landscape) {
-    margin-right: 1.25em;
+    margin-right: .5em;
   }
-
-  //margin-right: 1.25em;
-  //@include respond-to($iphone_landscape) { margin-right: 0; }
 }
 
 ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
@@ -718,13 +710,12 @@ ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
 ul.site-sections-list li a {
   display: block;
   height: 100%;
-  //margin: .5em 0 0 0;
-  padding: 0 .7em .7em .7em;
+  padding: .7em;
   font-family: $headline;
   line-height: 1.25em;
   color: $blue-3;
   @include respond-to($iphone_landscape) {
-    padding: 0 1em .1em 1em;
+    padding: 1em;
   }
 }
 ul.site-sections-list li:hover a {
@@ -733,22 +724,21 @@ ul.site-sections-list li:hover a {
 }
 
 ul.site-sections-list li i {
-  font-size: calc-em(16px);
+  font-size: calc-em(21px);
   display: block;
-  margin: .5em auto .7em auto;
+  margin-bottom: .3em;
   text-align: center;
-
+  text-shadow: 1px 1px 2px #222;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(25px);
+    margin-bottom: 0;
   }
-
 }
 
 ul.site-sections-list li span.menu-item-title {
   @include respond-to($iphone_landscape) {
     display: none;
   }
-
 }
 
 body[class$="-pages-index"] li#search { background: lighten($bluewood, 15%); }

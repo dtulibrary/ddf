@@ -319,3 +319,16 @@ http://nithinbekal.com/posts/rails-page-titles/
 This one uses a gem:
 http://cookieshq.co.uk/posts/easy-seo-metatags-with-rails-4/
 https://github.com/kpumuk/meta-tags
+
+RAILS REFACTORING, PARTICULARLY CONTROLLERS:
+http://blog.pivotal.io/labs/labs/object-oriented-rails-writing-better-controllers
+https://www.agileplannerapp.com/blog/building-agile-planner/refactoring-with-hexagonal-rails
+http://nithinbekal.com/posts/rails-presenters/
+http://stackoverflow.com/questions/2194745/rails-refactoring-views-helpers-how-does-it-all-go-together
+
+g(rails where to put custom classes)
+http://stackoverflow.com/questions/15260984/guidelines-for-where-to-put-classes-in-rails-apps-that-dont-fit-anywhere
+http://stackoverflow.com/questions/1068558/oo-design-in-rails-where-to-put-stuff
+
+Good example of Ruby mixins:
+http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html

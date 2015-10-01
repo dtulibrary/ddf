@@ -9,6 +9,16 @@
 </div>
 
 <div class="container">
-  <div id="chart"></div>
+  <!--   <div id="chart"></div> -->
+
+  <ul>
+    <% @types.each do |facet| %>
+      <li>
+        <a href="/"><%= facet[:label] %></a>
+        <span class="count"><%= facet[:count] %></span>
+        <span class="pct" style="width: 42%"><%= format_pct(facet[:pct]) %></span>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
