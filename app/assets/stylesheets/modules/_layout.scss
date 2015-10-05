@@ -326,3 +326,9 @@ figure#deff {
 #chart { text-align: center; }
 
 div.intro { margin-bottom: .5em; }
+
+div.chart {
+   @include respond-to($ipad_portrait) {
+    margin-bottom: 7em; // TODO
+  }
+}

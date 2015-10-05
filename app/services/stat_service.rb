@@ -1,7 +1,8 @@
 module StatService
 
-  def publications_by_facet(facet, limit: 10)
-    publication_attrs(to_hash(raw_data_for(facet)), facet).take(limit)
+  def publications_by_facet(facet, limit: 60)
+    facet_list = publication_attrs(to_hash(facet), facet)
+    whitelist(facet_list).take(display_limit)
   end
 
   def raw_data_for(facet)
@@ -14,12 +15,17 @@ module StatService
     publ['facet_counts']['facet_fields'][facet]
   end
 
-  def to_hash(arr)
+  def to_hash(facet)
+    arr = raw_data_for(facet)
     Hash[*arr]
   end
 
   def values_for(facet)
-    to_hash(raw_data_for(facet)).values
+    to_hash(facet).values
+  end
+
+  def display_limit
+    to_hash('source_ss').length
   end
 
   def publication_attrs(hash, facet)
@@ -35,6 +41,12 @@ module StatService
     end
     a
   end
+
+  def whitelist(facet_list)
+    facet_list.select { |hash| (hash.values & BLACKLISTED_LABELS).empty? }
+  end
+
+  BLACKLISTED_LABELS = ['Other']
 
   def translate(facet, code)
     t([LABEL_TRANSLATIONS[facet], '.', code].join)
