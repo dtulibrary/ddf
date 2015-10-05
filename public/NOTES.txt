@@ -352,3 +352,10 @@ http://stackoverflow.com/questions/31734769/connect-to-gmail-via-phpmailer
   </section>
 
 Du er verdensbedste verdensmester! Du er en sej haj!
+
+
+  <%= link_to_facet(facet) %>
+  <span class="count"><%= facet[:count] %></span>
+  <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
+
+

@@ -1,47 +1,45 @@
-<div class="intro">
+<article role="main">
+  <div class="intro">
+    <div class="container">
+      <p class="pitch measure"> <%= t('blacklight.elevator_pitch')%> </p>
+      <p class="news">
+        <em class="news-tag"><%= t('blacklight.news_tag')%></em>
+        <%= t('blacklight.news_content')%>
+      </p>
+    </div>
+  </div>
+
   <div class="container">
-    <p class="pitch measure"> <%= t('blacklight.elevator_pitch')%> </p>
-    <p class="news">
-      <em class="news-tag"><%= t('blacklight.news_tag')%></em>
-      <%= t('blacklight.news_content')%>
-    </p>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-md-6">
+        <section>
+          <h1 class="chart-heading">Publications <em>by</em> Type</h1>
+          <ul class="chartlist">
+            <% @types.each do |facet| %>
+            <li>
+              <%= render_link_to(facet) %>
+              <%= render_count_for(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
 
-<div class="container">
-  <!--   <div id="chart"></div> -->
-
-  <div class="row block">
-    <div class="">
-      <section>
-        <h1 class="chart-heading">Publications <em>by</em> Type</h1>
-        <ul class="chartlist">
-          <% @types.each do |facet| %>
-          <li>
-            <%= link_to_facet(facet) %>
-            <span class="count"><%= facet[:count] %></span>
-            <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
-          </li>
-          <% end %>
-        </ul>
-      </section>
-    </div>
-
-    <div class="">
-      <section>
-        <h1 class="chart-heading">Publications <em>by</em> Institution</h1>
-        <ul class="chartlist">
-          <% @institutions.each do |facet| %>
-          <li>
-            <%= link_to_facet(facet) %>
-            <span class="count"><%= facet[:count] %></span>
-            <span class="pct" style="width: <%= format_as_pct(facet[:pct]) %>"><%= parenthesize_as_pct(facet[:pct]) %></span>
-          </li>
-          <% end %>
-        </ul>
-      </section>
+      <div class="col-md-6">
+        <section>
+          <h1 class="chart-heading">Publications <em>by</em> Institution</h1>
+          <ul class="chartlist">
+            <% @institutions.each do |facet| %>
+            <li>
+              <%= render_link_to(facet) %>
+              <%= render_count_for(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
-
-</div>
-
+</article>

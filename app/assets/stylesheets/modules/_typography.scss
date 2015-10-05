@@ -954,10 +954,11 @@ h1.chart-heading {
   font-family: $serif;
   font-weight: 600;
   font-size: calc-em(17px);
-  letter-spacing: .09em;
-  margin: 1em 0 2em 0;
+  letter-spacing: .1em;
+  margin: 1em 0 1.5em 0;
   color: $blue-2;
 }
 h1.chart-heading em {
  text-transform: none;
+ letter-spacing: .05em;
 }
