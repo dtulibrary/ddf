@@ -30,6 +30,12 @@ da:
       ef_section:
         eliteforsk: "Eliteforsk Pris"
 
+    data_visualization:
+      publications: Udgivelser
+      by: efter
+      type:
+      institution: Forskningsinstitution
+
     tools:
       cite: 'Citer'
 

@@ -1,6 +1,6 @@
 module StatService
 
-  def publications_by_facet(facet, limit: 60)
+  def publications_by_facet(facet)
     facet_list = publication_attrs(to_hash(facet), facet)
     whitelist(facet_list).take(display_limit)
   end
@@ -43,10 +43,10 @@ module StatService
   end
 
   def whitelist(facet_list)
-    facet_list.select { |hash| (hash.values & BLACKLISTED_LABELS).empty? }
+    facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
   end
 
-  BLACKLISTED_LABELS = ['Other']
+  BLACKLISTED_CODES = ['do']
 
   def translate(facet, code)
     t([LABEL_TRANSLATIONS[facet], '.', code].join)

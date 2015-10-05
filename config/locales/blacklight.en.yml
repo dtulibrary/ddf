@@ -23,6 +23,12 @@ en:
       ef_section:
         eliteforsk: "Eliteforsk Award"
 
+    data_visualization:
+      publications: Publication
+      by: by
+      type:
+      institution: Institution
+
     entry_name:
         default: 'entry'
     search:
