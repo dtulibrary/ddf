@@ -13,52 +13,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <h1 class="logo logo-main">
-          <a href="/">
-            <em><%= t('blacklight.national')%></em>
-            <%= t('blacklight.research_database') %>
-          </a>
-        </h1>
+        <h1 class="logo logo-main"><%= link_to home_item_contents, root_path %></h1>
       </div>
 
       <div class="col-md-7">
         <ul class="site-sections-list icon-labels icon-labels__topnav">
-          <li id="search">
-            <a href="/">
-              <i class="glyphicon glyphicon-search"></i>
-              <span class="menu-item-title">
-                <%= t('blacklight.navigation.search_section.search') %>
-              </span>
-            </a>
-          </li>
-
-<!--
-          <li id="open-access">
-            <a href="/open-access">
-              <i class="glyphicon glyphicon-lock"></i>
-              <span class="menu-item-title">
-                <%# t('blacklight.navigation.oa_section.open_access') %>
-              </span>
-            </a>
-          </li>
-          <li id="eliteforsk-award">
-            <a href="/eliteforsk-award">
-              <i class="glyphicon glyphicon-education"></i>
-              <span class="menu-item-title">
-                <%# t('blacklight.navigation.ef_section.eliteforsk') %>
-              </span>
-            </a>
-          </li>
- -->
-
-          <li id="about">
-            <a href="/about">
-              <i class="glyphicon glyphicon-info-sign"></i>
-              <span class="menu-item-title">
-                <%= t('blacklight.navigation.about_section.about') %>
-              </span>
-            </a>
-          </li>
+          <li id="search"><%= link_to search_item_contents, search_path %></li>
+          <!--
+          <li id="open-access"><%# link_to open_access_item_contents, open_access_path %></li>
+          <li id="eliteforsk-award"><%# link_to eliteforsk_award_item_contents, eliteforsk_award_path %></li>
+          -->
+          <li id="about"><%= link_to about_item_contents, about_path %></li>
         </ul>
       </div>
     </div>

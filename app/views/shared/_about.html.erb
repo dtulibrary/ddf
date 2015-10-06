@@ -8,16 +8,16 @@
 
       <ul class="subnav-items-list">
         <li id="search-get">
-          <a href="/about/search-and-get"><%= t('blacklight.navigation.about_section.search_get') %></a>
+          <%= link_to t('blacklight.navigation.about_section.search_get'), about_search_and_get_path %>
         </li>
         <li id="data">
-          <a href="/about/data"><%= t('blacklight.navigation.about_section.data') %></a>
+          <%= link_to t('blacklight.navigation.about_section.data'), about_data_path %>
         </li>
         <li id="faq">
-          <a href="/about/faq"><%= t('blacklight.navigation.about_section.faq') %></a>
+          <%= link_to t('blacklight.navigation.about_section.faq'), about_faq_path %>
         </li>
         <li id="contact">
-          <a href="/about/contact"><%= t('blacklight.navigation.about_section.contact') %></a>
+          <%= link_to t('blacklight.navigation.about_section.contact'), about_contact_path %>
         </li>
       </ul>
     </div>
