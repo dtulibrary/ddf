@@ -1,8 +1,9 @@
 module StatService
 
-  def publications_by_facet(facet)
+  def publications_by_facet(facet, opts={})
     facet_list = publication_attrs(to_hash(facet), facet)
-    whitelist(facet_list).take(display_limit)
+    limit = opts[:limit] || limit_by_facet('source_ss')
+    whitelist(facet_list).take(limit)
   end
 
   def raw_data_for(facet)
@@ -24,8 +25,8 @@ module StatService
     to_hash(facet).values
   end
 
-  def display_limit
-    to_hash('source_ss').length
+  def limit_by_facet(facet)
+    to_hash(facet).length
   end
 
   def publication_attrs(hash, facet)
