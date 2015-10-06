@@ -4,6 +4,8 @@ require "minitest/autorun"
 require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
 
+Dir["../services/*.rb"].each {|file| require file }
+
 class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
@@ -15,3 +17,9 @@ class HelperTest < MiniTest::Spec
   include ActionView::TestCase::Behavior
   register_spec_type(/Helper$/, self)
 end
+
+# class ServiceTest < MiniTest::Spec
+#   include ActiveSupport::Testing::SetupAndTeardown
+#   include ActionView::TestCase::Behavior
+#   register_spec_type(/Service$/, self)
+# end

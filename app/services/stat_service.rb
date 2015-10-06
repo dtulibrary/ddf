@@ -1,7 +1,7 @@
 module StatService
 
   def publications_by_facet(facet, opts={})
-    facet_list = publication_attrs(to_hash(facet), facet)
+    facet_list = publication_attrs(facet)
     limit = opts[:limit] || limit_by_facet('source_ss')
     whitelist(facet_list).take(limit)
   end
@@ -16,22 +16,22 @@ module StatService
     publ['facet_counts']['facet_fields'][facet]
   end
 
-  def to_hash(facet)
+  def hashify(facet)
     arr = raw_data_for(facet)
     Hash[*arr]
   end
 
   def values_for(facet)
-    to_hash(facet).values
+    hashify(facet).values
   end
 
   def limit_by_facet(facet)
-    to_hash(facet).length
+    hashify(facet).length
   end
 
-  def publication_attrs(hash, facet)
+  def publication_attrs(facet)
     a = []
-    hash.each do |k, v|
+    hashify(facet).each do |k, v|
       h = {}
       h.store(:name, facet)
       h.store(:code, k)
