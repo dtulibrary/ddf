@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   # get 'pages/data', :defaults => { :format => 'json' }
 
   # SEARCH
-  # get '/search', to: redirect('/catalog')
-  get '/search', to: redirect('/')
-  get '/catalog', to: redirect('/')
+  # Don't do a 301 redirect:
+  # get '/search', to: redirect('/')
+  # get '/catalog', to: redirect('/')
+
+  get '/search', to: 'pages#index'
+  get '/catalog', to: 'pages#index'
 
   # OPEN ACCESS
   get '/open-access' => 'pages#open_access'
