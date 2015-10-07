@@ -343,3 +343,5 @@ http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html
 http://mixandgo.com/blog/how-to-use-link_to-in-rails
 Good article.
 
+GREAT URL ENCODING LINKS:
+http://stackoverflow.com/questions/2824126/whats-the-difference-between-uri-escape-and-cgi-escape

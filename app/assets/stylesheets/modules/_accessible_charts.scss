@@ -25,7 +25,7 @@ http://alistapart.com/article/accessibledatavisualization
   position: relative;
   z-index: 2;
 }
-.chartlist li a:hover { text-decoration: none;} //added
+.chartlist li a:hover { text-decoration: none; } //added
 
 .chartlist .count {
   display: block;
@@ -52,3 +52,7 @@ http://alistapart.com/article/accessibledatavisualization
   overflow: hidden;
   line-height: 2em;
 }
+
+// .chartlist li:hover .pct {
+//   background: darken(#B8E4F5, 5%);
+// }

@@ -16,10 +16,13 @@ module PagesHelper
   end
 
   def render_count_for(facet)
-    "<span class='count'>#{facet[:count]}</span>".html_safe
+    num = number_with_delimiter(facet[:count])
+    "<span class='count'>#{num}</span>".html_safe
   end
 
   def render_percentage_for(facet)
-    "<span class='pct' style='width: #{format_as_pct(facet[:pct])}'>#{parenthesize_as_pct(facet[:pct])}</span>".html_safe
+    pct = format_as_pct(facet[:pct])
+    parenthesized = parenthesize_as_pct(facet[:pct])
+    "<span class='pct' style='width: #{pct}'>#{parenthesized}</span>".html_safe
   end
 end

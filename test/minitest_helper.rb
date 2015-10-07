@@ -23,3 +23,5 @@ end
 #   include ActionView::TestCase::Behavior
 #   register_spec_type(/Service$/, self)
 # end
+
+require 'minitest/pride'
