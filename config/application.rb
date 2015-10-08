@@ -38,5 +38,11 @@ module Ddf
     config.active_record.raise_in_transactional_callbacks = true
 
     config.solr_document = { :document_id => 'cluster_id_ss' }
+
+    config.sitemap = {
+      :generate         => false,
+      :host             => '',
+      :dedup_source_url => '',
+    }
   end
 end
