@@ -345,3 +345,10 @@ Good article.
 
 GREAT URL ENCODING LINKS:
 http://stackoverflow.com/questions/2824126/whats-the-difference-between-uri-escape-and-cgi-escape
+
+324: Best architecture
+322: Espresso machine
+306: Company advertisements
+208: Tea
+scion: Science park (http://sciondtu.dk/)
+
