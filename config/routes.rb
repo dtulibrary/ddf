@@ -50,6 +50,9 @@ Rails.application.routes.draw do
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
+  # ROBOTS
+  get '/robots', to: 'pages#robots'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

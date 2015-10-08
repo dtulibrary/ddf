@@ -56,4 +56,9 @@ class PagesController < ApplicationController
   def feedback
     render :layout => 'chrome'
   end
+
+  # ROBOTS
+  def robots
+    render :layout => nil
+  end
 end
