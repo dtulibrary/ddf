@@ -18,7 +18,7 @@
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.type") %>
           </h1>
-          <ul class="chartlist">
+          <ul class="chartlist types">
             <% @types.each do |facet| %>
             <li>
               <%= render_link_to(facet) %>
@@ -37,7 +37,7 @@
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.institution") %>
           </h1>
-          <ul class="chartlist">
+          <ul class="chartlist institutions">
             <% @institutions.each do |facet| %>
             <li>
               <%= render_link_to(facet) %>
