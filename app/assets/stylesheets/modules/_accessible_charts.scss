@@ -53,6 +53,9 @@ http://alistapart.com/article/accessibledatavisualization
   line-height: 2em;
 }
 
-// .chartlist li:hover .pct {
-//   background: darken(#B8E4F5, 5%);
-// }
+//ADDED:
+.chartlist li:hover .pct { background: darken(#B8E4F5, 5%); }
+
+.chartlist li a:visited { color: #666; }
+.chartlist li a:hover,
+.chartlist li a:visited:hover { color: $orange; }
