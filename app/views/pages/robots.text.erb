@@ -1,1 +1,3 @@
+<%- if File.exists? "#{Rails.root}/public/sitemap.xml.gz" -%>
 Sitemap: <%= "#{root_url :locale => nil}sitemap.xml.gz" %>
+<%- end -%>
