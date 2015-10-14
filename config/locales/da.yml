@@ -186,6 +186,7 @@ da:
       rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
+      backlink_ss: Arkitekskolen Aarhus
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review

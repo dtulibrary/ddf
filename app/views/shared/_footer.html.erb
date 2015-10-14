@@ -4,13 +4,19 @@
 
     <!-- <a href="mailto:feedbackforskningsdatabase@dtu.dk?subject=Website Feedback"> -->
 
-    <a href="mailto:feedbackforskningsdatabase@dtu.dk?subject=Feedback on forskningsdatabasen.dk (url: http://forskningsdatabasen.dk/…)">
-
-
+    <a href="javascript:urlForPage()">
       <i class="glyphicon glyphicon-envelope"></i>
       Feedback
     </a>
   </div>
+
+  <script>
+    l = window.location;
+    t = document.title;
+    function urlForPage() {
+    window.location = "mailto:feedbackforskningsdatabase@dtu.dk"+"?subject=Website Feedback: "+t+"&body=Page URL: "+l+" Page Name: "+t;
+    }
+  </script>
 
   <div class="container">
     <h1 class="footer-heading">

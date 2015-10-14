@@ -352,3 +352,5 @@ http://stackoverflow.com/questions/2824126/whats-the-difference-between-uri-esca
 208: Tea
 scion: Science park (http://sciondtu.dk/)
 
+Dynamically generate page title and page url to mailto: html tag with JavaScript:
+http://mygreatestchoice.com/dynamically-generate-page-title-and-page-url-to-mailto-html-tag-with-javascript/

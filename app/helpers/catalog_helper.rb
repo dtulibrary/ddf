@@ -158,10 +158,15 @@ module CatalogHelper
       'rdb_ark'
     when /^https?:\/\/pure\.fak\.dk/
       'rdb_fak'
+    when /^https?:\/\/aarch\.dk/
+      'backlink_ss'
     else
       raise "Couldn't find data provider for the url: #{link}"
     end
   end
+
+  # "backlink_ss": [
+  #   "http://aarch.dk/publications/6b563f21-3451-4e71-8ee3-14a21ee341d1"
 
   def render_journal_info args, format = :index
     document = args[:document]
