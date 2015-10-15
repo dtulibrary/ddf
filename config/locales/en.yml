@@ -58,6 +58,7 @@ en:
           access_condition_s: Publication Status
           review_status_s: Review Status
           scientific_level_s: Scientific level
+          format_orig_s: Type
         show:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
@@ -212,7 +213,7 @@ en:
       ris: "Export to RIS"
       cite: "Cite"
     links:
-      resolve_via_doi: Resolve publisher edition via DOI
-      resolve_via_doi_hover: Resolve publisher edition via DOI (opens in a new window)
-      direct_fulltext: Download full text directly from %{source} (opens in a new window)
+      resolve_via_doi: Get publisher edition via DOI resolver
+      resolve_via_doi_hover: Get publisher edition via DOI resolver (opens in a new window)
+      direct_fulltext: Get full text directly from %{source} (opens in a new window)
       backlink_hover: View this record at %{source}

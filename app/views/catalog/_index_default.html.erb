@@ -7,7 +7,7 @@
     <% end -%>
   <% end -%>
 
-  <%# render :partial => 'availability_panel', :locals => {:document => document} %>
-  <%= render :partial => 'fulltext_access', :locals => {:document => document} if document['fulltext_list_ssf'] %>
-  <%= render :partial => 'data_providers',  :locals => {:document => document} if document['backlink_ss'] %>
+  <%# render :partial => 'index_availability_panel', :locals => {:document => document} %>
+  <%= render :partial => 'index_fulltext_access', :locals => {:document => document} if document['fulltext_list_ssf'] %>
+  <%= render :partial => 'index_data_providers',  :locals => {:document => document} if document['backlink_ss'] %>
 </dl>

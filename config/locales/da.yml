@@ -233,7 +233,7 @@ da:
       ris: "Exporter til RIS"
       cite: "Citer"
     links:
-      resolve_via_doi: Slå forlagsudgave op gennem DOI
-      resolve_via_doi_hover: Slå forlagsudgave op gennem DOI (åbner i nyt vindue)
+      resolve_via_doi: Hent forlagsudgave gennem DOI-opslag
+      resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
       backlink_hover: Se denne post hos %{source}
