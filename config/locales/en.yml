@@ -46,6 +46,8 @@ en:
           pub_date_tis: Year
           supervisor_ts: Supervisor
           editor_ts: Editor
+          fulltext_access: Full text access
+          data_providers: Data providers
         facet:
           author_facet: Author
           journal_title_facet: Journal Title
@@ -166,7 +168,7 @@ en:
       rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
-      backlink_ss: Aarhus School of Architecture
+      rdb_aarch: Aarhus School of Architecture
     review_status_labels:
       peer_review: Peer Review
       other_review: Other review
@@ -209,3 +211,8 @@ en:
       bibtex: "Export to BibTeX"
       ris: "Export to RIS"
       cite: "Cite"
+    links:
+      resolve_via_doi: Resolve publisher edition via DOI
+      resolve_via_doi_hover: Resolve publisher edition via DOI (opens in a new window)
+      direct_fulltext: Download full text directly from %{source} (opens in a new window)
+      backlink_hover: View this record at %{source}

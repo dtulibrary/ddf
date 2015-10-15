@@ -211,6 +211,26 @@ div.availability-panel ul.institutions-list li {
 }
 div.availability-panel--show ul.institutions-list li { margin-bottom: .3em; }
 
+.fulltext-access {
+  background-color: $blue-4;
+  border-radius: 5px;
+  padding: 0.5em 0em;
+  margin: 0.5em 0em;
+}
+
+.fulltext-access, .data-providers {
+  img {
+    height: 1em;
+  }
+
+  i.fa-external-link-square {
+    vertical-align: super;
+    font-size: 0.8em;
+    margin-left: 0.25em;
+    color: $blue-2;
+  }
+}
+
 a.details-link {
   display: block;
   font-size: calc-em(21px);

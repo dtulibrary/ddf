@@ -59,6 +59,8 @@ da:
           pub_date_tis: År
           supervisor_ts: Vejleder
           editor_ts: Redaktør
+          fulltext_access: Fuldtekstadgang
+          data_providers: Dataleverandører
         facet:
           author_facet: Forfatter
           format_orig_s: Type
@@ -186,7 +188,7 @@ da:
       rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
-      backlink_ss: Arkitekskolen Aarhus
+      rdb_aarch: Arkitekskolen Aarhus
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review
@@ -230,3 +232,8 @@ da:
       bibtex: "Exporter til BibTeX"
       ris: "Exporter til RIS"
       cite: "Citer"
+    links:
+      resolve_via_doi: Slå forlagsudgave op gennem DOI
+      resolve_via_doi_hover: Slå forlagsudgave op gennem DOI (åbner i nyt vindue)
+      direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
+      backlink_hover: Se denne post hos %{source}

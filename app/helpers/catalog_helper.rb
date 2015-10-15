@@ -159,7 +159,9 @@ module CatalogHelper
     when /^https?:\/\/pure\.fak\.dk/
       'rdb_fak'
     when /^https?:\/\/aarch\.dk/
-      'backlink_ss'
+      # This is a pseudo source name that only exists here
+      # to handle two sources packed into one Pure backend.
+      'rdb_aarch'
     else
       raise "Couldn't find data provider for the url: #{link}"
     end

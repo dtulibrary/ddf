@@ -1,0 +1,20 @@
+<div class="availability-panel">
+  <dt class="ddf-index-key"><%= t('ddf.tools.availability') %>:</dt>
+
+  <dd class="ddf-index-value">
+    <ul class="institutions-list">
+      <%# TODO:
+        1) Refactor this loop to controller to show ';' if length > 1
+        2) Include title attrs on hover
+      %>
+      <% (document['backlink_ss'] || []).each do |link| %>
+        <li>
+          <%= link_to(t("mxd_type_labels.source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
+          <i class="fa fa-external-link-square"></i>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to (content_tag('i', '', :class => 'fa fa-file')), catalog_path(document.id), :class => 'details-link align-right' %>
+  </dd>
+</div>

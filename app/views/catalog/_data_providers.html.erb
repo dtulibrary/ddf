@@ -1,0 +1,13 @@
+<div class="data-providers">
+  <dt><%= t 'blacklight.search.fields.index.data_providers' %>:</dt>
+  <% (document['backlink_ss'] || []).each do |backlink| %>
+    <dd>
+      <% t("mxd_type_labels.source_labels.#{get_backlink_origin(backlink)}").tap do |source_label| %>
+        <%= link_to source_label, backlink, 
+                    :target => '_blank',
+                    :title  => t('ddf.links.backlink_hover', :source => source_label) %>
+      <% end %>
+      <i class="fa fa-external-link-square"></i>
+    </dd>
+  <% end %>
+</div>

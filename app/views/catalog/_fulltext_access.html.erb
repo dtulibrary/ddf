@@ -1,0 +1,24 @@
+<div class="fulltext-access">
+  <dt><%= t 'blacklight.search.fields.index.fulltext_access' %>:</dt>
+  <%# TODO: Export to helpers, align links in CSS %>
+  <% (document['fulltext_list_ssf'] || []).map {|json| JSON.parse json}.each do |fulltext| %>
+    <dd>
+      <%= image_tag image_url('openaccess.png') %>
+      <% t("mxd_type_labels.source_labels.#{fulltext['source']}").tap do |source_label| %>
+        <%= link_to source_label, fulltext['url'],
+                    :target => '_blank',
+                    :title  => t('ddf.links.direct_fulltext', :source => source_label) %>
+      <% end %>
+      <i class="fa fa-external-link-square"></i>
+    </dd>
+  <% end %>
+  <% (document['doi_ss'] || []).map {|doi| "http://dx.doi.org/#{doi}"}.each do |url| %>
+    <dd>
+      <%= image_tag image_url('doi.png') %>
+      <%= link_to t('ddf.links.resolve_via_doi'), url,
+                  :target => '_blank',
+                  :title  => t('ddf.links.resolve_via_doi_hover') %>
+      <i class="fa fa-external-link-square"></i>
+    </dd>
+  <% end %>
+</div>
