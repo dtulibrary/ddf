@@ -56,7 +56,7 @@ en:
           source_ss: Research Institution
           isolanguage_ss: Language
           access_condition_s: Publication Status
-          review_status_s: Review Status
+          review_status_s: Review type
           scientific_level_s: Scientific level
           format_orig_s: Type
         show:
@@ -78,7 +78,7 @@ en:
           subtitle_ts: Subtitle
           access_condition_s: Publication Status
           scientific_level_s: Scientific Level
-          review_status_s: Review status
+          review_status_s: Review type
           pub_date_tis: Publication year
           supervisor_ts: Supervisor
           editor_ts: Editor
