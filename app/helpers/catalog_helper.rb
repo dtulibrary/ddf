@@ -1,6 +1,14 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  def render_fulltext_access? document
+    !(collect_fulltexts(document) + collect_dois(document)).empty?
+  end
+
+  def render_data_providers? document
+    !collect_backlinks(document).empty?
+  end
+
   def render_format_field_facet value
     t "mxd_type_labels.publication_type_labels.#{value}"
   end
@@ -280,4 +288,5 @@ module CatalogHelper
   def collect_backlinks document
     (document['backlink_ss'] || [])
   end
+
 end
