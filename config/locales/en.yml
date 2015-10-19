@@ -84,6 +84,7 @@ en:
           editor_ts: Editor
           conf_title_ts: Conference
           submission_year_tis: Submission year
+          cluster_id_ss: ID
 
       form:
         logo_label: Danish National Research Database

@@ -96,6 +96,7 @@ da:
           editor_ts: Redaktør
           conf_title_ts: Konference
           submission_year_tis: Indberetningsår
+          cluster_id_ss: ID
 
       filters:
         title: "Du søgte efter:"

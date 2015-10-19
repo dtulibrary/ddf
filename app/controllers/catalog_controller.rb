@@ -129,7 +129,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
     config.add_show_field 'doi_ss', :label => 'DOI'
     config.add_show_field 'abstract_ts', :label => 'Abstract'
-    config.add_show_field 'keywords_ts', :label => :'blacklight.search.fields.show.keywords_ts', :separator => ' ; '
+    config.add_show_field 'keywords_ts',  :separator => ' ; '
     config.add_show_field 'research_area_ss', :label => 'Research Area'
     config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.show.access_condition_s'), :helper_method => :render_publishing_status
     config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.show.series_title_ts')
@@ -142,6 +142,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'submission_year_tis', :label => I18n.t('blacklight.search.fields.show.submission_year_tis')
     config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
     config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
+    config.add_show_field 'cluster_id_ss'
 
     # config.add_show_field 'source_ss', :helper_method => :render_source_field
     # "fielded" search configuration. Used by pulldown among other places.
