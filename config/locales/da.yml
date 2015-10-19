@@ -81,6 +81,7 @@ da:
           isbn_ss: ISBN
           issn_ss: ISSN
           journal_title_ts: Udgivet i
+          keywords_ts: Emneord
           language_ss: Sprog
           publisher_ts: Udgiver
           research_area_ss: Hovedforskningsområde

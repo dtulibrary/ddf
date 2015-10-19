@@ -69,6 +69,7 @@ en:
           isbn_ss: ISBN
           issn_ss: ISSN
           journal_title_ts: Published in
+          keywords_ts: Keywords
           language_ss: Language
           publisher_ts: Publisher
           research_area_ss: Main Research Area
