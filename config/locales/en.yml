@@ -22,7 +22,7 @@
 en:
   blacklight:
     application_name: Danish National Research Database-Den Danske Forskningsdatabase
-    language_switcher: Danish
+    language_switcher: Dansk
     latest_search: Latest Search
     search:
       fields:
