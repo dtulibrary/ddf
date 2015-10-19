@@ -1,22 +1,8 @@
 <footer>
   <%# content_for :modal %>
   <div class="sticky">
-
-    <!-- <a href="mailto:feedbackforskningsdatabase@dtu.dk?subject=Website Feedback"> -->
-
-    <a href="javascript:urlForPage()">
-      <i class="glyphicon glyphicon-envelope"></i>
-      Feedback
-    </a>
+    <%= link_to '<i class="glyphicon glyphicon-envelope"></i> Feedback'.html_safe, feedback_mail_link %>
   </div>
-
-  <script>
-    l = window.location;
-    t = document.title;
-    function urlForPage() {
-    window.location = "mailto:feedbackforskningsdatabase@dtu.dk"+"?subject=Website Feedback: "+t+"&body=Page URL: "+l+" Page Name: "+t;
-    }
-  </script>
 
   <div class="container">
     <h1 class="footer-heading">
