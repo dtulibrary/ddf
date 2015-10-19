@@ -667,16 +667,16 @@ ul.collaborator-logos-list li img {
   vertical-align: bottom;
 }
 
-ul.icon-labels li > a { color: $link-color; }
-ul.icon-labels li > i {
+ul.icon-labels > li > a { color: $link-color; }
+ul.icon-labels > li > i {
   position: relative;
   font-size: calc-em(25px);
   top: 5px;
   padding-left: 2px;
   color: $link-color-auxiliary;
 }
-ul.icon-labels__topnav li > a { color: #fff; }
-ul.icon-labels__topnav li > i {
+ul.icon-labels__topnav > li > a { color: #fff; }
+ul.icon-labels__topnav>li > i {
   font-size: calc-em(21px);
   top: 3px;
   color: $blue-3;
@@ -971,3 +971,16 @@ span.beta {
 }
 
 .show_hide { display: none; }
+
+
+dd.icon-label  { line-height: 1.6em; }
+dd.icon-label img {
+  font-size: calc-em(23px);
+  vertical-align: text-bottom;
+}
+dd.icon-label a {}
+
+dd.icon-label--doi {
+  position: relative;
+  left: -4px;
+}
