@@ -95,7 +95,7 @@ da:
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           conf_title_ts: Konference
-          submission_year_tis: Indsendelsesår
+          submission_year_tis: Indberetningsår
 
       filters:
         title: "Du søgte efter:"
