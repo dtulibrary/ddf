@@ -111,6 +111,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'author_ts', :label => 'Authors', :separator => ' ; '
     config.add_index_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_format_field_index
     config.add_index_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
+    config.add_index_field 'editor_ts', :label => I18n.t('blacklight.search.fields.index.editor_ts')
     config.add_index_field 'doi_ss', :label => 'DOI'
     config.add_index_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
     config.add_index_field 'research_area_ss', :label => 'Research Area'
@@ -118,7 +119,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.index.publisher_ts')
     config.add_index_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.index.pub_date_tis')
     config.add_index_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.index.supervisor_ts')
-    config.add_index_field 'editor_ts', :label => I18n.t('blacklight.search.fields.index.editor_ts')
 
     # ALL SHOW FIELDS:
     config.add_show_field 'subtitle_ts', :label => I18n.t('blacklight.search.fields.show.subtitle_ts" ')
@@ -127,21 +127,22 @@ class CatalogController < ApplicationController
     config.add_show_field 'affiliation_ts', :label => 'Affiliation'
     config.add_show_field 'language_ss', :label => I18n.t('blacklight.search.fields.show.language_ss'), :helper_method => :render_language
     config.add_show_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
+    config.add_show_field 'editor_ts', :label => I18n.t('blacklight.search.fields.show.editor_ts')
     config.add_show_field 'doi_ss', :label => 'DOI'
     config.add_show_field 'abstract_ts', :label => 'Abstract'
-    config.add_show_field 'keywords_ts', :label => :'blacklight.search.fields.show.keywords_ts', :separator => ' ; '
+    config.add_show_field 'keywords_ts',  :separator => ' ; '
     config.add_show_field 'research_area_ss', :label => 'Research Area'
     config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.show.access_condition_s'), :helper_method => :render_publishing_status
     config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.show.series_title_ts')
     config.add_show_field 'review_status_s', :label => I18n.t('blacklight.search.fields.show.review_status_s'), :helper_method => :render_review_status
     config.add_show_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.show.supervisor_ts')
-    config.add_show_field 'editor_ts', :label => I18n.t('blacklight.search.fields.show.editor_ts')
     config.add_show_field 'conf_title_ts', :label => I18n.t('blacklight.search.fields.show.conf_title_ts')
     config.add_show_field 'isbn_ss', :label => I18n.t('blacklight.search.fields.show.isbn_ss')
     config.add_show_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.show.publisher_ts')
     config.add_show_field 'submission_year_tis', :label => I18n.t('blacklight.search.fields.show.submission_year_tis')
     config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
     config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
+    config.add_show_field 'cluster_id_ss'
 
     # config.add_show_field 'source_ss', :helper_method => :render_source_field
     # "fielded" search configuration. Used by pulldown among other places.

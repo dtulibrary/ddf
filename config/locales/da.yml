@@ -69,8 +69,8 @@ da:
           research_area_ss: Hovedforskningsområde
           source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
-          access_condition_s: Publikations status
-          review_status_s: Review status
+          access_condition_s: Publikationsstatus
+          review_status_s: Review type
           scientific_level_s: Videnskabeligt niveau
         show:
           abstract_ts: Resumé
@@ -88,14 +88,15 @@ da:
           series_title_ts: Serie
           source_ss: Forskningsinstitution
           subtitle_ts: Undertitel
-          access_condition_s: Publikations status
+          access_condition_s: Publikationsstatus
           scientific_level_s: Videnskabeligt niveau
-          review_status_s: Review status
+          review_status_s: Review type
           pub_date_tis: Udgivelsesår
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           conf_title_ts: Konference
-          submission_year_tis: Indsendelsesår
+          submission_year_tis: Indberetningsår
+          cluster_id_ss: ID
 
       filters:
         title: "Du søgte efter:"
