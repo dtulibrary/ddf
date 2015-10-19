@@ -42,7 +42,7 @@ da:
       fields:
         default: Søgeord
         index:
-          abstract_ts: Abstrakt
+          abstract_ts: Resumé
           affiliation_ts: Tilhørsforhold
           author_ts: Forfattere
           conf_title_ts: Konference
@@ -56,7 +56,7 @@ da:
           research_area_ss: Hovedforskningsområde
           series_title_ts: Serie
           source_ss: Forskningsinstitution
-          pub_date_tis: År
+          pub_date_tis: Udgivelsesår
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           fulltext_access: Fuldtekstadgang
@@ -73,7 +73,7 @@ da:
           review_status_s: Review status
           scientific_level_s: Videnskabeligt niveau
         show:
-          abstract_ts: Abstrakt
+          abstract_ts: Resumé
           affiliation_ts: Tilhørsforhold
           author_ts: Forfattere
           doi_ss: DOI
@@ -90,10 +90,11 @@ da:
           access_condition_s: Publikations status
           scientific_level_s: Videnskabeligt niveau
           review_status_s: Review status
-          pub_date_tis: År
+          pub_date_tis: Udgivelsesår
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           conf_title_ts: Konference
+          submission_year_tis: Indsendelsesår
 
       filters:
         title: "Du søgte efter:"
@@ -232,8 +233,10 @@ da:
       bibtex: "Exporter til BibTeX"
       ris: "Exporter til RIS"
       cite: "Citer"
+      fulltext_access: Fuldtekstadgang
+      data_providers: Dataleverandører
     links:
       resolve_via_doi: Hent forlagsudgave gennem DOI-opslag
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
-      backlink_hover: Se denne post hos %{source}
+      backlink_hover: Se denne post hos %{source} (åbner i et nyt vindue)

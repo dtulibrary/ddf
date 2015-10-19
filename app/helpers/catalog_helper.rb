@@ -6,7 +6,7 @@ module CatalogHelper
   end
 
   def render_source_field_facet value
-    t "mxd_type_labels.source_labels.#{value}"
+    source_label(value)
   end
 
   def render_language_field_facet value
@@ -44,7 +44,7 @@ module CatalogHelper
   end
 
   def render_source_field args
-    args[:document]['source_ss'].collect {|s| t "source_labels.#{s}"}.join ' ; '
+    args[:document]['source_ss'].collect {|s| source_label(s)}.join ' ; '
   end
 
   def render_format_field_index args
@@ -244,6 +244,9 @@ module CatalogHelper
     return snippet.size > 500 ? snippet.slice(0, 500) + '...' : snippet
   end
 
+  def source_label source
+    t "mxd_type_labels.source_labels.#{source}"
+  end
  ##
   # Look up the current per page value, or the default if none if set
   #
@@ -260,5 +263,21 @@ module CatalogHelper
       end
     end
     list.join('; ').html_safe
+  end
+
+  def collect_fulltexts document
+    (document['fulltext_list_ssf'] || []).map {|json| JSON.parse json}
+  end
+
+  def collect_dois document
+    (document['doi_ss'] || [])
+  end
+
+  def collect_doi_links document
+    collect_dois(document).map {|doi| "http://dx.doi.org/#{doi}"}
+  end
+
+  def collect_backlinks document
+    (document['backlink_ss'] || [])
   end
 end

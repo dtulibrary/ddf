@@ -47,6 +47,11 @@ gem 'sqlite3'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'sitemap_generator'
 
+group :development do
+  gem 'foreman'
+  gem 'puma'
+end
+
 group :assets do
   gem 'uglifier', '>= 1.3.0'
   gem 'sprockets', '~> 2.8'

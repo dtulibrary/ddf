@@ -1,0 +1,17 @@
+<div class="panel__block data-providers data-providers-show">
+  <h2 class="panel__block-heading"><%= t 'ddf.tools.data_providers' %> <i class="fa fa-file"></i></h2>
+
+  <div class="panel__block-contents">
+    <ul>
+      <% collect_backlinks(document).each do |backlink| %>
+        <li>
+          <%= image_tag image_url('pure.png') %>
+          <%= link_to source_label(get_backlink_origin(backlink)), backlink,
+                      :target => '_blank',
+                      :title  => t('ddf.links.backlink_hover', :source => source_label(get_backlink_origin(backlink))) %>
+          <i class="fa fa-external-link-square"></i>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

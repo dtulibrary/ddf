@@ -1,45 +1,8 @@
 <div class="docdetails panel">
-
-  <div class="panel__block availability-panel availability-panel--show">
-    <h2 class="panel__block-heading">
-      <%= t('ddf.tools.available_at') %>
-      <i class="fa fa-file"></i>
-    </h2>
-
-    <div class="panel__block-contents">
-      <ul class="institutions-list">
-        <% (@document['backlink_ss'] || []).each do |link| %>
-          <li>
-            <%= link_to(t("mxd_type_labels.source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
-            <i class="fa fa-external-link-square"></i>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-<!--
-  <div class=" panel__block">
-    <h2 class="panel__block-heading">
-      <%# t('ddf.tools.metrics') %>
-      <i class="fa fa-pie-chart"></i>
-    </h2>
-
-    <div class=" panel__block-contents">
-      <p>Metrix!</p>
-    </div>
-  </div>
-
-  <div class="panel__block">
-    <h2 class="panel__block-heading">
-      <%# t('ddf.tools.open_acess') %>
-      <i class="fa fa-unlock-alt"></i>
-    </h2>
-
-    <div class="panel__block-contents">
-      <p>Access or not?</p>
-    </div>
-  </div>
- -->
- </div>
+  <%= render :partial => 'show_fulltext_access',    :locals => {:document => @document} %>
+  <%= render :partial => 'show_data_providers',     :locals => {:document => @document} %>
+  <%# render :partial => 'show_availability_panel', :locals => {:document => @document} %>
+  <%# render :partial => 'show_metrics_panel',      :locals => {:document => @document} %>
+  <%# render :partial => 'show_open_access_panel',  :locals => {:document => @document} %>
+</div>
 

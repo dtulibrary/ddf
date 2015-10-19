@@ -1,0 +1,26 @@
+<div class="panel__block fulltext-access fulltext-access-show">
+  <h2 class="panel__block-heading"><%= t 'ddf.tools.fulltext_access' %> <i class="fa fa-file"></i></h2>
+
+  <div class="panel__block-contents">
+    <ul>
+      <% collect_fulltexts(document).each do |fulltext| %>
+        <li>
+          <%= image_tag image_url('openaccess.png') %>
+          <%= link_to source_label(fulltext['source']), fulltext['url'],
+                      :target => '_blank',
+                      :title  => t('ddf.links.direct_fulltext', :source => source_label(fulltext['source'])) %>
+          <i class="fa fa-external-link-square"></i>
+        </li>
+      <% end %>
+      <% collect_doi_links(document).each do |link| %>
+        <li>
+          <%= image_tag image_url('doi.png') %>
+          <%= link_to t('ddf.links.resolve_via_doi'), link,
+                      :target => '_blank',
+                      :title  => t('ddf.links.resolve_via_doi_hover') %>
+          <i class="fa fa-external-link-square"></i>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

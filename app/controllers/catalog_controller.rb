@@ -138,6 +138,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'conf_title_ts', :label => I18n.t('blacklight.search.fields.show.conf_title_ts')
     config.add_show_field 'isbn_ss', :label => I18n.t('blacklight.search.fields.show.isbn_ss')
     config.add_show_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.show.publisher_ts')
+    config.add_show_field 'submission_year_tis', :label => I18n.t('blacklight.search.fields.show.submission_year_tis')
     config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
     config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
 

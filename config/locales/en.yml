@@ -43,7 +43,7 @@ en:
           research_area_ss: Main Research Area
           series_title_ts: Series
           source_ss: Research Institution
-          pub_date_tis: Year
+          pub_date_tis: Publication year
           supervisor_ts: Supervisor
           editor_ts: Editor
           fulltext_access: Full text access
@@ -78,10 +78,11 @@ en:
           access_condition_s: Publication Status
           scientific_level_s: Scientific Level
           review_status_s: Review status
-          pub_date_tis: Year
+          pub_date_tis: Publication year
           supervisor_ts: Supervisor
           editor_ts: Editor
           conf_title_ts: Conference
+          submission_year_tis: Submission year
 
       form:
         logo_label: Danish National Research Database
@@ -212,8 +213,10 @@ en:
       bibtex: "Export to BibTeX"
       ris: "Export to RIS"
       cite: "Cite"
+      fulltext_access: Full text access
+      data_providers: Data providers
     links:
       resolve_via_doi: Get publisher edition via DOI resolver
       resolve_via_doi_hover: Get publisher edition via DOI resolver (opens in a new window)
       direct_fulltext: Get full text directly from %{source} (opens in a new window)
-      backlink_hover: View this record at %{source}
+      backlink_hover: View this record at %{source} (opens in a new window)

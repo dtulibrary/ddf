@@ -1,0 +1,17 @@
+<div class="panel__block availability-panel availability-panel--show">
+  <h2 class="panel__block-heading">
+    <%= t('ddf.tools.available_at') %>
+    <i class="fa fa-file"></i>
+  </h2>
+
+  <div class="panel__block-contents">
+    <ul class="institutions-list">
+      <% (document['backlink_ss'] || []).each do |link| %>
+        <li>
+          <%= link_to(t("mxd_type_labels.source_labels.#{get_backlink_origin link}"), link, :target => '_blank') %>
+          <i class="fa fa-external-link-square"></i>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
