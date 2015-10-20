@@ -48,8 +48,8 @@ gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'sitemap_generator'
 
 group :development do
-  gem 'foreman'
-  gem 'puma'
+  #gem 'foreman'
+  #gem 'puma'
 end
 
 group :assets do
