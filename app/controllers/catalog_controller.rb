@@ -4,19 +4,16 @@
 require 'i18n'
 class CatalogController < ApplicationController
 
-    include Blacklight::Catalog
+  include Blacklight::Catalog
 
-    before_filter :set_locale
+  before_filter :set_locale
 
-    configure_blacklight do |config|
-    # Ensure I18n load paths are loaded
-    Dir[Rails.root + 'config/locales/**/*.{rb,yml}'].each { |path| I18n.load_path << path }
-
+  configure_blacklight do |config|
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :qt => '/ddf_publ',
       :rows => 10
-  }
+    }
     # solr path which will be added to solr base url before the other solr params.
     # config.solr_path = 'select'
     # items to show per page, each number in the array represent another option to choose from.
@@ -32,7 +29,7 @@ class CatalogController < ApplicationController
       # :fl => '*',
       # :rows => 1
       # :q => '{!raw f=id v=$id}'
-  }
+    }
     # solr field configuration for search results/index views
     config.index.title_field = 'title_ts'
 
@@ -65,86 +62,66 @@ class CatalogController < ApplicationController
     #   :assumed_boundaries => [1900, Time.now.year + 2],
     # }
 
-    # PLANNED FACET FIELDS:
-    #
-    # Type
-    # Publication Year
-    # Submission Year
-    # Research Institution
-    # Research Area
-    # Scientific Level
-    # Peer Review Status
-    # Author
-    # Publication Channel
-
     # ALL FACET FIELDS:
-    config.add_facet_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.facet.format_orig_s'), :helper_method => :render_format_field_facet
-    config.add_facet_field 'pub_date_tsort', :label => I18n.t('blacklight.search.fields.facet.pub_date_tsort'), :range => {
+    config.add_facet_field 'format_orig_s', :helper_method => :render_format_field_facet
+    config.add_facet_field 'pub_date_tsort', :range => {
       :num_segments => 3,
       :assumed_boundaries => [1900, Time.now.year + 2]
     }
-    config.add_facet_field 'author_facet', :label => I18n.t('blacklight.search.fields.facet.author_facet'), :limit => 10
-    config.add_facet_field 'source_ss', :label => I18n.t('blacklight.search.fields.facet.source_ss'), :helper_method => :render_source_field_facet, :limit => 10
-    config.add_facet_field 'journal_title_facet', :label => I18n.t('blacklight.search.fields.facet.journal_title_facet'), :limit => 10
-    config.add_facet_field 'isolanguage_ss', :label => I18n.t('blacklight.search.fields.facet.isolanguage_ss'), :helper_method => :render_language_field_facet
-    config.add_facet_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.facet.scientific_level_s'), :helper_method => :render_scientific_level_facet
-    config.add_facet_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.facet.access_condition_s'), :helper_method => :render_publication_status_facet
-    config.add_facet_field 'review_status_s', :label => I18n.t('blacklight.search.fields.facet.review_status_s'), :helper_method => :render_review_status_facet
-    config.add_facet_field 'research_area_ss', :label => I18n.t('blacklight.search.fields.facet.research_area_ss'), :helper_method => :render_research_area_facet
+    config.add_facet_field 'author_facet', :limit => 10
+    config.add_facet_field 'source_ss', :helper_method => :render_source_field_facet, :limit => 10
+    config.add_facet_field 'journal_title_facet', :limit => 10
+    config.add_facet_field 'isolanguage_ss', :helper_method => :render_language_field_facet
+    config.add_facet_field 'scientific_level_s', :helper_method => :render_scientific_level_facet
+    config.add_facet_field 'access_condition_s', :helper_method => :render_publication_status_facet
+    config.add_facet_field 'review_status_s', :helper_method => :render_review_status_facet
+    config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
-    # solr fields to be displayed in the index (search results) view
-    # The ordering of the field names is the order of the display
-
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
-    #
-    # :helper_methods result in errors, so don't use'em:
-    # config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
-    # config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
-
+    
     # ALL INDEX FIELDS:
-    config.add_index_field 'author_ts', :label => 'Authors', :separator => ' ; '
-    config.add_index_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_format_field_index
-    config.add_index_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
-    config.add_index_field 'editor_ts', :label => I18n.t('blacklight.search.fields.index.editor_ts')
-    config.add_index_field 'doi_ss', :label => 'DOI'
-    config.add_index_field 'abstract_ts', :label => 'Abstract', :helper_method => :snip_abstract
-    config.add_index_field 'research_area_ss', :label => 'Research Area'
-    config.add_index_field 'series_title_ts', :label => 'Series'
-    config.add_index_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.index.publisher_ts')
-    config.add_index_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.index.pub_date_tis')
-    config.add_index_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.index.supervisor_ts')
+    config.add_index_field 'author_ts', :separator => ' ; '
+    config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
+    config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
+    config.add_index_field 'editor_ts'
+    config.add_index_field 'doi_ss'
+    config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
+    config.add_index_field 'research_area_ss'
+    config.add_index_field 'series_title_ts'
+    config.add_index_field 'publisher_ts'
+    config.add_index_field 'pub_date_tis'
+    config.add_index_field 'supervisor_ts'
 
     # ALL SHOW FIELDS:
-    config.add_show_field 'subtitle_ts', :label => I18n.t('blacklight.search.fields.show.subtitle_ts" ')
-    config.add_show_field 'author_ts', :label => 'Authors', :separator => ' ; '
-    config.add_show_field 'format_orig_s', :label => I18n.t('blacklight.search.fields.index.format_orig_s'), :helper_method => :render_type
-    config.add_show_field 'affiliation_ts', :label => 'Affiliation'
-    config.add_show_field 'language_ss', :label => I18n.t('blacklight.search.fields.show.language_ss'), :helper_method => :render_language
-    config.add_show_field 'journal_title_ts', :label => 'Published in', :helper_method => :render_journal_info
-    config.add_show_field 'editor_ts', :label => I18n.t('blacklight.search.fields.show.editor_ts')
-    config.add_show_field 'doi_ss', :label => 'DOI'
-    config.add_show_field 'abstract_ts', :label => 'Abstract'
-    config.add_show_field 'keywords_ts',  :separator => ' ; '
-    config.add_show_field 'research_area_ss', :label => 'Research Area'
-    config.add_show_field 'access_condition_s', :label => I18n.t('blacklight.search.fields.show.access_condition_s'), :helper_method => :render_publishing_status
-    config.add_show_field 'series_title_ts', :label => I18n.t('blacklight.search.fields.show.series_title_ts')
-    config.add_show_field 'review_status_s', :label => I18n.t('blacklight.search.fields.show.review_status_s'), :helper_method => :render_review_status
-    config.add_show_field 'supervisor_ts', :label => I18n.t('blacklight.search.fields.show.supervisor_ts')
-    config.add_show_field 'conf_title_ts', :label => I18n.t('blacklight.search.fields.show.conf_title_ts')
-    config.add_show_field 'isbn_ss', :label => I18n.t('blacklight.search.fields.show.isbn_ss')
-    config.add_show_field 'publisher_ts', :label => I18n.t('blacklight.search.fields.show.publisher_ts')
-    config.add_show_field 'submission_year_tis', :label => I18n.t('blacklight.search.fields.show.submission_year_tis')
-    config.add_show_field 'pub_date_tis', :label => I18n.t('blacklight.search.fields.show.pub_date_tis')
-    config.add_show_field 'scientific_level_s', :label => I18n.t('blacklight.search.fields.show.scientific_level_s'), :helper_method => :render_scientific_level
+    config.add_show_field 'subtitle_ts'
+    config.add_show_field 'author_ts', :separator => ' ; '
+    config.add_show_field 'format_orig_s', :helper_method => :render_type
+    config.add_show_field 'affiliation_ts'
+    config.add_show_field 'language_ss', :helper_method => :render_language
+    config.add_show_field 'journal_title_ts', :helper_method => :render_journal_info
+    config.add_show_field 'editor_ts'
+    config.add_show_field 'doi_ss'
+    config.add_show_field 'abstract_ts'
+    config.add_show_field 'keywords_ts', :separator => ' ; '
+    config.add_show_field 'research_area_ss'
+    config.add_show_field 'access_condition_s', :helper_method => :render_publishing_status
+    config.add_show_field 'series_title_ts'
+    config.add_show_field 'review_status_s', :helper_method => :render_review_status
+    config.add_show_field 'supervisor_ts'
+    config.add_show_field 'conf_title_ts'
+    config.add_show_field 'isbn_ss'
+    config.add_show_field 'publisher_ts'
+    config.add_show_field 'submission_year_tis'
+    config.add_show_field 'pub_date_tis'
+    config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
 
-    # config.add_show_field 'source_ss', :helper_method => :render_source_field
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
@@ -162,21 +139,36 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
     config.add_search_field 'all_fields', :label => 'Title'
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
 
-    # I18n.t('blacklight.search.fields.facet.format_orig_s')
+    relevance_ordering = [
+      'score desc',
+      'pub_date_tsort desc',
+      'journal_vol_tsort desc',
+      'journal_issue_tsort desc',
+      'journal_page_start_tsort asc',
+      'title_sort asc'
+    ]
+    config.add_sort_field relevance_ordering.join(', '), :label => 'relevance'
 
-    # I18n.t('blacklight.search.sort.criteria.relevance')
-    # I18n.t('blacklight.search.sort.criteria.year')
-    # I18n.t('blacklight.search.sort.criteria.title')
+    year_ordering = [
+      'pub_date_tsort desc',
+      'journal_vol_tsort desc',
+      'journal_issue_tsort desc',
+      'journal_page_start_tsort asc',
+      'title_sort asc'
+    ]
+    config.add_sort_field year_ordering.join(', '), :label => 'year'
 
-    config.add_sort_field 'score desc, pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_tsort desc, journal_vol_tsort desc, journal_issue_tsort desc, journal_page_start_tsort asc, title_sort asc', :label => 'year'
-    # config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-    config.add_sort_field 'title_sort asc, pub_date_tsort desc', :label => 'title'
+    title_ordering = [
+      'title_sort asc',
+      'pub_date_tsort desc'
+    ]
+    config.add_sort_field title_ordering.join(', '), :label => 'title'
   end
 
   def show
