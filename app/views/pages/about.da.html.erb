@@ -11,12 +11,12 @@
     <p>Databasen dækker publiceret litteratur, eksempelvis videnskabelige artikler, ph.d-afhandlinger, præsentationer fra konferencer og undervisningsnoter.</p>
 
     <h2>Organisation</h2>
-    <p>Databasen indgår i Danmarks Elektroniske Fag- og Forskningsbibliotek — <a href="http://www.deff.dk/">DEFF</a>
-      i samarbejde med <a href="http://kum.dk/">Kulturministeriet</a>, <a href="http://ufm.dk/">Uddannelses- og Forskningsministeriet</a> and <a href="http://uvm.dk/">Ministeriet for Børn, Undervisning og Ligestilling</a>. Den tekniske operatør er <a href="http://www.bibliotek.dtu.dk/">DTU Bibliotek</a>. Retningslinjerne for den overordnede udvikling af databasen fastlægges af Styregruppen.</p>
+    <p>Databasen indgår i Danmarks Elektroniske Fag- og Forskningsbibliotek — <a href="http://www.deff.dk/" target="_blank">DEFF</a>
+      i samarbejde med <a href="http://kum.dk/" target="_blank">Kulturministeriet</a>, <a href="http://ufm.dk/" target="_blank">Uddannelses- og Forskningsministeriet</a> and <a href="http://uvm.dk/" target="_blank">Ministeriet for Børn, Undervisning og Ligestilling</a>. Den tekniske operatør er <a href="http://www.bibliotek.dtu.dk/" target="_blank">DTU Bibliotek</a>. Retningslinjerne for den overordnede udvikling af databasen fastlægges af Styregruppen.</p>
 
       <h3>Medlemmerne af Styregruppen</h3>
       <ul>
-        <li>Formand: Mogens Sandfær, Danmarks Tekniske Universitet</li> 
+        <li>Formand: Chef for Bibliometri og Data Management Mogens Sandfær</li>
         <li>2 repræsentanter for danske universiteter (Ingeniør Lene Offersgaard, Center for Sprogteknologi, Københavns Universitet Lektor og overlæge Reimar W. Thomsen, Institut for Klinisk Medicin - Klinisk Epidemiologi Afdeling)</li>
         <li>1 repræsentant for danske university colleges (Bibliotekschef Peter Flodin Professionshøjskolen Metropol)</li>
         <li>1 repræsentant for dansk sektorforskning</li>
@@ -29,18 +29,18 @@
 
       <h3>Sekretariat</h3>
       <ul>
-        <li>Specialkonsulent Lise Mikkelsen, Danmarks Tekniske Universitet</li>
-        <li>Specialkonsulent Mikael Elbæk, Danmarks Tekniske Universitet</li>
-        <li>Fuldmægtig Jonas Bak, Styrelsen for Forskning og Innovation</li>
+        <li>Projektleder Lise Mikkelsen, Danmarks Tekniske Universitet</li>
+        <li>Specialkonsulent, Bibliometri og Data Management Mikael Elbæk</li>
+        <li>Fuldmægtig Karen Skytte-Larsen, Styrelsen for Forskning og Innovation</li>
         <li>Specialkonsulent Hanne-Louise Kirkegaard, Styrelsen for Forskning og Innovation</li>
       </ul>
 
       <h2>Den tekniske løsning</h2>
-      <p><strong>Datagrundlag:</strong> De bibliografiske data stilles til rådighed for Den Danske Forskningsdatabase fra dataleverandørernes frit tilgængelige baser (typisk dataleverandørens CRIS system) via en <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">OAI-PMH</a>-baseret adgang i forskellige åbne og veldokumenterede dataformater (for publikationsdata primært DDF-MXD formatet. Se også under <a href="/about/data">Data</a>.</p>
+      <p><strong>Datagrundlag:</strong> De bibliografiske data stilles til rådighed for Den Danske Forskningsdatabase fra dataleverandørernes frit tilgængelige baser (typisk dataleverandørens CRIS system) via en <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a>-baseret adgang i forskellige åbne og veldokumenterede dataformater (for publikationsdata primært DDF-MXD formatet. Se også under <%= link_to 'Data', about_data_path %>.</p>
 
-      <p><strong>Databehandling:</strong> Metadata høstes, behandles, flettes og indekseres af DTU Biblioteks Data Processing Platform til bibliotekets fælles <a href="https://lucene.apache.org/">Apache Lucene</a>-baserede indeks, udstyret med <a href="http://lucene.apache.org/solr/">Apache SOLR</a> som søgeplatform. Se også <%= link_to "Søg & Hent", about_search_and_get_path %>).</p>
+      <p><strong>Databehandling:</strong> Metadata høstes, behandles, flettes og indekseres af DTU Biblioteks Data Processing Platform til bibliotekets fælles <a href="https://lucene.apache.org/" target="_blank">Apache Lucene</a>-baserede indeks, udstyret med <a href="http://lucene.apache.org/solr/" target="_blank">Apache SOLR</a> som søgeplatform. Se også <%= link_to "Søg & Hent", about_search_and_get_path %>).</p>
 
-      <p><strong>Eksponering:</strong> Brugerinterfacet er udviklet i <a href="http://projectblacklight.org/">Blacklight</a> som sammen med den dedikerede SOLR request handler gør det muligt, at søge og vise den relevante litteratur.</p>
+      <p><strong>Eksponering:</strong> Brugerinterfacet er udviklet i <a href="http://projectblacklight.org/" target="_blank">Blacklight</a> som sammen med den dedikerede SOLR request handler gør det muligt, at søge og vise den relevante litteratur.</p>
     </div>
   </article>
 
