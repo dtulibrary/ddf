@@ -102,7 +102,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subtitle_ts'
     config.add_show_field 'author_ts', :separator => ' ; '
     config.add_show_field 'format_orig_s', :helper_method => :render_type
-    config.add_show_field 'affiliation_ts'
+    config.add_show_field 'affiliation_ts', :separator => '<hr style="margin:0.2em 0em">'.html_safe
     config.add_show_field 'language_ss', :helper_method => :render_language
     config.add_show_field 'journal_title_ts', :helper_method => :render_journal_info
     config.add_show_field 'editor_ts'
