@@ -35,6 +35,8 @@ da:
       by: efter
       type:
       institution: Forskningsinstitution
+      more: Flere
+      less: Færre
 
     tools:
       cite: 'Citer'

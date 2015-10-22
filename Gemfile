@@ -64,7 +64,7 @@ group :development, :test do
   gem 'spring'
   gem 'jettywrapper'
 
-  gem 'web-console', '~> 2.0'
+  # gem 'web-console', '~> 2.0'
   gem 'xray-rails'
   gem 'pry', '~> 0.10.1'
   gem 'minitest'

@@ -27,7 +27,16 @@
             </li>
             <% end %>
           </ul>
-          <button class="show_hide" id="plus">+</button>
+          <button class="toggle-rest">
+            <span class="s">
+              <%= t("blacklight.data_visualization.more") %>
+              <i class="glyphicon glyphicon-plus-sign"></i>
+            </span>
+            <span class="h">
+              <%= t("blacklight.data_visualization.less") %>
+              <i class="glyphicon glyphicon-minus-sign"></i>
+            </span>
+          </button>
         </section>
       </div>
 

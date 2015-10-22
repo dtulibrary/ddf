@@ -970,7 +970,29 @@ span.beta {
   vertical-align: text-top;
 }
 
-.show_hide { display: none; }
+button.toggle-rest span.h { display: none; }
+button.toggle-rest span.s { display: block; }
+button.show span.h { display: block; }
+button.show span.s { display: none; }
+
+button.toggle-rest {
+  font-size: calc-em(15px);
+  color: $link-color;
+  background: #fff;
+  border: 1px solid $blue-3;
+  padding: .1em .4em;
+  border-radius: 3px;
+}
+button.toggle-rest:hover { background: #eee; }
+button.toggle-rest:active {
+  background: #eee;
+  color: $orange;
+}
+button.toggle-rest .glyphicon {
+  font-size: calc-em(15px);
+  vertical-align: -7%;
+}
+
 
 
 dd.icon-label  { line-height: 1.6em; }

@@ -28,6 +28,9 @@ en:
       by: by
       type:
       institution: Institution
+      more: More
+      less: Less
+
 
     entry_name:
         default: 'entry'
