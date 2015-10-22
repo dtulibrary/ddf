@@ -62,6 +62,7 @@ end
 
 group :development, :test do
   gem 'spring'
+  gem 'metastore-test_data', :github => 'dtulibrary/metastore-test_data'
   gem 'jettywrapper'
 
   # gem 'web-console', '~> 2.0'

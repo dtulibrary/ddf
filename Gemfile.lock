@@ -7,6 +7,17 @@ GIT
       jquery-rails
       rails (>= 3.0, < 5.0)
 
+GIT
+  remote: git://github.com/dtulibrary/metastore-test_data.git
+  revision: d66ec9665e7c1adaadf0cdd83798b75c90216f69
+  specs:
+    metastore-test_data (0.0.1)
+      highline
+      jettywrapper
+      nokogiri
+      rails
+      rsolr
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -272,6 +283,7 @@ DEPENDENCIES
   json (= 1.8.2)
   libv8 (= 3.16.14.7)
   meta-tags
+  metastore-test_data!
   minitest
   netaddr
   openurl
