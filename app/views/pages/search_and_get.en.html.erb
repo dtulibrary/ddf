@@ -164,12 +164,6 @@
    <h2>Search operators</h2>
    <p>AND is default if you do not type anything between multiple search terms. Search operators like AND OR must be all caps.</p>
 
-   <h2>Stemming</h2>
-   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term <strong>test</strong> you also retrieve hits on <strong>tests</strong>, <strong>tested</strong>, <strong>testing</strong>, etc.</p>
-
-   <h2>Truncation and wild card matching</h2>
-   <p>In most cases truncation is not necessary because of the default  stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
-
    <h2>Year range searches</h2>
    <p>Search for records published between 2006 and 2008 like so:</p>
 
@@ -178,6 +172,20 @@
     <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
    </p>
  -->
+
+   <h2>Stemming</h2>
+   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term <span class="search-example">test</span> you will also retrieve hits on <span class="search-result">tests</span>, <span class="search-result">tested</span>, <span class="search-result">testing</span>, <span class="search-result">tester</span>, etc.</p>
+
+   <h2>Truncation and wild card matching</h2>
+   <p>In most cases truncation is not necessary because of the default stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
+
+  <p>The following examples illustrate the difference between a query without truncation (query 1) and a query with truncation (query 2):</p>
+
+  <p><strong>Query 1</strong>: <span class="search-example">ti:water</span> <br />
+    Retrieves hits on: <span class="search-result">water</span> and <span class="search-result">waters</span> (default stemming)</p>
+
+  <p><strong>Query 2:</strong> <span class="search-example">ti:water*</span> <br />
+    Retrieves hits on: <span class="search-result">water</span>, <span class="search-result">waters</span> and <span class="search-result">waterlogged</span>.</p>
 
    <p>Search results can be ranked on various parameters. The default is “relevance”, which gives a priority boost to the <em>title</em> data element.</p>
 

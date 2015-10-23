@@ -137,6 +137,20 @@
  </div>
 
  <div class="measure">
+  <h2>Stemming</h2>
+  <p>Enhver søgeterm er som standard reduceret til roden af termen for at få et søgeresultat, der indholder alle former af termen. En søgning efter termen: <span class="search-example">test</span> giver et søgeresultat, hvor termerne <span class="search-result">tests</span>, <span class="search-result">tested</span>, <span class="search-result">testing</span>, <span class="search-result">tester</span> mfl. indgår.</p>
+
+  <h2>Trunkering og jokertegn</h2>
+  <p>I de fleste tilfælde er det ikke nødvendigt at anvende trunkering, da der som default anvendes stemming. En stjerne bruges som joker-symbol, for at angive et vilkårligt skrifttegn inden for et ord. En søgning for <span class="search-example">wom*n</span> vil således give resultater med <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
+
+  <p>Eksemplerne nedenfor illustrerer forskellen på en søgning udført uden trunkering (søgning 1) og en søgning med trunkering (søgning 2):</p>
+
+  <p><strong>Søgning 1</strong>: <span class="search-example">ti:water</span> <br />
+    Giver resultater med: <span class="search-result">water</span> og <span class="search-result">waters</span> (default stemming)</p>
+
+  <p><strong>Søgning 2</strong>: <span class="search-example">ti:water*</span> <br />
+    Giver resultater med: <span class="search-result">water</span>, <span class="search-result">waters</span> and <span class="search-result">waterlogged</span>.</p>
+
   <p>Søgeresultaterne kan rankeres efter forskellige kriterier. Standard er “relevans”. Relevans prioriterer data fra titel-feltet.</p>
 
   <p>Der tilbydes en række facetter til at indsnævre søgningen med.</p>
