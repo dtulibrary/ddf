@@ -10,6 +10,13 @@
 # jetty_path is only required for rake tasks that need to know
 # how to start up solr, generally for automated testing.
 
+# development:
+#   url: <%= ENV['SOLR_URL'] || 'http://lb.production.metastore.cvt.dk/solr/metastore' %>
+# test: &test
+#   url: http://lb.production.metastore.cvt.dk/solr/metastore
+# production:
+#   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr" %>
+
 development:
   jetty_path: './jetty'
   url: 'http://127.0.0.1:8983/solr/metastore'
