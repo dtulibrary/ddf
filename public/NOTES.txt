@@ -354,3 +354,9 @@ scion: Science park (http://sciondtu.dk/)
 
 Dynamically generate page title and page url to mailto: html tag with JavaScript:
 http://mygreatestchoice.com/dynamically-generate-page-title-and-page-url-to-mailto-html-tag-with-javascript/
+
+http://localhost:3000/da/catalog/2286781326
+http://localhost:3000/da/catalog/2282344575
+
+Best place on page to have Google Analytics tracking script:
+https://groups.google.com/forum/#!category-topic/digital-analytics-fundamentals/lesson-4-1-creating-an-account/V9z4TVXQW_4
