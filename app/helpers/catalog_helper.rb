@@ -298,4 +298,9 @@ end
     (document['backlink_ss'] || [])
   end
 
+  # TODO: Decoration of the data provider facet page
+  def decorate
+    params["f"]["source_ss"]
+  end
+
 end
