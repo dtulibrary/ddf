@@ -59,6 +59,7 @@ en:
           review_status_s: Review type
           scientific_level_s: Scientific level
           format_orig_s: Type
+          submission_year_tis: Submission year
         show:
           abstract_ts: Abstract
           affiliation_ts: Affiliations
