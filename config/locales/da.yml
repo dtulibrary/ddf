@@ -66,6 +66,7 @@ da:
           format_orig_s: Type
           journal_title_facet: Tidskriftets titel
           pub_date_tsort: Udgivelsesår
+          submission_year_tis: Indberetningsår
           research_area_ss: Hovedforskningsområde
           source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
