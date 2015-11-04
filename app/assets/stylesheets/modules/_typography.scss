@@ -341,6 +341,9 @@ form.range_limit input.form-control:focus {
   border: 2px solid #2e6da4;
 }
 
+form.range_limit input.range_begin,
+form.range_limit input.range_end { text-align: center; }
+
 form.range_limit input.submit {
   border: 1px solid #2e6da4;
   background: #337ab7;
