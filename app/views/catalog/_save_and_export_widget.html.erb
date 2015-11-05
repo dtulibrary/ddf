@@ -13,5 +13,10 @@
     <li role="presentation">
       <%= link_to(content_tag('i', '', :class => 'icon-file-text-o') + t('ddf.tools.bibtex'), url_for(params_for_search(:format => :bib)), :role => 'menuitem') %>
     </li>
+
+    <li role="presentation">
+      <%= link_to(t('ddf.tools.email_resultset'), catalog_email_path, :role => 'menuitem',
+                  data: { ajax_modal: 'trigger' }) %>
+    </li>
   </ul>
 </div>

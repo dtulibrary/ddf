@@ -238,6 +238,7 @@ da:
       cite: "Citer"
       fulltext_access: Fuldtekstadgang
       data_providers: Dataleverandører
+      email_resultset: "Email citeringer"
     links:
       resolve_via_doi: Hent forlagsudgave gennem DOI-opslag
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
