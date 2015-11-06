@@ -239,5 +239,6 @@ en:
       send_to: "Send to %{to}"
     email:
       subject: "Citations"
+      sent: "Citations sent to %{to}"
   close: "Close"
   edit: "Edit"

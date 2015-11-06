@@ -9,6 +9,7 @@ class CitationsController < CatalogController
   end
 
   def preview
+    validate_email_params
     (@response, @document_list) = search_results(params, search_params_logic)
     respond_to do |format|
       format.js { render layout: nil }
@@ -18,10 +19,7 @@ class CitationsController < CatalogController
 
   def send_citations
     CitationMailer.send_citations(params[:to], params[:message]).deliver_now
-    respond_to do |format|
-      format.js { render template: 'catalog/email_success', flash: { success: 'Email sent hooray!' }, layout: nil }
-      format.html { render template: 'catalog/email_success', flash: { success: 'Email sent hooray!' } }
-    end
+    redirect_to :back, flash: { success: I18n.t('citations.email.sent', to: params[:to]) }
   end
 
   # This passes the search context in to allow us to re-run the active search with modified params if necessary
