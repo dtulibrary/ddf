@@ -46,6 +46,7 @@ namespace :config do
   task :symlink do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{deploy_to}/shared/config/solr.yml #{release_path}/config/solr.yml"
+    run "ln -nfs #{deploy_to}/shared/config/blacklight.yml #{release_path}/config/solr.yml"
     run "ln -nfs #{deploy_to}/shared/config/application.local.rb #{release_path}/config/application.local.rb"
     run "ln -nfs #{deploy_to}/shared/config/secrets.yml #{release_path}/config/secrets.yml"
   end
