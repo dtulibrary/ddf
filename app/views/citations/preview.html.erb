@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <button type="button" class="ajax-modal-close close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h1 class="modal-title"><%= t('blacklight.citations.preview.title') %></h1>
+</div>
+<%# we capture the citation output so we can reuse it in the body and in the input below %>
+<% text = capture do %>
+    <% @document_list.each_with_index do |doc, i| %>
+        <%= "#{i+1}: #{doc.export_as_citation_txt(params['style'])}" %>
+        <hr/>
+    <% end %>
+<% end %>
+<div class="modal-body">
+  <%= text %>
+</div>
+<div class="modal-footer">
+  <%= form_tag(citations_send_path, data: { remote: true }, id: 'send_citations') do |f| %>
+    <%= hidden_field_tag(:to, params[:to]) %>
+    <%= hidden_field_tag(:message, text) %>
+    <%= button_tag(t(:close), class: 'btn btn-default', data: { dismiss: 'modal' }) %>
+    <%= button_tag(t(:edit), class: 'btn btn-warning') %>
+    <%= button_tag(t('.send_to', to: params[:to]), class: 'btn btn-primary') %>
+<% end %>
+</div>
