@@ -13,11 +13,11 @@
   <%= text %>
 </div>
 <div class="modal-footer">
-  <%= form_tag(citations_send_path, data: { remote: true }, id: 'send_citations') do |f| %>
+  <%= form_tag(citations_send_path, id: 'send_citations') do |f| %>
     <%= hidden_field_tag(:to, params[:to]) %>
     <%= hidden_field_tag(:message, text) %>
     <%= button_tag(t(:close), class: 'btn btn-default', data: { dismiss: 'modal' }) %>
-    <%= button_tag(t(:edit), class: 'btn btn-warning') %>
+    <%= link_to(t(:edit), citations_new_path(to: params[:to]), class: 'btn btn-warning', data: { ajax_modal: 'trigger' }) %>
     <%= button_tag(t('.send_to', to: params[:to]), class: 'btn btn-primary') %>
 <% end %>
 </div>
