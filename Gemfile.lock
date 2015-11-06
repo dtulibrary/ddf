@@ -65,8 +65,14 @@ GEM
     autoprefixer-rails (6.0.3)
       execjs
       json
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     bibtex-ruby (4.0.5)
       latex-decode (~> 0.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     blacklight (5.15.0)
       bootstrap-sass (~> 3.2)
       deprecation
@@ -110,6 +116,7 @@ GEM
     csl-styles (1.0.1.5)
       csl (~> 1.0)
     dalli (2.7.2)
+    debug_inspector (0.0.2)
     deprecation (0.2.2)
       activesupport
     ensure_valid_encoding (0.5.3)
@@ -268,7 +275,9 @@ DEPENDENCIES
   activerecord-session_store
   addressable
   autoprefixer-rails
+  better_errors
   bibtex-ruby
+  binding_of_caller
   blacklight (~> 5.15.0)
   blacklight_range_limit!
   capistrano (~> 2.0)
