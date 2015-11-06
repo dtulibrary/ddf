@@ -112,6 +112,11 @@ da:
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
 
+    citations:
+      new:
+        title: "Email citeringer"
+      preview:
+        title: "Vis citeringer"
   mxd_type_labels:
     language_labels:
       eng: Engelsk
@@ -244,3 +249,15 @@ da:
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
       backlink_hover: Se denne post hos %{source} (åbner i et nyt vindue)
+  citations:
+    form:
+      number: "Antal:"
+      format: "Format:"
+      preview: "Vis"
+    preview:
+      send: "Send"
+      send_to: "Send til %{to}"
+    email:
+      subject: "Citeringer"
+  close: "Luk"
+  edit: "Rediger"

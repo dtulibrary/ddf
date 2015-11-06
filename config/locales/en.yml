@@ -93,6 +93,11 @@ en:
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
 
+    citations:
+      new:
+        title: "Email citations"
+      preview:
+        title: "Preview citations"
   mxd_type_labels:
     language_labels:
       eng: English
@@ -224,3 +229,15 @@ en:
       resolve_via_doi_hover: Get publisher edition via DOI resolver (opens in a new window)
       direct_fulltext: Get full text directly from %{source} (opens in a new window)
       backlink_hover: View this record at %{source} (opens in a new window)
+  citations:
+    form:
+      number: "No:"
+      format: "Format:"
+      preview: "Preview"
+    preview:
+      send: "Send"
+      send_to: "Send to %{to}"
+    email:
+      subject: "Citations"
+  close: "Close"
+  edit: "Edit"
