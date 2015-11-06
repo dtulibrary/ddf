@@ -2,31 +2,19 @@
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
 
-  # Override blacklight document actions to exclude 'Folder' and 'Bookmarks'
-  # and instead render 'Tagging' functionality
-  # def render_index_doc_actions (document, options={})
-  #   wrapping_class = options.delete(:wrapping_class) || "index-document-functions"
-
-  #   content = []
-  #   content << render_tag_control(document) if can? :tag, Bookmark
-  #   content_tag("div", content.join("\n").html_safe, :class => wrapping_class) unless content.empty?
-  # end
-
-  # def render_tag_control(document)
-  #   bookmark = current_user.bookmarks.find_by_document_id(document.id)
-  #   tags = bookmark ? bookmark.tags.order(:name) : []
-  #   tags = current_user.tags.order(:name)
-
-  #   return_url = request.url
-  #   if params && params[:return_url]
-  #     return_url = params[:return_url]
-  #   end
-
-  #   render 'tags/tag_control',
-  #   {:document => document, :document_id => document.id, :bookmark => bookmark, :tags => tags, :return_url => return_url}
-  # end
-
   # TODO
+  def render_bookmark_toggle(document, options={})
+    wrapping_class = options.delete(:wrapping_class) || "bookmark_document"
+
+    bookmark = current_or_guest_user.bookmarks.find_by_document_id(document.id) # not required by partial
+    return_url = params[:url] || request.url # not required by partial
+
+    # binding.pry
+
+    control = render('bookmark_control', :document => document)
+    content_tag("div", control, :class => wrapping_class)
+  end
+
   def render_index_doc_actions(document, options={})
     return_url = params[:url] || request.url
     actions = []
