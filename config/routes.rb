@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
-    get 'citations/new'
-    get 'citations/preview'
-    post 'citations/send', to: 'citations#send_citations'
+    get 'citations/new', as: 'new_citations'
+    get 'citations/preview', as: 'preview_citations'
+    post 'citations/send', to: 'citations#send_citations', as: 'send_citations'
     # You can have the root of your site routed with "root"
   root 'pages#index'
   # For the visualization dataset. Use another URL (end path) than 'data':
