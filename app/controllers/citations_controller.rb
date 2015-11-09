@@ -10,7 +10,7 @@ class CitationsController < CatalogController
 
   def preview
     validate_email_params
-    (@response, @document_list) = search_results(params, search_params_logic)
+    (@response, @document_list) =  get_search_results(params)
     respond_to do |format|
       format.js { render layout: nil }
       format.html
