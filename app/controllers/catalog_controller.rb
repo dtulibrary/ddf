@@ -115,11 +115,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'series_title_ts'
     config.add_show_field 'review_status_s', :helper_method => :render_review_status
     config.add_show_field 'supervisor_ts'
-    config.add_show_field 'conf_title_ts'
+    config.add_show_field 'conf_title_ts', :helper_method => :render_conf_title
     config.add_show_field 'isbn_ss'
-    config.add_show_field 'publisher_ts'
+    config.add_show_field 'publisher_ts', :helper_method => :render_publisher
     config.add_show_field 'submission_year_tis'
-    config.add_show_field 'pub_date_tis'
+    # Only show the published date as an independent field if there is no journal title, conference title or publisher - otherwise it will be appended to these
+    config.add_show_field 'pub_date_tis', unless: proc { |_context, _field_config, doc | doc['journal_title_ts'].present? || doc['conf_title_ts'].present? || doc['publisher_ts'].present? }
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
 

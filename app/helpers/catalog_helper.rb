@@ -183,12 +183,36 @@ end
     field = args[:field]
     [render_journal_title_info(document, format),
      render_journal_subtitle_info(document, format),
-     render_journal_pub_date_info(document, format),
+     render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
-   end
+  end
 
+  def render_conf_title(args)
+    doc = args[:document]
+    if doc['conf_title_ts'].present?
+      title = doc['conf_title_ts'].first
+      # do not append pub date if there is a 4 digit number present in the title
+      if title =~ / \d{4}/
+        title
+      else
+        title + render_pub_date_info(doc, :show)
+      end
+    end
+  end
+
+  def render_publisher(args)
+    doc = args[:document]
+    if doc['publisher_ts'].present?
+      info = doc['publisher_ts']
+      # if there is no journal title conference title, append published date here
+      unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
+        info += render_pub_date_info(doc, :show)
+      end
+      info
+    end
+  end
 
    def render_journal_page_info document, format
     if document['journal_page_ssf']
@@ -222,7 +246,7 @@ end
     end
   end
 
-  def render_journal_pub_date_info document, format
+  def render_pub_date_info document, format
     if document['pub_date_tis']
       ", #{document['pub_date_tis'].first}"
     else
