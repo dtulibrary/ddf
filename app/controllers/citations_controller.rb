@@ -10,7 +10,14 @@ class CitationsController < CatalogController
 
   def preview
     validate_email_params
-    (@response, @document_list) =  get_search_results(params)
+    # if there is an id present we are only retrieving one result
+    # otherwise we are redoing the previous search but with changed rows param
+    if params[:id].present?
+      (@response, @document) = get_solr_response_for_doc_id
+      @document_list = [@document]
+    else
+      (@response, @document_list) =  get_search_results(params)
+    end
     respond_to do |format|
       format.js { render layout: nil }
       format.html
