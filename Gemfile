@@ -32,7 +32,7 @@ gem 'json', '1.8.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'blacklight', '~> 5.15.0'
+gem 'blacklight', '~> 5.7.1'
 gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
 
 gem 'capistrano', '~> 2.0'

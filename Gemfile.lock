@@ -62,7 +62,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.3)
-    autoprefixer-rails (6.0.3)
+    autoprefixer-rails (6.1.0.1)
       execjs
       json
     better_errors (2.1.1)
@@ -73,13 +73,13 @@ GEM
       latex-decode (~> 0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blacklight (5.15.0)
+    blacklight (5.7.2)
       bootstrap-sass (~> 3.2)
       deprecation
-      kaminari (>= 0.15)
+      kaminari (~> 0.13)
       nokogiri (~> 1.6)
       rails (>= 3.2.6, < 5)
-      rsolr (~> 1.0.11)
+      rsolr (~> 1.0.6)
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
@@ -278,7 +278,7 @@ DEPENDENCIES
   better_errors
   bibtex-ruby
   binding_of_caller
-  blacklight (~> 5.15.0)
+  blacklight (~> 5.7.1)
   blacklight_range_limit!
   capistrano (~> 2.0)
   capybara
