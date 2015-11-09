@@ -96,7 +96,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     config.add_index_field 'publisher_ts'
-    config.add_index_field 'pub_date_tis'
+    # only show year in search results if journal title is not present - otherwise it will be appended to this
+    config.add_index_field 'pub_date_tis', unless: proc { |_context, _field_config, doc | doc['journal_title_ts'].present? }
     config.add_index_field 'supervisor_ts'
 
     # ALL SHOW FIELDS:
