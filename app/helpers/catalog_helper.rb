@@ -299,8 +299,27 @@ end
   end
 
   # TODO: Decoration of the data provider facet page
-  def decorate
-    params["f"]["source_ss"]
+  def render_provider_logos
+    raw_codes = params['f']['source_ss']
+    splits = raw_codes.map { |code | code.split "_" }
+    prefixed = splits.select { |arr| arr.length.eql? 2 }
+    not_prefixed = splits - prefixed  # edge case 'orbit'
+    suffixes = prefixed.map { |arr| arr[1] }
+    codes = suffixes.flatten + not_prefixed.flatten
+    images = codes.map do |code|
+      content_tag :li do
+        render_logo_from(code)
+      end
+    end
+    images.join.html_safe
+  end
+
+  def render_logo_from(code)
+    if !Rails.application.assets.find_asset("data-providers/#{code}.png").nil?
+      image_tag("data-providers/#{code}.png")
+    else
+      image_tag("data-providers/#{code}.jpg")
+    end
   end
 
 end

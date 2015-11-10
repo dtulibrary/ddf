@@ -1074,3 +1074,15 @@ ol.selected-documents__list li a {
   color: $link-color-auxiliary;
   //font-size: calc-em(17px);
 }
+
+ul.data-provider-logos-list {
+  margin: 0;
+  text-align: right;
+}
+
+ul.data-provider-logos-list li {
+  margin: 0;
+  display: inline-block;
+  width: 10em;
+}
+ul.data-provider-logos-list li:not(:last-child) { margin: 0 1em 0 0; }
