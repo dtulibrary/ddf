@@ -175,6 +175,19 @@ end
     end
   end
 
+  # only show year in search results if journal title is not present -
+  # otherwise it will be appended to this
+  def show_publication_year_search? _field_config, doc
+    doc['journal_title_ts'].blank?
+  end
+
+  # Only show the published date as an independent field
+  # if there is no journal title, conference title or publisher -
+  # otherwise it will be appended to these
+  def show_publication_year_item? _field_config, doc
+    doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
+  end
+
   # "backlink_ss": [
   #   "http://aarch.dk/publications/6b563f21-3451-4e71-8ee3-14a21ee341d1"
 

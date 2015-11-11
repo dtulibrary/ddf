@@ -96,8 +96,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     config.add_index_field 'publisher_ts'
-    # only show year in search results if journal title is not present - otherwise it will be appended to this
-    config.add_index_field 'pub_date_tis', unless: proc { |_context, _field_config, doc | doc['journal_title_ts'].present? }
+    config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
 
     # ALL SHOW FIELDS:
@@ -120,8 +119,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'isbn_ss'
     config.add_show_field 'publisher_ts', :helper_method => :render_publisher
     config.add_show_field 'submission_year_tis'
-    # Only show the published date as an independent field if there is no journal title, conference title or publisher - otherwise it will be appended to these
-    config.add_show_field 'pub_date_tis', unless: proc { |_context, _field_config, doc | doc['journal_title_ts'].present? || doc['conf_title_ts'].present? || doc['publisher_ts'].present? }
+    config.add_show_field 'pub_date_tis', if: :show_publication_year_item?
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
 
