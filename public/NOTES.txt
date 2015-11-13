@@ -370,3 +370,13 @@ class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 end
 
+REBASING & MERGING WORKFLOW:
+
+While on some_branch:
+
+git rebase master
+git co master
+open pull request
+pull request ok
+git merge bookmarks
+
