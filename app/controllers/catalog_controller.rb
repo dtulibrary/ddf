@@ -9,6 +9,11 @@ class CatalogController < ApplicationController
   before_filter :set_locale
 
   configure_blacklight do |config|
+
+    config.document_presenter_class = Dtu::DocumentPresenter
+    config.metrics_presenter_classes = [Dtu::Metrics::AltmetricPresenter]
+
+
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :qt => '/ddf_publ',

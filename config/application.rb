@@ -36,6 +36,8 @@ module Ddf
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.eager_load_paths += %W(#{config.root}/lib/document #{config.root}/app/presenters/concerns)
+
 
     config.solr_document = { :document_id => 'cluster_id_ss' }
 

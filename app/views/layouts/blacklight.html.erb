@@ -29,6 +29,7 @@
     <![endif]-->
       <%= display_meta_tags %>
       <%= render partial: 'shared/google_analytics' %>
+    <%= Dtu::Metrics::AltmetricPresenter.altmetric_embed_script %>
   </head>
 
   <body class="<%= render_body_class %>">
