@@ -218,7 +218,7 @@ end
   def render_publisher(args)
     doc = args[:document]
     if doc['publisher_ts'].present?
-      info = doc['publisher_ts']
+      info = doc['publisher_ts'].first
       # if there is no journal title conference title, append published date here
       unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
         info += render_pub_date_info(doc, :show)
