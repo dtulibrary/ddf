@@ -373,6 +373,7 @@ ul.search-extras-list {
   }
 }
 ul.search-extras-list li { display: inline-block; }
+ul.search-extras-list li:not(:last-child) { margin-right: 1em; }
 
 a.btn-danger:link,
 a.btn-danger:hover,
@@ -674,7 +675,7 @@ ul.icon-labels > li > a { color: $link-color; }
 ul.icon-labels > li > i {
   position: relative;
   font-size: calc-em(25px);
-  top: 5px;
+  top: 4px;
   padding-left: 2px;
   color: $link-color-auxiliary;
 }

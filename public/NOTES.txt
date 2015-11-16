@@ -364,3 +364,19 @@ https://groups.google.com/forum/#!category-topic/digital-analytics-fundamentals/
 Customizing HTML checkboxes:
 http://stackoverflow.com/questions/29171243/checkboxes-with-fontawesome-change-background-color-only-css
 http://codepen.io/jamesbarnett/pen/yILjk/
+
+# -*- encoding : utf-8 -*-
+class BookmarksController < CatalogController
+  include Blacklight::Bookmarks
+end
+
+REBASING & MERGING WORKFLOW:
+
+While on some_branch:
+
+git rebase master
+git co master
+open pull request
+pull request ok
+git merge bookmarks
+

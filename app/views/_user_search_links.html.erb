@@ -1,5 +1,12 @@
 <ul class="search-extras-list icon-labels align-right">
   <li>
+    <i class="glyphicon glyphicon-check"></i>
+    <%= link_to bookmarks_path do %>
+      <%= t('blacklight.header_links.bookmarks') %>
+      (<span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span>)
+    <% end %>
+  </li>
+  <li>
     <i class="glyphicon glyphicon-time"></i>
     <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
   </li>

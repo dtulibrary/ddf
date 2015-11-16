@@ -45,4 +45,5 @@ public/assets
 .project
 # Ignore RubyMine files
 .idea
+.agignore
 /TAGS

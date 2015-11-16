@@ -77,3 +77,6 @@ end
 
 gem 'rsolr', '~> 1.0.6'
 gem 'meta-tags'
+gem 'devise'
+gem 'devise-guests', '~> 0.3'
+
