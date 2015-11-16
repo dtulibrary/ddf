@@ -11,10 +11,15 @@ class CitationsController < CatalogController
   def preview
     validate_email_params
     # if there is an id present we are only retrieving one result
-    # otherwise we are redoing the previous search but with changed rows param
     if params[:id].present?
       (@response, @document) = get_solr_response_for_doc_id
       @document_list = [@document]
+    # If we are coming from the bookmarks controller then we want to export the bookmarks
+    elsif current_search_session.query_params['controller'] == 'bookmarks'
+      bookmarks = token_or_current_or_guest_user.bookmarks
+      bookmark_ids = bookmarks.collect { |b| b.document_id.to_s }
+      @response, @document_list = get_solr_response_for_document_ids(bookmark_ids, rows: bookmark_ids.size)
+    # otherwise we are coming from a search context and want to redo the search with changed rows params
     else
       (@response, @document_list) =  get_search_results(params)
     end
@@ -35,5 +40,20 @@ class CitationsController < CatalogController
       current_search_params = current_search_session.query_params.empty? ? {} : current_search_session.query_params
       params.merge!(current_search_params.reject {|k,v| ["controller","action"].include?(k)})
     end
+  end
+
+  # This has been copied over from bookmarks controller
+
+  def token_or_current_or_guest_user
+    token_user || current_or_guest_user
+  end
+
+  def token_user
+    @token_user ||= if params[:encrypted_user_id]
+                      user_id = decrypt_user_id params[:encrypted_user_id]
+                      User.find(user_id)
+                    else
+                      nil
+                    end
   end
 end

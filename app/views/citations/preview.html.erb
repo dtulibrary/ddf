@@ -2,7 +2,7 @@
   <button type="button" class="ajax-modal-close close" data-dismiss="modal" aria-hidden="true">×</button>
   <h1 class="modal-title"><%= t('blacklight.citations.preview.title') %></h1>
 </div>
-<%# we capture the citation output so we can reuse it in the body and in the input below %>
+<%# we capture the citation output so we can use it in the body and in the input below %>
 <% text = capture do %>
     <% @document_list.each_with_index do |doc, i| %>
         <%= "#{i+1}: #{doc.export_as_citation_txt(params['style'])}" %>
