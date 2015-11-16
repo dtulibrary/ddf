@@ -20,5 +20,9 @@
         <%= link_to content_tag('i', '', :class => 'icon-file-text-o') + t('ddf.tools.ris'), catalog_path(document, :format => 'ris') %>
       </li>
     <% end %>
+
+    <li>
+      <%= link_to t('ddf.tools.email_result'), new_citations_path(id: document.id), data: { ajax_modal: 'trigger'} %>
+    </li>
   </ul>
 </span>

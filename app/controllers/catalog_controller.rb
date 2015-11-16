@@ -96,7 +96,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     config.add_index_field 'publisher_ts'
-    config.add_index_field 'pub_date_tis'
+    config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
 
     # ALL SHOW FIELDS:
@@ -115,11 +115,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'series_title_ts'
     config.add_show_field 'review_status_s', :helper_method => :render_review_status
     config.add_show_field 'supervisor_ts'
-    config.add_show_field 'conf_title_ts'
+    config.add_show_field 'conf_title_ts', :helper_method => :render_conf_title
     config.add_show_field 'isbn_ss'
-    config.add_show_field 'publisher_ts'
+    config.add_show_field 'publisher_ts', :helper_method => :render_publisher
     config.add_show_field 'submission_year_tis'
-    config.add_show_field 'pub_date_tis'
+    config.add_show_field 'pub_date_tis', if: :show_publication_year_item?
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
 

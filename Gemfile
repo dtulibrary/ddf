@@ -50,6 +50,8 @@ gem 'sitemap_generator'
 group :development do
   #gem 'foreman'
   #gem 'puma'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :assets do

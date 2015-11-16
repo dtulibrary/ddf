@@ -1,0 +1,35 @@
+<%= form_tag(preview_citations_path, method: :get, data: { ajax_modal: 'trigger' }) do |f| %>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="to">
+          <%= t('blacklight.email.form.to') %>
+        </label>
+        <div class="col-sm-10">
+          <%= email_field_tag :to, params[:to], class: 'form-control', required: true %>
+        </div>
+      </div>
+      <%# If there is an id present we are only rendering for one document %>
+      <% if params[:id].present? %>
+        <%= hidden_field_tag(:id, params[:id]) %>
+      <% else %>
+          <div class="form-group">
+            <label class="control-label col-sm-2"><%= t '.number' %></label>
+            <div class="col-sm-10">
+              <% default_rows = blacklight_config.default_solr_params[:rows] %>
+              <%= select_tag(:rows, options_for_select(blacklight_config.per_page, default_rows), class: 'form-control') %>
+            </div>
+          </div>
+      <% end %>
+      <div class="form-group">
+        <label class="control-label col-sm-2"><%= t '.format' %></label>
+        <div class="col-sm-10">
+          <%= select_tag(:style, options_for_select(SolrDocument.new.citation_styles), class: 'form-control') %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= button_tag(t(:close), class: 'btn btn-default', data: { dismiss: 'modal' }) %>
+      <%= button_tag(t('.preview'), class: 'btn btn-primary', data: { disable_with: 'Loading...'}) %>
+    </div>
+
+<% end %>

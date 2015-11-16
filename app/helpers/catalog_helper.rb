@@ -175,6 +175,19 @@ end
     end
   end
 
+  # only show year in search results if journal title is not present -
+  # otherwise it will be appended to this
+  def show_publication_year_search? _field_config, doc
+    doc['journal_title_ts'].blank?
+  end
+
+  # Only show the published date as an independent field
+  # if there is no journal title, conference title or publisher -
+  # otherwise it will be appended to these
+  def show_publication_year_item? _field_config, doc
+    doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
+  end
+
   # "backlink_ss": [
   #   "http://aarch.dk/publications/6b563f21-3451-4e71-8ee3-14a21ee341d1"
 
@@ -183,12 +196,36 @@ end
     field = args[:field]
     [render_journal_title_info(document, format),
      render_journal_subtitle_info(document, format),
-     render_journal_pub_date_info(document, format),
+     render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
-   end
+  end
 
+  def render_conf_title(args)
+    doc = args[:document]
+    if doc['conf_title_ts'].present?
+      title = doc['conf_title_ts'].first
+      # do not append pub date if there is a 4 digit number present in the title
+      if title =~ / \d{4}/
+        title
+      else
+        title + render_pub_date_info(doc, :show)
+      end
+    end
+  end
+
+  def render_publisher(args)
+    doc = args[:document]
+    if doc['publisher_ts'].present?
+      info = doc['publisher_ts'].first
+      # if there is no journal title conference title, append published date here
+      unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
+        info += render_pub_date_info(doc, :show)
+      end
+      info
+    end
+  end
 
    def render_journal_page_info document, format
     if document['journal_page_ssf']
@@ -222,7 +259,7 @@ end
     end
   end
 
-  def render_journal_pub_date_info document, format
+  def render_pub_date_info document, format
     if document['pub_date_tis']
       ", #{document['pub_date_tis'].first}"
     else
