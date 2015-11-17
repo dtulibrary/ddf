@@ -354,3 +354,14 @@ div.chart {
     margin-bottom: 7em; // TODO
   }
 }
+
+div.bookmark_document {
+  //background: #eee;
+}
+
+div.bookmark_document input.toggle_bookmark {
+  // display: inline-block;
+  position: relative;
+  vertical-align: 5%;
+  //top: 3px;
+}

@@ -380,3 +380,5 @@ open pull request
 pull request ok
 git merge bookmarks
 
+Excellent tutorial on branching, merging, etc in Git:
+https://www.atlassian.com/git/tutorials/using-branches/git-checkout

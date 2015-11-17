@@ -1,0 +1,42 @@
+<div id="content" class="col-md-12">
+
+  <div class="page-leadin page-leadin--search group">
+
+    <div class="col-md-8">
+      <h1 class='search-page-heading'><%= t('blacklight.bookmarks.title') %></h1>
+    </div>
+
+    <div class="col-md-4">
+
+        <nav class="align-right">
+          <ul class="history-view__resets">
+            <li>
+              <i class="glyphicon glyphicon-list"></i>
+              <%= link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
+            </li>
+
+            <li class="destructive">
+              <i class="glyphicon glyphicon-remove-sign"></i>
+              <%= link_to t('blacklight.bookmarks.clear.action_title'), clear_bookmarks_path, :method => :delete, :data => { :confirm => t('blacklight.bookmarks.clear.action_confirm') } %>
+            </li>
+          </ul>
+        </nav>
+
+    </div>
+  </div>
+
+
+    <%- if current_or_guest_user.blank? -%>
+      <h2 class='section-heading'><%= t('blacklight.bookmarks.need_login') %></h2>
+    <%- elsif @document_list.blank? -%>
+      <h3 class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></h3>
+    <% else %>
+      <%= render 'sort_and_per_page' %>
+        <div class="col-md-9">
+          <%= render_document_index %>
+          <%= render 'results_pagination' %>
+        </div>
+      <% end %>
+
+</div>
+

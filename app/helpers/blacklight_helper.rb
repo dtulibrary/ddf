@@ -2,15 +2,8 @@
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
 
-  # TODO
   def render_bookmark_toggle(document, options={})
     wrapping_class = options.delete(:wrapping_class) || "bookmark_document"
-
-    bookmark = current_or_guest_user.bookmarks.find_by_document_id(document.id) # not required by partial
-    return_url = params[:url] || request.url # not required by partial
-
-    # binding.pry
-
     control = render('bookmark_control', :document => document)
     content_tag("div", control, :class => wrapping_class)
   end
