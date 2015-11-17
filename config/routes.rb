@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'messages/create'
 
   get 'messages/message_params'
+  get 'oai', to: 'open_access_indicator#get'
 
 
   scope "(:locale)", :locale => /en|da/ do
