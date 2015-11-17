@@ -11,6 +11,8 @@
       <%# If there is an id present we are only rendering for one document %>
       <% if params[:id].present? %>
         <%= hidden_field_tag(:id, params[:id]) %>
+      <%# If we are coming from the bookmarks context then we don't select the rows %>
+      <% elsif current_search_session.query_params['controller'] == 'bookmarks' %>
       <% else %>
           <div class="form-group">
             <label class="control-label col-sm-2"><%= t '.number' %></label>
