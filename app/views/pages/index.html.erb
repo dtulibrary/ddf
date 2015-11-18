@@ -9,16 +9,17 @@
     </div>
   </div>
 
-  <div class="row">
     <div class="col-md-12">
       <section>
         <h1 class="chart-heading">OPEN ACCESS</h1>
-        <div class="center-block">
-          <%= link_to 'Overview', open_access_path %>
+        <div class="col-md-4 col-md-push-4">
+          <div id="oai-chart" data-function="oai-chart" data-link="<%= oai_url(resource: 'national') + "&year=2014" %>"></div>
         </div>
       </section>
     </div>
-  </div>
+    <div class="col-md-12">
+      <%= link_to 'Overview', open_access_path %>
+    </div>
 
   <div class="container">
     <div class="row">
