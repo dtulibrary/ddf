@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//
-//= require d3
-//
+//= require plotly.min
 // Required by Blacklight:
 //= require blacklight/blacklight
 //
