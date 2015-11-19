@@ -128,6 +128,8 @@ module Blacklight::UrlHelperBehavior
 
     label ||= t('blacklight.back_to_search')
 
+    # binding.pry
+
     link_to label, link_url, opts
   end
 
