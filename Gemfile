@@ -73,6 +73,7 @@ group :development, :test do
   gem 'minitest'
   gem 'capybara'
   gem 'addressable'
+  gem 'rspec-rails'
 end
 
 gem 'rsolr', '~> 1.0.6'
