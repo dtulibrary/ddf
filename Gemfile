@@ -71,13 +71,18 @@ group :development, :test do
   gem 'xray-rails'
   gem 'pry', '~> 0.10.1'
   gem 'minitest'
-  gem 'capybara'
   gem 'addressable'
+end
+
+group :test do
   gem 'rspec-rails'
+  gem 'launchy'
+  gem 'capybara'
 end
 
 gem 'rsolr', '~> 1.0.6'
 gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
+gem 'dtu_blacklight_common', path: '/home/ronan/dtu_blacklight_common'
 

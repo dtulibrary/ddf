@@ -4,24 +4,19 @@
 require 'i18n'
 class CatalogController < ApplicationController
 
-  include Blacklight::Catalog
+  include ::DtuBlacklightCommon::CatalogBehavior
 
   before_filter :set_locale
 
   configure_blacklight do |config|
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
-    config.default_solr_params = {
-      :qt => '/ddf_publ',
-      :rows => 10
-    }
     # solr path which will be added to solr base url before the other solr params.
-    # config.solr_path = 'select'
-    # items to show per page, each number in the array represent another option to choose from.
-    config.per_page = [10,20,50]
+    config.solr_path = 'ddf_publ'
 
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
     #
+    # TODO; DDF specific
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
      :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
@@ -31,10 +26,7 @@ class CatalogController < ApplicationController
       # :q => '{!raw f=id v=$id}'
     }
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_ts'
 
-    # solr field configuration for document/show views
-    config.show.title_field = 'title_ts'
     # config.show.display_type_field = 'format'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -63,60 +55,58 @@ class CatalogController < ApplicationController
     # }
 
     # ALL FACET FIELDS:
+    # TODO - investigate difference with format field as used in Toshokan
     config.add_facet_field 'format_orig_s', :helper_method => :render_format_field_facet
-    config.add_facet_field 'pub_date_tsort', :range => {
-      :num_segments => 3,
-      :assumed_boundaries => [1900, Time.now.year + 2]
-    }
+
     config.add_facet_field 'submission_year_tis', range: true
-    config.add_facet_field 'author_facet', :limit => 10
     config.add_facet_field 'source_ss', :helper_method => :render_source_field_facet, :limit => 10
-    config.add_facet_field 'journal_title_facet', :limit => 10
     config.add_facet_field 'isolanguage_ss', :helper_method => :render_language_field_facet
     config.add_facet_field 'scientific_level_s', :helper_method => :render_scientific_level_facet
     config.add_facet_field 'access_condition_s', :helper_method => :render_publication_status_facet
     config.add_facet_field 'review_status_s', :helper_method => :render_review_status_facet
     config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
 
-    # Have BL send all facet field names to Solr, which has been the default
-    # previously. Simply remove these lines if you'd rather use Solr request
-    # handler defaults, or have no facets.
-    config.add_facet_fields_to_solr_request!
 
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
     
     # ALL INDEX FIELDS:
+    # NOTE: Toshokan uses a helper method here to create author links
     config.add_index_field 'author_ts', :separator => ' ; '
     config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
+    # NOTE: Toshokan uses a somewhat different helper method
     config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
     config.add_index_field 'editor_ts'
-    config.add_index_field 'doi_ss'
+    # NOTE: Toshokan has a method here to render highlighting in the abstrac
     config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
+    # NOTE: Toshokan does the same here but with highlighting
     config.add_index_field 'publisher_ts'
     config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
 
     # ALL SHOW FIELDS:
-    config.add_show_field 'subtitle_ts'
+    # NOTE: Toshokan uses a helper method here to create author links
     config.add_show_field 'author_ts', :separator => ' ; '
     config.add_show_field 'format_orig_s', :helper_method => :render_type
+    # NOTE: Toshokan uses a helper method here to render affiliations
     config.add_show_field 'affiliation_ts', :separator => '<hr style="margin:0.2em 0em">'.html_safe
     config.add_show_field 'language_ss', :helper_method => :render_language
+    # NOTE: Toshokan uses a somewhat different helper method
     config.add_show_field 'journal_title_ts', :helper_method => :render_journal_info
+    # NOTE: Toshokan uses the author link helper method here
     config.add_show_field 'editor_ts'
-    config.add_show_field 'doi_ss'
-    config.add_show_field 'abstract_ts'
+    # NOTE: Toshokan uses a helper method here to create keyword links
     config.add_show_field 'keywords_ts', :separator => ' ; '
     config.add_show_field 'research_area_ss'
     config.add_show_field 'access_condition_s', :helper_method => :render_publishing_status
     config.add_show_field 'series_title_ts'
     config.add_show_field 'review_status_s', :helper_method => :render_review_status
+    # NOTE: Toshokan uses a link creating method here
     config.add_show_field 'supervisor_ts'
+    # NOTE: Toshokan has a different helper method here
     config.add_show_field 'conf_title_ts', :helper_method => :render_conf_title
-    config.add_show_field 'isbn_ss'
     config.add_show_field 'publisher_ts', :helper_method => :render_publisher
     config.add_show_field 'submission_year_tis'
     config.add_show_field 'pub_date_tis', if: :show_publication_year_item?
@@ -146,30 +136,6 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
 
-    relevance_ordering = [
-      'score desc',
-      'pub_date_tsort desc',
-      'journal_vol_tsort desc',
-      'journal_issue_tsort desc',
-      'journal_page_start_tsort asc',
-      'title_sort asc'
-    ]
-    config.add_sort_field relevance_ordering.join(', '), :label => 'relevance'
-
-    year_ordering = [
-      'pub_date_tsort desc',
-      'journal_vol_tsort desc',
-      'journal_issue_tsort desc',
-      'journal_page_start_tsort asc',
-      'title_sort asc'
-    ]
-    config.add_sort_field year_ordering.join(', '), :label => 'year'
-
-    title_ordering = [
-      'title_sort asc',
-      'pub_date_tsort desc'
-    ]
-    config.add_sort_field title_ordering.join(', '), :label => 'title'
   end
 
   def show

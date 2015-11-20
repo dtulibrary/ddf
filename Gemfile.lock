@@ -18,6 +18,14 @@ GIT
       rails
       rsolr
 
+PATH
+  remote: /home/ronan/dtu_blacklight_common
+  specs:
+    dtu_blacklight_common (0.0.1)
+      blacklight (~> 5.7)
+      rails (~> 4.2.1)
+      solr_wrapper
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -157,6 +165,8 @@ GEM
       activesupport (>= 3.0.0)
     latex-decode (0.2.2)
       unicode (~> 0.4)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     libv8 (3.16.14.7)
     logger (1.2.8)
     loofah (2.0.3)
@@ -248,6 +258,7 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.0)
+    ruby-progressbar (1.7.5)
     rubyzip (1.1.7)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -263,6 +274,9 @@ GEM
     sitemap_generator (5.1.0)
       builder
     slop (3.6.0)
+    solr_wrapper (0.4.0)
+      ruby-progressbar
+      rubyzip
     spring (1.4.1)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -319,10 +333,12 @@ DEPENDENCIES
   dalli
   devise
   devise-guests (~> 0.3)
+  dtu_blacklight_common!
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
   json (= 1.8.2)
+  launchy
   libv8 (= 3.16.14.7)
   meta-tags
   metastore-test_data!
