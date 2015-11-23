@@ -72,17 +72,17 @@ class CatalogController < ApplicationController
     
     # ALL INDEX FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_index_field 'author_ts', :separator => ' ; '
+    config.add_index_field 'author_ts', :separator => ' ; ', highlight: true, :helper_method => :render_highlight_field
     config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
     # NOTE: Toshokan uses a somewhat different helper method
-    config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info
+    config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info, highlight: true
     config.add_index_field 'editor_ts'
-    # NOTE: Toshokan has a method here to render highlighting in the abstrac
-    config.add_index_field 'abstract_ts', :helper_method => :snip_abstract
+    # NOTE: Toshokan has a method here to render highlighting in the abstract
+    config.add_index_field 'abstract_ts', :helper_method => :render_highlighted_abstract, :highlight => true, separator: ''
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     # NOTE: Toshokan does the same here but with highlighting
-    config.add_index_field 'publisher_ts'
+    config.add_index_field 'publisher_ts', highlight: true, :helper_method => :render_highlight_field
     config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
 
