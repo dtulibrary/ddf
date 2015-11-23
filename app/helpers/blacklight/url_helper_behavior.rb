@@ -128,18 +128,12 @@ module Blacklight::UrlHelperBehavior
 
     label ||= t('blacklight.back_to_search')
 
-    # binding.pry
-
     link_to label, link_url, opts
   end
 
   # Search History and Saved Searches display
   def link_to_previous_search(params)
     link_to(render_search_to_s(params), search_action_path(params))
-    # TODO
-    # byebug
-    # Men den bruger både søgeparams og facets ?
-    # link_to(t("blacklight.search.fields.index.#{params[:key]}"), search_action_path(params))
   end
 
   # @overload params_for_search(source_params, params_to_merge)
