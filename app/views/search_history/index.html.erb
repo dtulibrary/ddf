@@ -7,7 +7,7 @@
     </div>
 
     <div class="col-md-4">
-      <%- unless has_search_history? -%>
+      <%- if has_search_history? -%>
         <nav class="align-right">
           <ul class="history-view__resets">
             <li>

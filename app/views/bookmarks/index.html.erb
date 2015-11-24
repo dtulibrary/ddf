@@ -8,7 +8,7 @@
 
     <div class="col-md-4">
         <nav class="align-right">
-          <%- unless has_search_history? -%>
+          <%- unless @document_list.blank? -%>
             <ul class="history-view__resets">
               <li>
                 <i class="glyphicon glyphicon-list"></i>

@@ -53,11 +53,15 @@ module ApplicationHelper
   end
 
   def latest_search_path
-    search_action_path(previous_searches.first.query_params)
+    if has_search_history?
+      search_action_path(previous_searches.first.query_params)
+    else
+      ""
+    end
   end
 
   def has_search_history?
-    !(searches_from_history.eql?(Search.none))
+    !previous_searches.empty?
   end
 
   # Copied from app/controllers/concerns/blacklight/controller.rb

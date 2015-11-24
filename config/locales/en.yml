@@ -29,11 +29,23 @@ en:
       search_history: History
       bookmarks: Selected
     bookmarks:
-      title: Selected
+      collection:
+        add:
+          button: 'Select'
+      title: Selected records
       no_bookmarks: 'You have no selected records'
       clear:
         action_title: 'Clear selected'
+        action_confirm: 'Clear selected records?'
+        success: 'Cleared selection.'
+        failure: 'Sorry, error clearing selection.'
+
     search:
+      bookmarks:
+        absent: Select
+        present: Selected
+        inprogress: Saving...
+
       fields:
         default: "Search terms"
         format_orig_s: Type
