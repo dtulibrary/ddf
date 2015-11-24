@@ -7,7 +7,7 @@
     </div>
 
     <div class="col-md-4">
-      <%- unless @searches.blank? -%>
+      <%- unless has_search_history? -%>
         <nav class="align-right">
           <ul class="history-view__resets">
             <li>
@@ -25,8 +25,10 @@
     </div>
   </div>
 
-  <%- if @searches.blank? -%>
-    <h3 class="search-help search-help--large no-history"><%= t('blacklight.search_history.no_history') %>.</h3>
+  <%- unless has_search_history? -%>
+    <h3 class="search-help search-help--large no-history">
+      <%= t('blacklight.search_history.no_history') %>.
+    </h3>
   <%- else -%>
     <h3 class="search-help search-help--large"><%=t('blacklight.search_history.recent')%>:</h3>
 

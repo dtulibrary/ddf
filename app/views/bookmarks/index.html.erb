@@ -7,36 +7,35 @@
     </div>
 
     <div class="col-md-4">
-
         <nav class="align-right">
-          <ul class="history-view__resets">
-            <li>
-              <i class="glyphicon glyphicon-list"></i>
-              <%= link_to t('blacklight.latest_search'), latest_search_path %>
-            </li>
+          <%- unless has_search_history? -%>
+            <ul class="history-view__resets">
+              <li>
+                <i class="glyphicon glyphicon-list"></i>
+                <%= link_to t('blacklight.latest_search'), latest_search_path %>
+              </li>
 
-            <li class="destructive">
-              <i class="glyphicon glyphicon-remove-sign"></i>
-              <%= link_to t('blacklight.bookmarks.clear.action_title'), clear_bookmarks_path, :method => :delete, :data => { :confirm => t('blacklight.bookmarks.clear.action_confirm') } %>
-            </li>
-          </ul>
+               <li class="destructive">
+                <i class="glyphicon glyphicon-remove-sign"></i>
+                <%= link_to t('blacklight.bookmarks.clear.action_title'), clear_bookmarks_path, :method => :delete, :data => { :confirm => t('blacklight.bookmarks.clear.action_confirm') } %>
+              </li>
+            </ul>
+          <%- end -%>
         </nav>
-
     </div>
   </div>
 
-
-    <%- if current_or_guest_user.blank? -%>
-      <h2 class='section-heading'><%= t('blacklight.bookmarks.need_login') %></h2>
-    <%- elsif @document_list.blank? -%>
-      <h3 class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></h3>
+    <%- if @document_list.blank? -%>
+      <h3 class="search-help search-help--large no-history">
+        <%= t('blacklight.bookmarks.no_bookmarks') %>
+      </h3>
     <% else %>
       <%= render 'sort_and_per_page' %>
         <div class="col-md-9">
           <%= render_document_index %>
           <%= render 'results_pagination' %>
         </div>
-      <% end %>
+    <% end %>
 
 </div>
 

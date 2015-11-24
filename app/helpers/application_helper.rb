@@ -56,6 +56,10 @@ module ApplicationHelper
     search_action_path(previous_searches.first.query_params)
   end
 
+  def has_search_history?
+    !(searches_from_history.eql?(Search.none))
+  end
+
   # Copied from app/controllers/concerns/blacklight/controller.rb
   def searches_from_history
     session[:history].blank? ? Search.none : Search.where(:id => session[:history]).order("updated_at desc")
