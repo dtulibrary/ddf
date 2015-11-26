@@ -4,7 +4,7 @@
 require 'i18n'
 class CatalogController < ApplicationController
 
-  include ::DtuBlacklightCommon::CatalogBehavior
+  include Dtu::CatalogBehavior
 
   before_filter :set_locale
 

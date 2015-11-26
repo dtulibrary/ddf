@@ -11,10 +11,10 @@
  * file per style scope.
  *
  *= require_self
+ *= require 'dtu/dtu'
  *= require screen
 
  *
  * Used by blacklight_range_limit
  *= require  'blacklight_range_limit'
- *= require 'dtu_blacklight_common'
 */

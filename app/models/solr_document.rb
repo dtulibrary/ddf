@@ -5,7 +5,7 @@ require 'openurl'
 class SolrDocument
   include Configured
   include Blacklight::Solr::Document
-  include DtuBlacklightCommon::Highlighting
+  include Dtu::SolrDocument::Highlighting
   self.unique_key = SolrDocument.document_id
 
   SolrDocument.use_extension(Reference)
