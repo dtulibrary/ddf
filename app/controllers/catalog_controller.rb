@@ -16,7 +16,7 @@ class CatalogController < ApplicationController
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
     #
-    # TODO; DDF specific
+
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
      :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
@@ -54,6 +54,11 @@ class CatalogController < ApplicationController
     #   :assumed_boundaries => [1900, Time.now.year + 2],
     # }
 
+    config.add_facet_field 'pub_date_tsort', :range => {
+        :num_segments => 3,
+        :assumed_boundaries => [1900, Time.now.year + 2]
+    }
+
     # ALL FACET FIELDS:
     # TODO - investigate difference with format field as used in Toshokan
     config.add_facet_field 'format_orig_s', :helper_method => :render_format_field_facet
@@ -66,7 +71,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'review_status_s', :helper_method => :render_review_status_facet
     config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
 
-
+    config.add_facet_fields_to_solr_request!
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
     
@@ -85,10 +90,15 @@ class CatalogController < ApplicationController
     config.add_index_field 'publisher_ts', highlight: true, :helper_method => :render_highlight_field
     config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
+    config.add_index_field 'doi_ss'
 
     # ALL SHOW FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
     config.add_show_field 'author_ts', :separator => ' ; '
+    config.add_show_field 'subtitle_ts'
+    config.add_show_field 'doi_ss'
+    config.add_show_field 'abstract_ts'
+    config.add_show_field 'isbn_ss'
     config.add_show_field 'format_orig_s', :helper_method => :render_type
     # NOTE: Toshokan uses a helper method here to render affiliations
     config.add_show_field 'affiliation_ts', :separator => '<hr style="margin:0.2em 0em">'.html_safe
