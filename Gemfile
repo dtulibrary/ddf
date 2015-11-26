@@ -65,7 +65,6 @@ end
 group :development, :test do
   gem 'spring'
   gem 'metastore-test_data', :github => 'dtulibrary/metastore-test_data'
-  gem 'jettywrapper'
 
   # gem 'web-console', '~> 2.0'
   gem 'xray-rails'
@@ -84,5 +83,6 @@ gem 'rsolr', '~> 1.0.6'
 gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
+gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
 gem 'dtu_blacklight_common', path: '/home/ronan/dtu_blacklight_common'
 

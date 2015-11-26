@@ -18,13 +18,22 @@ GIT
       rails
       rsolr
 
+GIT
+  remote: git://github.com/flyingzumwalt/solr_wrapper.git
+  revision: 8a475b1768ee545cad26d57f4f3c4be904a5f594
+  specs:
+    solr_wrapper (0.4.0)
+      ruby-progressbar
+      rubyzip
+
 PATH
   remote: /home/ronan/dtu_blacklight_common
   specs:
     dtu_blacklight_common (0.0.1)
-      blacklight (~> 5.7)
-      rails (~> 4.2.1)
+      blacklight (~> 5.7.0)
+      rails (~> 4.1)
       solr_wrapper
+      twitter-typeahead-rails (~> 0.11)
 
 GEM
   remote: https://rubygems.org/
@@ -274,9 +283,6 @@ GEM
     sitemap_generator (5.1.0)
       builder
     slop (3.6.0)
-    solr_wrapper (0.4.0)
-      ruby-progressbar
-      rubyzip
     spring (1.4.1)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -296,6 +302,10 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
+    twitter-typeahead-rails (0.11.1)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -335,7 +345,6 @@ DEPENDENCIES
   devise-guests (~> 0.3)
   dtu_blacklight_common!
   jbuilder (~> 2.0)
-  jettywrapper
   jquery-rails
   json (= 1.8.2)
   launchy
@@ -354,6 +363,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sitemap_generator
+  solr_wrapper!
   spring
   sprockets (~> 2.8)
   sqlite3
