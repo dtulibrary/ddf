@@ -2,10 +2,8 @@
 require 'citeproc'
 require 'openurl'
 
-class SolrDocument
+class SolrDocument < Dtu::SolrDocument
   include Configured
-  include Blacklight::Solr::Document
-  include Dtu::SolrDocument::Highlighting
   self.unique_key = SolrDocument.document_id
 
   SolrDocument.use_extension(Reference)
