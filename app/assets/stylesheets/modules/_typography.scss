@@ -612,7 +612,6 @@ ul.sitemap a:hover {
   border-bottom: 1px dashed $orange;
   text-decoration: none;
 }
-li.sitemap__section > a { font-weight: bold; }
 
 li.sitemap__section {
   display: inline-block;
@@ -621,9 +620,15 @@ li.sitemap__section {
   @include respond-to($ipad_portrait) { display: block; }
 }
 
+li.sitemap__section > a { font-weight: bold; }
+li.sitemap__section a > i.glyphicon {
+  display: inline-block;
+  padding-right: .5em;
+}
+
 li.sitemap__section > ul {
   margin-top: .1em;
-  margin-left: 1em;
+  margin-left: 1.5em;
   margin-bottom: .7em;
 }
 
@@ -1075,3 +1080,4 @@ ol.selected-documents__list li a {
   color: $link-color-auxiliary;
   //font-size: calc-em(17px);
 }
+
