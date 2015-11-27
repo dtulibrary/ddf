@@ -84,5 +84,5 @@ gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
-gem 'dtu_blacklight_common', path: '/home/ronan/dtu_blacklight_common'
+gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common'
 
