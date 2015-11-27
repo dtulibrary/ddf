@@ -2,7 +2,7 @@
 class SearchHistoryController < ApplicationController
   include Blacklight::Configurable
   include Blacklight::UrlHelperBehavior
-  include Blacklight::Catalog::SearchContext
+  include Blacklight::SearchContext
 
   copy_blacklight_config_from(CatalogController)
 

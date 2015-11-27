@@ -32,8 +32,9 @@ gem 'json', '1.8.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'blacklight', '~> 5.7.1'
-gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
+gem 'blacklight', '~> 5.16.3'
+gem 'blacklight_range_limit', '~> 5.2.0'
+# gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
 
 gem 'capistrano', '~> 2.0'
 
@@ -84,5 +85,5 @@ gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
-gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common'
+gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common', branch: 'blacklight5.16'
 

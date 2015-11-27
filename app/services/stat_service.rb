@@ -7,7 +7,7 @@ module StatService
   end
 
   def raw_data_for(facet)
-    publ = Blacklight.solr.get('ddf_publ',
+    publ = Blacklight.default_index.connection.get('ddf_publ',
       :params => {
         :q => '*:*',
         :facet => 'true',

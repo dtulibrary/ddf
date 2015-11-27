@@ -1,18 +1,10 @@
 GIT
-  remote: git://github.com/dtulibrary/blacklight_range_limit.git
-  revision: da3ca02cea6adfd981406b46db32fd930f10ee6b
-  specs:
-    blacklight_range_limit (5.0.2)
-      blacklight (>= 5.0.0.pre4, < 6)
-      jquery-rails
-      rails (>= 3.0, < 5.0)
-
-GIT
   remote: git://github.com/dtulibrary/dtu_blacklight_common.git
-  revision: db2f4b147b3c6c01365e8ec4fd4c45be8d62cef2
+  revision: 952bb2603e5161bbb875dc6fe15e38ab9460de99
+  branch: blacklight5.16
   specs:
     dtu_blacklight_common (0.0.1)
-      blacklight (~> 5.7.0)
+      blacklight (~> 5.16)
       rails (~> 4.1)
       solr_wrapper
       twitter-typeahead-rails (~> 0.11)
@@ -80,7 +72,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.3)
-    autoprefixer-rails (6.1.0.1)
+    autoprefixer-rails (6.1.1)
       execjs
       json
     bcrypt (3.1.10)
@@ -92,16 +84,20 @@ GEM
       latex-decode (~> 0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blacklight (5.7.2)
+    blacklight (5.16.4)
       bootstrap-sass (~> 3.2)
       deprecation
-      kaminari (~> 0.13)
+      kaminari (>= 0.15)
       nokogiri (~> 1.6)
       rails (>= 3.2.6, < 5)
-      rsolr (~> 1.0.6)
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
+      rsolr (~> 1.0.11)
+    blacklight_range_limit (5.2.0)
+      blacklight (~> 5.15)
+      jquery-rails
+      rails (>= 3.0, < 5.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     capistrano (2.15.7)
       highline
@@ -189,9 +185,9 @@ GEM
     meta-tags (2.1.0)
       actionpack (>= 3.0.0)
     method_source (0.8.2)
-    mime-types (2.6.2)
+    mime-types (2.99)
     mini_portile (0.6.2)
-    minitest (5.8.2)
+    minitest (5.8.3)
     multi_json (1.11.2)
     namae (0.10.1)
     net-scp (1.2.1)
@@ -202,7 +198,7 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netaddr (1.5.0)
-    nokogiri (1.6.6.2)
+    nokogiri (1.6.6.4)
       mini_portile (~> 0.6.0)
     openurl (1.0.0)
       marc
@@ -334,8 +330,8 @@ DEPENDENCIES
   better_errors
   bibtex-ruby
   binding_of_caller
-  blacklight (~> 5.7.1)
-  blacklight_range_limit!
+  blacklight (~> 5.16.3)
+  blacklight_range_limit (~> 5.2.0)
   capistrano (~> 2.0)
   capybara
   citeproc-ruby
