@@ -1,6 +1,7 @@
 # 23.07.2015: Here or in CatalogHelper?
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
+  include Dtu::DocumentHelper
 
   def render_bookmark_toggle(document, options={})
     wrapping_class = options.delete(:wrapping_class) || "bookmark_document"

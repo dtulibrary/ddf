@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount DtuBlacklightCommon::Engine, at: '/'
   devise_for :users
   get 'messages/new'
 
