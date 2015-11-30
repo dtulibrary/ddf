@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: git://github.com/dtulibrary/dtu_blacklight_common.git
-  revision: db2f4b147b3c6c01365e8ec4fd4c45be8d62cef2
+  revision: 6297f2694dc655a4468012b66a2b7f2f204e4d7f
   specs:
-    dtu_blacklight_common (0.0.1)
+    dtu_blacklight_common (5.7.0)
       blacklight (~> 5.7.0)
       rails (~> 4.1)
       solr_wrapper
@@ -350,7 +350,7 @@ DEPENDENCIES
   dalli
   devise
   devise-guests (~> 0.3)
-  dtu_blacklight_common!
+  dtu_blacklight_common (~> 5.7.0)!
   jbuilder (~> 2.0)
   jquery-rails
   json (= 1.8.2)
