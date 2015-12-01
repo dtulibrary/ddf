@@ -7,6 +7,7 @@ feature 'Catalog search' do
   end
 
   scenario 'Checking default facets' do
+    pending 'this has actually been removed in master'
     expect(page).to have_content /limit your search/i
     expect(page).to have_content /type/i
     expect(page).to have_content /publication year/i
