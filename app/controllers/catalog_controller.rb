@@ -12,11 +12,10 @@ class CatalogController < ApplicationController
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = 'ddf_publ'
-
+    config.something = ['random']
+    config.metrics_presenter_classes = [ 'Dtu::Metrics::AltmetricPresenter' ]
+    
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
-    # parameters included in the Blacklight-jetty document requestHandler.
-    #
-
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
      :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
@@ -91,6 +90,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
     config.add_index_field 'supervisor_ts'
     config.add_index_field 'doi_ss'
+
+    config.add_results_document_tool :cite_button
+    config.add_results_document_tool :export_button
 
     # ALL SHOW FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links

@@ -41,4 +41,39 @@ module ApplicationHelper
       "</span>"
     ].join.html_safe
   end
+
+  # Utilities for displaying search history
+  def previous_searches
+    searches_from_history.select { |search| real? search }
+  end
+
+  def real?(search)
+    search.query_params.has_key?('q') ||
+    search.query_params.has_key?('f')
+  end
+
+  def latest_search_path
+    if has_search_history?
+      search_action_path(previous_searches.first.query_params)
+    else
+      ""
+    end
+  end
+
+  def has_search_history?
+    !previous_searches.empty?
+  end
+
+  # Copied from app/controllers/concerns/blacklight/controller.rb
+  def searches_from_history
+    session[:history].blank? ? Search.none : Search.where(:id => session[:history]).order("updated_at desc")
+  end
+
+  def render_locale_switcher(*locales)
+    if I18n.locale.eql? locales[0]
+      link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[1])
+    else
+      link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[0])
+    end
+  end
 end

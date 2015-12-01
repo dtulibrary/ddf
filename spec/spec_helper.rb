@@ -93,3 +93,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+Capybara::Webkit.configure do |config|
+#  config.block_unknown_urls
+end

@@ -403,7 +403,7 @@ ul.search-widgets-list > li a.btn:visited,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li a.btn:visited:hover,
 ul.search-widgets-list > li a.btn:active{ color: $link-color; }
-
+.index-document-functions a,
 ul.document-actions-list {
   display: inline-block;
   margin: 0;
@@ -413,17 +413,23 @@ ul.document-actions-list {
   text-align: center;
   border-radius: 3px;
 }
+.index-document-functions a,
 ul.document-actions-list li {
   display: inline-block;
   margin: 0;
   padding: 0 .2em;
 }
+.index-document-functions > a:first-child,
 ul.document-actions-list > li:first-child { padding-left: .7em; }
+.index-document-functions > a:last-child,
 ul.document-actions-list > li:last-child { padding-right: .7em; }
 
+.index-document-functions a,
 ul.document-actions-list li a { color: $blue-2; }
 
+.index-document-functions a:hover,
 ul.document-actions-list li a:hover { color: $orange; }
+.index-document-functions a:active,
 ul.document-actions-list li a:active { color: $orange; }
 
 span.export_dropdown { position: relative; }
@@ -612,7 +618,6 @@ ul.sitemap a:hover {
   border-bottom: 1px dashed $orange;
   text-decoration: none;
 }
-li.sitemap__section > a { font-weight: bold; }
 
 li.sitemap__section {
   display: inline-block;
@@ -621,9 +626,15 @@ li.sitemap__section {
   @include respond-to($ipad_portrait) { display: block; }
 }
 
+li.sitemap__section > a { font-weight: bold; }
+li.sitemap__section a > i.glyphicon {
+  display: inline-block;
+  padding-right: .5em;
+}
+
 li.sitemap__section > ul {
   margin-top: .1em;
-  margin-left: 1em;
+  margin-left: 1.5em;
   margin-bottom: .7em;
 }
 
@@ -967,13 +978,6 @@ h1.chart-heading em {
  letter-spacing: .05em;
 }
 
-span.beta {
-  font-family: $serif;
-  font-style: italic;
-  font-size: .8em;
-  vertical-align: text-top;
-}
-
 button.toggle-rest span.h { display: none; }
 button.toggle-rest span.s { display: block; }
 button.show span.h { display: block; }
@@ -1075,3 +1079,4 @@ ol.selected-documents__list li a {
   color: $link-color-auxiliary;
   //font-size: calc-em(17px);
 }
+

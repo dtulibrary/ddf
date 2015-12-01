@@ -11,22 +11,22 @@
     </h1>
     <ul class="sitemap">
       <li class="sitemap__section">
-        <a href="/search"><%= t('blacklight.navigation.search_section.search') %></a>
+        <%= link_to search_item_contents, root_path %>
       </li>
       <li class="sitemap__section">
-        <a href="/about"><%= t('blacklight.navigation.about_section.about') %></a>
+        <%= link_to about_item_contents, about_path %>
         <ul>
           <li>
-            <a href="/about/search-and-get"><%= t('blacklight.navigation.about_section.search_get') %></a>
+            <%= link_to t('blacklight.navigation.about_section.search_get'), about_search_and_get_path %>
           </li>
           <li>
-            <a href="/about/data"><%= t('blacklight.navigation.about_section.data') %></a>
+            <%= link_to t('blacklight.navigation.about_section.data'), about_data_path %>
           </li>
           <li>
-            <a href="/about/faq"><%= t('blacklight.navigation.about_section.faq') %></a>
+            <%= link_to t('blacklight.navigation.about_section.faq'), about_faq_path %>
           </li>
           <li>
-            <a href="/about/contact"><%= t('blacklight.navigation.about_section.contact') %></a>
+            <%= link_to t('blacklight.navigation.about_section.contact'), about_contact_path %>
           </li>
         </ul>
       </li>

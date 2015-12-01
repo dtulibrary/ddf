@@ -3,6 +3,7 @@
   <%= render :partial => 'show_data_providers',     :locals => {:document => @document} if render_data_providers?(@document) %>
   <%# this comes from dtu_blacklight_common %>
   <%= render 'show_metrics' %>
+
   <%# render :partial => 'show_availability_panel', :locals => {:document => @document} %>
   <%# render :partial => 'show_metrics_panel',      :locals => {:document => @document} %>
   <%# render :partial => 'show_open_access_panel',  :locals => {:document => @document} %>

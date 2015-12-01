@@ -72,12 +72,14 @@ group :development, :test do
   gem 'pry', '~> 0.10.1'
   gem 'minitest'
   gem 'addressable'
+  gem 'byebug'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 gem 'rsolr', '~> 1.0.6'

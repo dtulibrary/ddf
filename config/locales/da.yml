@@ -27,7 +27,7 @@ da:
       text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"
     header_links:
       search_history: Historik
-      bookmarks: Bogmærker
+      bookmarks: Udvalgte
     language_switcher: English
     range_limit:
       submit_limit: Begræns
@@ -37,11 +37,11 @@ da:
     bookmarks:
       collection:
         add:
-          button: 'Tilføj til bogmærker'
-      title: 'Bogmærker'
-      no_bookmarks: 'Du har ingen bogmærker'
+          button: 'Vælg'
+      title: Udvalgte poster
+      no_bookmarks: 'Du har ingen udvalgte poster'
       add:
-        button: 'Tilføj til bogmærker'
+        button: 'Vælg'
         success:
           one: 'Dit bogmærke er blevet gemt.'
           other: 'Dine bogmærker er blevet gemt.'
@@ -52,16 +52,16 @@ da:
         failure: 'Beklager, dine bogmærker kunne ikke fjernes.'
         action_confirm: 'Fjern bogmærket?'
       clear:
-        action_title: 'Ryd bogmærker'
-        action_confirm: 'Ryd dine bogmærker?'
-        success: 'Bogmærker ryddet.'
-        failure: 'Beklager dine bogmærker kunne ikke ryddes.'
-      list_title: 'Dine bogmærker'
+        action_title: 'Ryd udvalgte'
+        action_confirm: 'Ryd udvalgte?'
+        success: 'Udvalgte poster ryddet.'
+        failure: 'Beklager, udvalgte poster kunne ikke ryddes.'
+      list_title: 'Dine udvalgte poster'
       delete: 'Slet'
     search:
       bookmarks:
-        absent: Tilføj til bogmærker
-        present: I bogmærker
+        absent: Vælg
+        present: Valgt
         inprogress: Gemmer...
       index:
         label: '%{label}:'
