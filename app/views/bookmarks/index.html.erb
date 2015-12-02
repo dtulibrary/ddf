@@ -10,6 +10,10 @@
         <nav class="align-right">
           <%- unless @document_list.blank? -%>
             <ul class="history-view__resets">
+        <!-- <li>
+              <i class="glyphicon glyphicon-print"></i>
+              <a href="#" id="print-selected">Print</a>
+            </li> -->
               <li>
                 <i class="glyphicon glyphicon-list"></i>
                 <%= link_to t('blacklight.latest_search'), latest_search_path %>
@@ -30,8 +34,8 @@
         <%= t('blacklight.bookmarks.no_bookmarks') %>
       </h3>
     <% else %>
-      <%= render 'sort_and_per_page' %>
-        <div class="col-md-9">
+      <%= render 'filtering_selected' %>
+        <div class="col-md-9 col-md-offset-3">
           <%= render_document_index %>
           <%= render 'results_pagination' %>
         </div>

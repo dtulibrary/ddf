@@ -383,7 +383,8 @@ a.btn-danger:active { color: #fff; }
 ul.search-widgets-list {
   margin: 0;
   display: inline-block;
-  @include respond-to($screen-lg-min) {
+  float: right;
+  @include respond-to($ipad_landscape) {
     float: none;
     margin-top: 1em;
   }
@@ -392,17 +393,23 @@ ul.search-widgets-list > li { display: inline-block; }
 ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
 ul.search-widgets-list ul.dropdown-menu li { display: block; }
 
-ul.search-widgets-list > li a { color: $link-color; }
+ul.search-widgets-list > li a {
+  color: $link-color;
+}
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li button,
-ul.search-widgets-list > li button:hover { border: 1px solid $blue-3; }
+ul.search-widgets-list > li button:hover {
+  border: 0;
+  background: #eceff1;
+}
 
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:visited,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li a.btn:visited:hover,
-ul.search-widgets-list > li a.btn:active{ color: $link-color; }
+ul.search-widgets-list > li a.btn:active {
+  color: $link-color; }
 
 ul.document-actions-list {
   display: inline-block;
@@ -421,7 +428,7 @@ ul.document-actions-list li {
 ul.document-actions-list > li:first-child { padding-left: .7em; }
 ul.document-actions-list > li:last-child { padding-right: .7em; }
 
-ul.document-actions-list li a { color: $blue-2; }
+ul.document-actions-list li a { color: $blue-1; }
 
 ul.document-actions-list li a:hover { color: $orange; }
 ul.document-actions-list li a:active { color: $orange; }
@@ -505,7 +512,7 @@ ul[class$="__resets"] li i {
 li.destructive i { color: $action-red; }
 
 ul.applied-filters-list {
-  margin: 1em 0 .5em .2em;
+  margin: 1em 0 0 .2em;
   padding: 0;
 }
 

@@ -340,4 +340,7 @@ end
     params["f"]["source_ss"]
   end
 
+  def active_sort_fields_selected
+    active_sort_fields.reject { |k, v| v.label.eql? 'relevance' }
+  end
 end
