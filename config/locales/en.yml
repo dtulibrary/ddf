@@ -29,6 +29,10 @@ en:
       search_history: History
       bookmarks: Selected
     bookmarks:
+      add:
+        button: 'Select'
+      remove:
+        button: 'Unselect'
       collection:
         add:
           button: 'Select'
