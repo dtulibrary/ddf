@@ -34,7 +34,7 @@ gem 'json', '1.8.2'
 
 gem 'blacklight', '~> 5.7.1'
 gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
-
+gem 'honeypot-captcha'
 gem 'capistrano', '~> 2.0'
 
 gem 'dalli'
@@ -87,4 +87,3 @@ gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
 gem 'dtu_blacklight_common', '~> 5.7.0', github:'dtulibrary/dtu_blacklight_common'
-

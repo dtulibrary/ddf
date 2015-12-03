@@ -15,7 +15,7 @@
   <%= text %>
 </div>
 <div class="modal-footer">
-  <%= form_tag(send_citations_path, id: 'send_citations') do |f| %>
+  <%= form_tag(send_citations_path, id: 'send_citations', honeypot: true) do |f| %>
     <%= hidden_field_tag(:to, params[:to]) %>
     <%= hidden_field_tag(:message, text) %>
     <%= button_tag(t(:close), class: 'btn btn-default', data: { dismiss: 'modal' }) %>
