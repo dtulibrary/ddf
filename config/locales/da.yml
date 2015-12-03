@@ -279,11 +279,17 @@ da:
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
       backlink_hover: Se denne post hos %{source} (åbner i et nyt vindue)
+    citation:
+      modern-language-association: Modern Language Association
+      apa: APA
+      chicago-author-date: Chicago Author Date
   citations:
     form:
       number: "Antal:"
       format: "Format:"
       preview: "Vis"
+      to: 'Til:'
+      comment: 'Kommentar:'
     preview:
       send: "Send"
       send_to: "Send til %{to}"

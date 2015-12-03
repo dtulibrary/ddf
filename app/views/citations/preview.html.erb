@@ -4,6 +4,8 @@
 </div>
 <%# we capture the citation output so we can use it in the body and in the input below %>
 <% text = capture do %>
+    <em><%= params[:comment] %></em>
+    <hr/>
     <% @document_list.each_with_index do |doc, i| %>
         <%= "#{i+1}: #{doc.export_as_citation_txt(params['style'])}" %>
         <hr/>
@@ -17,7 +19,9 @@
     <%= hidden_field_tag(:to, params[:to]) %>
     <%= hidden_field_tag(:message, text) %>
     <%= button_tag(t(:close), class: 'btn btn-default', data: { dismiss: 'modal' }) %>
-    <%= link_to(t(:edit), new_citations_path(to: params[:to], id: params[:id]), class: 'btn btn-warning', data: { ajax_modal: 'trigger' }) %>
+    <%= link_to(t(:edit), new_citations_path(to: params[:to], id: params[:id], comment: params[:comment]),
+        class: 'btn btn-warning', data: { ajax_modal: 'trigger' })
+    %>
     <%= button_tag(t('.send_to', to: params[:to]), class: 'btn btn-primary') %>
 <% end %>
 </div>
