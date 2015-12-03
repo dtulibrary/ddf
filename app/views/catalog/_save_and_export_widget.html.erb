@@ -1,5 +1,9 @@
 <div id="save_and_export-dropdown" class="dropdown hidden-phone">
-  <%= link_to(('<span class="glyphicon glyphicon-export"></span>' + t('ddf.tools.save_and_export') + ' <span class="caret"></span>').html_safe, "#", :class => 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown') %>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-export"></span>
+    <%= link_to(t('ddf.tools.save_and_export'), "#") %>
+    <span class="glyphicon glyphicon-chevron-down"></span>
+  </button>
 
   <ul class="dropdown-menu">
     <li role="presentation">
@@ -20,3 +24,5 @@
     </li>
   </ul>
 </div>
+
+

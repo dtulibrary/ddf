@@ -54,6 +54,7 @@ a:active { color: red; }
 nav.upper { font-size: .9em; }
 
 h1.logo {
+  display: inline-block;
   font-family: $headline;
   font-size: calc-em(23px);
   font-weight: 500;
@@ -384,12 +385,33 @@ ul.search-widgets-list {
   margin: 0;
   display: inline-block;
   float: right;
-  @include respond-to($ipad_landscape) {
-    float: none;
+  @include respond-to($iphone_landscape) {
     margin-top: 1em;
+    float: none;
+    text-align: center;
   }
 }
-ul.search-widgets-list > li { display: inline-block; }
+ul.search-widgets-list > li {
+  display: inline-block;
+  @include respond-to($iphone_landscape) {
+    text-align: center;
+    // display: block;
+    // margin-top: .125em;
+  }
+
+}
+
+ul.search-widgets-list > li a {
+  @include respond-to($ipad_landscape) {
+    display: none;
+    // margin-top: .125em;
+  }
+
+}
+
+
+
+
 ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
 ul.search-widgets-list ul.dropdown-menu li { display: block; }
 
@@ -401,7 +423,6 @@ ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li button,
 ul.search-widgets-list > li button:hover {
   border: 0;
-  background: #eceff1;
 }
 
 ul.search-widgets-list > li a.btn,
@@ -409,14 +430,15 @@ ul.search-widgets-list > li a.btn:visited,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li a.btn:visited:hover,
 ul.search-widgets-list > li a.btn:active {
-  color: $link-color; }
+  color: $link-color;
+}
 
 ul.document-actions-list {
   display: inline-block;
   margin: 0;
   padding: .2em 0 .2em 0;
   font-size: calc-em(15px);
-  background: $blue-4;
+  background: #eceff1;
   text-align: center;
   border-radius: 3px;
 }
@@ -460,7 +482,7 @@ div[id$="-dropdown"] ul.dropdown-menu > li > a {
   padding: .3em .5em .3em .9em;
 }
 div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
-div[id$="-dropdown"] span.glyphicon { padding-right: .4em; }
+//div[id$="-dropdown"] span.glyphicon { padding-right: .4em; }
 
 table#search-syntax tr.info a { text-decoration: underline; }
 
@@ -543,7 +565,7 @@ li.applied-filter a.remove:hover {
  color: #fff;
 }
 
-h1.search-page-heading {
+h1.search-searche-heading {
   font-family: $headline;
   font-weight: 300;
   font-size: calc-em(30px);
@@ -1073,11 +1095,7 @@ ul.selected-documents__actions-list li a:hover {
 
 ul.selected-documents__actions-list i.glyphicon-remove-circle { color: $action-red; }
 
-ol.selected-documents__list li {
-  display: table;
-
-  //background: #eee;
-}
+ol.selected-documents__list li { display: table; }
 
 ol.selected-documents__list li a {
   display: table-cell;
@@ -1087,4 +1105,28 @@ ol.selected-documents__list li a {
   color: $link-color-auxiliary;
   //font-size: calc-em(17px);
 }
+
+ul.search-widgets-list .dropdown-toggle .glyphicon {
+  vertical-align: -4%;
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(1) {
+  font-size: calc-em(18px);
+    @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(2) {
+  font-size: calc-em(13px);
+    @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
+
+ul.search-widgets-list .btn-default:hover { background: lighten(#eceff1, 3%); }
+ul.search-widgets-list .btn-default:active,
+.open > .btn-default.dropdown-toggle:focus,
+.open > .btn-default.dropdown-toggle:hover,
+.open > button.btn-default.dropdown-toggle { background: #eceff1; }
+
+
 
