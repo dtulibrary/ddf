@@ -2,7 +2,7 @@
 
   <div class="page-leadin page-leadin--search group">
 
-    <div class="col-md-8">
+    <div class="col-md-5 col-md-offset-3">
       <h1 class='search-page-heading'><%= t('blacklight.bookmarks.title') %></h1>
     </div>
 
@@ -29,17 +29,21 @@
     </div>
   </div>
 
+  <div class="col-md-9 col-md-offset-3">
+    <hr class="offset-3" />
+  </div>
+
+  <div class="col-md-9 col-md-offset-3">
     <%- if @document_list.blank? -%>
       <h3 class="search-help search-help--large no-history">
         <%= t('blacklight.bookmarks.no_bookmarks') %>
       </h3>
     <% else %>
       <%= render 'filtering_selected' %>
-        <div class="col-md-9 col-md-offset-3">
-          <%= render_document_index %>
-          <%= render 'results_pagination' %>
-        </div>
+      <%= render_document_index %>
+      <%= render 'results_pagination' %>
     <% end %>
+  </div>
 
 </div>
 

@@ -267,7 +267,7 @@ div.applied-filters-container {
 h3.search-help {
   font-size: calc-em(16px);
   font-weight: bold;
-  margin: 1em 0 .5em 0;
+  margin: 0 0 1em 0;
   font-style: italic;
   color: $blue-2;
 }
@@ -567,11 +567,11 @@ li.applied-filter a.remove:hover {
 
 h1.search-page-heading {
   font-family: $headline;
-  font-weight: 300;
-  font-size: calc-em(30px);
-  line-height: calc-em(30px);
-  margin: 0;
-  margin-left: -15px;
+  font-weight: 500;
+  font-size: calc-em(23px);
+  line-height: calc-em(35px);
+  margin: .25em 0 0 0;
+  color: $blue-1;
 }
 
 div.page-leadin--search { margin-top: -.75em; }
@@ -1128,5 +1128,12 @@ ul.search-widgets-list .btn-default:active,
 .open > .btn-default.dropdown-toggle:hover,
 .open > button.btn-default.dropdown-toggle { background: #eceff1; }
 
-
+hr.offset-3 {
+   // height: .3em;
+   margin-top: 1em;
+   margin-bottom: 1em;
+   border-style: solid;
+   border-color: #eee;
+   border-width: 2px 0 0 0;
+}
 
