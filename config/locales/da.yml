@@ -47,7 +47,7 @@ da:
           other: 'Dine bogmærker er blevet gemt.'
         failure:  'Beklager, dine bogmærker kunne ikke gemmes'
       remove:
-        button: 'Fjern bogmærke'
+        button: 'Fjern valgte'
         success: 'Din bogmærker er blevet fjernet.'
         failure: 'Beklager, dine bogmærker kunne ikke fjernes.'
         action_confirm: 'Fjern bogmærket?'
