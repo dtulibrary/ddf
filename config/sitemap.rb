@@ -12,23 +12,22 @@ SitemapGenerator::Sitemap.create do
   end
 
   # Add single record pages
-  Tempfile.open('dedup_file', '/tmp') do |file|
-    uri = URI(Rails.application.config.sitemap[:dedup_source_url])
+  cursorMark = '*'
+  loop do
+    response = Blacklight.solr.get('/solr/metastore/ddf_publ', :params => {
+      'q'          => '*:*',
+      'fl'         => 'cluster_id_ss',
+      'cursorMark' => cursorMark,
+      'rows'       => ENV['BATCH_SIZE'] || 1000,
+      'sort'       => 'id asc'
+    })
 
-    Net::HTTP.start(uri.host, uri.port) do |http|
-      request = Net::HTTP::Get.new uri.request_uri
-
-      http.request request do |response|
-        response.read_body do |chunk|
-          file.write chunk
-        end
-      end
+    response['response']['docs'].each do |doc|
+      add "/catalog/#{doc['cluster_id_ss'].first}"
     end
-    
-    file.close
 
-    IO.foreach(file) do |line|
-      add "/catalog/#{line.chomp}"
-    end
+    break if response['nextCursorMark'] == cursorMark
+
+    cursorMark = response['nextCursorMark']
   end
 end
