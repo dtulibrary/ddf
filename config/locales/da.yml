@@ -213,7 +213,7 @@ da:
       accepted: Accepteret
       in_press: "I trykken"
       unpublished: Upubliceret
-    source_labels:
+    source_labels: &SOURCES
       orbit: Danmarks Tekniske Universitet
       rdb_ku: Københavns Universitet
       rdb_itu: IT Universitet i København
@@ -227,6 +227,10 @@ da:
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
       rdb_aarch: Arkitekskolen Aarhus
+    # copy from source labels but overwrite architecture institute
+    facet_source_labels:
+      <<: *SOURCES
+      rdb_ark: "Forskning i Arkitektur, Design og Konservering"
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review

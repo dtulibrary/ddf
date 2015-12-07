@@ -14,7 +14,7 @@ module CatalogHelper
   end
 
   def render_source_field_facet value
-    source_label(value)
+    facet_source_label(value)
   end
 
   def render_language_field_facet value
@@ -299,6 +299,10 @@ end
 
   def source_label source
     t "mxd_type_labels.source_labels.#{source}"
+  end
+
+  def facet_source_label source
+    t "mxd_type_labels.facet_source_labels.#{source}"
   end
  ##
   # Look up the current per page value, or the default if none if set

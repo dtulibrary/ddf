@@ -192,7 +192,7 @@ en:
       accepted: Accepted
       in_press: "In press"
       unpublished: Unpublished
-    source_labels:
+    source_labels: &SOURCES
       orbit: Technical University of Denmark
       rdb_ku: University of Copenhagen
       rdb_itu: IT University of Copenhagen
@@ -206,6 +206,10 @@ en:
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
       rdb_aarch: Aarhus School of Architecture
+    # copy from source labels but overwrite architecture institute
+    facet_source_labels:
+      <<: *SOURCES
+      rdb_ark: "Research in Architecture, Design and Conservation"
     review_status_labels:
       peer_review: Peer Review
       other_review: Other review
