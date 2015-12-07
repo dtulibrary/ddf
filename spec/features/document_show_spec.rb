@@ -1,9 +1,10 @@
 Capybara.javascript_driver = :webkit
 feature 'Document show' do
+  include_context 'common'
 
-  given(:params) {{ id: '269784833' }}
   background do
-    visit(solr_document_path(params))
+    allow(Blacklight.solr).to receive(:get).and_return(default_show_response)
+    visit(solr_document_path(default_show_params))
   end
 
   scenario 'retrieving a citation' do
@@ -13,7 +14,7 @@ feature 'Document show' do
     expect(page).to have_content 'Chicago Author Date'
   end
 
-  context 'exporting a document', js: true  do
+  context 'exporting', js: true  do
     scenario 'clicking on the export button makes options visible' do
       expect(page).not_to have_content 'Save to Mendeley'
       expect(page).not_to have_content 'Export to BibTeX'
@@ -32,7 +33,7 @@ feature 'Document show' do
       fill_in 'To', with: 'tester@sample.com'
       select('APA', from: 'style')
       click_button 'Preview'
-      expect(page).to have_content 'Baron, C. P.'
+      expect(page).to have_content 'Benros, M. E.'
     end
   end
 end
