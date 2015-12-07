@@ -9,7 +9,7 @@ feature 'Document show' do
   scenario 'retrieving a citation' do
     click_link 'citeLink'
     expect(page).to have_content 'Modern Language Association'
-    expect(page).to have_content 'Apa'
+    expect(page).to have_content 'APA'
     expect(page).to have_content 'Chicago Author Date'
   end
 
@@ -29,8 +29,8 @@ feature 'Document show' do
     scenario 'Email citation', js: true do
       click_link 'Save and export'
       click_link 'Email citation'
-      fill_in 'Email', with: 'tester@sample.com'
-      select('apa', from: 'style')
+      fill_in 'To', with: 'tester@sample.com'
+      select('APA', from: 'style')
       click_button 'Preview'
       expect(page).to have_content 'Baron, C. P.'
     end
