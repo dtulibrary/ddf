@@ -22,7 +22,7 @@ module Reference
     bib_doc = Reference::Entry.new
     bib_doc.type = self.to_semantic_values[:format].first
     self.to_semantic_values.select { |field, values| BIBTEX_FIELD_NAMES.include? field.to_sym }.each do |field,values|
-      case(field)   
+      case(field)
       when :format    
       when :author
         names = BibTeX::Names.new
@@ -36,7 +36,7 @@ module Reference
           end 
         end
         bib_doc.add(field.to_sym, names)
-      when :abstract
+      when :abstract, :journal
         bib_doc.add(field.to_sym, values.first)
       else
         bib_doc.add(field.to_sym, values.join(", "))  
