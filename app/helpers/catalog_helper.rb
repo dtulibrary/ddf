@@ -199,9 +199,9 @@ end
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
-  end
+   end
 
-  def render_conf_title(args)
+   def render_conf_title(args)
     doc = args[:document]
     if doc['conf_title_ts'].present?
       title = doc['conf_title_ts'].first
@@ -226,7 +226,7 @@ end
     end
   end
 
-   def render_journal_page_info document, format
+  def render_journal_page_info document, format
     if document['journal_page_ssf']
       ", p. #{document['journal_page_ssf'].first}"
     else
@@ -339,4 +339,31 @@ end
     params["f"]["source_ss"]
   end
 
+  SELECTED_SORT_FIELDS = ['year', 'title']
+
+  def active_sort_fields_selected
+    active_sort_fields.select { |k, v| SELECTED_SORT_FIELDS.include? v.label }
+  end
+
+  # This is a modified version of Blacklight::CatalogHelperBehavior#current_sort_field
+  def current_sort_field_selected
+    sort_field_from_response ||  # as in original
+    sort_field_from_params ||    # sort param specified
+    sort_field_from_list ||      # sort param not specified
+    default_sort_field           # falls back on 'relevance'
+  end
+
+  def sort_field_from_response
+    if @response && @response.sort.present?
+      blacklight_config.sort_fields.values.find { |f| f.sort.eql? @response.sort }
+    end
+  end
+
+  def sort_field_from_params
+    blacklight_config.sort_fields[params[:sort]]
+  end
+
+  def sort_field_from_list
+    active_sort_fields_selected.shift[1]
+  end
 end

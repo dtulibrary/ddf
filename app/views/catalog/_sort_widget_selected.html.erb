@@ -1,13 +1,13 @@
-<% if show_sort_and_per_page? and !active_sort_fields.blank? %>
+<% if show_sort_and_per_page? and !active_sort_fields_selected.blank? %>
   <div id="sort-dropdown" class="btn-group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
       <span class="glyphicon glyphicon-sort"></span>
-      <%= link_to(t('blacklight.search.sort.label', :field => current_sort_field.label), "#") %>
+      <%= link_to(t('blacklight.search.sort.label', :field => current_sort_field_selected.label), "#") %>
       <span class="glyphicon glyphicon-chevron-down"></span>
     </button>
 
     <ul class="dropdown-menu" role="menu">
-        <%- active_sort_fields.each do |sort_key, field_config| %>
+        <%- active_sort_fields_selected.each do |sort_key, field_config| %>
           <li>
             <%= link_to(t("blacklight.search.sort.criteria.#{field_config.label}"), url_for(params_for_search(:sort => sort_key))) %>
           </li>
@@ -15,3 +15,4 @@
     </ul>
   </div>
 <% end %>
+
