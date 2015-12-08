@@ -175,16 +175,10 @@ end
     end
   end
 
-  # only show year in search results if journal title is not present -
-  # otherwise it will be appended to this
-  def show_publication_year_search? _field_config, doc
-    doc['journal_title_ts'].blank?
-  end
-
   # Only show the published date as an independent field
   # if there is no journal title, conference title or publisher -
   # otherwise it will be appended to these
-  def show_publication_year_item? _field_config, doc
+  def show_publication_year? _field_config, doc
     doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
   end
 
@@ -217,7 +211,7 @@ end
   def render_publisher(args)
     doc = args[:document]
     if doc['publisher_ts'].present?
-      info = doc['publisher_ts'].first
+      info = render_first_highlight_field(args)
       # if there is no journal title conference title, append published date here
       unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
         info += render_pub_date_info(doc, :show)
