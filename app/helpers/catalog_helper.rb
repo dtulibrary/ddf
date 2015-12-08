@@ -193,7 +193,7 @@ end
 
   def render_journal_info args, format = :index
     document = args[:document]
-    [render_highlight_field(args),
+    [render_first_highlight_field(args),
      render_journal_subtitle_info(document, format),
      render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
