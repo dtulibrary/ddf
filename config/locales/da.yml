@@ -230,7 +230,7 @@ da:
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES
-      rdb_ark: "Forskning i Arkitektur, Design og Konservering"
+      rdb_ark: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review
