@@ -21,6 +21,7 @@
 <%- elsif render_grouped_response? %>
   <%= render_grouped_document_index %>
 <%- else %>
+  <%= render 'sort_and_per_page' %>
   <%= render_document_index %>
 <%- end %>
 

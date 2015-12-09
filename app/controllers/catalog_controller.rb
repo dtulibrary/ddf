@@ -73,7 +73,7 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
-    
+
     # ALL INDEX FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
     config.add_index_field 'author_ts', :separator => ' ; ', highlight: true, :helper_method => :render_highlight_field
@@ -86,8 +86,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     # NOTE: Toshokan does the same here but with highlighting
-    config.add_index_field 'publisher_ts', highlight: true, :helper_method => :render_highlight_field
-    config.add_index_field 'pub_date_tis', if: :show_publication_year_search?
+    config.add_index_field 'publisher_ts', highlight: true, :helper_method => :render_publisher
+    config.add_index_field 'pub_date_tis', if: :show_publication_year?
     config.add_index_field 'supervisor_ts'
     config.add_index_field 'doi_ss'
 
@@ -110,7 +110,7 @@ class CatalogController < ApplicationController
     # NOTE: Toshokan uses the author link helper method here
     config.add_show_field 'editor_ts'
     # NOTE: Toshokan uses a helper method here to create keyword links
-    config.add_show_field 'keywords_ts', :separator => ' ; '
+    config.add_show_field 'keywords_ts', :separator => '; '
     config.add_show_field 'research_area_ss'
     config.add_show_field 'access_condition_s', :helper_method => :render_publishing_status
     config.add_show_field 'series_title_ts'
@@ -121,7 +121,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'conf_title_ts', :helper_method => :render_conf_title
     config.add_show_field 'publisher_ts', :helper_method => :render_publisher
     config.add_show_field 'submission_year_tis'
-    config.add_show_field 'pub_date_tis', if: :show_publication_year_item?
+    config.add_show_field 'pub_date_tis', if: :show_publication_year?
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
 

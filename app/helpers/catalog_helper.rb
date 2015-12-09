@@ -14,7 +14,7 @@ module CatalogHelper
   end
 
   def render_source_field_facet value
-    source_label(value)
+    facet_source_label(value)
   end
 
   def render_language_field_facet value
@@ -175,16 +175,10 @@ end
     end
   end
 
-  # only show year in search results if journal title is not present -
-  # otherwise it will be appended to this
-  def show_publication_year_search? _field_config, doc
-    doc['journal_title_ts'].blank?
-  end
-
   # Only show the published date as an independent field
   # if there is no journal title, conference title or publisher -
   # otherwise it will be appended to these
-  def show_publication_year_item? _field_config, doc
+  def show_publication_year? _field_config, doc
     doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
   end
 
@@ -193,15 +187,15 @@ end
 
   def render_journal_info args, format = :index
     document = args[:document]
-    [render_highlight_field(args),
+    [render_first_highlight_field(args),
      render_journal_subtitle_info(document, format),
      render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
-  end
+   end
 
-  def render_conf_title(args)
+   def render_conf_title(args)
     doc = args[:document]
     if doc['conf_title_ts'].present?
       title = doc['conf_title_ts'].first
@@ -217,7 +211,7 @@ end
   def render_publisher(args)
     doc = args[:document]
     if doc['publisher_ts'].present?
-      info = doc['publisher_ts'].first
+      info = render_first_highlight_field(args)
       # if there is no journal title conference title, append published date here
       unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
         info += render_pub_date_info(doc, :show)
@@ -226,7 +220,7 @@ end
     end
   end
 
-   def render_journal_page_info document, format
+  def render_journal_page_info document, format
     if document['journal_page_ssf']
       ", p. #{document['journal_page_ssf'].first}"
     else
@@ -300,6 +294,10 @@ end
   def source_label source
     t "mxd_type_labels.source_labels.#{source}"
   end
+
+  def facet_source_label source
+    t "mxd_type_labels.facet_source_labels.#{source}"
+  end
  ##
   # Look up the current per page value, or the default if none if set
   #
@@ -339,4 +337,31 @@ end
     params["f"]["source_ss"]
   end
 
+  SELECTED_SORT_FIELDS = ['year', 'title']
+
+  def active_sort_fields_selected
+    active_sort_fields.select { |k, v| SELECTED_SORT_FIELDS.include? v.label }
+  end
+
+  # This is a modified version of Blacklight::CatalogHelperBehavior#current_sort_field
+  def current_sort_field_selected
+    sort_field_from_response ||  # as in original
+    sort_field_from_params ||    # sort param specified
+    sort_field_from_list ||      # sort param not specified
+    default_sort_field           # falls back on 'relevance'
+  end
+
+  def sort_field_from_response
+    if @response && @response.sort.present?
+      blacklight_config.sort_fields.values.find { |f| f.sort.eql? @response.sort }
+    end
+  end
+
+  def sort_field_from_params
+    blacklight_config.sort_fields[params[:sort]]
+  end
+
+  def sort_field_from_list
+    active_sort_fields_selected.shift[1]
+  end
 end
