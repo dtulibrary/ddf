@@ -47,7 +47,7 @@ da:
           other: 'Dine bogmærker er blevet gemt.'
         failure:  'Beklager, dine bogmærker kunne ikke gemmes'
       remove:
-        button: 'Fjern bogmærke'
+        button: 'Fjern valgte'
         success: 'Din bogmærker er blevet fjernet.'
         failure: 'Beklager, dine bogmærker kunne ikke fjernes.'
         action_confirm: 'Fjern bogmærket?'
@@ -213,7 +213,7 @@ da:
       accepted: Accepteret
       in_press: "I trykken"
       unpublished: Upubliceret
-    source_labels:
+    source_labels: &SOURCES
       orbit: Danmarks Tekniske Universitet
       rdb_ku: Københavns Universitet
       rdb_itu: IT Universitet i København
@@ -227,6 +227,10 @@ da:
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
       rdb_aarch: Arkitekskolen Aarhus
+    # copy from source labels but overwrite architecture institute
+    facet_source_labels:
+      <<: *SOURCES
+      rdb_ark: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review
@@ -279,11 +283,17 @@ da:
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
       backlink_hover: Se denne post hos %{source} (åbner i et nyt vindue)
+    citation:
+      modern-language-association: Modern Language Association
+      apa: APA
+      chicago-author-date: Chicago Author Date
   citations:
     form:
       number: "Antal:"
       format: "Format:"
       preview: "Vis"
+      to: 'Til:'
+      comment: 'Kommentar:'
     preview:
       send: "Send"
       send_to: "Send til %{to}"

@@ -8,6 +8,16 @@ GIT
       rails (>= 3.0, < 5.0)
 
 GIT
+  remote: git://github.com/dtulibrary/dtu_blacklight_common.git
+  revision: 6221ea9d7cff7e84953916752b8de28ded527ebb
+  specs:
+    dtu_blacklight_common (5.7.1.2)
+      blacklight (~> 5.7.0)
+      rails (~> 4.1)
+      solr_wrapper
+      twitter-typeahead-rails (~> 0.11)
+
+GIT
   remote: git://github.com/dtulibrary/metastore-test_data.git
   revision: d66ec9665e7c1adaadf0cdd83798b75c90216f69
   specs:
@@ -17,6 +27,14 @@ GIT
       nokogiri
       rails
       rsolr
+
+GIT
+  remote: git://github.com/flyingzumwalt/solr_wrapper.git
+  revision: e5b36673f966876148e15102f0c67339790ec183
+  specs:
+    solr_wrapper (0.4.0)
+      ruby-progressbar
+      rubyzip
 
 GEM
   remote: https://rubygems.org/
@@ -85,6 +103,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
     builder (3.2.2)
+    byebug (8.2.0)
     capistrano (2.15.7)
       highline
       net-scp (>= 1.0.0)
@@ -97,6 +116,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.7.1)
+      capybara (>= 2.3.0, < 2.6.0)
+      json
     childprocess (0.5.8)
       ffi (~> 1.0, >= 1.0.11)
     citeproc (1.0.2)
@@ -129,6 +151,7 @@ GEM
       warden (~> 1.2.3)
     devise-guests (0.3.3)
       devise
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -136,6 +159,7 @@ GEM
       activesupport (>= 4.1.0)
     highline (1.7.8)
     hike (1.2.3)
+    honeypot-captcha (0.0.3)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -156,6 +180,8 @@ GEM
       activesupport (>= 3.0.0)
     latex-decode (0.2.2)
       unicode (~> 0.4)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     libv8 (3.16.14.7)
     logger (1.2.8)
     loofah (2.0.3)
@@ -230,6 +256,24 @@ GEM
       railties (>= 4.2.0, < 5)
     rsolr (1.0.13)
       builder (>= 2.1.2)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.0)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.0)
+    ruby-progressbar (1.7.5)
     rubyzip (1.1.7)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -264,6 +308,10 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
+    twitter-typeahead-rails (0.11.1)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -293,18 +341,22 @@ DEPENDENCIES
   binding_of_caller
   blacklight (~> 5.7.1)
   blacklight_range_limit!
+  byebug
   capistrano (~> 2.0)
   capybara
+  capybara-webkit
   citeproc-ruby
   coffee-rails (~> 4.1.0)
   csl-styles
   dalli
   devise
   devise-guests (~> 0.3)
+  dtu_blacklight_common (~> 5.7.1.2)!
+  honeypot-captcha
   jbuilder (~> 2.0)
-  jettywrapper
   jquery-rails
   json (= 1.8.2)
+  launchy
   libv8 (= 3.16.14.7)
   meta-tags
   metastore-test_data!
@@ -316,9 +368,11 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-i18n (~> 4.0.0)
   rsolr (~> 1.0.6)
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sitemap_generator
+  solr_wrapper!
   spring
   sprockets (~> 2.8)
   sqlite3

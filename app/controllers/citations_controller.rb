@@ -1,5 +1,7 @@
 class CitationsController < CatalogController
   before_action :inject_last_query_into_params, only: [:new, :preview]
+  # See honeypot-captcha - prevent use of form for spamming
+  before_action :protect_from_spam, only: [:preview, :send_citations]
 
   def new
     respond_to do |format|

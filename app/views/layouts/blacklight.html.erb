@@ -33,6 +33,7 @@
       <%# citation_tag('foo', 'bar') %>
       <%= citation_tags_for @document %>
       <%= render partial: 'shared/google_analytics' %>
+    <%= Dtu::Metrics::AltmetricPresenter.altmetric_embed_script %>
   </head>
 
   <body class="<%= render_body_class %>">
