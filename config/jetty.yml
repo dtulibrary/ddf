@@ -1,8 +1,13 @@
-default:
+development:
+  startup_wait: 15
   jetty_port: 8983
-  java_opts:
-    - "-XX:MaxPermSize=128M"
-    - "-Xms512m"
-    - "-Xmx512m"
-    - "-Djava.util.logging.config.file=logging.properties"
-    - "-server"
+  java_version: ">= 1.7"
+test:
+  startup_wait: 60
+  jetty_port: <%= ENV['TEST_JETTY_PORT'] || 8983 %>
+  <%= ENV['TEST_JETTY_PATH'] ? "jetty_home: " + ENV['TEST_JETTY_PATH'] : '' %>
+  java_version: ">= 1.7"
+production:
+  startup_wait: 15
+  jetty_port: 8983
+  java_version: ">= 1.7"
