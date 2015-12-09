@@ -1,6 +1,11 @@
-<% set_meta_tags citation_title: @doctitle,
-                 citation_author: @author,
-                 citation_publication_date: @pubdate %>
+<% set_meta_tags citation_title: @document[:title_ts],
+                 citation_author: @document[:author_ts],
+                 citation_publication_date: @document[:pub_date_tis],
+                 citation_publisher: @document[:publisher_ts],
+                 citation_journal_title: @document[:journal_title_ts],
+
+                 citation_keywords: @document[:keywords_ts],
+                 citation_language: @document[:language_ss] %>
 
 <div id="content" class="col-md-9 col-sm-8 show-document">
   <%= render 'previous_next_doc' %>

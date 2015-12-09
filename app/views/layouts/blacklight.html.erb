@@ -30,6 +30,8 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
       <%= display_meta_tags %>
+      <%# citation_tag('foo', 'bar') %>
+      <%= citation_tags_for @document %>
       <%= render partial: 'shared/google_analytics' %>
   </head>
 

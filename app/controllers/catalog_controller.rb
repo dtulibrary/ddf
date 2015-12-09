@@ -85,7 +85,7 @@ class CatalogController < ApplicationController
 
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
-    
+
     # ALL INDEX FIELDS:
     config.add_index_field 'author_ts', :separator => ' ; '
     config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
@@ -175,17 +175,5 @@ class CatalogController < ApplicationController
   def show
     super()
     # binding.pry
-    @doctitle = @document[:title_ts]
-    @author   = @document[:author_ts]
-    @pubdate  = @document[:pub_date_tis]
-  end
-
-  # NOT USED:
-  def citation_tag(tag, content)
-     "<meta name='citation_#{tag}' content='#{content}'>".html_safe
-  end
-
-  def citation_tags
-     citation_tag(:foo, "bar")
   end
 end

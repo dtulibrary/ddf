@@ -340,4 +340,38 @@ end
     params["f"]["source_ss"]
   end
 
+
+  META_TAGS = {
+    :title_ts         => :citation_title,
+    :author_ts        => :citation_author,
+    :pub_date_tis     => :citation_publication_date,
+    :publisher_ts     => :citation_publisher,
+    :journal_title_ts => :citation_journal_title
+  }
+
+  def render_meta_tags_for(document)
+    res = []
+    META_TAGS.each do |k, v|
+      res << set_meta_tags(v => document[k]) # this method is just not available from here
+    end
+    res << set_meta_tags(author: "http://yourgplusprofile.com/profile/url") # does not produce HTML
+
+    binding.pry
+    res
+  end
+
+  def citation_tags_for(document)
+    unless document.nil?
+      citation_tag(document[:title_ts], 'This is a TEST')
+    end
+  end
+
+  def citation_tag(tag, content)
+     "<meta name='citation_#{tag}' content='#{content}'>".html_safe
+  end
+
+  def citation_tags
+     citation_tag(:foo, "bar")
+  end
+
 end
