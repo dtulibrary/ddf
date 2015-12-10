@@ -9,12 +9,21 @@ class CatalogController < ApplicationController
   before_filter :set_locale
 
   configure_blacklight do |config|
+    config.show.oembed_field = :oembed_url_ssm
+    config.show.partials.insert(1, :oembed)
+    config.view.gallery.partials = [:index_header, :index]
+    config.view.masonry.partials = [:index]
+    config.view.slideshow.partials = [:index]
+
+    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    config.show.partials.insert(1, :openseadragon)
+
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = 'ddf_publ'
     config.something = ['random']
     config.metrics_presenter_classes = [ 'Dtu::Metrics::AltmetricPresenter' ]
-    
+
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',

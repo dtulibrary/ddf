@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209124635) do
+ActiveRecord::Schema.define(version: 20151210091926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20151209124635) do
 
   add_index "bookmarks", ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id", using: :btree
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -140,10 +153,8 @@ ActiveRecord::Schema.define(version: 20151209124635) do
     t.integer  "masthead_id"
     t.integer  "thumbnail_id"
     t.integer  "weight",         default: 50
-    t.boolean  "default",        default: true
   end
 
-  add_index "spotlight_exhibits", ["default"], name: "index_spotlight_exhibits_on_default", unique: true, using: :btree
   add_index "spotlight_exhibits", ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true, using: :btree
 
   create_table "spotlight_featured_images", force: :cascade do |t|
@@ -214,6 +225,7 @@ ActiveRecord::Schema.define(version: 20151209124635) do
     t.datetime "indexed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "metadata"
   end
 
   create_table "spotlight_roles", force: :cascade do |t|
@@ -290,9 +302,31 @@ ActiveRecord::Schema.define(version: 20151209124635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "guest",                  default: false
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end

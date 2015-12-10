@@ -1,8 +1,11 @@
 Dir["../services/*.rb"].each {|file| require file }
 
 class ApplicationController < ActionController::Base
+  helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
+  include Spotlight::Controller
+
   # Please be sure to impelement current_user and user_session. Blacklight depends on
   # these methods in order to perform user specific actions.
 

@@ -92,4 +92,10 @@ gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common', branch: 
 gem 'blacklight', '~> 5.16'
 
 gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
+# gem 'blacklight-spotlight', path: 'home/ronan/spotlight'
 gem 'jettywrapper', '>= 2.0'
+gem 'friendly_id'
+gem 'blacklight-gallery', '>= 0.3.0'
+gem 'blacklight-oembed'
+gem 'social-share-button'
+gem 'devise_invitable'

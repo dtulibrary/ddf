@@ -1,15 +1,4 @@
 GIT
-  remote: git://github.com/dtulibrary/dtu_blacklight_common.git
-  revision: 313de72e5d5dde5166a20e8afdc790083a7f7d0b
-  branch: blacklight5.16
-  specs:
-    dtu_blacklight_common (5.16.1)
-      blacklight (~> 5.16)
-      rails (~> 4.1)
-      solr_wrapper
-      twitter-typeahead-rails (~> 0.11)
-
-GIT
   remote: git://github.com/dtulibrary/metastore-test_data.git
   revision: d66ec9665e7c1adaadf0cdd83798b75c90216f69
   specs:
@@ -64,6 +53,15 @@ GIT
       social-share-button (~> 0.1.5)
       tophat
       underscore-rails (~> 1.6)
+
+PATH
+  remote: /home/ronan/dtu_blacklight_common
+  specs:
+    dtu_blacklight_common (5.16.1)
+      blacklight (~> 5.16)
+      rails (~> 4.1)
+      solr_wrapper
+      twitter-typeahead-rails (~> 0.11)
 
 GEM
   remote: https://rubygems.org/
@@ -495,6 +493,8 @@ DEPENDENCIES
   bibtex-ruby
   binding_of_caller
   blacklight (~> 5.16)
+  blacklight-gallery (>= 0.3.0)
+  blacklight-oembed
   blacklight-spotlight!
   blacklight_range_limit (~> 5.2.0)
   byebug
@@ -507,7 +507,9 @@ DEPENDENCIES
   dalli
   devise
   devise-guests (~> 0.3)
+  devise_invitable
   dtu_blacklight_common!
+  friendly_id
   honeypot-captcha
   jbuilder (~> 2.0)
   jettywrapper (>= 2.0)
@@ -529,6 +531,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sitemap_generator
+  social-share-button
   solr_wrapper!
   spring
   sprockets (~> 2.8)

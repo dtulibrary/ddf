@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  mount Blacklight::Oembed::Engine, at: 'oembed'
+  root to: 'spotlight/exhibits#index'
+  mount Spotlight::Engine, at: 'spotlight'
   mount DtuBlacklightCommon::Engine, at: '/'
   devise_for :users
   get 'messages/new'
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
     get 'citations/preview', as: 'preview_citations'
     post 'citations/send', to: 'citations#send_citations', as: 'send_citations'
     # You can have the root of your site routed with "root"
-  root 'pages#index'
+#  root 'pages#index' # replaced by spotlight root path
   # For the visualization dataset. Use another URL (end path) than 'data':
   # get 'pages/data', :defaults => { :format => 'json' }
 
