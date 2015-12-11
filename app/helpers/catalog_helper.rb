@@ -337,42 +337,6 @@ end
     params["f"]["source_ss"]
   end
 
-<<<<<<< HEAD
-
-  META_TAGS = {
-    :title_ts         => :citation_title,
-    :author_ts        => :citation_author,
-    :pub_date_tis     => :citation_publication_date,
-    :publisher_ts     => :citation_publisher,
-    :journal_title_ts => :citation_journal_title
-  }
-
-  def render_meta_tags_for(document)
-    res = []
-    META_TAGS.each do |k, v|
-      res << set_meta_tags(v => document[k]) # this method is just not available from here
-    end
-    res << set_meta_tags(author: "http://yourgplusprofile.com/profile/url") # does not produce HTML
-
-    binding.pry
-    res
-  end
-
-  def citation_tags_for(document)
-    unless document.nil?
-      citation_tag(document[:title_ts], 'This is a TEST')
-    end
-  end
-
-  def citation_tag(tag, content)
-     "<meta name='citation_#{tag}' content='#{content}'>".html_safe
-  end
-
-  def citation_tags
-     citation_tag(:foo, "bar")
-  end
-
-=======
   SELECTED_SORT_FIELDS = ['year', 'title']
 
   def active_sort_fields_selected
@@ -400,5 +364,59 @@ end
   def sort_field_from_list
     active_sort_fields_selected.shift[1]
   end
->>>>>>> ae79c3dd964d2502e916e0ef3090a152cf0ba253
+
+  META_FIELDS = {
+    title_ts:         'citation_title',
+    author_ts:        'citation_author',
+    pub_date_tis:     'citation_publication_date',
+    publisher_ts:     'citation_publisher',
+    journal_title_ts: 'citation_journal_title',
+    language_ss:      'citation_language',
+    conf_title_ts:    'citation_conference_title',
+    isbn_ss:          'citation_isbn',
+    doi_ss:           'citation_doi'
+  }
+
+  JOINED_META_FIELDS = { keywords_ts: 'citation_keywords' }
+
+  def citation_tags_for(document)
+    unless document.nil?
+      taglist = []
+
+      # taglist << "\n"
+      # taglist << "TEST"
+
+      META_FIELDS.each do |k, v|
+        if document[k]
+          if document[k].length.eql?(1)
+            taglist << atomic_citation_tag_for(v, document[k])
+          else
+            taglist << split_citation_tags_for(v, document[k])
+          end
+        end
+      end
+      JOINED_META_FIELDS.each do |k, v|
+        if document[k]
+          taglist << joined_citation_tags_for(v, document[k])
+        end
+      end
+      taglist.join("\n").html_safe
+    end
+  end
+
+  def atomic_citation_tag_for(field_name, field_value)
+    citation_tag(field_name, field_value.join())
+  end
+
+  def split_citation_tags_for(field_name, field_value)
+    field_value.map { |str| citation_tag(field_name, str) }.join("\n").html_safe
+  end
+
+  def joined_citation_tags_for(field_name, field_value)
+    citation_tag(field_name, field_value.join("; "))
+  end
+
+  def citation_tag(tag, content)
+    "<meta name=\"#{tag}\" content=\"#{content}\" />".html_safe
+  end
 end
