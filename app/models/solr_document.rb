@@ -4,6 +4,8 @@ require 'openurl'
 
 class SolrDocument < Dtu::SolrDocument
   include Configured
+  include Spotlight::SolrDocument
+
   self.unique_key = SolrDocument.document_id
 
   SolrDocument.use_extension(Reference)
@@ -244,5 +246,14 @@ class SolrDocument < Dtu::SolrDocument
       end
     end
     @context_object
+  end
+
+  # Spotlight overrides to prevents errors
+  def self.solr_field_for_tagger(exhibit)
+    :fake_ss
+  end
+
+  def self.visibility_field(exhibit)
+    :fake_ss
   end
 end

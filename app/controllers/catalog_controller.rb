@@ -5,19 +5,11 @@ require 'i18n'
 class CatalogController < ApplicationController
 
   include Dtu::CatalogBehavior
+  include SpotlightConfig
 
   before_filter :set_locale
 
   configure_blacklight do |config|
-    config.show.oembed_field = :oembed_url_ssm
-    config.show.partials.insert(1, :oembed)
-    config.view.gallery.partials = [:index_header, :index]
-    config.view.masonry.partials = [:index]
-    config.view.slideshow.partials = [:index]
-
-    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
-    config.show.partials.insert(1, :openseadragon)
-
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = 'ddf_publ'

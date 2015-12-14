@@ -3,7 +3,13 @@
   <%= render_facet_limit_list paginator, solr_field %>
 
   <% unless paginator.last_page? || params[:action] == "facet" %>
-    <li class="more_facets_link"><%= link_to t('blacklight.search.facets.more'), 
-       params.merge(id: solr_field, action: "facet", page: nil), class: "more_facets_link" %></li>
+    <li class="more_facets_link">
+    <% unless params['controller'] == 'spotlight/home_pages' %>
+    <%= link_to t('blacklight.search.facets.more'),
+      params.merge(id: solr_field, action: "facet", page: nil), class: "more_facets_link" %></li>
+    <% end %>
+
+    </li>
   <% end %>
+
 </ul>

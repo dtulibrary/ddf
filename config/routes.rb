@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount Blacklight::Oembed::Engine, at: 'oembed'
-  root to: 'spotlight/exhibits#index'
   mount Spotlight::Engine, at: 'spotlight'
   mount DtuBlacklightCommon::Engine, at: '/'
   devise_for :users
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
 
     # root :to => "catalog#index"
     # blacklight_for :catalog
-    # root to: "catalog#index"
+    root to: "catalog#index"
     blacklight_for :catalog
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
