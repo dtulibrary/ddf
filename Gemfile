@@ -82,7 +82,6 @@ group :test do
 end
 
 gem 'rsolr', '~> 1.0.6'
-gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'

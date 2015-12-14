@@ -366,15 +366,15 @@ end
   end
 
   META_FIELDS = {
-    title_ts:         'citation_title',
-    author_ts:        'citation_author',
-    pub_date_tis:     'citation_publication_date',
-    publisher_ts:     'citation_publisher',
-    journal_title_ts: 'citation_journal_title',
-    language_ss:      'citation_language',
-    conf_title_ts:    'citation_conference_title',
-    isbn_ss:          'citation_isbn',
-    doi_ss:           'citation_doi'
+    title_ts:         'title',
+    author_ts:        'author',
+    pub_date_tis:     'publication_date',
+    publisher_ts:     'publisher',
+    journal_title_ts: 'journal_title',
+    language_ss:      'language',
+    conf_title_ts:    'conference_title',
+    isbn_ss:          'isbn',
+    doi_ss:           'doi'
   }
 
   JOINED_META_FIELDS = { keywords_ts: 'citation_keywords' }
@@ -382,10 +382,7 @@ end
   def citation_tags_for(document)
     unless document.nil?
       taglist = []
-
-      # taglist << "\n"
-      # taglist << "TEST"
-
+      taglist << "\n"
       META_FIELDS.each do |k, v|
         if document[k]
           if document[k].length.eql?(1)
@@ -417,6 +414,6 @@ end
   end
 
   def citation_tag(tag, content)
-    "<meta name=\"#{tag}\" content=\"#{content}\" />".html_safe
+    "<meta name=\"citation_#{tag}\" content=\"#{content}\" />".html_safe
   end
 end

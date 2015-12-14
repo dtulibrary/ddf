@@ -191,8 +191,6 @@ GEM
     marc (1.0.0)
       scrub_rb (>= 1.0.1, < 2)
       unf
-    meta-tags (2.1.0)
-      actionpack (>= 3.0.0)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
@@ -358,7 +356,6 @@ DEPENDENCIES
   json (= 1.8.2)
   launchy
   libv8 (= 3.16.14.7)
-  meta-tags
   metastore-test_data!
   minitest
   netaddr
