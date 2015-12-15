@@ -298,28 +298,49 @@ end
     (document['backlink_ss'] || [])
   end
 
-  # TODO: Decoration of the data provider facet page
+  # values MUST match image file names
+  PROVIDER_LOGOS = {
+    rdb_sbi: 'capital-region',
+    rdb_ka:  'ministry-of-culture',
+    rdb_cbs: 'cph-business-school',
+    rdb_ruc: 'roskilde-university',
+    rdb_ku:  'copenhagen-university',
+    rdb_itu: 'it-university-of-cph',
+    rdb_fak: 'danish-defence-college',
+    rdb_sdu: 'university-southern-denmark',
+    orbit:   'technical-university-of-dk',
+    rdb_vbn: 'aalborg-university',
+    rdb_au:  'aarhus-university',
+    rdb_ark: 'architecture-design-conservation'
+  }
+
   def render_provider_logos
-    raw_codes = params['f']['source_ss']
-    splits = raw_codes.map { |code | code.split "_" }
-    prefixed = splits.select { |arr| arr.length.eql? 2 }
-    not_prefixed = splits - prefixed  # edge case 'orbit'
-    suffixes = prefixed.map { |arr| arr[1] }
-    codes = suffixes.flatten + not_prefixed.flatten
-    images = codes.map do |code|
+    provider_codes = params['f']['source_ss']
+    image_names = provider_codes.map { |code| PROVIDER_LOGOS[code.to_sym] }
+    images = image_names.map do |name|
       content_tag :li do
-        render_logo_from(code)
+        render_logo_from(name)
+        link_to(render_logo_from(name), data_provider_path(name))
       end
     end
     images.join.html_safe
   end
 
-  def render_logo_from(code)
-    if !Rails.application.assets.find_asset("data-providers/#{code}.png").nil?
-      image_tag("data-providers/#{code}.png")
-    else
-      image_tag("data-providers/#{code}.jpg")
+  def render_logo_from(image_name)
+    image_tag(logo_path(image_name))
+  end
+
+  def data_provider_path(image_name)
+    "about/data/providers##{image_name}"
+  end
+
+  def logo_path(image_name)
+    if Rails.application.assets.find_asset("data-providers/#{image_name}.#{I18n.locale}.png")
+      "data-providers/#{image_name}.#{I18n.locale}.png"
+    elsif Rails.application.assets.find_asset("data-providers/#{image_name}.png")
+      "data-providers/#{image_name}.png"
     end
+    # TODO: Exception
   end
 
 end

@@ -364,3 +364,6 @@ https://groups.google.com/forum/#!category-topic/digital-analytics-fundamentals/
 Customizing HTML checkboxes:
 http://stackoverflow.com/questions/29171243/checkboxes-with-fontawesome-change-background-color-only-css
 http://codepen.io/jamesbarnett/pen/yILjk/
+
+Definition lists:
+https://css-tricks.com/utilizing-the-underused-but-semantically-awesome-definition-list/
