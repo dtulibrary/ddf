@@ -316,14 +316,16 @@ end
 
   def render_provider_logos
     provider_codes = params['f']['source_ss']
-    image_names = provider_codes.map { |code| PROVIDER_LOGOS[code.to_sym] }
-    images = image_names.map do |name|
-      content_tag :li do
-        render_logo_from(name)
-        link_to(render_logo_from(name), data_provider_path(name))
+    unless provider_codes.nil?
+      image_names = provider_codes.map { |code| PROVIDER_LOGOS[code.to_sym] }
+      images = image_names.map do |name|
+        content_tag :li do
+          render_logo_from(name)
+          link_to(render_logo_from(name), data_provider_path(name))
+        end
       end
+      images.join.html_safe
     end
-    images.join.html_safe
   end
 
   def render_logo_from(image_name)

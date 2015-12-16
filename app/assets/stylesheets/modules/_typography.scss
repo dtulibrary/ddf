@@ -310,18 +310,6 @@ a.btn-info:hover,
 a.btn-info:visited:hover { color: #fff; }
 a.btn-info:active        { color: #eee; }
 
-ul.data-providers-list li { list-style-type: none; }
-
-h1.data-provider-heading {
-  font-family: $headline;
-  font-size: calc-em(20px);
-  line-height: calc-em(20px);
-  margin: .5em 0;
-  color: $bluewood;
-  font-weight: 700;
-  //letter-spacing: .07em;
-}
-
 form.range_limit input.form-control {
   border: 1px solid $blue-2;
   border-radius: 0;
@@ -1113,10 +1101,27 @@ dl.provider-details-list dd {
   margin-bottom: .4em;
 }
 
-figure.provider-logo {
-  position: relative;
-  left: 25%;
-  // TODO:
-  top: 4em;
-  width: 150%;
+figure.provider-logo { margin-bottom: 1em; }
+
+dl.provider-details-list dd i {
+  color: $blue-2;
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  vertical-align: super;
+}
+
+ul.data-providers-list li {
+  list-style-type: none;
+  margin-bottom: 3em;
+}
+
+// TODO: article.static h1 overrides second rule
+ul.data-providers-list h1.data-provider-heading {
+  font-family: $headline;
+  font-size: calc-em(19px);
+  line-height: calc-em(20px);
+  margin: 0 0 1em 0;
+  color: $bluewood;
+  font-weight: 700;
+  //letter-spacing: .07em;
 }
