@@ -1093,6 +1093,7 @@ dl.provider-details-list dt {
   // text-align: right;
   font-weight: bold;
   padding-right: 5px;
+  color: $blue-2;
 }
 dl.provider-details-list dt:after { content: ":"; }
 dl.provider-details-list dd {
@@ -1112,7 +1113,14 @@ dl.provider-details-list dd i {
 
 ul.data-providers-list li {
   list-style-type: none;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
+  padding: 1em 1em 0 1em;
+  border-radius: 5px;
+  border: 1px dashed #fff;
+
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
 }
 
 // TODO: article.static h1 overrides second rule
@@ -1125,3 +1133,10 @@ ul.data-providers-list h1.data-provider-heading {
   font-weight: 700;
   //letter-spacing: .07em;
 }
+
+ul.data-providers-list li:target {
+  background: lighten($blue-3, 17%);
+  border: 1px solid $link-color-auxiliary;
+}
+
+

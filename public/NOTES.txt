@@ -365,5 +365,45 @@ Customizing HTML checkboxes:
 http://stackoverflow.com/questions/29171243/checkboxes-with-fontawesome-change-background-color-only-css
 http://codepen.io/jamesbarnett/pen/yILjk/
 
-Definition lists:
+When & why to use definition lists:
 https://css-tricks.com/utilizing-the-underused-but-semantically-awesome-definition-list/
+
+Putting the :target pseudoclass to use:
+https://css-tricks.com/on-target/
+
+
+DATA PROVIDER LIST ITEM SCAFFOLD:
+          <li id="">
+            <h1 class="data-provider-heading"></h1>
+            <figure class="provider-logo">
+              <%= image_tag("data-providers/.#{I18n.locale}.png") %>
+            </figure>
+            <dl class="provider-details-list">
+              <dt>Acronym</dt>
+              <dd></dd>
+
+              <dt>Web</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+
+              <dt>Established</dt>
+              <dd></dd>
+
+              <dt>Location</dt>
+              <dd></dd>
+
+              <dt>CRIS</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+
+              <dt>OAI repository URL</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+            </dl>
+          </li>

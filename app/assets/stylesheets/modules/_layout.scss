@@ -164,6 +164,11 @@ button#search {
   }
 }
 
+ul.data-providers-list {
+  -moz-column-gap: 2.5em;
+  -webkit-column-gap: 2.5em;
+}
+
 .page-leadin {
   //background: #eee;
   margin-bottom: 1.5em;
