@@ -6,7 +6,7 @@
 
         <ul class="data-providers-list multicol-2">
           <li id="aalborg-university">
-            <h1 class="data-provider-heading">Aalborg University</h1>
+            <h2 class="data-provider-heading">Aalborg University</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/aalborg-university.#{I18n.locale}.png") %>
             </figure>
@@ -41,7 +41,7 @@
           </li>
 
           <li id="aarhus-university">
-            <h1 class="data-provider-heading">Aarhus University</h1>
+            <h2 class="data-provider-heading">Aarhus University</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/aarhus-university.#{I18n.locale}.png") %>
             </figure>
@@ -76,7 +76,7 @@
           </li>
 
           <li id="cph-business-school">
-            <h1 class="data-provider-heading">Copenhagen Business School</h1>
+            <h2 class="data-provider-heading">Copenhagen Business School</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/cph-business-school.png") %>
             </figure>
@@ -112,7 +112,7 @@
 
 
           <li id="technical-university-of-dk">
-            <h1 class="data-provider-heading">Technical University of Denmark</h1>
+            <h2 class="data-provider-heading">Technical University of Denmark</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/technical-university-of-dk.png") %>
             </figure>
@@ -147,7 +147,7 @@
           </li>
 
           <li id="danish-defence-college">
-            <h1 class="data-provider-heading">Royal Danish Defence College</h1>
+            <h2 class="data-provider-heading">Royal Danish Defence College</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/danish-defence-college.png") %>
             </figure>
@@ -183,7 +183,7 @@
 
 
           <li id="it-university-of-cph">
-            <h1 class="data-provider-heading">IT University of Copenhagen</h1>
+            <h2 class="data-provider-heading">IT University of Copenhagen</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/it-university-of-cph.#{I18n.locale}.png") %>
             </figure>
@@ -219,7 +219,7 @@
 
 
           <li id="architecture-design-conservation">
-            <h1 class="data-provider-heading">Research institutions in Architecture, Design and Conservation</h1>
+            <h2 class="data-provider-heading">Research institutions in Architecture, Design and Conservation</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/architecture-design-conservation.#{I18n.locale}.png") %>
             </figure>
@@ -235,14 +235,95 @@
                 <a target="_blank" href="http://www.re-ad.dk/ws/oai">http://www.re-ad.dk/ws/oai</a>
                 <i class="fa fa-external-link"></i>
               </dd>
-
-              <!-- TODO: sub-schools -->
+              <dt>Includes</dt>
+              <dd>KADK, AAA and DSKD</dd>
             </dl>
+
+            <!-- TODO: sub-schools -->
+
+            <ul class="data-provider-list__sub">
+              <li>
+                <h3 class="data-provider-list__sub__heading">The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation</h3>
+
+                <dl class="provider-details-list">
+                  <dt>Acronym</dt>
+                  <dd>KADK</dd>
+
+                  <dt>Web</dt>
+                  <dd>
+                    <a target="_blank" href="https://kadk.dk/en/">https://kadk.dk/en/</a>
+                    <i class="fa fa-external-link"></i>
+                  </dd>
+
+                  <dt>Established</dt>
+                  <dd>2011</dd>
+
+                  <dt>Location</dt>
+                  <dd>Copenhagen, Bornholm</dd>
+                </dl>
+
+                <h4 class="data-provider-list__leaves-heading">Includes</h4>
+                <ul class="data-provider-list__leaves">
+                  <li>
+                    <a href="https://kadk.dk/en/school-architecture">School of Architecture</a>
+                    <i class="fa fa-external-link"></i>
+                  </li>
+                  <li>
+                    <a href="https://kadk.dk/en/school-design">School of Design</a>
+                    <i class="fa fa-external-link"></i>
+                  </li>
+                  <li>
+                    <a href="https://kadk.dk/en/school-conservation">School of Conservation</a>
+                    <i class="fa fa-external-link"></i>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <h3 class="data-provider-list__sub__heading">Aarhus School of Architecture</h3>
+                <dl class="provider-details-list">
+                  <dt>Acronym</dt>
+                  <dd>AAA</dd>
+
+                  <dt>Web</dt>
+                  <dd>
+                    <a target="_blank" href="http://aarch.dk/">http://aarch.dk/</a>
+                    <i class="fa fa-external-link"></i>
+                  </dd>
+
+                  <dt>Established</dt>
+                  <dd>1965</dd>
+
+                  <dt>Location</dt>
+                  <dd>Aarhus</dd>
+                </dl>
+              </li>
+
+              <li>
+                <h3 class="data-provider-list__sub__heading">Design School Kolding</h3>
+                <dl class="provider-details-list">
+                  <dt>Acronym</dt>
+                  <dd>DSKD</dd>
+
+                  <dt>Web</dt>
+                  <dd>
+                    <a target="_blank" href="https://www.designskolenkolding.dk/en">https://www.designskolenkolding.dk/en</a>
+                    <i class="fa fa-external-link"></i>
+                  </dd>
+
+                  <dt>Established</dt>
+                  <dd>1967</dd>
+
+                  <dt>Location</dt>
+                  <dd>Kolding</dd>
+                </dl>
+              </li>
+            </ul>
           </li>
 
 
           <li id="copenhagen-university">
-            <h1 class="data-provider-heading">University of Copenhagen</h1>
+            <h2 class="data-provider-heading">University of Copenhagen</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/copenhagen-university.#{I18n.locale}.png") %>
             </figure>
@@ -278,7 +359,7 @@
 
 
           <li id="ministry-of-culture">
-            <h1 class="data-provider-heading">Ministry of Culture</h1>
+            <h2 class="data-provider-heading">Ministry of Culture</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/ministry-of-culture.#{I18n.locale}.png") %>
             </figure>
@@ -309,16 +390,37 @@
                 <a target="_blank" href="http://pure-01.kb.dk/ws/oai">http://pure-01.kb.dk/ws/oai</a>
                 <i class="fa fa-external-link"></i>
               </dd>
-
-              <!-- TODO: markup? -->
-              <dt>Includes</dt>
-              <dd>LIST</dd>
             </dl>
+
+            <h4 class="data-provider-list__leaves-heading">Includes</h4>
+            <ul class="data-provider-list__leaves">
+              <li><a href="http://pure-01.kb.dk/portal/en/organisations/kulturministeriet%28808250f0-26d5-44f8-90d1-f092d20ce9e6%29.html">Ministry of Culture Denmark</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/dansk-landbrugsmuseum%2813b92634-ac9a-4f4f-89bc-5e8e85fe081e%29.html">Danish Agricultural Museum</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/jagt-og-skovbrugsmuseum%28f9368eff-1794-42ab-a96c-b791f457b25f%29.html">Danish Museum of Hunting and Forestry</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/danmarks-kunstbibliotek%28ddb9af1d-1b01-4297-8d6c-f19f3d9176fd%29.html">Danmarks Kunstbibliotek</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/den-hirschsprungske-samling%28f8266890-3b34-4dc2-999a-6f0ab692b35f%29.html">Hirschsprungs</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/ordrupgaard%287a244512-fef9-4ddc-aa49-7c8e81e0e648%29.html">Ordrupgaard</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/rigsarkivet%287d4a2430-6f3a-4ef4-93ce-77883bb9f1c0%29.html">Rigsarkivet</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/det-kongelige-danske-kunstakademi-billedkunstskolerne%28de5e8736-0eba-4fa7-ba30-0c8498919f8b%29.html">Schools of Visual Art</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/statens-museum-for-kunst%28652489a7-6040-486c-8df8-c6b1143eb58e%29.html">SMK National Gallery of Denmark</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/det-kongelige-bibliotek%2860906427-1125-4261-9490-24e1240b07f7%29.html">The Royal Library</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/statens-arkiver%2827bcd88d-ba25-4427-ba1c-f187fb1bc16a%29.html">The State Archives Taken over by Rigsarkivet</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/nationalmuseet%28d71b9871-ab9a-4909-8cb0-380733d8b650%29.html">The National Museum of Denmark</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/danmarks-og-middelhavslandenes-oldtid%28e61bf3f3-2b4e-46f5-b5a0-8a5848799b16%29.html">Ancient Cultures of Denmark and the Mediterranean</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/miljoearkaeologi-og-materialeforskning%28b439aeaa-4399-4768-a411-ddf33eda46a4%29.html">Environmental Archaeology and Materials Science</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/middelalder-renaessance-og-numismatik%2825654a43-2b24-4034-8742-417a5b107258%29.html">Middle Ages, Renaissance and Numismatics</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/nyere-tid-og-verdens-kulturer%287167521f-a424-4005-baae-392261dc6d62%29.html">Modern History and World Cultures</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/formidling%2816cc0087-2d0c-4f7c-a9d1-c0d8e3dfaaa0%29.html">Public Programs</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/forskning-og-formidling-sekretariat%28ac825c21-0ad2-4812-8ce2-96ecf44aaf37%29.html">Research and Communication, Secretariat</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/landbokultur-og-soefart%2840be9e75-a030-4699-a43e-b12b71d3e91f%29.html">Rural and Maritime History and Culture</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/magasinering-og-kulturhistorisk-konservering%2831f64619-1a62-4741-9dc1-93de3eba922f%29.html">Storage and Culturalhistorical Conservation</a></li>
+              <li><a href="pure-01.kb.dk/portal/en/organisations/krig-og-besaettelse%28aec8e024-a96c-4118-8387-05e44eaf5d7a%29.html">War and Occupation</a></li>
+            </ul>
           </li>
 
 
           <li id="capital-region">
-            <h1 class="data-provider-heading">Capital Region of Denmark</h1>
+            <h2 class="data-provider-heading">Capital Region of Denmark</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/capital-region.png") %>
             </figure>
@@ -358,7 +460,7 @@
 
 
           <li id="roskilde-university">
-            <h1 class="data-provider-heading">Roskilde University</h1>
+            <h2 class="data-provider-heading">Roskilde University</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/roskilde-university.png") %>
             </figure>
@@ -394,7 +496,7 @@
 
 
           <li id="university-southern-denmark">
-            <h1 class="data-provider-heading">University of Southern Denmark</h1>
+            <h2 class="data-provider-heading">University of Southern Denmark</h2>
             <figure class="provider-logo">
               <%= image_tag("data-providers/university-southern-denmark.png") %>
             </figure>

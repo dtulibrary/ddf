@@ -333,7 +333,7 @@ end
   end
 
   def data_provider_path(image_name)
-    "about/data/providers##{image_name}"
+    "about/data/providers/##{image_name}"
   end
 
   def logo_path(image_name)
