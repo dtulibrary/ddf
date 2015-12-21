@@ -1177,10 +1177,10 @@ ul.data-providers-list h4.data-provider-list__leaves-heading {
   font-family: $sans;
   text-transform: uppercase;
   letter-spacing: .08em;
-  font-size: calc-em(14px);
+  font-size: calc-em(15px);
   line-height: calc-em(20px);
   // font-style: italic;
-  margin: -.5em 0 .5em 0;
+  margin: .25em 0 .5em 0;
   color: $bluewood;
   font-weight: 600;
 }
@@ -1195,4 +1195,11 @@ ul.data-provider-list__leaves { margin-bottom: 1.5em; }
 ul.data-provider-list__leaves li {
   margin-bottom: .3em;
   padding: 0 0 0 1em;
+}
+
+ul.data-provider-list__leaves li i {
+  color: $blue-2;
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  vertical-align: super;
 }
