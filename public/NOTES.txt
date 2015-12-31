@@ -410,3 +410,6 @@ DATA PROVIDER LIST ITEM SCAFFOLD:
             </dl>
           </li>
 
+Interpolating strings with jQuery:
+http://stackoverflow.com/questions/6644618/interpolation-in-javascript
+http://stackoverflow.com/questions/10274081/javascript-interpolating-variables-inside-strings

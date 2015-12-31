@@ -299,7 +299,7 @@ end
   end
 
   # values MUST match image file names
-  PROVIDER_LOGOS = {
+  PROVIDER_CODES = {
     rdb_sbi: 'capital-region',
     rdb_ka:  'ministry-of-culture',
     rdb_cbs: 'cph-business-school',
@@ -315,16 +315,24 @@ end
   }
 
   def render_provider_logos
-    provider_codes = params['f']['source_ss']
-    unless provider_codes.nil?
-      image_names = provider_codes.map { |code| PROVIDER_LOGOS[code.to_sym] }
+    providers = params['f']['source_ss']
+    unless providers.nil?
+      image_names = providers.map { |code| PROVIDER_CODES[code.to_sym] }
       images = image_names.map do |name|
-        content_tag :li do
-          render_logo_from(name)
+        content_tag(:li, class: name) do
+          # render_logo_from(name)
           link_to(render_logo_from(name), data_provider_path(name))
         end
       end
       images.join.html_safe
+    end
+  end
+
+  # Not using semantic names for the partials, OK?
+  def render_provider_cards
+    providers = params['f']['source_ss']
+    unless providers.nil?
+      providers.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
     end
   end
 

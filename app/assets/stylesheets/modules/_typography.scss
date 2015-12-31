@@ -1203,3 +1203,20 @@ ul.data-provider-list__leaves li i {
   margin-left: 0.25em;
   vertical-align: super;
 }
+
+ul.data-provider-cards-list {
+  margin: 0;
+}
+ul.data-provider-cards-list > li {
+  list-style-type: none;
+  display: none;
+}
+
+// TODO: same as ul.data-provider-logos-list li:hover on this element (see above)
+.logo-clicked {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 5px;
+}
