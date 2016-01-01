@@ -24,6 +24,9 @@ $(document).ready(function() {
     // $(this).parent().toggleClass("logo-clicked"); // not working very well
 
     // remove visibility from previously chosen item (for when list.length > 1)
+    previous = $("ul.data-provider-cards-list li[style^='display: list-item']")
+    // console.log(previous);
+    previous.slideToggle("fast");
 
     // klass = $("ul.data-provider-logos-list li").attr("class")
     klass = $(this).parent().attr("class") // alternative to above
