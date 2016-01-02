@@ -1071,19 +1071,21 @@ ul.data-provider-logos-list {
 ul.data-provider-logos-list li {
   margin: 0;
   display: inline-block;
+  padding: .3em;
+  border-radius: 5px;
   transition: all .2s ease-in-out;
 }
-ul.data-provider-logos-list li:not(:last-child) { margin: 0 2em 0 0; }
+ul.data-provider-logos-list li:not(:last-child) { margin: 0 1.25em 0 0; }
 
 ul.data-provider-logos-list li:hover {
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  transform: scale(1.5);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-
-  // border-radius: 100px / 10px;
-  border-radius: 5px;
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+  background: lighten($bluewood, 65%);
+  // background: #eee;
 }
+
+ul.data-provider-logos-list li:active { background: lighten($bluewood, 55%); }
 
 /* TODO: DOESN'T WORK
 ul.data-provider-logos-list li,
@@ -1139,7 +1141,8 @@ ul.data-providers-list > li {
 }
 
 // TODO: article.static h1 overrides second rule
-ul.data-providers-list h2.data-provider-heading {
+ul.data-providers-list h2.data-provider-heading,
+ul.data-provider-cards-list h2.data-provider-heading {
   font-family: $headline;
   font-size: calc-em(21px);
   line-height: calc-em(20px);
@@ -1210,6 +1213,10 @@ ul.data-provider-cards-list {
 }
 ul.data-provider-cards-list > li {
   list-style-type: none;
+  background: lighten($bluewood, 65%);
+  padding: 1em 1em .5em 1em;
+  border-radius: 5px;
+  margin: 1em 0;
   display: none;
 }
 
