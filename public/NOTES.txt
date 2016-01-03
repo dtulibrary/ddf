@@ -413,3 +413,7 @@ DATA PROVIDER LIST ITEM SCAFFOLD:
 Interpolating strings with jQuery:
 http://stackoverflow.com/questions/6644618/interpolation-in-javascript
 http://stackoverflow.com/questions/10274081/javascript-interpolating-variables-inside-strings
+
+How do you roll back (reset) a Git repository to a particular commit? [duplicate]
+http://stackoverflow.com/questions/1616957/how-do-you-roll-back-reset-a-git-repository-to-a-particular-commit
+git reset --hard <tag/branch/commit id>

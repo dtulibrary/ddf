@@ -1071,7 +1071,7 @@ ul.data-provider-logos-list {
 ul.data-provider-logos-list li {
   margin: 0;
   display: inline-block;
-  padding: .3em;
+  padding: .2em;
   border-radius: 5px;
   transition: all .2s ease-in-out;
 }
@@ -1081,11 +1081,13 @@ ul.data-provider-logos-list li:hover {
   -webkit-transform: scale(1.4);
   -ms-transform: scale(1.4);
   transform: scale(1.4);
-  background: lighten($bluewood, 65%);
-  // background: #eee;
+  // background: lighten($bluewood, 65%);
+  background: #ccc;
 }
 
 ul.data-provider-logos-list li:active { background: lighten($bluewood, 55%); }
+
+ul.data-provider-logos-list li a { display: block; }
 
 /* TODO: DOESN'T WORK
 ul.data-provider-logos-list li,

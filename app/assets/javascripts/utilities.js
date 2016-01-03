@@ -21,16 +21,19 @@ $(document).ready(function() {
   $("ul.data-provider-logos-list li a").click(function(event) {
     event.preventDefault();
 
-    // $(this).parent().toggleClass("logo-clicked"); // not working very well
+    // $(this).parent().toggleClass("logo-clicked"); // TODO
+    // $(this).toggleClass("logo-clicked"); // TODO
     console.log( $(this).parent() );
 
     // remove visibility from previously chosen item (for when list.length > 1)
     previous = $("ul.data-provider-cards-list li[style^='display: list-item']")
-    // klass = $("ul.data-provider-logos-list li").attr("class")
     klass = $(this).parent().attr("class") // alternative to above
     item = $("ul.data-provider-cards-list li[class^=" +klass+ "]")
 
-    if (!previous.is(item)) { previous.slideToggle("fast"); }
+    if (!previous.is(item)) {
+      previous.slideToggle("fast");
+      // $(this).toggleClass("logo-clicked"); // TODO
+    }
     item.slideToggle("slow");
     //console.log(item);
   });
