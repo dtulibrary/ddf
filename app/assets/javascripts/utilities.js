@@ -12,30 +12,26 @@ $(document).ready(function() {
   });
 });
 
-// Prevent default
-// (Maybe change visual state of this button)
-// Get the source list item's class
-// Fetch the target list item with that class
-// slideToggle that item
+/*
+1) Override default behavior on clicked link
+2) Animate the clicked logo
+3) Show corresponding card
+*/
 $(document).ready(function() {
   $("ul.data-provider-logos-list li a").click(function(event) {
     event.preventDefault();
 
-    // $(this).parent().toggleClass("logo-clicked"); // TODO
-    // $(this).toggleClass("logo-clicked"); // TODO
-    console.log( $(this).parent() );
+    previousLogo = $("ul.data-provider-logos-list li.logo-clicked")
+    // console.log(previousLogo);
+    if (!previousLogo.is($(this).parent())) { previousLogo.toggleClass("logo-clicked"); }
+    $(this).parent().toggleClass("logo-clicked");
 
-    // remove visibility from previously chosen item (for when list.length > 1)
-    previous = $("ul.data-provider-cards-list li[style^='display: list-item']")
-    klass = $(this).parent().attr("class") // alternative to above
-    item = $("ul.data-provider-cards-list li[class^=" +klass+ "]")
+    previousCard = $("ul.data-provider-cards-list li[style^='display: list-item']")
+    klazz = $(this).parent().attr("class").split(" ")[0]; // we only need the first class
+    clickedCard = $("ul.data-provider-cards-list li[class^=" +klazz+ "]")
 
-    if (!previous.is(item)) {
-      previous.slideToggle("fast");
-      // $(this).toggleClass("logo-clicked"); // TODO
-    }
-    item.slideToggle("slow");
-    //console.log(item);
+    if (!previousCard.is(clickedCard)) { previousCard.slideToggle("fast"); }
+    clickedCard.slideToggle("slow");
   });
 
 });

@@ -1074,6 +1074,7 @@ ul.data-provider-logos-list li {
   padding: .2em;
   border-radius: 5px;
   transition: all .2s ease-in-out;
+  position: relative;
 }
 ul.data-provider-logos-list li:not(:last-child) { margin: 0 1.25em 0 0; }
 
@@ -1088,6 +1089,15 @@ ul.data-provider-logos-list li:hover {
 ul.data-provider-logos-list li:active { background: lighten($bluewood, 55%); }
 
 ul.data-provider-logos-list li a { display: block; }
+ul.data-provider-logos-list li i.glyphicon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: calc-em(22px);
+  color: $orange;
+  background: #fff;
+  display: none;
+}
 
 /* TODO: DOESN'T WORK
 ul.data-provider-logos-list li,
@@ -1222,11 +1232,5 @@ ul.data-provider-cards-list > li {
   display: none;
 }
 
-// TODO: same as ul.data-provider-logos-list li:hover on this element (see above)
-.logo-clicked {
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  transform: scale(1.5);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  border-radius: 5px;
-}
+.logo-clicked { background: #ccc; }
+ul.data-provider-logos-list li.logo-clicked i.glyphicon { display: block; }

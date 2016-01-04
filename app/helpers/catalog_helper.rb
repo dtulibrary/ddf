@@ -321,7 +321,8 @@ end
       images = image_names.map do |name|
         content_tag(:li, class: name) do
           # render_logo_from(name)
-          link_to(render_logo_from(name), data_provider_path(name))
+          link_to(render_logo_from(name), data_provider_path(name)) +
+          content_tag(:i, "", class: "glyphicon glyphicon-info-sign")
         end
       end
       images.join.html_safe
