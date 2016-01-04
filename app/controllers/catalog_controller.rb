@@ -55,17 +55,17 @@ class CatalogController < ApplicationController
     #   :assumed_boundaries => [1900, Time.now.year + 2],
     # }
 
+    # ALL FACET FIELDS:
+    # TODO - investigate difference with format field as used in Toshokan
+    config.add_facet_field 'format_orig_s', :helper_method => :render_format_field_facet
     config.add_facet_field 'pub_date_tsort', :range => {
         :num_segments => 3,
         :assumed_boundaries => [1900, Time.now.year + 2]
     }
-
-    # ALL FACET FIELDS:
-    # TODO - investigate difference with format field as used in Toshokan
-    config.add_facet_field 'format_orig_s', :helper_method => :render_format_field_facet
-
-    config.add_facet_field 'submission_year_tis', range: true
+    config.add_facet_field 'author_facet', :limit => 10
     config.add_facet_field 'source_ss', :helper_method => :render_source_field_facet, :limit => 10
+    config.add_facet_field 'journal_title_facet', :limit => 10
+    config.add_facet_field 'submission_year_tis', range: true
     config.add_facet_field 'isolanguage_ss', :helper_method => :render_language_field_facet
     config.add_facet_field 'scientific_level_s', :helper_method => :render_scientific_level_facet
     config.add_facet_field 'access_condition_s', :helper_method => :render_publication_status_facet
