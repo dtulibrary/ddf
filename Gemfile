@@ -52,6 +52,7 @@ group :development do
   #gem 'puma'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'http_logger'
 end
 
 group :assets do
