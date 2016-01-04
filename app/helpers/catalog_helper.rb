@@ -236,7 +236,7 @@ end
     end
   end
 
-  def render_journal_title_info document, format
+  def render_journal_title_info(document, format = nil)
     if document['journal_title_ts']
       "#{document['journal_title_ts'].first}"
     else
@@ -365,40 +365,92 @@ end
     active_sort_fields_selected.shift[1]
   end
 
+  # Highwire expects names in format Firstname Lastname
+  def highwire_author_format(name)
+    if name.include? ','
+      name.split(',').reverse.join(' ').strip
+    else
+      name
+    end
+  end
+
+  def format_issn(val)
+    if val.include? '-'
+      val
+    elsif val.class == String && val.size == 8
+      val.insert(4, '-')
+    else
+      nil
+    end
+  end
+
+  def highwire_issn_tags(doc)
+    issns = doc['issn_ss']
+    return unless issns.present?
+    vals = issns.collect do |issn|
+      val = format_issn(issn)
+      citation_tag('issn', val) if val.present?
+    end
+    vals.join("\n")
+  end
+
+  def highwire_author_tags(doc)
+    authors = doc['author_ts']
+    return unless authors.present?
+    vals = authors.collect do |val|
+      name = highwire_author_format(val)
+      citation_tag('author', name) if name.present?
+    end
+    vals.join("\n")
+  end
+
+  def highwire_journal_title_tag(doc)
+    title = render_journal_title_info(doc)
+    if doc['subformat_s'] == 'bookchapter'
+      citation_tag('inbook_title', title) if title.present?
+    else
+      citation_tag('journal_title', title) if title.present?
+    end
+  end
+  # We supply Procs where additional logic is necessary to
+  # transform the value
+  # Otherwise the document key is used
   META_FIELDS = {
-    title_ts:         'title',
-    author_ts:        'author',
-    pub_date_tis:     'publication_date',
-    publisher_ts:     'publisher',
-    journal_title_ts: 'journal_title',
-    language_ss:      'language',
-    conf_title_ts:    'conference_title',
-    isbn_ss:          'isbn',
-    doi_ss:           'doi'
+    title: 'title_ts',
+    author: :highwire_author_tags,
+    publication_date: 'pub_date_tis',
+    publisher: 'publisher_ts',
+    journal_title: :highwire_journal_title_tag,
+    language: 'language_ss',
+    conference_title: 'conf_title_ts',
+    isbn: 'isbn_ss',
+    doi: 'doi_ss',
+    issn: :highwire_issn_tags
   }
 
-  JOINED_META_FIELDS = { keywords_ts: 'citation_keywords' }
+  JOINED_META_FIELDS = { citation_keywords: 'keywords_ts' }
 
   def citation_tags_for(document)
-    unless document.nil?
-      taglist = []
-      taglist << "\n"
-      META_FIELDS.each do |k, v|
-        if document[k]
-          if document[k].length.eql?(1)
-            taglist << atomic_citation_tag_for(v, document[k])
-          else
-            taglist << split_citation_tags_for(v, document[k])
-          end
+    return if document.nil?
+    taglist = []
+    taglist << "\n"
+    META_FIELDS.each do |k, v|
+      if v.class == Symbol && self.respond_to?(v)
+        taglist << send(v, document)
+      elsif document[v]
+        if document[v].length.eql?(1)
+          taglist << atomic_citation_tag_for(k, document[v])
+        else
+          taglist << split_citation_tags_for(k, document[v])
         end
       end
-      JOINED_META_FIELDS.each do |k, v|
-        if document[k]
-          taglist << joined_citation_tags_for(v, document[k])
-        end
-      end
-      taglist.join("\n").html_safe
     end
+    JOINED_META_FIELDS.each do |k, v|
+      if document[v]
+        taglist << joined_citation_tags_for(k, document[v])
+      end
+    end
+    taglist.join("\n").html_safe
   end
 
   def atomic_citation_tag_for(field_name, field_value)
