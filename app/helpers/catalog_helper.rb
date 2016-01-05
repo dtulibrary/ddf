@@ -1,6 +1,13 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  # Get the last news item from our locale files
+  def latest_update
+    last = t('ddf.news.updates').keys.last
+    t('ddf.news.updates')[last].html_safe
+  rescue
+    nil
+  end
   def render_fulltext_access? document
     !(collect_fulltexts(document) + collect_dois(document)).empty?
   end

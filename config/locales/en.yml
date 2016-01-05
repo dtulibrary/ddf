@@ -223,6 +223,11 @@ en:
       undetermined: Undetermined
 
   ddf:
+    news:
+      title: "New"
+      updates:
+        october_2015: "(October 2015): Interface and search technology upgraded"
+        january_2016: '(January 2016): Various improvements, including enhanced search result refinement (new facet on submission year) and improved integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
     search:
       form:
         clear_icon_text_hover: Clear search field
