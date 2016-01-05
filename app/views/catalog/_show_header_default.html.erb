@@ -5,4 +5,5 @@
   <div class="document-actions-container">
     <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
   </div>
+    <%= render partial: 'catalog/bookmark_control', locals: { document: document } %>
 </div>
