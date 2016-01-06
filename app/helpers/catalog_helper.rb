@@ -1,6 +1,13 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  # Get the last news item from our locale files
+  def latest_update
+    last = t('ddf.news.updates').keys.last
+    t('ddf.news.updates')[last].html_safe
+  rescue
+    nil
+  end
   def render_fulltext_access? document
     !(collect_fulltexts(document) + collect_dois(document)).empty?
   end
@@ -14,7 +21,7 @@ module CatalogHelper
   end
 
   def render_source_field_facet value
-    source_label(value)
+    facet_source_label(value)
   end
 
   def render_language_field_facet value
@@ -175,16 +182,10 @@ end
     end
   end
 
-  # only show year in search results if journal title is not present -
-  # otherwise it will be appended to this
-  def show_publication_year_search? _field_config, doc
-    doc['journal_title_ts'].blank?
-  end
-
   # Only show the published date as an independent field
   # if there is no journal title, conference title or publisher -
   # otherwise it will be appended to these
-  def show_publication_year_item? _field_config, doc
+  def show_publication_year? _field_config, doc
     doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
   end
 
@@ -193,16 +194,15 @@ end
 
   def render_journal_info args, format = :index
     document = args[:document]
-    field = args[:field]
-    [render_journal_title_info(document, format),
+    [render_first_highlight_field(args),
      render_journal_subtitle_info(document, format),
      render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
-  end
+   end
 
-  def render_conf_title(args)
+   def render_conf_title(args)
     doc = args[:document]
     if doc['conf_title_ts'].present?
       title = doc['conf_title_ts'].first
@@ -218,7 +218,7 @@ end
   def render_publisher(args)
     doc = args[:document]
     if doc['publisher_ts'].present?
-      info = doc['publisher_ts'].first
+      info = render_first_highlight_field(args)
       # if there is no journal title conference title, append published date here
       unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
         info += render_pub_date_info(doc, :show)
@@ -227,7 +227,7 @@ end
     end
   end
 
-   def render_journal_page_info document, format
+  def render_journal_page_info document, format
     if document['journal_page_ssf']
       ", p. #{document['journal_page_ssf'].first}"
     else
@@ -243,7 +243,7 @@ end
     end
   end
 
-  def render_journal_title_info document, format
+  def render_journal_title_info(document, format = nil)
     if document['journal_title_ts']
       "#{document['journal_title_ts'].first}"
     else
@@ -301,6 +301,10 @@ end
   def source_label source
     t "mxd_type_labels.source_labels.#{source}"
   end
+
+  def facet_source_label source
+    t "mxd_type_labels.facet_source_labels.#{source}"
+  end
  ##
   # Look up the current per page value, or the default if none if set
   #
@@ -340,4 +344,135 @@ end
     params["f"]["source_ss"]
   end
 
+  SELECTED_SORT_FIELDS = ['year', 'title']
+
+  def active_sort_fields_selected
+    active_sort_fields.select { |k, v| SELECTED_SORT_FIELDS.include? v.label }
+  end
+
+  # This is a modified version of Blacklight::CatalogHelperBehavior#current_sort_field
+  def current_sort_field_selected
+    sort_field_from_response ||  # as in original
+    sort_field_from_params ||    # sort param specified
+    sort_field_from_list ||      # sort param not specified
+    default_sort_field           # falls back on 'relevance'
+  end
+
+  def sort_field_from_response
+    if @response && @response.sort.present?
+      blacklight_config.sort_fields.values.find { |f| f.sort.eql? @response.sort }
+    end
+  end
+
+  def sort_field_from_params
+    blacklight_config.sort_fields[params[:sort]]
+  end
+
+  def sort_field_from_list
+    active_sort_fields_selected.shift[1]
+  end
+
+  # Highwire expects names in format Firstname Lastname
+  def highwire_author_format(name)
+    if name.include? ','
+      name.split(',').reverse.join(' ').strip
+    else
+      name
+    end
+  end
+
+  def format_issn(val)
+    if val.include? '-'
+      val
+    elsif val.class == String && val.size == 8
+      val.insert(4, '-')
+    else
+      nil
+    end
+  end
+
+  def highwire_issn_tags(doc)
+    issns = doc['issn_ss']
+    return unless issns.present?
+    vals = issns.collect do |issn|
+      val = format_issn(issn)
+      citation_tag('issn', val) if val.present?
+    end
+    vals.join("\n")
+  end
+
+  def highwire_author_tags(doc)
+    authors = doc['author_ts']
+    return unless authors.present?
+    vals = authors.collect do |val|
+      name = highwire_author_format(val)
+      citation_tag('author', name) if name.present?
+    end
+    vals.join("\n")
+  end
+
+  def highwire_journal_title_tag(doc)
+    title = render_journal_title_info(doc)
+    if doc['subformat_s'] == 'bookchapter'
+      citation_tag('inbook_title', title) if title.present?
+    else
+      citation_tag('journal_title', title) if title.present?
+    end
+  end
+  # We supply Procs where additional logic is necessary to
+  # transform the value
+  # Otherwise the document key is used
+  META_FIELDS = {
+    title: 'title_ts',
+    author: :highwire_author_tags,
+    publication_date: 'pub_date_tis',
+    publisher: 'publisher_ts',
+    journal_title: :highwire_journal_title_tag,
+    language: 'language_ss',
+    conference_title: 'conf_title_ts',
+    isbn: 'isbn_ss',
+    doi: 'doi_ss',
+    issn: :highwire_issn_tags
+  }
+
+  JOINED_META_FIELDS = { citation_keywords: 'keywords_ts' }
+
+  def citation_tags_for(document)
+    return if document.nil?
+    taglist = []
+    taglist << "\n"
+    META_FIELDS.each do |k, v|
+      if v.class == Symbol && self.respond_to?(v)
+        taglist << send(v, document)
+      elsif document[v]
+        if document[v].length.eql?(1)
+          taglist << atomic_citation_tag_for(k, document[v])
+        else
+          taglist << split_citation_tags_for(k, document[v])
+        end
+      end
+    end
+    JOINED_META_FIELDS.each do |k, v|
+      if document[v]
+        taglist << joined_citation_tags_for(k, document[v])
+      end
+    end
+    taglist.join("\n").html_safe
+  end
+
+  def atomic_citation_tag_for(field_name, field_value)
+    citation_tag(field_name, field_value.join())
+  end
+
+  def split_citation_tags_for(field_name, field_value)
+    field_value.map { |str| citation_tag(field_name, str) }.join("\n").html_safe
+  end
+
+  def joined_citation_tags_for(field_name, field_value)
+    citation_tag(field_name, field_value.join("; "))
+  end
+
+  def citation_tag(tag, content)
+    "<meta name=\"citation_#{tag}\" content=\"#{content}\" />".html_safe
+  end
 end

@@ -27,7 +27,7 @@ da:
       text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"
     header_links:
       search_history: Historik
-      bookmarks: Bogmærker
+      bookmarks: Udvalgte
     language_switcher: English
     range_limit:
       submit_limit: Begræns
@@ -37,31 +37,31 @@ da:
     bookmarks:
       collection:
         add:
-          button: 'Tilføj til bogmærker'
-      title: 'Bogmærker'
-      no_bookmarks: 'Du har ingen bogmærker'
+          button: 'Vælg'
+      title: Udvalgte poster
+      no_bookmarks: 'Du har ingen udvalgte poster'
       add:
-        button: 'Tilføj til bogmærker'
+        button: 'Vælg'
         success:
           one: 'Dit bogmærke er blevet gemt.'
           other: 'Dine bogmærker er blevet gemt.'
         failure:  'Beklager, dine bogmærker kunne ikke gemmes'
       remove:
-        button: 'Fjern bogmærke'
+        button: 'Fjern valgte'
         success: 'Din bogmærker er blevet fjernet.'
         failure: 'Beklager, dine bogmærker kunne ikke fjernes.'
         action_confirm: 'Fjern bogmærket?'
       clear:
-        action_title: 'Ryd bogmærker'
-        action_confirm: 'Ryd dine bogmærker?'
-        success: 'Bogmærker ryddet.'
-        failure: 'Beklager dine bogmærker kunne ikke ryddes.'
-      list_title: 'Dine bogmærker'
+        action_title: 'Ryd udvalgte'
+        action_confirm: 'Ryd udvalgte?'
+        success: 'Udvalgte poster ryddet.'
+        failure: 'Beklager, udvalgte poster kunne ikke ryddes.'
+      list_title: 'Dine udvalgte poster'
       delete: 'Slet'
     search:
       bookmarks:
-        absent: Tilføj til bogmærker
-        present: I bogmærker
+        absent: Vælg
+        present: Valgt
         inprogress: Gemmer...
       index:
         label: '%{label}:'
@@ -213,7 +213,7 @@ da:
       accepted: Accepteret
       in_press: "I trykken"
       unpublished: Upubliceret
-    source_labels:
+    source_labels: &SOURCES
       orbit: Danmarks Tekniske Universitet
       rdb_ku: Københavns Universitet
       rdb_itu: IT Universitet i København
@@ -227,6 +227,10 @@ da:
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
       rdb_aarch: Arkitekskolen Aarhus
+    # copy from source labels but overwrite architecture institute
+    facet_source_labels:
+      <<: *SOURCES
+      rdb_ark: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
     review_status_labels:
       peer_review: Peer Review
       other_review: Andet review
@@ -240,6 +244,11 @@ da:
       undetermined: Ubestemt
 
   ddf:
+    news:
+      title: Nyt
+      updates:
+        october_2015: "(Oktober 2015): Interface og søgeteknologi opgraderet"
+        january_2016: '(Januar 2016): Diverse forbedringer, inklusiv bedre forfining af søgeresultater (ny facet på indberetningsår) og forbedret integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
     search:
       form:
         clear_icon_text_hover: Slet søgetermerne
@@ -279,11 +288,17 @@ da:
       resolve_via_doi_hover: Hent forlagsudgave gennem DOI-opslag (åbner i nyt vindue)
       direct_fulltext: Hent fuldteksten direkte fra %{source} (åbner i nye vindue)
       backlink_hover: Se denne post hos %{source} (åbner i et nyt vindue)
+    citation:
+      modern-language-association: Modern Language Association
+      apa: APA
+      chicago-author-date: Chicago Author Date
   citations:
     form:
       number: "Antal:"
       format: "Format:"
       preview: "Vis"
+      to: 'Til:'
+      comment: 'Kommentar:'
     preview:
       send: "Send"
       send_to: "Send til %{to}"

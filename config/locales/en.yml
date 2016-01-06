@@ -24,7 +24,32 @@ en:
     application_name: Danish National Research Database-Den Danske Forskningsdatabase
     language_switcher: Dansk
     latest_search: Latest Search
+
+    header_links:
+      search_history: History
+      bookmarks: Selected
+    bookmarks:
+      add:
+        button: 'Select'
+      remove:
+        button: 'Unselect'
+      collection:
+        add:
+          button: 'Select'
+      title: Selected records
+      no_bookmarks: 'You have no selected records'
+      clear:
+        action_title: 'Clear selected'
+        action_confirm: 'Clear selected records?'
+        success: 'Cleared selection.'
+        failure: 'Sorry, error clearing selection.'
+
     search:
+      bookmarks:
+        absent: Select
+        present: Selected
+        inprogress: Saving...
+
       fields:
         default: "Search terms"
         format_orig_s: Type
@@ -98,6 +123,8 @@ en:
         title: "Email citations"
       preview:
         title: "Preview citations"
+      form:
+        comment: 'Comment:'
   mxd_type_labels:
     language_labels:
       eng: English
@@ -165,7 +192,7 @@ en:
       accepted: Accepted
       in_press: "In press"
       unpublished: Unpublished
-    source_labels:
+    source_labels: &SOURCES
       orbit: Technical University of Denmark
       rdb_ku: University of Copenhagen
       rdb_itu: IT University of Copenhagen
@@ -179,6 +206,10 @@ en:
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
       rdb_aarch: Aarhus School of Architecture
+    # copy from source labels but overwrite architecture institute
+    facet_source_labels:
+      <<: *SOURCES
+      rdb_ark: "Research Institutions in Architecture, Design and Conservation"
     review_status_labels:
       peer_review: Peer Review
       other_review: Other review
@@ -192,6 +223,11 @@ en:
       undetermined: Undetermined
 
   ddf:
+    news:
+      title: "New"
+      updates:
+        october_2015: "(October 2015): Interface and search technology upgraded"
+        january_2016: '(January 2016): Various improvements, including enhanced search result refinement (new facet on submission year) and improved integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
     search:
       form:
         clear_icon_text_hover: Clear search field
@@ -230,11 +266,17 @@ en:
       resolve_via_doi_hover: Get publisher edition via DOI resolver (opens in a new window)
       direct_fulltext: Get full text directly from %{source} (opens in a new window)
       backlink_hover: View this record at %{source} (opens in a new window)
+    citation:
+      modern-language-association: Modern Language Association
+      apa: APA
+      chicago-author-date: Chicago Author Date
   citations:
     form:
       number: "No:"
       format: "Format:"
       preview: "Preview"
+      to: 'To:'
+      comment: 'Comment:'
     preview:
       send: "Send"
       send_to: "Send to %{to}"

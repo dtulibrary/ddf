@@ -21,6 +21,8 @@ vendor/bundle
 # Ignore index test files and generated config
 /jetty/solr/metastore/data
 /jetty/solr/toc/data
+/solr/
+
 
 /config/*.local.yml
 /config/*.local.rb

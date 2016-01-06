@@ -11,3 +11,11 @@ $(document).ready(function() {
     rest.slideToggle("medium");
   });
 });
+
+$(document).ready(function() {
+  $('#print-selected').click(function()
+  {
+    window.print();
+  });
+});
+

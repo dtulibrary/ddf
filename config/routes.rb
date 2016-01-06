@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount DtuBlacklightCommon::Engine, at: '/'
   devise_for :users
   get 'messages/new'
 
@@ -7,8 +8,10 @@ Rails.application.routes.draw do
   get 'messages/message_params'
   get 'oai', to: 'open_access_indicator#get'
 
-
   scope "(:locale)", :locale => /en|da/ do
+
+    get '/selected', to: 'bookmarks#index'
+
     # root :to => "catalog#index"
     # blacklight_for :catalog
     # root to: "catalog#index"

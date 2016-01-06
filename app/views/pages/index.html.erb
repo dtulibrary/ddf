@@ -2,10 +2,12 @@
   <div class="intro">
     <div class="container">
       <p class="pitch measure"> <%= t('blacklight.elevator_pitch')%> </p>
-      <p class="news">
-        <em class="news-tag"><%= t('blacklight.news_tag')%></em>
-        <%= t('blacklight.news_content')%>
-      </p>
+      <% unless latest_update.nil? %>
+        <p class="news">
+          <em class="news-tag"><%= t('ddf.news.title')%></em>
+          <%= latest_update %>
+        </p>
+      <% end %>
     </div>
   </div>
 

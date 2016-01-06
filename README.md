@@ -12,10 +12,8 @@ Once this is done:
 ```
 # install dependencies
 bundle install
-# startup solr
-rake jetty:start
-# load test data
-rake metastore:testdata:index
+# setup solr and load test data
+rake solr:setup_and_import
 # startup server
 bin/rails s
 ```

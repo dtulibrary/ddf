@@ -5,7 +5,7 @@
     <ul>
       <% collect_fulltexts(document).each do |fulltext| %>
         <li>
-          <%= image_tag image_url('openaccess.png') %>
+          <%= image_tag image_url('openaccess.png'), class: 'sidepanel-icon' %>
           <%= link_to source_label(fulltext['source']), fulltext['url'],
                       :target => '_blank',
                       :title  => t('ddf.links.direct_fulltext', :source => source_label(fulltext['source'])) %>
@@ -14,7 +14,7 @@
       <% end %>
       <% collect_doi_links(document).each do |link| %>
         <li>
-          <%= image_tag image_url('doi.png') %>
+          <%= image_tag image_url('doi.png'), class: 'sidepanel-icon' %>
           <%= link_to t('ddf.links.resolve_via_doi'), link,
                       :target => '_blank',
                       :title  => t('ddf.links.resolve_via_doi_hover') %>
