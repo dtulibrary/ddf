@@ -1091,9 +1091,9 @@ ul.data-provider-logos-list li:active { background: lighten($bluewood, 55%); }
 ul.data-provider-logos-list li a { display: block; }
 ul.data-provider-logos-list li i.glyphicon {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  font-size: calc-em(22px);
+  top: -7px;
+  right: -7px;
+  font-size: calc-em(18px);
   color: $orange;
   background: #fff;
   display: none;
