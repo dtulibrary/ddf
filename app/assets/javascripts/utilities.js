@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     previousCard = $("ul.data-provider-cards-list li[style^='display: list-item']")
     klazz = $(this).parent().attr("class").split(" ")[0]; // we only need the first class
-    clickedCard = $("ul.data-provider-cards-list li[class^=" +klazz+ "]")
+    clickedCard = $("ul.data-provider-cards-list li[id^=" +klazz+ "]")
 
     if (!previousCard.is(clickedCard)) { previousCard.slideToggle("fast"); }
     clickedCard.slideToggle("slow");
