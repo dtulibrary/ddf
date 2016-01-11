@@ -1139,29 +1139,19 @@ dl.provider-details-list dd i {
   vertical-align: super;
 }
 
-ul.data-providers-list li { list-style-type: none; }
-
-ul.data-providers-list > li {
-  margin-bottom: 1em;
-  padding: 1em 1em 0 1em;
-  border-radius: 5px;
-  border: 1px dashed #fff;
-
-  -webkit-column-break-inside: avoid; /* Chrome, Safari */
-  page-break-inside: avoid;           /* Theoretically FF 20+ */
-  break-inside: avoid-column;         /* IE 11 */
-}
 
 // TODO: article.static h1 overrides second rule
 ul.data-providers-list h2.data-provider-heading,
 ul.data-provider-cards-list h2.data-provider-heading {
   font-family: $headline;
-  font-size: calc-em(21px);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 400;
+  font-size: calc-em(20px);
   line-height: calc-em(20px);
   margin: 0 0 1em 0;
   color: $bluewood;
-  font-weight: 500;
-  //letter-spacing: .07em;
+
 }
 
 ul.data-providers-list li:target {
@@ -1235,4 +1225,16 @@ ul.data-provider-cards-list > li {
 .logo-clicked { background: #ccc; }
 ul.data-provider-logos-list li.logo-clicked i.glyphicon { display: block; }
 
+h1.centered { text-align: center; }
+h1.feature-heading {
+  font-family: $sans;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
 
+article.static h1.feature-heading {
+  font-family: $sans;
+  font-size: calc-em(23px);
+  font-weight: 500;
+  margin: .2em 0 1.5em 0em;
+}

@@ -40,6 +40,10 @@ class PagesController < ApplicationController
     render :layout => 'about'
   end
 
+  def data_providers
+    render :layout => 'data_providers'
+  end
+
   def faq
     render :layout => 'about'
   end
