@@ -961,28 +961,30 @@ span.beta {
   vertical-align: text-top;
 }
 
-button.toggle-rest span.h { display: none; }
-button.toggle-rest span.s { display: block; }
+// TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
+button.toggle-visibility span.h { display: none; }
+button.toggle-visibility span.s { display: block; }
 button.show span.h { display: block; }
 button.show span.s { display: none; }
 
-button.toggle-rest {
-  font-size: calc-em(15px);
+button.list-toggle {
+  font-size: calc-em(16px);
   color: $link-color;
   background: #fff;
   border: 1px solid $blue-3;
   padding: .1em .4em;
   border-radius: 3px;
 }
-button.toggle-rest:hover { background: #eee; }
-button.toggle-rest:active {
+button.list-toggle:hover { background: #eee; }
+button.list-toggle:active {
   background: #eee;
   color: $orange;
 }
-button.toggle-rest .glyphicon {
+button.list-toggle .glyphicon {
   font-size: calc-em(15px);
-  vertical-align: -7%;
+  vertical-align: -8%;
 }
+// TOGGLING CLASSES
 
 dd.icon-label  { line-height: 1.6em; }
 dd.icon-label img {
@@ -1177,6 +1179,7 @@ ul.data-providers-list h3.data-provider-list__sub__heading {
   color: $bluewood;
   font-weight: 700;
 }
+ul.data-providers-list h3.data-provider-list__sub__heading:last-child { margin-bottom: 0; }
 
 ul.data-providers-list h4.data-provider-list__leaves-heading {
   font-family: $sans;
@@ -1194,6 +1197,7 @@ ul.data-provider-list__sub li {
   margin-bottom: .5em;
   padding: 0 0 0 1em;
 }
+ul.data-provider-list__sub li:last-child { margin-bottom: 0; }
 
 ul.data-provider-list__leaves { margin-bottom: 1.5em; }
 
@@ -1237,4 +1241,25 @@ article.static h1.feature-heading {
   font-size: calc-em(23px);
   font-weight: 500;
   margin: .2em 0 1.5em 0em;
+}
+
+button.card-toggle {
+  font-size: calc-em(25px);
+  color: $link-color;
+  padding: 0;
+  border: 0;
+  background: inherit;
+  margin-left: 95%;
+  margin: 0 0 .3em 95%;
+}
+button.card-toggle:hover {
+  background: inherit;
+}
+button.card-toggle:active {
+  color: $orange;
+  border: 0;
+}
+button.card-toggle .glyphicon {
+  font-size: calc-em(15px);
+  vertical-align: -8%;
 }

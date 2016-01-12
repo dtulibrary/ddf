@@ -1,3 +1,4 @@
+// LISTS
 $(document).ready(function() {
   rest = $(".chartlist.types li")
   .filter(function(index) {
@@ -6,9 +7,16 @@ $(document).ready(function() {
 
   rest.hide();
 
-  $("button.toggle-rest").click(function() {
+  $("button.toggle-visibility").click(function() {
     $(this).toggleClass("show");
     rest.slideToggle("medium");
+  });
+});
+
+// CARDS
+$(document).ready(function() {
+  $("button.toggle-visibility").click(function() {
+    $(this).parent().next().slideToggle("medium");
   });
 });
 

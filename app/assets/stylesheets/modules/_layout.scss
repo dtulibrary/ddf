@@ -381,7 +381,6 @@ ul.data-providers-list li { list-style-type: none; }
 ul.data-providers-list > li {
   background: #fff;
   margin-bottom: 1em;
-  padding: 1em 1em 0 1em;
   border-radius: 5px;
   border: 1px solid rgba(0,0,0, .2);
 
@@ -394,3 +393,9 @@ ul.data-providers-list > li {
   break-inside: avoid-column;         /* IE 11 */
 }
 
+section.core-data { padding: 1em 1em 0 1em; }
+section.secondary-data {
+  display: none;
+  background: lighten($blue-2, 60%);
+  padding: 1em;
+}
