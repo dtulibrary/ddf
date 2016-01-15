@@ -45,6 +45,7 @@ module Ddf
       :dedup_source_url => '',
     }
 
-    config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/devel' 
+    config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/test'
+    config.x.open_access.years = [ 2013, 2014 ]
   end
 end

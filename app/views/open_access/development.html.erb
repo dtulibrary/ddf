@@ -1,0 +1,11 @@
+<% key = @timeline.keys.first %>
+<h1><%= "Development in #{key.titleize} for #{OpenAccessIndicator::YEARS.last} til #{OpenAccessIndicator::YEARS.first}"  %></h1>
+<ul class="timeline">
+  <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
+    <% data = @timeline[key][year.to_s] %>
+    <li>
+      <%= content_tag :span, year, class: 'year_label' %>
+      <%= content_tag :span, data['relative'], class: 'count', style: "height: #{data['relative']}%" %>
+    </li>
+  <% end %>
+</ul>

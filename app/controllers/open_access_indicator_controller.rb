@@ -10,17 +10,22 @@ class OpenAccessIndicatorController < ApplicationController
   end
 
   def overview
-    year = params[:year] || '2016'
+    year = params[:year] || OpenAccessIndicator::YEARS.first
     view = params[:view] || 'relative'
     @overview = {}
     OpenAccessIndicator::RESOURCES.each do |resource|
       @overview[resource] = OpenAccessIndicator.fetch(resource, year, view)
     end
-    render 'open_access/overview'
   end
 
   def development
-
     resource = params[:resource] || 'national'
+    key = params[:key] || 'national'
+    @timeline = OpenAccessIndicator.timeline(resource, key)
+  end
+
+  # This overwrites the default lookup view folder
+  def self.controller_path
+    'open_access'
   end
 end

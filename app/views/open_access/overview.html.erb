@@ -1,30 +1,36 @@
-<h1>Open Access Overview</h1>
-<% year = params[:year] || Time.now.year %>
+<% year = params[:year] || OpenAccessIndicator::YEARS.first %>
 <% view = params[:view] || 'relative' %>
+<h1>Open Access Overview <%= year %></h1>
 <div class="row">
 <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'pull-right') do  %>
   <%= label_tag :view %>
   <%- view_types = ['relative', 'relative_clear'].collect { |tp| [ I18n.t("ddf.open_access.form.view_types.#{tp}"), tp ] } %>
   <%= select_tag(:view, options_for_select(view_types, view)) %>
   <%= label_tag :year %>
-  <%= select_tag(:year, options_for_select([2016, 2015, 2014], year)) %>
+  <%= select_tag(:year, options_for_select(OpenAccessIndicator::YEARS, year)) %>
   <%= submit_tag 'View' %>
 <% end %>
 </div>
-<div class="row">
-  <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }, class: 'pull-right') %>
-</div>
-<div class="col-md-2 chartbox">
-  <h2>National</h2>
-  <%= render partial: 'open_access/chart', locals: { stats: @overview['national'], view: view } %>
-</div>
-<div class="col-md-4 chartbox">
-  <h2>Research Area</h2>
-  <%= render partial: 'open_access/chart', locals: { stats: @overview['research_area'], view: view} %>
+<% if @overview.values.include? nil %>
+  <div class="alert alert-danger">
+    Error - some data missing for this year. Contact your administrator for assistance.
   </div>
-</div>
-<div class="col-md-4 chartbox">
-  <h2>Universities</h2>
-  <%= render partial: 'open_access/chart', locals: { stats: @overview['universities'], view: view} %>
+<% else %>
+  <div class="row">
+    <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }, class: 'pull-right') %>
   </div>
-</div>
+  <div class="col-md-2 chartbox">
+    <h2>National</h2>
+    <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
+  </div>
+  <div class="col-md-4 chartbox">
+    <h2>Research Area</h2>
+    <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
+    </div>
+  </div>
+  <div class="col-md-4 chartbox">
+    <h2>Universities</h2>
+    <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
+    </div>
+  </div>
+<% end %>
