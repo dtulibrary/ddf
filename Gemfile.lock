@@ -380,6 +380,3 @@ DEPENDENCIES
   therubyracer (= 0.12.1)
   turbolinks
   xray-rails
-
-BUNDLED WITH
-   1.10.6
