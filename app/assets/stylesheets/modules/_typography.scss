@@ -1249,8 +1249,8 @@ button.card-toggle {
   padding: 0;
   border: 0;
   background: inherit;
-  margin-left: 95%;
-  margin: 0 0 .3em 95%;
+  // margin-left: 95%;
+  // margin: 0 0 .3em 95%;
 }
 button.card-toggle:hover {
   background: inherit;
@@ -1263,3 +1263,51 @@ button.card-toggle .glyphicon {
   font-size: calc-em(15px);
   vertical-align: -8%;
 }
+
+ul.card-info-actions-list {
+  margin: 0 1em 1em 0;
+  text-align: right;
+}
+ul.card-info-actions-list li {
+  margin: 0;
+  display: inline-block;
+  text-align: right;
+}
+ul.card-info-actions-list li:not(:last-child) { margin-right: .5em; }
+ul.card-info-actions-list li.learn-more {
+  font-family: $serif;
+  font-style: italic;
+  font-size: calc-em(20px);
+  text-decoration: none;
+}
+ul.card-info-actions-list li.learn-more a {
+  text-decoration: none;
+  border: 0;
+  padding: .2em .4em 0 .4em;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+}
+ul.card-info-actions-list li.learn-more a:after { content: " \02192"; }
+ul.card-info-actions-list li.learn-more a:hover {
+  background: lighten($bluewood, 60%);
+  color: $orange;
+}
+
+ul.data-provider-cards-list .hide-on-serp,
+ul.data-providers-list .hide-on-dp { display: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

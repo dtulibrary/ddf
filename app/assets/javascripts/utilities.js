@@ -16,7 +16,7 @@ $(document).ready(function() {
 // CARDS
 $(document).ready(function() {
   $("button.toggle-visibility").click(function() {
-    $(this).parent().next().slideToggle("medium");
+    $(this).parent().parent().next().slideToggle("medium");
   });
 });
 
