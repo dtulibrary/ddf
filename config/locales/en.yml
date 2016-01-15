@@ -223,6 +223,11 @@ en:
       undetermined: Undetermined
 
   ddf:
+    open_access:
+      form:
+        view_types:
+          relative: All values
+          relative_clear: Exclude unclear values
     news:
       title: "New"
       updates:

@@ -50,9 +50,10 @@ gem 'sitemap_generator'
 group :development do
   #gem 'foreman'
   #gem 'puma'
+  gem 'byebug'
+  gem 'http_logger'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'http_logger'
   gem 'quiet_assets'
 end
 

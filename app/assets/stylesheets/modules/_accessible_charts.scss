@@ -59,3 +59,136 @@ http://alistapart.com/article/accessibledatavisualization
 .chartlist li a:visited { color: #666; }
 .chartlist li a:hover,
 .chartlist li a:visited:hover { color: $orange; }
+
+.chartbox h2 {
+  text-align: center;
+}
+
+    section.chart * {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      color: #333;
+
+    }
+
+
+    section.chart a {
+      color: #2D7BB2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section.chart a:hover {
+      color: #333;
+    }
+    section.chart h1, h2, h3 {
+      clear: both;
+      margin: 0 0 0.6em 0;
+    }
+    section.chart h3 {
+      color: #666;
+    }
+    section.chart {
+      display: block; /* HTML5 shim */
+      width: 20em;
+      margin: 0 auto;
+      padding: 1em 2em;
+    }
+
+    /* stacked-bar CHARTS */
+    .stacked-bar {
+      font-size: 1.5em; /* tweak to zoom in / out */
+      height: 10em;
+      width: 53em;
+    }
+    .stacked-bar ul {
+      list-style-type: none;
+    }
+    .stacked-bar > li {
+      position: relative;
+      display: inline-block;
+      width: 1.5em;
+      height: 8em;
+    }
+    .stacked-bar > li a {
+      display: block;
+      height: 100%;
+    }
+    .stacked-bar > li .label {
+      display: block;
+      position: absolute;
+      bottom: -2.5em; /* vertical offset */
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+
+      font-size: .8em; /* adjust to match default */
+    }
+
+    ul.values {
+      /*
+      Essential to set this element's height to that of the parent — 
+      as its childrens' heights are sized relatively.
+      */
+      height: 100%;
+      z-index: -1;
+    }
+    ul.values li {
+      position: relative;
+      list-style-type: none;
+    }
+
+
+    div.overlay {
+      font-size: 16px;
+      vertical-align: bottom;
+      width: 200px;
+      padding: 5px;
+      position: absolute;
+      bottom: 15px;
+      left: 35%;
+      z-index: 15;
+      border: 3px solid #000;
+      border-radius: 3px;
+      background: rgba(0,0,0, .6);
+      color: #2EFA05;
+      /*color: yellow;*/
+      font-family: 'Monaco';
+      font-size: 0.75em;
+      /*display: none;*/
+
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.7s linear;
+      overflow: visible;
+    }
+
+    ul.values li:hover div.overlay {
+      /*display: block;*/
+
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .stacked-bar .tooltip {
+      line-height: 500px;
+    }
+
+    dt {
+      float: left;
+      clear: left;
+      padding-right: 5px;
+    }
+    dt:after { content: ":"; }
+
+    dd {
+      margin-bottom: .3em;
+      font-size: 1em;
+    }
+
+    .realized { background: #008000; }
+    .unclear { background: #FF0000; }
+    .unused { background: #FFFF00; }

@@ -123,10 +123,10 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     citeproc (1.0.2)
       namae (~> 0.8)
-    closure-compiler (1.1.11)
     citeproc-ruby (1.1.0)
       citeproc (>= 1.0.2, < 2.0)
       csl (~> 1.4)
+    closure-compiler (1.1.11)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -316,9 +316,6 @@ GEM
       railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
@@ -383,3 +380,6 @@ DEPENDENCIES
   therubyracer (= 0.12.1)
   turbolinks
   xray-rails
+
+BUNDLED WITH
+   1.10.6

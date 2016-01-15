@@ -244,6 +244,11 @@ da:
       undetermined: Ubestemt
 
   ddf:
+    open_access:
+      form:
+        view_types:
+          relative: Alle værdier
+          relative_clear: Uden uklar værdier
     news:
       title: Nyt
       updates:

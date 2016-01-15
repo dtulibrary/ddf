@@ -44,5 +44,7 @@ module Ddf
       :host             => '',
       :dedup_source_url => '',
     }
+
+    config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/devel' 
   end
 end

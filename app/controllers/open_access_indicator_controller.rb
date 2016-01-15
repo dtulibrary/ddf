@@ -1,12 +1,26 @@
 class OpenAccessIndicatorController < ApplicationController
 
-  # A proxy method to get around CORS problems
-  def get
-    stats = OpenAccessIndicator.fetch(params[:resource], params[:year])
-    if stats.present?
-      render json: stats
+  def chart
+    @stats = OpenAccessIndicator.fetch(params[:resource], params[:year])
+    if @stats.present?
+      render 'open_access/chart', layout: nil
     else
-      render json: { error: 'Invalid response' }, status: :unprocessable_entity
+      render text: 'error', status: :unprocessable_entity
     end
+  end
+
+  def overview
+    year = params[:year] || '2016'
+    view = params[:view] || 'relative'
+    @overview = {}
+    OpenAccessIndicator::RESOURCES.each do |resource|
+      @overview[resource] = OpenAccessIndicator.fetch(resource, year, view)
+    end
+    render 'open_access/overview'
+  end
+
+  def development
+
+    resource = params[:resource] || 'national'
   end
 end

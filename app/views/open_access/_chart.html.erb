@@ -1,0 +1,31 @@
+<% if stats.present? %>
+<%# view here will be relative or relative_clear, default to relative %>
+<% view ||= 'relative' %>
+  <section class="vertical stacked bar chart">
+    <ul class="stacked-bar">
+      <% stats.each do |unit, data| %>
+      <li>
+      <!-- <a href="http://www.example.com/2007/dec/1/" title="December 1, 2007: 40"> -->
+          <%= content_tag :span, unit, class: 'label' %>
+          <ul class="values">
+            <% data[view].each do |key, value| %>
+              <%= content_tag :li, class: key, style: "height: #{value.round(4)}%"  do %>
+                <div class="overlay">
+                  <h4><%= key.titleize %></h4>
+                  <dl>
+                    <dt>Absolute</dt>
+                    <dd><%= "#{data['absolute'][key]} publications" rescue nil %></dd>
+                    <dt>Relative</dt>
+                    <dd><%= "#{value.round(2)}% of total" %></dd>
+                  </dl>
+                </div>
+              <% end %>
+            <% end %>
+          </ul>
+        </a>
+      </li>
+      <% end %>
+      <li>
+    </ul>
+  </section>
+<% end %>

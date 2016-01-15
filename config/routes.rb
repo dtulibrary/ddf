@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'messages/create'
 
   get 'messages/message_params'
-  get 'oai', to: 'open_access_indicator#get'
+  get 'open_access/overview', to: 'open_access_indicator#overview'
+  get 'open_access/development', to: 'open_access_indicator#development'
 
   scope "(:locale)", :locale => /en|da/ do
 
@@ -34,9 +35,6 @@ Rails.application.routes.draw do
 
   get '/search', to: 'pages#index'
   get '/catalog', to: 'pages#index'
-
-  # OPEN ACCESS
-  get '/open-access' => 'pages#open_access'
 
   # ELITEFORSK AWARD
   get '/eliteforsk-award' => 'pages#eliteforsk_award'
