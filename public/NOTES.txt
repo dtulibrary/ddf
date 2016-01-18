@@ -421,3 +421,26 @@ git reset --hard <tag/branch/commit id>
 Google's Cards:
 https://www.google.com/design/spec/components/cards.html#cards-usage
 http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card
+
+# -*- encoding : utf-8 -*-
+class BookmarksController < CatalogController
+  include Blacklight::Bookmarks
+end
+
+REBASING & MERGING WORKFLOW:
+
+While on some_branch:
+
+git rebase master
+git co master
+open pull request
+pull request ok
+git merge bookmarks
+
+Excellent tutorial on branching, merging, etc in Git:
+https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+
+Adding print functionality to pages:
+http://stackoverflow.com/questions/20101409/how-can-i-insert-a-print-button-that-prints-a-form-in-a-webpage
+https://css-tricks.com/quick-tip-making-a-print-this-page-button/
+

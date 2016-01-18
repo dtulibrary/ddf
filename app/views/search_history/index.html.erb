@@ -2,17 +2,17 @@
 
   <div class="page-leadin page-leadin--search group">
 
-    <div class="col-md-8">
+    <div class="col-md-5 col-md-offset-3">
       <h1 class="search-page-heading"><%=t('blacklight.search_history.title')%></h1>
     </div>
 
     <div class="col-md-4">
-      <%- unless @searches.blank? -%>
+      <%- if has_search_history? -%>
         <nav class="align-right">
           <ul class="history-view__resets">
             <li>
               <i class="glyphicon glyphicon-list"></i>
-              <%= link_back_to_catalog(label: "#{t('blacklight.latest_search')}") %>
+              <%= link_to t('blacklight.latest_search'), latest_search_path %>
             </li>
 
             <li class="destructive">
@@ -25,19 +25,27 @@
     </div>
   </div>
 
-  <%- if @searches.blank? -%>
-    <h3 class="search-help search-help--large no-history"><%= t('blacklight.search_history.no_history') %>.</h3>
-  <%- else -%>
-    <h3 class="search-help search-help--large"><%=t('blacklight.search_history.recent')%>:</h3>
+  <div class="col-md-9 col-md-offset-3">
+    <hr class="offset-3" />
+  </div>
 
-    <ul class="search-queries-list">
-      <%- @searches.each_with_index do |search, index| -%>
-        <%= content_tag :li, :id => "document_#{index + 1}" do %>
-          <!-- TODO: translate search parameter names -->
-          <%= link_to_previous_search(search.query_params) %>
-          <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-        <% end %>
-      <%- end -%>
-    </table>
-  <%- end -%>
+  <div class="col-md-9 col-md-offset-3">
+    <%- unless has_search_history? -%>
+      <h3 class="search-help search-help--large no-history">
+        <%= t('blacklight.search_history.no_history') %>.
+      </h3>
+    <%- else -%>
+      <h3 class="search-help search-help--large"><%=t('blacklight.search_history.recent')%>:</h3>
+
+      <ul class="search-queries-list">
+        <%- previous_searches.each_with_index do |search, index| -%>
+          <%= content_tag :li, :id => "document_#{index + 1}" do %>
+            <%= link_to_previous_search(search.query_params) %>
+            <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+          <% end %>
+        <%- end -%>
+      </ul>
+    <%- end -%>
+  </div>
+
 </div>

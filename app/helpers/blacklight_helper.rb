@@ -1,32 +1,14 @@
 # 23.07.2015: Here or in CatalogHelper?
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
+  include Dtu::DocumentHelper
 
-  # Override blacklight document actions to exclude 'Folder' and 'Bookmarks'
-  # and instead render 'Tagging' functionality
-  # def render_index_doc_actions (document, options={})
-  #   wrapping_class = options.delete(:wrapping_class) || "index-document-functions"
+  def render_bookmark_toggle(document, options={})
+    wrapping_class = options.delete(:wrapping_class) || "bookmark_document"
+    control = render('bookmark_control', :document => document)
+    content_tag("div", control, :class => wrapping_class)
+  end
 
-  #   content = []
-  #   content << render_tag_control(document) if can? :tag, Bookmark
-  #   content_tag("div", content.join("\n").html_safe, :class => wrapping_class) unless content.empty?
-  # end
-
-  # def render_tag_control(document)
-  #   bookmark = current_user.bookmarks.find_by_document_id(document.id)
-  #   tags = bookmark ? bookmark.tags.order(:name) : []
-  #   tags = current_user.tags.order(:name)
-
-  #   return_url = request.url
-  #   if params && params[:return_url]
-  #     return_url = params[:return_url]
-  #   end
-
-  #   render 'tags/tag_control',
-  #   {:document => document, :document_id => document.id, :bookmark => bookmark, :tags => tags, :return_url => return_url}
-  # end
-
-  # TODO
   def render_index_doc_actions(document, options={})
     return_url = params[:url] || request.url
     actions = []
@@ -52,6 +34,22 @@ module BlacklightHelper
     title = document[blacklight_config.show.title_field]
     (title.kind_of? Array) ? title.first : title
   end
+
+  # The below code moved in to make bookmarks functionality work
+
+  def current_bookmarks response = nil
+    response ||= @response
+    @current_bookmarks ||= current_or_guest_user.bookmarks_for_documents(response.documents).to_a
+  end
+
+  ##
+  # Check if the document is in the user's bookmarks
+  def bookmarked? document
+    current_bookmarks.any? { |x| x.document_id == document.id and x.document_type == document.class }
+  end
+
+  alias_method :is_bookmarked?, :bookmarked?
+  deprecation_deprecate :is_bookmarked?
 end
 
 

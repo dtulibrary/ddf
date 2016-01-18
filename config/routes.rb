@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount DtuBlacklightCommon::Engine, at: '/'
+  devise_for :users
   get 'messages/new'
 
   get 'messages/create'
@@ -6,14 +8,20 @@ Rails.application.routes.draw do
   get 'messages/message_params'
 
   scope "(:locale)", :locale => /en|da/ do
-  # root :to => "catalog#index"
-  # blacklight_for :catalog
-  # root to: "catalog#index"
-  blacklight_for :catalog
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+    get '/selected', to: 'bookmarks#index'
+
+    # root :to => "catalog#index"
+    # blacklight_for :catalog
+    # root to: "catalog#index"
+    blacklight_for :catalog
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
+
+    get 'citations/new', as: 'new_citations'
+    get 'citations/preview', as: 'preview_citations'
+    post 'citations/send', to: 'citations#send_citations', as: 'send_citations'
+    # You can have the root of your site routed with "root"
   root 'pages#index'
   # For the visualization dataset. Use another URL (end path) than 'data':
   # get 'pages/data', :defaults => { :format => 'json' }

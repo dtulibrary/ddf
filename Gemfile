@@ -34,7 +34,7 @@ gem 'json', '1.8.2'
 
 gem 'blacklight', '~> 5.7.1'
 gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
-
+gem 'honeypot-captcha'
 gem 'capistrano', '~> 2.0'
 
 gem 'dalli'
@@ -50,6 +50,8 @@ gem 'sitemap_generator'
 group :development do
   #gem 'foreman'
   #gem 'puma'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :assets do
@@ -63,15 +65,24 @@ end
 group :development, :test do
   gem 'spring'
   gem 'metastore-test_data', :github => 'dtulibrary/metastore-test_data'
-  gem 'jettywrapper'
 
   # gem 'web-console', '~> 2.0'
   gem 'xray-rails'
   gem 'pry', '~> 0.10.1'
   gem 'minitest'
-  gem 'capybara'
   gem 'addressable'
+  gem 'byebug'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 gem 'rsolr', '~> 1.0.6'
-gem 'meta-tags'
+gem 'devise'
+gem 'devise-guests', '~> 0.3'
+gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
+gem 'dtu_blacklight_common', '~> 5.7.1.2', github:'dtulibrary/dtu_blacklight_common'

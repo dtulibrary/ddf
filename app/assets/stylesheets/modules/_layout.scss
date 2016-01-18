@@ -171,9 +171,9 @@ ul.data-providers-list {
 
 .page-leadin {
   //background: #eee;
-  margin-bottom: 1.5em;
-  padding-bottom: .7em;
-  border-bottom: 2px dashed #ccc;
+  // margin-bottom: 1.5em;
+  // padding-bottom: .7em;
+  // border-bottom: 2px dashed #ccc;
 }
 
 ul.data-providers-list li {}
@@ -303,6 +303,12 @@ nav.index-view {
   padding: 0 .5em 1em .5em;
 }
 
+nav.index-view {
+  margin-bottom: 1em;
+  border-bottom: 2px solid #eee;
+  padding: 0 .5em 0 .5em;
+}
+
 nav.show-view ul {
   @include respond-to($iphone_landscape) {
     display: block;
@@ -312,7 +318,7 @@ nav.show-view ul {
 }
 
 div#sortAndPerPage {
-  margin: 0;
+  margin: 0 0 1em 0;
   padding: 0;
   border: 0;
 }
@@ -326,8 +332,29 @@ ul[class$="__resets"] li {
   display: inline-block;
   font-size: calc-em(16px);
 }
-ul.index-view__pagination { margin-top: .4em; }
+ul.index-view__pagination {
 
+}
+
+ul.pagination-list {
+  margin: 0;
+  padding: 0;
+  font-size: calc-em(16px);
+}
+ul.pagination-list--index {
+  margin-top: .3em;
+  float: left;
+}
+ul.pagination-list li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: $link-color-auxiliary;
+}
+ul.pagination-list li a {
+  text-decoration: underline;
+  color: $link-color-auxiliary;
+}
 
 ul[class$="__pagination"] li { color: $link-color-auxiliary; }
 ul[class$="__pagination"] li a,
@@ -376,8 +403,6 @@ div.chart {
 body#data-providers { background: $blue-4; }
 
 ul.data-providers-list li { list-style-type: none; }
-
-
 ul.data-providers-list > li {
   background: #fff;
   margin-bottom: 1em;
@@ -399,3 +424,16 @@ section.secondary-data {
   background: lighten($blue-2, 60%);
   padding: 1em;
 }
+
+div.bookmark_document {
+  //background: #eee;
+}
+
+div.bookmark_document input.toggle_bookmark {
+  // display: inline-block;
+  position: relative;
+  vertical-align: 5%;
+  //top: 3px;
+}
+
+div#facets { padding-bottom: 0; }

@@ -55,7 +55,7 @@ module StatService
 
   LABEL_TRANSLATIONS = {
     'format_orig_s' => 'mxd_type_labels.publication_type_labels',
-    'source_ss'     => 'mxd_type_labels.source_labels'
+    'source_ss'     => 'mxd_type_labels.facet_source_labels'
   }
 
   def relative_by(fn, value, facet)

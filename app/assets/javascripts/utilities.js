@@ -43,3 +43,10 @@ $(document).ready(function() {
   });
 
 });
+
+$(document).ready(function() {
+  $('#print-selected').click(function()
+  {
+    window.print();
+  });
+});

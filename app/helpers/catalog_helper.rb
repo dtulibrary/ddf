@@ -14,7 +14,7 @@ module CatalogHelper
   end
 
   def render_source_field_facet value
-    source_label(value)
+    facet_source_label(value)
   end
 
   def render_language_field_facet value
@@ -175,22 +175,52 @@ end
     end
   end
 
+  # Only show the published date as an independent field
+  # if there is no journal title, conference title or publisher -
+  # otherwise it will be appended to these
+  def show_publication_year? _field_config, doc
+    doc['journal_title_ts'].blank? && doc['conf_title_ts'].blank? && doc['publisher_ts'].blank?
+  end
+
   # "backlink_ss": [
   #   "http://aarch.dk/publications/6b563f21-3451-4e71-8ee3-14a21ee341d1"
 
   def render_journal_info args, format = :index
     document = args[:document]
-    field = args[:field]
-    [render_journal_title_info(document, format),
+    [render_first_highlight_field(args),
      render_journal_subtitle_info(document, format),
-     render_journal_pub_date_info(document, format),
+     render_pub_date_info(document, format),
      render_journal_vol_info(document, format),
      render_journal_issue_info(document, format),
      render_journal_page_info(document, format)].join('').html_safe
    end
 
+   def render_conf_title(args)
+    doc = args[:document]
+    if doc['conf_title_ts'].present?
+      title = doc['conf_title_ts'].first
+      # do not append pub date if there is a 4 digit number present in the title
+      if title =~ / \d{4}/
+        title
+      else
+        title + render_pub_date_info(doc, :show)
+      end
+    end
+  end
 
-   def render_journal_page_info document, format
+  def render_publisher(args)
+    doc = args[:document]
+    if doc['publisher_ts'].present?
+      info = render_first_highlight_field(args)
+      # if there is no journal title conference title, append published date here
+      unless doc['journal_title_ts'].present? || doc['conf_title_ts'].present?
+        info += render_pub_date_info(doc, :show)
+      end
+      info
+    end
+  end
+
+  def render_journal_page_info document, format
     if document['journal_page_ssf']
       ", p. #{document['journal_page_ssf'].first}"
     else
@@ -222,7 +252,7 @@ end
     end
   end
 
-  def render_journal_pub_date_info document, format
+  def render_pub_date_info document, format
     if document['pub_date_tis']
       ", #{document['pub_date_tis'].first}"
     else
@@ -263,6 +293,10 @@ end
 
   def source_label source
     t "mxd_type_labels.source_labels.#{source}"
+  end
+
+  def facet_source_label source
+    t "mxd_type_labels.facet_source_labels.#{source}"
   end
  ##
   # Look up the current per page value, or the default if none if set
@@ -353,4 +387,83 @@ end
     # TODO: Exception
   end
 
+  SELECTED_SORT_FIELDS = ['year', 'title']
+
+  def active_sort_fields_selected
+    active_sort_fields.select { |k, v| SELECTED_SORT_FIELDS.include? v.label }
+  end
+
+  # This is a modified version of Blacklight::CatalogHelperBehavior#current_sort_field
+  def current_sort_field_selected
+    sort_field_from_response ||  # as in original
+    sort_field_from_params ||    # sort param specified
+    sort_field_from_list ||      # sort param not specified
+    default_sort_field           # falls back on 'relevance'
+  end
+
+  def sort_field_from_response
+    if @response && @response.sort.present?
+      blacklight_config.sort_fields.values.find { |f| f.sort.eql? @response.sort }
+    end
+  end
+
+  def sort_field_from_params
+    blacklight_config.sort_fields[params[:sort]]
+  end
+
+  def sort_field_from_list
+    active_sort_fields_selected.shift[1]
+  end
+
+  META_FIELDS = {
+    title_ts:         'title',
+    author_ts:        'author',
+    pub_date_tis:     'publication_date',
+    publisher_ts:     'publisher',
+    journal_title_ts: 'journal_title',
+    language_ss:      'language',
+    conf_title_ts:    'conference_title',
+    isbn_ss:          'isbn',
+    doi_ss:           'doi'
+  }
+
+  JOINED_META_FIELDS = { keywords_ts: 'citation_keywords' }
+
+  def citation_tags_for(document)
+    unless document.nil?
+      taglist = []
+      taglist << "\n"
+      META_FIELDS.each do |k, v|
+        if document[k]
+          if document[k].length.eql?(1)
+            taglist << atomic_citation_tag_for(v, document[k])
+          else
+            taglist << split_citation_tags_for(v, document[k])
+          end
+        end
+      end
+      JOINED_META_FIELDS.each do |k, v|
+        if document[k]
+          taglist << joined_citation_tags_for(v, document[k])
+        end
+      end
+      taglist.join("\n").html_safe
+    end
+  end
+
+  def atomic_citation_tag_for(field_name, field_value)
+    citation_tag(field_name, field_value.join())
+  end
+
+  def split_citation_tags_for(field_name, field_value)
+    field_value.map { |str| citation_tag(field_name, str) }.join("\n").html_safe
+  end
+
+  def joined_citation_tags_for(field_name, field_value)
+    citation_tag(field_name, field_value.join("; "))
+  end
+
+  def citation_tag(tag, content)
+    "<meta name=\"citation_#{tag}\" content=\"#{content}\" />".html_safe
+  end
 end

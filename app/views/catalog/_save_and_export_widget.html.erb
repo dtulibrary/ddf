@@ -1,5 +1,9 @@
 <div id="save_and_export-dropdown" class="dropdown hidden-phone">
-  <%= link_to(('<span class="glyphicon glyphicon-export"></span>' + t('ddf.tools.save_and_export') + ' <span class="caret"></span>').html_safe, "#", :class => 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown') %>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-export"></span>
+    <%= link_to(t('ddf.tools.save_and_export'), "#") %>
+    <span class="glyphicon glyphicon-chevron-down"></span>
+  </button>
 
   <ul class="dropdown-menu">
     <li role="presentation">
@@ -13,5 +17,12 @@
     <li role="presentation">
       <%= link_to(content_tag('i', '', :class => 'icon-file-text-o') + t('ddf.tools.bibtex'), url_for(params_for_search(:format => :bib)), :role => 'menuitem') %>
     </li>
+
+    <li role="presentation">
+      <%= link_to(t('ddf.tools.email_resultset'), new_citations_path, :role => 'menuitem',
+                  data: { ajax_modal: 'trigger' }) %>
+    </li>
   </ul>
 </div>
+
+

@@ -18,14 +18,15 @@
   <%# #render checks if total_pages > 1, so we can't put our fallback
   in here .. -%>
   <%= paginator.render do -%>
-    <ul class="index-view__pagination">
+    <ul class="pagination-list pagination-list--index">
       <li><%= prev_page_tag %> |</li>
       <li><%= page_entries_info %> |</li>
       <li><%= next_page_tag %></li>
     </ul>
   <% end -%>
 <% else -%>
-    <ul class="index-view__pagination">
+    <ul class="pagination-list pagination-list--index">
       <li><%= page_entries_info %></li>
     </ul>
 <% end -%>
+

@@ -54,6 +54,7 @@ a:active { color: red; }
 nav.upper { font-size: .9em; }
 
 h1.logo {
+  display: inline-block;
   font-family: $headline;
   font-size: calc-em(23px);
   font-weight: 500;
@@ -266,7 +267,7 @@ div.applied-filters-container {
 h3.search-help {
   font-size: calc-em(16px);
   font-weight: bold;
-  margin: 1em 0 .5em 0;
+  margin: 0 0 1em 0;
   font-style: italic;
   color: $blue-2;
 }
@@ -361,6 +362,7 @@ ul.search-extras-list {
   }
 }
 ul.search-extras-list li { display: inline-block; }
+ul.search-extras-list li:not(:last-child) { margin-right: 1em; }
 
 a.btn-danger:link,
 a.btn-danger:hover,
@@ -370,33 +372,61 @@ a.btn-danger:active { color: #fff; }
 ul.search-widgets-list {
   margin: 0;
   display: inline-block;
-  @include respond-to($screen-lg-min) {
-    float: none;
+  float: right;
+  @include respond-to($iphone_landscape) {
     margin-top: 1em;
+    float: none;
+    text-align: center;
   }
 }
-ul.search-widgets-list > li { display: inline-block; }
+ul.search-widgets-list > li {
+  display: inline-block;
+  @include respond-to($iphone_landscape) {
+    text-align: center;
+    // display: block;
+    // margin-top: .125em;
+  }
+
+}
+
+ul.search-widgets-list > li a {
+  @include respond-to($ipad_landscape) {
+    display: none;
+    // margin-top: .125em;
+  }
+
+}
+
+
+
+
 ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
 ul.search-widgets-list ul.dropdown-menu li { display: block; }
 
-ul.search-widgets-list > li a { color: $link-color; }
+ul.search-widgets-list > li a {
+  color: $link-color;
+}
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li button,
-ul.search-widgets-list > li button:hover { border: 1px solid $blue-3; }
+ul.search-widgets-list > li button:hover {
+  border: 0;
+}
 
 ul.search-widgets-list > li a.btn,
 ul.search-widgets-list > li a.btn:visited,
 ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li a.btn:visited:hover,
-ul.search-widgets-list > li a.btn:active{ color: $link-color; }
+ul.search-widgets-list > li a.btn:active {
+  color: $link-color;
+}
 
 ul.document-actions-list {
   display: inline-block;
   margin: 0;
   padding: .2em 0 .2em 0;
   font-size: calc-em(15px);
-  background: $blue-4;
+  background: #eceff1;
   text-align: center;
   border-radius: 3px;
 }
@@ -408,7 +438,7 @@ ul.document-actions-list li {
 ul.document-actions-list > li:first-child { padding-left: .7em; }
 ul.document-actions-list > li:last-child { padding-right: .7em; }
 
-ul.document-actions-list li a { color: $blue-2; }
+ul.document-actions-list li a { color: $blue-1; }
 
 ul.document-actions-list li a:hover { color: $orange; }
 ul.document-actions-list li a:active { color: $orange; }
@@ -440,7 +470,7 @@ div[id$="-dropdown"] ul.dropdown-menu > li > a {
   padding: .3em .5em .3em .9em;
 }
 div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
-div[id$="-dropdown"] span.glyphicon { padding-right: .4em; }
+//div[id$="-dropdown"] span.glyphicon { padding-right: .4em; }
 
 table#search-syntax tr.info a { text-decoration: underline; }
 
@@ -492,7 +522,7 @@ ul[class$="__resets"] li i {
 li.destructive i { color: $action-red; }
 
 ul.applied-filters-list {
-  margin: 1em 0 .5em .2em;
+  margin: 1em 0 0 .2em;
   padding: 0;
 }
 
@@ -525,11 +555,11 @@ li.applied-filter a.remove:hover {
 
 h1.search-page-heading {
   font-family: $headline;
-  font-weight: 300;
-  font-size: calc-em(30px);
-  line-height: calc-em(30px);
-  margin: 0;
-  margin-left: -15px;
+  font-weight: 500;
+  font-size: calc-em(23px);
+  line-height: calc-em(35px);
+  margin: .25em 0 0 0;
+  color: $blue-1;
 }
 
 div.page-leadin--search { margin-top: -.75em; }
@@ -599,7 +629,6 @@ ul.sitemap a:hover {
   border-bottom: 1px dashed $orange;
   text-decoration: none;
 }
-li.sitemap__section > a { font-weight: bold; }
 
 li.sitemap__section {
   display: inline-block;
@@ -608,9 +637,15 @@ li.sitemap__section {
   @include respond-to($ipad_portrait) { display: block; }
 }
 
+li.sitemap__section > a { font-weight: bold; }
+li.sitemap__section a > i.glyphicon {
+  display: inline-block;
+  padding-right: .5em;
+}
+
 li.sitemap__section > ul {
   margin-top: .1em;
-  margin-left: 1em;
+  margin-left: 1.5em;
   margin-bottom: .7em;
 }
 
@@ -662,7 +697,7 @@ ul.icon-labels > li > a { color: $link-color; }
 ul.icon-labels > li > i {
   position: relative;
   font-size: calc-em(25px);
-  top: 5px;
+  top: 4px;
   padding-left: 2px;
   color: $link-color-auxiliary;
 }
@@ -964,6 +999,8 @@ span.beta {
 // TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
 button.toggle-visibility span.h { display: none; }
 button.toggle-visibility span.s { display: block; }
+button.toggle-rest span.h { display: none; }
+button.toggle-rest span.s { display: block; }
 button.show span.h { display: block; }
 button.show span.s { display: none; }
 
@@ -996,6 +1033,12 @@ dd.icon-label a {}
 dd.icon-label--doi {
   position: relative;
   left: -4px;
+}
+
+img.sidepanel-icon {
+  display: inline-block;
+  font-size: calc-em(23px);
+  vertical-align: text-bottom;
 }
 
 a.select-document {
@@ -1050,11 +1093,7 @@ ul.selected-documents__actions-list li a:hover {
 
 ul.selected-documents__actions-list i.glyphicon-remove-circle { color: $action-red; }
 
-ol.selected-documents__list li {
-  display: table;
-
-  //background: #eee;
-}
+ol.selected-documents__list li { display: table; }
 
 ol.selected-documents__list li a {
   display: table-cell;
@@ -1296,18 +1335,33 @@ ul.card-info-actions-list li.learn-more a:hover {
 ul.data-provider-cards-list .hide-on-serp,
 ul.data-providers-list .hide-on-dp { display: none; }
 
+ul.search-widgets-list .dropdown-toggle .glyphicon {
+  vertical-align: -4%;
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(1) {
+  font-size: calc-em(18px);
+    @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(2) {
+  font-size: calc-em(13px);
+    @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
 
+ul.search-widgets-list .btn-default:hover { background: lighten(#eceff1, 3%); }
+ul.search-widgets-list .btn-default:active,
+.open > .btn-default.dropdown-toggle:focus,
+.open > .btn-default.dropdown-toggle:hover,
+.open > button.btn-default.dropdown-toggle { background: #eceff1; }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+hr.offset-3 {
+   // height: .3em;
+   margin-top: 1em;
+   margin-bottom: 1em;
+   border-style: solid;
+   border-color: #eee;
+   border-width: 2px 0 0 0;
+}

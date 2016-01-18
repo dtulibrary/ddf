@@ -21,6 +21,8 @@ vendor/bundle
 # Ignore index test files and generated config
 /jetty/solr/metastore/data
 /jetty/solr/toc/data
+/solr/
+
 
 /config/*.local.yml
 /config/*.local.rb
@@ -43,5 +45,7 @@ public/assets
 
 # Ignore Aptana/Eclipse project files
 .project
-
+# Ignore RubyMine files
+.idea
+.agignore
 /TAGS
