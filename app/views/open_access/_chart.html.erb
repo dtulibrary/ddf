@@ -5,9 +5,7 @@
     <ul class="stacked-bar">
       <% stats[resource].each do |unit, data| %>
       <li>
-          <%= content_tag :span, class: 'label'  do %>
-            <%= link_to(unit, open_access_development_path(resource: resource, key: unit)) %>
-          <% end %>
+          <%= content_tag :span, t("ddf.open_access.labels.#{unit}"), class: 'label' %>
           <ul class="values">
             <% data[view].each do |status, value| %>
               <%= content_tag :li, class: status, style: "height: #{value.round(4)}%"  do %>
@@ -23,7 +21,9 @@
               <% end %>
             <% end %>
           </ul>
-        </a>
+        <%= link_to open_access_development_path(resource: resource, key: unit) do %>
+          <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+        <% end %>
       </li>
       <% end %>
       <li>

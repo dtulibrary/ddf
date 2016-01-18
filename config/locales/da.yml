@@ -246,9 +246,30 @@ da:
   ddf:
     open_access:
       form:
+        labels:
+          view_type: Open Access Potential
+          year: Indikator år
         view_types:
-          relative: Alle værdier
-          relative_clear: Uden uklar værdier
+          relative: Realized, Unused and Unclear
+          relative_clear: Realized and Unclear
+      labels:
+        national: I alt
+        hum: Humaniora
+        soc: Samfundsvidenskab
+        sci: Teknik/naturvidenskab
+        med: Sundhedsvidenskab'
+        sdu: Syddansk Universitet (SDU)
+        au: Aarhus Universitet (AU)
+        ruc: Roskilde Universitet (RUC)
+        aau: Aalborg Universitet (AAU)
+        itu: IT Universitet (ITU)
+        dtu: Danmarks Tekniske Universitet (DTU)
+        ku: Københavns Universitet (KU)
+        cbs: Copenhagen Business School (CBS)
+      headers:
+        national: National
+        research_area: Efter forskningsområde
+        universities: Efter universitet
     news:
       title: Nyt
       updates:

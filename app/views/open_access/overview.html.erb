@@ -3,10 +3,10 @@
 <h1>Open Access Overview <%= year %></h1>
 <div class="row">
 <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'pull-right') do  %>
-  <%= label_tag :view %>
+  <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
   <%- view_types = ['relative', 'relative_clear'].collect { |tp| [ I18n.t("ddf.open_access.form.view_types.#{tp}"), tp ] } %>
   <%= select_tag(:view, options_for_select(view_types, view)) %>
-  <%= label_tag :year %>
+  <%= label_tag :year, t('ddf.open_access.form.labels.year') %>
   <%= select_tag(:year, options_for_select(OpenAccessIndicator::YEARS, year)) %>
   <%= submit_tag 'View' %>
 <% end %>
@@ -20,16 +20,16 @@
     <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }, class: 'pull-right') %>
   </div>
   <div class="col-md-2 chartbox">
-    <h2>National</h2>
+    <h2><%= t('ddf.open_access.headers.national') %></h2>
     <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
   </div>
   <div class="col-md-4 chartbox">
-    <h2>Research Area</h2>
+    <h2><%= t('ddf.open_access.headers.research_area') %></h2>
     <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
     </div>
   </div>
   <div class="col-md-4 chartbox">
-    <h2>Universities</h2>
+    <h2><%= t('ddf.open_access.headers.universities') %></h2>
     <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
     </div>
   </div>
