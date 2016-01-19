@@ -46,6 +46,8 @@ module Ddf
     }
 
     config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/test'
+    config.x.open_access.status_api = 'http://oa-indicator.cvt.dk/oa-indicator/ws/status'
+    config.x.open_access.api_profile = 'test'
     config.x.open_access.years = [ 2013, 2014 ]
   end
 end

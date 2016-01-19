@@ -18,35 +18,99 @@ class OpenAccessIndicator
   #
   # OpenAccessIndicator.fetch('national', '2015', 'relative_clear')
   def self.fetch(resource, year, view = 'relative')
-    url = self.url(year, resource)
-    Rails.logger.info "OpenAccessIndicator: Fetching #{url}"
-    response = Net::HTTP.get_response(URI(url)) rescue nil
-    if Response.ok? response
-      Response.values(response.body, resource, view)
-    else
-      Rails.logger.error "OpenAccessIndicator: Error #{Response.error_message(response.body)}"
+    response = self.get_resource(year, resource)
+    if response.nil?
       nil
+    else
+      Response.values(response, resource, view)
     end
   end
 
   def self.timeline(resource, key)
     timeline = { key => {} }
     YEARS.each do |year|
-      response = Net::HTTP.get_response(URI(self.url(year, resource))) rescue nil
-      if Response.ok? response
-        timeline[key][year.to_s] = Response.timeline_values(response.body, resource, key)
+      response = self.get_resource(year, resource)
+      unless response.nil?
+        timeline[key][year.to_s] = Response.timeline_values(response, resource, key)
       end
     end
     timeline
   end
 
-  def self.url(year, resource)
-    Rails.configuration.x.open_access.url % { year: year, resource: resource, format: 'json' }
+  def self.resource_url(year, resource)
+    URI(Rails.configuration.x.open_access.url % { year: year, resource: resource, format: 'json' })
   end
 
+  def self.status_url
+    URI(Rails.configuration.x.open_access.status_api)
+  end
+
+  # Check to see if we have a cached copy before calling Open Access API
+  def self.get_resource(year, resource)
+    response = self.get(self.resource_url(year, resource))
+    # if LocalCache.update_needed?
+    #   LocalCache.write(year, resor)
+    # else
+    #   # LocalCache.read_latest(year)
+    # end
+  end
+
+  # Generic handling of HTTP requests in this context
+  def self.get(url)
+    Rails.logger.info "OpenAccessIndicator: Getting #{url.to_s}"
+    response = Net::HTTP.get_response(url) rescue nil
+    if response.nil? || !(response.is_a? Net::HTTPSuccess)
+      nil
+    elsif !Response.ok?(response.body)
+      Rails.logger.error "OpenAccessIndicator: Error #{Response.error_message(response)}"
+      nil
+    else
+      response.body
+    end
+  end
+
+  class LocalCache
+    def self.update_needed?
+      status = OpenAccessIndicator.get(OpenAccessIndicator.status_url)
+      return if status.nil?
+      values = StatusResponse.values(status, Rails.configuration.x.open_access.api_profile)
+      values.each do |year, tstamp|
+        path = self.path(year, tstamp)
+        return true unless File.exist? path
+      end
+      false
+    end
+
+    def self.read_latest(year)
+      latest = Dir.entries(self.path(year))
+        .reject { |x| x.include? '.' }
+        .sort
+        .last
+      File.open(self.path(year, latest)).read
+    end
+
+    def self.path(*args)
+      Rails.root.join('tmp', 'open_access', *args)
+    end
+  end
+  # For handling the status API
+  # We use XML parsing here because the JSON API is not well structured
+  class StatusResponse
+
+    def self.values(response_body, profile)
+      values = {}
+      nok = Nokogiri::XML(response_body)
+      years = nok.xpath('//year').each do |node|
+        values[node['val']] = node.xpath("types/#{profile}/runs/run/end").text
+      end
+      values
+    end
+  end
+
+  # Handles parsing of API responses
   class Response
-    def self.ok?(response_obj)
-      response_obj.is_a?(Net::HTTPSuccess) && self.error_message(response_obj.body).nil?
+    def self.ok?(response)
+      self.error_message(response).nil?
     end
 
     def self.error_message(response_body)
