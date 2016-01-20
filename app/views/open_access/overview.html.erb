@@ -1,65 +1,70 @@
-<div class="container">
-  <% year = params[:year] || OpenAccessIndicator::YEARS.first %>
-  <% view = params[:view] || 'relative' %>
+<article role="main">
+  <div class="container">
 
+    <% year = params[:year] || OpenAccessIndicator::YEARS.first %>
+    <% view = params[:view] || 'relative' %>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="oa-overview-heading">Open Access Overview <%= year %></h1>
-      <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
-        <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered') do  %>
-          <ul class="oa-filtering-inputs">
-            <li>
-              <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
-              <%- view_types = ['relative', 'relative_clear'].collect { |tp| [ I18n.t("ddf.open_access.form.view_types.#{tp}"), tp ] } %>
-              <%= select_tag(:view, options_for_select(view_types, view)) %>
-            </li>
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="oa-overview-heading">Open Access Overview <%= year %></h1>
+        <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
+          <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered') do  %>
+            <ul class="oa-filtering-inputs">
+              <li>
+                <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
+                <%- view_types = ['relative', 'relative_clear'].collect { |tp| [ I18n.t("ddf.open_access.form.view_types.#{tp}"), tp ] } %>
+                <%= select_tag(:view, options_for_select(view_types, view)) %>
+              </li>
 
-            <li>
-              <%= label_tag :year, t('ddf.open_access.form.labels.year') %>
-              <%= select_tag(:year, options_for_select(OpenAccessIndicator::YEARS, year)) %>
-            </li>
+              <li>
+                <%= label_tag :year, t('ddf.open_access.form.labels.year') %>
+                <%= select_tag(:year, options_for_select(OpenAccessIndicator::YEARS, year)) %>
+              </li>
 
-            <li>
-              <%= button_tag(class: 'view-oa', type: "submit") do %>
-                <i class="glyphicon glyphicon-refresh"></i> View
-              <% end %>
-            </li>
-          </ul>
+              <li>
+                <%= button_tag(class: 'view-oa', type: "submit") do %>
+                  <i class="glyphicon glyphicon-refresh"></i> View
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+       </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <% if @overview.values.include? nil %>
+          <div class="alert alert-danger">
+            Error — some data missing for this year. Contact your administrator for assistance.
+          </div>
+        <% else %>
+          <div class="oa-actions-panel">
+            <ul class="dataset-actions-list">
+              <li>
+                <i class="glyphicon glyphicon-download-alt"></i>
+                <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }) %>
+              </li>
+            </ul>
+          </div>
+
+          <div class="chartbox">
+            <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
+          </div>
+
+          <div class="chartbox">
+            <h2 class="chart-heading"><%= t('ddf.open_access.headers.research_area') %></h2>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
+          </div>
+
+          <div class="chartbox">
+            <h2 class="chart-heading"><%= t('ddf.open_access.headers.universities') %></h2>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
+          </div>
         <% end %>
-     </div>
+      </div>
     </div>
+
   </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <% if @overview.values.include? nil %>
-        <div class="alert alert-danger">
-          Error — some data missing for this year. Contact your administrator for assistance.
-        </div>
-      <% else %>
-
-        <p class="download-dataset">
-          <i class="glyphicon glyphicon-download-alt"></i>
-          <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }) %>
-        </p>
-
-        <div class="chartbox">
-          <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
-          <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
-        </div>
-
-        <div class="chartbox">
-          <h2 class="chart-heading"><%= t('ddf.open_access.headers.research_area') %></h2>
-          <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
-        </div>
-
-        <div class="chartbox">
-          <h2 class="chart-heading"><%= t('ddf.open_access.headers.universities') %></h2>
-          <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-</div>
+</article>
