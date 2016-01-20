@@ -19,11 +19,6 @@ class PagesController < ApplicationController
     render :layout => 'search'
   end
 
-  # OPEN ACCESS
-  def open_access
-    render :layout => 'open_access'
-  end
-
   # ELITEFORSK AWARD
   def eliteforsk_award
     render :layout => 'eliteforsk_award'

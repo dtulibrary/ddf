@@ -68,4 +68,12 @@ module ApplicationHelper
   def searches_from_history
     session[:history].blank? ? Search.none : Search.where(:id => session[:history]).order("updated_at desc")
   end
+
+  def render_submenu
+    if controller_name == 'open_access_indicator'
+      render partial: 'shared/open_access'
+    else
+      render partial: 'shared/search'
+    end
+  end
 end

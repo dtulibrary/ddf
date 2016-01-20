@@ -720,7 +720,7 @@ ul.icon-labels__topnav>li > i {
   color: $blue-3;
 }
 
-ul.site-sections-list {
+ul.site-sections-list, ul.open-access-menu {
   float: right;
   margin: 0;
   @include respond-to($ipad_portrait) {
@@ -732,7 +732,7 @@ ul.site-sections-list {
   }
 }
 
-ul.site-sections-list li {
+ul.site-sections-list li, ul.open-access-menu li {
   display: inline-block;
   margin: 0;
   vertical-align: text-top; //WOW!!!
@@ -759,6 +759,24 @@ ul.site-sections-list li a {
 ul.site-sections-list li:hover a {
   color: #fff;
   text-decoration: none;
+}
+ul.open-access-menu li a {
+  padding-top: 0.5em;
+  color: $blue-1;
+  font-weight: 550;
+}
+
+ul.open-access-menu {
+  margin-top: 23px;
+}
+
+ul.open-access-menu li:hover a {
+  text-decoration: none;
+  color: $blue-2;
+}
+
+ul.open-access-menu li:not(:last-child) {
+  margin-right: 1.5em;
 }
 
 ul.site-sections-list li i {
@@ -1135,4 +1153,3 @@ hr.offset-3 {
    border-color: #eee;
    border-width: 2px 0 0 0;
 }
-
