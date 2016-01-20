@@ -25,4 +25,14 @@ module PagesHelper
     parenthesized = parenthesize_as_pct(facet[:pct])
     "<span class='pct' style='width: #{pct}'>#{parenthesized}</span>".html_safe
   end
+
+  # Return the translated values for the open access resources
+  def translate_oa_resources(resources)
+    resources.collect do |k,v|
+      [
+        t("ddf.open_access.headers.#{k}"),
+        v.collect { |opt| [t("ddf.open_access.labels.#{opt}"), opt] }
+      ]
+    end
+  end
 end

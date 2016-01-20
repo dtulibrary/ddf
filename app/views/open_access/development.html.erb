@@ -1,11 +1,41 @@
 <% key = @timeline.keys.first %>
-<h1><%= "Development in #{key.titleize} for #{OpenAccessIndicator::YEARS.last} til #{OpenAccessIndicator::YEARS.first}"  %></h1>
-<ul class="timeline">
-  <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
-    <% data = @timeline[key][year.to_s] %>
-    <li>
-      <%= content_tag :span, year, class: 'year_label' %>
-      <%= content_tag :span, data['relative'], class: 'count', style: "height: #{data['relative']}%" %>
-    </li>
-  <% end %>
-</ul>
+<article role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="oa-overview-heading">
+          <%= "Development for #{t('ddf.open_access.labels.' + key)} from #{OpenAccessIndicator::YEARS.last} to #{OpenAccessIndicator::YEARS.first}"  %>
+        </h1>
+        <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
+          <%= form_tag({controller: 'open_access_indicator', action: 'development'}, method: 'get', class: 'centered') do %>
+            <ul class="oa-filtering-inputs">
+              <li>
+                <%= label_tag :key,  t('ddf.open_access.form.labels.resource')  %>
+                <%= select_tag(:key, grouped_options_for_select(translate_oa_resources(OpenAccessIndicator::RESOURCES), key)) %>
+              </li>
+              <li>
+                <%= button_tag(class: 'view-oa', type: "submit") do %>
+                  <i class="glyphicon glyphicon-refresh"></i> View
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="timeline">
+          <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
+          <% data = @timeline[key][year.to_s] %>
+            <li>
+              <%= content_tag :span, year, class: 'year_label' %>
+              <%= content_tag :span, data['relative'], class: 'count', style: "height: #{data['relative']}%" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>

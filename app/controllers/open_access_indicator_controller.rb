@@ -13,14 +13,15 @@ class OpenAccessIndicatorController < ApplicationController
     year = params[:year] || OpenAccessIndicator::YEARS.first
     view = params[:view] || 'relative'
     @overview = {}
-    OpenAccessIndicator::RESOURCES.each do |resource|
+    OpenAccessIndicator::RESOURCES.keys.each do |resource|
       @overview[resource] = OpenAccessIndicator.fetch(resource, year, view)
     end
   end
 
   def development
-    resource = params[:resource] || 'national'
     key = params[:key] || 'national'
+    # get the resource that corresponds to this key
+    resource = OpenAccessIndicator::RESOURCES.select {|k,v| key.in? v}.keys.first
     @timeline = OpenAccessIndicator.timeline(resource, key)
   end
 

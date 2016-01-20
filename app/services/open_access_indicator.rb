@@ -1,8 +1,16 @@
 # Connects to OA Indicator API and transforms response
 class OpenAccessIndicator
 
-  RESOURCES = ['national'.freeze, 'universities'.freeze, 'research_area'.freeze]
-  CLASSIFICATIONS = ['realized'.freeze, 'unused'.freeze, 'unclear'.freeze]
+  RESOURCES = {
+    'national' => ['national'.freeze],
+    'research_area' => ['hum'.freeze, 'soc'.freeze, 'sci'.freeze, 'med'.freeze ],
+    'universities' => [
+      'sdu'.freeze, 'au'.freeze, 'ruc'.freeze, 'aau'.freeze,
+      'itu'.freeze, 'dtu'.freeze, 'ku'.freeze, 'cbs'.freeze
+    ]
+  }
+
+  CLASSIFICATIONS = ['realized'.freeze, 'unclear'.freeze, 'unused'.freeze]
   # Get vals from config - ensure that they are ordered by latest first
   YEARS = Rails.configuration.x.open_access.years.sort.reverse
 
@@ -30,7 +38,7 @@ class OpenAccessIndicator
     timeline = { key => {} }
     YEARS.each do |year|
       response = self.get_resource(year, resource)
-      unless response.nil?
+      if response.present?
         timeline[key][year.to_s] = Response.timeline_values(response, resource, key)
       end
     end

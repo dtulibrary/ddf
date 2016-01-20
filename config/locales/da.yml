@@ -249,6 +249,7 @@ da:
         labels:
           view_type: Open Access Potential
           year: Indikator år
+          resource: Segment
         view_types:
           relative: Realized, Unused and Unclear
           relative_clear: Realized and Unclear
