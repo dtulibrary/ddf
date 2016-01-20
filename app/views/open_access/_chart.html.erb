@@ -1,32 +1,45 @@
 <% if stats.present? %>
-<%# view here will be relative or relative_clear, default to relative %>
-<% view ||= 'relative' %>
+  <%# view here will be relative or relative_clear, default to relative %>
+  <% view ||= 'relative' %>
   <section class="vertical stacked bar chart">
+
     <ul class="stacked-bar">
       <% stats[resource].each do |unit, data| %>
-      <li>
-          <%= content_tag :span, t("ddf.open_access.labels.#{unit}"), class: 'label' %>
-          <ul class="values">
-            <% data[view].each do |status, value| %>
-              <%= content_tag :li, class: status, style: "height: #{value.round(4)}%"  do %>
-                <div class="overlay">
-                  <h4><%= status.titleize %></h4>
-                  <dl>
-                    <dt>Absolute</dt>
-                    <dd><%= "#{data['absolute'][status]} publications" rescue nil %></dd>
-                    <dt>Relative</dt>
-                    <dd><%= "#{value.round(2)}% of total" %></dd>
-                  </dl>
-                </div>
-              <% end %>
-            <% end %>
-          </ul>
-        <%= link_to open_access_development_path(resource: resource, key: unit) do %>
-          <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
-        <% end %>
-      </li>
+        <li>
+          <div class="row">
+            <div class="col-md-5">
+              <%= content_tag :h3, t("ddf.open_access.labels.#{unit}"), class: 'oa-label' %>
+            </div>
+            <div class="col-md-7">
+              <div class="col-xs-11">
+                <ul class="values block">
+
+                  <% data[view].each do |status, value| %>
+                    <%= content_tag :li, class: status, style: "width: #{value.round(4)}%"  do %>
+                      <div class="overlay">
+                        <h4><%= status.titleize %></h4>
+                        <dl>
+                          <dt>Absolute</dt>
+                          <dd><%= "#{data['absolute'][status]} publications" rescue nil %></dd>
+                          <dt>Relative</dt>
+                          <dd><%= "#{value.round(2)}% of total" %></dd>
+                        </dl>
+                      </div>
+                    <% end %>
+                  <% end %>
+
+                </ul>
+              </div>
+
+              <div class="col-xs-1">
+                <%= link_to(open_access_development_path(resource: resource, key: unit), class: "development") do %>
+                  <span class="fa fa-line-chart" aria-hidden="true"></span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </li>
       <% end %>
-      <li>
-    </ul>
-  </section>
-<% end %>
+
+    </section>
+  <% end %>

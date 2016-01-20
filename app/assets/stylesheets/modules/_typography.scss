@@ -1004,7 +1004,7 @@ em.news-tag {
   font-weight: 700;
 }
 
-h1.chart-heading {
+.chart-heading {
   text-align: center;
   text-transform: uppercase;
   font-family: $serif;
@@ -1014,7 +1014,7 @@ h1.chart-heading {
   color: $blue-2;
   margin: 1em 0 1.5em 0;
 }
-h1.chart-heading em {
+.chart-heading em {
  text-transform: none;
  letter-spacing: .05em;
 }
@@ -1128,13 +1128,13 @@ ul.search-widgets-list .dropdown-toggle .glyphicon {
 }
 ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(1) {
   font-size: calc-em(18px);
-    @include respond-to($iphone_landscape) {
+  @include respond-to($iphone_landscape) {
     font-size: calc-em(20px);
   }
 }
 ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(2) {
   font-size: calc-em(13px);
-    @include respond-to($iphone_landscape) {
+  @include respond-to($iphone_landscape) {
     font-size: calc-em(20px);
   }
 }
@@ -1152,4 +1152,68 @@ hr.offset-3 {
    border-style: solid;
    border-color: #eee;
    border-width: 2px 0 0 0;
+ }
+
+ h1.oa-overview-heading {
+  font-family: $serif;
+  text-align: center;
+  font-style: italic;
+  margin: .25em 0 .7em 0;
+  color: $blue-1;
+}
+
+form.centered { text-align: center; }
+
+div.oa-inputs-wrapper {
+  text-align: center;
+  // margin: 0 0 1em 0;
+  margin-bottom: 3em;
+}
+div.oa-inputs-wrapper > form {
+  display: inline-block;
+  background: lighten($bluewood, 65%);
+  padding: .5em 1em;
+  border-radius: 5px;
+}
+
+ul.oa-filtering-inputs {
+  margin: 0;
+  padding: 0;
+}
+
+ul.oa-filtering-inputs li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  @include respond-to($ipad_portrait) { display: block; }
+  @include respond-to($iphone_landscape) {}
+}
+
+ul.oa-filtering-inputs li:not(:last-child) {
+  margin-right: 1.5em;
+   @include respond-to($ipad_portrait) { margin-bottom: .5em; }
+}
+
+ul.dataset-actions-list {
+  text-align: right;
+  margin: 0;
+  margin-right: 1em;
+  font-size: .9em;
+}
+ul.dataset-actions-list li {
+  display: inline-block;
+}
+
+button.view-oa {
+  background: $blue-1;
+  color: #fff;
+  padding: 2px 7px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+button.view-oa:hover {
+  background: $orange;
+  color: #fff;
 }

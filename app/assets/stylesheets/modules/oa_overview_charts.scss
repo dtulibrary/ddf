@@ -1,0 +1,96 @@
+
+ul.stacked-bar { }
+ul.stacked-bar > li {
+  list-style-type: none;
+}
+
+ul.values {}
+ul.values li {
+  float: left;
+  position: relative;
+  // list-style-type: none;
+}
+
+h3.oa-label {
+  font-size: calc-em(17px);
+  font-weight: 500;
+  // background: #ccc;
+  line-height: 20px;
+  margin: .25em 0 .5em 0;
+  padding: 0;
+  // vertical-align: top;
+  // use margins instead, and line-height
+}
+
+h3.oa-label--total { font-weight: 700; }
+
+a.development {
+  // display: block;
+  font-size: 1.2em;
+  vertical-align: top;
+  color: $link-color-auxiliary;
+  border-radius: 3px;
+  position: relative;
+  top: -1.5px;
+}
+a.development > span.fa {
+  vertical-align: 10%;
+  padding: 0 7px;
+}
+a.development:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+div.overlay {
+  font-size: 16px;
+  vertical-align: bottom;
+  width: 200px;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+  left: 35%;
+  z-index: 15;
+  border: 3px solid #000;
+  border-radius: 3px;
+  background: rgba(0,0,0, .6);
+  color: #2EFA05;
+  /*color: yellow;*/
+  font-family: 'Monaco';
+  font-size: 0.75em;
+  /*display: none;*/
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.7s linear;
+  overflow: visible;
+}
+
+ul.values li:hover div.overlay {
+  /*display: block;*/
+
+  visibility: visible;
+  opacity: 1;
+}
+
+ul.stacked-bar .tooltip {
+  line-height: 500px;
+}
+
+dt {
+  float: left;
+  clear: left;
+  padding-right: 5px;
+}
+dt:after { content: ":"; }
+
+dd {
+  margin-bottom: .3em;
+  font-size: 1em;
+}
+
+.realized { background: #008000; }
+.unclear { background: #FF0000; }
+.unused { background: #FFFF00; }
+
