@@ -13,8 +13,8 @@
             <div class="col-md-7">
               <div class="col-xs-11">
                 <ul class="values block">
-
-                  <% data[view].each do |status, value| %>
+                  <% OpenAccessIndicator::CLASSIFICATIONS.each do |status| %>
+                    <% value = data[view][status] %>
                     <%= content_tag :li, class: status, style: "width: #{value.round(4)}%"  do %>
                       <div class="overlay">
                         <h4><%= status.titleize %></h4>
@@ -27,7 +27,6 @@
                       </div>
                     <% end %>
                   <% end %>
-
                 </ul>
               </div>
 

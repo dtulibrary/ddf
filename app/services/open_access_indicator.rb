@@ -10,7 +10,7 @@ class OpenAccessIndicator
     ]
   }
 
-  CLASSIFICATIONS = ['realized'.freeze, 'unclear'.freeze, 'unused'.freeze]
+  CLASSIFICATIONS = ['realized'.freeze, 'unused'.freeze, 'unclear'.freeze]
   # Get vals from config - ensure that they are ordered by latest first
   YEARS = Rails.configuration.x.open_access.years.sort.reverse
 
