@@ -54,7 +54,7 @@ group :development do
   gem 'http_logger'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
 end
 
 group :assets do
@@ -88,4 +88,4 @@ gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
-gem 'dtu_blacklight_common', '~> 5.7.1.2', github:'dtulibrary/dtu_blacklight_common'
+gem 'dtu_blacklight_common', '~> 5.7.1.3', github: 'dtulibrary/dtu_blacklight_common'

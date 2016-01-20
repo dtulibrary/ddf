@@ -9,10 +9,11 @@ GIT
 
 GIT
   remote: git://github.com/dtulibrary/dtu_blacklight_common.git
-  revision: 6221ea9d7cff7e84953916752b8de28ded527ebb
+  revision: d4b836e56fe8a2c4db21ddfc6109dfc68de884bf
   specs:
-    dtu_blacklight_common (5.7.1.2)
+    dtu_blacklight_common (5.7.1.3)
       blacklight (~> 5.7.0)
+      font-awesome-rails
       rails (~> 4.1)
       solr_wrapper
       twitter-typeahead-rails (~> 0.11)
@@ -156,6 +157,8 @@ GEM
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     highline (1.7.8)
@@ -218,8 +221,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    quiet_assets (1.0.3)
-      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -351,7 +352,7 @@ DEPENDENCIES
   dalli
   devise
   devise-guests (~> 0.3)
-  dtu_blacklight_common (~> 5.7.1.2)!
+  dtu_blacklight_common (~> 5.7.1.3)!
   honeypot-captcha
   http_logger
   jbuilder (~> 2.0)
@@ -365,7 +366,6 @@ DEPENDENCIES
   openurl
   pg
   pry (~> 0.10.1)
-  quiet_assets
   rails (= 4.2.1)
   rails-i18n (~> 4.0.0)
   rsolr (~> 1.0.6)
