@@ -20,12 +20,20 @@
 
       <div class="col-md-7">
         <ul class="site-sections-list icon-labels icon-labels__topnav">
-          <li id="search"><%= link_to search_item_contents, root_path %></li>
-          <!--
-          <li id="open-access"><%# link_to open_access_item_contents, open_access_path %></li>
+          <li id="search">
+            <%= link_to search_item_contents, root_path %>
+          </li>
+          <li id="open-access">
+            <%= link_to open_access_overview_path do %>
+              <i class="ai ai-open-access ai-3x"></i>
+              Open Access
+            <% end %>
+          </li>
           <li id="eliteforsk-award"><%# link_to eliteforsk_award_item_contents, eliteforsk_award_path %></li>
           -->
-          <li id="about"><%= link_to about_item_contents, about_path %></li>
+          <li id="about">
+            <%= link_to about_item_contents, about_path %>
+          </li>
         </ul>
       </div>
     </div>
@@ -33,4 +41,3 @@
 </nav>
 
 <!-- <a href="/feedback" class="" data-ajax-modal="trigger">Send Feedback!</a> -->
-
