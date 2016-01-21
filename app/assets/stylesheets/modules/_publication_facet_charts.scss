@@ -59,3 +59,12 @@ http://alistapart.com/article/accessibledatavisualization
 .chartlist li a:visited { color: #666; }
 .chartlist li a:hover,
 .chartlist li a:visited:hover { color: $orange; }
+
+.chartlist li a.muted-link {
+  cursor: auto;
+  // color: #fff;
+  font-weight: 700;
+  color: #777;
+  font-size: 0.875em;
+  line-height: 2em;
+}
