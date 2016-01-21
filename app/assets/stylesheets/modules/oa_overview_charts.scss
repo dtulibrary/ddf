@@ -13,7 +13,7 @@ ul.values li {
 // Make the bars appear even though they don't contain any content:
 ul.values li:after {
   content: ".";
-  visibility: hidden;
+  opacity: 0;
 }
 
 h3.oa-label {
