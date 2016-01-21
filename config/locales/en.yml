@@ -251,12 +251,13 @@ en:
         research_area: By Main Research Area
         universities: By University
       reports:
+        header: 'Indicator year %{year}:'
         summary:
           title: Summary data
           description: The datasets behind the online visualisations
         publications:
           title: Publications in scope
-          description: The scope. All publications (deduplicated) in scope. 
+          description: The scope. All publications (deduplicated) in scope.
             The basis of the summations and aggregations
         records:
           title: Records in scope

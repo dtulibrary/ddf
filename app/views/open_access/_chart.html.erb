@@ -14,6 +14,8 @@
               <div class="col-xs-11">
                 <ul class="values block">
                   <% OpenAccessIndicator::CLASSIFICATIONS.each do |status| %>
+                    <%# This catches a nil pointer when we're not showing unclear status %>
+                    <% next unless status.in? data[view] %>
                     <% value = data[view][status] %>
                     <%= content_tag :li, class: status, style: "width: #{value.round(4)}%" do %>
                       <div class="overlay">

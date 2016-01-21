@@ -8,7 +8,7 @@
       <div class="col-md-12">
         <h1 class="oa-overview-heading">Open Access Overview <%= year %></h1>
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
-          <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered') do  %>
+          <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered', enforce_utf8: false) do  %>
             <ul class="oa-filtering-inputs">
               <li>
                 <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
@@ -22,7 +22,7 @@
               </li>
 
               <li>
-                <%= button_tag(class: 'view-oa', type: "submit") do %>
+                <%= button_tag(class: 'view-oa', type: "submit", name: nil) do %>
                   <i class="glyphicon glyphicon-refresh"></i> View
                 <% end %>
               </li>
@@ -66,22 +66,5 @@
       </div>
     </div>
 
-    <div class="row">
-      <hr/>
-      <div class="col-md-5"><h2>Indicator year <%= year %></h2></div>
-      <div class="col-md-7"></div>
-    </div>
-
-    <% OpenAccessIndicator.report_urls(year, I18n.locale).each do |name, url| %>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-5">
-          <%= link_to(url) do %>
-            <%= fa_icon 'file-excel-o 3x' %>
-            <%= I18n.t("ddf.open_access.reports.#{name}.title") %>
-          <% end %>
-        </div>
-        <div class="col-md-4"><%= I18n.t("ddf.open_access.reports.#{name}.description") %></div>
-      </div>
-    <% end %>
-  </div>
+    <%= render partial: 'reports', locals: { year: year} %>
 </article>
