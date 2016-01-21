@@ -8,7 +8,12 @@ ul.values {}
 ul.values li {
   float: left;
   position: relative;
-  // list-style-type: none;
+  list-style-type: none;
+}
+// Make the bars appear even though they don't contain any content:
+ul.values li:after {
+  content: ".";
+  visibility: hidden;
 }
 
 h3.oa-label {
@@ -35,7 +40,7 @@ a.development {
 }
 a.development > span.fa {
   vertical-align: 10%;
-  padding: 0 7px;
+  padding: 2px 7px 0 7px;
 }
 a.development:hover {
   background: #000;
@@ -69,14 +74,11 @@ div.overlay {
 
 ul.values li:hover div.overlay {
   /*display: block;*/
-
   visibility: visible;
   opacity: 1;
 }
 
-ul.stacked-bar .tooltip {
-  line-height: 500px;
-}
+ul.stacked-bar .tooltip { line-height: 500px; }
 
 dt {
   float: left;
