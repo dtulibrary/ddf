@@ -277,7 +277,7 @@ da:
         overview: Oversigt
         development: Udvikling
       reports:
-        header: 'Indikatorår %{year}:'
+        header: 'Indikatorår: %{year}'
         summary:
           title: Summary data
           description: The datasets behind the online visualisations

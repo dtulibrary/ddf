@@ -1207,3 +1207,55 @@ button.view-oa:hover {
   background: $orange;
   color: #fff;
 }
+
+div.indicator-downloads {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 2px solid $blue-3;
+}
+
+h2.indicator-downloads-heading {
+  font-size: calc-em(18px);
+  line-height: calc-em(23px);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 700;
+  margin: 0 0 1em 0;
+  color: $link-color-auxiliary;
+}
+h2.indicator-downloads-heading span {
+  display: block;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+
+ul.indicator-downloads-list li {
+  list-style-type: none;
+  // background: #eee;
+  padding: .5em 0;
+  margin-bottom: 1em;
+}
+
+ul.indicator-downloads-list li:hover { background: $blue-4; }
+
+// TODO
+ul.indicator-downloads-list li a:link.download-link {
+  display: block;
+  color: $link-color;
+  //border-bottom: 1px dashed $link-color-auxiliary;
+}
+// TODO
+ul.indicator-downloads-list li:hover a:link.download-link {
+  //border-bottom: 1px dashed $orange;
+  color: $orange;
+  text-decoration: underline;
+}
+
+ul.indicator-downloads-list li div.file-title {
+  font-weight: 600;
+}
+
+.fa-3x {
+  font-size: calc-em(19px);
+}
