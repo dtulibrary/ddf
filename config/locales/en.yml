@@ -224,11 +224,13 @@ en:
 
   ddf:
     open_access:
+      header: Open Access Overview %{year}
       form:
         labels:
           view_type: Open Access Potential
           year: Indicator Year
           resource: Segment
+          submit: View
         view_types:
           relative: Realized, Unused and Unclear
           relative_clear: Realized and Unclear
@@ -250,6 +252,9 @@ en:
         national: National
         research_area: By Main Research Area
         universities: By University
+      menu:
+        overview: Overview
+        development: Development
       reports:
         header: 'Indicator year %{year}:'
         summary:
