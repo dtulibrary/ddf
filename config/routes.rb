@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   get 'messages/create'
 
   get 'messages/message_params'
-  get 'open_access/overview', to: 'open_access_indicator#overview'
-  get 'open_access/development', to: 'open_access_indicator#development'
 
   scope "(:locale)", :locale => /en|da/ do
 
+    get 'open_access/overview', to: 'open_access_indicator#overview'
+    get 'open_access/development', to: 'open_access_indicator#development'
+    get 'open_access', to: 'open_access_indicator#overview'
     get '/selected', to: 'bookmarks#index'
 
     # root :to => "catalog#index"

@@ -6,9 +6,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h1 class="oa-overview-heading">Open Access Overview <%= year %></h1>
+        <h1 class="oa-overview-heading"><%= t('ddf.open_access.header', year: year) %></h1>
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
-          <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered') do  %>
+          <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered', enforce_utf8: false) do  %>
             <ul class="oa-filtering-inputs">
               <li>
                 <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
@@ -22,8 +22,9 @@
               </li>
 
               <li>
-                <%= button_tag(class: 'view-oa', type: "submit") do %>
-                  <i class="glyphicon glyphicon-refresh"></i> View
+                <%= button_tag(class: 'view-oa', type: "submit", name: nil) do %>
+                  <i class="glyphicon glyphicon-refresh"></i>
+                  <%= t('ddf.open_access.form.labels.submit') %>
                 <% end %>
               </li>
             </ul>
@@ -39,15 +40,6 @@
             Error — some data missing for this year. Contact your administrator for assistance.
           </div>
         <% else %>
-          <div class="oa-actions-panel">
-            <ul class="dataset-actions-list">
-              <li>
-                <i class="glyphicon glyphicon-download-alt"></i>
-                <%= link_to("Full dataset (#{year})", Rails.configuration.x.open_access.url % { year: year, resource: 'records', format: 'csv' }) %>
-              </li>
-            </ul>
-          </div>
-
           <div class="chartbox">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
             <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
@@ -66,5 +58,5 @@
       </div>
     </div>
 
-  </div>
+    <%= render partial: 'reports', locals: { year: year} %>
 </article>
