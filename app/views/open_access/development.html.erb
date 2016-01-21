@@ -25,13 +25,14 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
-        <ul class="timeline">
-          <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
+      <div class="col-md-8 col-md-offset-2 chart">
+        <ul class="chartlist types">
+          <% OpenAccessIndicator::YEARS.each do |year| %>
           <% data = @timeline[key][year.to_s] %>
             <li>
-              <%= content_tag :span, year, class: 'year_label' %>
-              <%= content_tag :span, data['relative'], class: 'count', style: "height: #{data['relative']}%" %>
+              <a href="#" class="muted-link"><%= "#{data['relative'].round(1)}%" %></a>
+              <%= content_tag :span, year, class: 'count' %>
+              <%= content_tag :span, data['relative'], class: 'pct', style: "width: #{data['relative']}%" %>
             </li>
           <% end %>
         </ul>
