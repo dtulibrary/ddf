@@ -279,16 +279,16 @@ da:
       reports:
         header: 'Indikatorår %{year}:'
         summary:
-          title: Summary data
-          description: The datasets behind the online visualisations
+          title: Summeringer
+          description: Datasættene – grundlaget for online visualiseringerne
         publications:
-          title: Publications in scope
-          description: The scope. All publications (deduplicated) in scope.
-            The basis of the summations and aggregations
+          title: Genstandsfeltet – publikationer
+          description: Genstandsfeltet. Alle publikationer (dedublikeret) i
+            genstandsfeltet. Grundlaget for summeringerne.
         records:
-          title: Records in scope
-          description: The scope. All publications (including duplicates) in scope.
-            The basis of the summations and aggregations at the university level.
+          title: Genstandsfeltet - poster
+          description: Alle publikationer (inkl. dubletter) i genstandsfeltet.
+            Grundlaget for summeringerne per universitet.
 
     news:
       title: Nyt
