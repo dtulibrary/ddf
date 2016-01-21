@@ -42,6 +42,22 @@ describe OpenAccessIndicator do
     let(:tstamp2) { '1452869000' }
   end
 
+  describe 'report_urls' do
+    subject { OpenAccessIndicator.report_urls(year, lang) }
+    let(:year) { '2014' }
+    let (:lang) { I18n.default_locale }
+    it { should be_a Hash }
+    it 'should have values eql to the report types' do
+      expect(subject.keys).to eql OpenAccessIndicator::REPORTS
+    end
+    it 'should contain urls with the correct year, language and profile' do
+      expect(subject.values.first).to include 'http'
+      expect(subject.values.first).to include year
+      expect(subject.values.first).to include 'eng'
+      expect(subject.values.first).to include OpenAccessIndicator.profile
+    end
+  end
+
   describe 'fetch' do
     subject { OpenAccessIndicator.fetch(*params) }
     context 'with invalid parameters' do
@@ -57,6 +73,7 @@ describe OpenAccessIndicator do
       context 'when there is a cached copy' do
         include_context 'valid_cache'
         it 'does not make a request to the resource url' do
+          pending 'putting caching on hold for now'
           expect(OpenAccessIndicator).not_to receive(:resource_url)
           OpenAccessIndicator.fetch(*params)
         end
@@ -108,7 +125,8 @@ describe OpenAccessIndicator do
       context 'when there is valid cached data' do
         include_context 'valid_cache'
         let(:year) { '2014' }
-        it { should eql response }
+        pending 'putting caching on hold for now'
+        # it { should eql response }
       end
     end
   end

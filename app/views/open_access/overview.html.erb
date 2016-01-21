@@ -66,5 +66,22 @@
       </div>
     </div>
 
+    <div class="row">
+      <hr/>
+      <div class="col-md-5"><h2>Indicator year <%= year %></h2></div>
+      <div class="col-md-7"></div>
+    </div>
+
+    <% OpenAccessIndicator.report_urls(year, I18n.locale).each do |name, url| %>
+      <div class="row">
+        <div class="col-md-3 col-md-offset-5">
+          <%= link_to(url) do %>
+            <%= fa_icon 'file-excel-o 3x' %>
+            <%= I18n.t("ddf.open_access.reports.#{name}.title") %>
+          <% end %>
+        </div>
+        <div class="col-md-4"><%= I18n.t("ddf.open_access.reports.#{name}.description") %></div>
+      </div>
+    <% end %>
   </div>
 </article>

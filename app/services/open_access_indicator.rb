@@ -13,6 +13,8 @@ class OpenAccessIndicator
   CLASSIFICATIONS = ['realized'.freeze, 'unused'.freeze, 'unclear'.freeze]
   # Get vals from config - ensure that they are ordered by latest first
   YEARS = Rails.configuration.x.open_access.years.sort.reverse
+  REPORTS = [ 'summary'.freeze, 'publications'.freeze, 'records'.freeze ]
+  LANGUAGES = { da: 'dan', en: 'eng' }
 
   # Query API and convert response into a hash of values
   #
@@ -53,6 +55,25 @@ class OpenAccessIndicator
     URI(Rails.configuration.x.open_access.status_api)
   end
 
+  def self.report_urls(year, lang)
+    urls = {}
+    lang_code = LANGUAGES[lang]
+    REPORTS.each do |report|
+      urls[report] = self.report_url(year, lang_code, report)
+    end
+    urls
+  end
+
+  def self.report_url(year, lang, report)
+    Rails.configuration.x.open_access.report_url % {
+      year: year, lang: lang, report: report, profile: self.profile
+    }
+  end
+
+  def self.profile
+    Rails.configuration.x.open_access.api_profile
+  end
+
   # Check to see if we have a cached copy before calling Open Access API
   def self.get_resource(year, resource)
     response = self.get(self.resource_url(year, resource))
@@ -81,7 +102,7 @@ class OpenAccessIndicator
     def self.update_needed?
       status = OpenAccessIndicator.get(OpenAccessIndicator.status_url)
       return if status.nil?
-      values = StatusResponse.values(status, Rails.configuration.x.open_access.api_profile)
+      values = StatusResponse.values(status, OpenAccessIndicator.profile)
       values.each do |year, tstamp|
         path = self.path(year, tstamp)
         return true unless File.exist? path
