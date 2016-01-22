@@ -26,7 +26,7 @@ module ApplicationHelper
 
   def open_access_item_contents
     [
-      "<i class='glyphicon glyphicon-lock'></i>",
+      "<i class='ai ai-open-access ai-3x'></i>",
       "<span class='menu-item-title'>",
         "#{t('blacklight.navigation.oa_section.open_access')}",
       "</span>"
