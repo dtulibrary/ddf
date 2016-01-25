@@ -18,14 +18,10 @@
                     <% next unless status.in? data[view] %>
                     <% value = data[view][status] %>
                     <%= content_tag :li, class: status, style: "width: #{value.round(4)}%" do %>
+                      <span class="relative-rounded"><%= "#{value.round}%" %></span>
                       <div class="overlay">
-                        <h4><%= status.titleize %></h4>
-                        <dl>
-                          <dt>Absolute</dt>
-                          <dd><%= "#{data['absolute'][status]} publications" rescue nil %></dd>
-                          <dt>Relative</dt>
-                          <dd><%= "#{value.round(2)}% of total" %></dd>
-                        </dl>
+                        <p><%= "#{value.round(2)}% #{status.capitalize}" %></p>
+                        <p><%= "#{data['absolute'][status]} publications" rescue nil %></p>
                       </div>
                     <% end %>
                   <% end %>
