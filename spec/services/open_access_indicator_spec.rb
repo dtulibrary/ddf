@@ -69,7 +69,7 @@ describe OpenAccessIndicator do
       it { should eql nil }
     end
     context 'with valid parameters' do
-      let(:params){['national', '2013']}
+      let(:params){ ['national', '2013'] }
       context 'when there is a cached copy' do
         include_context 'valid_cache'
         it 'does not make a request to the resource url' do
@@ -176,8 +176,8 @@ describe OpenAccessIndicator do
       end
       context '(universities)' do
         include_context 'universities'
-        it 'should contain keys for the universities' do
-          expect(subject.keys).to eql ['cbs', 'au', 'sdu', 'itu', 'ruc', 'aau', 'dtu', 'ku']
+        it 'should sort by relative values descending' do
+          expect(subject.keys).to eql ['dtu', 'ruc', 'aau', 'itu', 'ku', 'sdu', 'au', 'cbs']
         end
         it 'should contain the relative values for each university' do
           expect(subject['cbs']['relative']['unclear']).to eql 28.3333333333333

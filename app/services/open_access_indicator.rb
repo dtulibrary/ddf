@@ -77,11 +77,6 @@ class OpenAccessIndicator
   # Check to see if we have a cached copy before calling Open Access API
   def self.get_resource(year, resource)
     response = self.get(self.resource_url(year, resource))
-    # if LocalCache.update_needed?
-    #   LocalCache.write(year, resor)
-    # else
-    #   # LocalCache.read_latest(year)
-    # end
   end
 
   # Generic handling of HTTP requests in this context
@@ -163,7 +158,7 @@ class OpenAccessIndicator
           stats[k][view] = v[view]
           stats[k]['absolute'] = self.absolute_values(body, k)
         end
-        stats
+        stats.sort_by { |_k, v| v[view]['realized']}.reverse.to_h
       end
     end
 
