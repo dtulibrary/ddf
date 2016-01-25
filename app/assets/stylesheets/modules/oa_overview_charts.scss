@@ -1,3 +1,4 @@
+div.chart-container { padding-left: 0; } // Override BS default column padding
 
 ul.stacked-bar { }
 ul.stacked-bar > li {
@@ -80,19 +81,22 @@ ul.values li:hover div.overlay {
 
 ul.stacked-bar .tooltip { line-height: 500px; }
 
-dt {
-  float: left;
-  clear: left;
-  padding-right: 5px;
+div.overlay p {
+  font-size: 1.1em;
+  margin-bottom: .5em;
 }
-dt:after { content: ":"; }
-
-dd {
-  margin-bottom: .3em;
-  font-size: 1em;
-}
+div.overlay p:last-child { margin-bottom: 0; }
 
 .realized { background: #008000; }
 .unclear { background: #FF0000; }
 .unused { background: #FFFF00; }
 
+span.relative-rounded {
+  font-size: .8em;
+  font-weight: 600;
+  padding: .4em 0 .4em .5em;
+  color: #fff;
+  line-height: 1em;
+}
+
+li.unused span.relative-rounded  { color: #000; }

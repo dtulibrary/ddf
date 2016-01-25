@@ -263,7 +263,7 @@ en:
         overview: Overview
         development: Development
       reports:
-        header: 'Indicator year %{year}:'
+        header: 'Indicator year: %{year}'
         summary:
           title: Summary data
           description: The datasets behind the online visualisations

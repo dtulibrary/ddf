@@ -60,6 +60,7 @@ http://alistapart.com/article/accessibledatavisualization
 .chartlist li a:hover,
 .chartlist li a:visited:hover { color: $orange; }
 
+//ADDED FOR THE OA OVERVIEW CHARTS:
 .chartlist li a.muted-link {
   cursor: auto;
   // color: #fff;
@@ -68,3 +69,6 @@ http://alistapart.com/article/accessibledatavisualization
   font-size: 0.875em;
   line-height: 2em;
 }
+
+// TODO: TEST
+.chartlist li.projected { margin-bottom: 1em; }

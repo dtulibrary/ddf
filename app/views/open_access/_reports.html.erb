@@ -1,18 +1,31 @@
-<div class="row">
-  <hr/>
-  <div class="col-md-5"><h2><%= t("ddf.open_access.reports.header", { year: year }) %></h2></div>
-  <div class="col-md-7"></div>
+<div class="row indicator-downloads">
+  <div class="col-md-5">
+    <h2 class="indicator-downloads-heading">
+      <i class="glyphicon glyphicon-download-alt"></i>
+      Downloads
+      <span class="indicator-year">(<%= t("ddf.open_access.reports.header", { year: year }) %>)</span>
+    </h2>
+  </div>
+
+  <div class="col-md-7">
+    <ul class="indicator-downloads-list">
+
+      <% OpenAccessIndicator.report_urls(year, I18n.locale).each do |name, url| %>
+        <li class="row group">
+          <div class="col-xs-4 file-title">
+            <%= link_to(url, class: "download-link") do %>
+              <%= fa_icon 'file-excel-o 3x' %>
+              <%= I18n.t("ddf.open_access.reports.#{name}.title") %>
+            <% end %>
+          </div>
+          <div class="col-xs-8 file-description">
+            <%= I18n.t("ddf.open_access.reports.#{name}.description") %>
+          </div>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
 </div>
 
-<% OpenAccessIndicator.report_urls(year, I18n.locale).each do |name, url| %>
-  <div class="row">
-    <div class="col-md-3 col-md-offset-5">
-      <%= link_to(url) do %>
-        <%= fa_icon 'file-excel-o 3x' %>
-        <%= I18n.t("ddf.open_access.reports.#{name}.title") %>
-      <% end %>
-    </div>
-    <div class="col-md-4"><%= I18n.t("ddf.open_access.reports.#{name}.description") %></div>
-  </div>
-<% end %>
-</div>
+

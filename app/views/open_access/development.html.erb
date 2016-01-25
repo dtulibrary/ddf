@@ -2,8 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="oa-overview-heading">
-          <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
+        <h1 class="oa-development-heading">
+          <span class="development-for">
+              <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
+          </span>
+          <span class="development-period">
+            Period:
+            <%= "#{OpenAccessIndicator::YEARS.last}" %> &mdash;
+            <%= "#{OpenAccessIndicator::YEARS.first}" %>
+          </span>
         </h1>
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
           <%= form_tag({controller: 'open_access_indicator', action: 'development'}, method: 'get', class: 'centered') do %>
@@ -26,6 +33,15 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 chart">
         <ul class="chartlist types">
+
+        <!-- TODO: TEST -->
+          <li class="projected">
+            <a class="muted-link" href="#">100%</a>
+            <span class="count">2020</span>
+            <span class="pct" style="width: 100%">100</span>
+          </li>
+        <!-- TODO: TEST -->
+
           <% OpenAccessIndicator::YEARS.each do |year| %>
           <% data = @timeline[@key][year.to_s] %>
             <li>

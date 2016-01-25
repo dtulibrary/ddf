@@ -1,15 +1,16 @@
 <div class="header__wrapper">
   <div class="container">
-    <h1 class="site-section">
-      <i class="ai ai-open-access ai-3x"></i>
-      <%= t('ddf.open_access.menu.header') %>
-    </h1>
-    <div class="pull-right">
-      <ul class="open-access-menu">
-        <li>
+    <div class="block">
+      <h1 class="site-section">
+        <i class="ai ai-open-access ai-3x"></i>
+        <%= t('ddf.open_access.menu.header') %>
+      </h1>
+
+      <ul class="subnav-items-list">
+        <li id="oa-overview">
           <%= link_to t('ddf.open_access.menu.overview'), open_access_overview_path %>
         </li>
-        <li>
+        <li id="oa-development">
           <%= link_to t('ddf.open_access.menu.development'), open_access_development_path %>
         </li>
       </ul>

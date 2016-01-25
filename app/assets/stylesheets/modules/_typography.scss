@@ -1207,3 +1207,81 @@ button.view-oa:hover {
   background: $orange;
   color: #fff;
 }
+
+div.indicator-downloads {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 2px solid $blue-3;
+}
+
+h2.indicator-downloads-heading {
+  font-size: calc-em(16px);
+  line-height: calc-em(23px);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-weight: 600;
+  margin: 0 0 1em 0;
+  color: $blue-2;
+}
+h2.indicator-downloads-heading span {
+  display: block;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 700;
+  font-size: calc-em(17px);
+}
+
+ul.indicator-downloads-list li {
+  list-style-type: none;
+  // background: #eee;
+  padding: .5em 0;
+  margin-bottom: 0;
+}
+ul.indicator-downloads-list li:hover { background: rgba(0,0,0, .03); }
+ul.indicator-downloads-list li a:link.download-link {
+  display: block;
+  color: $link-color;
+  text-decoration: underline;
+}
+ul.indicator-downloads-list li:hover a:link.download-link {
+  color: $orange;
+  text-decoration: none;
+}
+
+ul.indicator-downloads-list li div.file-title { font-weight: 600; }
+
+.fa-3x { font-size: calc-em(19px); }
+
+h1.site-section i.ai-3x { font-size: 1em; }
+
+ul.oa-filtering-inputs label { color: $link-color-auxiliary; }
+
+h1.oa-development-heading {
+  text-align: center;
+  font-family: $headline;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: calc-em(20px);
+  line-height: calc-em(25px);
+  color: $blue-2;
+}
+
+h1.oa-development-heading span.development-for {
+  display: block;
+  font-family: $serif;
+  font-style: italic;
+  letter-spacing: normal;
+  text-transform: none;
+  margin-bottom: .25em;
+  font-size: calc-em(20px);
+  color: $blue-1;
+}
+
+h1.oa-development-heading span.development-period {
+  display: block;
+  font-family: $sans;
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: calc-em(14px);
+  font-weight: 600;
+}
