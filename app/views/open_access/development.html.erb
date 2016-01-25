@@ -1,17 +1,16 @@
-<% key = @timeline.keys.first %>
 <article role="main">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1 class="oa-overview-heading">
-          <%= "Development for #{t('ddf.open_access.labels.' + key)} from #{OpenAccessIndicator::YEARS.last} to #{OpenAccessIndicator::YEARS.first}"  %>
+          <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
         </h1>
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
           <%= form_tag({controller: 'open_access_indicator', action: 'development'}, method: 'get', class: 'centered') do %>
             <ul class="oa-filtering-inputs">
               <li>
                 <%= label_tag :key,  t('ddf.open_access.form.labels.resource')  %>
-                <%= select_tag(:key, grouped_options_for_select(translate_oa_resources(OpenAccessIndicator::RESOURCES), key)) %>
+                <%= select_tag(:key, grouped_options_for_select(translate_oa_resources(OpenAccessIndicator::RESOURCES), @key)) %>
               </li>
               <li>
                 <%= button_tag(class: 'view-oa', type: "submit") do %>
@@ -28,7 +27,7 @@
       <div class="col-md-8 col-md-offset-2 chart">
         <ul class="chartlist types">
           <% OpenAccessIndicator::YEARS.each do |year| %>
-          <% data = @timeline[key][year.to_s] %>
+          <% data = @timeline[@key][year.to_s] %>
             <li>
               <a href="#" class="muted-link"><%= "#{data['relative'].round(1)}%" %></a>
               <%= content_tag :span, year, class: 'count' %>

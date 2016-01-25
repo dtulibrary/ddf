@@ -224,7 +224,9 @@ en:
 
   ddf:
     open_access:
-      header: Open Access Overview %{year}
+      header: Open Access Indicator - Statistics for %{year}
+      development:
+        header: "Development for: %{resource} %{segment}"
       form:
         labels:
           view_type: Open Access Potential
@@ -248,11 +250,16 @@ en:
         dtu: Technical University of Denmark (DTU)
         ku: Copenhagen University (KU)
         cbs: Copenhagen Business School (CBS)
+      segments:
+        national: National
+        research_area: Main Research Area
+        universities: University
       headers:
         national: National
         research_area: By Main Research Area
         universities: By University
       menu:
+        header: Open Access Indicator
         overview: Overview
         development: Development
       reports:

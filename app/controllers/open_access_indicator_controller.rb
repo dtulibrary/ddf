@@ -19,10 +19,10 @@ class OpenAccessIndicatorController < ApplicationController
   end
 
   def development
-    key = params[:key] || 'national'
+    @key = params[:key] || 'national'
     # get the resource that corresponds to this key
-    resource = OpenAccessIndicator::RESOURCES.select {|k,v| key.in? v}.keys.first
-    @timeline = OpenAccessIndicator.timeline(resource, key)
+    @resource = OpenAccessIndicator::RESOURCES.select {|k,v| @key.in? v}.keys.first
+    @timeline = OpenAccessIndicator.timeline(@resource, @key)
   end
 
   # This overwrites the default lookup view folder
