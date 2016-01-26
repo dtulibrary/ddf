@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     get 'open_access/overview', to: 'open_access_indicator#overview'
     get 'open_access/development', to: 'open_access_indicator#development'
+    get 'open_access/reports', to: 'open_access_indicator#reports'
     get 'open_access', to: 'open_access_indicator#overview'
     get '/selected', to: 'bookmarks#index'
 

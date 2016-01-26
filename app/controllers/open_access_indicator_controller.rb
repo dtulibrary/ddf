@@ -25,6 +25,19 @@ class OpenAccessIndicatorController < ApplicationController
     @timeline = OpenAccessIndicator.timeline(@resource, @key)
   end
 
+  def reports
+    report_url = OpenAccessIndicator.report_url(
+      params[:year], params[:lang], params[:report]
+    )
+    filename = OpenAccessIndicator.report_name(
+      params[:year], params[:lang], params[:report]
+    )
+    report = open(report_url)
+    send_file report, filename: filename, type: 'application/vnd.ms-excel'
+  rescue # catch 404s and send back to the overview
+    redirect_to open_access_overview_path, alert: 'File not found!'
+  end
+
   # This overwrites the default lookup view folder
   def self.controller_path
     'open_access'

@@ -59,14 +59,28 @@ class OpenAccessIndicator
     urls = {}
     lang_code = LANGUAGES[lang]
     REPORTS.each do |report|
-      urls[report] = self.report_url(year, lang_code, report)
+      urls[report] = self.proxy_url(year, lang_code, report)
     end
     urls
   end
 
-  def self.report_url(year, lang, report)
-    Rails.configuration.x.open_access.report_url % {
+  def self.proxy_url(year, lang, report)
+    '/open_access/reports?report=%{report}&year=%{year}&lang=%{lang}&profile=%{profile}' % {
       year: year, lang: lang, report: report, profile: self.profile
+    }
+  end
+
+  def self.report_url(year, lang, report)
+    filename = self.report_name(year, lang, report)
+    Rails.configuration.x.open_access.report_url % {
+      year: year, lang: lang, report: report, profile: self.profile,
+      filename: filename
+    }
+  end
+
+  def self.report_name(year, lang, report)
+    Rails.configuration.x.open_access.report_name % {
+      year: year, lang: lang, report: report
     }
   end
 

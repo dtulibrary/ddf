@@ -51,7 +51,7 @@ describe OpenAccessIndicator do
       expect(subject.keys).to eql OpenAccessIndicator::REPORTS
     end
     it 'should contain urls with the correct year, language and profile' do
-      expect(subject.values.first).to include 'http'
+      expect(subject.values.first).to include 'open_access/reports'
       expect(subject.values.first).to include year
       expect(subject.values.first).to include 'eng'
       expect(subject.values.first).to include OpenAccessIndicator.profile
