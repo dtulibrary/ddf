@@ -5,7 +5,7 @@
     <ul>
       <% collect_backlinks(document).each do |backlink| %>
         <li>
-          <%= image_tag image_url('pure.png') %>
+          <%= image_tag image_url('pure.png'), class: 'sidepanel-icon' %>
           <%= link_to source_label(get_backlink_origin(backlink)), backlink,
                       :target => '_blank',
                       :title  => t('ddf.links.backlink_hover', :source => source_label(get_backlink_origin(backlink))) %>

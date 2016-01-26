@@ -43,7 +43,7 @@ describe CatalogController do
 
       describe 'facet_fields' do
         subject { controller.blacklight_config.facet_fields.keys }
-        it { is_expected.to eq %w(pub_date_tsort format_orig_s submission_year_tis source_ss isolanguage_ss scientific_level_s access_condition_s review_status_s research_area_ss)}
+        it { is_expected.to eq %w(format_orig_s pub_date_tsort author_facet source_ss journal_title_facet submission_year_tis isolanguage_ss scientific_level_s access_condition_s review_status_s research_area_ss)}
       end
 
       describe 'show_fields' do

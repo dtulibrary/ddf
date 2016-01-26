@@ -1040,6 +1040,12 @@ dd.icon-label--doi {
   left: -4px;
 }
 
+img.sidepanel-icon {
+  display: inline-block;
+  font-size: calc-em(23px);
+  vertical-align: text-bottom;
+}
+
 a.select-document {
   font-size: calc-em(20px);
   vertical-align: -10%;

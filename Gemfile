@@ -54,6 +54,8 @@ group :development do
   #gem 'puma'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'http_logger'
+  gem 'quiet_assets'
 end
 
 group :assets do
@@ -84,7 +86,6 @@ group :test do
 end
 
 gem 'rsolr', '~> 1.0.6'
-gem 'meta-tags'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'

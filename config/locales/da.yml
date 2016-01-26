@@ -244,6 +244,11 @@ da:
       undetermined: Ubestemt
 
   ddf:
+    news:
+      title: Nyt
+      updates:
+        october_2015: "(Oktober 2015): Interface og søgeteknologi opgraderet"
+        january_2016: '(Januar 2016): Diverse forbedringer, inklusiv bedre forfining af søgeresultater (ny facet på indberetningsår) og forbedret integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
     search:
       form:
         clear_icon_text_hover: Slet søgetermerne
