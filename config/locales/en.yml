@@ -235,7 +235,7 @@ en:
           submit: View
         view_types:
           relative: Realized, Unused and Unclear
-          relative_clear: Realized and Unclear
+          relative_clear: Realized and Unused
       labels:
         national: Total
         hum: Humanities

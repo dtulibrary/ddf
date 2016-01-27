@@ -256,7 +256,7 @@ da:
           submit: Vis
         view_types:
           relative: Realiseret, Uudnyttet, Uklart
-          relative_clear: Realiseret og Uklart
+          relative_clear: Realiseret og Uudnyttet
       labels:
         national: I alt
         hum: Humaniora
