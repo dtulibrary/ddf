@@ -1,15 +1,22 @@
 <article role="main">
-  <div class="intro">
+  <header class="intro">
     <div class="container">
-      <p class="pitch measure"> <%= t('blacklight.elevator_pitch')%> </p>
-      <% unless latest_update.nil? %>
-        <p class="news">
-          <em class="news-tag"><%= t('ddf.news.title')%></em>
-          <%= latest_update %>
-        </p>
-      <% end %>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <p class="pitch"> <%= t('blacklight.elevator_pitch')%> </p>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+          <% unless latest_update.nil? %>
+            <p class="news">
+              <em class="news-tag"><%= t('ddf.news.title')%></em>
+              <%= latest_update %>
+            </p>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
 
   <div class="container">
     <div class="row">
