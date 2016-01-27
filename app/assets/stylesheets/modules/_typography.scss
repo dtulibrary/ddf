@@ -831,30 +831,29 @@ article.static h3 {
   color: $bluewood;
 }
 
-p.search-example {
+article.search-docs p.search-example {
   border: 1px solid $blue-3;
   padding: .5em;
   position: relative;
 }
 
-p.search-example i.glyphicon {
+article.search-docs p.search-example i.glyphicon {
   position: absolute;
   top: 35%;
   right: 15px;
   color: $blue-2;
 }
 
-span.search-example {
+article.search-docs span.search-example {
   border: 1px solid $blue-3;
   padding: 0 .5em .2em .5em;
 }
 
-p.search-explanation { margin: .5em 0 0 0; }
+article.search-docs span.search-result { font-weight: bold; }
 
-span.search-result {
-  //font-style: italic;
-  font-weight: bold;
-}
+article.search-docs span.operator { font-weight: 600; }
+
+article.search-docs p.search-explanation { margin: .5em 0 0 0; }
 
 table.one-col-emphasis {
   text-align: left;
@@ -1135,4 +1134,5 @@ hr.offset-3 {
    border-color: #eee;
    border-width: 2px 0 0 0;
 }
+
 
