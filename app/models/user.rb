@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Spotlight::User
 
   if Blacklight::Utils.needs_attr_accessible?
 
