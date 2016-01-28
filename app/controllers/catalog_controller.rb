@@ -14,7 +14,7 @@ class CatalogController < ApplicationController
     config.solr_path = 'ddf_publ'
     config.something = ['random']
     config.metrics_presenter_classes = [ 'Dtu::Metrics::AltmetricPresenter' ]
-    
+
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
@@ -148,6 +148,16 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
 
+    ###################################
+    ####### Spotlight Config ##########
+    ###################################
+
+    config.show.oembed_field = :oembed_url_ssm
+    config.show.partials.insert(1, :oembed)
+    config.view.gallery.partials = [:index_header, :index]
+    config.view.masonry.partials = [:index]
+    config.view.slideshow.partials = [:index]
+    config.index.timestamp_field = :pub_date_tsort
   end
 
   def show

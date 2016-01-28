@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'messages/create'
 
   get 'messages/message_params'
-  mount Spotlight::Engine, at: 'elite'
+  mount Spotlight::Engine, at: 'spotlight'
 
   scope "(:locale)", :locale => /en|da/ do
 

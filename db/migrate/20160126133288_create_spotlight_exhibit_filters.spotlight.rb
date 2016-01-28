@@ -4,10 +4,11 @@ class CreateSpotlightExhibitFilters < ActiveRecord::Migration
     create_table :spotlight_filters do |t|
       t.string :field
       t.string :value
-      t.references :spotlight_exhibit, index: true, foreign_key: true
+      # t.references :exhibit, index: true, foreign_key: true
 
       t.timestamps null: false
     end
+    add_reference :spotlight_filters, :exhibit, references: :spotlight_exhibits 
 
     reversible do |change|
       change.up do
