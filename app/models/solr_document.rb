@@ -20,6 +20,29 @@ class SolrDocument < Dtu::SolrDocument
     id.kind_of?(Array) ? id.first : id
   end
 
+  # Since our unique key is multi-valued but Spotlight/blacklight
+  # sometimes assume a single value we need to override the lookup
+  # method to cast to single value when it is being referenced
+  def [](key)
+    if key.to_s == self.class.unique_key
+      return Array(super).first
+    end
+    super
+  end
+
+  # Spotlight overrides to prevents errors
+  def self.solr_field_for_tagger(exhibit)
+    :fake_ss
+  end
+
+  def self.visibility_field(exhibit)
+    :fake_ss
+  end
+
+  def private? _
+    false
+  end
+
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
   # single valued. See Blacklight::Solr::Document::ExtendableClassMethods#field_semantics

@@ -85,13 +85,6 @@ module Blacklight::BlacklightHelperBehavior
   end
 
   ##
-  # Render the search navbar
-  # @return [String]
-  def render_search_bar
-    render :partial=>'catalog/search_form'
-  end
-
-  ##
   # Render "docuemnt actions" area for search results view
   # (normally renders next to title in the list view)
   #

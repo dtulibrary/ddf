@@ -48,6 +48,7 @@ da:
         other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
       facets:
         more: 'mere »'
+        more_html:  '<span class="sr-only">%{field_name}</span> »'
         label: '%{label}:'
         count: '%{number}'
         sort:
