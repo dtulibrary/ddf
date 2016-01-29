@@ -498,6 +498,7 @@ DEPENDENCIES
   bibtex-ruby
   binding_of_caller
   blacklight (~> 5.16)
+  blacklight-gallery
   blacklight-spotlight!
   blacklight_range_limit (~> 5.2.0)
   byebug
@@ -514,7 +515,6 @@ DEPENDENCIES
   honeypot-captcha
   http_logger
   jbuilder (~> 2.0)
-  jettywrapper (>= 2.0)
   jquery-rails
   json (= 1.8.2)
   launchy
@@ -528,7 +528,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.1)
   rails-i18n (~> 4.0.0)
-  rsolr (~> 1.0.6)
+  rsolr
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

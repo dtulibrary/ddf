@@ -84,7 +84,7 @@ group :test do
   gem 'capybara-webkit'
 end
 
-gem 'rsolr', '~> 1.0.6'
+gem 'rsolr'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
@@ -92,4 +92,4 @@ gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common', branch: 
 
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
-gem 'jettywrapper', '>= 2.0'
+gem 'blacklight-gallery' # necessary for spotlight
