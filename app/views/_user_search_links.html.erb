@@ -10,5 +10,21 @@
     <i class="glyphicon glyphicon-time"></i>
     <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
   </li>
+  <% if within_spotlight? && current_user %>
+    <li>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="userDropdown">
+          <%= current_user.email %>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+          <li><%= link_to 'Opret udstilling', new_exhibit_path %></li>
+          <% if current_exhibit %>
+            <li><%= link_to 'Dashboard', edit_exhibit_path(current_exhibit) %></li>
+          <% end %>
+          <li><%= link_to 'Log ud', destroy_user_session_path %></li>
+        </ul>
+      </div>
+    </li>
+  <% end %>
 </ul>
-
