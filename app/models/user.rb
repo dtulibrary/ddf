@@ -7,11 +7,10 @@ class User < ActiveRecord::Base
   end
 # Connects this user object to Blacklights Bookmarks.
   include Blacklight::User
-  include Blacklight::User
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Method added by Blacklight; Blacklight uses #to_s on your
