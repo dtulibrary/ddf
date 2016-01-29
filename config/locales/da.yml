@@ -136,7 +136,7 @@ da:
         q: Søg...
         submit: Søg ...
       sort:
-        label: Sorter efter relevans
+        label: Sortér efter relevans
       start_over: Start forfra
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
@@ -274,7 +274,7 @@ da:
       mendeley: Save to Mendeley
       availability: Tilgængelig hos
       cite_and_export: "Citer og exporter"
-      save_and_export: "Gem og exporter"
+      save_and_export: "Gem og exportér"
       mendeley: "Gem til Mendeley"
       bibtex: "Exporter til BibTeX"
       ris: "Exporter til RIS"
