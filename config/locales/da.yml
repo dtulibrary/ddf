@@ -273,11 +273,11 @@ da:
       open_access: "Open Acess"
       mendeley: Save to Mendeley
       availability: Tilgængelig hos
-      cite_and_export: "Citer og exporter"
-      save_and_export: "Gem og exportér"
+      cite_and_export: "Citer og eksportér"
+      save_and_export: "Gem og eksportér"
       mendeley: "Gem til Mendeley"
-      bibtex: "Exporter til BibTeX"
-      ris: "Exporter til RIS"
+      bibtex: "Eksportér til BibTeX"
+      ris: "Eksportér til RIS"
       cite: "Citer"
       fulltext_access: Fuldtekstadgang
       data_providers: Dataleverandører
