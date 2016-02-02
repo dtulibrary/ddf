@@ -91,5 +91,5 @@ gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
 gem 'dtu_blacklight_common', github:'dtulibrary/dtu_blacklight_common', branch: 'blacklight5.16'
 
 gem 'blacklight', '~> 5.16'
-gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
+gem 'blacklight-spotlight', tag: 'v0.16.0', github: 'sul-dlss/spotlight'
 gem 'blacklight-gallery' # necessary for spotlight
