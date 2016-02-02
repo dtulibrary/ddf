@@ -48,4 +48,5 @@ public/assets
 # Ignore RubyMine files
 .idea
 .agignore
+.byebug_history
 /TAGS
