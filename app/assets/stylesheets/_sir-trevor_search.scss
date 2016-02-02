@@ -1,0 +1,11 @@
+.st-block-control {
+  @extend .btn;
+  word-wrap: normal;
+  .st-icon-search {
+    @extend .icon;
+    background-image: image-url('spotlight/blocks/results.png');
+    &:hover {
+      background-image: image-url('spotlight/blocks/results-on.png');
+    }
+  }
+}

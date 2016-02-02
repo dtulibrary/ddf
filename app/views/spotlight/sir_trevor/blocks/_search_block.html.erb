@@ -1,0 +1,10 @@
+<% search_block.with_solr_helper(self) %>
+
+<h3>Publications in the Danish Research Database</h3>
+<% if search_block.item_count > 10 %>
+<h4>10 most recent of <%= search_block.item_count %> in total. </h4>
+<% else %>
+<h4>Most recent publications</h4>
+<% end %>
+<%= render search_block.documents, as: 'document' %>
+<%= link_to "Full publication list", spotlight.exhibit_browse_path(search_block.exhibit, search_block.search) %>
