@@ -775,21 +775,16 @@ body[class$="search"] li#search { background: lighten($bluewood, 15%); }
 body[class$="search"] li#search i,
 body[class$="search"] li#search a { color: #fff; }
 
-body[class$="about"] li#about { background: lighten($bluewood, 15%); }
-body[class$="about"] li#about i,
-body[class$="about"] li#about a { color: #fff; }
+body[class~="blacklight-pages-search_and_get"] li#search-get a,
+body[class~="blacklight-pages-data_providers"] li#data-providers a,
+body[class~="blacklight-pages-data"] li#data a,
+body[class~="blacklight-pages-faq"] li#faq a,
+body[class~="blacklight-pages-contact"] li#contact a
+{
+  background: lighten($bluewood, 20%);
+  color: #fff;
+}
 
-body[class*="data_formats"] li#data-formats { background: lighten($bluewood, 15%); }
-body[class*="data_formats"] li#data-formats i,
-body[class*="data_formats"] li#data-formats a { color: #fff; }
-
-body[class*="data_providers"] li#data-providers { background: lighten($bluewood, 15%); }
-body[class*="data_providers"] li#data-providers i,
-body[class*="data_providers"] li#data-providers a { color: #fff; }
-
-body[class*="contact"] li#contact { background: lighten($bluewood, 15%); }
-body[class*="contact"] li#contact i,
-body[class*="contact"] li#contact a { color: #fff; }
 
 article.static h1 {
   font-family: $headline;
@@ -904,9 +899,11 @@ h1.logo a:visited:active {
 }
 
 h1.site-section {
-  //font-family: $serif;
+  font-family: $headline;
+  text-transform: uppercase;
+  letter-spacing: .03em;
   font-size: calc-em(18px);
-  font-weight: 600;
+  font-weight: 500;
   //font-style: italic;
   margin: .1em 0 0 0;
   color: $blue-1;
@@ -941,22 +938,27 @@ ul.subnav-items-list li {
   //border-radius: 4px;
 }
 ul.subnav-items-list li:not(:last-child) {
-  border-bottom: 2px dotted $blue-3;
-  margin-right: 1em;
+  margin-right: .5em;
   @include respond-to($iphone_landscape) { margin-right: 0; }
 }
 
 ul.subnav-items-list li a {
-  padding: .5em .2em;
+  vertical-align: middle;
 
+  padding: .1em .5em .2em .5em;
+  border-radius: 3px;
+  text-decoration: none;
   @include respond-to($iphone_landscape) {
     display: block;
   }
 }
 
 ul.subnav-items-list li a:hover {
+  background: rgba(0,0,0, .1);
+  color: $orange;
+  text-decoration: none;
   @include respond-to($iphone_landscape) {
-    background: darken($blue-4, 3%);
+
     text-decoration: none;
   }
 }

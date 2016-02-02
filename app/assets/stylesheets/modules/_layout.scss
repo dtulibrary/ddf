@@ -55,6 +55,11 @@ body > header {
   padding: .5em 0;
 }
 
+body#data-providers .header__wrapper {
+  border-bottom: 1px solid $blue-3;
+}
+
+
 // TODO
 body > footer {
   clear: both;
