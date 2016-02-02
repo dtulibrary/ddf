@@ -18,10 +18,10 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="userDropdown">
-          <li><%= link_to 'Opret udstilling', new_exhibit_path %></li>
           <% if current_exhibit %>
-            <li><%= link_to 'Dashboard', edit_exhibit_path(current_exhibit) %></li>
+          <li><%= link_to 'Administrèr udstilling', edit_exhibit_path(current_exhibit) %></li>
           <% end %>
+          <li><%= link_to 'Opret udstilling', new_exhibit_path %></li>
           <li><%= link_to 'Log ud', destroy_user_session_path %></li>
         </ul>
       </div>
