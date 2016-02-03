@@ -69,8 +69,6 @@ end
 
 group :development, :test do
   gem 'spring'
-  gem 'metastore-test_data', :github => 'dtulibrary/metastore-test_data'
-
   # gem 'web-console', '~> 2.0'
   gem 'xray-rails'
   gem 'pry', '~> 0.10.1'

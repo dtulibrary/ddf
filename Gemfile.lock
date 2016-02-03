@@ -10,17 +10,6 @@ GIT
       twitter-typeahead-rails (~> 0.11)
 
 GIT
-  remote: git://github.com/dtulibrary/metastore-test_data.git
-  revision: d66ec9665e7c1adaadf0cdd83798b75c90216f69
-  specs:
-    metastore-test_data (0.0.1)
-      highline
-      jettywrapper
-      nokogiri
-      rails
-      rsolr
-
-GIT
   remote: git://github.com/flyingzumwalt/solr_wrapper.git
   revision: e5b36673f966876148e15102f0c67339790ec183
   specs:
@@ -183,8 +172,6 @@ GEM
       carrierwave (>= 0.8.0, < 0.11.0)
       jquery-rails
       rails (>= 3.2)
-    childprocess (0.5.8)
-      ffi (~> 1.0, >= 1.0.11)
     citeproc (1.0.2)
       namae (~> 0.8)
     citeproc-ruby (1.1.0)
@@ -226,7 +213,6 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.10)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     github-markup (1.4.0)
@@ -252,7 +238,6 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    highline (1.7.8)
     hike (1.2.3)
     honeypot-captcha (0.0.3)
     http_logger (0.5.1)
@@ -262,12 +247,6 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jettywrapper (2.0.3)
-      activesupport (>= 3.0.0)
-      childprocess
-      i18n
-      logger
-      rubyzip
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -287,7 +266,6 @@ GEM
     little-plugger (1.1.4)
     lodash-rails (4.0.0)
       railties (>= 3.1)
-    logger (1.2.8)
     logging (2.0.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
@@ -526,7 +504,6 @@ DEPENDENCIES
   json (= 1.8.2)
   launchy
   libv8 (= 3.16.14.7)
-  metastore-test_data!
   minitest
   netaddr
   openurl
