@@ -1,70 +1,51 @@
-require 'bundler/capistrano'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-set :rails_env, ENV['RAILS_ENV'] || 'unstable'
-set :application, ENV['HOST'] || 'ddf.vagrant.vm'
-set :ddf_config, ENV['DDF_CONFIG'] || "#{rails_env}"
+set :application, 'ddf'
+set :repo_url, 'git@github.com:dtulibrary/ddf.git'
 
-set :deploy_to, "/var/www/#{application}"
-role :web, "#{application}"
-role :app, "#{application}"
-role :db, "#{application}", :primary => true
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'elite'
 
-default_run_options[:pty] = true
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, '/var/www/spotlight.ddf.dtic.dk'
+set :passenger_restart_with_touch, true
 
-ssh_options[:forward_agent] = false
-set :user, 'capistrano'
-set :use_sudo, false
-set :copy_exclude, %w(.git jetty feature spec)
+# Default value for :scm is :git
+# set :scm, :git
 
+# Default value for :format is :pretty
+# set :format, :pretty
 
-if fetch(:application).end_with?('vagrant.vm')
-  set :scm, :none
-  set :repository, '.'
-  set :deploy_via, :copy
-  set :copy_strategy, :export
-  ssh_options[:keys] = [ENV['IDENTITY'] || './vagrant/puppet-applications/vagrant-modules/vagrant_capistrano_id_dsa']
-else
-  set :deploy_via, :remote_cache
-  set :scm, :git
-  set :scm_username, ENV['CAP_USER']
-  set :repository, ENV['SCM']
-  if variables.include?(:branch_name)
-    set :branch, "#{branch_name}"
-  else
-    set :branch, 'master'
-  end
-  set :git_enable_submodules, 1
-end
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-# tasks
+# Default value for :pty is false
+# set :pty, true
 
-before "deploy:assets:precompile", "config:symlink"
-after "deploy:update", "deploy:cleanup"
+# Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push(
+'config/database.yml', 'config/secrets.yml', 'config/blacklight.yml')
 
-namespace :config do
-  desc "linking configuration to current release"
-  task :symlink do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{deploy_to}/shared/config/solr.yml #{release_path}/config/solr.yml"
-    run "ln -nfs #{deploy_to}/shared/config/application.local.rb #{release_path}/config/application.local.rb"
-    run "ln -nfs #{deploy_to}/shared/config/secrets.yml #{release_path}/config/secrets.yml"
-  end
-end
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads', 'public/assets')
 
-# load deploy:seed task
-load 'lib/deploy/seed'
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
 
 namespace :deploy do
-  task :start, :roles => :app do
-    run "touch #{current_path}/tmp/restart.txt"
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
   end
 
-  task :stop, :roles => :app do
-    # Do nothing.
-  end
-
-  desc "Restart Application"
-  task :restart, :roles => :app do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
 end

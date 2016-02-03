@@ -36,7 +36,9 @@ gem 'blacklight_range_limit', '~> 5.2.0'
 # gem 'blacklight_range_limit', :github => 'dtulibrary/blacklight_range_limit'
 
 gem 'honeypot-captcha'
-gem 'capistrano', '~> 2.0'
+gem 'capistrano', '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-passenger', '~> 0.2'
 
 gem 'dalli'
 gem 'bibtex-ruby'
