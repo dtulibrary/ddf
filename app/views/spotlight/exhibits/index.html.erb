@@ -1,46 +1,55 @@
 <div class="col-md-9">
   <% if (current_user && current_user.exhibits.any?) || can?(:manage, Spotlight::Exhibit) %>
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab"><%= t('.published') %></a></li>
-      <% if can?(:manage, Spotlight::Exhibit) && @exhibits.unpublished.accessible_by(current_ability).any? %>
-        <li role="presentation"><a href="#unpublished" aria-controls="unpublished" role="tab" data-toggle="tab"><%= t('.unpublished') %></a></li>
-      <% end %>
-      <% if current_user && current_user.exhibits.any? %>
-        <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab"><%= t('.user') %></a></li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="published">
-      <% if @exhibits.published.none? %>
-        <%= render 'missing_exhibits' %>
-      <% else %>
-        <%#= render 'tags', tags: @exhibits.published.all_tags %>
-        <%= render 'exhibits', exhibits: @published_exhibits %>
-
-        <% if @published_exhibits.total_count > @published_exhibits.size %>
-          <nav>
-            <ul class="pager">
-              <li><%= link_to_previous_page @published_exhibits, t('views.pagination.previous').html_safe %></li>
-              <li><%= link_to_next_page @published_exhibits, t('views.pagination.next').html_safe %></li>
-            </ul>
-          </nav>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab"><%= t('.published') %></a></li>
+        <% if can?(:manage, Spotlight::Exhibit) &&  @exhibits.unpublished.accessible_by(current_ability).any? %>
+            <li role="presentation"><a href="#unpublished" aria-controls="unpublished" role="tab" data-toggle="tab"><%= t('.unpublished') %></a></li>
         <% end %>
-      <% end %>
+        <% if current_user && current_user.exhibits.any? %>
+            <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab"><%= t('.user') %></a></li>
+        <% end %>
+      </ul>
+  <% end %>
+  <div class="tab-content">
 
-    </div>
+    <%= cache cache_key_for_spotlight_exhibits do %>
+
+        <div role="tabpanel" class="tab-pane active" id="published">
+          <% if @exhibits.published.none? %>
+              <%= render 'missing_exhibits' %>
+          <% end %>
+          <% ActsAsTaggableOn::Tag.all.order('name desc').each do |year_tag| %>
+              <% ids = ActsAsTaggableOn::Tagging.where(taggable_type: 'Spotlight::Exhibit', tag_id: year_tag.id).pluck(:taggable_id) %>
+
+              <h1>Prisvindere <%= year_tag.name %></h1>
+
+              <% @exhibits.published.where(id: ids).each_slice(3).each do |row| %>
+                  <div class="row"><!-- start main content row -->
+                    <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+                  </div>
+              <% end %>
+          <% end %>
+        </div>
+    <% end %>
 
     <% if @exhibits.unpublished.accessible_by(current_ability).any? %>
-      <div role="tabpanel" class="tab-pane" id="unpublished">
-        <%= render 'exhibits', exhibits: @exhibits.unpublished.accessible_by(current_ability) %>
-      </div>
+        <div role="tabpanel" class="tab-pane" id="unpublished">
+          <% @exhibits.unpublished.accessible_by(current_ability).each_slice(3).each do |row| %>
+              <div class="row"><!-- start main content row -->
+                <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+              </div>
+          <% end %>
+        </div>
     <% end %>
 
     <% if current_user && current_user.exhibits.any? %>
-      <div role="tabpanel" class="tab-pane" id="user">
-        <%= render 'exhibits', exhibits: current_user.exhibits %>
-      </div>
+        <div role="tabpanel" class="tab-pane" id="user">
+          <% current_user.exhibits.each_slice(3).each do |row| %>
+              <div class="row"><!-- start main content row -->
+                <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+              </div>
+          <% end %>
+        </div>
     <% end %>
   </div>
 </div>
