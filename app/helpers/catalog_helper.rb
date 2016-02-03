@@ -269,7 +269,7 @@ end
 
   def render_journal_issue_info document, format
     if document['journal_issue_ssf']
-      ", No. #{document['journal_issue_ssf'].first}"
+      ", Issue #{document['journal_issue_ssf'].first}"
     else
       ''
     end
