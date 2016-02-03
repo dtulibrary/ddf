@@ -205,7 +205,7 @@ en:
       rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
-      rdb_aarch: Aarhus School of Architecture
+      rdb_aarch: "Research Institutions in Architecture, Design and Conservation"
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES
