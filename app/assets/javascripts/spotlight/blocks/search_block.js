@@ -22,7 +22,6 @@ SirTrevor.Blocks.Search = (function(){
         '<div class="widget-header">',
           '<%= description() %>',
         '</div>',
-        '<p>Show 25 most recent publications</p>',
       '</div>'
     ].join("\n"),
   });
@@ -30,7 +29,7 @@ SirTrevor.Blocks.Search = (function(){
 })();
 
 SirTrevor.Locales.en.blocks.search = {
-  title:  "Publications",
-  description: "Show a select sample of publications",
+    title:  "Publications",
+    description: "Show 10 most recent publications"
 };
 
