@@ -386,3 +386,6 @@ https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 Adding print functionality to pages:
 http://stackoverflow.com/questions/20101409/how-can-i-insert-a-print-button-that-prints-a-form-in-a-webpage
 https://css-tricks.com/quick-tip-making-a-print-this-page-button/
+
+Overriding BS variables:
+http://stackoverflow.com/questions/20435612/overriding-bootstrap-variables-in-rails-with-bootstrap-sass-gem
