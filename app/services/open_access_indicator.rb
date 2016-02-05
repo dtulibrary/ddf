@@ -48,7 +48,8 @@ class OpenAccessIndicator
   end
 
   def self.resource_url(year, resource)
-    URI(Rails.configuration.x.open_access.url % { year: year, resource: resource, format: 'json' })
+    URI(Rails.configuration.x.open_access.url %
+      { year: year, resource: resource, format: 'json', profile: self.profile })
   end
 
   def self.status_url
