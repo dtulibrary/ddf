@@ -1,9 +1,13 @@
-<article class="static">
+<article class="static search-docs">
 
   <div class="measure">
     <h1>Søgning</h1>
 
-    <p>Syntaksen <a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a> anvendes som søgesyntaks. De tilgængelige feltnavne er::</p>
+    <p>
+      Syntaksen <a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a> anvendes som søgesyntaks, men vær opmærksom på, at Lucene anvender <span class="operator">OR</span> operatoren som default operator mellem to termer, hvis der ikke er angivet en boolsk operator, hvorimod DDF anvender <span class="operator">AND</span> operatoren som default operator.
+    </p>
+
+    <p>De tilgængelige feltnavne er::</p>
   </div>
 
   <div class="measure">
@@ -148,19 +152,24 @@
   <p><strong>Søgning 1</strong>: <span class="search-example">ti:water</span> <br />
     Giver resultater med: <span class="search-result">water</span> og <span class="search-result">waters</span> (default stemming)</p>
 
-  <p><strong>Søgning 2</strong>: <span class="search-example">ti:water*</span> <br />
-    Giver resultater med: <span class="search-result">water</span>, <span class="search-result">waters</span> and <span class="search-result">waterlogged</span>.</p>
+    <p><strong>Søgning 2</strong>: <span class="search-example">ti:water*</span> <br />
+      Giver resultater med: <span class="search-result">water</span>, <span class="search-result">waters</span> and <span class="search-result">waterlogged</span>.</p>
 
-  <p>Søgeresultaterne kan rankeres efter forskellige kriterier. Standard er “relevans”. Relevans prioriterer data fra titel-feltet.</p>
+      <p>Søgeresultaterne kan rankeres efter forskellige kriterier. Standard er “relevans”. Relevans prioriterer data fra titel-feltet.</p>
 
-  <p>Der tilbydes en række facetter til at indsnævre søgningen med.</p>
+      <p>Der tilbydes en række facetter til at indsnævre søgningen med.</p>
 
+<<<<<<< HEAD
   <h2>Hent</h2>
   <p>Ved hver publikation tilbydes der links tilbage til institutionernes CRIS systemer, links til Open Access fuldtekst versionerne samt links til forlagsversionen.</p>
+=======
+      <h2>Hent</h2>
+      <p>Ved hver publikation tilbydes der links tilbage til institutionernes CRIS systemer, links til Open Access fuldtekst versionerne samt links til forlagsversionen.</p>
+>>>>>>> master
 
-  <p>Det er interfacet i det enkelte CRIS system, som publikationen oprindeligt er hentet fra, der håndterer rettighederne til fuldteksterne. Det enkelte CRIS system tilbyder sandsynligvis forskellige og differentierede adgangsrettigheder til fuldteksterne baseret på brugerens rolle, affiliation, version af fuldteksten etc.</p>
+      <p>Det er interfacet i det enkelte CRIS system, som publikationen oprindeligt er hentet fra, der håndterer rettighederne til fuldteksterne. Det enkelte CRIS system tilbyder sandsynligvis forskellige og differentierede adgangsrettigheder til fuldteksterne baseret på brugerens rolle, affiliation, version af fuldteksten etc.</p>
 
-  <p>Den Danske Forskningsdatabase indeholder ingen fuldtekster og har ingen service hvad angår bestilling af publikationer. Her henvises til dataleverandørens CRIS system, et bibliotek og/eller publikationens udgiver.</p>
-</div>
-</article>
+      <p>Den Danske Forskningsdatabase indeholder ingen fuldtekster og har ingen service hvad angår bestilling af publikationer. Her henvises til dataleverandørens CRIS system, et bibliotek og/eller publikationens udgiver.</p>
+    </div>
+  </article>
 

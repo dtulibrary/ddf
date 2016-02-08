@@ -1,9 +1,13 @@
-<article class="static">
+<article class="static search-docs">
 
   <div class="measure">
     <h1>Search Tutorial</h1>
 
-    <p>Database search is performed using the <a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a>. The available search parameters are:</p>
+    <p>
+      Database search is performed using the <a target="_blank" href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">Lucene Query Syntax</a>, but be aware that while Lucene uses <span class="operator">OR</span> as the default conjunction operator, DDF uses the <span class="operator">AND</span> operator. So when no boolean operator is specified between search terms, <span class="operator">AND</span> will be used.
+    </p>
+
+    <p>The available search parameters are:</p>
   </div>
 
   <div class="measure">
@@ -173,23 +177,23 @@
    </p>
  -->
 
-   <h2>Stemming</h2>
-   <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term <span class="search-example">test</span> you will also retrieve hits on <span class="search-result">tests</span>, <span class="search-result">tested</span>, <span class="search-result">testing</span>, <span class="search-result">tester</span>, etc.</p>
+ <h2>Stemming</h2>
+ <p>Any search term is by default reduced to its elemental root in order to retrieve all forms of the term, just like applying truncation. If you search for the term <span class="search-example">test</span> you will also retrieve hits on <span class="search-result">tests</span>, <span class="search-result">tested</span>, <span class="search-result">testing</span>, <span class="search-result">tester</span>, etc.</p>
 
-   <h2>Truncation and wild card matching</h2>
-   <p>In most cases truncation is not necessary because of the default stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
+ <h2>Truncation and wild card matching</h2>
+ <p>In most cases truncation is not necessary because of the default stemming of search terms. Asterisk is used as wildcard symbol, representing any character within a word. Searching for <span class="search-example">wom*n</span> will retrieve <span class="search-result">woman</span> and <span class="search-result">women</span>.</p>
 
-  <p>The following examples illustrate the difference between a query without truncation (query 1) and a query with truncation (query 2):</p>
+ <p>The following examples illustrate the difference between a query without truncation (query 1) and a query with truncation (query 2):</p>
 
-  <p><strong>Query 1</strong>: <span class="search-example">ti:water</span> <br />
-    Retrieves hits on: <span class="search-result">water</span> and <span class="search-result">waters</span> (default stemming)</p>
+ <p><strong>Query 1</strong>: <span class="search-example">ti:water</span> <br />
+  Retrieves hits on: <span class="search-result">water</span> and <span class="search-result">waters</span> (default stemming)</p>
 
   <p><strong>Query 2:</strong> <span class="search-example">ti:water*</span> <br />
     Retrieves hits on: <span class="search-result">water</span>, <span class="search-result">waters</span> and <span class="search-result">waterlogged</span>.</p>
 
-   <p>Search results can be ranked on various parameters. The default is “relevance”, giving a priority boost to the <em>title</em> data element.</p>
+    <p>Search results can be ranked on various parameters. The default is “relevance”, giving a priority boost to the <em>title</em> data element.</p>
 
-   <p>To refine search results, the database offers a selection of facets, which allows for narrowing down of the various parameters.</p>
+    <p>To refine search results, the database offers a selection of facets, which allows for narrowing down of the various parameters.</p>
 
     <h2>Get</h2>
     <p>For publications found in the database, it provides: backlinks to the research institutions' CRIS systems; links to Open Access versions of full texts; and links to publishers' editions.</p>
@@ -197,6 +201,6 @@
     <p>Thus, access to the full texts of publications found in the database is handled by the user interfaces of the CRIS systems in which the publications were originally registered. They may offer different and differentiated access options – based on user role, affiliation, existence of deposited Open Access versions, etc.</p>
 
     <p>This database does not contain digital copies of any of the publications and has no service with regard to ordering of material. For ordering, please refer to the data providers’ CRIS, a library and/or the publishers of the publications.</p>
- </div>
+  </div>
 </article>
 

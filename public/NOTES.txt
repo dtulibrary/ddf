@@ -444,3 +444,14 @@ Adding print functionality to pages:
 http://stackoverflow.com/questions/20101409/how-can-i-insert-a-print-button-that-prints-a-form-in-a-webpage
 https://css-tricks.com/quick-tip-making-a-print-this-page-button/
 
+<<<<<<< HEAD
+=======
+Overriding BS variables:
+http://stackoverflow.com/questions/20435612/overriding-bootstrap-variables-in-rails-with-bootstrap-sass-gem
+
+Cookie banner implementations:
+https://github.com/dobarkod/cookie-banner
+https://cookie-script.com/demo.html
+https://silktide.com/tools/cookie-consent/
+
+>>>>>>> master
