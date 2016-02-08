@@ -1382,10 +1382,7 @@ hr.offset-3 {
    border-width: 2px 0 0 0;
 }
 
-ul.release-details {
-  margin-top: 5px;
-  margin-left: 20px;
-  li {
-    margin-bottom: auto;
-  }
-}
+ol.release-list { list-style-type: none; }
+ol.release-list time { font-weight: 600; }
+ol.release-details { margin: -.5em 0 1em 2em; }
+ol.release-details li:not(:last-child) { margin-bottom: .5em; }
