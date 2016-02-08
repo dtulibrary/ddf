@@ -18,10 +18,12 @@ da:
         about: Om Basen
         search_get: "Søg og Hent"
         data: Data
+        providers: Leverandører
         faq: FAQ
         contact: Kontakt
         indicators: Indikatorer
         actuality: Aktuelt
+        releases: Release historie
       oa_section:
         open_access: "Open Access"
       ef_section:

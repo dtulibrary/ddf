@@ -365,6 +365,63 @@ Customizing HTML checkboxes:
 http://stackoverflow.com/questions/29171243/checkboxes-with-fontawesome-change-background-color-only-css
 http://codepen.io/jamesbarnett/pen/yILjk/
 
+When & why to use definition lists:
+https://css-tricks.com/utilizing-the-underused-but-semantically-awesome-definition-list/
+
+Putting the :target pseudoclass to use:
+https://css-tricks.com/on-target/
+-> Yellow Fade technique with pure CSS:
+http://snook.ca/archives/html_and_css/yellow-fade-technique-css-animations
+
+
+DATA PROVIDER LIST ITEM SCAFFOLD:
+          <li id="">
+            <h1 class="data-provider-heading"></h1>
+            <figure class="provider-logo">
+              <%= image_tag("data-providers/.#{I18n.locale}.png") %>
+            </figure>
+            <dl class="provider-details-list">
+              <dt>Acronym</dt>
+              <dd></dd>
+
+              <dt>Web</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+
+              <dt>Established</dt>
+              <dd></dd>
+
+              <dt>Location</dt>
+              <dd></dd>
+
+              <dt>CRIS</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+
+              <dt>OAI repository URL</dt>
+              <dd>
+                <a target="_blank" href=""></a>
+                <i class="fa fa-external-link"></i>
+              </dd>
+            </dl>
+          </li>
+
+Interpolating strings with jQuery:
+http://stackoverflow.com/questions/6644618/interpolation-in-javascript
+http://stackoverflow.com/questions/10274081/javascript-interpolating-variables-inside-strings
+
+How do you roll back (reset) a Git repository to a particular commit? [duplicate]
+http://stackoverflow.com/questions/1616957/how-do-you-roll-back-reset-a-git-repository-to-a-particular-commit
+git reset --hard <tag/branch/commit id>
+
+Google's Cards:
+https://www.google.com/design/spec/components/cards.html#cards-usage
+http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card
+
 # -*- encoding : utf-8 -*-
 class BookmarksController < CatalogController
   include Blacklight::Bookmarks
@@ -387,6 +444,8 @@ Adding print functionality to pages:
 http://stackoverflow.com/questions/20101409/how-can-i-insert-a-print-button-that-prints-a-form-in-a-webpage
 https://css-tricks.com/quick-tip-making-a-print-this-page-button/
 
+<<<<<<< HEAD
+=======
 Overriding BS variables:
 http://stackoverflow.com/questions/20435612/overriding-bootstrap-variables-in-rails-with-bootstrap-sass-gem
 
@@ -395,3 +454,4 @@ https://github.com/dobarkod/cookie-banner
 https://cookie-script.com/demo.html
 https://silktide.com/tools/cookie-consent/
 
+>>>>>>> master

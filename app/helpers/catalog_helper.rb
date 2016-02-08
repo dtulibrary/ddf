@@ -339,9 +339,59 @@ end
     (document['backlink_ss'] || [])
   end
 
-  # TODO: Decoration of the data provider facet page
-  def decorate
-    params["f"]["source_ss"]
+  # values MUST match image file names
+  PROVIDER_CODES = {
+    rdb_sbi: 'capital-region',
+    rdb_ka:  'ministry-of-culture',
+    rdb_cbs: 'cph-business-school',
+    rdb_ruc: 'roskilde-university',
+    rdb_ku:  'copenhagen-university',
+    rdb_itu: 'it-university-of-cph',
+    rdb_fak: 'danish-defence-college',
+    rdb_sdu: 'university-southern-denmark',
+    orbit:   'technical-university-of-dk',
+    rdb_vbn: 'aalborg-university',
+    rdb_au:  'aarhus-university',
+    rdb_ark: 'architecture-design-conservation'
+  }
+
+  def render_provider_logos
+    providers = params['f']['source_ss']
+    unless providers.nil?
+      image_names = providers.map { |code| PROVIDER_CODES[code.to_sym] }
+      images = image_names.map do |name|
+        content_tag(:li, class: name) do
+          link_to(render_logo_from(name), data_provider_path(name)) +
+          content_tag(:i, "", class: "glyphicon glyphicon-info-sign")
+        end
+      end
+      images.join.html_safe
+    end
+  end
+
+  # Not using semantic names for the partials, OK?
+  def render_provider_cards
+    providers = params['f']['source_ss']
+    unless providers.nil?
+      providers.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
+    end
+  end
+
+  def render_logo_from(image_name)
+    image_tag(logo_path(image_name))
+  end
+
+  def data_provider_path(image_name)
+    "about/data/providers/##{image_name}"
+  end
+
+  def logo_path(image_name)
+    if Rails.application.assets.find_asset("data-providers/#{image_name}.#{I18n.locale}.png")
+      "data-providers/#{image_name}.#{I18n.locale}.png"
+    elsif Rails.application.assets.find_asset("data-providers/#{image_name}.png")
+      "data-providers/#{image_name}.png"
+    end
+    # TODO: Exception
   end
 
   SELECTED_SORT_FIELDS = ['year', 'title']

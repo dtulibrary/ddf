@@ -50,6 +50,9 @@ Rails.application.routes.draw do
   get 'about/data' => 'pages#data'
   get 'about/faq' => 'pages#faq'
   get 'about/contact' => 'pages#contact'
+  get 'about/releases' => 'pages#releases'
+
+  get 'about/data/providers' => 'pages#data_providers'
 
   # OTHER
   get 'pattern-library' => 'pages#pattern_library'
