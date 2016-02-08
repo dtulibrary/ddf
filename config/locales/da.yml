@@ -249,6 +249,7 @@ da:
       updates:
         october_2015: "(Oktober 2015): Interface og søgeteknologi opgraderet"
         january_2016: '(Januar 2016): Diverse forbedringer, inklusiv bedre forfining af søgeresultater (ny facet på indberetningsår) og forbedret integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
+        february_2016: '(Februar 2016): Forbedret fremvisning af dataleverandører'
     search:
       form:
         clear_icon_text_hover: Slet søgetermerne
@@ -292,6 +293,10 @@ da:
       modern-language-association: Modern Language Association
       apa: APA
       chicago-author-date: Chicago Author Date
+    pages:
+      data:
+        providers:
+          title: Leverandører
   citations:
     form:
       number: "Antal:"

@@ -311,6 +311,18 @@ a.btn-info:hover,
 a.btn-info:visited:hover { color: #fff; }
 a.btn-info:active        { color: #eee; }
 
+ul.data-providers-list li { list-style-type: none; }
+
+h1.data-provider-heading {
+  font-family: $headline;
+  font-size: calc-em(20px);
+  line-height: calc-em(20px);
+  margin: .5em 0;
+  color: $bluewood;
+  font-weight: 700;
+  //letter-spacing: .07em;
+}
+
 form.range_limit input.form-control {
   border: 1px solid $blue-2;
   border-radius: 0;
@@ -775,16 +787,21 @@ body[class$="search"] li#search { background: lighten($bluewood, 15%); }
 body[class$="search"] li#search i,
 body[class$="search"] li#search a { color: #fff; }
 
-body[class~="blacklight-pages-search_and_get"] li#search-get a,
-body[class~="blacklight-pages-data_providers"] li#data-providers a,
-body[class~="blacklight-pages-data"] li#data a,
-body[class~="blacklight-pages-faq"] li#faq a,
-body[class~="blacklight-pages-contact"] li#contact a
-{
-  background: lighten($bluewood, 20%);
-  color: #fff;
-}
+body[class$="about"] li#about { background: lighten($bluewood, 15%); }
+body[class$="about"] li#about i,
+body[class$="about"] li#about a { color: #fff; }
 
+body[class*="data_formats"] li#data-formats { background: lighten($bluewood, 15%); }
+body[class*="data_formats"] li#data-formats i,
+body[class*="data_formats"] li#data-formats a { color: #fff; }
+
+body[class*="data_providers"] li#data-providers { background: lighten($bluewood, 15%); }
+body[class*="data_providers"] li#data-providers i,
+body[class*="data_providers"] li#data-providers a { color: #fff; }
+
+body[class*="contact"] li#contact { background: lighten($bluewood, 15%); }
+body[class*="contact"] li#contact i,
+body[class*="contact"] li#contact a { color: #fff; }
 
 article.static h1 {
   font-family: $headline;
@@ -990,16 +1007,6 @@ h1.chart-heading em {
  letter-spacing: .05em;
 }
 
-span.beta {
-  font-family: $serif;
-  font-style: italic;
-  font-size: .8em;
-  vertical-align: text-top;
-}
-
-// TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
-button.toggle-visibility span.h { display: none; }
-button.toggle-visibility span.s { display: block; }
 button.toggle-rest span.h { display: none; }
 button.toggle-rest span.s { display: block; }
 button.show span.h { display: block; }
@@ -1370,4 +1377,12 @@ hr.offset-3 {
    border-style: solid;
    border-color: #eee;
    border-width: 2px 0 0 0;
+}
+
+ul.release-details {
+  margin-top: 5px;
+  margin-left: 20px;
+  li {
+    margin-bottom: auto;
+  }
 }

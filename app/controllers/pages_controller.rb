@@ -52,6 +52,10 @@ class PagesController < ApplicationController
     render :layout => 'about'
   end
 
+  def releases
+    render :layout => 'about'
+  end
+
   # OTHER
   def pattern_library
     render :layout => 'chrome'
