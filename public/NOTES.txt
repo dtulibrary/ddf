@@ -389,3 +389,9 @@ https://css-tricks.com/quick-tip-making-a-print-this-page-button/
 
 Overriding BS variables:
 http://stackoverflow.com/questions/20435612/overriding-bootstrap-variables-in-rails-with-bootstrap-sass-gem
+
+Cookie banner implementations:
+https://github.com/dobarkod/cookie-banner
+https://cookie-script.com/demo.html
+https://silktide.com/tools/cookie-consent/
+
