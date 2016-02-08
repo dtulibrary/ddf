@@ -1007,6 +1007,9 @@ h1.chart-heading em {
  letter-spacing: .05em;
 }
 
+// TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
+button.toggle-visibility span.h { display: none; }
+button.toggle-visibility span.s { display: block; }
 button.toggle-rest span.h { display: none; }
 button.toggle-rest span.s { display: block; }
 button.show span.h { display: block; }
