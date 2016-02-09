@@ -370,9 +370,7 @@ end
   # Not using semantic names for the partials, OK?
   def render_provider_cards
     return unless providers_params.present?
-    unless providers_params.nil?
-      providers_params.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
-    end
+    providers_params.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
   end
 
   def providers_params
