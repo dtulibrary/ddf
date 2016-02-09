@@ -356,25 +356,27 @@ end
   }
 
   def render_provider_logos
-    providers = params['f']['source_ss']
-    unless providers.nil?
-      image_names = providers.map { |code| PROVIDER_CODES[code.to_sym] }
-      images = image_names.map do |name|
-        content_tag(:li, class: name) do
-          link_to(render_logo_from(name), data_provider_path(name)) +
-          content_tag(:i, "", class: "glyphicon glyphicon-info-sign")
-        end
+    return unless providers_params.present?
+    image_names = providers_params.map { |code| PROVIDER_CODES[code.to_sym] }
+    images = image_names.map do |name|
+      content_tag(:li, class: name) do
+        link_to(render_logo_from(name), data_provider_path(name)) +
+        content_tag(:i, "", class: "glyphicon glyphicon-info-sign")
       end
-      images.join.html_safe
     end
+    images.join.html_safe
   end
 
   # Not using semantic names for the partials, OK?
   def render_provider_cards
-    providers = params['f']['source_ss']
-    unless providers.nil?
-      providers.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
+    return unless providers_params.present?
+    unless providers_params.nil?
+      providers_params.map { |prov| render "catalog/providers/#{prov}" }.join.html_safe
     end
+  end
+
+  def providers_params
+    params['f']['source_ss'] rescue nil
   end
 
   def render_logo_from(image_name)
