@@ -51,6 +51,8 @@ Rails.application.routes.draw do
   get 'about/faq' => 'pages#faq'
   get 'about/contact' => 'pages#contact'
   get 'about/releases' => 'pages#releases'
+  get 'about/cookies' => 'pages#cookies'
+
 
   get 'about/data/providers' => 'pages#data_providers'
 
