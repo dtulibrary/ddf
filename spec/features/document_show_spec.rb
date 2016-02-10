@@ -1,4 +1,4 @@
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :selenium
 feature 'Document show' do
   include_context 'common'
 

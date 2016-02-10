@@ -81,6 +81,7 @@ group :test do
   gem 'launchy'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 end
 
 gem 'rsolr', '~> 1.0.6'
