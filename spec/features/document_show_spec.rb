@@ -3,15 +3,10 @@ feature 'Document show' do
   include_context 'common'
 
   background do
-    pending 'Something going wrong here'
     visit root_path
     fill_in 'Search...', with: 'search terms'
-    expect_any_instance_of(Net::HTTPResponse).to receive(:body).at_least(:once)
-    .and_return(response_with_highlighting)
     click_button 'Search'
-    click_link 'sample title'
-    #  expect(Blacklight.solr).to receive(:get).and_return(default_show_response)
-    # visit(solr_document_path({id: '2266145840'}))
+    first('h5.doctitle').find('a').click
   end
 
   scenario 'retrieving a citation' do
@@ -22,7 +17,6 @@ feature 'Document show' do
   end
 
   context 'exporting', js: true  do
-    pending 'Something going wrong here'
     scenario 'clicking on the export button makes options visible' do
       expect(page).not_to have_content 'Save to Mendeley'
       expect(page).not_to have_content 'Export to BibTeX'
@@ -36,13 +30,12 @@ feature 'Document show' do
     end
 
     scenario 'Email citation', js: true do
-    pending 'Something going wrong here'
       click_link 'Save and export'
       click_link 'Email citation'
       fill_in 'To', with: 'tester@sample.com'
       select('APA', from: 'style')
       click_button 'Preview'
-      expect(page).to have_content 'Benros, M. E.'
+      expect(page).to have_content 'Preview citations'
     end
   end
 end
