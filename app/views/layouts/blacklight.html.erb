@@ -56,5 +56,12 @@
     </div>
 
     <%= render :partial => 'shared/footer' %>
+    <script type="text/javascript" id="cookiebanner"
+    src="//cookiebanner.eu/js/cookiebanner.min.js"
+    data-height="30px" data-position="top"
+    data-message="<%= t 'ddf.cookies.message' %>"
+    data-moreinfo="<%= about_cookies_path %>"
+    >
+  </script>
   </body>
 </html>
