@@ -444,8 +444,6 @@ Adding print functionality to pages:
 http://stackoverflow.com/questions/20101409/how-can-i-insert-a-print-button-that-prints-a-form-in-a-webpage
 https://css-tricks.com/quick-tip-making-a-print-this-page-button/
 
-<<<<<<< HEAD
-=======
 Overriding BS variables:
 http://stackoverflow.com/questions/20435612/overriding-bootstrap-variables-in-rails-with-bootstrap-sass-gem
 
@@ -454,4 +452,12 @@ https://github.com/dobarkod/cookie-banner
 https://cookie-script.com/demo.html
 https://silktide.com/tools/cookie-consent/
 
->>>>>>> master
+DON'T RETURN OR PASS NIL:
+https://robots.thoughtbot.com/if-you-gaze-into-nil-nil-gazes-also-into-you
+http://www.nickdesteffen.com/blog/why-rescue-nil-is-bad
+http://devblog.avdi.org/2012/11/19/rubytapas-022-inline-rescue/
+http://technicaldebt.com/the-cost-of-using-rubys-rescue-as-logic/
+
+Do this instead:
+http://stackoverflow.com/questions/17512197/how-to-deal-with-potential-errors-while-accessing-a-hash-inside-a-hash
+
