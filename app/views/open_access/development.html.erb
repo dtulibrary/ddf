@@ -40,24 +40,14 @@
             </li>
           -->
 
-            <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
-              <% data = @timeline[@key][year.to_s] %>
-
-              <%# binding.pry %>
-
+            <% @years.each do |year| %>
               <li>
                 <a href="#" class="">
-                  <span class="label"><%= year %></span>
-                  <span class="count" style="height: <%= data['relative'] %>%">(<%= data['relative'] %>%)</span>
-                  <%# render_pct_for_year(@key, year) %>
+                  <%= render_year_for(year) %>
+                  <%= render_pct_for(@resource, @key, year) %>
                 </a>
               </li>
             <% end %>
-
-              <%# render_link_to(facet) %>
-              <%# render_count_for(facet) %>
-              <%# render_percentage_for(facet) %>
-
 
         </ul>
       </div>

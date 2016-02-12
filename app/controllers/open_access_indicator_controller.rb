@@ -22,7 +22,8 @@ class OpenAccessIndicatorController < ApplicationController
     @key = params[:key] || 'national'
     # get the resource that corresponds to this key
     @resource = OpenAccessIndicator::RESOURCES.select {|k,v| @key.in? v}.keys.first
-    @timeline = OpenAccessIndicator.timeline(@resource, @key) #used only once — can be removed
+    @timeline = OpenAccessIndicator.timeline(@resource, @key) #used only once
+    @years = OpenAccessIndicator::YEARS.reverse
   end
 
   def reports

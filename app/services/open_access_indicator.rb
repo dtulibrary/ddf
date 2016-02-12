@@ -44,13 +44,14 @@ class OpenAccessIndicator
         timeline[key][year.to_s] = Response.timeline_values(response, resource, key)
       end
     end
+    # binding.pry
     timeline
   end
 
   def self.get_percentage_for(resource, key, year)
     timeline = timeline(resource, key)
     data = timeline[key][year.to_s]
-    data[relative]
+    data['relative']
   end
 
   def self.resource_url(year, resource)

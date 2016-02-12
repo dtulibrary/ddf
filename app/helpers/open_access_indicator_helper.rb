@@ -27,10 +27,17 @@ module OpenAccessIndicatorHelper
   #   "<span class='pct' style='width: #{pct}'>#{parenthesized}</span>".html_safe
   # end
 
-  def render_pct_for(key, year)
-    pct = OpenAccessIndicator.get_percentage_for(key, year)
-    "<span class='count' style='height: #{pct}'>#{pct}</span>".html_safe
+  def render_year_for(year)
+    "<span class='label'>#{year}</span>".html_safe
+  end
+
+  def render_pct_for(resource, key, year)
+    pct = OpenAccessIndicator.get_percentage_for(resource, key, year)
+    rounded = pct.round(2)
+    "<span class='count' style='height: #{pct}%'>#{rounded}%</span>".html_safe
   end
 
 end
+
+
 
