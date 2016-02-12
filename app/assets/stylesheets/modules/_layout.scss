@@ -377,6 +377,10 @@ figure#deff {
 div.intro { margin-bottom: .5em; }
 
 div.chart {
+  background: #eee;
+  position: relative;
+
+
  @include respond-to($ipad_portrait) {
     margin-bottom: 7em; // TODO
   }

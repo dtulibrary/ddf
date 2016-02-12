@@ -47,6 +47,12 @@ class OpenAccessIndicator
     timeline
   end
 
+  def self.get_percentage_for(resource, key, year)
+    timeline = timeline(resource, key)
+    data = timeline[key][year.to_s]
+    data[relative]
+  end
+
   def self.resource_url(year, resource)
     URI(Rails.configuration.x.open_access.url %
       { year: year, resource: resource, format: 'json', profile: self.profile })

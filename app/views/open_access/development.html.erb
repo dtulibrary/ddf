@@ -3,16 +3,15 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="oa-development-heading">
-          <span class="development-for">
-              <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
-          </span>
-          <span class="development-period">
-            Period:
-            <%= "#{OpenAccessIndicator::YEARS.last}" %> &mdash;
-            <%= "#{OpenAccessIndicator::YEARS.first}" %>
-          </span>
+          <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
         </h1>
-        <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
+        <h2>
+          Period:
+          <%= "#{OpenAccessIndicator::YEARS.last}" %> &mdash;
+          <%= "#{OpenAccessIndicator::YEARS.first}" %>
+        </h2>
+
+        <div class="oa-inputs-wrapper">
           <%= form_tag({controller: 'open_access_indicator', action: 'development'}, method: 'get', class: 'centered') do %>
             <ul class="oa-filtering-inputs">
               <li>
@@ -27,31 +26,44 @@
             </ul>
           <% end %>
         </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 chart">
-        <ul class="chartlist types">
 
-        <!-- TODO: TEST -->
-          <li class="projected">
-            <a class="muted-link" href="#">100%</a>
-            <span class="count">2020</span>
-            <span class="pct" style="width: 100%">100</span>
-          </li>
-        <!-- TODO: TEST -->
 
-          <% OpenAccessIndicator::YEARS.each do |year| %>
-          <% data = @timeline[@key][year.to_s] %>
-            <li>
-              <a href="#" class="muted-link"><%= "#{data['relative'].round(1)}%" %></a>
-              <%= content_tag :span, year, class: 'count' %>
-              <%= content_tag :span, data['relative'], class: 'pct', style: "width: #{data['relative']}%" %>
+        <div class="chart">
+          <ul class="timeline">
+
+          <!-- TODO:
+            <li class="projected">
+              <a class="muted-link" href="#">100%</a>
+              <span class="count">2020</span>
+              <span class="pct" style="width: 100%">100</span>
             </li>
-          <% end %>
+          -->
+
+            <% OpenAccessIndicator::YEARS.reverse.each do |year| %>
+              <% data = @timeline[@key][year.to_s] %>
+
+              <%# binding.pry %>
+
+              <li>
+                <a href="#" class="">
+                  <span class="label"><%= year %></span>
+                  <span class="count" style="height: <%= data['relative'] %>%">(<%= data['relative'] %>%)</span>
+                  <%# render_pct_for_year(@key, year) %>
+                </a>
+              </li>
+            <% end %>
+
+              <%# render_link_to(facet) %>
+              <%# render_count_for(facet) %>
+              <%# render_percentage_for(facet) %>
+
+
         </ul>
+      </div>
+
       </div>
     </div>
   </div>
 </article>
+
