@@ -1,14 +1,14 @@
  /* TIMELINE CHARTS */
  ul.timeline {
   font-size: 0.75em;
-  height: 10em;
+  height: 100%;
   width: 53em;
 }
 ul.timeline li {
   position: relative;
   display: inline-block;
-  width: 3.5em;
-  height: 15em;
+  width: 4em;
+  height: 20em;
 }
 ul.timeline li:not(:last-child) { margin-right: .5em; }
 
@@ -30,6 +30,7 @@ ul.timeline li .label {
   color: #000;
   font-size: 1.2em;
   padding: 0; // override BS
+  font-weight: 600;
 }
 ul.timeline li a .count {
   display: block;
@@ -38,14 +39,23 @@ ul.timeline li a .count {
   left: 0;
   height: 0;
   width: 100%;
-  background: #AAA;
+  background: $chart-green;
   text-align: center;
-  // text-indent: -9999px;
-  // overflow: hidden;
+  padding-top: .3em;
+  font-weight: 600;
 }
 ul.timeline li:hover {
   background: #EFEFEF;
 }
 ul.timeline li a:hover .count {
-  background: #2D7BB2;
+  // background: #2D7BB2;
+}
+
+ul.timeline li.unavailable .count { display: none; }
+
+ul.timeline li.projected .count { background: lighten($chart-green, 30%); }
+
+div.oa-development-chart {
+  // height: 15em;
+  // background: #eee;
 }
