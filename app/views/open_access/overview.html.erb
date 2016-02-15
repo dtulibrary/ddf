@@ -7,6 +7,13 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="oa-overview-heading"><%= t('ddf.open_access.header', year: year) %></h1>
+
+        <ul class="oa-colors-list">
+          <li><span class="legend realized"></span>Realized</li>
+          <li><span class="legend unused"></span>Unused</li>
+          <li><span class="legend unclear"></span>Unclear</li>
+        </ul>
+
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
           <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered', enforce_utf8: false) do  %>
             <ul class="oa-filtering-inputs">
@@ -35,6 +42,13 @@
 
     <div class="row">
       <div class="col-md-12">
+
+<!--         <ul class="oa-colors-list">
+          <li><span class="legend realized"></span>Realized</li>
+          <li><span class="legend unused"></span>Unused</li>
+          <li><span class="legend unclear"></span>Unclear</li>
+        </ul> -->
+
         <% if @overview.values.include? nil %>
           <div class="alert alert-danger">
             Error — some data missing for this year. Contact your administrator for assistance.

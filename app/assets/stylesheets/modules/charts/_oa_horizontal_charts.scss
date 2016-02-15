@@ -97,3 +97,29 @@ span.relative-rounded {
 }
 
 li.unused span.relative-rounded  { color: #000; }
+
+
+ul.oa-colors-list {
+  margin: 0 0 1.5em 0;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  font-size: .93em;
+}
+ul.oa-colors-list li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+ul.oa-colors-list li:not(:last-child) { margin-right: 1.5em; }
+ul.oa-colors-list li span.legend {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: .5em;
+}
+ul.oa-colors-list li span.realized { background: $chart-green; }
+ul.oa-colors-list li span.unused { background: $chart-yellow; }
+ul.oa-colors-list li span.unclear { background: $chart-red; }
+ul.oa-colors-list li span.projected { background: $chart-green--projected; }
