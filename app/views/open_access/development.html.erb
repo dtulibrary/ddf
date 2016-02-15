@@ -43,7 +43,7 @@
           -->
 
             <% @years.each do |year| %>
-              <li>
+              <li class="available">
                 <a href="#" class="">
                   <%= render_year_for(year) %>
                   <%= render_pct_for(@resource, @key, year) %>

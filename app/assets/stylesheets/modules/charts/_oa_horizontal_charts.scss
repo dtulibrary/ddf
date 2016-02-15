@@ -87,9 +87,9 @@ div.overlay p {
 }
 div.overlay p:last-child { margin-bottom: 0; }
 
-.realized { background: #008000; }
-.unclear { background: #FF0000; }
-.unused { background: #FFFF00; }
+.realized { background: $chart-green; }
+.unused { background: $chart-yellow; }
+.unclear { background: $chart-red; }
 
 span.relative-rounded {
   font-size: .8em;

@@ -27,10 +27,10 @@ ul.timeline li .label {
   line-height: 2em;
   text-align: center;
 
-  color: #000;
+  color: #666;
   font-size: 1.2em;
   padding: 0; // override BS
-  font-weight: 600;
+  font-weight: 700;
 }
 ul.timeline li a .count {
   display: block;
@@ -42,7 +42,8 @@ ul.timeline li a .count {
   background: $chart-green;
   text-align: center;
   padding-top: .3em;
-  font-weight: 600;
+  font-weight: 700;
+  color: #333;
 }
 ul.timeline li:hover {
   background: #EFEFEF;
@@ -53,9 +54,10 @@ ul.timeline li a:hover .count {
 
 ul.timeline li.unavailable .count { display: none; }
 
-ul.timeline li.projected .count { background: lighten($chart-green, 30%); }
+ul.timeline li.projected .count { background: $chart-green--projected; }
 
 div.oa-development-chart {
   // height: 15em;
   // background: #eee;
 }
+
