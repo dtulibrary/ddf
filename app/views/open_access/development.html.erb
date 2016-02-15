@@ -44,8 +44,8 @@
 
             <% @years.each do |year| %>
               <li class="available">
-                <a href="#" class="">
-                  <%= render_year_for(year) %>
+                <a href="<%= render_overview_link_for(year) %>" class="">
+                  <%= render_label_for(year) %>
                   <%= render_pct_for(@resource, @key, year) %>
                 </a>
               </li>

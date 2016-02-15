@@ -8,7 +8,7 @@
         <li>
           <div class="row">
             <div class="col-md-5">
-              <%= content_tag :h3, t("ddf.open_access.labels.#{unit}"), class: 'oa-label' %>
+              <%= render_oa_unit_heading(unit) %>
             </div>
             <div class="col-md-7">
               <div class="col-xs-11 chart-container">
