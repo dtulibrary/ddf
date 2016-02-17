@@ -245,7 +245,7 @@ da:
 
   ddf:
     open_access:
-      header: Open Access Indikator - Statistik for %{year}
+      header: Open Access Indikator — Statistik for %{year}
       development:
         header: "Udvikling for: %{resource} %{segment}"
       form:

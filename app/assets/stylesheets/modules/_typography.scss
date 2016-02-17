@@ -1013,6 +1013,10 @@ em.news-tag {
   letter-spacing: .1em;
   color: $blue-2;
   margin: 1em 0 1.5em 0;
+  // $screen-md-min
+  @include respond-to($ipad_landscape) {
+    margin: 1em 0 .5em 0;
+  }
 }
 .chart-heading em {
  text-transform: none;
@@ -1192,7 +1196,7 @@ ul.oa-filtering-inputs li {
 
 ul.oa-filtering-inputs li:not(:last-child) {
   margin-right: 1.5em;
-   @include respond-to($ipad_portrait) { margin-bottom: .5em; }
+  @include respond-to($ipad_portrait) { margin-bottom: .5em; }
 }
 
 button.view-oa {

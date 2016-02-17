@@ -382,9 +382,7 @@ div.chart {
   }
 }
 
-div.bookmark_document {
-  //background: #eee;
-}
+div.bookmark_document {}
 
 div.bookmark_document input.toggle_bookmark {
   // display: inline-block;
@@ -394,3 +392,5 @@ div.bookmark_document input.toggle_bookmark {
 }
 
 div#facets { padding-bottom: 0; }
+
+div.oa-chart-container { margin-bottom: 3em; }

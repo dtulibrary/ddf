@@ -1,8 +1,16 @@
 div.chart-container { padding-left: 0; } // Override BS default column padding
 
-ul.stacked-bar { }
+ul.stacked-bar,
+ul.stacked-bar > li {
+  margin: 0;
+  padding: 0;
+}
 ul.stacked-bar > li {
   list-style-type: none;
+  margin-bottom: 1em;
+  @include respond-to($screen-md-min) {
+    margin-bottom: .3em;
+  }
 }
 
 ul.values {}

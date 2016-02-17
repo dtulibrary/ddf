@@ -16,6 +16,23 @@ class OpenAccessIndicator
   REPORTS = [ 'summary'.freeze, 'publications'.freeze, 'records'.freeze ]
   LANGUAGES = { da: 'dan', en: 'eng' }
 
+
+  TOTAL_YEARS = (2013..2021)
+  PROJECTED_YEARS = { 2016 => '80', 2021 => '100' }
+
+  def self.available_years
+    # (TOTAL_YEARS.first..(Time.now.year - 2)) # ideally, this
+    (TOTAL_YEARS.first..2014)
+  end
+
+  def self.available? year
+    available_years.include? year
+  end
+
+  def self.projected? year
+    PROJECTED_YEARS.keys.include? year
+  end
+
   # Query API and convert response into a hash of values
   #
   # ==== Attributes
@@ -48,6 +65,7 @@ class OpenAccessIndicator
     timeline
   end
 
+  # ADDED by abbottjam
   def self.get_percentage_for(resource, key, year)
     timeline = timeline(resource, key)
     data = timeline[key][year.to_s]

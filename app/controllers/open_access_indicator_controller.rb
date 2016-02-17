@@ -23,7 +23,7 @@ class OpenAccessIndicatorController < ApplicationController
     # get the resource that corresponds to this key
     @resource = OpenAccessIndicator::RESOURCES.select {|k,v| @key.in? v}.keys.first
     @timeline = OpenAccessIndicator.timeline(@resource, @key) #used only once
-    @years = OpenAccessIndicator::YEARS.reverse
+    @years = OpenAccessIndicator::TOTAL_YEARS
   end
 
   def reports

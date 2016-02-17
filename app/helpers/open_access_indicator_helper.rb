@@ -11,14 +11,54 @@ module OpenAccessIndicatorHelper
     "<span class='label'>#{year}</span>".html_safe
   end
 
-  def render_pct_for(resource, key, year)
-    pct = OpenAccessIndicator.get_percentage_for(resource, key, year)
-    rounded = pct.round(2)
-    "<span class='count' style='height: #{pct}%'>#{rounded}%</span>".html_safe
+  def render_pct_for(value)
+    float = value.to_f
+    rounded = (float % 10)==0? float.round(0) : float.round(2)
+    # binding.pry
+    "<span class='count' style='height: #{rounded}%'>#{rounded}%</span>".html_safe
   end
 
   def render_overview_link_for(year)
     [open_access_overview_path, "?year=#{year}"].join
+  end
+
+  def render_bar_for(resource, key, year)
+    if OpenAccessIndicator.available? year
+      render_available(resource, key, year)
+    elsif OpenAccessIndicator.projected? year
+      render_projected(year)
+    else
+      render_unavailable(year)
+    end
+  end
+
+  def render_available(resource, key, year)
+    percentage = OpenAccessIndicator.get_percentage_for(resource, key, year)
+    "<li class='available'>
+      <a href='#{render_overview_link_for(year)}'>
+        #{render_label_for(year)}
+        #{render_pct_for(percentage)}
+      </a>
+    </li>".html_safe
+  end
+
+  def render_unavailable(year)
+    "<li id='#{year}' class='unavailable'>
+      <a href='#'>
+        #{render_label_for(year)}
+        #{render_pct_for(0)}
+      </a>
+    </li>".html_safe
+  end
+
+  def render_projected(year)
+    percentage = OpenAccessIndicator::PROJECTED_YEARS[year]
+    "<li id='#{year}' class='projected'>
+      <a href='#'>
+        #{render_label_for(year)}
+        #{render_pct_for(percentage)}
+      </a>
+    </li>".html_safe
   end
 end
 

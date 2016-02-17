@@ -224,7 +224,7 @@ en:
 
   ddf:
     open_access:
-      header: Open Access Indicator - Statistics for %{year}
+      header: Open Access Indicator — Statistics for %{year}
       development:
         header: "Development for: %{resource} %{segment}"
       form:

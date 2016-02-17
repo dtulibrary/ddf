@@ -54,17 +54,17 @@
             Error — some data missing for this year. Contact your administrator for assistance.
           </div>
         <% else %>
-          <div class="chartbox">
+          <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
             <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
           </div>
 
-          <div class="chartbox">
+          <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.research_area') %></h2>
             <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
           </div>
 
-          <div class="chartbox">
+          <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.universities') %></h2>
             <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
           </div>
