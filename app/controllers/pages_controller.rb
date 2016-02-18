@@ -56,7 +56,7 @@ class PagesController < ApplicationController
     render :layout => 'about'
   end
 
-  def cookies
+  def privacy
     render :layout => 'about'
   end
 
