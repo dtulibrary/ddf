@@ -8,7 +8,7 @@ module OpenAccessIndicatorHelper
   end
 
   def render_label_for(year)
-    "<span class='label'>#{year}</span>".html_safe
+    "<time datetime='#{year}' class='label'>#{year}</time>".html_safe
   end
 
   def render_pct_for(value)
