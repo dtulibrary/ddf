@@ -11,18 +11,17 @@ class OpenAccessIndicator
   }
 
   CLASSIFICATIONS = ['realized'.freeze, 'unused'.freeze, 'unclear'.freeze]
-  # Get vals from config - ensure that they are ordered by latest first
-  YEARS = Rails.configuration.x.open_access.years.sort.reverse
   REPORTS = [ 'summary'.freeze, 'publications'.freeze, 'records'.freeze ]
   LANGUAGES = { da: 'dan', en: 'eng' }
 
-
-  TOTAL_YEARS = (2013..2021)
   PROJECTED_YEARS = { 2016 => '80', 2021 => '100' }
 
+  # Defined in application.rb — subject to change
+  TOTAL_YEARS = Rails.configuration.x.open_access.total_years
+  LAST_YEAR = Rails.configuration.x.open_access.last_available_year
+
   def self.available_years
-    # (TOTAL_YEARS.first..(Time.now.year - 2)) # ideally, this
-    (TOTAL_YEARS.first..2014)
+    (TOTAL_YEARS.first..LAST_YEAR)
   end
 
   def self.available? year
@@ -55,7 +54,7 @@ class OpenAccessIndicator
 
   def self.timeline(resource, key)
     timeline = { key => {} }
-    YEARS.each do |year|
+    available_years.each do |year|
       response = self.get_resource(year, resource)
       if response.present?
         timeline[key][year.to_s] = Response.timeline_values(response, resource, key)
@@ -65,11 +64,9 @@ class OpenAccessIndicator
     timeline
   end
 
-  # ADDED by abbottjam
   def self.get_percentage_for(resource, key, year)
-    timeline = timeline(resource, key)
-    data = timeline[key][year.to_s]
-    data['relative']
+    response = self.get_resource(year, resource)
+    Response.timeline_values(response, resource, key)['relative']
   end
 
   def self.resource_url(year, resource)
@@ -147,9 +144,9 @@ class OpenAccessIndicator
 
     def self.read_latest(year)
       latest = Dir.entries(self.path(year))
-        .reject { |x| x.include? '.' }
-        .sort
-        .last
+      .reject { |x| x.include? '.' }
+      .sort
+      .last
       File.open(self.path(year, latest)).read
     end
 

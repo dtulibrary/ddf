@@ -10,11 +10,11 @@ class OpenAccessIndicatorController < ApplicationController
   end
 
   def overview
-    year = params[:year] || OpenAccessIndicator::YEARS.first
-    view = params[:view] || 'relative'
+    @year = params[:year] || OpenAccessIndicator.available_years.last
+    @view = params[:view] || 'relative'
     @overview = {}
     OpenAccessIndicator::RESOURCES.keys.each do |resource|
-      @overview[resource] = OpenAccessIndicator.fetch(resource, year, view)
+      @overview[resource] = OpenAccessIndicator.fetch(resource, @year, @view)
     end
   end
 

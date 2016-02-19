@@ -3,13 +3,14 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="oa-development-for">
-          <%= t('ddf.open_access.development.header', { resource: t('ddf.open_access.segments.' + @resource), segment: t('ddf.open_access.labels.' + @key)}) %>
+          <span class="development-segment"><%= t('ddf.open_access.development.header') %></span>
+          <%= t('ddf.open_access.labels.' + @key) %>
         </h1>
         <h2 class="oa-development-period">
           Period:
           <strong>
-            <%= "#{OpenAccessIndicator::YEARS.last}" %> &mdash;
-            <%= "#{OpenAccessIndicator::YEARS.first}" %>
+            <%= "#{OpenAccessIndicator.available_years.first}" %> &mdash;
+            <%= "#{OpenAccessIndicator.available_years.last}" %>
           </strong>
         </h2>
 

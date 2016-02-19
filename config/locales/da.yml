@@ -247,7 +247,7 @@ da:
     open_access:
       header: Open Access Indikator — Statistik for %{year}
       development:
-        header: "Udvikling for: %{resource} %{segment}"
+        header: "Udvikling for:"
       form:
         labels:
           view_type: Open Access potentiale

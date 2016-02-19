@@ -1,12 +1,9 @@
 <article role="main">
   <div class="container">
 
-    <% year = params[:year] || OpenAccessIndicator::YEARS.first %>
-    <% view = params[:view] || 'relative' %>
-
     <div class="row">
       <div class="col-md-12">
-        <h1 class="oa-overview-heading"><%= t('ddf.open_access.header', year: year) %></h1>
+        <h1 class="oa-overview-heading"><%= t('ddf.open_access.header', year: @year) %></h1>
 
         <ul class="oa-colors-list">
           <li><span class="legend realized"></span>Realized</li>
@@ -20,12 +17,12 @@
               <li>
                 <%= label_tag :view, t('ddf.open_access.form.labels.view_type') %>
                 <%- view_types = ['relative', 'relative_clear'].collect { |tp| [ I18n.t("ddf.open_access.form.view_types.#{tp}"), tp ] } %>
-                <%= select_tag(:view, options_for_select(view_types, view)) %>
+                <%= select_tag(:view, options_for_select(view_types, @view)) %>
               </li>
 
               <li>
                 <%= label_tag :year, t('ddf.open_access.form.labels.year') %>
-                <%= select_tag(:year, options_for_select(OpenAccessIndicator::YEARS, year)) %>
+                <%= select_tag(:year, options_for_select(OpenAccessIndicator.available_years.to_a.reverse, @year)) %>
               </li>
 
               <li>
@@ -56,21 +53,22 @@
         <% else %>
           <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
-            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view: view } %>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view:
+              @view } %>
           </div>
 
           <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.research_area') %></h2>
-            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: view } %>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'research_area', view: @view } %>
           </div>
 
           <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.universities') %></h2>
-            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: view } %>
+            <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'universities', view: @view } %>
           </div>
         <% end %>
       </div>
     </div>
 
-    <%= render partial: 'reports', locals: { year: year} %>
+    <%= render partial: 'reports', locals: { year: @year} %>
 </article>
