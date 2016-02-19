@@ -202,10 +202,10 @@ en:
       rdb_sdu: University of Southern Denmark
       rdb_vbn: Aalborg University
       rdb_sbi: Capital Region of Denmark
-      rdb_ark: "The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation"
+      rdb_ark: "Research Institutions in Architecture, Design and Conservation"
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
-      rdb_aarch: Aarhus School of Architecture
+      rdb_aarch: "Research Institutions in Architecture, Design and Conservation"
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES
@@ -280,6 +280,7 @@ en:
       updates:
         october_2015: "(October 2015): Interface and search technology upgraded"
         january_2016: '(January 2016): Various improvements, including enhanced search result refinement (new facet on submission year) and improved integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
+        february_2016: "(February 2016): Enhanced presentation of data providers"
     search:
       form:
         clear_icon_text_hover: Clear search field
@@ -322,6 +323,14 @@ en:
       modern-language-association: Modern Language Association
       apa: APA
       chicago-author-date: Chicago Author Date
+    pages:
+      data:
+        providers:
+          title: Data Providers
+    cookies:
+      message: We use cookies to improve the Danish National Research Database
+      linkmsg: Learn more
+
   citations:
     form:
       number: "No:"

@@ -11,10 +11,13 @@ en:
         about: About
         search_get: "Search & Get"
         data: Data
+        providers: Providers
         faq: FAQ
         contact: Contact
         indicators: Indicators
         actuality: Actuality
+        releases: Release History
+        cookies: Cookies and privacy policy
       oa_section:
         open_access: "Open Access"
       ef_section:

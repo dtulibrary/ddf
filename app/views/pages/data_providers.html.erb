@@ -1,21 +1,27 @@
 <article class="static">
-  <div class="measure">
 
-    <h1>Data providers</h1>
-    <ul class="data-providers-list">
-      <li>Aalborg University</li>
-      <li>Århus University</li>
-      <li>Copenhagen Business School</li>
-      <li>Technical University of Denmark</li>
-      <li>Royal Danish Defence College</li>
-      <li>IT University of Copenhagen</li>
-      <li>The Royal Danish Academy of Fine Arts, Schools of Architecture, Design and Conservation</li>
-      <li>University of Copenhagen</li>
-      <li>Ministry of Culture</li>
-      <li>Capital Region of Denmark</li>
-      <li>Roskilde University</li>
-      <li>University of Southern Denmark</li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
 
+        <h1 class="feature-heading centered"><%= t('ddf.pages.data.providers.title')%></h1>
+        <ul class="data-providers-list multicol-2">
+          <%= render '/catalog/providers/rdb_vbn' %>
+          <%= render '/catalog/providers/rdb_au' %>
+          <%= render '/catalog/providers/rdb_cbs' %>
+          <%= render '/catalog/providers/orbit' %>
+          <%= render '/catalog/providers/rdb_fak' %>
+          <%= render '/catalog/providers/rdb_itu' %>
+          <%= render '/catalog/providers/rdb_ark' %>
+          <%= render '/catalog/providers/rdb_ku' %>
+          <%= render '/catalog/providers/rdb_ka' %>
+          <%= render '/catalog/providers/rdb_sbi' %>
+          <%= render '/catalog/providers/rdb_ruc' %>
+          <%= render '/catalog/providers/rdb_sdu' %>
+        </ul>
+
+      </div>
+    </div>
   </div>
+
 </article>

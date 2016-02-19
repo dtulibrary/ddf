@@ -21,23 +21,21 @@ module StatService
     Hash[*arr]
   end
 
-  def values_for(facet)
-    hashify(facet).values
-  end
-
   def limit_by_facet(facet)
     hashify(facet).length
   end
 
   def publication_attrs(facet)
+    hash = hashify(facet)
+    counts = hash.values
     a = []
-    hashify(facet).each do |k, v|
+    hash.each do |k, v|
       h = {}
       h.store(:name, facet)
       h.store(:code, k)
       h.store(:label, translate(facet, k))
       h.store(:count, v)
-      h.store(:pct, relative_by(:max, v, facet))
+      h.store(:pct, relative_by(:max, v, counts))
       a << h
     end
     a
@@ -58,9 +56,8 @@ module StatService
     'source_ss'     => 'mxd_type_labels.facet_source_labels'
   }
 
-  def relative_by(fn, value, facet)
-    counts = values_for(facet)
-    res = FUNCTIONS[fn].call(counts)
+  def relative_by(fn, value, numbers)
+    res = FUNCTIONS[fn].call(numbers)
     value.to_f / res.to_f * 100
   end
 

@@ -136,7 +136,7 @@ da:
         q: Søg...
         submit: Søg ...
       sort:
-        label: Sorter efter relevans
+        label: Sortér efter relevans
       start_over: Start forfra
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
@@ -223,10 +223,10 @@ da:
       rdb_sdu: Syddansk Universitet
       rdb_vbn: Aalborg Universitet
       rdb_sbi: Region Hovedstaden
-      rdb_ark: "Det Kongelige Danske Kunstakademis Skoler for Arkitektur, Design og Konservering"
+      rdb_ark: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
-      rdb_aarch: Arkitekskolen Aarhus
+      rdb_aarch: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES
@@ -302,6 +302,7 @@ da:
       updates:
         october_2015: "(Oktober 2015): Interface og søgeteknologi opgraderet"
         january_2016: '(Januar 2016): Diverse forbedringer, inklusiv bedre forfining af søgeresultater (ny facet på indberetningsår) og forbedret integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
+        february_2016: '(Februar 2016): Forbedret fremvisning af dataleverandører'
     search:
       form:
         clear_icon_text_hover: Slet søgetermerne
@@ -326,11 +327,11 @@ da:
       open_access: "Open Acess"
       mendeley: Save to Mendeley
       availability: Tilgængelig hos
-      cite_and_export: "Citer og exporter"
-      save_and_export: "Gem og exporter"
+      cite_and_export: "Citer og eksportér"
+      save_and_export: "Gem og eksportér"
       mendeley: "Gem til Mendeley"
-      bibtex: "Exporter til BibTeX"
-      ris: "Exporter til RIS"
+      bibtex: "Eksportér til BibTeX"
+      ris: "Eksportér til RIS"
       cite: "Citer"
       fulltext_access: Fuldtekstadgang
       data_providers: Dataleverandører
@@ -345,6 +346,13 @@ da:
       modern-language-association: Modern Language Association
       apa: APA
       chicago-author-date: Chicago Author Date
+    pages:
+      data:
+        providers:
+          title: Leverandører
+    cookies:
+      message: Vi benytter os af cookies for at forbedre Forskningsdatabasen.
+      linkmsg: Mere information
   citations:
     form:
       number: "Antal:"
