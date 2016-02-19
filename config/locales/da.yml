@@ -297,6 +297,9 @@ da:
       data:
         providers:
           title: Leverandører
+    cookies:
+      message: Vi benytter os af cookies for at forbedre Forskningsdatabasen.
+      linkmsg: Mere information
   citations:
     form:
       number: "Antal:"

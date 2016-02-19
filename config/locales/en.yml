@@ -275,6 +275,9 @@ en:
       data:
         providers:
           title: Data Providers
+    cookies:
+      message: We use cookies to improve the Danish National Research Database
+      linkmsg: Learn more
 
   citations:
     form:

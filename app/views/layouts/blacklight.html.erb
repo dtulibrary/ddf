@@ -31,7 +31,11 @@
     <![endif]-->
       <%= citation_tags_for @document %>
       <%= render partial: 'shared/google_analytics' %>
-    <%= Dtu::Metrics::AltmetricPresenter.altmetric_embed_script %>
+
+      <%# we only need Altmetrics on the show pages %>
+      <% if controller_name == 'catalog' && action_name == 'show' %>
+        <%= Dtu::Metrics::AltmetricPresenter.altmetric_embed_script %>
+      <% end %>
   </head>
 
   <body class="<%= render_body_class %>">
@@ -52,5 +56,13 @@
     </div>
 
     <%= render :partial => 'shared/footer' %>
+    <script type="text/javascript" id="cookiebanner"
+    src="//cookiebanner.eu/js/cookiebanner.min.js"
+    data-height="30px" data-position="bottom"
+    data-message="<%= t 'ddf.cookies.message' %>"
+    data-moreinfo="<%= about_privacy_path %>"
+    data-linkmsg="<%= t 'ddf.cookies.linkmsg' %>"
+    >
+  </script>
   </body>
 </html>
