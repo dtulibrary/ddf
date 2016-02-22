@@ -6,5 +6,7 @@
 <% else %>
 <h4>Most recent publications</h4>
 <% end %>
+<%# We need to populate a @response variable to make document actions work %>
+<% @response ||= search_block.search_results %>
 <%= render search_block.documents, as: 'document' %>
-<%= link_to "Full publication list", spotlight.exhibit_browse_path(search_block.exhibit, search_block.search) %>
+<%= link_to "Full publication list", catalog_index_path + search_block.search_url %>

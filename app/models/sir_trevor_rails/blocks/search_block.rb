@@ -38,7 +38,16 @@ module SirTrevorRails
       end
 
       def item_count
-        solr_helper.search_results(search.query_params, solr_helper.search_params_logic).first['response']['numFound']
+        search_results['response']['numFound']
+      end
+
+      def search_results
+        solr_helper.search_results(search.query_params, solr_helper.search_params_logic).first
+      end
+
+      def search_url
+         filter = Spotlight::Filter.find_by(exhibit_id: exhibit.id)
+         "?f[#{filter.field}][]=#{filter.value}"
       end
     end
   end
