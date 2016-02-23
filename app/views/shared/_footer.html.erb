@@ -13,6 +13,7 @@
       <li class="sitemap__section">
         <%= link_to search_item_contents, root_path %>
       </li>
+
       <li class="sitemap__section">
         <%= link_to about_item_contents, about_path %>
         <ul>
@@ -24,7 +25,7 @@
           </li>
           <li>
             <%= link_to t('blacklight.navigation.about_section.providers'), about_data_providers_path %>
-            </li>
+          </li>
           <li>
             <%= link_to t('blacklight.navigation.about_section.faq'), about_faq_path %>
           </li>
@@ -39,6 +40,19 @@
           </li>
         </ul>
       </li>
+
+      <li class="sitemap__section">
+        <%= link_to open_access_item_contents, open_access_path %>
+        <ul>
+          <li>
+            <%= link_to t('blacklight.navigation.oa_section.overview'), open_access_overview_path %>
+          </li>
+          <li>
+          <%= link_to t('blacklight.navigation.oa_section.development'), open_access_development_path %>
+          </li>
+        </ul>
+      </li>
+
     </ul>
   </div>
 
