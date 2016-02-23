@@ -4,14 +4,9 @@ class PagesController < ApplicationController
   def index
     @types = publications_by_facet('format_orig_s', limit: 50)
     @institutions = publications_by_facet('source_ss', limit: 50)
-    @stats = {}
+    @national_segments = OpenAccessIndicator.segment_attrs('national', OpenAccessIndicator::LAST_YEAR)
+    @university_segments = OpenAccessIndicator.segment_attrs('universities', OpenAccessIndicator::LAST_YEAR)
   end
-
-  # def data
-  #   respond_to do |format|
-  #     format.json { render :json => [1, 2, 3, 4, 5] }
-  #   end
-  # end
 
   # SEARCH
   def search

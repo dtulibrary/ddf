@@ -20,53 +20,58 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6 chart">
-        <section>
-          <h1 class="chart-heading">
-            <%= t("blacklight.data_visualization.publications") %>
-            <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.type") %>
-          </h1>
-          <ul class="chartlist types">
-            <% @types.each do |facet| %>
-            <li>
-              <%= render_link_to(facet) %>
-              <%= render_count_for(facet) %>
-              <%= render_percentage_for(facet) %>
-            </li>
-            <% end %>
-          </ul>
-          <button class="toggle-visibility list-toggle">
-            <span class="s">
-              <%= t("blacklight.data_visualization.more") %>
-              <i class="glyphicon glyphicon-plus-sign"></i>
-            </span>
-            <span class="h">
-              <%= t("blacklight.data_visualization.less") %>
-              <i class="glyphicon glyphicon-minus-sign"></i>
-            </span>
-          </button>
-        </section>
-      </div>
 
       <div class="col-md-6 chart">
         <section>
-          <h1 class="chart-heading">
+          <h1 class="chart-segment-heading">
+            <i class="fa fa-files-o"></i>
             <%= t("blacklight.data_visualization.publications") %>
-            <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.institution") %>
+            <em><%# t("blacklight.data_visualization.by") %></em>
+            <%# t("blacklight.data_visualization.institution") %>
           </h1>
           <ul class="chartlist institutions">
             <% @institutions.each do |facet| %>
             <li>
-              <%= render_link_to(facet) %>
-              <%= render_count_for(facet) %>
+              <%= render_facet_link(facet) %>
+              <%= render_facet_count(facet) %>
               <%= render_percentage_for(facet) %>
             </li>
             <% end %>
           </ul>
         </section>
       </div>
+
+      <div class="col-md-6 chart">
+        <section class="segmented-chart">
+          <h1 class="chart-segment-heading">
+            <i class="ai ai-open-access ai-3x"></i>
+            <%= t("blacklight.data_visualization.oa_indicator") %>
+          </h1>
+
+          <h2 class="chart-heading">National</h2>
+          <ul class="chartlist types">
+            <% @national_segments.each do |segment| %>
+            <li>
+              <%= render_segment_link(segment) %>
+              <%= render_segment_count(segment) %>
+              <%= render_percentage_for(segment) %>
+            </li>
+            <% end %>
+          </ul>
+
+          <h2 class="chart-heading">By University</h2>
+          <ul class="chartlist types">
+            <% @university_segments.each do |segment| %>
+            <li>
+              <%= render_segment_link(segment) %>
+              <%= render_segment_count(segment) %>
+              <%= render_percentage_for(segment) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+
     </div>
   </div>
 </article>

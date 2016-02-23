@@ -32,6 +32,25 @@ class OpenAccessIndicator
     PROJECTED_YEARS.keys.include? year
   end
 
+  def self.segment_attrs(name, year)
+    hash = fetch(name, year)
+    keys = hash.keys
+    arr = []
+    keys.each do |k|
+      h = {}
+      h.store(:name, k)
+      h.store(:label, translate(k))
+      h.store(:pct, hash[k]["relative"]["realized"])
+      h.store(:count, hash[k]["absolute"]["realized"])
+      arr << h
+    end
+    arr
+  end
+
+  def self.translate(key)
+    I18n.t("ddf.open_access.labels.#{key}")
+  end
+
   # Query API and convert response into a hash of values
   #
   # ==== Attributes

@@ -1024,6 +1024,7 @@ em.news-tag {
     margin: 1em 0 .5em 0;
   }
 }
+section.segmented-chart .chart-heading { margin: 3em 0 1em 0; }
 .chart-heading em {
  text-transform: none;
  letter-spacing: .05em;
@@ -1528,8 +1529,25 @@ h2.oa-development-period {
   margin: 0 0 1.5em 0;
 }
 
-
 ol.release-list { list-style-type: none; }
 ol.release-list time { font-weight: 600; }
 ol.release-details { margin: -.5em 0 1em 2em; }
 ol.release-details li:not(:last-child) { margin-bottom: .5em; }
+
+h1.chart-segment-heading {
+  font-family: $headline;
+  font-size: calc-em(23px);
+  font-weight: 300;
+
+  color: $blue-1;
+  text-align: center;
+  margin: .5em 0 1.5em 0;
+}
+
+// h1.chart-segment-heading i.ai-open-access { font-size: inherit; }
+
+h1.chart-segment-heading i {
+  font-size: .9em;
+  vertical-align: text-top;
+  color: $orange;
+}

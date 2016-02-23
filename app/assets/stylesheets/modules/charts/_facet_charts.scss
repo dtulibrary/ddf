@@ -47,15 +47,15 @@ http://alistapart.com/article/accessibledatavisualization
   top: 0;
   left: 0;
   height: 100%;
-  background: #B8E4F5;
-  // background: lighten($chart-blue, 25%);
+  // background: #B8E4F5; // as in original
+  background: lighten($chart-blue, 25%);
   text-indent: -9999px;
   overflow: hidden;
   line-height: 2em;
 }
 
 //ADDED:
-.chartlist li:hover .pct { background: darken(#B8E4F5, 5%); }
+// .chartlist li:hover .pct { background: lighten($chart-blue, 25%); }
 
 .chartlist li a:visited { color: #666; }
 .chartlist li a:hover,
