@@ -31,6 +31,8 @@ da:
         development: Udvikling
       ef_section:
         eliteforsk: "Eliteforsk Pris"
+      statistics_section:
+        statistics: Statistik
 
     data_visualization:
       publications: Udgivelser

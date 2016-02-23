@@ -42,6 +42,15 @@ module ApplicationHelper
     ].join.html_safe
   end
 
+  def statistics_item_contents
+    [
+      "<i class='fa fa-bar-chart'></i>",
+      "<span class='menu-item-title'>",
+        "#{t('blacklight.navigation.statistics_section.statistics')}",
+      "</span>"
+    ].join.html_safe
+  end
+
   # Utilities for displaying search history
   def previous_searches
     searches_from_history.select { |search| real? search }

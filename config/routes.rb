@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'open_access', to: 'open_access_indicator#overview'
     get '/selected', to: 'bookmarks#index'
 
+    get 'statistics', to: 'statistics#index'
+
     # root :to => "catalog#index"
     # blacklight_for :catalog
     # root to: "catalog#index"

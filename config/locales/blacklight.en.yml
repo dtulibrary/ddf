@@ -24,6 +24,8 @@ en:
         development: Development
       ef_section:
         eliteforsk: "Eliteforsk Award"
+      statistics_section:
+        statistics: Statistics
 
     data_visualization:
       publications: Publications
