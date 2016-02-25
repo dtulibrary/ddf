@@ -1,0 +1,70 @@
+//
+// TOPNAV
+//
+// Search
+body[class~="blacklight-pages-index"] li#search { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-index"] li#search i,
+body[class~="blacklight-pages-index"] li#search a { color: #fff; }
+
+// OA
+body[class~="blacklight-open_access_indicator"] li#open-access { background: lighten($bluewood, 15%); }
+body[class~="blacklight-open_access_indicator"] li#open-access i,
+body[class~="blacklight-open_access_indicator"] li#open-access a { color: #fff; }
+
+// Statistics
+body[class~="blacklight-statistics"] li#statistics { background: lighten($bluewood, 15%); }
+body[class~="blacklight-statistics"] li#statistics i,
+body[class~="blacklight-statistics"] li#statistics a { color: #fff; }
+
+// About
+body[class~="blacklight-pages-about"] li#about { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-about"] li#about i,
+body[class~="blacklight-pages-about"] li#about a { color: #fff; }
+
+//
+// SUBNAV
+//
+// About > Search & Get
+body[class~="blacklight-pages-search_and_get"] li#search-get { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-search_and_get"] li#search-get i,
+body[class~="blacklight-pages-search_and_get"] li#search-get a { color: #fff; }
+
+// About > Data
+body[class~="blacklight-pages-data"] li#data { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-data"] li#data i,
+body[class~="blacklight-pages-data"] li#data a { color: #fff; }
+
+// About > Data Providers
+body[class~="blacklight-pages-data_providers"] li#data-providers { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-data_providers"] li#data-providers i,
+body[class~="blacklight-pages-data_providers"] li#data-providers a { color: #fff; }
+
+// About > FAQ
+body[class~="blacklight-pages-faq"] li#faq { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-faq"] li#faq i,
+body[class~="blacklight-pages-faq"] li#faq a { color: #fff; }
+
+// About > Release History
+body[class~="blacklight-pages-releases"] li#releases { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-releases"] li#releases i,
+body[class~="blacklight-pages-releases"] li#releases a { color: #fff; }
+
+// About > Privacy
+body[class~="blacklight-pages-privacy"] li#privacy { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-privacy"] li#privacy i,
+body[class~="blacklight-pages-privacy"] li#privacy a { color: #fff; }
+
+// About > Contact
+body[class~="blacklight-pages-contact"] li#contact { background: lighten($bluewood, 15%); }
+body[class~="blacklight-pages-contact"] li#contact i,
+body[class~="blacklight-pages-contact"] li#contact a { color: #fff; }
+
+// OA > Overview
+body[class~="blacklight-open_access_indicator-overview"] li#oa-overview { background: lighten($bluewood, 15%); }
+body[class~="blacklight-open_access_indicator-overview"] li#oa-overview i,
+body[class~="blacklight-open_access_indicator-overview"] li#oa-overview a { color: #fff; }
+
+// OA > Development
+body[class~="blacklight-open_access_indicator-development"] li#oa-development { background: lighten($bluewood, 15%); }
+body[class~="blacklight-open_access_indicator-development"] li#oa-development i,
+body[class~="blacklight-open_access_indicator-development"] li#oa-development a { color: #fff; }
