@@ -20,8 +20,14 @@
                     <%= content_tag :li, class: status, style: "width: #{value.round(4)}%" do %>
                       <span class="relative-rounded"><%= "#{value.round}%" %></span>
                       <div class="overlay">
-                        <p><%= "#{value.round(2)}% #{status.capitalize}" %></p>
-                        <p><%= "#{data['absolute'][status]} publications" rescue nil %></p>
+                        <p>
+                          <%= "#{value.round(2)}%" %>
+                          <%= t("ddf.open_access.overlay.status.#{status}") %>
+                        </p>
+                        <p>
+                          <%= "#{data['absolute'][status]}" rescue nil %>
+                          <%= t("ddf.open_access.overlay.publications") %>
+                        </p>
                       </div>
                     <% end %>
                   <% end %>

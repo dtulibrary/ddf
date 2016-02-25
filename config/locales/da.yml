@@ -296,6 +296,20 @@ da:
           title: Genstandsfeltet - poster
           description: Alle publikationer (inkl. dubletter) i genstandsfeltet.
             Grundlaget for summeringerne per universitet.
+      legend:
+        overview:
+          realized: Realiseret
+          unused: Uudnyttet
+          unclear: Uklart
+        development:
+          realized: Realiseret Open Access potentiale
+          projected: Forventet Open Access (c.f. den nationale strategi)
+      overlay:
+        status:
+          realized: Realiseret
+          unused: Uudnyttet
+          unclear: Uklart
+        publications: publikationer
 
     news:
       title: Nyt

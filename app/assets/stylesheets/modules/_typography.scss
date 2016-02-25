@@ -723,6 +723,7 @@ ul.site-sections-list li a {
   font-family: $headline;
   line-height: 1.25em;
   color: $blue-3;
+  text-decoration: none;
   @include respond-to($iphone_landscape) {
     padding: 1em;
   }
@@ -754,6 +755,7 @@ ul.site-sections-list li i {
   }
 }
 ul.site-sections-list li span.menu-item-title {
+  text-shadow: 1px 1px 2px #222;
   @include respond-to($iphone_landscape) {
     display: none;
   }
@@ -930,7 +932,6 @@ ul.subnav-items-list li a:hover {
   color: $orange;
   text-decoration: none;
   @include respond-to($iphone_landscape) {
-
     text-decoration: none;
   }
 }
@@ -1493,3 +1494,5 @@ h1.chart-segment-heading i {
 }
 
 li.sitemap__section i.ai-open-access { font-size: inherit; }
+
+ul.sitemap i.fa { margin-right: .3em; }

@@ -275,6 +275,21 @@ en:
           title: Records in scope
           description: The scope. All publications (including duplicates) in scope.
             The basis of the summations and aggregations at the university level.
+      legend:
+        overview:
+          realized: Realized
+          unused: Unused
+          unclear: Unclear
+        development:
+          realized: Realized Open Access potential
+          projected: Projected Open Access (c.f. national strategy)
+      overlay:
+        status:
+          realized: Realized
+          unused: Unused
+          unclear: Unclear
+        publications: publications
+
     news:
       title: "New"
       updates:
