@@ -941,9 +941,15 @@ header.intro { text-align: center; }
 p.pitch {
   font-family: $serif;
   font-size: calc-em(26px);
-  line-height: 1.5em;
+  line-height: 1.4em;
   color: $blue-2;
   margin-bottom: .7em;
+  @include respond-to($ipad_portrait) {
+    line-height: 1.3em;
+  }
+  @include respond-to($iphone_landscape) {
+    line-height: 1.2em;
+  }
 }
 
 em.news-tag {
