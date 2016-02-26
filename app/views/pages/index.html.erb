@@ -31,7 +31,7 @@
             <% @institutions.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
-              <%= render_facet_count(facet) %>
+              <%= display_facet_count(facet) %>
               <%= render_percentage_for(facet) %>
             </li>
             <% end %>

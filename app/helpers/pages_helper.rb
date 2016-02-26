@@ -15,7 +15,8 @@ module PagesHelper
     link_to facet[:label], catalog_index_path(:f => {facet[:name] => [facet[:code]]})
   end
 
-  def render_facet_count(facet)
+  # "render_facet_count" clashes with module Blacklight::FacetsHelperBehavior.render_facet_count
+  def display_facet_count(facet)
     num = number_with_delimiter(facet[:count])
     "<span class='count'>#{num}</span>".html_safe
   end
@@ -37,7 +38,7 @@ module PagesHelper
   end
 
   def render_segment_link(segment)
-    "<a href=''>#{segment[:label]}</a>".html_safe
+    link_to(segment[:label], open_access_development_path(key: segment[:code]))
   end
 
   def render_segment_count(segment)

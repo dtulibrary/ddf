@@ -38,7 +38,7 @@ class OpenAccessIndicator
     arr = []
     keys.each do |k|
       h = {}
-      h.store(:name, k)
+      h.store(:code, k)
       h.store(:label, translate(k))
       h.store(:pct, hash[k]["relative"]["realized"])
       h.store(:count, hash[k]["absolute"]["realized"])
