@@ -2,3 +2,7 @@
 @import "globals";
 @import "viewports";
 @import "debug";
+
+.twitter-typeahead {
+  #q { width: 100%; }
+}
