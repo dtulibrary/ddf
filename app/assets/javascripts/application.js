@@ -23,4 +23,4 @@
 // this:
 //= require 'blacklight_range_limit'
 
-//= require 'dtu/dtu'
+//= require jquery-ui
