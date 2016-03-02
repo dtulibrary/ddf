@@ -48,7 +48,7 @@ class OpenAccessIndicator
   end
 
   def self.translate(key)
-    I18n.t("ddf.open_access.labels.#{key}")
+    I18n.t("ddf.open_access.labels.#{key}").split("(").first
   end
 
   # Query API and convert response into a hash of values

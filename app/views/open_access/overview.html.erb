@@ -34,29 +34,42 @@
     <div class="row">
       <div class="col-md-12">
 
-        <ul class="oa-colors-list">
-          <li>
-            <span class="legend realized"></span>
-            <!-- Realized -->
-            <%= t('ddf.open_access.legend.overview.realized') %>
-          </li>
-          <li>
-            <span class="legend unused"></span>
-            <!-- Unused  -->
-            <%= t('ddf.open_access.legend.overview.unused') %>
-          </li>
-          <li>
-            <span class="legend unclear"></span>
-            <!-- Unclear -->
-            <%= t('ddf.open_access.legend.overview.unclear') %>
-          </li>
-        </ul>
-
         <% if @overview.values.include? nil %>
           <div class="alert alert-danger">
             Error — some data missing for this year. Contact your administrator for assistance.
           </div>
         <% else %>
+          <div class="oa-legend-container col-md-6 col-md-offset-3">
+            <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.overview.potential') %></h2>
+            <ul class="oa-colors-list">
+              <li> <!-- Realized -->
+                <span class="legend realized"></span>
+                <strong class="realized"><%= t('ddf.open_access.legend.overview.realized') %></strong>
+              </li>
+              <li> <!-- Unused  -->
+                <span class="legend unused"></span>
+                <strong class="unused"><%= t('ddf.open_access.legend.overview.unused') %></strong>
+              </li>
+              <li> <!-- Unclear -->
+                <span class="legend unclear"></span>
+                <strong class="unclear"><%= t('ddf.open_access.legend.overview.unclear') %></strong>
+              </li>
+            </ul>
+            <p class="oa-terms-description">
+              <%= t('ddf.open_access.legend.overview.description.description') %>:
+              <%= render_overview_doc_link(params) %>;
+              <%= render_technical_doc_link(params) %>;
+              <%= render_fi_link %>
+            </p>
+          </div>
+
+          <!-- FIXME -->
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
           <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>
             <%= render partial: 'open_access/chart', locals: { stats: @overview, resource: 'national', view:

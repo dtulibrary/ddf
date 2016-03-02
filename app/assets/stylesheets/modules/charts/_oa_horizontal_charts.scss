@@ -97,6 +97,20 @@ div.overlay p:last-child { margin-bottom: 0; }
 .unused { background: $chart-yellow; }
 .unclear { background: $chart-red; }
 
+strong.realized {
+  background: inherit;
+  color: $chart-green;
+}
+strong.unused {
+  background: inherit;
+  color: $chart-yellow;
+}
+strong.unclear {
+  background: inherit;
+  color: $chart-red;
+}
+
+
 span.relative-rounded {
   font-size: .8em;
   font-weight: 600;
@@ -108,7 +122,7 @@ span.relative-rounded {
 li.unused span.relative-rounded  { color: #000; }
 
 ul.oa-colors-list {
-  margin: 0 0 1.5em 0;
+  margin: 0;
   text-align: center;
   font-weight: 600;
   color: #333;

@@ -12,10 +12,10 @@ module OpenAccessIndicatorHelper
   end
 
   def render_pct_for(value)
+    int = value.to_i
     float = value.to_f
     rounded = (float % 10)==0? float.round(0) : float.round(2)
-    # binding.pry
-    "<span class='count' style='height: #{rounded}%'>#{rounded}%</span>".html_safe
+    "<span class='count' style='height: #{rounded}%'>#{int}%</span>".html_safe
   end
 
   def render_overview_link_for(year)
@@ -44,7 +44,7 @@ module OpenAccessIndicatorHelper
 
   def render_unavailable(year)
     "<li id='#{year}' class='unavailable'>
-      <a href='#'>
+      <a>
         #{render_label_for(year)}
         #{render_pct_for(0)}
       </a>
@@ -54,11 +54,33 @@ module OpenAccessIndicatorHelper
   def render_projected(year)
     percentage = OpenAccessIndicator::PROJECTED_YEARS[year]
     "<li id='#{year}' class='projected'>
-      <a href='#'>
+      <a>
         #{render_label_for(year)}
         #{render_pct_for(percentage)}
       </a>
     </li>".html_safe
+  end
+
+  def render_overview_doc_link(params)
+    doc_url = if params.has_key? "year"
+      "/oa-placeholder-pdfs/overview/Open_Access_Indicator_#{params["year"]}_Overview_#{params["locale"]}_PLACEHOLDER.pdf"
+    else
+      "/oa-placeholder-pdfs/overview/Open_Access_Indicator_2014_Overview_#{params["locale"]}_PLACEHOLDER.pdf"
+    end
+    link_to(t('ddf.open_access.legend.overview.description.overview'), doc_url)
+  end
+
+  def render_technical_doc_link(params)
+    doc_url = if params.has_key? "year"
+      "/oa-placeholder-pdfs/technical/Open_Access_Indicator_#{params["year"]}_Technical_#{params["locale"]}_PLACEHOLDER.pdf"
+    else
+      "/oa-placeholder-pdfs/technical/Open_Access_Indicator_2014_Technical_#{params["locale"]}_PLACEHOLDER.pdf"
+    end
+    link_to(t('ddf.open_access.legend.overview.description.technical'), doc_url)
+  end
+
+  def render_fi_link
+    link_to(t('ddf.open_access.legend.overview.description.at_fi'), "http://ufm.dk/acl_users/credentials_cookie_auth/require_login?came_from=http%3A//ufm.dk/forskning-og-innovation/samspil-mellem-viden-og-innovation/open-access/artikler/den-nationale-styregruppe/igangvaerende-initiativer/open-access-barometer")
   end
 end
 

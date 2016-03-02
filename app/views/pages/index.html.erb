@@ -1,32 +1,14 @@
 <article role="main">
-  <header class="intro">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <p class="pitch"> <%= t('blacklight.elevator_pitch')%> </p>
-        </div>
-
-        <div class="col-md-8 col-md-offset-2">
-          <% unless latest_update.nil? %>
-            <p class="news">
-              <em class="news-tag"><%= t('ddf.news.title')%></em>
-              <%= latest_update %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <div class="container">
     <div class="row">
 
       <div class="col-md-6 chart">
         <section>
           <h1 class="chart-segment-heading">
-            <i class="fa fa-files-o"></i>
+            <!-- <i class="fa fa-files-o"></i> -->
             <%= t("blacklight.data_visualization.publications") %>
           </h1>
+          <h2 class="chart-heading">By Research Institution</h2>
           <ul class="chartlist institutions">
             <% @institutions.each do |facet| %>
             <li>
@@ -36,13 +18,14 @@
             </li>
             <% end %>
           </ul>
+          <p class="more-link"><%= link_to(t("blacklight.data_visualization.more_statistics"), statistics_path) %></p>
         </section>
       </div>
 
       <div class="col-md-6 chart">
         <section class="segmented-chart">
           <h1 class="chart-segment-heading">
-            <i class="ai ai-open-access ai-3x"></i>
+            <!-- <i class="ai ai-open-access ai-3x"></i> -->
             <%= t("blacklight.data_visualization.oa_indicator") %>
           </h1>
 
@@ -67,9 +50,29 @@
             </li>
             <% end %>
           </ul>
+          <p class="more-link more-link--oa"><%= link_to(t("blacklight.data_visualization.more_oa"), open_access_path) %></p>
         </section>
       </div>
 
     </div>
   </div>
+
+  <footer class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <p class="pitch"> <%= t('blacklight.elevator_pitch')%> </p>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+          <% unless latest_update.nil? %>
+            <p class="news">
+              <em class="news-tag"><%= t('ddf.news.title')%></em>
+              <%= latest_update %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </footer>
 </article>

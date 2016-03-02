@@ -38,11 +38,12 @@ module PagesHelper
   end
 
   def render_segment_link(segment)
-    link_to(segment[:label], open_access_development_path(key: segment[:code]))
+    # link_to(segment[:label], open_access_development_path(key: segment[:code]))
+    link_to(segment[:label], open_access_overview_path)
   end
 
   def render_segment_count(segment)
-    rounded = format_as_pct(segment[:pct].round(2))
+    rounded = format_as_pct(segment[:pct].round(0))
     "<span class='count'>#{rounded}</span>".html_safe
   end
 

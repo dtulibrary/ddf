@@ -26,7 +26,7 @@ da:
         releases: Release historie
         cookies: "Cookie- og privatlivspolitik"
       oa_section:
-        open_access: "Open Access"
+        open_access: "Open Access Indicator"
         overview: Oversigt
         development: Udvikling
       ef_section:
@@ -35,13 +35,15 @@ da:
         statistics: Statistik
 
     data_visualization:
-      publications: Udgivelser
+      publications: Publikationer
       by: efter
       type:
       institution: Forskningsinstitution
       more: Flere
       less: Færre
       oa_indicator: Open Access Indicator
+      more_statistics: Mere Statistik
+      more_oa: Mere Information
 
     tools:
       cite: 'Citer'

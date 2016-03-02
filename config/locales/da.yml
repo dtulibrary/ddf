@@ -247,7 +247,7 @@ da:
     open_access:
       header: Open Access Indikator — Statistik for %{year}
       development:
-        header: "Udvikling for:"
+        header: "Open Access Indikator — Udvikling for:"
       form:
         labels:
           view_type: Open Access potentiale
@@ -298,12 +298,20 @@ da:
             Grundlaget for summeringerne per universitet.
       legend:
         overview:
+          potential: "Open Access Potentiale:"
           realized: Realiseret
           unused: Uudnyttet
           unclear: Uklart
+          description:
+            description: Beskrivelse
+            overview: Overblik
+            technical: Teknisk
+            at_fi: Hos FI
+
         development:
-          realized: Realiseret Open Access potentiale
-          projected: Forventet Open Access (c.f. den nationale strategi)
+          potential: "Realiseret Open Access Potentiale:"
+          realized: Faktisk
+          projected: Stipuleret (c.f. National Strategy)
       overlay:
         status:
           realized: Realiseret

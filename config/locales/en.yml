@@ -226,7 +226,7 @@ en:
     open_access:
       header: Open Access Indicator — Statistics for %{year}
       development:
-        header: "Development for:"
+        header: "Open Access Indicator — Development for:"
       form:
         labels:
           view_type: Open Access Potential
@@ -277,12 +277,19 @@ en:
             The basis of the summations and aggregations at the university level.
       legend:
         overview:
+          potential: "Open Access Potential:"
           realized: Realized
           unused: Unused
           unclear: Unclear
+          description:
+            description: Description
+            overview: Overview
+            technical: Technical
+            at_fi: At FI
         development:
-          realized: Realized Open Access potential
-          projected: Projected Open Access (c.f. national strategy)
+          potential: "Realized Open Access Potential:"
+          realized: Actual
+          projected: Projected (c.f. National Strategy)
       overlay:
         status:
           realized: Realized

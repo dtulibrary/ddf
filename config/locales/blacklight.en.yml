@@ -19,7 +19,7 @@ en:
         releases: Release History
         cookies: Cookies and privacy policy
       oa_section:
-        open_access: "Open Access"
+        open_access: "Open Access Indicator"
         overview: Overview
         development: Development
       ef_section:
@@ -35,6 +35,8 @@ en:
       more: More
       less: Less
       oa_indicator: Open Access Indicator
+      more_statistics: More Statistics
+      more_oa: More Information
 
 
     entry_name:
