@@ -6,10 +6,10 @@ set :repo_url, 'git@github.com:dtulibrary/ddf.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :branch, 'elite'
+set :branch, 'matt'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/spotlight.ddf.dtic.dk'
+set :deploy_to, '/var/www/matt.ddf.dtic.dk'
 set :passenger_restart_with_touch, true
 
 # Default value for :scm is :git
