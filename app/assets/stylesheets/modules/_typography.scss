@@ -1458,7 +1458,7 @@ h1.site-section i.ai-3x { font-size: 1em; }
 
 ul.oa-filtering-inputs label { color: $link-color-auxiliary; }
 
-h1.oa-development-for {
+h1.oa-headline {
   text-align: center;
   font-family: $headline;
   font-weight: 500;
@@ -1467,7 +1467,12 @@ h1.oa-development-for {
   margin: 0 0 1em 0;
   color: $blue-2;
 }
-h1.oa-development-for span.development-segment { font-weight: 300; }
+h1.oa-headline span.development-segment { font-weight: 300; }
+
+h1.oa-headline--overview {
+  font-size: calc-em(24px);
+  font-weight: 400;
+}
 
 h2.oa-development-period {
   text-align: center;

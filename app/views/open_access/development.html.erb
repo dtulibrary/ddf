@@ -2,19 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="oa-development-for">
+        <h1 class="oa-headline">
           <span class="development-segment"><%= t('ddf.open_access.development.header') %></span>
           <%= t('ddf.open_access.labels.' + @key) %>
         </h1>
-<!--
-        <h2 class="oa-development-period">
-          Period:
-          <strong>
-            <%# "#{OpenAccessIndicator.available_years.first}" %> &mdash;
-            <%# "#{OpenAccessIndicator.available_years.last}" %>
-          </strong>
-        </h2>
- -->
+
         <div class="oa-inputs-wrapper">
           <%= form_tag({controller: 'open_access_indicator', action: 'development'}, method: 'get', class: 'centered') do %>
             <ul class="oa-filtering-inputs">
@@ -24,7 +16,8 @@
               </li>
               <li>
                 <%= button_tag(class: 'view-oa', type: "submit") do %>
-                  <i class="glyphicon glyphicon-refresh"></i> View
+                  <i class="glyphicon glyphicon-refresh"></i>
+                  <%= t('ddf.open_access.form.labels.submit')  %>
                 <% end %>
               </li>
             </ul>
@@ -33,18 +26,18 @@
 
         <div class="oa-development-chart">
 
-        <div class="oa-legend-container col-md-6 col-md-offset-3">
-          <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.development.potential') %></h2>
-          <ul class="oa-colors-list">
-            <li><span class="legend realized"></span>
-              <%= t('ddf.open_access.legend.development.realized') %>
-            </li>
-            <li><span class="legend projected"></span>
-              <!-- Projected Open Access (c.f. national strategy) -->
-              <%= t('ddf.open_access.legend.development.projected') %>
-            </li>
-          </ul>
-        </div>
+          <div class="oa-legend-container col-md-6 col-md-offset-3">
+            <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.development.potential') %></h2>
+            <ul class="oa-colors-list">
+              <li><span class="legend realized"></span>
+                <%= t('ddf.open_access.legend.development.realized') %>
+              </li>
+              <li><span class="legend projected"></span>
+                <!-- Projected Open Access (c.f. national strategy) -->
+                <%= t('ddf.open_access.legend.development.projected') %>
+              </li>
+            </ul>
+          </div>
 
           <div class="col-md-6 col-md-offset-3">
             <ul class="timeline">

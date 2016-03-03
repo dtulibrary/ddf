@@ -3,7 +3,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h1 class="oa-overview-heading"><%= t('ddf.open_access.header', year: @year) %></h1>
+        <h1 class="oa-headline oa-headline--overview">
+          <%= t('ddf.open_access.header', year: @year) %>
+        </h1>
 
         <div class="oa-inputs-wrapper col-md-10 col-md-offset-1">
           <%= form_tag({controller: 'open_access_indicator', action: 'overview'}, method: 'get', class: 'centered', enforce_utf8: false) do  %>
@@ -39,36 +41,31 @@
             Error — some data missing for this year. Contact your administrator for assistance.
           </div>
         <% else %>
-          <div class="oa-legend-container col-md-6 col-md-offset-3">
-            <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.overview.potential') %></h2>
-            <ul class="oa-colors-list">
-              <li> <!-- Realized -->
-                <span class="legend realized"></span>
-                <strong class="realized"><%= t('ddf.open_access.legend.overview.realized') %></strong>
-              </li>
-              <li> <!-- Unused  -->
-                <span class="legend unused"></span>
-                <strong class="unused"><%= t('ddf.open_access.legend.overview.unused') %></strong>
-              </li>
-              <li> <!-- Unclear -->
-                <span class="legend unclear"></span>
-                <strong class="unclear"><%= t('ddf.open_access.legend.overview.unclear') %></strong>
-              </li>
-            </ul>
-            <p class="oa-terms-description">
-              <%= t('ddf.open_access.legend.overview.description.description') %>:
-              <%= render_overview_doc_link(params) %>;
-              <%= render_technical_doc_link(params) %>;
-              <%= render_fi_link %>
-            </p>
+          <div class="row">
+            <div class="oa-legend-container col-md-6 col-md-offset-3">
+              <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.overview.potential') %></h2>
+              <ul class="oa-colors-list">
+                <li> <!-- Realized -->
+                  <span class="legend realized"></span>
+                  <strong class="realized"><%= t('ddf.open_access.legend.overview.realized') %></strong>
+                </li>
+                <li> <!-- Unused  -->
+                  <span class="legend unused"></span>
+                  <strong class="unused"><%= t('ddf.open_access.legend.overview.unused') %></strong>
+                </li>
+                <li> <!-- Unclear -->
+                  <span class="legend unclear"></span>
+                  <strong class="unclear"><%= t('ddf.open_access.legend.overview.unclear') %></strong>
+                </li>
+              </ul>
+              <p class="oa-terms-description">
+                <%= t('ddf.open_access.legend.overview.description.description') %>:
+                <%= render_overview_doc_link(params) %>;
+                <%= render_technical_doc_link(params) %>;
+                <%= render_fi_link %>
+              </p>
+            </div>
           </div>
-
-          <!-- FIXME -->
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
 
           <div class="oa-chart-container">
             <h2 class="chart-heading"><%= t('ddf.open_access.headers.national') %></h2>

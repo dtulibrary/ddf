@@ -8,35 +8,39 @@ ul.stacked-bar > li {
 }
 ul.stacked-bar > li {
   list-style-type: none;
-  margin-bottom: 1em;
+  margin: 0;
+  padding: 1em 0 .5em 0;
   @include respond-to($screen-md-min) {
     margin-bottom: .3em;
+    padding: .3em 0;
   }
 }
+ul.stacked-bar > li:not(:last-child) {
+  @include above-viewport($screen-md-min) {
+    border-bottom: 1px dotted $blue-3;
+  }
+}
+ul.stacked-bar > li:hover { background: $blue-4; }
 
 ul.values {}
 ul.values li {
+  margin: 0;
+  padding: 0;
   float: left;
   position: relative;
   list-style-type: none;
-}
-// Make the bars appear even though they don't contain any content:
-ul.values li:after {
-  // content: ".";
-  // opacity: 0;
 }
 
 h3.oa-label {
   font-size: calc-em(17px);
   font-weight: 500;
-  // background: #ccc;
   line-height: 20px;
-  margin: .25em 0 .5em 0;
-  padding: 0;
-  // vertical-align: top;
-  // use margins instead, and line-height
+  margin: 0;
+  padding: 0 0 0 1em;
+  @include respond-to($screen-md-min) {
+    padding: 0 0 .5em 0;
+  }
 }
-
 h3.oa-label--total { font-weight: 700; }
 
 a.development {
@@ -109,7 +113,6 @@ strong.unclear {
   background: inherit;
   color: $chart-red;
 }
-
 
 span.relative-rounded {
   font-size: .8em;
