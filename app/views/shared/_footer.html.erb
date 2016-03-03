@@ -1,8 +1,5 @@
 <footer>
-  <%# content_for :modal %>
-  <div class="sticky">
-    <%= link_to '<i class="glyphicon glyphicon-envelope"></i> Feedback'.html_safe, feedback_mail_link %>
-  </div>
+  <%= render_feedback_button %>
 
   <div class="container">
     <h1 class="footer-heading">

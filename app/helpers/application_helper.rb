@@ -3,53 +3,53 @@ module ApplicationHelper
     [
       "<em>#{t('blacklight.national')}</em>",
       "#{t('blacklight.research_database')}"
-    ].join.html_safe
-  end
-
-  def search_item_contents
-    [
-      "<i class='glyphicon glyphicon-search'></i>",
-      "<span class='menu-item-title'>",
-        "#{t('blacklight.navigation.search_section.search')}",
-      "</span>"
-    ].join.html_safe
-  end
-
-  def about_item_contents
-      [
-        "<i class='glyphicon glyphicon-info-sign'></i>",
-        "<span class='menu-item-title'>",
-          "#{t('blacklight.navigation.about_section.about')}",
-        "</span>"
       ].join.html_safe
-  end
+    end
 
-  def open_access_item_contents
-    [
-      "<i class='ai ai-open-access ai-3x'></i>",
-      "<span class='menu-item-title'>",
-        "#{t('blacklight.navigation.oa_section.open_access')}",
-      "</span>"
-    ].join.html_safe
-  end
+    def search_item_contents
+      [
+        "<i class='glyphicon glyphicon-search'></i>",
+        "<span class='menu-item-title'>",
+        "#{t('blacklight.navigation.search_section.search')}",
+        "</span>"
+        ].join.html_safe
+      end
 
-  def eliteforsk_award_item_contents
-    [
-      "<i class='glyphicon glyphicon-education'></i>",
-      "<span class='menu-item-title'>",
-        "#{t('blacklight.navigation.ef_section.eliteforsk')}",
-      "</span>"
-    ].join.html_safe
-  end
+      def about_item_contents
+        [
+          "<i class='glyphicon glyphicon-info-sign'></i>",
+          "<span class='menu-item-title'>",
+          "#{t('blacklight.navigation.about_section.about')}",
+          "</span>"
+          ].join.html_safe
+        end
 
-  def statistics_item_contents
-    [
-      "<i class='fa fa-bar-chart'></i>",
-      "<span class='menu-item-title'>",
-        "#{t('blacklight.navigation.statistics_section.statistics')}",
-      "</span>"
-    ].join.html_safe
-  end
+        def open_access_item_contents
+          [
+            "<i class='ai ai-open-access ai-3x'></i>",
+            "<span class='menu-item-title'>",
+            "#{t('blacklight.navigation.oa_section.open_access')}",
+            "</span>"
+            ].join.html_safe
+          end
+
+          def eliteforsk_award_item_contents
+            [
+              "<i class='glyphicon glyphicon-education'></i>",
+              "<span class='menu-item-title'>",
+              "#{t('blacklight.navigation.ef_section.eliteforsk')}",
+              "</span>"
+              ].join.html_safe
+            end
+
+            def statistics_item_contents
+              [
+                "<i class='fa fa-bar-chart'></i>",
+                "<span class='menu-item-title'>",
+                "#{t('blacklight.navigation.statistics_section.statistics')}",
+                "</span>"
+                ].join.html_safe
+              end
 
   # Utilities for displaying search history
   def previous_searches
@@ -83,6 +83,14 @@ module ApplicationHelper
       render partial: 'shared/open_access'
     else
       render partial: 'shared/search'
+    end
+  end
+
+  def render_feedback_button
+    if controller_name == 'open_access_indicator'
+      render partial: 'shared/feedback_oa'
+    else
+      render partial: 'shared/feedback_general'
     end
   end
 end
