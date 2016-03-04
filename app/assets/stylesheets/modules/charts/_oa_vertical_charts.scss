@@ -45,19 +45,30 @@ ul.timeline li a .count {
   font-weight: 700;
   color: #333;
 }
-ul.timeline li:hover {
-  background: #EFEFEF;
+ul.timeline li:hover { background: #EFEFEF; }
+
+ul.timeline li.available .decimals {
+  width: 70px;
+  padding: 5px;
+  position: absolute;
+  top: -35px;
+  left: -25%;
+  z-index: 15;
+  border: 3px solid #000;
+  border-radius: 3px;
+  background: rgba(0,0,0, .6);
+  color: #2EFA05;
+  font-size: 1.2em;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.7s linear;
+  overflow: visible;
 }
-ul.timeline li a:hover .count {
-  // background: #2D7BB2;
+ul.timeline li.available:hover .decimals {
+ visibility: visible;
+ opacity: 1;
 }
 
 ul.timeline li.unavailable .count { display: none; }
-
 ul.timeline li.projected .count { background: $chart-green--projected; }
-
-div.oa-development-chart {
-  // height: 15em;
-  // background: #eee;
-}
 

@@ -18,6 +18,22 @@ module OpenAccessIndicatorHelper
     "<span class='count' style='height: #{rounded}%'>#{int}%</span>".html_safe
   end
 
+  def render_realized_pct_for(value)
+    int = value.to_i
+    float = value.to_f
+    rounded = float.round(2)
+    "<span class='count' style='height: #{rounded}%'>
+      #{int}%
+      <span class='decimals'>#{rounded}%</span>
+    </span>".html_safe
+  end
+
+  def render_decimals_for(value)
+    float = value.to_f
+    rounded = (float % 10)==0? float.round(0) : float.round(2)
+    "<span class='decimals'>#{rounded}%</span>".html_safe
+  end
+
   def render_overview_link_for(year)
     [open_access_overview_path, "?year=#{year}"].join
   end
@@ -37,7 +53,7 @@ module OpenAccessIndicatorHelper
     "<li class='available'>
       <a href='#{render_overview_link_for(year)}'>
         #{render_label_for(year)}
-        #{render_pct_for(percentage)}
+        #{render_realized_pct_for(percentage)}
       </a>
     </li>".html_safe
   end
@@ -80,9 +96,10 @@ module OpenAccessIndicatorHelper
   end
 
   def render_fi_link
-    link_to(t('ddf.open_access.legend.overview.description.at_fi'), "http://ufm.dk/acl_users/credentials_cookie_auth/require_login?came_from=http%3A//ufm.dk/forskning-og-innovation/samspil-mellem-viden-og-innovation/open-access/artikler/den-nationale-styregruppe/igangvaerende-initiativer/open-access-barometer")
+    link_to(t('ddf.open_access.legend.overview.description.at_fi'), "http://ufm.dk/forskning-og-innovation/samspil-mellem-viden-og-innovation/open-access/artikler/status")
   end
 end
+
 
 
 

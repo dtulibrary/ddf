@@ -21,11 +21,11 @@
                       <span class="relative-rounded"><%= "#{value.round}%" %></span>
                       <div class="overlay">
                         <p>
-                          <%= "#{value.round(2)}%" %>
+                          <strong><%= "#{value.round(2)}%" %></strong>
                           <%= t("ddf.open_access.overlay.status.#{status}") %>
                         </p>
                         <p>
-                          <%= "#{data['absolute'][status]}" rescue nil %>
+                          <strong><%= "#{data['absolute'][status]}" rescue nil %></strong>
                           <%= t("ddf.open_access.overlay.publications") %>
                         </p>
                       </div>
