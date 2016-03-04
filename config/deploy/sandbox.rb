@@ -5,7 +5,7 @@
 
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
-server 'matt.ddf.dtic.dk', user: 'romc', roles: %w{app db web}
+server 'matt.ddf.dtic.dk', user: 'capistrano', roles: %w{app db web}
 set :rails_env, 'unstable'
 
 # role-based syntax
