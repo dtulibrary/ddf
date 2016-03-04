@@ -1527,12 +1527,20 @@ div.oa-legend-container {
   margin-bottom: 1.5em;
 }
 
-p.oa-terms-description {
+ul.oa-terms-list {
+  display: inline-block;
   margin: .5em 0 0 0;
+  padding: 0;
   text-align: center;
   font-size: calc-em(16px);
 }
-p.oa-terms-description a { text-decoration: underline; }
+ul.oa-terms-list li {
+  display: inline-block;
+  margin: 0;
+}
+ul.oa-terms-list li:not(:last-child) { margin-right: .5em; }
+
+ul.oa-terms-list a { text-decoration: underline; }
 
 p.more-link { text-align: center; }
 p.more-link--oa { margin-top: 4em; }

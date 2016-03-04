@@ -58,12 +58,21 @@
                   <strong class="unclear"><%= t('ddf.open_access.legend.overview.unclear') %></strong>
                 </li>
               </ul>
-              <p class="oa-terms-description">
-                <%= t('ddf.open_access.legend.overview.description.description') %>:
-                <%= render_overview_doc_link(params) %>;
-                <%= render_technical_doc_link(params) %>;
-                <%= render_fi_link %>
-              </p>
+              <ul class="oa-terms-list">
+                <li><%= t('ddf.open_access.legend.overview.description.description') %>:</li>
+                <li>
+                  <i class="fa fa-file-pdf-o"></i>
+                  <%= render_overview_doc_link(params) %>;
+                </li>
+                <li>
+                  <i class="fa fa-file-pdf-o"></i>
+                  <%= render_technical_doc_link(params) %>;
+                </li>
+                <li>
+                  <i class="fa fa-external-link"></i>
+                  <%= render_fi_link %>
+                </li>
+              </ul>
             </div>
           </div>
 
