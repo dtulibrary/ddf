@@ -42,7 +42,7 @@
           </div>
         <% else %>
           <div class="row">
-            <div class="oa-legend-container col-md-6 col-md-offset-3">
+            <div class="oa-legend-container col-md-8 col-md-offset-2">
               <h2 class="oa-legend-heading"><%= t('ddf.open_access.legend.overview.potential') %></h2>
               <ul class="oa-colors-list">
                 <li> <!-- Realized -->
@@ -58,22 +58,26 @@
                   <strong class="unclear"><%= t('ddf.open_access.legend.overview.unclear') %></strong>
                 </li>
               </ul>
-              <ul class="oa-terms-list">
-                <li><%= t('ddf.open_access.legend.overview.description.description') %>:</li>
-                <li>
-                  <i class="fa fa-file-pdf-o"></i>
-                  <%= render_overview_doc_link(params) %>;
-                </li>
-                <li>
-                  <i class="fa fa-file-pdf-o"></i>
-                  <%= render_technical_doc_link(params) %>;
-                </li>
-                <li>
-                  <i class="fa fa-external-link"></i>
-                  <%= render_fi_link %>
-                </li>
-              </ul>
             </div>
+
+          <div class="oa-legend-description col-md-12">
+            <ul class="oa-terms-list">
+              <li class="description"><%= t('ddf.open_access.legend.overview.description.description') %>:</li>
+              <li>
+                <i class="fa fa-file-pdf-o"></i>
+                <%= render_overview_doc_link(params) %>;
+              </li>
+              <li>
+                <i class="fa fa-file-pdf-o"></i>
+                <%= render_technical_doc_link(params) %>;
+              </li>
+              <li>
+                <i class="fa fa-external-link"></i>
+                <%= render_fi_link %>
+              </li>
+            </ul>
+          </div>
+
           </div>
 
           <div class="oa-chart-container">

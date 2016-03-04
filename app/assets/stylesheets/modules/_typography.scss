@@ -979,6 +979,13 @@ em.news-tag {
  letter-spacing: .05em;
 }
 
+div.oa-chart-container .chart-heading {
+  margin: .5em 0 1em 0;
+  @include respond-to($ipad_landscape) {
+    margin: 1em 0 .5em 0;
+  }
+}
+
 section.segmented-chart ul.chartlist:not(:last-child) { margin-bottom: 2em; }
 
 // TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
@@ -1524,21 +1531,25 @@ div.oa-legend-container {
   border-top: 1px solid $blue-3;
   border-bottom: 1px solid $blue-3;
   padding: .7em;
-  margin-bottom: 1.5em;
+  margin-bottom: .3em;
 }
 
+div.oa-legend-description { margin-bottom: 2em; }
+
 ul.oa-terms-list {
-  display: inline-block;
   margin: .5em 0 0 0;
   padding: 0;
   text-align: center;
-  font-size: calc-em(16px);
+  font-size: calc-em(15px);
 }
 ul.oa-terms-list li {
   display: inline-block;
   margin: 0;
 }
 ul.oa-terms-list li:not(:last-child) { margin-right: .5em; }
+ul.oa-terms-list li.description {
+  font-weight: 600;
+}
 
 ul.oa-terms-list a { text-decoration: underline; }
 
