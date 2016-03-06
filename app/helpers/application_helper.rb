@@ -87,9 +87,9 @@ module ApplicationHelper
   end
 
   def render_feedback_button
-    if controller_name == 'open_access_indicator'
+    if controller_name.eql? 'open_access_indicator'
       render partial: 'shared/feedback_oa'
-    else
+    elsif !(controller_name.eql?('pages') && action_name.eql?('index'))
       render partial: 'shared/feedback_general'
     end
   end
