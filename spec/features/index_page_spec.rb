@@ -5,12 +5,12 @@ feature 'DDF Index Page' do
   end
 
   scenario 'Inspecting default facets' do
-    expect(page).to have_content /publications by type/i
-    expect(page).to have_content /publications by institution/i
+    expect(page).to have_content /publications/i
+    expect(page).to have_content /by institution/i
   end
 
   scenario 'Clicking on facet leads to search' do
-    click_link 'Journal article'
+    click_link 'University of Copenhagen'
     expect(current_path).to include catalog_index_path
   end
 
