@@ -28,8 +28,11 @@ en:
         statistics: Statistics
 
     data_visualization:
+      publication_statistics: Publication Statistics
       publications: Publications
       national: National
+      by: "By"
+      type: "Type"
       by_institution: By Institution
       by_university: By University
       more: More

@@ -35,8 +35,11 @@ da:
         statistics: Statistik
 
     data_visualization:
+      publication_statistics: Publikation statistikker
       publications: Publikationer
       national: Nationalt
+      by: "Efter"
+      type: "Type"
       by_institution: Efter Forskningsinstitution
       by_university: Efter Universitet
       more: Flere
