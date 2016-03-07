@@ -60,7 +60,7 @@ group :development do
 end
 
 group :assets do
-  gem 'closure-compiler'
+  gem 'uglifier'
   gem 'sprockets', '~> 2.8'
   gem 'therubyracer', '0.12.1', platforms: :ruby
   gem 'libv8', '3.16.14.7'
