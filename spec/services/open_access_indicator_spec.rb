@@ -70,14 +70,6 @@ describe OpenAccessIndicator do
     end
     context 'with valid parameters' do
       let(:params){ ['national', '2013'] }
-      context 'when there is a cached copy' do
-        include_context 'valid_cache'
-        it 'does not make a request to the resource url' do
-          pending 'putting caching on hold for now'
-          expect(OpenAccessIndicator).not_to receive(:resource_url)
-          OpenAccessIndicator.fetch(*params)
-        end
-      end
       context 'when there is an invalid cache' do
         it 'makes a new request to the resource url'
       end
