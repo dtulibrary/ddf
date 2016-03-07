@@ -83,7 +83,13 @@ module OpenAccessIndicatorHelper
     else
       "/oa-placeholder-pdfs/overview/Open_Access_Indicator_2014_Overview_#{params["locale"]}_PLACEHOLDER.pdf"
     end
-    link_to(t('ddf.open_access.legend.overview.description.overview'), doc_url)
+
+    # link_to(t('ddf.open_access.legend.overview.description.overview'), doc_url)
+    if params[:locale].eql? 'en'
+      "<a title='Not available yet'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
+    else
+      "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
+    end
   end
 
   def render_technical_doc_link(params)
@@ -92,7 +98,13 @@ module OpenAccessIndicatorHelper
     else
       "/oa-placeholder-pdfs/technical/Open_Access_Indicator_2014_Technical_#{params["locale"]}_PLACEHOLDER.pdf"
     end
-    link_to(t('ddf.open_access.legend.overview.description.technical'), doc_url)
+
+    # link_to(t('ddf.open_access.legend.overview.description.technical'), doc_url)
+    if params[:locale].eql? 'en'
+      "<a title='Not available yet'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
+    else
+      "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
+    end
   end
 
   def render_fi_link
