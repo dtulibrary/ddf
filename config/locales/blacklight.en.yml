@@ -29,9 +29,9 @@ en:
 
     data_visualization:
       publications: Publications
-      by: by
-      type:
-      institution: Institution
+      national: National
+      by_institution: By Institution
+      by_university: By University
       more: More
       less: Less
       oa_indicator: Open Access Indicator

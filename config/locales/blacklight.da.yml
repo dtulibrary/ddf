@@ -36,12 +36,12 @@ da:
 
     data_visualization:
       publications: Publikationer
-      by: efter
-      type:
-      institution: Forskningsinstitution
+      national: Nationalt
+      by_institution: Efter Forskningsinstitution
+      by_university: Efter Universitet
       more: Flere
       less: Færre
-      oa_indicator: Open Access Indicator
+      oa_indicator: Open Access Indikator
       more_statistics: Mere Statistik
       more_oa: Mere Information
 

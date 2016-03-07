@@ -8,7 +8,7 @@
             <!-- <i class="fa fa-files-o"></i> -->
             <%= t("blacklight.data_visualization.publications") %>
           </h1>
-          <h2 class="chart-heading">By Research Institution</h2>
+          <h2 class="chart-heading"><%= t("blacklight.data_visualization.by_institution") %></h2>
           <ul class="chartlist institutions">
             <% @institutions.each do |facet| %>
             <li>
@@ -29,7 +29,7 @@
             <%= t("blacklight.data_visualization.oa_indicator") %>
           </h1>
 
-          <h2 class="chart-heading">National</h2>
+          <h2 class="chart-heading"><%= t("blacklight.data_visualization.national") %></h2>
           <ul class="chartlist types">
             <% @national_segments.each do |segment| %>
             <li>
@@ -40,7 +40,7 @@
             <% end %>
           </ul>
 
-          <h2 class="chart-heading">By University</h2>
+          <h2 class="chart-heading"><%= t("blacklight.data_visualization.by_university") %></h2>
           <ul class="chartlist types">
             <% @university_segments.each do |segment| %>
             <li>
