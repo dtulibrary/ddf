@@ -79,9 +79,9 @@ module OpenAccessIndicatorHelper
 
   def render_overview_doc_link(params)
     doc_url = if params.has_key? "year"
-      "/oa-placeholder-pdfs/overview/Open_Access_Indicator_#{params["year"]}_Overview_#{params["locale"]}_PLACEHOLDER.pdf"
+      "/oa-docs/overview/Open_Access_Indicator_#{params["year"]}_Overview_#{params["locale"]}.pdf"
     else
-      "/oa-placeholder-pdfs/overview/Open_Access_Indicator_2014_Overview_#{params["locale"]}_PLACEHOLDER.pdf"
+      "/oa-docs/overview/Open_Access_Indicator_2014_Overview_#{params["locale"]}.pdf"
     end
 
     # link_to(t('ddf.open_access.legend.overview.description.overview'), doc_url)
@@ -94,9 +94,9 @@ module OpenAccessIndicatorHelper
 
   def render_technical_doc_link(params)
     doc_url = if params.has_key? "year"
-      "/oa-placeholder-pdfs/technical/Open_Access_Indicator_#{params["year"]}_Technical_#{params["locale"]}_PLACEHOLDER.pdf"
+      "/oa-docs/technical/Open_Access_Indicator_#{params["year"]}_Technical_#{params["locale"]}.pdf"
     else
-      "/oa-placeholder-pdfs/technical/Open_Access_Indicator_2014_Technical_#{params["locale"]}_PLACEHOLDER.pdf"
+      "/oa-docs/technical/Open_Access_Indicator_2014_Technical_#{params["locale"]}.pdf"
     end
 
     # link_to(t('ddf.open_access.legend.overview.description.technical'), doc_url)
