@@ -96,33 +96,6 @@ describe OpenAccessIndicator do
     end
   end
 
-  describe OpenAccessIndicator::LocalCache do
-    describe 'update_needed?' do
-      include_context 'status_api'
-      subject { OpenAccessIndicator::LocalCache.update_needed? }
-      context 'when nothing is cached' do
-        it { should eql true }
-      end
-      context 'when there is a cached copy with the same timestamp as given by the API' do
-        include_context 'valid_cache'
-        it { should eql false }
-      end
-      context 'when there is a cached copy with another timestamp' do
-        include_context 'invalid_cache'
-        it { should eql true }
-      end
-    end
-    describe 'read_latest' do
-      subject { OpenAccessIndicator::LocalCache.read_latest(year) }
-      context 'when there is valid cached data' do
-        include_context 'valid_cache'
-        let(:year) { '2014' }
-        pending 'putting caching on hold for now'
-        # it { should eql response }
-      end
-    end
-  end
-
   describe OpenAccessIndicator::StatusResponse do
     include_context 'status_api'
     describe 'status' do
