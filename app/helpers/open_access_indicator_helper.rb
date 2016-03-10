@@ -79,39 +79,24 @@ module OpenAccessIndicatorHelper
 
   def render_overview_doc_link(params)
     doc_url = if params.has_key? "year"
-      "/oa-docs/overview/Open_Access_Indicator_#{params["year"]}_Overview_#{params["locale"]}.pdf"
+      "/oa-docs/overview/Open_Access_Indicator_#{params["year"]}_Overview_da.pdf"
     else
-      "/oa-docs/overview/Open_Access_Indicator_2014_Overview_#{params["locale"]}.pdf"
+      "/oa-docs/overview/Open_Access_Indicator_#{OpenAccessIndicator::LAST_YEAR}_Overview_da.pdf"
     end
-
-    # link_to(t('ddf.open_access.legend.overview.description.overview'), doc_url)
-    if params[:locale].eql? 'en'
-      "<a title='Not available yet'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
-    else
-      "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
-    end
+    "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
   end
 
   def render_technical_doc_link(params)
     doc_url = if params.has_key? "year"
-      "/oa-docs/technical/Open_Access_Indicator_#{params["year"]}_Technical_#{params["locale"]}.pdf"
+      "/oa-docs/technical/Open_Access_Indicator_#{params["year"]}_Technical_da.pdf"
     else
-      "/oa-docs/technical/Open_Access_Indicator_2014_Technical_#{params["locale"]}.pdf"
+      "/oa-docs/technical/Open_Access_Indicator_#{OpenAccessIndicator::LAST_YEAR}_Technical_da.pdf"
     end
 
-    # link_to(t('ddf.open_access.legend.overview.description.technical'), doc_url)
-    if params[:locale].eql? 'en'
-      "<a title='Not available yet'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
-    else
-      "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
-    end
+    "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
   end
 
   def render_fi_link
     link_to(t('ddf.open_access.legend.overview.description.at_fi'), "http://ufm.dk/forskning-og-innovation/samspil-mellem-viden-og-innovation/open-access/artikler/status")
   end
 end
-
-
-
-
