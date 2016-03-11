@@ -4,3 +4,6 @@ da:
     saved_search:
       label: Gem denne søgning
       title: Søgningens titel
+    curation:
+      nav:
+        home: Forside
