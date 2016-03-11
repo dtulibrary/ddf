@@ -6,9 +6,12 @@
       </div>
 
       <div class="col-md-4 search-options-container">
+        <% if within_spotlight? %>
+          <%= render partial: 'spotlight/search_links' %>
+        <% else %>
         <%= render :partial=>'/user_search_links' %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-

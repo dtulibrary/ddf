@@ -1,30 +1,13 @@
 <ul class="search-extras-list icon-labels align-right">
-  <li>
-    <i class="glyphicon glyphicon-check"></i>
-    <%= link_to selected_path do %>
-      <%= t('blacklight.header_links.bookmarks') %>
-      (<span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span>)
-    <% end %>
-  </li>
-  <li>
-    <i class="glyphicon glyphicon-time"></i>
-    <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
-  </li>
-  <% if within_spotlight? && current_user %>
     <li>
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="userDropdown">
-          <%= current_user.email %>
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="userDropdown">
-          <% if current_exhibit %>
-          <li><%= link_to 'Administrèr udstilling', edit_exhibit_path(current_exhibit) %></li>
-          <% end %>
-          <li><%= link_to 'Opret udstilling', new_exhibit_path %></li>
-          <li><%= link_to 'Log ud', destroy_user_session_path %></li>
-        </ul>
-      </div>
+      <i class="glyphicon glyphicon-time"></i>
+      <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
     </li>
-  <% end %>
+    <li>
+      <i class="glyphicon glyphicon-check"></i>
+      <%= link_to selected_path do %>
+        <%= t('blacklight.header_links.bookmarks') %>
+        (<span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span>)
+      <% end %>
+    </li>
 </ul>

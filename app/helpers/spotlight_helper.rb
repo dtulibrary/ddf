@@ -1,10 +1,6 @@
 module SpotlightHelper
   include Spotlight::MainAppHelpers
 
-  def should_render_spotlight_search_bar?
-    false
-  end
-
   def within_spotlight?
     controller.class.to_s.include? 'Spotlight'
   end
@@ -15,7 +11,9 @@ module SpotlightHelper
   # Render the search navbar
   # @return [String]
   def render_search_bar
-    render :partial=>'catalog/search_form' unless within_spotlight?
+    unless within_spotlight? && defined?(@exhibit) && !@exhibit.searchable?
+      render :partial=>'catalog/search_form'
+    end
   end
 
   # link_to_document(doc, 'VIEW', :counter => 3)
