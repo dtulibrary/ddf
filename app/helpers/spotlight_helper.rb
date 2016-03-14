@@ -5,15 +5,27 @@ module SpotlightHelper
     controller.class.to_s.include? 'Spotlight'
   end
 
+  def render_search_nav
+    if within_spotlight?
+      render partial: 'spotlight/search'
+    else
+      render partial: 'shared/search'
+    end
+  end
+
+  def exhibit_navs(exhibit)
+    navs = current_exhibit.main_navigations.displayable
+    navs.to_a.reject! {|n| n.nav_type == 'browse' }
+  end
+
+
   ##
   # Overrides default Blacklight behaviour to disable
   # Search bar on Spotlight pages.
   # Render the search navbar
   # @return [String]
   def render_search_bar
-    unless within_spotlight? && defined?(@exhibit) && !@exhibit.searchable?
-      render :partial=>'catalog/search_form'
-    end
+    render partial: 'catalog/search_form'
   end
 
   # link_to_document(doc, 'VIEW', :counter => 3)
