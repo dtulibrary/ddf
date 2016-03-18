@@ -53,7 +53,7 @@ en:
       fields:
         default: "Search terms"
         format_orig_s: Type
-        index:
+        index: &LABELS
           abstract_ts: Abstract
           affiliation_ts: Affiliations
           author_ts: Authors
@@ -73,45 +73,26 @@ en:
           editor_ts: Editor
           fulltext_access: Full text access
           data_providers: Data providers
-        facet:
+          name_ts: Name
+          is_active_b: Status
+          orcid_ss: ORCID
+          scientific_level_s: Scientific level
+          review_status_s: Review type
           author_facet: Author
           journal_title_facet: Journal Title
           pub_date_tsort: Publication Year
-          research_area_ss: Main Research Area
-          source_ss: Research Institution
           isolanguage_ss: Language
           access_condition_s: Publication Status
           review_status_s: Review type
-          scientific_level_s: Scientific level
-          format_orig_s: Type
-          submission_year_tis: Submission year
-        show:
-          abstract_ts: Abstract
-          affiliation_ts: Affiliations
-          author_ts: Authors
-          conf_title_ts: Conference
-          doi_ss: DOI
           format: Type
-          isbn_ss: ISBN
-          issn_ss: ISSN
-          journal_title_ts: Published in
           keywords_ts: Keywords
-          language_ss: Language
-          publisher_ts: Publisher
-          research_area_ss: Main Research Area
-          series_title_ts: Series
-          source_ss: Research Institution
           subtitle_ts: Subtitle
-          access_condition_s: Publication Status
-          scientific_level_s: Scientific Level
-          review_status_s: Review type
-          pub_date_tis: Publication year
-          supervisor_ts: Supervisor
-          editor_ts: Editor
-          conf_title_ts: Conference
           submission_year_tis: Submission year
           cluster_id_ss: ID
-
+          has_orcid_b: ORCID
+          person_affiliations_ssf: Affiliations
+        facet: *LABELS
+        show: *LABELS
       form:
         logo_label: Danish National Research Database
       start_over: Start Over
@@ -221,6 +202,16 @@ en:
       popular: Popular
       administrative: Administrative
       undetermined: Undetermined
+    # note that since true and false,
+    # yes and no are treated as booleans
+    # by i18n we need to quote these values
+    orcid_labels:
+      "true": 'Yes'
+      "false": 'No'
+    status_labels:
+      "true": 'Active'
+      "false": 'Formerly active'
+
 
   ddf:
     open_access:
@@ -353,6 +344,10 @@ en:
     cookies:
       message: We use cookies to improve the Danish National Research Database
       linkmsg: Learn more
+    researchers:
+      affiliations:
+        current: Affiliations
+        previous: Former Affiliations
 
   citations:
     form:

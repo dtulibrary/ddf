@@ -1,5 +1,5 @@
 <ul class="search-widgets-list">
-  <li><%= render :partial => 'save_and_export_widget' %></li>
+  <li><%= render :partial => 'save_and_export_widget' unless params[:search_field] == 'researchers' %></li>
   <li><%= render :partial => 'sort_widget' %></li>
   <li><%= render :partial => 'per_page_widget' %></li>
   <!-- <li><%# render :partial => 'view_type_group' %></li> -->

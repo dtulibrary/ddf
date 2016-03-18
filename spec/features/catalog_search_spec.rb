@@ -1,24 +1,36 @@
 feature 'Catalog search' do
+  describe 'publications search' do
+    background do
+      visit root_path
+      fill_in 'Search...', with: 'fish'
+      click_button 'Search'
+    end
 
-  background do
-    visit root_path
-    fill_in 'Search...', with: 'fish'
-    click_button 'Search'
-  end
+    scenario 'Checking per page toggle' do
+      within '#per_page-dropdown' do
+        expect(page).to have_content '10'
+        expect(page).to have_content '20'
+        expect(page).to have_content '50'
+      end
+    end
 
-  scenario 'Checking per page toggle' do
-    within '#per_page-dropdown' do
-      expect(page).to have_content '10'
-      expect(page).to have_content '20'
-      expect(page).to have_content '50'
+    scenario 'Checking sort types' do
+      within '#sort-dropdown' do
+        expect(page).to have_content 'relevance'
+        expect(page).to have_content 'year'
+        expect(page).to have_content 'title'
+      end
     end
   end
-
-  scenario 'Checking sort types' do
-    within '#sort-dropdown' do
-      expect(page).to have_content 'relevance'
-      expect(page).to have_content 'year'
-      expect(page).to have_content 'title'
+  describe 'researchers' do
+    scenario 'searching' do
+      visit root_path
+      fill_in 'Search...', with: 'Muhammad'
+      select('Researchers', from: 'search_field')
+      click_button 'Search'
+      expect(page).to have_content 'Muhammad Rizwan Tabassum'
     end
+
+
   end
 end

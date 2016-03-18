@@ -13,7 +13,7 @@ class CatalogController < ApplicationController
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = 'ddf_publ'
 
-
+    config.document_presenter_class = DDFPresenter
     config.metrics_presenter_classes = [ Dtu::Metrics::AltmetricPresenter ]
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
@@ -73,6 +73,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
 
     config.add_facet_fields_to_solr_request!
+
+    config.index.display_type_field = 'format'
+    config.show.display_type_field = 'format'
     # 08.07.2015. Way to go:
     # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
 
@@ -122,8 +125,19 @@ class CatalogController < ApplicationController
     config.add_show_field 'submission_year_tis'
     config.add_show_field 'pub_date_tis', if: :show_publication_year?
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
-    config.add_show_field 'cluster_id_ss'
 
+    ################################
+    ######## Researchers  ##########
+    ################################
+    config.add_index_field 'orcid_ss', highlight: true, label: 'ORCID'
+    config.add_index_field 'is_active_b', helper_method: :render_status_index
+    config.add_show_field 'orcid_ss'
+    # config.add_show_field 'person_affiliations_ssf', helper_method: :render_current_affiliations
+    config.add_show_field 'is_active_b', helper_method: :render_status_index
+    config.add_facet_field 'has_orcid_b', helper_method: :render_orcid_status
+    config.add_facet_field 'is_active_b', helper_method: :render_active_status
+
+    config.add_show_field 'cluster_id_ss'
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
@@ -140,7 +154,22 @@ class CatalogController < ApplicationController
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
-    config.add_search_field 'all_fields', :label => 'Title'
+
+    name_ordering = [
+    'name_ts asc'
+    ]
+    config.add_sort_field name_ordering.join(', '), :label => 'name'
+    config.add_search_field 'all_fields', label: 'Publications'
+
+    # Limit results to researchers
+    # In our solrconfig.xml we have created a person_qf
+    # configuration to limit searches to name and orcid fields.
+    config.add_search_field('researchers') do |field|
+      field.label = 'Researchers'
+      field.solr_local_parameters = {
+        :qf => '$person_qf'
+      }
+    end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and

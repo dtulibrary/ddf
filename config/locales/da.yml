@@ -70,7 +70,7 @@ da:
         other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
       fields:
         default: Søgeord
-        index:
+        index: &LABELS
           abstract_ts: Resumé
           affiliation_ts: Tilhørsforhold
           author_ts: Forfattere
@@ -90,43 +90,27 @@ da:
           editor_ts: Redaktør
           fulltext_access: Fuldtekstadgang
           data_providers: Dataleverandører
-        facet:
+          name_ts: Navn
+          is_active_b: Status
+          orcid_ss: ORCID
           author_facet: Forfatter
-          format_orig_s: Type
           journal_title_facet: Tidskriftets titel
           pub_date_tsort: Udgivelsesår
           submission_year_tis: Indberetningsår
           research_area_ss: Hovedforskningsområde
-          source_ss: Forskningsinstitution
           isolanguage_ss: Sprog
           access_condition_s: Publikationsstatus
           review_status_s: Review type
           scientific_level_s: Videnskabeligt niveau
-        show:
-          abstract_ts: Resumé
-          affiliation_ts: Tilhørsforhold
-          author_ts: Forfattere
-          doi_ss: DOI
+          has_orcid_b: ORCID
           format: Type
-          isbn_ss: ISBN
-          issn_ss: ISSN
-          journal_title_ts: Udgivet i
           keywords_ts: Emneord
-          language_ss: Sprog
-          publisher_ts: Udgiver
-          research_area_ss: Hovedforskningsområde
-          series_title_ts: Serie
-          source_ss: Forskningsinstitution
           subtitle_ts: Undertitel
-          access_condition_s: Publikationsstatus
-          scientific_level_s: Videnskabeligt niveau
-          review_status_s: Review type
-          pub_date_tis: Udgivelsesår
-          supervisor_ts: Vejleder
-          editor_ts: Redaktør
-          conf_title_ts: Konference
-          submission_year_tis: Indberetningsår
           cluster_id_ss: ID
+          person_affiliations_ssf: Tilhørsforhold
+        facet: *LABELS
+        show: *LABELS
+
 
       filters:
         title: "Du søgte efter:"
@@ -242,6 +226,15 @@ da:
       popular: Populærvidenskabelig
       administrative: Administrativ
       undetermined: Ubestemt
+    # note that since true and false,
+    # yes and no are treated as booleans
+    # by i18n we need to quote these values
+    orcid_labels:
+      "true": 'Ja'
+      "false": 'Nej'
+    status_labels:
+      "true": 'Aktiv'
+      "false": 'Tidligere aktiv'
 
   ddf:
     open_access:
@@ -376,6 +369,10 @@ da:
     cookies:
       message: Vi benytter os af cookies for at forbedre Forskningsdatabasen.
       linkmsg: Mere information
+    researchers:
+      affiliations:
+        current: Tilhørsforhold
+        previous: Tidligere tilhørsforhold
   citations:
     form:
       number: "Antal:"

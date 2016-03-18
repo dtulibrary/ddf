@@ -38,7 +38,7 @@ describe CatalogController do
 
       describe 'index fields' do
         subject { controller.blacklight_config.index_fields.keys }
-        it { is_expected.to eq %w(author_ts format_orig_s journal_title_ts editor_ts abstract_ts research_area_ss series_title_ts publisher_ts pub_date_tis supervisor_ts doi_ss) }
+        it { is_expected.to eq %w(author_ts format_orig_s journal_title_ts editor_ts abstract_ts research_area_ss series_title_ts publisher_ts pub_date_tis supervisor_ts doi_ss name_ts) }
       end
 
       describe 'facet_fields' do
