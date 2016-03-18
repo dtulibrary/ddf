@@ -3,7 +3,8 @@ class StatisticsController < ApplicationController
   layout "statistics"
 
   def index
-    @types = publications_by_facet('format_orig_s', limit: 50)
-    @institutions = publications_by_facet('source_ss', limit: 50)
+    @types = publications_by_facet { nojs_attrs_for('format_orig_s') }
+    @institutions = publications_by_facet { nojs_attrs_for('source_ss') }
+    @review = publications_by_facet { chartjs_attrs_for('review_status_s') }.to_json
   end
 end

@@ -1,8 +1,8 @@
 module StatService
 
-  def publications_by_facet(facet, opts={})
-    facet_list = publication_attrs(facet)
-    limit = opts[:limit] || limit_by_facet('source_ss')
+  def publications_by_facet(opts={}, &block)
+    facet_list = yield
+    limit = opts[:limit] || 1000 # arbitrary large value, or "no limit"
     whitelist(facet_list).take(limit)
   end
 
@@ -21,11 +21,8 @@ module StatService
     Hash[*arr]
   end
 
-  def limit_by_facet(facet)
-    hashify(facet).length
-  end
-
-  def publication_attrs(facet)
+  # For charts that use no JS (ALA #256 Accessible Web Standards charts)
+  def nojs_attrs_for(facet)
     hash = hashify(facet)
     counts = hash.values
     a = []
@@ -41,6 +38,36 @@ module StatService
     a
   end
 
+  # For charts that use Chart.js
+  def chartjs_attrs_for(facet)
+    attrs = core_attrs_for(facet)
+    attrs.map { |h| h.merge(chart_colors(h)) }
+  end
+
+  def core_attrs_for(facet)
+    hash = hashify(facet)
+    a = []
+    hash.each do |k, v|
+      h = {}
+      h.store(:name, facet)
+      h.store(:value, v)
+      h.store(:label, translate(facet, k))
+      a << h
+    end
+    a
+  end
+
+  def chart_colors(attrs)
+    CHARTJS_COLORS[attrs[:name].to_sym][attrs[:label]]
+  end
+
+  CHARTJS_COLORS = {
+    review_status_s: {
+      'Undetermined' => { color: '#F15854', highlight: '#F15854' },
+      'Peer Review' =>  { color: '#60BD68', highlight: '#60BD68' }
+    }
+  }
+
   def whitelist(facet_list)
     facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
   end
@@ -51,9 +78,11 @@ module StatService
     t([LABEL_TRANSLATIONS[facet], '.', code].join)
   end
 
+  # These look up config/locales/[da|en].yml
   LABEL_TRANSLATIONS = {
-    'format_orig_s' => 'mxd_type_labels.publication_type_labels',
-    'source_ss'     => 'mxd_type_labels.facet_source_labels'
+    'format_orig_s'   => 'mxd_type_labels.publication_type_labels',
+    'source_ss'       => 'mxd_type_labels.facet_source_labels',
+    'review_status_s' => 'mxd_type_labels.review_status_labels'
   }
 
   def relative_by(fn, value, numbers)

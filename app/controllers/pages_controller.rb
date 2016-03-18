@@ -2,8 +2,7 @@ class PagesController < ApplicationController
   include StatService
 
   def index
-    @types = publications_by_facet('format_orig_s', limit: 50)
-    @institutions = publications_by_facet('source_ss', limit: 50)
+    @institutions = publications_by_facet { nojs_attrs_for('source_ss') }
     @national_segments = OpenAccessIndicator.segment_attrs('national', OpenAccessIndicator::LAST_YEAR)
     @university_segments = OpenAccessIndicator.segment_attrs('universities', OpenAccessIndicator::LAST_YEAR)
   end

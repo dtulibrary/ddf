@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 group :development, :production do
-  gem 'turbolinks' # turbolinks causing issues with tests... 
+  gem 'turbolinks' # turbolinks causing issues with tests...
 end
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
