@@ -14,8 +14,10 @@ class DDFPresenter < Dtu::DocumentPresenter
     return unless data.present?
     affiliations = JSON.parse(data)
     affiliations.select! { |h| h['type'] == status }
-    output = []
+    dated_affiliations = {}
     affiliations.each do |aff|
+      aff_end = parse_date(aff['endDate'])
+      dated_affiliations[aff_end] = ''
       affiliation = ''
       aff['organisation']['names'].each do |n|
         names = []
@@ -23,9 +25,9 @@ class DDFPresenter < Dtu::DocumentPresenter
         affiliation << names.compact.join(' - ')
       end
       affiliation << ' '  << affiliation_dates(aff['startDate'], aff['endDate']) unless status == 'current'
-      output << affiliation
+      dated_affiliations[aff_end] = affiliation
     end
-    output.join("<br/>").html_safe
+    dated_affiliations.sort_by {|date, _| date }.reverse.collect(&:last).join("<br/>").html_safe
   end
 
   def affiliation_dates(start_d, end_d)
@@ -33,9 +35,13 @@ class DDFPresenter < Dtu::DocumentPresenter
   end
 
   def format_date(d)
-    date = Date.parse(d)
+    date = parse_date(d)
     content_tag :time, datetime: date.strftime do
       date.strftime('%d/%m-%Y')
     end
+  end
+
+  def parse_date(d)
+    d.nil? ? Date.today : Date.parse(d)
   end
 end
