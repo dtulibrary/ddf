@@ -11,9 +11,9 @@
 # how to start up solr, generally for automated testing.
 
 development:
-  url: <%= ENV['SOLR_URL'] || 'http://lb.production.metastore.cvt.dk/solr/metastore' %>
+  url: <%= ENV['SOLR_URL'] || 'http://127.0.0.1:8983/solr/metastore' %>
 test: &test
-  url: http://lb.production.metastore.cvt.dk/solr/metastore
+  url: http://127.0.0.1:8983/solr/metastore
 production:
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr" %>
 
