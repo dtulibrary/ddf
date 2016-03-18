@@ -15,7 +15,7 @@ module SpotlightHelper
 
   def exhibit_navs(exhibit)
     navs = current_exhibit.main_navigations.displayable
-    navs.to_a.reject! {|n| n.nav_type == 'browse' }
+    navs.to_a.reject {|n| n.nav_type == 'browse' } 
   end
 
 
