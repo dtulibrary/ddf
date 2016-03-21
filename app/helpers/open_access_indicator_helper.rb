@@ -77,22 +77,13 @@ module OpenAccessIndicatorHelper
     </li>".html_safe
   end
 
-  def render_overview_doc_link(params)
-    doc_url = if params.has_key? "year"
-      "/oa-docs/overview/Open_Access_Indicator_#{params["year"]}_Overview_da.pdf"
-    else
-      "/oa-docs/overview/Open_Access_Indicator_#{OpenAccessIndicator::LAST_YEAR}_Overview_da.pdf"
-    end
+  def render_overview_doc_link(year)
+    doc_url = "/oa-docs/overview/Open_Access_Indicator_#{year}_Overview_#{I18n.locale}.pdf"
     "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.overview')}</a>".html_safe
   end
 
-  def render_technical_doc_link(params)
-    doc_url = if params.has_key? "year"
-      "/oa-docs/technical/Open_Access_Indicator_#{params["year"]}_Technical_da.pdf"
-    else
-      "/oa-docs/technical/Open_Access_Indicator_#{OpenAccessIndicator::LAST_YEAR}_Technical_da.pdf"
-    end
-
+  def render_technical_doc_link(year)
+    doc_url =  "/oa-docs/technical/Open_Access_Indicator_#{year}_Technical_#{I18n.locale}.pdf"
     "<a href='#{doc_url}'>#{t('ddf.open_access.legend.overview.description.technical')}</a>".html_safe
   end
 

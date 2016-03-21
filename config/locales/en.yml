@@ -283,8 +283,8 @@ en:
           unclear: Unclear
           description:
             description: Description
-            overview: Overview (Danish)
-            technical: Technical (Danish)
+            overview: Overview
+            technical: Technical
             at_fi: At the Danish Agency for Science, Technology and Innovation
         development:
           potential: "Realized Open Access Potential:"

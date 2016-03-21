@@ -65,11 +65,11 @@
               <li class="description"><%= t('ddf.open_access.legend.overview.description.description') %>:</li>
               <li>
                 <i class="fa fa-file-pdf-o"></i>
-                <%= render_overview_doc_link(params) %>;
+                <%= render_overview_doc_link(@year) %>;
               </li>
               <li>
                 <i class="fa fa-file-pdf-o"></i>
-                <%= render_technical_doc_link(params) %>;
+                <%= render_technical_doc_link(@year) %>;
               </li>
               <li>
                 <i class="fa fa-external-link"></i>
