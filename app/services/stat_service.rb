@@ -1,3 +1,8 @@
+#
+# To add a new Chart JS chart, add relevant data to:
+# 1) Label translations hash
+# 2) Chart JS colors chart
+#
 module StatService
 
   def publications_by_facet(opts={}, &block)
@@ -40,11 +45,11 @@ module StatService
 
   # For charts that use Chart.js
   def chartjs_attrs_for(facet)
-    attrs = core_attrs_for(facet)
-    attrs.map { |h| h.merge(chart_colors(h)) }
+    attrs = chartjs_core_attrs_for(facet)
+    # attrs.map { |h| h.merge(chartjs_colors_by(h)) }
   end
 
-  def core_attrs_for(facet)
+  def chartjs_core_attrs_for(facet)
     hash = hashify(facet)
     a = []
     hash.each do |k, v|
@@ -52,19 +57,39 @@ module StatService
       h.store(:name, facet)
       h.store(:value, v)
       h.store(:label, translate(facet, k))
-      a << h
+      colors = h.merge(set_colors_from(facet, k))
+      a << colors
     end
     a
   end
 
-  def chart_colors(attrs)
-    CHARTJS_COLORS[attrs[:name].to_sym][attrs[:label]]
+  def set_colors_from(facet, code)
+    CHARTJS_COLORS[facet.to_sym][code]
   end
 
   CHARTJS_COLORS = {
     review_status_s: {
-      'Undetermined' => { color: '#F15854', highlight: '#F15854' },
-      'Peer Review' =>  { color: '#60BD68', highlight: '#60BD68' }
+      'undetermined' => { color: '#DECF3F', highlight: '#e2d455' }, # Yellow
+      'peer_review' =>  { color: '#60BD68', highlight: '#72c479' }  # Green
+      # TODO
+      # 'other_review'
+      # 'no_review'
+    },
+
+    scientific_level_s: {
+      'scientific' =>   { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
+      'educational' =>  { color: '#B276B2', highlight: '#bb86bb' },  # Purple
+      'popular' =>      { color: '#FAA43A', highlight: '#fbaf53' }  # Orange
+      # TODO
+      # 'administrative'
+      # 'undetermined'
+    },
+
+    research_area_ss: {
+      'hum' => { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
+      'med' => { color: '#B276B2', highlight: '#bb86bb' },  # Purple
+      'sci' => { color: '#FAA43A', highlight: '#fbaf53' },  # Orange
+      'soc' => { color: '#B276B2', highlight: '#bb86bb' }  # Purple
     }
   }
 
@@ -82,7 +107,9 @@ module StatService
   LABEL_TRANSLATIONS = {
     'format_orig_s'   => 'mxd_type_labels.publication_type_labels',
     'source_ss'       => 'mxd_type_labels.facet_source_labels',
-    'review_status_s' => 'mxd_type_labels.review_status_labels'
+    'review_status_s' => 'mxd_type_labels.review_status_labels',
+    'scientific_level_s' => 'mxd_type_labels.scientific_level_labels',
+    'research_area_ss' => 'mxd_type_labels.research_area_labels'
   }
 
   def relative_by(fn, value, numbers)

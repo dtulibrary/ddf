@@ -18,4 +18,56 @@ $chart-purple: #B276B2;
 $chart-yellow: #DECF3F;
 $chart-red:   #F15854;
 
+// For OA Development
 $chart-green--projected: lighten($chart-green, 30%);
+
+// For Statistics (Chart JS)
+$chart-gray--highlight: lighten($chart-gray, 5%);
+$chart-blue--highlight: lighten($chart-blue, 5%);
+$chart-orange--highlight: lighten($chart-orange, 5%);
+$chart-green--highlight: lighten($chart-green, 5%);
+$chart-pink--highlight: lighten($chart-pink, 5%);
+$chart-brown--highlight: lighten($chart-brown, 5%);
+$chart-purple--highlight: lighten($chart-purple, 5%);
+$chart-yellow--highlight: lighten($chart-yellow, 5%);
+$chart-red--highlight: lighten($chart-red, 5%);
+
+.chart-gray--highlight { background: lighten($chart-gray, 5%); }
+.chart-blue--highlight { background: lighten($chart-blue, 5%); }
+.chart-orange--highlight { background: lighten($chart-orange, 5%); }
+.chart-green--highlight { background: lighten($chart-green, 5%); }
+.chart-pink--highlight { background: lighten($chart-pink, 5%); }
+.chart-brown--highlight { background: lighten($chart-brown, 5%); }
+.chart-purple--highlight { background: lighten($chart-purple, 5%); }
+.chart-yellow--highlight { background: lighten($chart-yellow, 5%);}
+.chart-red--highlight { background: lighten($chart-red, 5%); }
+
+// TODO: paste above as comments
+.chart-gray--highlight {
+  background: #5a5a5a; }
+
+.chart-blue--highlight {
+  background: #72b1df; }
+
+.chart-orange--highlight {
+  background: #fbaf53; }
+
+.chart-green--highlight {
+  background: #72c479; }
+
+.chart-pink--highlight {
+  background: #f393be; }
+
+.chart-brown--highlight {
+  background: #c6a134; }
+
+.chart-purple--highlight {
+  background: #bb86bb; }
+
+.chart-yellow--highlight {
+  background: #e2d455; }
+
+.chart-red--highlight {
+  background: #f36f6c; }
+
+/*# sourceMappingURL=chart-colors.css.map */
