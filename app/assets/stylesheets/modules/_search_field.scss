@@ -1,0 +1,64 @@
+select#search_field {
+  background-color: #337ab7;
+  color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-size: 18px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  margin-right: 0;
+  border-right-width: 0;
+  border-color: #2e6da4;
+  cursor: pointer;
+
+  // background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #337ab7;
+
+  option {
+    color: black;
+    background-color: #FFF;
+  }
+}
+
+
+select#search_field::-ms-expand { /* for IE 11 */
+    display: none;
+}
+
+/*target Internet Explorer 9 and Internet Explorer 10:*/
+@media screen and (min-width:0\0) {
+    select#search_field {
+        background:none;
+        padding: 5px;
+    }
+}
+
+#search-field-container {
+  width: 25%;
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+#field-label {position:relative}
+#field-label:after {
+  content:"\f078";
+  font-family: "FontAwesome";
+  font-size: 11px;
+  color:#fff;
+  right:8px; top:12px;
+  padding:0 0 2px;
+  position:absolute;
+  pointer-events:none;
+  z-index: 20;
+}
+#field-label:before {
+  content:'';
+  right:4px; top:0px;
+  width:23px; height:18px;
+  background:#fff;
+  position:absolute;
+  pointer-events:none;
+  display:block;
+}
