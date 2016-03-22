@@ -78,7 +78,7 @@ module StatService
 
     scientific_level_s: {
       'scientific' =>   { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
-      'educational' =>  { color: '#B276B2', highlight: '#bb86bb' },  # Purple
+      'educational' =>  { color: '#F17CB0', highlight: '#f393be' }, #Pink
       'popular' =>      { color: '#FAA43A', highlight: '#fbaf53' }  # Orange
       # TODO
       # 'administrative'
@@ -86,10 +86,10 @@ module StatService
     },
 
     research_area_ss: {
-      'hum' => { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
-      'med' => { color: '#B276B2', highlight: '#bb86bb' },  # Purple
-      'sci' => { color: '#FAA43A', highlight: '#fbaf53' },  # Orange
-      'soc' => { color: '#B276B2', highlight: '#bb86bb' }  # Purple
+      'Humanities' => { color: '#F17CB0', highlight: '#f393be' }, #Pink
+      'Medical science' => { color: '#F15854', highlight: '#f36f6c' },  # Orange
+      'Science/technology' => { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
+      'Social science' => { color: '#DECF3F', highlight: '#e2d455' }  # Yellow
     }
   }
 
@@ -109,7 +109,7 @@ module StatService
     'source_ss'       => 'mxd_type_labels.facet_source_labels',
     'review_status_s' => 'mxd_type_labels.review_status_labels',
     'scientific_level_s' => 'mxd_type_labels.scientific_level_labels',
-    'research_area_ss' => 'mxd_type_labels.research_area_labels'
+    'research_area_ss' => 'mxd_type_labels.research_area_labels_reverse'
   }
 
   def relative_by(fn, value, numbers)

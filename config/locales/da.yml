@@ -203,9 +203,16 @@ da:
       do:  Andet
     research_area_labels:
       hum: Humaniora
-      soc: 'Samfundsvidenskab'
-      med: 'Sundhedsvidenskab'
-      sci: 'Teknik/naturvidenskab'
+      soc: Samfundsvidenskab
+      med: Sundhedsvidenskab
+      sci: Teknik/naturvidenskab
+
+    research_area_labels_reverse:
+      Humanities: Humaniora
+      Medical science: Sundhedsvidenskab
+      Science/technology: Teknik/naturvidenskab
+      Social science: Samfundsvidenskab
+
     publishing_status_labels:
       published: Publiceret
       unknown: Ukendt

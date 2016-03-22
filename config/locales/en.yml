@@ -185,6 +185,13 @@ en:
       med: Medical science
       sci: Science/technology
       soc: Social science
+
+    research_area_labels_reverse:
+      Humanities: Humanities
+      Medical science: Medical science
+      Science/technology: Science/technology
+      Social science: Social science
+
     publishing_status_labels:
       published: Published
       unknown: Unknown

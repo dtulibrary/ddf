@@ -1557,3 +1557,10 @@ p.more-link { text-align: center; }
 p.more-link--oa { margin-top: 4em; }
 p.more-link a { text-decoration: underline; }
 
+h1.canvas-heading {
+  text-align: center;
+  font-family: $headline;
+  font-size: calc-em(20px);
+  font-weight: 300;
+  margin-bottom: 2em;
+}
