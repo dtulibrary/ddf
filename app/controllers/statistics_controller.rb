@@ -11,5 +11,6 @@ class StatisticsController < ApplicationController
     @review = publications_by_facet { chartjs_attrs_for('review_status_s') }.to_json
     @sci_level = publications_by_facet { chartjs_attrs_for('scientific_level_s') }.to_json
     @res_area = publications_by_facet { chartjs_attrs_for('research_area_ss') }.to_json
+    @pub_status = publications_by_facet { chartjs_attrs_for('access_condition_s') }.to_json
   end
 end

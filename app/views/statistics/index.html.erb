@@ -1,20 +1,21 @@
-<!-- <canvas id="chartjs-test"></canvas> -->
-
 <article role="main">
-
   <div class="container">
     <div class="row canvas-row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h1 class="canvas-heading">Review type</h1>
         <canvas id="review-type" height="200"><%= @review %></canvas>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h1 class="canvas-heading">Scientific level</h1>
         <canvas id="scientific-level" height="200"><%= @sci_level %></canvas>
       </div>
-      <div class="col-md-4">
-        <h1 class="canvas-heading">Research Area</h1>
+      <div class="col-md-3">
+        <h1 class="canvas-heading">Main Research Area</h1>
         <canvas id="research-area" height="200"><%= @res_area %></canvas>
+      </div>
+      <div class="col-md-3">
+        <h1 class="canvas-heading">Publication Status</h1>
+        <canvas id="publication-status" height="200"><%= @pub_status %></canvas>
       </div>
     </div>
   </div>

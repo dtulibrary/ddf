@@ -1,7 +1,8 @@
 #
-# To add a new Chart JS chart, add relevant data to:
-# 1) Label translations hash
-# 2) Chart JS colors chart
+# To create a new Chart JS chart, add the appropriate data to:
+# 1) LABEL_TRANSLATIONS hash
+# 2) CHARTJS_COLORS hash
+# 3) Add the chart to javascripts/charts.js
 #
 module StatService
 
@@ -45,11 +46,6 @@ module StatService
 
   # For charts that use Chart.js
   def chartjs_attrs_for(facet)
-    attrs = chartjs_core_attrs_for(facet)
-    # attrs.map { |h| h.merge(chartjs_colors_by(h)) }
-  end
-
-  def chartjs_core_attrs_for(facet)
     hash = hashify(facet)
     a = []
     hash.each do |k, v|
@@ -57,8 +53,7 @@ module StatService
       h.store(:name, facet)
       h.store(:value, v)
       h.store(:label, translate(facet, k))
-      colors = h.merge(set_colors_from(facet, k))
-      a << colors
+      a << h.merge(set_colors_from(facet, k))
     end
     a
   end
@@ -78,7 +73,7 @@ module StatService
 
     scientific_level_s: {
       'scientific' =>   { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
-      'educational' =>  { color: '#F17CB0', highlight: '#f393be' }, #Pink
+      'educational' =>  { color: '#F17CB0', highlight: '#f393be' }, # Pink
       'popular' =>      { color: '#FAA43A', highlight: '#fbaf53' }  # Orange
       # TODO
       # 'administrative'
@@ -86,10 +81,21 @@ module StatService
     },
 
     research_area_ss: {
-      'Humanities' => { color: '#F17CB0', highlight: '#f393be' }, #Pink
-      'Medical science' => { color: '#F15854', highlight: '#f36f6c' },  # Orange
+      'Humanities' =>         { color: '#F17CB0', highlight: '#f393be' }, # Pink
+      'Medical science' =>    { color: '#F15854', highlight: '#f36f6c' }, # Orange
       'Science/technology' => { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
-      'Social science' => { color: '#DECF3F', highlight: '#e2d455' }  # Yellow
+      'Social science' =>     { color: '#DECF3F', highlight: '#e2d455' }  # Yellow
+    },
+
+    # Publication pipeline:
+    # unknown > unpublished > submitted > accepted > in_press > published
+    access_condition_s: {
+      'published' =>   { color: '#5DA5DA', highlight: '#72b1df' }, # Blue
+      'unknown' =>     { color: '#4D4D4D', highlight: '#5a5a5a' }, # Gray
+      'submitted' =>   { color: '#F15854', highlight: '#f36f6c' }, # Orange
+      'accepted' =>    { color: '#60BD68', highlight: '#72c479' }, # Green
+      'in_press' =>    { color: '#DECF3F', highlight: '#e2d455' }, # Yellow
+      'unpublished' => { color: '#F15854', highlight: '#f36f6c' }  # Red
     }
   }
 
@@ -105,11 +111,12 @@ module StatService
 
   # These look up config/locales/[da|en].yml
   LABEL_TRANSLATIONS = {
-    'format_orig_s'   => 'mxd_type_labels.publication_type_labels',
-    'source_ss'       => 'mxd_type_labels.facet_source_labels',
-    'review_status_s' => 'mxd_type_labels.review_status_labels',
+    'format_orig_s'      => 'mxd_type_labels.publication_type_labels',
+    'source_ss'          => 'mxd_type_labels.facet_source_labels',
+    'review_status_s'    => 'mxd_type_labels.review_status_labels',
     'scientific_level_s' => 'mxd_type_labels.scientific_level_labels',
-    'research_area_ss' => 'mxd_type_labels.research_area_labels_reverse'
+    'research_area_ss'   => 'custom_labels.research_area_labels',
+    'access_condition_s' => 'mxd_type_labels.publishing_status_labels'
   }
 
   def relative_by(fn, value, numbers)

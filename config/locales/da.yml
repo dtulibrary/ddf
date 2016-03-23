@@ -206,13 +206,6 @@ da:
       soc: Samfundsvidenskab
       med: Sundhedsvidenskab
       sci: Teknik/naturvidenskab
-
-    research_area_labels_reverse:
-      Humanities: Humaniora
-      Medical science: Sundhedsvidenskab
-      Science/technology: Teknik/naturvidenskab
-      Social science: Samfundsvidenskab
-
     publishing_status_labels:
       published: Publiceret
       unknown: Ukendt
@@ -249,6 +242,13 @@ da:
       popular: Populærvidenskabelig
       administrative: Administrativ
       undetermined: Ubestemt
+
+  custom_labels:
+    research_area_labels:
+      Humanities: Humaniora
+      Medical science: Sundhedsvidenskab
+      Science/technology: Teknik/naturvidenskab
+      Social science: Samfundsvidenskab
 
   ddf:
     open_access:
