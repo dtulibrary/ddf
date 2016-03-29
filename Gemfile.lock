@@ -188,6 +188,10 @@ GEM
       addressable (~> 2.3)
     libv8 (3.16.14.7)
     logger (1.2.8)
+    lograge (0.3.6)
+      actionpack (>= 3)
+      activesupport (>= 3)
+      railties (>= 3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -367,6 +371,7 @@ DEPENDENCIES
   json (= 1.8.2)
   launchy
   libv8 (= 3.16.14.7)
+  lograge
   metastore-test_data!
   minitest
   netaddr
