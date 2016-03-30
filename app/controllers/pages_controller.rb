@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  include StatService
+  include Charts
 
   def index
     @institutions = publications_by_facet { nojs_attrs_for('source_ss') }

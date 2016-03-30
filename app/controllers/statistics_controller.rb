@@ -17,8 +17,3 @@ class StatisticsController < ApplicationController
     # @pub_year = Charts::Plot.new('pub_date_tsort').values.to_json
   end
 end
-
-# $ rails c
-# > include StatService
-# > raw_data_for("pub_date_tsort")
-# > hashify 'pub_date_tsort'
