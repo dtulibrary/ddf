@@ -463,3 +463,24 @@ http://technicaldebt.com/the-cost-of-using-rubys-rescue-as-logic/
 
 Do this instead:
 http://stackoverflow.com/questions/17512197/how-to-deal-with-potential-errors-while-accessing-a-hash-inside-a-hash
+
+SOME RUNTIME QUERYING GOODIES
+Here's how you query the app for where methods are defined:
+$ rails c
+> include StatService
+> app.method(:hashify)
+=> #<Method: ActionDispatch::Integration::Session(StatService)#hashify>
+or, even:
+> app.method(:hashify).source_location
+=> ["/Users/abbottjam/work/ddf/app/services/stat_service.rb", 25]
+
+Read more:
+http://stackoverflow.com/questions/175655/how-to-find-where-a-method-is-defined-at-runtime
+http://stackoverflow.com/questions/7158977/finding-out-where-methods-are-defined-in-ruby-rails-as-opposed-to-java
+
+Also possible via Pry. Insert a breakpoint with binding.pry, then:
+
+[1] pry(#<StatisticsController>)> find-method hashify
+StatService
+StatService#hashify
+

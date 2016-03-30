@@ -1,16 +1,24 @@
 class StatisticsController < ApplicationController
-  include StatService
+  include Charts
   layout "statistics"
 
   def index
     # No JS charts
-    @types = publications_by_facet { nojs_attrs_for('format_orig_s') }
-    @institutions = publications_by_facet { nojs_attrs_for('source_ss') }
+    @types = Charts::CSSBars.new('format_orig_s').values
+    @institutions = Charts::CSSBars.new('source_ss').values
 
     # JS charts
-    @review = publications_by_facet { chartjs_attrs_for('review_status_s') }.to_json
-    @sci_level = publications_by_facet { chartjs_attrs_for('scientific_level_s') }.to_json
-    @res_area = publications_by_facet { chartjs_attrs_for('research_area_ss') }.to_json
-    @pub_status = publications_by_facet { chartjs_attrs_for('access_condition_s') }.to_json
+    @review = Charts::Segments.new('review_status_s').values.to_json
+    @sci_level = Charts::Segments.new('scientific_level_s').values.to_json
+    @res_area = Charts::Segments.new('research_area_ss').values.to_json
+    @pub_status = Charts::Segments.new('access_condition_s').values.to_json
+
+    # Chart JS bar / line:
+    # @pub_year = Charts::Plot.new('pub_date_tsort').values.to_json
   end
 end
+
+# $ rails c
+# > include StatService
+# > raw_data_for("pub_date_tsort")
+# > hashify 'pub_date_tsort'
