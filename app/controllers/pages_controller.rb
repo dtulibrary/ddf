@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include Charts
 
   def index
-    @institutions = publications_by_facet { nojs_attrs_for('source_ss') }
+    @institutions = Charts::CSSBars.new('source_ss').values
     @national_segments = OpenAccessIndicator.segment_attrs('national', OpenAccessIndicator::LAST_YEAR)
     @university_segments = OpenAccessIndicator.segment_attrs('universities', OpenAccessIndicator::LAST_YEAR)
   end
