@@ -14,6 +14,6 @@ class StatisticsController < ApplicationController
     @pub_status = Charts::Segments.new('access_condition_s').values.to_json
 
     # Chart JS bar / line:
-    # @pub_year = Charts::Plot.new('pub_date_tsort').values.to_json
+    @pub_year = Charts::Plot.new('pub_date_tsort').values.to_json
   end
 end
