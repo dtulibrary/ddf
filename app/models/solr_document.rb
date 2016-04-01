@@ -84,6 +84,10 @@ class SolrDocument < Dtu::SolrDocument
     @citation_styles.include? style.to_sym
   end
 
+  def person?
+    self['format'] == 'person'
+  end
+
   # used for synthesizing a record from a reference
   def self.create_from_openURL(context_object)
 

@@ -1,6 +1,16 @@
 class DDFPresenter < Dtu::DocumentPresenter
   include ActionView::Context
 
+  # Show value of name field if document is person
+  # Otherwise use the generic method
+  def document_show_html_title
+    document.person? ? person_name : super
+  end
+
+  def person_name
+    document['name_ts'].first || document.id
+  end
+
   def affiliations
     aff_data = document['person_affiliations_ssf'].try(:first)
     output = {}
@@ -28,7 +38,7 @@ class DDFPresenter < Dtu::DocumentPresenter
       end
       affiliation_data << [aff_end, aff_description]
     end
-    # sort affiliations with most recently finished first 
+    # sort affiliations with most recently finished first
     aff_sorted = affiliation_data.sort_by {|date, _| date }.reverse
     aff_sorted.collect(&:last).join("<br/>").html_safe
   end
