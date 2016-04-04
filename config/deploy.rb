@@ -11,7 +11,7 @@ set :branch, 'matt'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/matt.ddf.dtic.dk'
 set :passenger_restart_with_touch, true
-
+set :tmp_dir, '~/tmp' 
 # Default value for :scm is :git
 # set :scm, :git
 
