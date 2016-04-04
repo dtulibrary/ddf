@@ -98,23 +98,22 @@ module Charts
     attr_accessor :data, :data_range
 
     def initialize(facet, opts={})
-      data_range = hashify(facet).sort # an array of 2-el arrays (pairs)
-      years = data_range.map { |pair| pair.first }
-      options = { from: years.first.to_i, to: years.last.to_i }
-      options = options.merge opts
-
-      @data = attrs_for(data_range, options)
+      # @facet_label / translation initialize here to pass to a datasets-building function (*)
+      @data_range = hashify(facet).sort # an array of 2-el arrays (pairs)
     end
 
     def values(opts={})
-      @data
+      years = @data_range.map { |pair| pair.first }
+      options = { from: years.first.to_i, to: years.last.to_i }
+      options = options.merge opts
+      @data = attrs_for(data_range, options)
     end
 
     def attrs_for(range, opts)
       arr = configure_data_range(range, opts)
       {
         labels: extract_x_range(arr),
-        datasets: [
+        datasets: [ # *
 
           {
             label: "My First dataset",
@@ -136,6 +135,9 @@ module Charts
         (pair.first.to_i >= opts[:from]) &&
         (pair.first.to_i <= opts[:to])
       end
+
+      # binding.pry
+
       if opts[:interval]
         year_intervals = year_range.each_slice(opts[:interval]).to_a
         reduce_intervals(year_intervals)
@@ -149,8 +151,8 @@ module Charts
     end
 
     def reduce_interval(arr)
-      years = arr.map { |pair| pair.first }.flatten
-      counts = arr.map { |pair| pair.last }.flatten
+      years = extract_x_range(arr).flatten
+      counts = extract_y_range(arr).flatten
       year_range = if years.first.eql? years.last
         years.first
       else
