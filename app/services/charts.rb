@@ -95,20 +95,25 @@ module Charts
     # Generates data for a Chart JS plot chart (i.e. Bar or Line)
     include Charts::DataUtils
 
-    attr_accessor :data
+    attr_accessor :data, :data_range
 
-    def initialize(facet)
-      @data = attrs_for(facet)
+    def initialize(facet, opts={})
+      data_range = hashify(facet).sort # an array of 2-el arrays (pairs)
+      years = data_range.map { |pair| pair.first }
+      options = { from: years.first.to_i, to: years.last.to_i }
+      options = options.merge opts
+
+      @data = attrs_for(data_range, options)
     end
 
-    def values
+    def values(opts={})
       @data
     end
 
-    def attrs_for(facet)
-      hash = hashify(facet)
+    def attrs_for(range, opts)
+      arr = configure_data_range(range, opts)
       {
-        labels: ["1800", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+        labels: extract_x_range(arr),
         datasets: [
 
           {
@@ -119,23 +124,49 @@ module Charts
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [10, 2, 6, 22, 18, 16, 16, 25, 28, 51, 52, 78, 82, 66, 81, 96, 137, 169, 217, 202, 251, 277, 300, 315, 407, 433, 538, 563, 597, 664, 775, 882, 1014, 1137, 1235, 1402, 1556, 1673, 1847, 2067, 2399, 2791, 3364, 4440, 7223, 8974, 9546, 12126, 12546, 14905, 18612, 19742, 25121, 25283, 29132, 31292, 32332, 34212, 35952, 39162, 40317, 45122, 46391, 47744, 49792, 50317, 50363, 51349, 50738, 10719, 80, 15, 1]
+            data: extract_y_range(arr)
           }
 
         ]
       }
     end
 
-    def labels_for(hash)
-      hash.sort.map { |pair| pair.first }
+    def configure_data_range(range, opts)
+      year_range = range.select do |pair|
+        (pair.first.to_i >= opts[:from]) &&
+        (pair.first.to_i <= opts[:to])
+      end
+      if opts[:interval]
+        year_intervals = year_range.each_slice(opts[:interval]).to_a
+        reduce_intervals(year_intervals)
+      else
+        year_range
+      end
     end
 
-    def dataset_for(hash)
-      h = {}
-      h.store(:label, "My First dataset")
-      h.store(:data, hash.sort.map { |pair| pair.last })
+    def reduce_intervals(arr)
+      arr.map { |interval| reduce_interval(interval) }
     end
 
+    def reduce_interval(arr)
+      years = arr.map { |pair| pair.first }.flatten
+      counts = arr.map { |pair| pair.last }.flatten
+      year_range = if years.first.eql? years.last
+        years.first
+      else
+        [years.first, years.last].join("-")
+      end
+      total_count = counts.reduce { |sum, count| sum += count }
+      [year_range, total_count]
+    end
+
+    def extract_x_range(arr)
+      arr.map { |pair| pair.first }
+    end
+
+    def extract_y_range(arr)
+      arr.map { |pair| pair.last }
+    end
   end
   # Plot
 
