@@ -14,7 +14,7 @@ class CatalogController < ApplicationController
     config.solr_path = 'ddf_publ'
 
     config.document_presenter_class = DDFPresenter
-    config.metrics_presenter_classes = [ Dtu::Metrics::AltmetricPresenter ]
+    config.metrics_presenter_classes = [ Dtu::Metrics::AltmetricPresenter, Dtu::Metrics::OrcidPresenter ]
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
 
