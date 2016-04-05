@@ -1,39 +1,42 @@
 <article role="main">
   <div class="container">
     <div class="row canvas-row">
-      <div class="col-md-3">
-        <h1 class="canvas-heading">Review type</h1>
-        <canvas id="review-type" height="200"><%= @review %></canvas>
+    <h1 class="facet-visualization-group">Publications by&hellip;</h1>
+      <div class="col-md-6">
+        <h2 class="facet-visualization-heading">Review type</h2>
+        <canvas id="review-type" height="140"><%= @review %></canvas>
       </div>
-      <div class="col-md-3">
-        <h1 class="canvas-heading">Scientific level</h1>
-        <canvas id="scientific-level" height="200"><%= @sci_level %></canvas>
+      <div class="col-md-6">
+        <h2 class="facet-visualization-heading">Scientific level</h2>
+        <canvas id="scientific-level" height="140"><%= @sci_level %></canvas>
       </div>
-      <div class="col-md-3">
-        <h1 class="canvas-heading">Main Research Area</h1>
-        <canvas id="research-area" height="200"><%= @res_area %></canvas>
+    </div>
+    <div class="row canvas-row">
+      <div class="col-md-6">
+        <h2 class="facet-visualization-heading">Main Research Area</h2>
+        <canvas id="research-area" height="140"><%= @res_area %></canvas>
       </div>
-      <div class="col-md-3">
-        <h1 class="canvas-heading">Publication Status</h1>
-        <canvas id="publication-status" height="200"><%= @pub_status %></canvas>
+      <div class="col-md-6">
+        <h2 class="facet-visualization-heading">Publication Status</h2>
+        <canvas id="publication-status" height="140"><%= @pub_status %></canvas>
       </div>
     </div>
   </div>
 
   <div class="row canvas-row">
-    <h1 class="canvas-heading">Publication Year</h1>
-    <canvas id="publication-year" height="200"><%= @pub_year %></canvas>
+    <h2 class="facet-visualization-heading">Records by Publication Year</h2>
+    <canvas id="publication-year" height="160"><%= @pub_year %></canvas>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-6 chart">
         <section>
-          <h1 class="chart-heading">
+          <h2 class="chart-heading">
             <%= t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.type") %>
-          </h1>
+          </h2>
           <ul class="chartlist types">
             <% @types.each do |facet| %>
             <li>

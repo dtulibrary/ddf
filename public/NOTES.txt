@@ -484,3 +484,9 @@ Also possible via Pry. Insert a breakpoint with binding.pry, then:
 StatService
 StatService#hashify
 
+HANDLING OF OPTIONAL PARAMS TO CLASS INSTANTIATORS / METHODS:
+OR-based:
+http://stackoverflow.com/questions/9710303/rails-optional-argument
+Merge hash - based:
+http://stackoverflow.com/questions/10234406/ruby-methods-and-optional-parameters
+

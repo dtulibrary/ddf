@@ -1557,7 +1557,17 @@ p.more-link { text-align: center; }
 p.more-link--oa { margin-top: 4em; }
 p.more-link a { text-decoration: underline; }
 
-h1.canvas-heading {
+h1.facet-visualization-group {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $headline;
+  font-size: calc-em(23px);
+  letter-spacing: .07em;
+  font-weight: 400;
+  color: $bluewood;
+}
+
+h2.facet-visualization-heading {
   text-align: center;
   font-family: $headline;
   font-size: calc-em(20px);
