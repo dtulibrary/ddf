@@ -292,6 +292,9 @@ da:
       modern-language-association: Modern Language Association
       apa: APA
       chicago-author-date: Chicago Author Date
+    elite:
+      index:
+        header: Årets Eliteforsk vindere
   citations:
     form:
       number: "Antal:"
