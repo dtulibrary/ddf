@@ -1,0 +1,23 @@
+<%# We overwrite to add our overview  %>
+<% set_html_page_title @page.title if @page.should_display_title? %>
+<% render 'tophat' %>
+<%= render 'overview' %>
+<%= cache_unless current_user, @page do %>
+<div class="col-md-12">
+  <div class="clearfix">
+    <%= render 'edit_page_link' if can? :edit, @page %>
+    <% if @page.should_display_title? %>
+      <h1 class="page-title">
+        <%= @page.title %>
+      </h1>
+    <% end %>
+  </div>
+  <div>
+    <% if @page.content? %>
+      <%= render @page.content %>
+    <% else %>
+      <%= render 'empty' %>
+    <% end %>
+  </div>
+</div>
+<% end %>

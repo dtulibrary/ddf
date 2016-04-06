@@ -17,6 +17,7 @@ vendor/bundle
 /jetty/logs/*
 /jetty/solr-webapp/
 /tmp
+/public/uploads
 
 # Ignore index test files and generated config
 /jetty/solr/metastore/data

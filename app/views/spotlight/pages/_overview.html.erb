@@ -1,0 +1,23 @@
+<% presenter = OverviewPresenter.new(current_exhibit, self)  %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        <%= presenter.title %>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= presenter.thumbnail %>
+    </div>
+    <div class="col-md-9">
+      <dl class="dl-horizontal">
+        <% presenter.metadata.each do |key, val | %>
+          <dt><%= key.humanize.titleize %></dt>
+          <dd><%= val %></dd>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>
