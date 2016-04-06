@@ -70,6 +70,7 @@ module ApplicationHelper
   end
 
   def render_locale_switcher(*locales)
+    return if within_spotlight?
     if I18n.locale.eql? locales[0]
       link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[1])
     else

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", :locale => /en|da/ do
 
     mount Spotlight::Engine, at: 'elite'
+    resources :exhibit_overviews
     get '/selected', to: 'bookmarks#index'
 
     # root :to => "catalog#index"
