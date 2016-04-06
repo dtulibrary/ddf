@@ -3,6 +3,7 @@
 <% render 'tophat' %>
 <%= render 'overview' %>
 <%= cache_unless current_user, @page do %>
+<%= render 'navigation' %>
 <div class="col-md-12">
   <div class="clearfix">
     <%= render 'edit_page_link' if can? :edit, @page %>

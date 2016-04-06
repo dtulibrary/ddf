@@ -43,3 +43,26 @@ h1.elite {
     width: 200px;
   }
 }
+#exhibit-navigation {
+  height: 50px;
+  margin-top: 20px;
+  background-color: $blue-4;
+
+  // shrink the container size to prevent the background spilling over
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm - 30;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md - 30;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg - 30;
+  }
+
+  ul.nav {
+    margin-bottom: 0;
+  }
+  li.active {
+    font-weight: bolder;
+  }
+}
