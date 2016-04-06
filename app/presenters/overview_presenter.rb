@@ -19,7 +19,7 @@ class OverviewPresenter
 
   def metadata
     data = {}
-    ['institution', 'research_area', 'contact_details'].each do |var|
+    ['research_area', 'institution', 'contact_details'].each do |var|
       data[var] = @overview.send(var)
     end
     data.select {|_,v| v.present? }

@@ -295,6 +295,10 @@ da:
     elite:
       index:
         header: Årets Eliteforsk vindere
+      overview:
+        institution: Institution
+        research_area: Fagområde
+        contact_details: Kontakt information
   citations:
     form:
       number: "Antal:"
