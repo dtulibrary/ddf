@@ -270,6 +270,13 @@ en:
       modern-language-association: Modern Language Association
       apa: APA
       chicago-author-date: Chicago Author Date
+    elite:
+      index:
+        header: Winners of this years EliteForsk award
+      overview:
+        institution: Institution
+        research_area: Research area
+        contact_details: Contact Information
   citations:
     form:
       number: "No:"

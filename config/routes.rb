@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
   get 'messages/message_params'
 
+  # we don't mount within a locale namespace
+  # as this led to the locale param being duplicated
+  mount Spotlight::Engine, at: 'elite'
+  resources :exhibit_overviews
+
   scope "(:locale)", :locale => /en|da/ do
 
-    mount Spotlight::Engine, at: 'elite'
     get '/selected', to: 'bookmarks#index'
 
     # root :to => "catalog#index"
@@ -39,7 +43,7 @@ Rails.application.routes.draw do
   get '/open-access' => 'pages#open_access'
 
   # ELITEFORSK AWARD
-  get '/eliteforsk-award' => 'pages#eliteforsk_award'
+  get '/elite/about' => 'pages#eliteforsk_award'
 
   # ABOUT
   get 'about' => 'pages#about'

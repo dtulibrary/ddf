@@ -2,8 +2,10 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <ul class="locales-list horizontal admin">
-        <i class="glyphicon glyphicon-flag"></i>
-        <%= render_locale_switcher(:en, :da) %>
+        <% unless within_spotlight?  %>
+          <i class="glyphicon glyphicon-flag"></i>
+          <%= render_locale_switcher(:en, :da) %>
+        <% end  %>
       </ul>
     </div>
   </div>
@@ -24,7 +26,7 @@
           <!--
           <li id="open-access"><%# link_to open_access_item_contents, open_access_path %></li>
           -->
-          <li id="eliteforsk-award"><%= link_to eliteforsk_award_item_contents, spotlight_path %></li>
+          <li id="eliteforsk-award"><%= link_to eliteforsk_award_item_contents, spotlight_path(locale: :da) %></li>
           <li id="about"><%= link_to about_item_contents, about_path %></li>
         </ul>
       </div>

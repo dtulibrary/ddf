@@ -2,7 +2,8 @@ module SpotlightHelper
   include Spotlight::MainAppHelpers
 
   def within_spotlight?
-    controller.class.to_s.include? 'Spotlight'
+    controller_name = controller.class.to_s
+    controller_name.include?('Spotlight') || controller_name.include?('ExhibitOverviews')
   end
 
   def render_search_nav
@@ -15,7 +16,7 @@ module SpotlightHelper
 
   def exhibit_navs(exhibit)
     navs = current_exhibit.main_navigations.displayable
-    navs.to_a.reject {|n| n.nav_type == 'browse' } 
+    navs.to_a.reject {|n| n.nav_type == 'browse' }
   end
 
 

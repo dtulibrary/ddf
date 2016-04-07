@@ -1,27 +1,27 @@
 <div class="header__wrapper">
-  <div class="container container--searchbox">
-    <% if current_exhibit && current_exhibit.searchable? %>
+  <div class="container container--searchbox elite-navbar">
     <div class="row">
       <div class="col-md-8">
-        <%= render_search_bar %>
-      </div>
-    </div>
-    <% end %>
-    <div class="row">
-      <div class="col-md-8">
-        <% if current_exhibit %>
-         <ul class="nav navbar-nav spotlight-nav">
-           <li class="<%= "active" if current_page?(current_exhibit) %>">
-             <%= link_to t(:'spotlight.curation.nav.home'), current_exhibit %>
-           </li>
-           <% exhibit_navs(current_exhibit).each do |navigation| %>
-             <%= render partial: "shared/#{navigation.nav_type}_navbar", locals: { navigation: navigation } %>
-           <% end %>
-         </ul>
-       <% end %>
+        <i class="glyphicon glyphicon-education"></i>
+        <h1>
+          <%= t 'ddf.elite.nav.theme' %>
+        </h1>
+        <% if current_exhibit && current_exhibit.searchable? %>
+          <%= render_search_bar %>
+        <% end %>
       </div>
       <div class="col-md-4">
-        <%= render partial: 'spotlight/search_links' %>
+        <nav>
+          <ul>
+            <li id="elite-about">
+              <%= link_to t('ddf.elite.nav.about'), elite_about_path %>
+            </li>
+            <li id="elite-home">
+              <%= link_to t('ddf.elite.nav.current'), spotlight_path %>
+            </li>
+          </ul>
+        </nav>
+        <%= render partial: 'spotlight/user_links' %>
       </div>
     </div>
   </div>

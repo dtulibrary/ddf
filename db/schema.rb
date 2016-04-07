@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129131203) do
+ActiveRecord::Schema.define(version: 20160405102746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20160129131203) do
 
   add_index "bookmarks", ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id", using: :btree
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+
+  create_table "exhibit_overviews", force: :cascade do |t|
+    t.string  "institution"
+    t.string  "research_area"
+    t.string  "contact_details"
+    t.integer "exhibit_id"
+  end
+
+  add_index "exhibit_overviews", ["exhibit_id"], name: "index_exhibit_overviews_on_exhibit_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -349,4 +358,5 @@ ActiveRecord::Schema.define(version: 20160129131203) do
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
+  add_foreign_key "exhibit_overviews", "spotlight_exhibits", column: "exhibit_id"
 end

@@ -1,0 +1,25 @@
+<% presenter = OverviewPresenter.new(current_exhibit, self)  %>
+<% if presenter.overview.present?  %>
+<div class="container exhibit-overview">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="elite">
+        <%= presenter.title %>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= presenter.thumbnail %>
+    </div>
+    <div class="col-md-9">
+      <dl class="dl-horizontal">
+        <% presenter.metadata.each do |key, val | %>
+          <dt><%= t("ddf.elite.overview.#{key}") %></dt>
+          <dd><%= val %></dd>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>
+<% end  %>

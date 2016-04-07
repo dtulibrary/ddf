@@ -293,8 +293,16 @@ da:
       apa: APA
       chicago-author-date: Chicago Author Date
     elite:
+      nav:
+        theme: Tema
+        about: Om EliteForsk prisen
+        current: Årets vindere
       index:
         header: Årets Eliteforsk vindere
+      overview:
+        institution: Institution
+        research_area: Fagområde
+        contact_details: Kontakt information
   citations:
     form:
       number: "Antal:"

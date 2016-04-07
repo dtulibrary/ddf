@@ -27,3 +27,74 @@ h1.elite {
   font-size: 2em;
   margin-bottom: 20px;
 }
+
+.exhibit-overview {
+  img {
+    height: 150px;
+    border: 1px solid #EEE;
+  }
+  dl {
+    color: $bluewood;
+    line-height: 2em;
+    padding-top: 1em;
+  }
+  dt {
+    text-align: left;
+    width: 200px;
+  }
+}
+#exhibit-navigation {
+  height: 50px;
+  margin-top: 20px;
+  background-color: $blue-4;
+
+  // shrink the container size to prevent the background spilling over
+  @media (min-width: $screen-sm-min) { width: $container-sm - 30; }
+  @media (min-width: $screen-md-min) { width: $container-md - 30; }
+  @media (min-width: $screen-lg-min) { width: $container-lg - 30; }
+
+  ul.nav { margin-bottom: 0; }
+  li.active {
+    font-weight: bolder;
+    color: black;
+  }
+}
+
+// this is for the main catalog
+// somehow Spotlight sets this to 50%
+#document .dl-horizontal { width: 100%; }
+
+.elite-navbar {
+  font-family: $headline;
+  h1 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: inline;
+  }
+  ul { margin-bottom: 0; }
+  li {
+    display: inline;
+  }
+  li:not(:last-child) { margin-right: 0.5em; }
+  a {
+    color: #000;
+    vertical-align: middle;
+    border-radius: 3px;
+    padding: .1em .5em .2em .5em;
+  }
+  a:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,0.1);
+    color: $orange;
+  }
+  a.active {
+    background: #6789ab;
+  }
+}
+// Display the actove
+body.blacklight-feature_pages li#elite-home a,
+body.blacklight-home_pages li#elite-home a,
+body.blacklight-exhibits-index li#elite-home a {
+  background: lighten($bluewood, 25%);
+  color: #fff;
+}
