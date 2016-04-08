@@ -65,6 +65,20 @@ module Charts
           'accepted' =>    { color: '#60BD68', highlight: '#72c479' }, # Green
           'in_press' =>    { color: '#DECF3F', highlight: '#e2d455' }, # Yellow
           'unpublished' => { color: '#F15854', highlight: '#f36f6c' }  # Red
+        },
+
+        pub_date_tsort: {
+          fillColor: "rgba(220,220,220,0.5)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)"
+        },
+
+        submission_year_tis: {
+          fillColor: "rgba(220,220,220,0.5)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)"
         }
       }
 
@@ -80,12 +94,14 @@ module Charts
 
       # These look up config/locales/[da|en].yml
       LABEL_TRANSLATIONS = {
-        'format_orig_s'      => 'mxd_type_labels.publication_type_labels',
-        'source_ss'          => 'mxd_type_labels.facet_source_labels',
-        'review_status_s'    => 'mxd_type_labels.review_status_labels',
-        'scientific_level_s' => 'mxd_type_labels.scientific_level_labels',
-        'research_area_ss'   => 'custom_labels.research_area_labels',
-        'access_condition_s' => 'mxd_type_labels.publishing_status_labels'
+        'format_orig_s'       => 'mxd_type_labels.publication_type_labels',
+        'source_ss'           => 'mxd_type_labels.facet_source_labels',
+        'review_status_s'     => 'mxd_type_labels.review_status_labels',
+        'scientific_level_s'  => 'mxd_type_labels.scientific_level_labels',
+        'research_area_ss'    => 'custom_labels.research_area_labels',
+        'access_condition_s'  => 'mxd_type_labels.publishing_status_labels',
+        'pub_date_tsort'      => 'blacklight.search.fields.facet',
+        'submission_year_tis' => 'blacklight.search.fields.facet'
       }
   end
   # DataUtils
@@ -95,41 +111,70 @@ module Charts
     # Generates data for a Chart JS plot chart (i.e. Bar or Line)
     include Charts::DataUtils
 
-    attr_accessor :data, :data_range
+    attr_accessor :data_ranges
 
-    def initialize(facet, opts={})
-      # @facet_label / translation initialize here to pass to a datasets-building function (*)
-      @data_range = hashify(facet).sort # an array of 2-el arrays (pairs)
+    # 1) Map facets to data sets
+    # 2) Extract x values (years) from 1)
+    # 3) For each dataset:
+      # A) Extract y values (counts) from 1)
+      # B) Map facets to labels
+      # C) Map facets to colors
+      # D) Combine A, B, and C
+    # 4) Combine 2 and D
+
+    def initialize(facets, opts={})
+      @facets = facets
+      @data_ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
+
+      # Invariant: @facets.map generates an array whose order corresponds
+      # to the order of elements in @facets.
+      # Therefore: @facets[i] maps to @data_ranges[i] for all i in [0 < i < @facets.length]
+      # Therefore: zipping is guaranteed to preserve that mapping.
+
+      # associate labels with hashes
+      @facets.zip(@data_ranges).to_h
     end
 
     def values(opts={})
-      years = @data_range.map { |pair| pair.first }
-      options = { from: years.first.to_i, to: years.last.to_i }
-      options = options.merge opts
-      @data = attrs_for(data_range, options)
+      # options = { from: x_values.first.to_i, to: x_values.last.to_i }
+      # options = options.merge opts
+      @data = json_structure
     end
 
-    def attrs_for(range, opts)
-      arr = configure_data_range(range, opts)
-      {
-        labels: extract_x_range(arr),
-        datasets: [ # *
-
-          {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: extract_y_range(arr)
-          }
-
-        ]
-      }
+    # () -> {}
+    def datasets
+      y_values = data_ranges.map { |hash| y_range(hash) }
+      complete_values = y_values.zip(labels, colors)
+      combined_values = complete_values.map { |arr| arr.reduce({}) { |acc, hash| acc.merge hash } }
+      { datasets: combined_values }
     end
 
+    # () -> {}
+    def x_range
+      { labels: data_ranges.first.sort.map { |pair| pair.first } }
+    end
+
+    # {} -> {}
+    def y_range(data_range)
+      { data: data_range.sort.map { |pair| pair.last } }
+    end
+
+    # () -> {}
+    def colors
+      @facets.map { |label| CHARTJS_COLORS[label.to_sym] }
+    end
+
+    # () -> {}
+    def labels
+      @facets.map { |facet| { label: translate(facet, facet) } }
+    end
+
+    # () -> {}
+    def json_structure
+      x_range.merge datasets
+    end
+
+    # TODO
     def configure_data_range(range, opts)
       year_range = range.select do |pair|
         (pair.first.to_i >= opts[:from]) &&
@@ -150,6 +195,7 @@ module Charts
       arr.map { |interval| reduce_interval(interval) }
     end
 
+    # reduce y-range, rather
     def reduce_interval(arr)
       years = extract_x_range(arr).flatten
       counts = extract_y_range(arr).flatten
