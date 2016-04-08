@@ -98,3 +98,9 @@ body.blacklight-exhibits-index li#elite-home a {
   background: lighten($bluewood, 25%);
   color: #fff;
 }
+
+.blacklight-home_pages-edit {
+  [data-type="search_results"] {
+    display: inline-block;
+  }
+}
