@@ -5,9 +5,10 @@
 
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
-server 'spotlight.ddf.dtic.dk', user: 'capistrano', roles: %w{app db web}
+user = 'capistrano'
+server 'spotlight.ddf.dtic.dk', user: user, roles: %w{app db web}
 set :rails_env, 'unstable'
-set :tmp_dir, '~/tmp'
+set :tmp_dir, "/home/#{user}/tmp"
 # role-based syntax
 # ==================
 
