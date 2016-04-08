@@ -7,6 +7,7 @@ class ExhibitOverviewsController < Spotlight::ApplicationController
   end
 
   def create
+    @exhibit = Spotlight::Exhibit.find(overview_params[:exhibit_id])
     @overview = ExhibitOverview.new(overview_params)
     if @overview.save
       redirect_to spotlight.exhibit_dashboard_path(@exhibit), notice: 'Overview created'
