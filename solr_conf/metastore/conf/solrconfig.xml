@@ -1191,7 +1191,6 @@
     </lst>
     <lst name="appends">
       <str name="fq">access_ss:ddf_publ</str>
-      <str name="fq">format:(article OR journal OR book OR thesis OR other OR person)</str>
     </lst>
   </requestHandler>
 
@@ -1204,7 +1203,6 @@
     </lst>
     <lst name="appends">
       <str name="fq">access_ss:ddf_publ</str>
-      <str name="fq">format:(article OR journal OR book OR thesis OR other)</str>
     </lst>
   </requestHandler>
 
