@@ -124,20 +124,54 @@ module Charts
 
     def initialize(facets, opts={})
       @facets = facets
-      @data_ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
+      ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
+      # Invarant: all functions operate on this sorted range:
+      @data_ranges = ranges.map { |hash| Hash[*hash.sort.flatten] }
+
+      @data = apply_options(@data_ranges, opts)
+
+      # binding.pry
 
       # Invariant: @facets.map generates an array whose order corresponds
       # to the order of elements in @facets.
       # Therefore: @facets[i] maps to @data_ranges[i] for all i in [0 < i < @facets.length]
       # Therefore: zipping is guaranteed to preserve that mapping.
 
-      # associate labels with hashes
+      # associate labels with hashes, not used:
       @facets.zip(@data_ranges).to_h
     end
 
+    # TODO
+    # It's a 2-dimensional transformation: x: ranges, y: functions
+    # Hence a nested for-loop
+    def apply_options(data, opts)
+      return data if opts.empty?
+      opts.map { |key, function| apply_option(data, key) }
+    end
+
+    # TODO
+    # Do this for all options, to chain the output of each together
+    def apply_option(data_range, opts)
+      if opts[:from]
+        FUNCTIONS[:from].call(data_range, opts[:from]) || data_range
+      end
+      if opts[:to]
+        FUNCTIONS[:to].call(data_range, opts[:to]) || data_range
+      end
+      if opts[:interval]
+        FUNCTIONS[:interval].call(data_range, opts[:interval]) || data_range
+      end
+    end
+
+    # TODO
+    FUNCTIONS = {
+      from: ->(data_range, limit) { data_range.select { |key, value| key >= limit } },
+      to:   ->(data_range, limit) { data_range.select { |key, value| key <= limit } }
+      # interval: ->() {}
+    }
+
+    # TODO
     def values(opts={})
-      # options = { from: x_values.first.to_i, to: x_values.last.to_i }
-      # options = options.merge opts
       @data = json_structure
     end
 
@@ -151,12 +185,12 @@ module Charts
 
     # () -> {}
     def x_range
-      { labels: data_ranges.first.sort.map { |pair| pair.first } }
+      { labels: data_ranges.first.keys }
     end
 
     # {} -> {}
     def y_range(data_range)
-      { data: data_range.sort.map { |pair| pair.last } }
+      { data: data_range.values }
     end
 
     # () -> {}
@@ -191,10 +225,12 @@ module Charts
       end
     end
 
+    # TODO
     def reduce_intervals(arr)
       arr.map { |interval| reduce_interval(interval) }
     end
 
+    # TODO
     # reduce y-range, rather
     def reduce_interval(arr)
       years = extract_x_range(arr).flatten

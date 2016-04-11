@@ -1560,17 +1560,17 @@ p.more-link a { text-decoration: underline; }
 h1.facet-visualization-group {
   text-align: center;
   text-transform: uppercase;
-  font-family: $headline;
-  font-size: calc-em(23px);
-  letter-spacing: .07em;
-  font-weight: 400;
+  font-family: $serif;
+  font-size: calc-em(21px);
+  letter-spacing: .15em;
+  font-weight: 600;
   color: $bluewood;
 }
 
 h2.facet-visualization-heading {
   text-align: center;
-  font-family: $headline;
-  font-size: calc-em(20px);
-  font-weight: 300;
-  margin-bottom: 2em;
+  // font-family: $headline;
+  font-size: calc-em(17px);
+  font-weight: 500;
+  margin: 1em 0 2em 0;
 }

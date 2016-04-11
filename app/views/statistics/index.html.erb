@@ -1,34 +1,43 @@
 <article role="main">
   <div class="container">
     <div class="row canvas-row">
-    <h1 class="facet-visualization-group">Publications by&hellip;</h1>
-      <div class="col-md-6">
+      <h1 class="chart-heading">
+        <%= t("blacklight.data_visualization.publications") %>
+        <em><%= t("blacklight.data_visualization.by") %></em>
+        Status
+      </h1>
+      <div class="col-md-3">
         <h2 class="facet-visualization-heading">Review type</h2>
-        <canvas id="review-type" height="140"><%= @review %></canvas>
+        <canvas id="review-type" height="235"><%= @review %></canvas>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <h2 class="facet-visualization-heading">Scientific level</h2>
-        <canvas id="scientific-level" height="140"><%= @sci_level %></canvas>
+        <canvas id="scientific-level" height="235"><%= @sci_level %></canvas>
       </div>
-    </div>
-    <div class="row canvas-row">
-      <div class="col-md-6">
+      <div class="col-md-3">
         <h2 class="facet-visualization-heading">Main Research Area</h2>
-        <canvas id="research-area" height="140"><%= @res_area %></canvas>
+        <canvas id="research-area" height="235"><%= @res_area %></canvas>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <h2 class="facet-visualization-heading">Publication Status</h2>
-        <canvas id="publication-status" height="140"><%= @pub_status %></canvas>
+        <canvas id="publication-status" height="235"><%= @pub_status %></canvas>
       </div>
     </div>
-  </div>
 
-  <div class="row canvas-row">
-    <h2 class="facet-visualization-heading">Records by Publication Year</h2>
-    <canvas id="publication-year" height="160">
-      <%= @pub_year %>
-    </canvas>
-  </div>
+    <br><br>
+
+    <div class="row canvas-row">
+      <h2 class="chart-heading">
+        <%= t("blacklight.data_visualization.publications") %>
+        <em><%= t("blacklight.data_visualization.by") %></em>
+        Timeline
+      </h2>
+      <canvas id="publication-year" height="160">
+        <%= @pub_year %>
+      </canvas>
+    </div>
+
+    <br><br>
 
   <div class="container">
     <div class="row">
