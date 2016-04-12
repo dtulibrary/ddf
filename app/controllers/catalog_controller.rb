@@ -167,7 +167,10 @@ class CatalogController < ApplicationController
     config.add_search_field('researchers') do |field|
       field.label = 'Researchers'
       field.solr_local_parameters = {
-        :qf => '$person_qf'
+        qf: '$person_qf'
+      }
+      field.solr_parameters = {
+        fq: 'NOT source_ss:rdb_ucviden'
       }
     end
 
