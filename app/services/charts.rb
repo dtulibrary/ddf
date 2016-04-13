@@ -67,19 +67,18 @@ module Charts
           'unpublished' => { color: '#F15854', highlight: '#f36f6c' }  # Red
         },
 
-        # TODO: distinct colors for each dataset
         pub_date_tsort: {
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
-          highlightFill: "rgba(220,220,220,0.75)",
-          highlightStroke: "rgba(220,220,220,1)"
+          fillColor:       "#60BD68",
+          strokeColor:     "rgba(220,220,220, 1)", # chart outer border
+          highlightFill:   "rgba(220,220,220,0.75)", # ?
+          highlightStroke: "rgba(220,220,220,1)" # ?
         },
 
         submission_year_tis: {
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
-          highlightFill: "rgba(220,220,220,0.75)",
-          highlightStroke: "rgba(220,220,220,1)"
+          fillColor:       "#DECF3F",
+          strokeColor:     "rgba(220,220,220, 1)", # chart outer border
+          highlightFill:   "rgba(220,220,220,0.75)", # ?
+          highlightStroke: "rgba(220,220,220,1)" # ?
         }
       }
 
@@ -123,7 +122,7 @@ module Charts
       # D) Combine A, B, and C
     # 4) Combine 2 and D
 
-    def initialize(facets, data_ranges=[], opts={})
+    def initialize(facets, data_ranges=[])
       @facets = facets
       if data_ranges.empty? # generate data ranges from facet list
         ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
@@ -134,10 +133,7 @@ module Charts
       end
     end
 
-    # TODO
-    def values(opts={})
-      # @data = apply_options(@data_ranges, opts)
-      # must now operate on the accessor for the above @data:
+    def values()
       json_structure
     end
 
@@ -224,7 +220,6 @@ module Charts
     end
   end
   # Plot
-
 
   class Segments
     # Generates data for a Chart JS segmented chart (i.e. Pie or Donut)
