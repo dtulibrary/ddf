@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 group :development, :production do
-  gem 'turbolinks' # turbolinks causing issues with tests... 
+  gem 'turbolinks' # turbolinks causing issues with tests...
 end
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -90,4 +90,4 @@ gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'solr_wrapper', github: 'flyingzumwalt/solr_wrapper'
-gem 'dtu_blacklight_common', '~> 5.7.1.5', github: 'dtulibrary/dtu_blacklight_common'
+gem 'dtu_blacklight_common', '~> 5.7.1.7', github: 'dtulibrary/dtu_blacklight_common'
