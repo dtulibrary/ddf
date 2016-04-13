@@ -1557,5 +1557,7 @@ p.more-link { text-align: center; }
 p.more-link--oa { margin-top: 4em; }
 p.more-link a { text-decoration: underline; }
 
-.orcid-metric a:hover { text-decoration: none; }
+.orcid-metric a {
+  &, &:hover, &:active, &:focus { text-decoration: none; } 
+}
 .orcid-metric img { margin-right: 5px; }
