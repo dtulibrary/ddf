@@ -67,6 +67,7 @@ module Charts
           'unpublished' => { color: '#F15854', highlight: '#f36f6c' }  # Red
         },
 
+        # TODO: distinct colors for each dataset
         pub_date_tsort: {
           fillColor: "rgba(220,220,220,0.5)",
           strokeColor: "rgba(220,220,220,0.8)",
@@ -111,7 +112,7 @@ module Charts
     # Generates data for a Chart JS plot chart (i.e. Bar or Line)
     include Charts::DataUtils
 
-    attr_accessor :data_ranges
+    attr_accessor :facets, :data_ranges
 
     # 1) Map facets to data sets
     # 2) Extract x values (years) from 1)
@@ -122,57 +123,71 @@ module Charts
       # D) Combine A, B, and C
     # 4) Combine 2 and D
 
-    def initialize(facets, opts={})
+    def initialize(facets, data_ranges=[], opts={})
       @facets = facets
-      ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
-      # Invarant: all functions operate on this sorted range:
-      @data_ranges = ranges.map { |hash| Hash[*hash.sort.flatten] }
-
-      @data = apply_options(@data_ranges, opts)
-
-      # binding.pry
-
-      # Invariant: @facets.map generates an array whose order corresponds
-      # to the order of elements in @facets.
-      # Therefore: @facets[i] maps to @data_ranges[i] for all i in [0 < i < @facets.length]
-      # Therefore: zipping is guaranteed to preserve that mapping.
-
-      # associate labels with hashes, not used:
-      @facets.zip(@data_ranges).to_h
-    end
-
-    # TODO
-    # It's a 2-dimensional transformation: x: ranges, y: functions
-    # Hence a nested for-loop
-    def apply_options(data, opts)
-      return data if opts.empty?
-      opts.map { |key, function| apply_option(data, key) }
-    end
-
-    # TODO
-    # Do this for all options, to chain the output of each together
-    def apply_option(data_range, opts)
-      if opts[:from]
-        FUNCTIONS[:from].call(data_range, opts[:from]) || data_range
-      end
-      if opts[:to]
-        FUNCTIONS[:to].call(data_range, opts[:to]) || data_range
-      end
-      if opts[:interval]
-        FUNCTIONS[:interval].call(data_range, opts[:interval]) || data_range
+      if data_ranges.empty? # generate data ranges from facet list
+        ranges = facets.map { |facet| hashify(facet) } # [{}, {}, ... , {}]
+        # Invarant: all functions operate on this sorted range:
+        @data_ranges = ranges.map { |hash| Hash[*hash.sort.flatten] }
+      else
+        @data_ranges = data_ranges
       end
     end
-
-    # TODO
-    FUNCTIONS = {
-      from: ->(data_range, limit) { data_range.select { |key, value| key >= limit } },
-      to:   ->(data_range, limit) { data_range.select { |key, value| key <= limit } }
-      # interval: ->() {}
-    }
 
     # TODO
     def values(opts={})
-      @data = json_structure
+      # @data = apply_options(@data_ranges, opts)
+      # must now operate on the accessor for the above @data:
+      json_structure
+    end
+
+    #
+    # If currying, could do smth like:
+    # l = method(:from).to_proc
+    # l.call(1971)
+    #
+    # int -> Plot.new
+    def from(year)
+      new_ranges = @data_ranges.map do |range|
+        pairs = range.sort
+        selection = pairs.select { |pair| pair.first.to_i >= year }
+        Hash[*selection.flatten]
+      end
+      self.class.new(self.facets, new_ranges)
+    end
+
+    # not very dry, mirrors above
+    # int -> Plot.new
+    def to(year)
+      new_ranges = @data_ranges.map do |range|
+        pairs = range.sort
+        selection = pairs.select { |pair| pair.first.to_i <= year }
+        Hash[*selection.flatten]
+      end
+      self.class.new(self.facets, new_ranges)
+    end
+
+    # int -> Plot.new
+    def interval(step)
+      new_ranges = @data_ranges.map do |range|
+        intervals = range.each_slice(step).to_a
+        reduced = intervals.map { |interval| reduce_interval(interval) }
+        Hash[*reduced.flatten]
+      end
+      self.class.new(self.facets, new_ranges)
+    end
+
+    # [] -> []
+    def reduce_interval(arr)
+      years = arr.map { |pair| pair.first }.flatten
+      counts = arr.map { |pair| pair.last }.flatten
+      year_range = if years.first.eql? years.last
+        years.first
+      else
+        [years.first, years.last].join("-")
+      end
+      total_count = counts.reduce { |sum, count| sum += count }
+      [year_range, total_count]
     end
 
     # () -> {}
@@ -206,50 +221,6 @@ module Charts
     # () -> {}
     def json_structure
       x_range.merge datasets
-    end
-
-    # TODO
-    def configure_data_range(range, opts)
-      year_range = range.select do |pair|
-        (pair.first.to_i >= opts[:from]) &&
-        (pair.first.to_i <= opts[:to])
-      end
-
-      # binding.pry
-
-      if opts[:interval]
-        year_intervals = year_range.each_slice(opts[:interval]).to_a
-        reduce_intervals(year_intervals)
-      else
-        year_range
-      end
-    end
-
-    # TODO
-    def reduce_intervals(arr)
-      arr.map { |interval| reduce_interval(interval) }
-    end
-
-    # TODO
-    # reduce y-range, rather
-    def reduce_interval(arr)
-      years = extract_x_range(arr).flatten
-      counts = extract_y_range(arr).flatten
-      year_range = if years.first.eql? years.last
-        years.first
-      else
-        [years.first, years.last].join("-")
-      end
-      total_count = counts.reduce { |sum, count| sum += count }
-      [year_range, total_count]
-    end
-
-    def extract_x_range(arr)
-      arr.map { |pair| pair.first }
-    end
-
-    def extract_y_range(arr)
-      arr.map { |pair| pair.last }
     end
   end
   # Plot

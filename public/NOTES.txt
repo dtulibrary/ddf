@@ -490,3 +490,7 @@ http://stackoverflow.com/questions/9710303/rails-optional-argument
 Merge hash - based:
 http://stackoverflow.com/questions/10234406/ruby-methods-and-optional-parameters
 
+Multiple constructors in Ruby, see version by Johan Holmberg:
+https://www.ruby-forum.com/topic/101959
+In more detail, covers allocate, initialize, & new:
+http://www.slideshare.net/ciscoleal/constructors-28459017

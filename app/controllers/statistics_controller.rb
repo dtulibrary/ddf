@@ -15,6 +15,6 @@ class StatisticsController < ApplicationController
 
     # Chart JS bar / line
     facets = ['pub_date_tsort', 'submission_year_tis']
-    @pub_year = Charts::Plot.new(facets).values(from: 1950, to: 2019, interval: 5).to_json
+    @pub_year = Charts::Plot.new(facets).from(1950).interval(5).values.to_json
   end
 end
