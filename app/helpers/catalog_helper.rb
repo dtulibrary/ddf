@@ -166,7 +166,9 @@ module CatalogHelper
       'orbit'
     when /^https?:\/\/pure\.au\.dk/
       'rdb_au'
-    when /^https?:\/\/forskning\.ku\.dk/, /.+cur\.adm\.ku\.dk/
+    when /^https?:\/\/forskning\.ku\.dk/,
+      /.+cur\.adm\.ku\.dk/,
+      /curis\.ku\.dk/
       'rdb_ku'
     when /^https?:\/\/pure\.itu\.dk/
       'rdb_itu'
