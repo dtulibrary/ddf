@@ -45,7 +45,7 @@ module StatService
     facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
   end
 
-  BLACKLISTED_CODES = ['do']
+  BLACKLISTED_CODES = ['do', 'rdb_ucviden']
 
   def translate(facet, code)
     t([LABEL_TRANSLATIONS[facet], '.', code].join)
