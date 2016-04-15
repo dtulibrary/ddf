@@ -93,4 +93,10 @@ module ApplicationHelper
       render partial: 'shared/feedback_general'
     end
   end
+
+  def present_person(solr_doc)
+    presenter = PersonPresenter.new(solr_doc, self)
+    yield presenter if block_given?
+    presenter
+  end
 end

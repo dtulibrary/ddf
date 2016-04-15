@@ -311,7 +311,9 @@ da:
           unused: Uudnyttet
           unclear: Uklart
         publications: publikationer
-
+    people:
+      recent_publications: Seneste publikationer
+      all_publications: Se %{number} publikationer >>
     news:
       title: Nyt
       updates:

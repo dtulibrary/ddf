@@ -214,6 +214,9 @@ en:
 
 
   ddf:
+    people:
+      recent_publications: Most recent publications
+      all_publications: See all %{number} publications >>
     open_access:
       header: Open Access Indicator — Statistics for %{year}
       development:

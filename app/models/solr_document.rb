@@ -20,6 +20,14 @@ class SolrDocument < Dtu::SolrDocument
     id.kind_of?(Array) ? id.first : id
   end
 
+  def title
+    self['title_ts'].try(:first)
+  end
+
+  def year_published
+    self['pub_date_tis'].try(:first)
+  end
+
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
   # single valued. See Blacklight::Solr::Document::ExtendableClassMethods#field_semantics
