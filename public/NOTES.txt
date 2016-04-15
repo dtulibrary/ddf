@@ -490,7 +490,14 @@ http://stackoverflow.com/questions/9710303/rails-optional-argument
 Merge hash - based:
 http://stackoverflow.com/questions/10234406/ruby-methods-and-optional-parameters
 
-Multiple constructors in Ruby, see version by Johan Holmberg:
+MULTIPLE CONSTRUCTORS IN RUBY, SEE VERSION BY JOHAN HOLMBERG:
 https://www.ruby-forum.com/topic/101959
 In more detail, covers allocate, initialize, & new:
 http://www.slideshare.net/ciscoleal/constructors-28459017
+
+CHART.JS CLICKABLE CHARTS:
+http://stackoverflow.com/questions/26257268/click-events-on-pie-charts-in-chart-js
+https://github.com/nnnick/Chart.js/issues/577
+
+USING HTML5 DATA-* ATTRIBUTES:
+https://developer.mozilla.org/en/docs/Web/Guide/HTML/Using_data_attributes

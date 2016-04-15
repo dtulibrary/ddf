@@ -7,20 +7,22 @@
         Status
       </h1>
       <div class="col-md-3">
-        <h2 class="facet-visualization-heading">Review type</h2>
-        <canvas id="review-type" height="235"><%= @review %></canvas>
+        <h2 class="facet-visualization-heading">Review Type</h2>
+        <canvas id="review-type" height="235" data-facet="review_status_s">
+          <%= @by_review_type %>
+        </canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Scientific level</h2>
-        <canvas id="scientific-level" height="235"><%= @sci_level %></canvas>
+        <canvas id="scientific-level" height="235"><%= @by_sci_level %></canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Main Research Area</h2>
-        <canvas id="research-area" height="235"><%= @res_area %></canvas>
+        <canvas id="research-area" height="235"><%= @by_research_area %></canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Publication Status</h2>
-        <canvas id="publication-status" height="235"><%= @pub_status %></canvas>
+        <canvas id="publication-status" height="235"><%= @by_publication_status %></canvas>
       </div>
     </div>
 
@@ -33,7 +35,7 @@
         Timeline
       </h2>
       <canvas id="publication-year" height="160">
-        <%= @pub_year %>
+        <%= @by_year %>
       </canvas>
     </div>
 
@@ -49,7 +51,7 @@
             <%= t("blacklight.data_visualization.type") %>
           </h2>
           <ul class="chartlist types">
-            <% @types.each do |facet| %>
+            <% @by_type.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
               <%= display_facet_count(facet) %>
@@ -78,7 +80,7 @@
             <%= t("blacklight.data_visualization.institution") %>
           </h1>
           <ul class="chartlist institutions">
-            <% @institutions.each do |facet| %>
+            <% @by_institution.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
               <%= display_facet_count(facet) %>
