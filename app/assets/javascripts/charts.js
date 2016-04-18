@@ -7,6 +7,23 @@ drawSegments = function(container) {
   return new Chart(ctx).Doughnut(json);
 }
 
+makeSegmentsClickable = function(chart, container) {
+  var DOMElement = "#"+container;
+  $("#review-type").click(
+    function(evt) {
+
+      var locale = window.location.pathname.split('/')[1];
+      var canvas = document.getElementById(container);
+      var facet_frag = canvas.dataset.facet;
+      var activePoints = chart.getSegmentsAtEvent(evt);
+      var segment = translations[activePoints[0].label];
+
+      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+      window.location = url;
+    }
+  );
+}
+
 drawPlot = function(container) {
   ctx = document.getElementById(container).getContext("2d");
   data = document.getElementById(container).innerHTML;
@@ -14,38 +31,35 @@ drawPlot = function(container) {
   return new Chart(ctx).Bar(json);
 }
 
-
 var translations = {}
-translations['Peer Review'] = 'peer_review';
+translations['Peer Review']  = 'peer_review';
 translations['Undetermined'] = 'undetermined';
-translations['Ubestemt'] = 'undetermined';
+translations['Ubestemt']     = 'undetermined';
 
 $(document).ready(function() {
   var reviewChart = drawSegments("review-type");
+  makeSegmentsClickable(reviewChart, "review-type");
+
+  // console.log(reviewChart);
 
   // TODO
-  $("#review-type").click(
-    function(evt) {
-      var activePoints = reviewChart.getSegmentsAtEvent(evt);
-      var segment = translations[activePoints[0].label];
-      var canvas = document.getElementById("review-type");
-      var facet_frag = canvas.dataset.facet;
+  // $("#review-type").click(
+  //   function(evt) {
+  //     var activePoints = reviewChart.getSegmentsAtEvent(evt);
 
-      console.log(segment);
+  //     // console.log(activePoints);
+  //     // alert(activePoints);
 
-      // var url = "http://example.com/?label=" + activePoints[0].label + "&value=" + activePoints[0].value;
+  //     var locale = window.location.pathname.split('/')[1];
+  //     var canvas = document.getElementById("review-type");
+  //     var facet_frag = canvas.dataset.facet;
+  //     var segment = translations[activePoints[0].label];
 
-      var url = "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-
-      window.location = url;
-    }
-  );
+  //     var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+  //     window.location = url;
+  //   }
+  // );
   // TODO
-
-  // Mine:
-  // http://localhost:3000/catalog?f[review_status_s][]=undertermined&q=*:*
-  // Facet:
-  // http://localhost:3000/en/catalog?f[review_status_s][]=undetermined&q=*%3A*
 
   var sciLevelChart = drawSegments("scientific-level");
   var resAreaChart = drawSegments("research-area");

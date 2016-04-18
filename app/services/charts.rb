@@ -241,9 +241,10 @@ module Charts
       a = []
       hash.each do |k, v|
         h = {}
-        h.store(:name, facet)
-        h.store(:value, v)
+        # h.store(:facet, facet)
+        # h.store(:segment, k)
         h.store(:label, translate(facet, k))
+        h.store(:value, v)
         a << h.merge(set_colors_from(facet, k))
       end
       a
