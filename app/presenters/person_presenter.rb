@@ -10,15 +10,16 @@ class PersonPresenter < Dtu::DocumentPresenter
   end
 
   def parse_cris_id
-    backlink = document['backlink_ss'].first
-    backlink.slice(/\(.*\)/).sub('(', '').sub(')','')
+    if document.backlink.present?
+      document.backlink.slice(/\(.*\)/).sub('(', '').sub(')','')
+    end
   end
 
   def publications
     solr = SolrService.new
     publications = solr.author_docs(cris_id)
     publications[:docs] = publications[:docs].collect { |doc| SolrDocument.new(doc) }
-    publications  
+    publications
   end
 
   def affiliations

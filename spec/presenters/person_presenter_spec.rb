@@ -7,7 +7,7 @@ describe PersonPresenter do
     subject { presenter.cris_id }
     let(:cris_id) { 'd0ff1f22-b755-48d5-b5c9-94a9ef4367ac' }
     context 'when there is no cris id but there is a backlink' do
-      let(:document) { Dtu::SolrDocument.new('backlink_ss' => [
+      let(:document) { SolrDocument.new('backlink_ss' => [
           "https://curis.ku.dk/portal/da/persons/tine-alkjaer(#{cris_id}).html"
         ])}
       it 'returns the cris id from the backlink' do
@@ -15,8 +15,12 @@ describe PersonPresenter do
       end
     end
     context 'when there is a cris id' do
-      let(:document) { Dtu::SolrDocument.new('cris_id_ss' => [cris_id]) }
+      let(:document) { SolrDocument.new('cris_id_ss' => [cris_id]) }
       it { should eql cris_id }
+    end
+    context 'when there is no cris id or backlink' do
+      let(:document) { SolrDocument.new }
+      it { should eql nil }
     end
   end
 

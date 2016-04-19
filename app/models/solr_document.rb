@@ -28,6 +28,10 @@ class SolrDocument < Dtu::SolrDocument
     self['pub_date_tis'].try(:first)
   end
 
+  def backlink
+    self['backlink_ss'].try(:first)
+  end
+
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
   # single valued. See Blacklight::Solr::Document::ExtendableClassMethods#field_semantics
