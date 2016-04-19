@@ -12,6 +12,7 @@ module Charts
       whitelist(facet_list).take(limit)
     end
 
+    # (str) -> []
     def raw_data_for(facet)
       publ = Blacklight.solr.get('ddf_publ',
         :params => {
@@ -22,11 +23,13 @@ module Charts
       publ['facet_counts']['facet_fields'][facet]
     end
 
+    # (str) -> {}
     def hashify(facet)
       arr = raw_data_for(facet)
       Hash[*arr]
     end
 
+    # (str, str) -> {}
     def set_colors_from(facet, code)
       CHARTJS_COLORS[facet.to_sym][code]
     end
@@ -82,12 +85,14 @@ module Charts
         }
       }
 
+      # ([{}..]) -> [{}..]
       def whitelist(facet_list)
         facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
       end
 
       BLACKLISTED_CODES = ['do']
 
+      # (str, str) -> str
       def translate(facet, code)
         I18n.t([LABEL_TRANSLATIONS[facet], '.', code].join)
       end
@@ -122,6 +127,7 @@ module Charts
       # D) Combine A, B, and C
     # 4) Combine 2 and D
 
+    # ([str..], *[{}..]) -> [{}..]
     def initialize(facets, data_ranges=[])
       @facets = facets
       if data_ranges.empty? # generate data ranges from facet list
@@ -133,6 +139,7 @@ module Charts
       end
     end
 
+    # () -> {}
     def values()
       json_structure
     end
@@ -142,7 +149,7 @@ module Charts
     # l = method(:from).to_proc
     # l.call(1971)
     #
-    # int -> Plot.new
+    # (int) -> Plot.new
     def from(year)
       new_ranges = @data_ranges.map do |range|
         pairs = range.sort
@@ -153,7 +160,7 @@ module Charts
     end
 
     # not very dry, mirrors above
-    # int -> Plot.new
+    # (int) -> Plot.new
     def to(year)
       new_ranges = @data_ranges.map do |range|
         pairs = range.sort
@@ -163,7 +170,7 @@ module Charts
       self.class.new(self.facets, new_ranges)
     end
 
-    # int -> Plot.new
+    # (int) -> Plot.new
     def interval(step)
       new_ranges = @data_ranges.map do |range|
         intervals = range.each_slice(step).to_a
@@ -173,7 +180,7 @@ module Charts
       self.class.new(self.facets, new_ranges)
     end
 
-    # [] -> []
+    # ([]) -> []
     def reduce_interval(arr)
       years = arr.map { |pair| pair.first }.flatten
       counts = arr.map { |pair| pair.last }.flatten
@@ -199,7 +206,7 @@ module Charts
       { labels: data_ranges.first.keys }
     end
 
-    # {} -> {}
+    # ({}) -> {}
     def y_range(data_range)
       { data: data_range.values }
     end
@@ -242,7 +249,7 @@ module Charts
       hash.each do |k, v|
         h = {}
         # h.store(:facet, facet)
-        # h.store(:segment, k)
+        h.store(:segment, k)
         h.store(:label, translate(facet, k))
         h.store(:value, v)
         a << h.merge(set_colors_from(facet, k))
@@ -297,3 +304,9 @@ module Charts
 end
 # Charts
 
+# translations['Publiceret']      = 'published'
+# translations['Ukendt']          = 'unknown'
+# translations['Indsendt']        = 'submitted'
+# translations['Accepteret']      = 'accepted'
+# translations['I Trykken']       = 'in_press'
+# translations['Ikke publiceret'] = 'unpublished'

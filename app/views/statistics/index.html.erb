@@ -20,11 +20,15 @@
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Main Research Area</h2>
-        <canvas id="research-area" height="235"><%= @by_research_area %></canvas>
+        <canvas id="research-area" height="235" data-facet="research_area_ss">
+          <%= @by_research_area %>
+        </canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Publication Status</h2>
-        <canvas id="publication-status" height="235"><%= @by_publication_status %></canvas>
+        <canvas id="publication-status" height="235" data-facet="access_condition_s">
+          <%= @by_publication_status %>
+        </canvas>
       </div>
     </div>
 
@@ -36,7 +40,7 @@
         <em><%= t("blacklight.data_visualization.by") %></em>
         Timeline
       </h2>
-      <canvas id="publication-year" height="160">
+      <canvas id="publication-timeline" height="160">
         <%= @by_year %>
       </canvas>
     </div>

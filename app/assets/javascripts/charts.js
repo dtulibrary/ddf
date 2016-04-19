@@ -44,6 +44,31 @@ translations['Videnskabelig']        = 'scientific';
 translations['Populærvidenskabelig'] = 'popular';
 translations['Undervisningsrettet']  = 'educational';
 
+translations['Humanities']         = 'Humanities';
+translations['Science/technology'] = 'Science/technology';
+translations['Medical science']    = 'Medical+science';
+translations['Social science']     = 'Social+science';
+
+translations['Humaniora']             = 'Humanities';
+translations['Teknik/naturvidenskab'] = 'Science/technology';
+translations['Sundhedsvidenskab']     = 'Medical+science';
+translations['Samfundsvidenskab']     = 'Social+science';
+
+
+translations['Published']   = 'published'
+translations['Unknown']     = 'unknown'
+translations['Submitted']   = 'submitted'
+translations['Accepted']    = 'accepted'
+translations['In Press']    = 'in_press'
+translations['Unpublished'] = 'unpublished'
+
+translations['Publiceret']  = 'published'
+translations['Ukendt']      = 'unknown'
+translations['Indsendt']    = 'submitted'
+translations['Accepteret']  = 'accepted'
+translations['I trykken']   = 'in_press'
+translations['Upubliceret'] = 'unpublished'
+
 $(document).ready(function() {
   var reviewChart = drawSegments("review-type");
   // makeSegmentsClickable(reviewChart, "review-type");
@@ -67,7 +92,7 @@ $(document).ready(function() {
   var sciLevelChart = drawSegments("scientific-level");
   // makeSegmentsClickable(sciLevelChart, "scientific-level");
 
-    $("#scientific-level").click(
+  $("#scientific-level").click(
     function(evt) {
 
       var locale = window.location.pathname.split('/')[1];
@@ -83,9 +108,39 @@ $(document).ready(function() {
 
 
   var resAreaChart = drawSegments("research-area");
+
+  $("#research-area").click(
+    function(evt) {
+
+      var locale = window.location.pathname.split('/')[1];
+      var canvas = document.getElementById("research-area");
+      var facet_frag = canvas.dataset.facet;
+      var activePoints = resAreaChart.getSegmentsAtEvent(evt);
+      var segment = translations[activePoints[0].label];
+
+      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+      window.location = url;
+    }
+  );
+
   var pubStatusChart = drawSegments("publication-status");
 
-  var pubYearChart = drawPlot("publication-year");
+  $("#publication-status").click(
+    function(evt) {
+
+      var locale = window.location.pathname.split('/')[1];
+      var canvas = document.getElementById("publication-status");
+      var facet_frag = canvas.dataset.facet;
+      var activePoints = pubStatusChart.getSegmentsAtEvent(evt);
+      var segment = translations[activePoints[0].label];
+
+      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+      window.location = url;
+    }
+  );
+
+
+  var publicationTimelineChart = drawPlot("publication-timeline");
 });
 
 //
