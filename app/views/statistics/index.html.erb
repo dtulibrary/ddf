@@ -8,25 +8,25 @@
       </h1>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Review Type</h2>
-        <canvas id="review-type" height="235" data-facet="review_status_s">
+        <canvas id="review-type" class="segments" height="235" data-facet="review_status_s">
           <%= @by_review_type %>
         </canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Scientific level</h2>
-        <canvas id="scientific-level" height="235" data-facet="scientific_level_s">
+        <canvas id="scientific-level" class="segments" height="235" data-facet="scientific_level_s">
           <%= @by_sci_level %>
         </canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Main Research Area</h2>
-        <canvas id="research-area" height="235" data-facet="research_area_ss">
+        <canvas id="research-area" class="segments" height="235" data-facet="research_area_ss">
           <%= @by_research_area %>
         </canvas>
       </div>
       <div class="col-md-3">
         <h2 class="facet-visualization-heading">Publication Status</h2>
-        <canvas id="publication-status" height="235" data-facet="access_condition_s">
+        <canvas id="publication-status" class="segments" height="235" data-facet="access_condition_s">
           <%= @by_publication_status %>
         </canvas>
       </div>

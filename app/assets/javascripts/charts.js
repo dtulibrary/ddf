@@ -9,7 +9,7 @@ drawSegments = function(container) {
 
 // makeSegmentsClickable = function(chart, container) {
 //   var DOMElement = "#"+container;
-//   $("#review-type").click(
+//   $("DOMElement").click(
 //     function(evt) {
 
 //       var locale = window.location.pathname.split('/')[1];
@@ -69,81 +69,37 @@ translations['Accepteret']  = 'accepted'
 translations['I trykken']   = 'in_press'
 translations['Upubliceret'] = 'unpublished'
 
+// [fooChart, barChart].event {}
+
 $(document).ready(function() {
   var reviewChart = drawSegments("review-type");
-  // makeSegmentsClickable(reviewChart, "review-type");
-
-  // TODO
-  $("#review-type").click(
-    function(evt) {
-
-      var locale = window.location.pathname.split('/')[1];
-      var canvas = document.getElementById("review-type");
-      var facet_frag = canvas.dataset.facet;
-      var activePoints = reviewChart.getSegmentsAtEvent(evt);
-      var segment = translations[activePoints[0].label];
-
-      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-      window.location = url;
-    }
-  );
-  // TODO
-
   var sciLevelChart = drawSegments("scientific-level");
-  // makeSegmentsClickable(sciLevelChart, "scientific-level");
-
-  $("#scientific-level").click(
-    function(evt) {
-
-      var locale = window.location.pathname.split('/')[1];
-      var canvas = document.getElementById("scientific-level");
-      var facet_frag = canvas.dataset.facet;
-      var activePoints = sciLevelChart.getSegmentsAtEvent(evt);
-      var segment = translations[activePoints[0].label];
-
-      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-      window.location = url;
-    }
-  );
-
-
   var resAreaChart = drawSegments("research-area");
-
-  $("#research-area").click(
-    function(evt) {
-
-      var locale = window.location.pathname.split('/')[1];
-      var canvas = document.getElementById("research-area");
-      var facet_frag = canvas.dataset.facet;
-      var activePoints = resAreaChart.getSegmentsAtEvent(evt);
-      var segment = translations[activePoints[0].label];
-
-      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-      window.location = url;
-    }
-  );
-
   var pubStatusChart = drawSegments("publication-status");
 
-  $("#publication-status").click(
-    function(evt) {
+  charts = {}
+  charts["review_status_s"]    = reviewChart;
+  charts["scientific_level_s"] = sciLevelChart;
+  charts["research_area_ss"]   = resAreaChart;
+  charts["access_condition_s"] = pubStatusChart;
 
-      var locale = window.location.pathname.split('/')[1];
-      var canvas = document.getElementById("publication-status");
-      var facet_frag = canvas.dataset.facet;
-      var activePoints = pubStatusChart.getSegmentsAtEvent(evt);
-      var segment = translations[activePoints[0].label];
+  $("canvas.segments").click(function(evt) {
+    // console.log(this);
+    var locale = window.location.pathname.split('/')[1];
+    var facet_frag = this.dataset.facet;
+    var chart = charts[facet_frag];
+    var activePoints = chart.getSegmentsAtEvent(evt);
+    var segment = translations[activePoints[0].label];
 
-      var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-      window.location = url;
-    }
-  );
-
+    var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+    window.location = url;
+  });
 
   var publicationTimelineChart = drawPlot("publication-timeline");
 });
 
 //
+// HOW TO ADD CLICK EVENTS:
 // http://stackoverflow.com/questions/26257268/click-events-on-pie-charts-in-chart-js
 //
 // $("#myChart").click(
@@ -154,3 +110,21 @@ $(document).ready(function() {
 //     }
 // );
 //
+//
+// OLD, HARD-CODED PER-CHART CLICK HANDLER:
+// $("#review-type").click(
+//   function(evt) {
+
+//     var locale = window.location.pathname.split('/')[1];
+//     var canvas = document.getElementById("review-type");
+//     var facet_frag = canvas.dataset.facet;
+//     var activePoints = reviewChart.getSegmentsAtEvent(evt);
+//     var segment = translations[activePoints[0].label];
+
+//     var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
+//     window.location = url;
+//   }
+// );
+//
+
+
