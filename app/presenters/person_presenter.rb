@@ -5,11 +5,15 @@ class PersonPresenter < Dtu::DocumentPresenter
     document['name_ts'].first || document.id
   end
 
-  def publications
+  def fetch_publications
     solr = SolrService.new
     publications = solr.author_docs(document.cris_id)
     publications[:docs] = publications[:docs].collect { |doc| SolrDocument.new(doc) }
     publications
+  end
+
+  def publications
+    @publications ||= fetch_publications
   end
 
   def affiliations
