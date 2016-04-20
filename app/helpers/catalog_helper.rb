@@ -13,7 +13,7 @@ module CatalogHelper
   end
 
   def render_data_providers? document
-    !collect_backlinks(document).empty?
+    collect_backlinks(document).present?
   end
 
   def render_format_field_facet value
