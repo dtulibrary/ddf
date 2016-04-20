@@ -3,26 +3,6 @@ describe PersonPresenter do
   let(:solr_response) { nil }
   let(:document) { SolrDocument.new(source_doc, solr_response) }
   let(:presenter) { described_class.new(document, CatalogController.new) }
-  describe '#cris_id' do
-    subject { presenter.cris_id }
-    let(:cris_id) { 'd0ff1f22-b755-48d5-b5c9-94a9ef4367ac' }
-    context 'when there is no cris id but there is a backlink' do
-      let(:document) { SolrDocument.new('backlink_ss' => [
-          "https://curis.ku.dk/portal/da/persons/tine-alkjaer(#{cris_id}).html"
-        ])}
-      it 'returns the cris id from the backlink' do
-        expect(subject).to eql cris_id
-      end
-    end
-    context 'when there is a cris id' do
-      let(:document) { SolrDocument.new('cris_id_ss' => [cris_id]) }
-      it { should eql cris_id }
-    end
-    context 'when there is no cris id or backlink' do
-      let(:document) { SolrDocument.new }
-      it { should eql nil }
-    end
-  end
 
   describe 'affiliations' do
     subject { presenter.affiliations }

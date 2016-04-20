@@ -5,19 +5,9 @@ class PersonPresenter < Dtu::DocumentPresenter
     document['name_ts'].first || document.id
   end
 
-  def cris_id
-    document['cris_id_ss'].try(:first) || parse_cris_id
-  end
-
-  def parse_cris_id
-    if document.backlink.present?
-      document.backlink.slice(/\(.*\)/).sub('(', '').sub(')','')
-    end
-  end
-
   def publications
     solr = SolrService.new
-    publications = solr.author_docs(cris_id)
+    publications = solr.author_docs(document.cris_id)
     publications[:docs] = publications[:docs].collect { |doc| SolrDocument.new(doc) }
     publications
   end
@@ -25,9 +15,8 @@ class PersonPresenter < Dtu::DocumentPresenter
   def affiliations
     aff_data = document['person_affiliations_ssf'].try(:first)
     output = {}
-    ['current', 'previous'].each do |type|
-      output[type] = render_affilations(aff_data, type)
-    end
+    output['current'] = render_affilations(aff_data, 'current')
+    output['previous'] = render_affilations(aff_data, 'previous')
     output.select { |_,val| val.present? }
   end
 

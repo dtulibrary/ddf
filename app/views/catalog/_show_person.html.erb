@@ -26,7 +26,7 @@
       <%= doc.year_published %>
     </li>
   <% end  %>
-  <%= link_to t("ddf.people.all_publications", number: presenter.publications[:size]), catalog_index_path(q: "cris_id_ss:#{presenter.cris_id}")  %>
+  <%= link_to t("ddf.people.all_publications", number: presenter.publications[:size]), catalog_index_path(q: "cris_id_ss:#{document.cris_id}")  %>
 </ul>
 </div>
 <% end  %>

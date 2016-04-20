@@ -42,6 +42,23 @@ class SolrDocument < Dtu::SolrDocument
     self['format'] || ''
   end
 
+  def cris_id
+    self['cris_id_ss'].try(:first) || parse_cris_id
+  end
+
+  def source_id
+    self['source_id_ss'].try(:first)
+  end
+
+  def parse_cris_id
+    if source_id.present?
+      source_id.split(':').last
+    elsif backlink.present?
+      backlink.slice(/\(.*\)/).sub('(', '').sub(')','')
+    end
+  end
+
+
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
   # single valued. See Blacklight::Solr::Document::ExtendableClassMethods#field_semantics
