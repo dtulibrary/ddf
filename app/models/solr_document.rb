@@ -32,6 +32,16 @@ class SolrDocument < Dtu::SolrDocument
     self['backlink_ss'].try(:first)
   end
 
+  # Only inactive persons can be inactive,
+  # active persons and publications are active
+  def status
+    self['is_active_b'] == false ? 'inactive' : 'active'
+  end
+
+  def format
+    self['format'] || ''
+  end
+
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
   # single valued. See Blacklight::Solr::Document::ExtendableClassMethods#field_semantics

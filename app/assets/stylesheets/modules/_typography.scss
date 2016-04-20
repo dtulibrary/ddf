@@ -1038,6 +1038,17 @@ a.select-document {
   vertical-align: -10%;
 }
 
+// disable the backlink for inactive Aarhus researchers
+.data-providers li.rdb_au.person.inactive {
+  a { pointer-events: none;  }
+  a:after {
+    content: ' \00a0\00a0\00a0\00a0\00a0 Cannot be viewed';
+    color: #777777;
+  }
+  i { display: none; }
+}
+
+
 div.selected-documents { border: 1px solid $blue-4; }
 div.selected-documents__container { padding: 0 .8em; }
 
@@ -1558,6 +1569,6 @@ p.more-link--oa { margin-top: 4em; }
 p.more-link a { text-decoration: underline; }
 
 .orcid-metric a {
-  &, &:hover, &:active, &:focus { text-decoration: none; } 
+  &, &:hover, &:active, &:focus { text-decoration: none; }
 }
 .orcid-metric img { margin-right: 5px; }
