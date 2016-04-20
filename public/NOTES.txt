@@ -501,3 +501,5 @@ https://github.com/nnnick/Chart.js/issues/577
 
 USING HTML5 DATA-* ATTRIBUTES:
 https://developer.mozilla.org/en/docs/Web/Guide/HTML/Using_data_attributes
+Using multiple values per attribute:
+http://stackoverflow.com/questions/11962091/is-it-possible-to-have-multiple-data-name-atributes-in-html5

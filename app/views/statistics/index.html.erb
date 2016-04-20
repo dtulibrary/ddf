@@ -40,7 +40,7 @@
         <em><%= t("blacklight.data_visualization.by") %></em>
         Timeline
       </h2>
-      <canvas id="publication-timeline" height="160">
+      <canvas id="publication-timeline" class="plot" height="160" data-facets="access_condition_s;submission_year_tis">
         <%= @by_year %>
       </canvas>
     </div>

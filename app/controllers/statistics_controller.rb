@@ -12,6 +12,7 @@ class StatisticsController < ApplicationController
     # Chart JS bar / line
     facets = ['pub_date_tsort', 'submission_year_tis']
     @by_year = Charts::Plot.new(facets).from(1960).interval(5).values.to_json
+    # @by_year = Charts::Plot.new(facets).from(2000).interval(5).values.to_json
 
     # No JS charts
     @by_type = Charts::CSSBars.new('format_orig_s').values

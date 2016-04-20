@@ -32,10 +32,12 @@ drawPlot = function(container) {
 }
 
 var translations = {}
+// REVIEW TYPE
 translations['Peer Review']  = 'peer_review';
 translations['Undetermined'] = 'undetermined';
 translations['Ubestemt']     = 'undetermined';
 
+// SCIENTIFIC LEVEL
 translations['Scientific']  = 'scientific';
 translations['Popular']     = 'popular';
 translations['Educational'] = 'educational';
@@ -44,6 +46,7 @@ translations['Videnskabelig']        = 'scientific';
 translations['Populærvidenskabelig'] = 'popular';
 translations['Undervisningsrettet']  = 'educational';
 
+// RESEARCH AREA
 translations['Humanities']         = 'Humanities';
 translations['Science/technology'] = 'Science/technology';
 translations['Medical science']    = 'Medical+science';
@@ -54,7 +57,7 @@ translations['Teknik/naturvidenskab'] = 'Science/technology';
 translations['Sundhedsvidenskab']     = 'Medical+science';
 translations['Samfundsvidenskab']     = 'Social+science';
 
-
+// PUBLICATION STATUS
 translations['Published']   = 'published'
 translations['Unknown']     = 'unknown'
 translations['Submitted']   = 'submitted'
@@ -69,20 +72,21 @@ translations['Accepteret']  = 'accepted'
 translations['I trykken']   = 'in_press'
 translations['Upubliceret'] = 'unpublished'
 
-// [fooChart, barChart].event {}
 
 $(document).ready(function() {
   var reviewChart = drawSegments("review-type");
   var sciLevelChart = drawSegments("scientific-level");
   var resAreaChart = drawSegments("research-area");
   var pubStatusChart = drawSegments("publication-status");
+  var publicationTimelineChart = drawPlot("publication-timeline");
 
-  charts = {}
+  var charts = {}
   charts["review_status_s"]    = reviewChart;
   charts["scientific_level_s"] = sciLevelChart;
   charts["research_area_ss"]   = resAreaChart;
   charts["access_condition_s"] = pubStatusChart;
 
+  // Make pie / dougnut charts behave like facets when clicked
   $("canvas.segments").click(function(evt) {
     // console.log(this);
     var locale = window.location.pathname.split('/')[1];
@@ -95,7 +99,26 @@ $(document).ready(function() {
     window.location = url;
   });
 
-  var publicationTimelineChart = drawPlot("publication-timeline");
+  // Make bar charts behave like facets when clicked
+  $("canvas.plot").click(function(evt) {
+    var locale = window.location.pathname.split('/')[1];
+    var activePoints = publicationTimelineChart.getBarsAtEvent(evt);
+    var label = activePoints[0].label;
+    years = label.split("-");
+    if (years.length == 1) {
+      var startYear = label;
+      var endYear   = label;
+    } else {
+      var startYear = years[0];
+      var endYear   = years[1];
+    }
+    // We create an URL containing both datasets, not the clicked one
+    var pubYearParams = "range[pub_date_tsort][begin]=" +startYear+ "&range[pub_date_tsort][end]=" +endYear
+    var subYearParams = "range[submission_year_tis][begin]=" +startYear+ "&range[submission_year_tis][end]=" +endYear
+    var url = "/" +locale+ "/catalog?" +pubYearParams+ "&" +subYearParams+ "&q=*:*";
+    window.location = url;
+  });
+
 });
 
 //
@@ -127,4 +150,8 @@ $(document).ready(function() {
 // );
 //
 
+// Target URL structure for the Plot chart:
+// http://localhost:3000/en/catalog?range[pub_date_tsort][begin]=1960&range[pub_date_tsort][end]=1964&q=*%3A*
+// For both datasets at once:
+// http://localhost:3000/en/catalog?range[pub_date_tsort][begin]=1960&range[pub_date_tsort][end]=1964&range[submission_year_tis][begin]=1960&range[submission_year_tis][end]=1964&q=*%3A*
 

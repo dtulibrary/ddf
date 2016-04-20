@@ -159,7 +159,7 @@ module Charts
       self.class.new(self.facets, new_ranges)
     end
 
-    # not very dry, mirrors above
+    # not very dry, shares structure with from(year)
     # (int) -> Plot.new
     def to(year)
       new_ranges = @data_ranges.map do |range|
