@@ -36,6 +36,18 @@ module CatalogHelper
     t "mxd_type_labels.review_status_labels.#{value}"
   end
 
+  # do a best guess for the search field
+  def current_search_field
+    search_field = if params[:search_field].present?
+      params[:search_field]
+    elsif defined? current_search_session
+      current_search_session.query_params['search_field']
+    else
+      ''
+    end
+    h(search_field)
+  end
+
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end
