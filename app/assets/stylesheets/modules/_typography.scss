@@ -1572,3 +1572,14 @@ p.more-link a { text-decoration: underline; }
   &, &:hover, &:active, &:focus { text-decoration: none; }
 }
 .orcid-metric img { margin-right: 5px; }
+.recent-publications {
+  h2 {
+    font-family: $headline;
+    font-weight: 400;
+    font-size: calc-em(23px);
+    line-height: calc-em(22px);
+    margin: .5em 0;
+    color: $bluewood;
+  }
+  ol { padding-left: 20px; }
+}

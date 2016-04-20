@@ -15,18 +15,19 @@
   <% end -%>
 </dl>
 <% if presenter.publications[:size] > 0  %>
-<div class="col-md-12">
+<div class="recent-publications col-md-12">
   <h2>
     <%= t 'ddf.people.recent_publications' %>
   </h2>
-  <ul>
-  <% presenter.publications[:docs].each do |doc| %>
-    <li>
-      <%= link_to doc.title, solr_document_path(doc.id) %>
-      <%= doc.year_published %>
-    </li>
-  <% end  %>
-  <%= link_to t("ddf.people.all_publications", number: presenter.publications[:size]), catalog_index_path(q: "cris_id_ss:#{document.cris_id}")  %>
-</ul>
+  <ol>
+    <% presenter.publications[:docs].each do |doc| %>
+      <li>
+        <%= link_to doc.title, solr_document_path(doc.id) %>
+        (<%= doc.year_published %>)
+      </li>
+    <% end  %>
+  </ol>
+
+  <%= link_to t("ddf.people.all_publications", number: presenter.publications[:size]), catalog_index_path(q: "cris_id_ss:#{document.cris_id}") if presenter.publications[:size] > 10 %>
 </div>
 <% end  %>
