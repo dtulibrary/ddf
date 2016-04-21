@@ -138,6 +138,38 @@ class CatalogController < ApplicationController
     config.add_facet_field 'is_active_b', helper_method: :render_active_status
 
     config.add_show_field 'cluster_id_ss'
+
+    # SORTING
+
+    relevance_ordering = [
+        'score desc',
+        'pub_date_tsort desc',
+        'journal_vol_tsort desc',
+        'journal_issue_tsort desc',
+        'journal_page_start_tsort asc',
+        'title_sort asc'
+    ]
+    year_ordering = [
+        'pub_date_tsort desc',
+        'journal_vol_tsort desc',
+        'journal_issue_tsort desc',
+        'journal_page_start_tsort asc',
+        'title_sort asc'
+    ]
+    title_ordering = [
+        'title_sort asc',
+        'pub_date_tsort desc'
+    ]
+    name_ordering = [
+      'name_sort asc'
+    ]
+
+    config.add_sort_field relevance_ordering.join(', '), :label => 'relevance'
+    config.add_sort_field year_ordering.join(', '), :label => 'year', unless: :researcher_search?
+    config.add_sort_field title_ordering.join(', '), :label => 'title', unless: :researcher_search?
+    config.add_sort_field name_ordering.join(', '), :label => 'name', if: :researcher_search?
+
+
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
@@ -155,10 +187,6 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
-    name_ordering = [
-    'name_ts asc'
-    ]
-    config.add_sort_field name_ordering.join(', '), :label => 'name'
     config.add_search_field 'all_fields', label: 'Publications'
 
     # Limit results to researchers
