@@ -35,12 +35,21 @@ en:
       type: "Type"
       by_institution: By Institution
       by_university: By University
+      status: Status
+      review_type: Review Type
+      scientific_level: Scientific Level
+      main_research_area: Main Research Area
+      publication_status: Publication Status
+      timeline: Timeline
+      institution: Institution
+      language: Language
+      journal_title: Journal Title
+      author: Author
       more: More
       less: Less
       oa_indicator: Open Access Indicator
       more_statistics: More Statistics
       more_oa: More Information
-
 
     entry_name:
         default: 'entry'

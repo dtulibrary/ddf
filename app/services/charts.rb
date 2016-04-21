@@ -91,9 +91,11 @@ module Charts
       end
 
       BLACKLISTED_CODES = ['do']
+      METADATA_FACETS = ['journal_title_facet', 'author_facet']
 
       # (str, str) -> str
       def translate(facet, code)
+        return code if METADATA_FACETS.include? facet
         I18n.t([LABEL_TRANSLATIONS[facet], '.', code].join)
       end
 

@@ -391,7 +391,7 @@ end
     elsif Rails.application.assets.find_asset("data-providers/#{image_name}.png")
       "data-providers/#{image_name}.png"
     end
-    # TODO: Exception
+    # TODO: Handle exception(s)
   end
 
   SELECTED_SORT_FIELDS = ['year', 'title']

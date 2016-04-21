@@ -42,6 +42,16 @@ da:
       type: "Type"
       by_institution: Efter Forskningsinstitution
       by_university: Efter Universitet
+      status: Status
+      review_type: Review Type
+      scientific_level: Videnskabeligt niveau
+      main_research_area: Hovedforskningsområde
+      publication_status: Publikationsstatus
+      timeline: Tidslinje
+      institution: Institution
+      language: Sprog
+      journal_title: Tidskriftens Titel
+      author: Forfatter
       more: Flere
       less: Færre
       oa_indicator: Open Access Indikator
