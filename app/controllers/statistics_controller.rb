@@ -15,7 +15,13 @@ class StatisticsController < ApplicationController
     # @by_year = Charts::Plot.new(facets).from(2000).interval(5).values.to_json
 
     # No JS charts
-    @by_type = Charts::CSSBars.new('format_orig_s').values
     @by_institution = Charts::CSSBars.new('source_ss').values
+    @by_type = Charts::CSSBars.new('format_orig_s').values
+
+    # TODO
+    @by_language = Charts::CSSBars.new('isolanguage_ss').values(limit: 13)
+
+    # @by_journal_title = Charts::CSSBars.new('journal_title_facet').values
+    # @by_author = Charts::CSSBars.new('author_facet').values
   end
 end

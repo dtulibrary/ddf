@@ -106,7 +106,8 @@ module Charts
         'research_area_ss'    => 'custom_labels.research_area_labels',
         'access_condition_s'  => 'mxd_type_labels.publishing_status_labels',
         'pub_date_tsort'      => 'blacklight.search.fields.facet',
-        'submission_year_tis' => 'blacklight.search.fields.facet'
+        'submission_year_tis' => 'blacklight.search.fields.facet',
+        'isolanguage_ss'      => 'mxd_type_labels.language_labels'
       }
   end
   # DataUtils

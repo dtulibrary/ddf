@@ -51,6 +51,25 @@
     <div class="row">
       <div class="col-md-6 chart">
         <section>
+          <h1 class="chart-heading">
+            <%= t("blacklight.data_visualization.publications") %>
+            <em><%= t("blacklight.data_visualization.by") %></em>
+            <%= t("blacklight.data_visualization.institution") %>
+          </h1>
+          <ul class="chartlist institutions">
+            <% @by_institution.each do |facet| %>
+            <li>
+              <%= render_facet_link(facet) %>
+              <%= display_facet_count(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+
+      <div class="col-md-6 chart">
+        <section>
           <h2 class="chart-heading">
             <%= t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
@@ -77,16 +96,21 @@
           </button>
         </section>
       </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
 
       <div class="col-md-6 chart">
         <section>
-          <h1 class="chart-heading">
+          <h2 class="chart-heading">
             <%= t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.institution") %>
-          </h1>
-          <ul class="chartlist institutions">
-            <% @by_institution.each do |facet| %>
+            <%= t("blacklight.data_visualization.language") %>
+          </h2>
+          <ul class="chartlist languages">
+            <% @by_language.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
               <%= display_facet_count(facet) %>
@@ -96,6 +120,8 @@
           </ul>
         </section>
       </div>
+
+      <div class="col-md-6 chart"></div>
     </div>
   </div>
 </article>
