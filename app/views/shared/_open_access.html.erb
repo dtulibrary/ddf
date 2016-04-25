@@ -8,7 +8,7 @@
 
       <nav class="mobile">
 
-        <ul class="subnav-items-list">
+        <ul class="subnav-items-list mobile-hide">
           <li id="oa-overview">
             <%= link_to t('ddf.open_access.menu.overview'), open_access_overview_path %>
           </li>
@@ -18,7 +18,7 @@
         </ul>
 
         <!-- TODO -->
-        <select>
+        <select class="mobile-show">
           <option value="" selected="selected"><%= t('ddf.open_access.menu.go_to') %></option>
           <option value="<%= open_access_overview_path %>"><%= t('ddf.open_access.menu.overview') %></option>
           <option value="<%= open_access_development_path %>"><%= t('ddf.open_access.menu.development') %></option>

@@ -68,3 +68,22 @@ body[class~="blacklight-open_access_indicator-overview"] li#oa-overview a { colo
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { background: lighten($bluewood, 25%); }
 body[class~="blacklight-open_access_indicator-development"] li#oa-development i,
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { color: #fff; }
+
+
+nav.mobile .mobile-show {
+  float: right;
+  display: none;
+  @include respond-to($screen-md-min) {
+    display: block;
+  }
+  @include respond-to($iphone-landscape) {
+    float: none;
+    margin: 1em 0 .5em 0;
+  }
+}
+
+nav.mobile .mobile-hide {
+  @include respond-to($screen-md-min) {
+    display: none;
+  }
+}
