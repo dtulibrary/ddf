@@ -503,3 +503,11 @@ USING HTML5 DATA-* ATTRIBUTES:
 https://developer.mozilla.org/en/docs/Web/Guide/HTML/Using_data_attributes
 Using multiple values per attribute:
 http://stackoverflow.com/questions/11962091/is-it-possible-to-have-multiple-data-name-atributes-in-html5
+
+MOBILE NAV:
+http://bradfrost.com/blog/web/responsive-nav-patterns/#select
+This, sans the JS:
+https://css-tricks.com/convert-menu-to-dropdown/
+Also:
+https://www.nngroup.com/articles/mobile-navigation-patterns/
+https://studio.uxpin.com/blog/5-creative-mobile-ui-patterns-navigation/

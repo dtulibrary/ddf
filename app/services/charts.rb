@@ -95,8 +95,11 @@ module Charts
 
       # (str, str) -> str
       def translate(facet, code)
-        return code if METADATA_FACETS.include? facet
-        I18n.t([LABEL_TRANSLATIONS[facet], '.', code].join)
+        if METADATA_FACETS.include? facet
+          code
+        else
+          I18n.t([LABEL_TRANSLATIONS[facet], '.', code].join)
+        end
       end
 
       # These look up config/locales/[da|en].yml
