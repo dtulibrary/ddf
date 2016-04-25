@@ -22,15 +22,4 @@ feature 'Catalog search' do
       end
     end
   end
-  describe 'researchers' do
-    scenario 'searching' do
-      visit root_path
-      fill_in 'Search...', with: 'Muhammad'
-      select('Researchers', from: 'search_field')
-      click_button 'Search'
-      expect(page).to have_content 'Muhammad Rizwan Tabassum'
-    end
-
-
-  end
 end
