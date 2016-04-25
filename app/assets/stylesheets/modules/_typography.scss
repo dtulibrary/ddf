@@ -1585,3 +1585,8 @@ p.more-link a { text-decoration: underline; }
   ol { padding-left: 20px; }
   a, a:hover { color: $link-color; }
 }
+.profile-picture img {
+  margin-left: 20px;
+  border: 1px solid #e3e3e3;
+  max-height: 160px;
+}

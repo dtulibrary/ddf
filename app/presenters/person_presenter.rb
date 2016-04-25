@@ -61,6 +61,8 @@ class PersonPresenter < Dtu::DocumentPresenter
   def image
     if document.image.present?
       "<img src='#{document.image}' />"
+    else
+      ''
     end
   end
 

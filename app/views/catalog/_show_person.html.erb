@@ -1,5 +1,8 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <% presenter = present_person(document) %>
+<div class="profile-picture pull-right hidden-xs">
+  <%= presenter.image.html_safe  %>
+</div>
 <dl class="dl-horizontal  dl-invert">
 
   <% presenter.affiliations.each do |type, info| %>
@@ -22,7 +25,7 @@
   <ol>
     <% presenter.publications[:docs].each do |doc| %>
       <li>
-        <%= link_to doc.title, solr_document_path(doc.id) %>
+        <%= link_to doc.title.html_safe, solr_document_path(doc.id) %>
         (<%= doc.year_published %>)
       </li>
     <% end  %>
