@@ -28,6 +28,7 @@ $(document).ready(function() {
   3) Show corresponding card
 */
 $(document).ready(function() {
+
   $("ul.data-provider-logos-list li a").click(function(event) {
     event.preventDefault();
 
@@ -47,9 +48,8 @@ $(document).ready(function() {
 });
 
 
-$(function() { alert("Shout on DOM ready!"); });
 $(document).ready(function() { alert("Shout on DOM ready!"); });
-
+$(function() { alert("Shout on DOM ready from alias!"); });
 
 $(document).ready(function() {
   $('#print-selected').click(function()
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 // responsive subnavs
 $(function() {
-  alert("Shout on DOM ready!");
+  alert("Shout on DOM ready from mobile submenu!");
   // Create the dropdown base
   // $("<select />").appendTo("nav");
 
