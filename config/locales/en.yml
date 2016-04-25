@@ -267,6 +267,7 @@ en:
         universities: By University
       menu:
         header: Open Access Indicator
+        go_to: Go to...
         overview: Overview
         development: Development
       reports:

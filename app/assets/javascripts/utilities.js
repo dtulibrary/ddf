@@ -46,6 +46,11 @@ $(document).ready(function() {
 
 });
 
+
+$(function() { alert("Shout on DOM ready!"); });
+$(document).ready(function() { alert("Shout on DOM ready!"); });
+
+
 $(document).ready(function() {
   $('#print-selected').click(function()
   {
@@ -53,8 +58,11 @@ $(document).ready(function() {
   });
 });
 
+
+
 // responsive subnavs
 $(function() {
+  alert("Shout on DOM ready!");
   // Create the dropdown base
   // $("<select />").appendTo("nav");
 
@@ -82,3 +90,6 @@ $(function() {
   });
 
 });
+
+
+
