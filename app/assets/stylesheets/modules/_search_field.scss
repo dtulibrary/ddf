@@ -20,20 +20,11 @@ select#search_field {
     color: black;
     background-color: #FFF;
   }
+
+  // IE hide default down arrow
+  &::-ms-expand{ display:none;}
 }
 
-
-select#search_field::-ms-expand { /* for IE 11 */
-    display: none;
-}
-
-/*target Internet Explorer 9 and Internet Explorer 10:*/
-@media screen and (min-width:0\0) {
-    select#search_field {
-        background:none;
-        padding: 5px;
-    }
-}
 
 #search-field-container {
   width: 25%;
@@ -53,6 +44,7 @@ select#search_field::-ms-expand { /* for IE 11 */
   pointer-events:none;
   z-index: 20;
 }
+
 #field-label:before {
   content:'';
   right:4px; top:0px;
