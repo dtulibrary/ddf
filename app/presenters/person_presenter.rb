@@ -58,6 +58,12 @@ class PersonPresenter < Dtu::DocumentPresenter
     end
   end
 
+  def image
+    if document.image.present?
+      "<img src='#{document.image}' />"
+    end
+  end
+
   def parse_date(d)
     d.nil? ? Date.today : Date.parse(d)
   end

@@ -4,6 +4,18 @@ describe PersonPresenter do
   let(:document) { SolrDocument.new(source_doc, solr_response) }
   let(:presenter) { described_class.new(document, CatalogController.new) }
 
+  describe 'image' do
+    subject { presenter.image }
+    context "when there is an image url" do
+      let(:url) { 'http://site.dk/image.jpg' }
+      let(:source_doc) { { 'image_ssf' => [url] }}
+      it 'returns an image tag' do
+        expect(subject).to include '<img'
+        expect(subject).to include url
+      end
+    end
+  end
+
   describe 'affiliations' do
     subject { presenter.affiliations }
     it 'returns a hash of affiliations' do

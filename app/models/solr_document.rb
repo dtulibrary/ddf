@@ -32,6 +32,10 @@ class SolrDocument < Dtu::SolrDocument
     self['backlink_ss'].try(:first)
   end
 
+  def image
+    self['image_ssf'].try(:first)
+  end
+
   # Only inactive persons can be inactive,
   # active persons and publications are active
   def status
