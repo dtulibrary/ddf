@@ -1,7 +1,6 @@
-
 <% # header bar for doc items in index view -%>
-
-<div class="documentHeader row">
+<% presenter = present_person(document) %>
+<div class="documentHeader person row">
   <%# main title container for doc partial view
   How many bootstrap columns need to be reserved
   for bookmarks control depends on size.
@@ -12,6 +11,6 @@
     <span class="document-counter">
       <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
     </span>
-    <%= link_to_document document, :label => document['name_ts'].first, :counter => counter %>
+    <%= link_to_document document, :label => presenter.person_name, :counter => counter %>
   </h5>
 </div>
