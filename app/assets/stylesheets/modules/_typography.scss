@@ -694,6 +694,7 @@ ul.icon-labels__topnav>li > i {
 }
 
 ul.site-sections-list, ul.open-access-menu {
+  font-size: calc-em(18px);
   float: right;
   margin: 0;
   @include respond-to($ipad_portrait) {
@@ -899,6 +900,7 @@ h1.site-section .glyphicon {
 ul.subnav-items-list {
   margin: 0;
   font-family: $headline;
+  font-weight: 500;
   //text-align: right;
   @include above-viewport($iphone_landscape) {
     float: right;

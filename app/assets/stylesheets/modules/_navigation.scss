@@ -17,9 +17,9 @@ body[class~="blacklight-statistics"] li#statistics i,
 body[class~="blacklight-statistics"] li#statistics a { color: #fff; }
 
 // About
-body[class~="blacklight-pages-about"] li#about a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-about"] li#about i,
-body[class~="blacklight-pages-about"] li#about a { color: #fff; }
+body[class~="about"] li#about a { background: lighten($bluewood, 25%); }
+body[class~="about"] li#about i,
+body[class~="about"] li#about a { color: #fff; }
 
 //
 // SUBNAV
@@ -78,7 +78,7 @@ nav.mobile .mobile-show {
   }
   @include respond-to($iphone-landscape) {
     float: none;
-    margin: 1em 0 .5em 0;
+    margin: .5em 0 0em 0;
   }
 }
 
