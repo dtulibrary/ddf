@@ -1,34 +1,21 @@
 Chart.defaults.global.responsive = true;
 
 drawSegments = function(container) {
-  ctx = document.getElementById(container).getContext("2d");
-  data = document.getElementById(container).innerHTML;
-  json = JSON.parse(data);
-  return new Chart(ctx).Doughnut(json);
+  if (document.getElementById(container)) {
+    var ctx = document.getElementById(container).getContext("2d");
+    var data = document.getElementById(container).innerHTML;
+    var json = JSON.parse(data);
+    return new Chart(ctx).Doughnut(json);
+  }
 }
 
-// makeSegmentsClickable = function(chart, container) {
-//   var DOMElement = "#"+container;
-//   $("DOMElement").click(
-//     function(evt) {
-
-//       var locale = window.location.pathname.split('/')[1];
-//       var canvas = document.getElementById(container);
-//       var facet_frag = canvas.dataset.facet;
-//       var activePoints = chart.getSegmentsAtEvent(evt);
-//       var segment = translations[activePoints[0].label];
-
-//       var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-//       window.location = url;
-//     }
-//   );
-// }
-
 drawPlot = function(container) {
-  ctx = document.getElementById(container).getContext("2d");
-  data = document.getElementById(container).innerHTML;
-  json = JSON.parse(data);
-  return new Chart(ctx).Bar(json);
+  if (document.getElementById(container)) {
+    var ctx = document.getElementById(container).getContext("2d");
+    var data = document.getElementById(container).innerHTML;
+    var json = JSON.parse(data);
+    return new Chart(ctx).Bar(json);
+  }
 }
 
 var translations = {}
@@ -149,9 +136,4 @@ $(document).ready(function() {
 //   }
 // );
 //
-
-// Target URL structure for the Plot chart:
-// http://localhost:3000/en/catalog?range[pub_date_tsort][begin]=1960&range[pub_date_tsort][end]=1964&q=*%3A*
-// For both datasets at once:
-// http://localhost:3000/en/catalog?range[pub_date_tsort][begin]=1960&range[pub_date_tsort][end]=1964&range[submission_year_tis][begin]=1960&range[submission_year_tis][end]=1964&q=*%3A*
 

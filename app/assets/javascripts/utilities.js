@@ -47,10 +47,6 @@ $(document).ready(function() {
 
 });
 
-
-$(document).ready(function() { alert("Shout on DOM ready!"); });
-$(function() { alert("Shout on DOM ready from alias!"); });
-
 $(document).ready(function() {
   $('#print-selected').click(function()
   {
@@ -58,11 +54,9 @@ $(document).ready(function() {
   });
 });
 
-
-
 // responsive subnavs
 $(function() {
-  alert("Shout on DOM ready from mobile submenu!");
+  // alert("Shout on DOM ready from mobile submenu!");
   // Create the dropdown base
   // $("<select />").appendTo("nav");
 
@@ -85,11 +79,10 @@ $(function() {
   // To make dropdown actually work
   // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
   $("nav.mobile select").change(function() {
-    alert("foo");
     window.location = $(this).find("option:selected").val();
   });
-
 });
 
-
+// $(document).ready(function() { alert("Shout on DOM ready!"); });
+// $(function() { alert("Shout on DOM ready from alias!"); });
 
