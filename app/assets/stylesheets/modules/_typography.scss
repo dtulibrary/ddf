@@ -1576,3 +1576,22 @@ h2.facet-visualization-heading {
   font-weight: 500;
   margin: 1em 0 2em 0;
 }
+
+
+// TODO: TEST DEMO
+ul.locales-list-test {
+  margin-top: 2em;
+}
+ul.locales-list-test li {
+  font-style: normal;
+}
+ul.locales-list-test li:not(:last-child) {
+  margin-right: -.4em;
+  padding-right: -.4em;
+}
+ul.locales-list-test li:not(:last-child):after {
+  content: "|";
+  color: #fff;
+  margin-left: .08em;
+  padding-left: .08em;
+}
