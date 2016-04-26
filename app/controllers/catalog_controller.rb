@@ -198,7 +198,7 @@ class CatalogController < ApplicationController
         qf: '$person_qf'
       }
       field.solr_parameters = {
-        fq: 'format:person AND NOT source_ss:rdb_ucviden'
+        fq: 'format:person AND NOT source_ss:rdb_ucviden AND has_publications_b:true'
       }
     end
 
