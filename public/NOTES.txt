@@ -511,3 +511,9 @@ https://css-tricks.com/convert-menu-to-dropdown/
 Also:
 https://www.nngroup.com/articles/mobile-navigation-patterns/
 https://studio.uxpin.com/blog/5-creative-mobile-ui-patterns-navigation/
+
+NIL GUARDS WHEN FINDING DOM ELEMENTS — JS vs JQUERY:
+http://stackoverflow.com/questions/3247251/is-ifdocument-getelementbyidsomething-null-identical-to-ifdocument-getel
+http://stackoverflow.com/questions/477667/how-to-check-null-objects-in-jquery
+http://stackoverflow.com/questions/14028959/why-does-jquery-or-a-dom-method-such-as-getelementbyid-not-find-the-element
+

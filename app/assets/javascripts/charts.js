@@ -49,7 +49,7 @@ translations['Published']   = 'published'
 translations['Unknown']     = 'unknown'
 translations['Submitted']   = 'submitted'
 translations['Accepted']    = 'accepted'
-translations['In Press']    = 'in_press'
+translations['In press']    = 'in_press'
 translations['Unpublished'] = 'unpublished'
 
 translations['Publiceret']  = 'published'
