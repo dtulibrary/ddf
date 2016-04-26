@@ -71,7 +71,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'access_condition_s', :helper_method => :render_publication_status_facet
     config.add_facet_field 'review_status_s', :helper_method => :render_review_status_facet
     config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
-
+    config.add_facet_field 'cris_id_ss', show: false
+    
     config.add_facet_fields_to_solr_request!
 
     config.index.display_type_field = 'format'

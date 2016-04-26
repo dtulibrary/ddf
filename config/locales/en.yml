@@ -91,6 +91,7 @@ en:
           cluster_id_ss: ID
           has_orcid_b: ORCID
           person_affiliations_ssf: Affiliations
+          cris_id_ss: Research Database ID
         facet: *LABELS
         show: *LABELS
       form:

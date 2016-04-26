@@ -108,6 +108,7 @@ da:
           subtitle_ts: Undertitel
           cluster_id_ss: ID
           person_affiliations_ssf: Tilhørsforhold
+          cris_id_ss: Forskningsdatabase ID
         facet: *LABELS
         show: *LABELS
 
