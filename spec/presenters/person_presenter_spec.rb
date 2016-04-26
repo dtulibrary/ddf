@@ -9,8 +9,8 @@ describe PersonPresenter do
     context "when there is an image url" do
       let(:url) { 'http://site.dk/image.jpg' }
       let(:source_doc) { { 'image_ssf' => [url] }}
-      it 'returns an image tag' do
-        expect(subject).to include '<img'
+      it 'returns an object tag' do
+        expect(subject).to include '<object'
         expect(subject).to include url
       end
     end
