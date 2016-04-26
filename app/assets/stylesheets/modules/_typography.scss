@@ -1585,9 +1585,19 @@ p.more-link a { text-decoration: underline; }
   ol { padding-left: 20px; }
   a, a:hover { color: $link-color; }
 }
-.profile-picture img {
+.profile-picture object {
   margin-left: 20px;
   margin-top: -40px;
   border: 1px solid #e3e3e3;
   max-height: 160px;
+}
+
+#documents .profile-picture object { max-height: 120px; }
+
+.affiliations ol {
+  li {
+    list-style-type: none;
+    margin-bottom: 0.1em;
+
+  }
 }

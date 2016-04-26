@@ -44,7 +44,8 @@ class PersonPresenter < Dtu::DocumentPresenter
     end
     # sort affiliations with most recently finished first
     aff_sorted = affiliation_data.sort_by {|date, _| date }.reverse
-    aff_sorted.collect(&:last).join("<br/>").html_safe
+    list_elems = aff_sorted.collect(&:last).collect{ |elem| "<li>#{elem}</li>"}.join
+    "<ol>#{list_elems}</ol>".html_safe
   end
 
   def affiliation_dates(start_d, end_d)
@@ -60,7 +61,7 @@ class PersonPresenter < Dtu::DocumentPresenter
 
   def image
     if document.image.present?
-      "<img src='#{document.image}' />"
+      "<object data='#{document.image}'></object>"
     else
       ''
     end

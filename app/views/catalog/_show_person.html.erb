@@ -6,8 +6,17 @@
 
   <% presenter.affiliations.each do |type, info| %>
     <dt><%= t("ddf.researchers.affiliations.#{type}") %></dt>
-    <dd><%= info %></dd>
+    <%= content_tag :dd, id: type, class: 'affiliations' do %>
+      <%= info %>
+    <% end %>
+    <div class="more-link pull-right" data-link-for="#<%= type %>" style="display: none;">
+      <br/>
+      <a href="#" data-click-text="<%= t('ddf.researchers.affiliations.less')  %>">
+        <%= t('ddf.researchers.affiliations.more') %>
+      </a>
+    </div>
   <% end %>
+
 
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>

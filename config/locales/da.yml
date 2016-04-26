@@ -375,6 +375,8 @@ da:
       affiliations:
         current: Tilhørsforhold
         previous: Tidligere tilhørsforhold
+        more: Vis mere
+        less: Vis færre
   citations:
     form:
       number: "Antal:"

@@ -351,6 +351,8 @@ en:
       affiliations:
         current: Affiliations
         previous: Former Affiliations
+        more: Show more
+        less: Show less
 
   citations:
     form:
