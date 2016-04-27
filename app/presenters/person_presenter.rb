@@ -63,7 +63,7 @@ class PersonPresenter < Dtu::DocumentPresenter
 
   def image
     if document.image.present?
-      "<object data='#{document.image}'></object>"
+      "<object type='image/jpg' data='#{document.image}'></object>"
     else
       ''
     end
