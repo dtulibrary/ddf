@@ -152,18 +152,6 @@ h5.index a:hover {
   color: #FF530D;
 }
 
-ul.admin {
-  margin: .7em .5em 0 0;
-  font-size: .9em;
-  float: right;
-  font-style: italic;
-  font-family: $headline;
-}
-ul.admin li {
-  display: inline-block;
-  padding: 0 .3em;
-  margin: 0;
-}
 ul.admin a {
   padding: 0;
   margin: 0;
@@ -1578,36 +1566,28 @@ h2.facet-visualization-heading {
 }
 
 // LOCALE SWITCHER
-// div.logo-container { position: relative; }
 ul.locales-list {
-  display: block;
-    @include respond-to($screen-md-min) {
-    display: none;
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 0;
+  @include respond-to($screen-md-min) {
+    margin-bottom: -1em;
   }
 }
-ul.locales-list-mobile {
-  position: absolute;
-  top: -1.25em;
-  right: 1em;
-  display: none;
-    @include respond-to($screen-md-min) {
-    display: block;
-  }
-}
-ul.locales-list li { font-style: normal; }
-ul.locales-list li:not(:last-child) {
-  margin-right: -.4em;
-  padding-right: -.4em;
+ul.locales-list li {
+  font-style: normal;
+  margin-bottom: 0;
 }
 ul.locales-list li.locale:not(:last-child):after {
   content: "|";
   color: #eee;
-  margin-left: .08em;
-  padding-left: .08em;
 }
 ul.locales-list li a {
+  // background: #eee;
+  font-family: $headline;
+  padding: .3em .4em;
   text-decoration: none;
-  font-size: .92em;
+  font-size: .85em;
   letter-spacing: .05em;
   font-weight: 500;
 }

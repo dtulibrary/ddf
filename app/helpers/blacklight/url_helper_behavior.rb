@@ -293,7 +293,7 @@ module Blacklight::UrlHelperBehavior
     end
   end
 
-  # DEPRECATED
+  # DEPRECATED since the Statistics branch
   def render_locale_switcher_old(*locales)
     if I18n.locale.eql? locales[0]
       link_to t('blacklight.language_switcher'), request.params.except(:locale).merge(:locale => locales[1])
@@ -310,7 +310,7 @@ module Blacklight::UrlHelperBehavior
         "locale"
       end
       url = link_to(loc.to_s.upcase, request.params.except(:locale).merge(locale: loc))
-      "<li id='#{loc.to_s}' class='#{classlist}'> #{link_to url} </li>".html_safe
+      "<li id='#{loc.to_s}' class='#{classlist}'> #{url} </li>".html_safe
     end
   end
 
