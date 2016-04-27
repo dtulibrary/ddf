@@ -86,11 +86,22 @@ module Charts
       }
 
       # ([{}..]) -> [{}..]
-      def whitelist(facet_list)
-        facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
+      def whitelist(facet_segments)
+        facet = facet_segments.first[:name]
+        if !BLACKLISTED_CODES.has_key? facet
+          facet_segments
+        else
+          bad_codes = BLACKLISTED_CODES[facet]
+          facet_segments.select { |seg| !bad_codes.include? seg[:code] }
+        end
       end
 
-      BLACKLISTED_CODES = ['do']
+      BLACKLISTED_CODES = {
+        'format_orig_s'       => ['do'],
+        'isolanguage_ss'      => ['und', 'mul'],
+        'journal_title_facet' => ['Ikke Angivet']
+      }
+
       METADATA_FACETS = ['journal_title_facet', 'author_facet']
 
       # (str, str) -> str
@@ -254,7 +265,7 @@ module Charts
       a = []
       hash.each do |k, v|
         h = {}
-        # h.store(:facet, facet)
+        # h.store(:name, facet)
         h.store(:segment, k)
         h.store(:label, translate(facet, k))
         h.store(:value, v)
