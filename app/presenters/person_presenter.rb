@@ -51,7 +51,7 @@ class PersonPresenter < Dtu::DocumentPresenter
   end
 
   def affiliation_dates(start_d, end_d)
-    "(#{format_date(start_d)} - #{format_date(end_d)})"
+    "<span class='affiliation-dates'>(#{format_date(start_d)} - #{format_date(end_d)})</span>"
   end
 
   def format_date(d)
