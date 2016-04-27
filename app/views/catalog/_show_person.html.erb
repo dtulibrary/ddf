@@ -4,10 +4,10 @@
 </div>
 <dl class="dl-horizontal  dl-invert">
 
-  <% presenter.affiliations.each do |type, info| %>
+  <% presenter.affiliations.each do |type, affiliation_list| %>
     <dt><%= t("ddf.researchers.affiliations.#{type}") %></dt>
     <%= content_tag :dd, id: type, class: 'affiliations' do %>
-      <%= info %>
+      <%= affiliation_list %>
     <% end %>
     <div class="more-link pull-right" data-link-for="#<%= type %>" style="display: none;">
       <br/>

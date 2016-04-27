@@ -21,7 +21,7 @@ class PersonPresenter < Dtu::DocumentPresenter
     output = {}
     output['current'] = render_affilations(aff_data, 'current')
     output['previous'] = render_affilations(aff_data, 'previous')
-    output.select { |_,val| val.present? }
+    output.select { |_,val| val.present? }.transform_values {|list| "<ol>#{list}</list>".html_safe }
   end
 
   def render_affilations(data, status)
@@ -44,8 +44,10 @@ class PersonPresenter < Dtu::DocumentPresenter
     end
     # sort affiliations with most recently finished first
     aff_sorted = affiliation_data.sort_by {|date, _| date }.reverse
-    list_elems = aff_sorted.collect(&:last).collect{ |elem| "<li>#{elem}</li>"}.join
-    "<ol>#{list_elems}</ol>".html_safe
+    # only take text portion
+    list_elems = aff_sorted.collect(&:last)
+    # wrap elements in li tags
+    list_elems.collect{ |elem| "<li>#{elem}</li>"}.join
   end
 
   def affiliation_dates(start_d, end_d)
