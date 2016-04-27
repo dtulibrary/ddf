@@ -4,7 +4,7 @@ feature 'Document show' do
 
   background do
     visit root_path
-    fill_in 'Search...', with: 'search terms'
+    fill_in 'Search...', with: 'constant'
     click_button 'Search'
     first('h5.doctitle').find('a').click
   end

@@ -12,7 +12,6 @@ feature 'Researcher search' do
   end
 
   scenario 'sorting' do
-    pending "test docs don't have name_sort field yet"
     within '#sort-dropdown' do
       expect(page).to have_content 'relevance'
       expect(page).to have_content 'name'

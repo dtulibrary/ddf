@@ -489,7 +489,7 @@
   <dynamicField name="*_d" type="double" indexed="true" stored="true"/>
   <dynamicField name="*_p" type="location" indexed="true" stored="true"/>
   <dynamicField name="*_c" type="currency" indexed="true" stored="true"/>
-  
+
   <!-- From 4.10 schema.xml -->
   <dynamicField name="*_sf"  type="string" indexed="false" stored="true" multiValued="false" />
   <dynamicField name="*_ssf" type="string" indexed="false" stored="true" multiValued="true" />
@@ -497,7 +497,7 @@
   <dynamicField name="*_ts"  type="text_en_splitting" indexed="true" stored="true" multiValued="true" />
 
   <dynamicField name="*_tsort" type="tint" indexed="true" stored="false" multiValued="false" required="false" />
-  <dynamixField name="*_sort"  type="string" indexed="true" stored="false" multiValued="false" required="false" />
+  <dynamicField name="*_sort"  type="string" indexed="true" stored="false" multiValued="false" required="false" />
   <dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true" />
   <dynamicField name="*_json"  type="string" indexed="false" stored="true" multiValued="false" />
 

@@ -21,40 +21,32 @@ feature 'Catalog search' do
     end
   end
 
-  feature 'author highlighting' do
+  describe 'highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: 'jensen, jens'
+      fill_in 'Search...', with: search_term
       click_button 'Search'
     end
 
-    it 'contains the highlighted author name' do
-      expect(page.find_all('em', text: 'Jensen').first).not_to be_nil
+    feature 'author highlighting' do
+      let(:search_term) { 'Daniel' }
+      it 'contains the highlighted author name' do
+        expect(page.find_all('em', text: search_term).first).not_to be_nil
+      end
+    end
+
+    feature 'abstract highlighting' do
+      let(:search_term) { 'constant' }
+      it 'contains a highlighted abstract' do
+        expect(page.find_all('em', text: search_term).first).not_to be_nil
+      end
+    end
+
+    feature 'publisher highlighting' do
+      let(:search_term) { 'computing machinery' }
+      it 'contains a highlighted publisher' do
+        expect(page.find_all('em', text: 'computing').first).not_to be_nil
+      end
     end
   end
-
-  feature 'abstract highlighting' do
-    background do
-      visit root_path
-      fill_in 'Search...', with: 'fish'
-      click_button 'Search'
-    end
-
-    it 'contains a highlighted abstract' do
-      expect(page.find_all('em', text: 'fish').first).not_to be_nil
-    end
-  end
-
-  feature 'publisher highlighting' do
-    background do
-      visit root_path
-      fill_in 'Search...', with: 'Blackwell'
-      click_button 'Search'
-    end
-
-    it 'contains a highlighted publisher' do
-      expect(page.find_all('em', text: 'Blackwell').first).not_to be_nil
-    end
-  end
-
 end
