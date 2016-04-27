@@ -1583,7 +1583,8 @@ p.more-link a { text-decoration: underline; }
     color: $bluewood;
   }
   ol { padding-left: 20px; }
-  a, a:hover { color: $link-color; }
+  a { color: $link-color; }
+  a:hover { color: red; }
 }
 .profile-picture object {
   margin-left: 20px;
@@ -1600,4 +1601,16 @@ p.more-link a { text-decoration: underline; }
     list-style-type: none;
     margin-bottom: 0.1em;
   }
+}
+
+.more-link a {
+  color: $link-color;
+  &:hover {
+    color: red;
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+   }
 }

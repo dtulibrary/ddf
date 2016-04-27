@@ -8,13 +8,13 @@ $(function(){
     $container.find('li:nth-child(1n+3)').toggle();
     $moreLink.insertAfter('dd#' + this.id +  ' li:nth-child(3)').show();
     $moreLink.children('a').click(function(){
+      // Hide or show depending on current status
+      $container.find('li:nth-child(1n+3)').fadeToggle();
       // swap texts around
       var currentText = $(this).text();
       var clickText = $(this).data('clickText');
       $(this).text(clickText);
       $(this).data('clickText', currentText);
-      // Hide or show depending on current status
-      $container.find('li:nth-child(1n+3)').fadeToggle();
       return false; // don't go anywhere with the link
     })
 
