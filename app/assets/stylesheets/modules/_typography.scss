@@ -168,8 +168,8 @@ ul.admin a {
   padding: 0;
   margin: 0;
 }
-ul.admin a:link    { color: #fff; }
-ul.admin a:visited { color: #fff; }
+ul.admin a:link    { color: #bbb; }
+ul.admin a:visited { color: #bbb; }
 ul.admin a:hover,
 ul.admin a:visited:hover,
 ul.admin a:focus,
@@ -353,7 +353,7 @@ form.range_limit input.submit {
 form.range_limit input.submit:hover { background: darken(#2e6da4, 7%); }
 
 div.search-options-container {
-  padding-top: 1.25em;
+  padding-top: 1.25em; // TODO
   @include respond-to($ipad_portrait) { padding: .3em 0 0 0; }
 }
 ul.search-extras-list {
@@ -1577,21 +1577,38 @@ h2.facet-visualization-heading {
   margin: 1em 0 2em 0;
 }
 
-
-// TODO: TEST DEMO
-ul.locales-list-test {
-  margin-top: 2em;
+// LOCALE SWITCHER
+// div.logo-container { position: relative; }
+ul.locales-list {
+  display: block;
+    @include respond-to($screen-md-min) {
+    display: none;
+  }
 }
-ul.locales-list-test li {
-  font-style: normal;
+ul.locales-list-mobile {
+  position: absolute;
+  top: -1.25em;
+  right: 1em;
+  display: none;
+    @include respond-to($screen-md-min) {
+    display: block;
+  }
 }
-ul.locales-list-test li:not(:last-child) {
+ul.locales-list li { font-style: normal; }
+ul.locales-list li:not(:last-child) {
   margin-right: -.4em;
   padding-right: -.4em;
 }
-ul.locales-list-test li:not(:last-child):after {
+ul.locales-list li.locale:not(:last-child):after {
   content: "|";
-  color: #fff;
+  color: #eee;
   margin-left: .08em;
   padding-left: .08em;
 }
+ul.locales-list li a {
+  text-decoration: none;
+  font-size: .92em;
+  letter-spacing: .05em;
+  font-weight: 500;
+}
+ul.locales-list li.current a { color: #fff; }
