@@ -1595,9 +1595,9 @@ p.more-link a { text-decoration: underline; }
 #documents .profile-picture object { max-height: 120px; }
 
 .affiliations ol {
+  margin-bottom: 0;
   li {
     list-style-type: none;
     margin-bottom: 0.1em;
-
   }
 }
