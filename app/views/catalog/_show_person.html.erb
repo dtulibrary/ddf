@@ -37,7 +37,6 @@
       </li>
     <% end  %>
   </ol>
-
-  <%= link_to t("ddf.people.all_publications", number: presenter.publications[:size]), catalog_index_path('f[cris_id_ss][]' => document.cris_id, sort: 'pub_date_tsort desc') if presenter.publications[:size] > 10 %>
+  <%= presenter.publications_link %>
 </div>
 <% end  %>

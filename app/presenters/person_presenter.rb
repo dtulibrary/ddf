@@ -5,15 +5,22 @@ class PersonPresenter < Dtu::DocumentPresenter
     document['name_ts'].first || document.id
   end
 
+  def publications
+    @publications ||= fetch_publications
+  end
+
   def fetch_publications
-    solr = SolrService.new
-    publications = solr.author_docs(document.cris_id)
+    publications = SolrService.author_docs(document.cris_ids)
     publications[:docs] = publications[:docs].collect { |doc| SolrDocument.new(doc) }
     publications
   end
 
-  def publications
-    @publications ||= fetch_publications
+
+  def publications_link
+    return unless publications[:size] > 10
+    link_to t('ddf.people.all_publications', number: publications[:size]),
+      catalog_index_path('f[cris_id_ss][]' => SolrService.cris_search(document.cris_ids),
+      sort: 'pub_date_tsort desc')
   end
 
   def affiliations

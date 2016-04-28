@@ -205,16 +205,15 @@ module Blacklight::UrlHelperBehavior
     facet_config = facet_configuration_for_field(field)
 
     value = facet_value_for_facet_item(item)
-
     p = reset_search_params(source_params)
     p[:f] = (p[:f] || {}).dup # the command above is not deep in rails3, !@#$!@#$
     p[:f][field] = (p[:f][field] || []).dup
-
     if facet_config.single and not p[:f][field].empty?
       p[:f][field] = []
     end
 
     p[:f][field].push(value)
+    p[:f] = Hash[p[:f].map { |k, v| [k, [v.join(' OR ')]] }]
 
     if item and item.respond_to?(:fq) and item.fq
       item.fq.each do |f,v|

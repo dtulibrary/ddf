@@ -54,12 +54,24 @@ class SolrDocument < Dtu::SolrDocument
     self['source_id_ss'].try(:first)
   end
 
+  def source_ids
+    self['source_id_ss'] || []
+  end
+
+  def cris_ids
+    source_ids.map { |sid| source_to_cris(sid) }
+  end
+
   def parse_cris_id
     if source_id.present?
-      source_id.split(':').last
+      source_to_cris(source_id)
     elsif backlink.present?
       backlink.slice(/\(.*\)/).sub('(', '').sub(')','')
     end
+  end
+
+  def source_to_cris(source)
+    source.split(':').last
   end
 
 
