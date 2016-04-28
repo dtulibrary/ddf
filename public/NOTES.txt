@@ -517,3 +517,6 @@ http://stackoverflow.com/questions/3247251/is-ifdocument-getelementbyidsomething
 http://stackoverflow.com/questions/477667/how-to-check-null-objects-in-jquery
 http://stackoverflow.com/questions/14028959/why-does-jquery-or-a-dom-method-such-as-getelementbyid-not-find-the-element
 
+SMOOTH SCROLLING WITH JQUERY:
+https://css-tricks.com/snippets/jquery/smooth-scrolling/
+(Used on /statistics)

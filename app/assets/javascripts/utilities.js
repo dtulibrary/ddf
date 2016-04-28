@@ -54,35 +54,28 @@ $(document).ready(function() {
   });
 });
 
-// responsive subnavs
+// Responsive subnavs, taken from:
+// https://css-tricks.com/convert-menu-to-dropdown/
 $(function() {
-  // alert("Shout on DOM ready from mobile submenu!");
-  // Create the dropdown base
-  // $("<select />").appendTo("nav");
-
-  // // Create default option "Go to..."
-  // $("<option />", {
-  //  "selected": "selected",
-  //  "value"   : "",
-  //  "text"    : "Go to..."
-  // }).appendTo("nav select");
-
-  // // Populate dropdown with menu items
-  // $("nav a").each(function() {
-  // var el = $(this);
-  // $("<option />", {
-  //    "value"   : el.attr("href"),
-  //    "text"    : el.text()
-  // }).appendTo("nav select");
-  // });
-
-  // To make dropdown actually work
   // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
   $("nav.mobile select").change(function() {
     window.location = $(this).find("option:selected").val();
   });
 });
 
-// $(document).ready(function() { alert("Shout on DOM ready!"); });
-// $(function() { alert("Shout on DOM ready from alias!"); });
-
+// Smooth scrolling to local HTML anchors, taken from:
+// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 800);
+        return false;
+      }
+    }
+  });
+});
