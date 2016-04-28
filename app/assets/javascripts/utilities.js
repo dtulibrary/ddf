@@ -2,7 +2,7 @@
 $(document).ready(function() {
   rest = $(".chartlist.types li")
   .filter(function(index) {
-    return index >= 12;
+    return index >= 13;
   })
 
   rest.hide();

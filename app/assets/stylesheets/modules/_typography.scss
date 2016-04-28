@@ -1585,13 +1585,23 @@ ul.locales-list li.locale:not(:last-child):after {
 ul.locales-list li a {
   // background: #eee;
   font-family: $headline;
-  padding: .3em .4em;
+  padding: .3em .1em;
   text-decoration: none;
   font-size: .85em;
   letter-spacing: .05em;
   font-weight: 500;
 }
 ul.locales-list li.current a { color: #fff; }
+
+// STATISTICS PAGE
+h1.statistics-headline {
+  font-family: $headline;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: calc-em(20px);
+  letter-spacing: .09em;
+  margin: .5em 0 1.5em 0;
+}
 
 nav.statistics-local {
   background: lighten($blue-3, 17%);
@@ -1610,36 +1620,22 @@ p.jump {
 ul.statistics-sections-list {
   margin: 0;
   padding: 0;
-
 }
-
 ul.statistics-sections-list li {
   margin: 0;
   padding: 0;
   display: inline-block;
-  // @include respond-to($screen-md-min) {
-  //   display: block;
-  // }
+  @include respond-to($screen-sm-min) {
+    margin-bottom: .3em;
+  }
 }
-ul.statistics-sections-list li:not(:last-child) { margin-right: .5em; }
+ul.statistics-sections-list li:not(:last-child) { margin-right: 1em; }
 
-// ul.statistics-sections-list li a {
-//    @include respond-to($screen-md-min) {
-//     display: inline-block;
-//     padding: 1em 0;
-//   }
-// }
-
-
-h1.statistics-headline {
-  font-family: $headline;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: calc-em(20px);
-  letter-spacing: .09em;
-  margin: .5em 0 1.5em 0;
+ul.statistics-sections-list li i {
+  color: $blue-2;
+  font-size: calc-em(19px);
 }
 
-div.statistics-nav-container {
-  margin-bottom: 3em;
-}
+div.statistics-row a[name],
+div.statistics-row a[name]:hover { text-decoration: none; }
+

@@ -12,29 +12,33 @@
           <ul class="statistics-sections-list">
             <li>
               <i class="fa fa-pie-chart" aria-hidden="true"></i>
-              <a href="">Indicators</a>;
+              <a href="#indicators">Indicators</a>;
             </li>
             <li>
               <i class="fa fa-bar-chart" aria-hidden="true"></i>
-              <a href="">Years</a>;
+              <a href="#years">Years</a>;
             </li>
             <li>
               <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-              <a href="">Type &amp; Language</a>;
+              <a href="#types">Type &amp; Language</a>;
             </li>
             <li>
               <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-              <a href="">Institutions, Authors, &amp; Journals</a>
+              <a href="#institutions">Institutions, Authors, &amp; Journals</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <div class="row statistics-row">
       <h2 class="chart-heading">
-        <em><%= t("blacklight.data_visualization.by") %></em>
-        <%= t("blacklight.data_visualization.indicator") %>
+        <a name="indicators">
+          <em><%= t("blacklight.data_visualization.by") %></em>
+          <%= t("blacklight.data_visualization.indicator") %>
+        </a>
       </h2>
 
       <div class="col-md-3">
@@ -70,28 +74,35 @@
         </canvas>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <div class="row statistics-row">
       <h2 class="chart-heading">
-        <%# t("blacklight.data_visualization.publications") %>
-        <em><%= t("blacklight.data_visualization.by") %></em>
-        <%= t("blacklight.data_visualization.publication_year") %>
-        <em><%= t("blacklight.data_visualization.and") %></em>
-        <%= t("blacklight.data_visualization.submission_year") %>
+        <a name="years">
+          <%# t("blacklight.data_visualization.publications") %>
+          <em><%= t("blacklight.data_visualization.by") %></em>
+          <%= t("blacklight.data_visualization.publication_year") %>
+          <em><%= t("blacklight.data_visualization.and") %></em>
+          <%= t("blacklight.data_visualization.submission_year") %>
+        </a>
       </h2>
       <canvas id="publication-timeline" class="plot" height="160" data-facets="access_condition_s;submission_year_tis">
         <%= @by_year %>
       </canvas>
     </div>
+  </div>
 
   <div class="container">
     <div class="row statistics-row">
       <div class="col-md-6 chart">
         <section>
           <h2 class="chart-heading">
-            <%# t("blacklight.data_visualization.publications") %>
-            <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.type") %>
+            <a name="types">
+              <%# t("blacklight.data_visualization.publications") %>
+              <em><%= t("blacklight.data_visualization.by") %></em>
+              <%= t("blacklight.data_visualization.type") %>
+            </a>
           </h2>
           <ul class="chartlist types">
             <% @by_type.each do |facet| %>
@@ -141,9 +152,11 @@
       <div class="col-md-4 chart">
         <section>
           <h1 class="chart-heading">
-            <%# t("blacklight.data_visualization.publications") %>
-            <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.institution") %>
+            <a name="institutions">
+              <%# t("blacklight.data_visualization.publications") %>
+              <em><%= t("blacklight.data_visualization.by") %></em>
+              <%= t("blacklight.data_visualization.institution") %>
+            </a>
           </h1>
           <ul class="chartlist institutions">
             <% @by_institution.each do |facet| %>
