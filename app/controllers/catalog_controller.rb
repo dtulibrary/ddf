@@ -12,7 +12,17 @@ class CatalogController < ApplicationController
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = 'ddf_publ'
-
+    config.default_solr_params = {
+      :q => '*:*',
+      :rows => 10,
+      :hl => true,
+      'hl.snippets' => 3,
+      'hl.usePhraseHighlighter' => true,
+      'hl.fl' => 'title_ts, author_ts, journal_title_ts, conf_title_ts, abstract_ts, publisher_ts',
+      'hl.fragsize' => 300,
+      fq: 'NOT format:person'
+    }
+    
     config.document_presenter_class = DDFPresenter
     config.metrics_presenter_classes = [ Dtu::Metrics::AltmetricPresenter, Dtu::Metrics::OrcidPresenter ]
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
@@ -72,7 +82,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'review_status_s', :helper_method => :render_review_status_facet
     config.add_facet_field 'research_area_ss', :helper_method => :render_research_area_facet
     config.add_facet_field 'cris_id_ss', show: false
-    
+
     config.add_facet_fields_to_solr_request!
 
     config.index.display_type_field = 'format'
@@ -199,7 +209,8 @@ class CatalogController < ApplicationController
         qf: '$person_qf'
       }
       field.solr_parameters = {
-        fq: 'format:person AND NOT source_ss:rdb_ucviden AND has_publications_b:true'
+        fq: 'format:person AND NOT source_ss:rdb_ucviden AND has_publications_b:true',
+        'hl.fl' => 'orcid_ss'
       }
     end
 

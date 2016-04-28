@@ -23,8 +23,14 @@ feature 'Researcher search' do
   end
 
   scenario 'show page' do
-    click_link('Jens', match: :first)
+    click_link(search_term, match: :first)
     expect(page).to have_content search_term
   end
 
+  feature 'orcid search' do
+    let(:search_term) { '0000-0001-6296-3310' }
+    scenario 'results' do
+      expect(page.find_all('em', text: search_term).first).not_to be_nil
+    end
+  end
 end

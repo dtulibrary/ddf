@@ -1,8 +1,9 @@
 feature 'Catalog search' do
   describe 'publications search' do
+    let(:search_term) { 'fish' }
     background do
       visit root_path
-      fill_in 'Search...', with: 'fish'
+      fill_in 'Search...', with: search_term
       click_button 'Search'
     end
 
@@ -19,6 +20,13 @@ feature 'Catalog search' do
         expect(page).to have_content 'relevance'
         expect(page).to have_content 'year'
         expect(page).to have_content 'title'
+      end
+    end
+
+    describe 'orcid search' do
+      let(:search_term) { '0000-0001-6296-3310' }
+      it 'should not retrieve researchers' do
+        expect(page).to have_content 'Your search did not find any records'
       end
     end
   end
