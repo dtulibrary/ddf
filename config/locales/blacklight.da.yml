@@ -57,6 +57,9 @@ da:
       oa_indicator: Open Access Indikator
       more_statistics: Mere Statistik
       more_oa: Mere Information
+      publication_year: Udgivelsesår
+      and: og
+      submission_year: Indberetningsår
 
     tools:
       cite: 'Citer'

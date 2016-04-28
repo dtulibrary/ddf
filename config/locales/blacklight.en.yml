@@ -50,6 +50,9 @@ en:
       oa_indicator: Open Access Indicator
       more_statistics: More Statistics
       more_oa: More Information
+      publication_year: Publication Year
+      and: and
+      submission_year: Submission Year
 
     entry_name:
         default: 'entry'

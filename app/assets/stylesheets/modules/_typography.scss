@@ -1,4 +1,4 @@
-@import "../base/all";
+ @import "../base/all";
 
 $sans:      'Open Sans', 'Helvetica Neue', sans-serif;
 $serif:     'Crimson Text', Georgia, serif;
@@ -1592,3 +1592,54 @@ ul.locales-list li a {
   font-weight: 500;
 }
 ul.locales-list li.current a { color: #fff; }
+
+nav.statistics-local {
+  background: lighten($blue-3, 17%);
+  text-align: center;
+  padding: .5em 0 .7em 0;
+  font-size: .95em;
+  border-top: 1px solid $blue-3;
+  border-bottom: 1px solid $blue-3;
+}
+
+p.jump {
+  font-weight: 600;
+  margin: 0 0 .25em 0;
+}
+
+ul.statistics-sections-list {
+  margin: 0;
+  padding: 0;
+
+}
+
+ul.statistics-sections-list li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  // @include respond-to($screen-md-min) {
+  //   display: block;
+  // }
+}
+ul.statistics-sections-list li:not(:last-child) { margin-right: .5em; }
+
+// ul.statistics-sections-list li a {
+//    @include respond-to($screen-md-min) {
+//     display: inline-block;
+//     padding: 1em 0;
+//   }
+// }
+
+
+h1.statistics-headline {
+  font-family: $headline;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: calc-em(20px);
+  letter-spacing: .09em;
+  margin: .5em 0 1.5em 0;
+}
+
+div.statistics-nav-container {
+  margin-bottom: 3em;
+}
