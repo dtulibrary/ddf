@@ -105,7 +105,7 @@ da:
           relevance: 'relevans'
           year: 'år'
           title: 'titel'
-          name: navn
+          name: efternavn
 
     footer:
       text_html: "Copyright &copy; 1998-%{year} Danmarks Elektroniske Fag- go Forskningsbibliotek - Danske Agentur for Bibliotek og Medier </br>i samarbejde med Kulturministeriet, Uddannelses- og Forskningsministeriet samt Undervisningsministeriet"

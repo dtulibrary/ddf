@@ -14,7 +14,7 @@ feature 'Researcher search' do
   scenario 'sorting' do
     within '#sort-dropdown' do
       expect(page).to have_content 'relevance'
-      expect(page).to have_content 'name'
+      expect(page).to have_content 'surname'
       expect(page).not_to have_content 'year'
       expect(page).not_to have_content 'title'
       click_link 'name'
