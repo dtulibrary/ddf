@@ -1077,6 +1077,8 @@
         journal_part_sort
         journal_page_start_tsort
         doi_ss
+        orcid_ss
+        cris_id_ss
       </str>
     <str name="pf">
         title_ts^5
@@ -1121,6 +1123,7 @@
       <str name="person_qf">
         name_ts
         orcid_ss
+        cris_id_ss
       </str>
       <!--
       <str name="subject_pf"></str>

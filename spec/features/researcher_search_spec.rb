@@ -27,10 +27,17 @@ feature 'Researcher search' do
     expect(page).to have_content search_term
   end
 
-  feature 'orcid search' do
+  describe 'orcid search' do
     let(:search_term) { '0000-0001-6296-3310' }
-    scenario 'results' do
-      expect(page.find_all('em', text: search_term).first).not_to be_nil
+    it 'should retrieve the correct researcher' do
+      expect(page).to have_content 'Mette Bak-Andersen'
+    end
+  end
+  describe 'cris search' do
+    let(:search_term) { 'bd876eba-edd3-45bd-a37f-b9e7ff1cd99e' }
+    it 'should find the correct researcher' do
+      pending 'Requires work in Metastore to add cris ids to researchers'
+      expect(page).to have_content 'Mette Bak-Andersen'
     end
   end
 end

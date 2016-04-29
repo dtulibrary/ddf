@@ -24,9 +24,19 @@ feature 'Catalog search' do
     end
 
     describe 'orcid search' do
-      let(:search_term) { '0000-0001-6296-3310' }
+      let(:search_term) { '0000-0003-2461-507X' }
+      it 'should retrieve publications' do
+        expect(page).to have_content 'Linear Logic by Levels and Bounded Time Complexity'
+      end
       it 'should not retrieve researchers' do
-        expect(page).to have_content 'Your search did not find any records'
+        expect(page).not_to have_content 'Thomas Haagen Birch'
+      end
+    end
+
+    describe 'cris search' do
+      let(:search_term) { '80ef6100-b171-4ef2-8370-265dbd7b57a2' }
+      it 'should retrieve publications with this cris id' do
+        expect(page).to have_content 'Eosinofil akut lymfatisk leukæmi hos yngre mand hjemvendt fra rejse i troperne'
       end
     end
   end
