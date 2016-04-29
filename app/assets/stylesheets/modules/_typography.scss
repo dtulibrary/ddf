@@ -156,8 +156,8 @@ ul.admin a {
   padding: 0;
   margin: 0;
 }
-ul.admin a:link    { color: #bbb; }
-ul.admin a:visited { color: #bbb; }
+ul.admin a:link    { color: lighten($bluewood, 45%); }
+ul.admin a:visited { color: lighten($bluewood, 45%); }
 ul.admin a:hover,
 ul.admin a:visited:hover,
 ul.admin a:focus,
@@ -1636,6 +1636,46 @@ ul.statistics-sections-list li i {
   font-size: calc-em(19px);
 }
 
-div.statistics-row a[name],
-div.statistics-row a[name]:hover { text-decoration: none; }
+a[name],
+a[name]:hover { text-decoration: none; }
+
+// CONTAIN
+div.contain {
+  overflow: hidden;
+  // width: 20%;
+  // margin: 0 auto;
+}
+div.contain > span.divider {
+    color: #bf0000;
+    display: table;
+    margin: 2em auto;
+    padding: 0 1em;
+    position: relative;
+    text-shadow: -0.03em 0.03em #aaa;
+}
+div.contain > span.divider:before { left: -9999%; }
+div.contain > span.divider::after { right: -9999%; }
+div.contain > span.divider:before,
+div.contain > span.divider:after {
+    background: #ccc;
+    content: " ";
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 9999%;
+}
+div.contain-bottom > span.divider:before,
+div.contain-bottom > span.divider:after { background: inherit; }
+div.contain-bottom > span.divider { margin: 1em auto 0 auto; }
+
+a.to-the-top {
+  color: $blue-3;
+  font-size: 1.5em;
+}
+a.to-the-top:hover { color: $blue-2; }
+a.to-the-top:visited,
+a.to-the-top:visited:hover { color: $blue-3; }
+a.to-the-top:active { color: $orange; }
 
