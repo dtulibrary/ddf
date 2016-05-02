@@ -29,6 +29,13 @@ en:
 
     data_visualization:
       publication_statistics: Publication Statistics
+      upper_navigation:
+        jump_to: Jump to
+        indicators: Indicators
+        years: Years
+        type_language: Type & Language
+        institutions_authors_journals: Institutions, Authors, & Journals
+      indicator: Indicator
       publications: Publications
       national: National
       by: "by"
@@ -40,7 +47,6 @@ en:
       scientific_level: Scientific Level
       main_research_area: Main Research Area
       publication_status: Publication Status
-      timeline: Timeline
       institution: Institution
       language: Language
       journal_title: Journal Title

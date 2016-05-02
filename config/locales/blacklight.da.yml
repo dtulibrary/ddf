@@ -36,6 +36,13 @@ da:
 
     data_visualization:
       publication_statistics: Publikations-statistikker
+      upper_navigation:
+        jump_to: Hop til
+        indicators: Indikatorer
+        years: År
+        type_language: Type & Sprog
+        institutions_authors_journals: Institutioner, Forfattere, & Tidskrifter
+      indicator: Indikator
       publications: Publikationer
       national: Nationalt
       by: "efter"
@@ -47,7 +54,6 @@ da:
       scientific_level: Videnskabeligt niveau
       main_research_area: Hovedforskningsområde
       publication_status: Publikationsstatus
-      timeline: Tidslinje
       institution: Institution
       language: Sprog
       journal_title: Tidskriftens Titel
