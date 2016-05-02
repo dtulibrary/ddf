@@ -378,19 +378,18 @@ end
   end
 
   def render_logo_from(image_name)
-    image_tag(logo_path(image_name))
+    image_tag(small_logo_path(image_name))
   end
 
   def data_provider_path(image_name)
     "about/data/providers/##{image_name}"
   end
 
-  def logo_path(image_name)
-    if Rails.application.assets.find_asset("data-providers/#{image_name}.#{I18n.locale}.png")
-      "data-providers/#{image_name}.#{I18n.locale}.png"
-    elsif Rails.application.assets.find_asset("data-providers/#{image_name}.png")
-      "data-providers/#{image_name}.png"
-    end
+  def small_logo_path(image_name)
+    path_with_locale    = "data-providers/small/#{image_name}.#{I18n.locale}.png"
+    path_without_locale = "data-providers/small/#{image_name}.png"
+    static_asset = Rails.application.assets.find_asset(path_with_locale) || Rails.application.assets.find_asset(path_without_locale)
+    static_asset.logical_path
     # TODO: Handle exception(s)
   end
 
