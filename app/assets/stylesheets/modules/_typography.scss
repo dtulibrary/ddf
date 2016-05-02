@@ -1105,13 +1105,22 @@ ul.data-provider-logos-list li:hover {
   -webkit-transform: scale(1.4);
   -ms-transform: scale(1.4);
   transform: scale(1.4);
-  // background: lighten($bluewood, 65%);
-  background: #ccc;
+  background: inherit;
+  border: 0;
 }
 
-ul.data-provider-logos-list li:active { background: lighten($bluewood, 55%); }
+ul.data-provider-logos-list li:active { background: inherit; }
 
 ul.data-provider-logos-list li a { display: block; }
+ul.data-provider-logos-list li a:hover,
+ul.data-provider-logos-list li a:visited,
+ul.data-provider-logos-list li a:active { border: 0; }
+
+ul.data-provider-logos-list li a img,
+ul.data-provider-logos-list li a:hover img,
+ul.data-provider-logos-list li a:visited img,
+ul.data-provider-logos-list li a:active img { border: 0; }
+
 ul.data-provider-logos-list li i.glyphicon {
   position: absolute;
   top: -7px;
