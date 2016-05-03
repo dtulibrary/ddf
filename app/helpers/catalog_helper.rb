@@ -382,7 +382,7 @@ end
   end
 
   def data_provider_path(image_name)
-    "about/data/providers/##{image_name}"
+    "about/research-institutions/##{image_name}"
   end
 
   def small_logo_path(image_name)
