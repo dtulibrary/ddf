@@ -89,7 +89,7 @@ da:
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           fulltext_access: Fuldtekstadgang
-          data_providers: Forskningsinstitutioner
+          data_providers: Institutioner
         facet:
           author_facet: Forfatter
           format_orig_s: Type

@@ -72,7 +72,7 @@ en:
           supervisor_ts: Supervisor
           editor_ts: Editor
           fulltext_access: Full text access
-          data_providers: Research Institutions
+          data_providers: Institutions
         facet:
           author_facet: Author
           journal_title_facet: Journal Title
