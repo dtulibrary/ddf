@@ -35,9 +35,9 @@ body[class~="blacklight-pages-data"] li#data i,
 body[class~="blacklight-pages-data"] li#data a { color: #fff; }
 
 // About > Data Providers
-body[class~="blacklight-pages-data_providers"] li#data-providers a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-data_providers"] li#data-providers i,
-body[class~="blacklight-pages-data_providers"] li#data-providers a { color: #fff; }
+body[class~="blacklight-pages-research_institutions"] li#data-providers a { background: lighten($bluewood, 25%); }
+body[class~="blacklight-pages-research_institutions"] li#data-providers i,
+body[class~="blacklight-pages-research_institutions"] li#data-providers a { color: #fff; }
 
 // About > FAQ
 body[class~="blacklight-pages-faq"] li#faq a { background: lighten($bluewood, 25%); }

@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   get 'about/privacy' => 'pages#privacy'
 
 
-  get 'about/data/providers' => 'pages#data_providers'
+  get 'about/research-institutions' => 'pages#research_institutions'
 
   # OTHER
   get 'pattern-library' => 'pages#pattern_library'

@@ -57,26 +57,26 @@ h1.logo {
   display: inline-block;
   font-family: $headline;
   font-size: calc-em(23px);
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   line-height: 1.1em;
   letter-spacing: .125em;
   color: $bluewood;
   color: #fff;
-  margin: 0 0 0 0;
+  margin: .5em 0 0 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
   }
 }
 
 h1.logo em {
-  font-size: calc-em(18px);
+  font-size: calc-em(20px);
   display: block;
   text-transform: none;
   letter-spacing: 0;
   font-weight: normal;
   font-family: $serif;
-  color: $orange;
+  color: lighten($orange, 15%);
 }
 
 /* PROTOTYPE START */
@@ -1136,20 +1136,6 @@ ul.data-provider-logos-list li i.glyphicon {
   display: none;
 }
 
-/* TODO: DOESN'T WORK
-ul.data-provider-logos-list li,
-ul.data-provider-logos-list li a,
-ul.data-provider-logos-list li img,
-ul.data-provider-logos-list li:active,
-ul.data-provider-logos-list li:focus,
-ul.data-provider-logos-list li a:active,
-ul.data-provider-logos-list li a:focus,
-ul.data-provider-logos-list li img:active,
-ul.data-provider-logos-list li img:focus {
-  border: 0;
-}
-*/
-
 dl.provider-details-list { margin-bottom: 1em; }
 dl.provider-details-list dt {
   float: left;
@@ -1176,15 +1162,14 @@ dl.provider-details-list dd i {
   vertical-align: super;
 }
 
-
 // TODO: article.static h1 overrides second rule
 ul.data-providers-list h2.data-provider-heading,
 ul.data-provider-cards-list h2.data-provider-heading {
   font-family: $headline;
   text-transform: uppercase;
-  letter-spacing: .05em;
-  font-weight: 400;
-  font-size: calc-em(20px);
+  letter-spacing: .07em;
+  font-weight: 500;
+  font-size: calc-em(18px);
   line-height: calc-em(20px);
   margin: 0 0 1em 0;
   color: $bluewood;
@@ -1273,8 +1258,9 @@ h1.feature-heading {
 
 article.static h1.feature-heading {
   font-family: $sans;
-  font-size: calc-em(23px);
-  font-weight: 500;
+  font-size: calc-em(20px);
+  font-weight: 600;
+  letter-spacing: .07em;
   margin: .2em 0 1.5em 0em;
 }
 

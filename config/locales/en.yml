@@ -310,7 +310,7 @@ en:
       updates:
         october_2015: "(October 2015): Interface and search technology upgraded"
         january_2016: '(January 2016): Various improvements, including enhanced search result refinement (new facet on submission year) and improved integration (<a href="http://www.altmetric.com" target="_blank">altmetric.com</a>)'
-        february_2016: "(February 2016): Enhanced presentation of data providers"
+        february_2016: "(February 2016): Enhanced presentation of about_sectioniders"
         march_2016: '(March 2016): 2014 Statistics for Open Access implemented. Approx. 130.000 duplicates no longer visible'
     search:
       form:
@@ -357,7 +357,7 @@ en:
     pages:
       data:
         providers:
-          title: Data Providers
+          title: Research Institutions
     cookies:
       message: We use cookies to improve the Danish National Research Database
       linkmsg: Learn more

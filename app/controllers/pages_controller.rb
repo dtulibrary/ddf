@@ -30,8 +30,8 @@ class PagesController < ApplicationController
     render :layout => 'about'
   end
 
-  def data_providers
-    render :layout => 'data_providers'
+  def research_institutions
+    render :layout => 'research_institutions'
   end
 
   def faq
