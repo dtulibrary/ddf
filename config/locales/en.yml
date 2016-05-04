@@ -317,6 +317,9 @@ en:
         containing_ieee: "containing the word \"IEEE\" in the title field."
         more_help: "Need more help?"
         search_how: Advanced search tutorial
+      fields:
+        publications: "Publications"
+        researchers: Researchers
     tools:
       available_at: "Available at"
       metrics: Metrics

@@ -198,13 +198,13 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
-    config.add_search_field 'all_fields', label: 'Publications'
+    config.add_search_field 'publications', label: I18n.t('ddf.search.fields.publications')
 
     # Limit results to researchers
     # In our solrconfig.xml we have created a person_qf
     # configuration to limit searches to name and orcid fields.
     config.add_search_field('researchers') do |field|
-      field.label = 'Researchers'
+      field.label = I18n.t('ddf.search.fields.researchers')
       field.solr_local_parameters = {
         qf: '$person_qf'
       }

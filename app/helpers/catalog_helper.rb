@@ -43,9 +43,13 @@ module CatalogHelper
     elsif (defined? current_search_session) && (current_search_session)
       current_search_session.query_params['search_field']
     else
-      ''
+      'publications' # default search field
     end
     h(search_field)
+  end
+
+  def active_field?(field)
+    current_search_field == field.last ? 'active' : ''
   end
 
   def researcher_search?(*args)

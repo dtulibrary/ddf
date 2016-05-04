@@ -340,6 +340,9 @@ da:
         containing_ieee: "som indeholder ordet \"IEEE\" i feltet: Titel."
         more_help: "Brug for mere hjælp?"
         search_how: Avanceret søgning
+      fields:
+        publications: "Publikationer"
+        researchers: Forskere
     tools:
       available_at: "Tilgængelig hos"
       metrics: Metrikker
