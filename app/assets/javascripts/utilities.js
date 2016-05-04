@@ -13,7 +13,7 @@ $(document).ready(function() {
   });
 });
 
-// CARDS ON about/data/providers
+// CARDS ON about/research-institutions
 $(document).ready(function() {
   $("button.card-toggle").click(function() {
     $(this).parent().parent().next().slideToggle("medium");
