@@ -6,6 +6,8 @@
 #
 module Charts
   module DataUtils
+    include ActionView::Helpers::NumberHelper
+
     def publications_by_facet(opts={}, &block)
       facet_list = yield
       limit = opts[:limit] || 1000 # aribtrary large number, i.e "no limit"
@@ -268,7 +270,7 @@ module Charts
         # h.store(:name, facet)
         h.store(:segment, k)
         h.store(:label, translate(facet, k))
-        h.store(:value, v)
+        h.store(:value, number_with_delimiter(v))
         a << h.merge(set_colors_from(facet, k))
       end
       a
