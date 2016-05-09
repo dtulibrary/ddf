@@ -270,7 +270,8 @@ module Charts
         # h.store(:name, facet)
         h.store(:segment, k)
         h.store(:label, translate(facet, k))
-        h.store(:value, number_with_delimiter(v))
+        # h.store(:value, number_with_delimiter(v))
+        h.store(:value, v)
         a << h.merge(set_colors_from(facet, k))
       end
       a
