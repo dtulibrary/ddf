@@ -6,7 +6,7 @@
 
     <p>It allows easy access to searching research publications from Danish research institutions (see also <%= link_to 'Search &amp; Get'.html_safe, about_search_and_get_path %>).</p>
 
-    <p>The database is primarily based on data collected from the Current Research Information Systems (CRIS) of Danish universities and other Danish research institutions. All Danish institutions of higher education, government research institutes, research councils and other public institutions carrying out research can become data providers. All data providers are participating on a voluntary basis. For more information, see the <%= link_to 'Data page', about_data_path %>.</p>
+    <p>The database is primarily based on data collected from the Current Research Information Systems (CRIS) of Danish universities and other Danish research institutions. All Danish institutions of higher education, government research institutions, research councils and other public institutions carrying out research can become data providers. All research institutions are participating on a voluntary basis. For more information, see the <%= link_to 'Data page', about_data_path %>.</p>
 
     <p>The database currently covers published literature, such as journal articles, PhD theses, conference presentations and lecture notes.</p>
 
@@ -43,7 +43,7 @@
     </ul>
 
     <h2>Technical issues</h2>
-    <p><strong>Foundation:</strong> The necessary metadata are made available for the database by the research institutions from their openly accessible repositories (typically the providers' CRIS) offering <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a>-based access to data in various open and well-documented data formats (for publication metadata, primarily DDF-MXD). See more at the <%= link_to 'Data page', about_data_path %>.</p>
+    <p><strong>Foundation:</strong> The necessary metadata are made available for the database by the research institutions from their openly accessible repositories (typically the research institutions' CRIS) offering <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a>-based access to data in various open and well-documented data formats (for publication metadata, primarily DDF-MXD). See more at the <%= link_to 'Data page', about_data_path %>.</p>
 
     <p><strong>Processing:</strong> Metadata are harvested, processed, deduplicated and indexed by the DTU Library Data Processing Platform into the DTU Library common <a href="https://lucene.apache.org/" target="_blank">Apache Lucene</a>-based index, equipped with <a href="http://lucene.apache.org/solr/" target="_blank">Apache SOLR</a> as search platform.</p>
 

@@ -56,14 +56,14 @@ nav.upper { font-size: .9em; }
 h1.logo {
   display: inline-block;
   font-family: $headline;
-  font-size: calc-em(23px);
+  font-size: calc-em(22px);
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1.1em;
   letter-spacing: .125em;
   color: $bluewood;
   color: #fff;
-  margin: .5em 0 0 0;
+  margin: .65em 0 0 0;
   @include respond-to($iphone_landscape) {
     font-size: calc-em(24px);
   }
