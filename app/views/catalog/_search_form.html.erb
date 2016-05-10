@@ -1,19 +1,24 @@
 <ul class="nav nav-tabs search-nav">
   <% search_fields.each do |field| %>
+    <% field_name = field.last  %>
     <%= content_tag :li, class: active_field?(field) do %>
-      <%= link_to t("ddf.search.fields.#{field.first.downcase}"), "##{field.last}", data: { toggle: 'tab'} %>
+      <%= link_to t("ddf.search.fields.#{field_name}"), "##{field_name}", data: { toggle: 'tab'} %>
     <% end  %>
   <% end  %>
 </ul>
 <div class="tab-content">
   <% search_fields.each do |field| %>
-    <%= content_tag :div, class: ['tab-pane', active_field?(field)], id: field.last, role: 'tab-panel' do %>
+    <% field_name = field.last  %>
+    <%= content_tag :div, class: ['tab-pane', active_field?(field)], id: field_name, role: 'tab-panel' do %>
       <%= form_tag search_action_url(controller: :catalog), :method => :get, :class => 'search-query-form form-inline clearfix navbar-form' do %>
           <%= render_hash_as_hidden_fields(
                   params_for_search()
                       .except(:q, :qt, :page, :utf8)
-                      .merge(search_field: field.last))
+                      .merge(search_field: field_name))
           %>
+          <% if controller_name == 'pages' && field_name == 'researchers' %>
+              <%= hidden_field_tag('f[is_active_b][]', true) %>
+          <% end %>
           <div class="text-field-with-icons">
             <div class="input-group">
               <ul class="search-icons-list">
@@ -30,10 +35,10 @@
               </ul>
 
               <label for="q" class="sr-only"><%= t('blacklight.search.form.q') %></label>
-              <%= text_field_tag :q, params[:q], :placeholder => t("ddf.search.form.placeholder.#{field.last}"), :class => "search_q q form-control", :id => "q_#{field.last}", :autofocus => should_autofocus_on_search_box? %>
+              <%= text_field_tag :q, params[:q], :placeholder => t("ddf.search.form.placeholder.#{field_name}"), :class => "search_q q form-control", :id => "q_#{field_name}", :autofocus => should_autofocus_on_search_box? %>
             </div>
 
-            <button type="submit" class="btn btn-primary search-btn" id=<%= "search.#{field.last}" %>>
+            <button type="submit" class="btn btn-primary search-btn" id=<%= "search.#{field_name}" %>>
               <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
               <span class="glyphicon glyphicon-search"></span>
             </button>

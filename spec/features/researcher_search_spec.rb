@@ -8,6 +8,10 @@ feature 'Researcher search' do
 
   scenario 'name search' do
     expect(page).to have_content search_term
+    # Should be a status: active facet on per default
+    within 'ul.applied-filters-list' do
+      expect(page).to have_content 'Status: Active'
+    end
   end
 
   scenario 'sorting' do
