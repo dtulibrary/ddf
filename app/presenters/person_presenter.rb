@@ -26,8 +26,8 @@ class PersonPresenter < Dtu::DocumentPresenter
   def affiliations
     aff_data = document['person_affiliations_ssf'].try(:first)
     output = {}
+    # we are choosing not to show previous affilations
     output['current'] = render_affilations(aff_data, 'current')
-    output['previous'] = render_affilations(aff_data, 'previous')
     output.select { |_,val| val.present? }.transform_values {|list| "<ol>#{list}</list>".html_safe }
   end
 
