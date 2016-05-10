@@ -148,7 +148,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'has_orcid_b', helper_method: :render_orcid_status
     config.add_facet_field 'is_active_b', helper_method: :render_active_status
 
-    config.add_show_field 'cluster_id_ss'
+    config.add_show_field 'cluster_id_ss', unless: :person_doc?
 
     # SORTING
 

@@ -56,6 +56,10 @@ module CatalogHelper
     current_search_field == 'researchers'
   end
 
+  def person_doc?(*args)
+    args.last.person?
+  end
+
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end
