@@ -14,10 +14,11 @@ da:
     navigation:
       search_section:
         search: Søgning
-      about_section:
-        about: Om Basen
+        statistics: Statistik
         search_get: "Søg og Hent"
         data: Data
+      about_section:
+        about: Om Basen
         providers: Institutioner
         faq: FAQ
         contact: Kontakt
@@ -31,8 +32,6 @@ da:
         development: Udvikling
       ef_section:
         eliteforsk: "Eliteforsk Pris"
-      statistics_section:
-        statistics: Statistik
 
     data_visualization:
       publication_statistics: Publikations-statistikker

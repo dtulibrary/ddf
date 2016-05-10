@@ -7,10 +7,11 @@ en:
     navigation:
       search_section:
         search: Search
-      about_section:
-        about: About
+        statistics: Statistics
         search_get: "Search & Get"
         data: Data
+      about_section:
+        about: About
         providers: Institutions
         faq: FAQ
         contact: Contact
@@ -24,8 +25,6 @@ en:
         development: Development
       ef_section:
         eliteforsk: "Eliteforsk Award"
-      statistics_section:
-        statistics: Statistics
 
     data_visualization:
       publication_statistics: Publication Statistics

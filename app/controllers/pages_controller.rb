@@ -12,6 +12,14 @@ class PagesController < ApplicationController
     render :layout => 'search'
   end
 
+  def search_and_get
+    render :layout => 'search_static'
+  end
+
+  def data
+    render :layout => 'search_static'
+  end
+
   # ELITEFORSK AWARD
   def eliteforsk_award
     render :layout => 'eliteforsk_award'
@@ -19,14 +27,6 @@ class PagesController < ApplicationController
 
   # ABOUT
   def about
-    render :layout => 'about'
-  end
-
-  def search_and_get
-    render :layout => 'about'
-  end
-
-  def data
     render :layout => 'about'
   end
 

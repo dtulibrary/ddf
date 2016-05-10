@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'open_access', to: 'open_access_indicator#overview'
     get '/selected', to: 'bookmarks#index'
 
-    get 'statistics', to: 'statistics#index'
+
 
     # root :to => "catalog#index"
     # blacklight_for :catalog
@@ -36,27 +36,24 @@ Rails.application.routes.draw do
   # Don't do a 301 redirect:
   # get '/search', to: redirect('/')
   # get '/catalog', to: redirect('/')
-
   get '/search', to: 'pages#index'
   get '/catalog', to: 'pages#index'
+  # TODO
+  get 'search/statistics', to: 'statistics#index'
+  get 'search/search-and-get' => 'pages#search_and_get'
+  get 'search/data' => 'pages#data'
+
+  # get 'statistics', to: 'statistics#index'
 
   # ELITEFORSK AWARD
   get '/eliteforsk-award' => 'pages#eliteforsk_award'
 
   # ABOUT
   get 'about' => 'pages#about'
-  get 'about/search-and-get' => 'pages#search_and_get'
-
-  # get 'about/indicators' => 'pages#indicators'
-  # get 'about/actuality' => 'pages#actuality'
-
-  get 'about/data' => 'pages#data'
   get 'about/faq' => 'pages#faq'
   get 'about/contact' => 'pages#contact'
   get 'about/releases' => 'pages#releases'
   get 'about/privacy' => 'pages#privacy'
-
-
   get 'about/research-institutions' => 'pages#research_institutions'
 
   # OTHER
