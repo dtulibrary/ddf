@@ -216,6 +216,10 @@ class SolrDocument < Dtu::SolrDocument
     doc
   end
 
+  def itemtype
+    person? ? 'http://schema.org/Person' : 'http://schema.org/CreativeWork'
+  end
+
   private
 
   # Map format to OpenURL genre

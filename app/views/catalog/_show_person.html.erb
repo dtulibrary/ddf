@@ -1,29 +1,36 @@
 <% presenter = present_person(document) %>
-<div class="profile-picture pull-right hidden-xs">
-  <%= presenter.image.html_safe  %>
-</div>
-<dl class="dl-horizontal  dl-invert">
-
-  <% presenter.affiliations.each do |type, affiliation_list| %>
-    <dt><%= t("ddf.researchers.affiliations.#{type}") %></dt>
-    <%= content_tag :dd, id: type, class: 'affiliations' do %>
-      <%= affiliation_list %>
-    <% end %>
-    <div class="more-link pull-right" data-link-for="#<%= type %>" style="display: none;">
-      <a href="#" data-click-text="<%= t('ddf.researchers.affiliations.less')  %>">
-        <%= t('ddf.researchers.affiliations.more') %>
-      </a>
+<div class="container">
+  <div class="row">
+    <% if presenter.image.present? %>
+    <div class="profile-picture col-md-2 hidden-xs">
+      <%= presenter.image.html_safe  %>
     </div>
-  <% end %>
+    <% end  %>
+  <div class="col-md-7">
+    <dl class="dl-horizontal  dl-invert">
+
+      <% presenter.affiliations.each do |type, affiliation_list| %>
+        <dt><%= t("ddf.researchers.affiliations.#{type}") %></dt>
+        <%= content_tag :dd, id: type, class: 'affiliations' do %>
+          <%= affiliation_list %>
+        <% end %>
+        <div class="more-link pull-right" data-link-for="#<%= type %>" style="display: none;">
+          <a href="#" data-click-text="<%= t('ddf.researchers.affiliations.less')  %>">
+            <%= t('ddf.researchers.affiliations.more') %>
+          </a>
+        </div>
+      <% end %>
 
 
-  <% document_show_fields(document).each do |solr_fname, field| -%>
-    <% if should_render_show_field? document, field %>
-	    <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, :field => solr_fname %></dt>
-	    <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
-    <% end -%>
-  <% end -%>
-</dl>
+      <% document_show_fields(document).each do |solr_fname, field| -%>
+        <% if should_render_show_field? document, field %>
+          <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, :field => solr_fname %></dt>
+          <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
+        <% end -%>
+      <% end -%>
+    </dl>
+  </div>
+</div>
 <% if presenter.publications[:size] > 0  %>
 <div class="recent-publications col-md-12">
   <h2>
@@ -40,3 +47,4 @@
   <%= presenter.publications_link %>
 </div>
 <% end  %>
+</div>

@@ -1586,14 +1586,19 @@ p.more-link a { text-decoration: underline; }
   a { color: $link-color; }
   a:hover { color: red; }
 }
+
+.profile-picture { padding-left: 2px !important;}
+
 .profile-picture object {
-  margin-left: 20px;
-  margin-top: -40px;
   border: 1px solid #e3e3e3;
   max-height: 160px;
 }
 
-#documents .profile-picture object { max-height: 120px; }
+#documents .profile-picture object {
+  max-height: 120px;
+  margin-top: -40px;
+  margin-left: 20px;
+}
 
 .affiliations ol {
   margin-bottom: 0;
@@ -1615,4 +1620,13 @@ p.more-link a { text-decoration: underline; }
     text-decoration: none;
     outline: none;
    }
+}
+
+// overwrite BL default styling for Person pages
+div#document[itemtype$=Person] {
+  dt {
+    text-align: left;
+    width: auto;
+  }
+  dd { margin-left: 110px; }
 }
