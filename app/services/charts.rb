@@ -270,7 +270,6 @@ module Charts
         # h.store(:name, facet)
         h.store(:segment, k)
         h.store(:label, translate(facet, k))
-        # h.store(:value, number_with_delimiter(v))
         h.store(:value, v)
         a << h.merge(set_colors_from(facet, k))
       end
@@ -324,9 +323,3 @@ module Charts
 end
 # Charts
 
-# translations['Publiceret']      = 'published'
-# translations['Ukendt']          = 'unknown'
-# translations['Indsendt']        = 'submitted'
-# translations['Accepteret']      = 'accepted'
-# translations['I Trykken']       = 'in_press'
-# translations['Ikke publiceret'] = 'unpublished'
