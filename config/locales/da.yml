@@ -109,6 +109,7 @@ da:
           cluster_id_ss: ID
           person_affiliations_ssf: Tilhørsforhold
           cris_id_ss: Forskningsdatabase ID
+          email_ssf: Email
         facet: *LABELS
         show: *LABELS
 

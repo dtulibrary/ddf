@@ -149,6 +149,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'is_active_b', helper_method: :render_active_status
 
     config.add_show_field 'cluster_id_ss', unless: :person_doc?
+    config.add_show_field 'email_ssf', if: :person_doc?, helper_method: :email_link
 
     # SORTING
 

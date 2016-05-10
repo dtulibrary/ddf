@@ -59,6 +59,10 @@ module CatalogHelper
     args.last.person?
   end
 
+  def email_link(args)
+    args[:value].collect { |address| mail_to(address) }.join('; ').html_safe
+  end
+
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end
