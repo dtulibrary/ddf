@@ -1,0 +1,32 @@
+<div class="header__wrapper">
+  <div class="container">
+    <div class="block">
+      <h1 class="site-section">
+        <i class="glyphicon glyphicon-info-sign"></i>
+        <%= t('blacklight.navigation.search_section.search') %>
+      </h1>
+
+      <nav class="mobile">
+        <ul class="subnav-items-list mobile-hide">
+          <li id="statistics">
+            <%= link_to t('blacklight.navigation.search_section.statistics'), search_statistics_path %>
+          </li>
+          <li id="search-get">
+            <%= link_to t('blacklight.navigation.search_section.search_get'), search_search_and_get_path %>
+          </li>
+          <li id="data">
+            <%= link_to t('blacklight.navigation.search_section.data'), search_data_path %>
+          </li>
+        </ul>
+
+        <select class="mobile-show">
+          <option value="" selected="selected"><%= t('ddf.open_access.menu.go_to') %></option>
+          <option value="<%= search_statistics_path %>"><%= t('blacklight.navigation.search_section.statistics') %></option>
+          <option value="<%= search_search_and_get_path %>"><%= t('blacklight.navigation.search_section.search_get') %></option>
+          <option value="<%= search_data_path %>"><%= t('blacklight.navigation.search_section.data') %></option>
+        </select>
+      </nav>
+
+    </div>
+  </div>
+</div>

@@ -36,8 +36,8 @@
       <% end %>
   </head>
 
-  <body class="<%= render_body_class %>">
-    <%# render :partial => 'shared/debug' %>
+  <body class="<%= render_body_class %> search">
+    <%= render :partial => 'shared/debug' %>
     <header>
       <%= render :partial => 'shared/header' %>
       <%= render_submenu %>

@@ -2,9 +2,9 @@
 // TOPNAV
 //
 // Search
-body[class~="blacklight-pages-index"] li#search a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-index"] li#search i,
-body[class~="blacklight-pages-index"] li#search a { color: #fff; }
+body[class~="search"] li#search a { background: lighten($bluewood, 25%); }
+body[class~="search"] li#search i,
+body[class~="search"] li#search a { color: #fff; }
 
 // OA
 body[class~="blacklight-open_access_indicator"] li#open-access a { background: lighten($bluewood, 25%); }

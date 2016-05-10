@@ -19,5 +19,7 @@ class StatisticsController < ApplicationController
     @by_institution = Charts::CSSBars.new('source_ss').values
     @by_journal_title = Charts::CSSBars.new('journal_title_facet').values(limit: 13)
     @by_author = Charts::CSSBars.new('author_facet').values(limit: 13)
+
+    render :layout => 'search_static'
   end
 end
