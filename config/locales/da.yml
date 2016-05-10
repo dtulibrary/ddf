@@ -327,6 +327,9 @@ da:
         clear_icon_text_hover: Slet søgetermerne
         question_icon_text_hover: Vis Søgetips
         more_options_icon_text_hover: Flere valgmuligheder
+        placeholder:
+          publications: 'Søg i publikationer...'
+          researchers: 'Søg i forskerprofiler...'
       help:
         example: Eksempel
         finds_records: Finder dokumenter

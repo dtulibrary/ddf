@@ -109,7 +109,7 @@ input.form-control {
   border-radius: 0;
 }
 
-button#search {
+button[id^=search] {
   margin-left: -5px;
   font-size: 18px;
   height: auto;

@@ -15,8 +15,8 @@ feature 'DDF Index Page' do
   end
 
   scenario 'Making a search from the search box' do
-    fill_in 'Search...', with: 'diabetic medicine'
-    click_button 'Search'
+    fill_in I18n.t('ddf.search.form.placeholder.publications'), with: 'diabetic medicine'
+    click_button 'search.publications'
     expect(current_path).to include catalog_index_path
   end
 end

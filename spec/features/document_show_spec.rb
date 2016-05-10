@@ -4,8 +4,8 @@ feature 'Document show' do
 
   background do
     visit root_path
-    fill_in 'Search...', with: 'constant'
-    click_button 'Search'
+    fill_in I18n.t('ddf.search.form.placeholder.publications'), with: 'constant'
+    click_button 'search.publications'
     first('h5.doctitle').find('a').click
   end
 

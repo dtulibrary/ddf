@@ -30,10 +30,10 @@
               </ul>
 
               <label for="q" class="sr-only"><%= t('blacklight.search.form.q') %></label>
-              <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q form-control", :id => "q", :autofocus => should_autofocus_on_search_box? %>
+              <%= text_field_tag :q, params[:q], :placeholder => t("ddf.search.form.placeholder.#{field.last}"), :class => "search_q q form-control", :id => "q_#{field.last}", :autofocus => should_autofocus_on_search_box? %>
             </div>
 
-            <button type="submit" class="btn btn-primary search-btn" id="search">
+            <button type="submit" class="btn btn-primary search-btn" id=<%= "search.#{field.last}" %>>
               <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
               <span class="glyphicon glyphicon-search"></span>
             </button>

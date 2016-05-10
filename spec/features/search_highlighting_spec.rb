@@ -4,11 +4,11 @@ feature 'Catalog search' do
   feature 'journal title highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: 'diabetic medicine'
+      fill_in I18n.t('ddf.search.form.placeholder.publications'), with: 'diabetic medicine'
       # stub out the default response with our fixture
       expect_any_instance_of(Net::HTTPResponse).to receive(:body).at_least(:once)
       .and_return(response_with_highlighting)
-      click_button 'Search'
+      click_button 'search.publications'
     end
 
     it 'contains the highlighted journal title' do
@@ -24,8 +24,8 @@ feature 'Catalog search' do
   describe 'highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: search_term
-      click_button 'Search'
+      fill_in I18n.t('ddf.search.form.placeholder.publications'), with: search_term
+      click_button 'search.publications'
     end
 
     feature 'author highlighting' do

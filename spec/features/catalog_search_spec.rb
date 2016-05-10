@@ -3,8 +3,8 @@ feature 'Catalog search' do
     let(:search_term) { 'fish' }
     background do
       visit root_path
-      fill_in 'Search...', with: search_term
-      click_button 'Search'
+      fill_in I18n.t('ddf.search.form.placeholder.publications'), with: search_term
+      click_button 'search.publications'
     end
 
     scenario 'Checking per page toggle' do

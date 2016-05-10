@@ -2,9 +2,8 @@ feature 'Researcher search' do
   let(:search_term) { 'Jens' }
   background do
     visit root_path
-    fill_in 'Search...', with: search_term
-    select('Researchers', from: 'search_field')
-    click_button 'Search'
+    fill_in I18n.t('ddf.search.form.placeholder.researchers'), with: search_term
+    click_button 'search.researchers'
   end
 
   scenario 'name search' do
