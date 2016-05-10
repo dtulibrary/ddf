@@ -8,6 +8,8 @@ div.debug-params {
   text-align: center;
   font-family: 'Monaco';
   font-size: .9em;
+
+  display: none;
 }
 
 div.viewport {
@@ -16,8 +18,6 @@ div.viewport {
   position: fixed;
   top: 0;
   //margin: 0;
-
-  display: none;
 }
 div.viewport p {
   text-align:  center;
