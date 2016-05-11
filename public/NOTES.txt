@@ -196,13 +196,14 @@ TRANSLATION PATTERN:
 <th><%= t('ddf.search.help.more_help')%></th>
 
 BEM:
-.block {}
-.block__element {}
-.block--modifier {}
+.some-block {}
+.some-block__child-element {}
+.some-block--modifier {}
 
-    .block represents the higher level of an abstraction or component.
-    .block__element represents a descendent of .block that helps form .block as a whole.
-    .block--modifier represents a different state or version of .block.
+Where:
+.some-block represents the higher level of an abstraction or component.
+.some-block__child-element represents a descendent of .some-block that helps form .some-block as a whole.
+.some-block--modifier represents a different state or version of .some-block.
 
 The reason for double rather than single hyphens and underscores is so that your block itself can be hyphen delimited, for example:
 

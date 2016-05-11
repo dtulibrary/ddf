@@ -9,9 +9,10 @@ module ApplicationHelper
     def search_item_contents
       [
         "<i class='glyphicon glyphicon-search'></i>",
-        "<span class='menu-item-title'>",
-        "#{t('blacklight.navigation.search_section.search')}",
-        "</span>"
+        "<div class='menu-item'>",
+          "<span class='menu-item__title'> #{t('blacklight.navigation.search_section.title')} </span>",
+          "<span class='menu-item__subtitle'> #{t('blacklight.navigation.search_section.subtitle')} </span>",
+        "</div>"
         ].join.html_safe
       end
 
@@ -27,9 +28,10 @@ module ApplicationHelper
         def open_access_item_contents
           [
             "<i class='ai ai-open-access ai-3x'></i>",
-            "<span class='menu-item-title'>",
-            "#{t('blacklight.navigation.oa_section.open_access')}",
-            "</span>"
+            "<div class='menu-item'>",
+              "<span class='menu-item__title'> #{t('blacklight.navigation.oa_section.title')} </span>",
+              "<span class='menu-item__subtitle'> #{t('blacklight.navigation.oa_section.subtitle')} </span>",
+            "</div>"
             ].join.html_safe
           end
 

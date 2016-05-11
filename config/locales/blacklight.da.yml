@@ -13,7 +13,8 @@ da:
     elevator_pitch: "Omkring 1 million forskningspublikationer, indsamlet fra 12 danske universiteter og forskningsinstitutioners forskningsdatabaser."
     navigation:
       search_section:
-        search: Søgning
+        title: Søgning
+        subtitle: Publikationer & Forskere
         statistics: Statistik
         search_get: "Søg og Hent"
         data: Data
@@ -27,7 +28,8 @@ da:
         releases: Release historie
         cookies: "Cookie- og privatlivspolitik"
       oa_section:
-        open_access: "Open Access Indikator"
+        title: Open Access
+        subtitle: Indikator
         overview: Oversigt
         development: Udvikling
       ef_section:

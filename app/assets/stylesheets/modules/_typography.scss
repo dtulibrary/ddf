@@ -63,9 +63,9 @@ h1.logo {
   letter-spacing: .125em;
   color: $bluewood;
   color: #fff;
-  margin: .65em 0 0 0;
-  @include respond-to($iphone_landscape) {
-    font-size: calc-em(24px);
+  margin: 1.4em 0 0 0;
+  @include respond-to($screen-md-min) {
+    // margin: 1em 0 -2em 0;
   }
 }
 
@@ -682,12 +682,9 @@ ul.icon-labels__topnav>li > i {
 }
 
 ul.site-sections-list, ul.open-access-menu {
-  font-size: calc-em(18px);
+  // font-size: calc-em(18px);
   float: right;
   margin: 0;
-  @include respond-to($ipad_portrait) {
-    margin-top: 1em;
-  }
   @include respond-to($iphone_landscape) {
     float: none;
     text-align: center;
@@ -697,7 +694,7 @@ ul.site-sections-list, ul.open-access-menu {
 ul.site-sections-list li, ul.open-access-menu li {
   display: inline-block;
   margin: 0;
-  vertical-align: text-top; //WOW!!!
+  // vertical-align: text-top;
 }
 ul.site-sections-list li:not(:last-child) {
   @include respond-to($iphone_landscape) {
@@ -743,12 +740,21 @@ ul.site-sections-list li i {
     margin-bottom: 0;
   }
 }
-ul.site-sections-list li span.menu-item-title {
+div.menu-item {
   text-shadow: 1px 1px 2px #222;
   @include respond-to($iphone_landscape) {
     display: none;
   }
 }
+div.menu-item span {
+  display: block;
+  text-align: center;
+}
+div.menu-item span.menu-item__title {
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+div.menu-item span.menu-item__subtitle {}
 
 article.static h1 {
   font-family: $headline;

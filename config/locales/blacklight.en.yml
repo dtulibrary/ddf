@@ -6,7 +6,8 @@ en:
     elevator_pitch: "Nearly 1 million research publications collected from the research databases of 12 Danish universities and research institutions."
     navigation:
       search_section:
-        search: Search
+        title: Search
+        subtitle: Publications & Researchers
         statistics: Statistics
         search_get: "Search & Get"
         data: Data
@@ -20,7 +21,8 @@ en:
         releases: Release History
         cookies: Cookies and privacy policy
       oa_section:
-        open_access: "Open Access Indicator"
+        title: Open Access
+        subtitle: Indicator
         overview: Overview
         development: Development
       ef_section:
