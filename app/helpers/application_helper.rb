@@ -1,57 +1,88 @@
 module ApplicationHelper
+
+  # LOGO
   def home_item_contents
     [
       "<em>#{t('blacklight.national')}</em>",
       "#{t('blacklight.research_database')}"
-      ].join.html_safe
-    end
+    ].join.html_safe
+  end
 
-    def search_item_contents
-      [
-        "<i class='glyphicon glyphicon-search'></i>",
-        "<div class='menu-item'>",
-          "<span class='menu-item__title'> #{t('blacklight.navigation.search_section.title')} </span>",
-          "<span class='menu-item__subtitle'> #{t('blacklight.navigation.search_section.subtitle')} </span>",
-        "</div>"
-        ].join.html_safe
-      end
 
-      def about_item_contents
-        [
-          "<i class='glyphicon glyphicon-info-sign'></i>",
-          "<span class='menu-item-title'>",
-          "#{t('blacklight.navigation.about_section.about')}",
-          "</span>"
-          ].join.html_safe
-        end
+  # UPPER MENU ITEMS
+  def search_item_contents
+    [
+      "<i class='glyphicon glyphicon-search'></i>",
+      "<div class='menu-item'>",
+        "<span class='menu-item__title'> #{t('blacklight.navigation.search_section.title')} </span>",
+        "<span class='menu-item__subtitle'> #{t('blacklight.navigation.search_section.subtitle')} </span>",
+      "</div>"
+    ].join.html_safe
+  end
 
-        def open_access_item_contents
-          [
-            "<i class='ai ai-open-access ai-3x'></i>",
-            "<div class='menu-item'>",
-              "<span class='menu-item__title'> #{t('blacklight.navigation.oa_section.title')} </span>",
-              "<span class='menu-item__subtitle'> #{t('blacklight.navigation.oa_section.subtitle')} </span>",
-            "</div>"
-            ].join.html_safe
-          end
+  def open_access_item_contents
+    [
+      "<i class='ai ai-open-access ai-3x'></i>",
+      "<div class='menu-item'>",
+        "<span class='menu-item__title'> #{t('blacklight.navigation.oa_section.title')} </span>",
+        "<span class='menu-item__subtitle'> #{t('blacklight.navigation.oa_section.subtitle')} </span>",
+      "</div>"
+    ].join.html_safe
+  end
 
-          def eliteforsk_award_item_contents
-            [
-              "<i class='glyphicon glyphicon-education'></i>",
-              "<span class='menu-item-title'>",
-              "#{t('blacklight.navigation.ef_section.eliteforsk')}",
-              "</span>"
-              ].join.html_safe
-            end
 
-            def statistics_item_contents
-              [
-                "<i class='fa fa-bar-chart'></i>",
-                "<span class='menu-item-title'>",
-                "#{t('blacklight.navigation.statistics_section.statistics')}",
-                "</span>"
-                ].join.html_safe
-              end
+  # NOT USED; MARKUP DEPRECATED
+  def about_item_contents
+    [
+      "<i class='glyphicon glyphicon-info-sign'></i>",
+      "<span class='menu-item-title'>",
+        "#{t('blacklight.navigation.about_section.about')}",
+      "</span>"
+    ].join.html_safe
+  end
+
+  def eliteforsk_award_item_contents
+    [
+      "<i class='glyphicon glyphicon-education'></i>",
+      "<span class='menu-item-title'>",
+        "#{t('blacklight.navigation.ef_section.eliteforsk')}",
+      "</span>"
+    ].join.html_safe
+  end
+
+  def statistics_item_contents
+    [
+      "<i class='fa fa-bar-chart'></i>",
+      "<span class='menu-item-title'>",
+        "#{t('blacklight.navigation.statistics_section.statistics')}",
+      "</span>"
+    ].join.html_safe
+  end
+
+
+  # INDEX PAGES FOR THE SITEMAP
+  def search_sitemap_index
+    [
+      "<i class='glyphicon glyphicon-search'></i>",
+      "#{t('blacklight.navigation.search_section.title')}"
+    ].join.html_safe
+  end
+
+  def oa_sitemap_index
+    [
+      "<i class='ai ai-open-access ai-3x'></i>",
+      "#{t('blacklight.navigation.oa_section.title')}"
+    ].join.html_safe
+  end
+
+  def about_sitemap_index
+    [
+    "<i class='glyphicon glyphicon-info-sign'></i>",
+    "#{t('blacklight.navigation.about_section.title')}"
+    ].join.html_safe
+  end
+
+  # OTHER
 
   # Utilities for displaying search history
   def previous_searches

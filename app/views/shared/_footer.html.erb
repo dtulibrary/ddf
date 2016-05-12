@@ -9,7 +9,7 @@
     <ul class="sitemap">
       <!-- SEARCH -->
       <li class="sitemap__section">
-        <%= link_to search_item_contents, root_path %>
+        <%= link_to(search_sitemap_index, root_path, class: "index") %>
         <ul>
           <li>
             <%= link_to t('blacklight.navigation.search_section.statistics'), search_statistics_path %>
@@ -25,7 +25,7 @@
 
       <!-- OA -->
       <li class="sitemap__section">
-        <%= link_to open_access_item_contents, open_access_path %>
+        <%= link_to(oa_sitemap_index, open_access_path, class: "index") %>
         <ul>
           <li>
             <%= link_to t('blacklight.navigation.oa_section.overview'), open_access_overview_path %>
@@ -36,14 +36,10 @@
         </ul>
       </li>
 
-      <!-- STATISTICS
-      <li class="sitemap__section">
-        <%# link_to statistics_item_contents, search_statistics_path %>
-      </li>
-      -->
       <!-- ABOUT -->
       <li class="sitemap__section">
-        <%= link_to about_item_contents, about_path %>
+
+        <%= link_to(about_sitemap_index, about_path, class: "index") %>
         <ul>
           <li>
             <%= link_to t('blacklight.navigation.about_section.providers'), about_research_institutions_path %>

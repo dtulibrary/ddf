@@ -12,7 +12,7 @@ en:
         search_get: "Search & Get"
         data: Data
       about_section:
-        about: About
+        title: About
         providers: Institutions
         faq: FAQ
         contact: Contact

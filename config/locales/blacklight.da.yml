@@ -19,7 +19,7 @@ da:
         search_get: "Søg og Hent"
         data: Data
       about_section:
-        about: Om Basen
+        title: Om Basen
         providers: Institutioner
         faq: FAQ
         contact: Kontakt

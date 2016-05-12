@@ -595,7 +595,7 @@ ul.sitemap a {
   color: #fff;
   padding: .3em;
   border-bottom: 1px dashed $blue-1;
-  vertical-align: text-bottom;
+  // vertical-align: text-bottom;
 }
 ul.sitemap a:hover {
   background: lighten($bluewood, 10%);
@@ -603,18 +603,28 @@ ul.sitemap a:hover {
   border-bottom: 1px dashed $orange;
   text-decoration: none;
 }
-
 li.sitemap__section {
   display: inline-block;
   vertical-align: top;
   margin-right: 2em;
   @include respond-to($ipad_portrait) { display: block; }
 }
-
-li.sitemap__section > a { font-weight: bold; }
-li.sitemap__section a > i.glyphicon {
+li.sitemap__section a.index { font-weight: bold; }
+li.sitemap__section a.index i.glyphicon,
+li.sitemap__section a.index i.ai {
+  color: #fff;
   display: inline-block;
-  padding-right: .5em;
+}
+li.sitemap__section a.index i.glyphicon {
+  vertical-align: -7%;
+  font-size: calc-em(19px);
+  padding-right: .3em;
+}
+li.sitemap__section a.index i.ai {
+  vertical-align: 5%;
+  font-size: calc-em(22px);
+  font-weight: 900;
+  // padding-right: .5em;
 }
 
 li.sitemap__section > ul {
@@ -1684,4 +1694,3 @@ a.to-the-top:hover { color: $blue-2; }
 a.to-the-top:visited,
 a.to-the-top:visited:hover { color: $blue-3; }
 a.to-the-top:active { color: $orange; }
-
