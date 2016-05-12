@@ -1694,3 +1694,30 @@ a.to-the-top:hover { color: $blue-2; }
 a.to-the-top:visited,
 a.to-the-top:visited:hover { color: $blue-3; }
 a.to-the-top:active { color: $orange; }
+
+a.goto-section:link {
+  display: inline-block;
+  position: relative;
+  left: 11%;
+  padding: 10px;
+  background: #B276B2;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 600px;
+}
+a.goto-section:hover,
+a.goto-section:visited:hover {
+  background: darken(#B276B2, 10%);
+  text-decoration: none;
+  color: #fff;
+}
+a.goto-section:visited {
+  background: #B276B2;
+  text-decoration: none;
+  color: #fff;
+}
+a.goto-section:active {
+  text-decoration: none;
+}

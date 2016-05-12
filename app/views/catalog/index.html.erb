@@ -1,6 +1,11 @@
 <div id="sidebar" class="col-md-3 col-sm-4">
   <%= render 'search_sidebar' %>
 
+  <a href="<%= search_statistics_path %>" class="goto-section">
+    <i class='fa fa-bar-chart'></i>
+    <%= t("blacklight.data_visualization.publication_statistics") %>
+  </a>
+
 <!--
   <div class="selected-documents">
     <h1 class="selected-documents__heading">
