@@ -75,5 +75,5 @@ http://alistapart.com/article/accessibledatavisualization
 .chartlist li.projected { margin-bottom: 1em; }
 
 // Make Chart.js segments appear like links
-.canvas-row canvas[data-facet],
-.canvas-row canvas[data-facets] { cursor: pointer; }
+.statistics-row canvas[data-facet],
+.statistics-row canvas[data-facets] { cursor: pointer; }

@@ -128,10 +128,8 @@ module ApplicationHelper
   end
 
   def render_statistics_link
-    if params.has_key? :search_field
-      unless params[:search_field].eql? 'researchers'
-        render partial: 'shared/goto_statistics'
-      end
+    if !params.has_key?(:search_field) || params[:search_field].eql?('publications')
+      render partial: 'shared/goto_statistics'
     end
   end
 end
