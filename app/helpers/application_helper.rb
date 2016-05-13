@@ -126,4 +126,12 @@ module ApplicationHelper
       render partial: 'shared/feedback_general'
     end
   end
+
+  def render_statistics_link
+    if params.has_key? :search_field
+      unless params[:search_field].eql? 'researchers'
+        render partial: 'shared/goto_statistics'
+      end
+    end
+  end
 end
