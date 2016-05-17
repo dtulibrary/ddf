@@ -365,7 +365,7 @@ da:
       ris: "Eksportér til RIS"
       cite: "Citer"
       fulltext_access: Fuldtekstadgang
-      data_providers: Forskningsinstitutioner
+      at_institutions: Hos forskningsinstitutioner
       email_resultset: "Email citeringer"
       email_result: "Email citering"
     links:

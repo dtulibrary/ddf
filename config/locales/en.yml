@@ -342,7 +342,7 @@ en:
       ris: "Export to RIS"
       cite: "Cite"
       fulltext_access: Full text access
-      data_providers: Research Institutions
+      at_institutions: At institutions
       email_resultset: "Email citations"
       email_result: "Email citation"
     links:
