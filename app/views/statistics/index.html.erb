@@ -1,15 +1,129 @@
 <article role="main">
   <div class="container">
-    <div class="row">
+
+    <h1 class="statistics-headline">
+      <a name="charts-top">
+        <%= t("blacklight.data_visualization.publication_statistics") %>
+      </a>
+    </h1>
+
+    <div class="row statistics-nav-container">
+      <div class="col-md-8 col-md-offset-2">
+        <nav class="statistics-local">
+          <p class="jump"><%= t("blacklight.data_visualization.upper_navigation.jump_to") %>:</p>
+          <ul class="statistics-sections-list">
+            <li>
+              <i class="fa fa-pie-chart" aria-hidden="true"></i>
+              <a href="#indicators"><%= t("blacklight.data_visualization.upper_navigation.indicators") %></a>;
+            </li>
+            <li>
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              <a href="#years"><%= t("blacklight.data_visualization.upper_navigation.years") %></a>;
+            </li>
+            <li>
+              <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+              <a href="#types"><%= t("blacklight.data_visualization.upper_navigation.type_language") %></a>;
+            </li>
+            <li>
+              <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+              <a href="#institutions"><%= t("blacklight.data_visualization.upper_navigation.institutions_authors_journals") %></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row statistics-row">
+      <h2 class="chart-heading">
+        <a name="indicators">
+          <em><%= t("blacklight.data_visualization.by") %></em>
+          <%= t("blacklight.data_visualization.indicator") %>
+        </a>
+      </h2>
+
+      <div class="col-md-3">
+        <h2 class="facet-visualization-heading">
+          <%= t("blacklight.data_visualization.review_type") %>
+        </h2>
+        <canvas id="review-type" class="segments" height="235" data-facet="review_status_s">
+          <%= @by_review_type %>
+        </canvas>
+      </div>
+      <div class="col-md-3">
+        <h2 class="facet-visualization-heading">
+          <%= t("blacklight.data_visualization.scientific_level") %>
+        </h2>
+        <canvas id="scientific-level" class="segments" height="235" data-facet="scientific_level_s">
+          <%= @by_sci_level %>
+        </canvas>
+      </div>
+      <div class="col-md-3">
+        <h2 class="facet-visualization-heading">
+          <%= t("blacklight.data_visualization.main_research_area") %>
+        </h2>
+        <canvas id="research-area" class="segments" height="235" data-facet="research_area_ss">
+          <%= @by_research_area %>
+        </canvas>
+      </div>
+      <div class="col-md-3">
+        <h2 class="facet-visualization-heading">
+          <%= t("blacklight.data_visualization.publication_status") %>
+        </h2>
+        <canvas id="publication-status" class="segments" height="235" data-facet="access_condition_s">
+          <%= @by_publication_status %>
+        </canvas>
+      </div>
+    </div>
+
+    <div class="contain">
+      <span class="divider">
+        <a href="#charts-top" class="to-the-top">
+          <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row statistics-row">
+      <h2 class="chart-heading">
+        <a name="years">
+          <%# t("blacklight.data_visualization.publications") %>
+          <em><%= t("blacklight.data_visualization.by") %></em>
+          <%= t("blacklight.data_visualization.publication_year") %>
+          <em><%= t("blacklight.data_visualization.and") %></em>
+          <%= t("blacklight.data_visualization.submission_year") %>
+        </a>
+      </h2>
+      <canvas id="publication-timeline" class="plot" height="160" data-facets="access_condition_s;submission_year_tis">
+        <%= @by_year %>
+      </canvas>
+    </div>
+
+    <div class="contain">
+      <span class="divider">
+        <a href="#charts-top" class="to-the-top">
+          <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row statistics-row">
       <div class="col-md-6 chart">
         <section>
-          <h1 class="chart-heading">
-            <%= t("blacklight.data_visualization.publications") %>
-            <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.type") %>
-          </h1>
+          <h2 class="chart-heading">
+            <a name="types">
+              <%# t("blacklight.data_visualization.publications") %>
+              <em><%= t("blacklight.data_visualization.by") %></em>
+              <%= t("blacklight.data_visualization.type") %>
+            </a>
+          </h2>
           <ul class="chartlist types">
-            <% @types.each do |facet| %>
+            <% @by_type.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
               <%= display_facet_count(facet) %>
@@ -32,13 +146,13 @@
 
       <div class="col-md-6 chart">
         <section>
-          <h1 class="chart-heading">
-            <%= t("blacklight.data_visualization.publications") %>
+          <h2 class="chart-heading">
+            <%# t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
-            <%= t("blacklight.data_visualization.institution") %>
-          </h1>
-          <ul class="chartlist institutions">
-            <% @institutions.each do |facet| %>
+            <%= t("blacklight.data_visualization.language") %>
+          </h2>
+          <ul class="chartlist languages">
+            <% @by_language.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
               <%= display_facet_count(facet) %>
@@ -48,6 +162,85 @@
           </ul>
         </section>
       </div>
+    </div>
+
+    <div class="contain">
+      <span class="divider">
+        <a href="#charts-top" class="to-the-top">
+          <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row statistics-row">
+      <div class="col-md-4 chart">
+        <section>
+          <h1 class="chart-heading">
+            <a name="institutions">
+              <%# t("blacklight.data_visualization.publications") %>
+              <em><%= t("blacklight.data_visualization.by") %></em>
+              <%= t("blacklight.data_visualization.institution") %>
+            </a>
+          </h1>
+          <ul class="chartlist institutions">
+            <% @by_institution.each do |facet| %>
+            <li>
+              <%= render_facet_link(facet) %>
+              <%= display_facet_count(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+
+      <div class="col-md-4 chart">
+        <section>
+          <h2 class="chart-heading">
+            <%# t("blacklight.data_visualization.publications") %>
+            <em><%= t("blacklight.data_visualization.by") %></em>
+            <%= t("blacklight.data_visualization.journal_title") %>
+          </h2>
+          <ul class="chartlist languages">
+            <% @by_journal_title.each do |facet| %>
+            <li>
+              <%= render_facet_link(facet) %>
+              <%= display_facet_count(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+
+      <div class="col-md-4 chart">
+        <section>
+          <h2 class="chart-heading">
+            <%# t("blacklight.data_visualization.publications") %>
+            <em><%= t("blacklight.data_visualization.by") %></em>
+            <%= t("blacklight.data_visualization.author") %>
+          </h2>
+          <ul class="chartlist languages">
+            <% @by_author.each do |facet| %>
+            <li>
+              <%= render_facet_link(facet) %>
+              <%= display_facet_count(facet) %>
+              <%= render_percentage_for(facet) %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="contain contain-bottom">
+      <span class="divider">
+        <a href="#charts-top" class="to-the-top">
+          <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+        </a>
+      </span>
     </div>
   </div>
 </article>

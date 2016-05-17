@@ -2,9 +2,9 @@
 // TOPNAV
 //
 // Search
-body[class~="blacklight-pages-index"] li#search a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-index"] li#search i,
-body[class~="blacklight-pages-index"] li#search a { color: #fff; }
+body[class~="search"] li#search a { background: lighten($bluewood, 25%); }
+body[class~="search"] li#search i,
+body[class~="search"] li#search a { color: #fff; }
 
 // OA
 body[class~="blacklight-open_access_indicator"] li#open-access a { background: lighten($bluewood, 25%); }
@@ -17,9 +17,9 @@ body[class~="blacklight-statistics"] li#statistics i,
 body[class~="blacklight-statistics"] li#statistics a { color: #fff; }
 
 // About
-body[class~="blacklight-pages-about"] li#about a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-about"] li#about i,
-body[class~="blacklight-pages-about"] li#about a { color: #fff; }
+body[class~="about"] li#about a { background: lighten($bluewood, 25%); }
+body[class~="about"] li#about i,
+body[class~="about"] li#about a { color: #fff; }
 
 //
 // SUBNAV
@@ -35,9 +35,9 @@ body[class~="blacklight-pages-data"] li#data i,
 body[class~="blacklight-pages-data"] li#data a { color: #fff; }
 
 // About > Data Providers
-body[class~="blacklight-pages-data_providers"] li#data-providers a { background: lighten($bluewood, 25%); }
-body[class~="blacklight-pages-data_providers"] li#data-providers i,
-body[class~="blacklight-pages-data_providers"] li#data-providers a { color: #fff; }
+body[class~="blacklight-pages-research_institutions"] li#data-providers a { background: lighten($bluewood, 25%); }
+body[class~="blacklight-pages-research_institutions"] li#data-providers i,
+body[class~="blacklight-pages-research_institutions"] li#data-providers a { color: #fff; }
 
 // About > FAQ
 body[class~="blacklight-pages-faq"] li#faq a { background: lighten($bluewood, 25%); }
@@ -68,3 +68,22 @@ body[class~="blacklight-open_access_indicator-overview"] li#oa-overview a { colo
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { background: lighten($bluewood, 25%); }
 body[class~="blacklight-open_access_indicator-development"] li#oa-development i,
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { color: #fff; }
+
+
+nav.mobile .mobile-show {
+  float: right;
+  display: none;
+  @include respond-to($screen-md-min) {
+    display: block;
+  }
+  @include respond-to($iphone-landscape) {
+    float: none;
+    margin: .5em 0 0em 0;
+  }
+}
+
+nav.mobile .mobile-hide {
+  @include respond-to($screen-md-min) {
+    display: none;
+  }
+}

@@ -1,4 +1,4 @@
-include StatService
+include Charts
 
 describe "testing the statistics / data visualization module" do
 

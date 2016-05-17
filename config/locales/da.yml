@@ -89,7 +89,7 @@ da:
           supervisor_ts: Vejleder
           editor_ts: Redaktør
           fulltext_access: Fuldtekstadgang
-          data_providers: Dataleverandører
+          data_providers: Institutioner
           name_ts: Navn
           is_active_b: Status
           orcid_ss: ORCID
@@ -189,9 +189,9 @@ da:
       do:  Andet
     research_area_labels:
       hum: Humaniora
-      soc: 'Samfundsvidenskab'
-      med: 'Sundhedsvidenskab'
-      sci: 'Teknik/naturvidenskab'
+      soc: Samfundsvidenskab
+      med: Sundhedsvidenskab
+      sci: Teknik/naturvidenskab
     publishing_status_labels:
       published: Publiceret
       unknown: Ukendt
@@ -238,6 +238,13 @@ da:
       "true": 'Aktiv'
       "false": 'Tidligere aktiv'
 
+  custom_labels:
+    research_area_labels:
+      Humanities: Humaniora
+      Medical science: Sundhedsvidenskab
+      Science/technology: Teknik/naturvidenskab
+      Social science: Samfundsvidenskab
+
   ddf:
     open_access:
       header: Open Access Indikator — Statistik for %{year}
@@ -276,6 +283,7 @@ da:
         universities: Efter universitet
       menu:
         header: Open Access Indikator
+        go_to: Gå til...
         overview: Oversigt
         development: Udvikling
       reports:
@@ -360,7 +368,7 @@ da:
       ris: "Eksportér til RIS"
       cite: "Citer"
       fulltext_access: Fuldtekstadgang
-      data_providers: Dataleverandører
+      at_institutions: Hos forskningsinstitutioner
       email_resultset: "Email citeringer"
       email_result: "Email citering"
     links:
@@ -375,7 +383,7 @@ da:
     pages:
       data:
         providers:
-          title: Leverandører
+          title: Forskningsinstitutioner
     cookies:
       message: Vi benytter os af cookies for at forbedre Forskningsdatabasen.
       linkmsg: Mere information

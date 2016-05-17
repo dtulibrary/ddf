@@ -6,12 +6,14 @@ en:
     elevator_pitch: "Nearly 1 million research publications collected from the research databases of 12 Danish universities and research institutions."
     navigation:
       search_section:
-        search: Search
-      about_section:
-        about: About
+        title: Search
+        subtitle: Publications & Researchers
+        statistics: Statistics
         search_get: "Search & Get"
         data: Data
-        providers: Providers
+      about_section:
+        title: About
+        providers: Institutions
         faq: FAQ
         contact: Contact
         indicators: Indicators
@@ -19,28 +21,45 @@ en:
         releases: Release History
         cookies: Cookies and privacy policy
       oa_section:
-        open_access: "Open Access Indicator"
+        title: Open Access
+        subtitle: Indicator
         overview: Overview
         development: Development
       ef_section:
         eliteforsk: "Eliteforsk Award"
-      statistics_section:
-        statistics: Statistics
 
     data_visualization:
       publication_statistics: Publication Statistics
+      upper_navigation:
+        jump_to: Jump to
+        indicators: Indicators
+        years: Years
+        type_language: Type & Language
+        institutions_authors_journals: Institutions, Authors, & Journals
+      indicator: Indicator
       publications: Publications
       national: National
-      by: "By"
+      by: "by"
       type: "Type"
       by_institution: By Institution
       by_university: By University
+      status: Status
+      review_type: Review Type
+      scientific_level: Scientific Level
+      main_research_area: Main Research Area
+      publication_status: Publication Status
+      institution: Institution
+      language: Language
+      journal_title: Journal Title
+      author: Author
       more: More
       less: Less
       oa_indicator: Open Access Indicator
       more_statistics: More Statistics
       more_oa: More Information
-
+      publication_year: Publication Year
+      and: and
+      submission_year: Submission Year
 
     entry_name:
         default: 'entry'

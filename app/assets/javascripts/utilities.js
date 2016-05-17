@@ -2,7 +2,7 @@
 $(document).ready(function() {
   rest = $(".chartlist.types li")
   .filter(function(index) {
-    return index >= 12;
+    return index >= 13;
   })
 
   rest.hide();
@@ -13,7 +13,7 @@ $(document).ready(function() {
   });
 });
 
-// CARDS ON about/data/providers
+// CARDS ON about/research-institutions
 $(document).ready(function() {
   $("button.card-toggle").click(function() {
     $(this).parent().parent().next().slideToggle("medium");
@@ -28,6 +28,7 @@ $(document).ready(function() {
   3) Show corresponding card
 */
 $(document).ready(function() {
+
   $("ul.data-provider-logos-list li a").click(function(event) {
     event.preventDefault();
 
@@ -50,5 +51,31 @@ $(document).ready(function() {
   $('#print-selected').click(function()
   {
     window.print();
+  });
+});
+
+// Responsive subnavs, taken from:
+// https://css-tricks.com/convert-menu-to-dropdown/
+$(function() {
+  // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+  $("nav.mobile select").change(function() {
+    window.location = $(this).find("option:selected").val();
+  });
+});
+
+// Smooth scrolling to local HTML anchors, taken from:
+// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 700);
+        return false;
+      }
+    }
   });
 });

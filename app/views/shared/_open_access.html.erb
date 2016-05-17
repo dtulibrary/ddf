@@ -6,14 +6,25 @@
         <%= t('ddf.open_access.menu.header') %>
       </h1>
 
-      <ul class="subnav-items-list">
-        <li id="oa-overview">
-          <%= link_to t('ddf.open_access.menu.overview'), open_access_overview_path %>
-        </li>
-        <li id="oa-development">
-          <%= link_to t('ddf.open_access.menu.development'), open_access_development_path %>
-        </li>
-      </ul>
+      <nav class="mobile">
+
+        <ul class="subnav-items-list mobile-hide">
+          <li id="oa-overview">
+            <%= link_to t('ddf.open_access.menu.overview'), open_access_overview_path %>
+          </li>
+          <li id="oa-development">
+            <%= link_to t('ddf.open_access.menu.development'), open_access_development_path %>
+          </li>
+        </ul>
+
+        <!-- TODO -->
+        <select class="mobile-show">
+          <option value="" selected="selected"><%= t('ddf.open_access.menu.go_to') %></option>
+          <option value="<%= open_access_overview_path %>"><%= t('ddf.open_access.menu.overview') %></option>
+          <option value="<%= open_access_development_path %>"><%= t('ddf.open_access.menu.development') %></option>
+        </select>
+      </nav>
+
     </div>
   </div>
 </div>

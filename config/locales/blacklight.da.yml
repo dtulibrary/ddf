@@ -13,12 +13,14 @@ da:
     elevator_pitch: "Omkring 1 million forskningspublikationer, indsamlet fra 12 danske universiteter og forskningsinstitutioners forskningsdatabaser."
     navigation:
       search_section:
-        search: Søgning
-      about_section:
-        about: Om Basen
+        title: Søgning
+        subtitle: Publikationer & Forskere
+        statistics: Statistik
         search_get: "Søg og Hent"
         data: Data
-        providers: Leverandører
+      about_section:
+        title: Om Basen
+        providers: Institutioner
         faq: FAQ
         contact: Kontakt
         indicators: Indikatorer
@@ -26,27 +28,45 @@ da:
         releases: Release historie
         cookies: "Cookie- og privatlivspolitik"
       oa_section:
-        open_access: "Open Access Indikator"
+        title: Open Access
+        subtitle: Indikator
         overview: Oversigt
         development: Udvikling
       ef_section:
         eliteforsk: "Eliteforsk Pris"
-      statistics_section:
-        statistics: Statistik
 
     data_visualization:
       publication_statistics: Publikations-statistikker
+      upper_navigation:
+        jump_to: Hop til
+        indicators: Indikatorer
+        years: År
+        type_language: Type & Sprog
+        institutions_authors_journals: Institutioner, Forfattere, & Tidskrifter
+      indicator: Indikator
       publications: Publikationer
       national: Nationalt
-      by: "Efter"
+      by: "efter"
       type: "Type"
       by_institution: Efter Forskningsinstitution
       by_university: Efter Universitet
+      status: Status
+      review_type: Review Type
+      scientific_level: Videnskabeligt niveau
+      main_research_area: Hovedforskningsområde
+      publication_status: Publikationsstatus
+      institution: Institution
+      language: Sprog
+      journal_title: Tidskriftens Titel
+      author: Forfatter
       more: Flere
       less: Færre
       oa_indicator: Open Access Indikator
       more_statistics: Mere Statistik
       more_oa: Mere Information
+      publication_year: Udgivelsesår
+      and: og
+      submission_year: Indberetningsår
 
     tools:
       cite: 'Citer'

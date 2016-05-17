@@ -196,13 +196,14 @@ TRANSLATION PATTERN:
 <th><%= t('ddf.search.help.more_help')%></th>
 
 BEM:
-.block {}
-.block__element {}
-.block--modifier {}
+.some-block {}
+.some-block__child-element {}
+.some-block--modifier {}
 
-    .block represents the higher level of an abstraction or component.
-    .block__element represents a descendent of .block that helps form .block as a whole.
-    .block--modifier represents a different state or version of .block.
+Where:
+.some-block represents the higher level of an abstraction or component.
+.some-block__child-element represents a descendent of .some-block that helps form .some-block as a whole.
+.some-block--modifier represents a different state or version of .some-block.
 
 The reason for double rather than single hyphens and underscores is so that your block itself can be hyphen delimited, for example:
 
@@ -463,3 +464,60 @@ http://technicaldebt.com/the-cost-of-using-rubys-rescue-as-logic/
 
 Do this instead:
 http://stackoverflow.com/questions/17512197/how-to-deal-with-potential-errors-while-accessing-a-hash-inside-a-hash
+
+SOME RUNTIME QUERYING GOODIES
+Here's how you query the app for where methods are defined:
+$ rails c
+> include StatService
+> app.method(:hashify)
+=> #<Method: ActionDispatch::Integration::Session(StatService)#hashify>
+or, even:
+> app.method(:hashify).source_location
+=> ["/Users/abbottjam/work/ddf/app/services/stat_service.rb", 25]
+
+Read more:
+http://stackoverflow.com/questions/175655/how-to-find-where-a-method-is-defined-at-runtime
+http://stackoverflow.com/questions/7158977/finding-out-where-methods-are-defined-in-ruby-rails-as-opposed-to-java
+
+Also possible via Pry. Insert a breakpoint with binding.pry, then:
+
+[1] pry(#<StatisticsController>)> find-method hashify
+StatService
+StatService#hashify
+
+HANDLING OF OPTIONAL PARAMS TO CLASS INSTANTIATORS / METHODS:
+OR-based:
+http://stackoverflow.com/questions/9710303/rails-optional-argument
+Merge hash - based:
+http://stackoverflow.com/questions/10234406/ruby-methods-and-optional-parameters
+
+MULTIPLE CONSTRUCTORS IN RUBY, SEE VERSION BY JOHAN HOLMBERG:
+https://www.ruby-forum.com/topic/101959
+In more detail, covers allocate, initialize, & new:
+http://www.slideshare.net/ciscoleal/constructors-28459017
+
+CHART.JS CLICKABLE CHARTS:
+http://stackoverflow.com/questions/26257268/click-events-on-pie-charts-in-chart-js
+https://github.com/nnnick/Chart.js/issues/577
+
+USING HTML5 DATA-* ATTRIBUTES:
+https://developer.mozilla.org/en/docs/Web/Guide/HTML/Using_data_attributes
+Using multiple values per attribute:
+http://stackoverflow.com/questions/11962091/is-it-possible-to-have-multiple-data-name-atributes-in-html5
+
+MOBILE NAV:
+http://bradfrost.com/blog/web/responsive-nav-patterns/#select
+This, sans the JS:
+https://css-tricks.com/convert-menu-to-dropdown/
+Also:
+https://www.nngroup.com/articles/mobile-navigation-patterns/
+https://studio.uxpin.com/blog/5-creative-mobile-ui-patterns-navigation/
+
+NIL GUARDS WHEN FINDING DOM ELEMENTS — JS vs JQUERY:
+http://stackoverflow.com/questions/3247251/is-ifdocument-getelementbyidsomething-null-identical-to-ifdocument-getel
+http://stackoverflow.com/questions/477667/how-to-check-null-objects-in-jquery
+http://stackoverflow.com/questions/14028959/why-does-jquery-or-a-dom-method-such-as-getelementbyid-not-find-the-element
+
+SMOOTH SCROLLING WITH JQUERY:
+https://css-tricks.com/snippets/jquery/smooth-scrolling/
+(Used on /statistics)

@@ -17,9 +17,7 @@
     <%= opensearch_description_tag application_name, opensearch_catalog_url(:format => 'xml') %>
     <%# favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag "application", media: "all" %>
-
     <%= javascript_include_tag "application" %>
-
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
 
@@ -27,21 +25,16 @@
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-      <%= citation_tags_for @document %>
-      <%= render partial: 'shared/google_analytics' %>
-
-      <%# we only need Altmetrics on the show pages %>
-      <% if controller_name == 'catalog' && action_name == 'show' %>
-        <%= Dtu::Metrics::AltmetricPresenter.altmetric_embed_script %>
-      <% end %>
+    <%= render partial: 'shared/google_analytics' %>
   </head>
 
-  <body class="<%= render_body_class %>">
+  <body class="<%= render_body_class %> search">
     <%= render :partial => 'shared/debug' %>
     <header>
       <%= render :partial => 'shared/header' %>
-      <%= render_submenu %>
+      <%= render :partial => 'shared/search_static' %>
     </header>
+
     <%= render partial: 'shared/ajax_modal' %>
 
     <div id="main-container" class="container">
@@ -53,13 +46,5 @@
     </div>
 
     <%= render :partial => 'shared/footer' %>
-    <script type="text/javascript" id="cookiebanner"
-    src="//cookiebanner.eu/js/cookiebanner.min.js"
-    data-height="30px" data-position="bottom"
-    data-message="<%= t 'ddf.cookies.message' %>"
-    data-moreinfo="<%= about_privacy_path %>"
-    data-linkmsg="<%= t 'ddf.cookies.linkmsg' %>"
-    >
-  </script>
   </body>
 </html>

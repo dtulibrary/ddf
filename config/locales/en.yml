@@ -215,6 +215,13 @@ en:
       "false": 'Formerly active'
 
 
+  custom_labels:
+    research_area_labels:
+      Humanities: Humanities
+      Medical science: Medical science
+      Science/technology: Science/technology
+      Social science: Social science
+
   ddf:
     people:
       recent_publications: Most recent publications
@@ -256,6 +263,7 @@ en:
         universities: By University
       menu:
         header: Open Access Indicator
+        go_to: Go to...
         overview: Overview
         development: Development
       reports:
@@ -336,7 +344,7 @@ en:
       ris: "Export to RIS"
       cite: "Cite"
       fulltext_access: Full text access
-      data_providers: Data providers
+      at_institutions: At institutions
       email_resultset: "Email citations"
       email_result: "Email citation"
     links:
@@ -351,7 +359,7 @@ en:
     pages:
       data:
         providers:
-          title: Data Providers
+          title: Research Institutions
     cookies:
       message: We use cookies to improve the Danish National Research Database
       linkmsg: Learn more

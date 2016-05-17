@@ -6,29 +6,35 @@
         <%= t('blacklight.navigation.about_section.about') %>
       </h1>
 
-      <ul class="subnav-items-list">
-        <li id="search-get">
-          <%= link_to t('blacklight.navigation.about_section.search_get'), about_search_and_get_path %>
-        </li>
-        <li id="data">
-          <%= link_to t('blacklight.navigation.about_section.data'), about_data_path %>
-        </li>
-        <li id="data-providers">
-          <%= link_to t('blacklight.navigation.about_section.providers'), about_data_providers_path %>
-        </li>
-        <li id="faq">
-          <%= link_to t('blacklight.navigation.about_section.faq'), about_faq_path %>
-        </li>
-        <li id="releases">
-          <%= link_to t('blacklight.navigation.about_section.releases'), about_releases_path %>
-        </li>
-        <li id="privacy">
-          <%= link_to t('blacklight.navigation.about_section.cookies'), about_privacy_path %>
-        </li>
-        <li id="contact">
-          <%= link_to t('blacklight.navigation.about_section.contact'), about_contact_path %>
-        </li>
-      </ul>
+      <nav class="mobile">
+        <ul class="subnav-items-list mobile-hide">
+          <li id="data-providers">
+            <%= link_to t('blacklight.navigation.about_section.providers'), about_research_institutions_path %>
+          </li>
+          <li id="faq">
+            <%= link_to t('blacklight.navigation.about_section.faq'), about_faq_path %>
+          </li>
+          <li id="releases">
+            <%= link_to t('blacklight.navigation.about_section.releases'), about_releases_path %>
+          </li>
+          <li id="privacy">
+            <%= link_to t('blacklight.navigation.about_section.cookies'), about_privacy_path %>
+          </li>
+          <li id="contact">
+            <%= link_to t('blacklight.navigation.about_section.contact'), about_contact_path %>
+          </li>
+        </ul>
+
+        <select class="mobile-show">
+          <option value="" selected="selected"><%= t('ddf.open_access.menu.go_to') %></option>
+          <option value="<%= about_research_institutions_path %>"><%= t('blacklight.navigation.about_section.providers') %></option>
+          <option value="<%= about_faq_path %>"><%= t('blacklight.navigation.about_section.faq') %></option>
+          <option value="<%= about_releases_path %>"><%= t('blacklight.navigation.about_section.releases') %></option>
+          <option value="<%= about_privacy_path %>"><%= t('blacklight.navigation.about_section.cookies') %></option>
+          <option value="<%= about_contact_path %>"><%= t('blacklight.navigation.about_section.contact') %></option>
+        </select>
+      </nav>
+
     </div>
   </div>
 </div>
