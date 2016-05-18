@@ -14,6 +14,7 @@
 //= require jquery_ujs
 // Required by Blacklight:
 //= require blacklight/blacklight
+//= require 'Chart.js'
 //
 //= require_tree .
 
@@ -22,4 +23,3 @@
 // this:
 //= require 'blacklight_range_limit'
 //= require 'bootstrap_tab.min.js'
-
