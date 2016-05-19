@@ -434,9 +434,22 @@ section.secondary-data {
   padding: 1em;
 }
 
+div.document-actions-container  {
+  // display: table-cell;
+  // width: 70px;
+  // min-width: 70px;
+  display: inline-block;
+  @include respond-to($iphone_landscape) {
+    display: block;
+    margin: 1em 0;
+  }
+}
+
 div.bookmark_document {
   //background: #eee;
 }
+
+label.toggle_bookmark { display: inline; }
 
 div.bookmark_document input.toggle_bookmark {
   // display: inline-block;
@@ -456,3 +469,8 @@ div.statistics-nav-container { margin-bottom: 3em; }
 div.statistics-row { margin-bottom: 2em; }
 
 ul.nav-tabs a { font-size: calc-em(16px); }
+
+// TESTING PRINT STYLESHEET
+// div.no-print,
+// ul.no-print,
+// nav.no-print { display: none; }

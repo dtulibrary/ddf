@@ -1,6 +1,6 @@
 <% #Using the Bootstrap Pagination class  -%>
 <% if @previous_document || @next_document %>
-	<nav class="show-view">
+	<nav class="show-view no-print">
     <ul class="show-view__pagination">
       <li><%= link_to_previous_document @previous_document %> |</li>
       <li><%= item_page_entry_info %> |</li>

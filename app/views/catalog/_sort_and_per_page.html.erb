@@ -1,5 +1,5 @@
 <% unless @document_list.empty? %>
-  <div id="sortAndPerPage" class="clearfix">
+  <div id="sortAndPerPage" class="clearfix no-print">
     <%= render :partial => "paginate_compact", :object => @response %>
     <%= render :partial => "filtering_widgets" %>
   </div>

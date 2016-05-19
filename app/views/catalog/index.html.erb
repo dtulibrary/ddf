@@ -1,8 +1,14 @@
-<div id="sidebar" class="col-md-3 col-sm-4">
+<div id="sidebar" class="col-md-3 col-sm-4 no-print">
   <%= render 'search_sidebar' %>
 
   <%= render_statistics_link %>
 
+  <button>
+    <i class="glyphicon glyphicon-print"></i>
+    <a href="">Print all</a>
+  </button>
+
+<!--
   <div class="selected-documents">
     <h1 class="selected-documents__heading">
       <i class="glyphicon glyphicon-check"></i>
@@ -45,7 +51,7 @@
       </ol>
     </div>
   </div>
-
+  -->
 
 </div>
 

@@ -14,10 +14,10 @@
     <%= link_to_document document, :label => document_show_link_field(document), :counter => counter %>
   </h5>
 
-  <div class="document-actions-container">
+  <div class="document-actions-container no-print">
     <%= render_index_doc_actions document, :wrapping_class => "index-document-functions" %>
   </div>
 
-  <%= render_bookmark_toggle document, wrapping_class: "bookmark_document" %>
+  <%# render_bookmark_toggle document, wrapping_class: "bookmark_document" %>
 </div>
 

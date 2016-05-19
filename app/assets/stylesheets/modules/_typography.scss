@@ -455,15 +455,6 @@ div.documentHeader .doctitle {
     padding-right: 0;
   }
 }
-div.document-actions-container  {
-  display: table-cell;
-  width: 70px;
-  min-width: 70px;
-  @include respond-to($iphone_landscape) {
-    display: block;
-    margin: 1em 0;
-  }
-}
 
 ul[class$="__resets"] li:not(:last-child) { margin-right: .5em; }
 ul[class$="__resets"] li i {

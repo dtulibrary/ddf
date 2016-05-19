@@ -14,6 +14,10 @@ module BlacklightHelper
     actions = []
     actions << content_tag("li", render_cite_action(document, options={}))
     actions << content_tag("li", render_export_action(document, :return_url => return_url))
+
+    # TODO
+    actions << render(:partial => 'catalog/bookmark_control', :locals => {:document=> document}.merge(options)) if render_bookmarks_control?
+
     wrapping_class = options.delete(:wrapping_class) || "document-actions-list"
     content_tag("ul", actions.join("\n").html_safe, :class => wrapping_class) unless actions.empty?
   end
