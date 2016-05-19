@@ -15,7 +15,7 @@ body {
   border-bottom: 3px solid $orange;
 
 /*
-  @include respond-to($ipad_portrait) { font-size: 1.15rem; }
+  @include respond-to($screen-md-min) { font-size: 1.15rem; }
   @include respond-to($iphone_landscape) {
     font-size: 1.1rem;
     line-height: 1.7rem;
@@ -115,31 +115,12 @@ h1.facet-heading span.close { font-size: 1.4em; }
 
 #document { margin-bottom: 3em; }
 
-// #documents dt[class^="blacklight-"], #documents dt[class^="ddf-index"],
-// #document dt[class^="blacklight-"], #document dt[class^="ddf-index"] {
-//   font-weight: 600;
-//   color: #333;
-//   //width: 160px; -> the default
-//   //width: 180px; -> to accommodate longer fields
-//   // the proper way to override width:
-//   //@include above-viewport($ipad_portrait) { width: 180px; }
-//   //background: #aaa;
-// }
-// #documents dd[class^="blacklight-"], #documents dd[class^="ddf-index"],
-// #document dd[class^="blacklight-"], #document dd[class^="ddf-index"] {
-//   margin-bottom: .3em;
-//   //margin-left: 180px; -> the default
-//   //margin-left: 190px; -> to accommodate longer fields
-//   // the proper way to override left margin:
-//   //@include above-viewport($ipad_portrait) { margin-left: 190px; }
-// }
-
 h5.index {
   font-family: $headline;
   font-size: calc-em(20px);
   line-height: calc-em(22px);
   margin: .25em 0 .7em 0;
-  @include respond-to($ipad_portrait) { margin: .25em 0 0 0; }
+  @include respond-to($screen-md-min) { margin: .25em 0 0 0; }
 }
 h5.index a:link {
   text-decoration: underline;
@@ -341,8 +322,8 @@ form.range_limit input.submit {
 form.range_limit input.submit:hover { background: darken(#2e6da4, 7%); }
 
 div.search-options-container {
-  padding-top: 1.25em;
-  @include respond-to($ipad_portrait) { padding: .3em 0 0 0; }
+  padding-top: 2.6em;
+  @include respond-to($screen-md-min) { padding: .3em 0 0 0; }
 }
 ul.search-extras-list {
   font-size: calc-em(15px);
@@ -606,7 +587,7 @@ li.sitemap__section {
   display: inline-block;
   vertical-align: top;
   margin-right: 2em;
-  @include respond-to($ipad_portrait) { display: block; }
+  @include respond-to($screen-md-min) { display: block; }
 }
 li.sitemap__section a.index { font-weight: bold; }
 li.sitemap__section a.index i.glyphicon,
@@ -950,7 +931,7 @@ p.pitch {
   line-height: 1.4em;
   color: $blue-2;
   margin-bottom: .7em;
-  @include respond-to($ipad_portrait) {
+  @include respond-to($screen-md-min) {
     line-height: 1.3em;
   }
   @include respond-to($iphone_landscape) {
@@ -1410,13 +1391,13 @@ ul.oa-filtering-inputs li {
   padding: 0;
   display: inline-block;
 
-  @include respond-to($ipad_portrait) { display: block; }
+  @include respond-to($screen-md-min) { display: block; }
   @include respond-to($iphone_landscape) {}
 }
 
 ul.oa-filtering-inputs li:not(:last-child) {
   margin-right: 1.5em;
-  @include respond-to($ipad_portrait) { margin-bottom: .5em; }
+  @include respond-to($screen-md-min) { margin-bottom: .5em; }
 }
 
 button.view-oa {
@@ -1791,3 +1772,6 @@ div#document[itemtype$=Person] {
   }
   dd { margin-left: 110px; }
 }
+
+// Overrides Bootstrap default:
+ul.nav-tabs { border-bottom: 0; }

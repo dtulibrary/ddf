@@ -4,7 +4,7 @@
   width: $cols15;
   @include centered;
   @include respond-to($cols13+$cols4) { width: 85%; }
-  @include respond-to($ipad_portrait) { width: 90%; }
+  @include respond-to($screen-md-min) { width: 90%; }
 }
 .measure {
   width: $cols10;
@@ -28,7 +28,7 @@ Some examples of classes for responsive breakpoints */
   }
 }
 .tablet-p > *[class^="col"] {
-  @include respond-to($ipad_portrait) {
+  @include respond-to($screen-md-min) {
     float: none;
     width: 100%;
   }
@@ -84,11 +84,14 @@ body > footer .sticky {
   border-radius: 3px;
 }
 
-form.search-query-form { padding-left: 0; }
+form.search-query-form {
+  padding-left: 0;
+  @include respond-to($screen-md-min) { padding-top: 0; }
+}
 
 form.search-query-form div.input-group {
   width: 80%;
-  @include respond-to($ipad_portrait) { width: 100%; }
+  @include respond-to($screen-md-min) { width: 100%; }
 }
 
 input.form-control {
@@ -115,14 +118,14 @@ button[id^=search] {
   height: auto;
   line-height: auto;
   padding: 8.5px 12px;
-  @include respond-to($ipad_portrait) {
+  @include respond-to($screen-md-min) {
     font-size: 17px;
     display: block;
     margin: 1em auto -.5em auto;
   }
   @include respond-to($iphone_landscape) { font-size: 16px; }
 
-  @include above-viewport($ipad_portrait) {
+  @include above-viewport($screen-md-min) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
@@ -134,11 +137,11 @@ button[id^=search] {
 }
 
 .container--searchbox {
-  @include respond-to($ipad_portrait) { width: 90%; }
+  @include respond-to($screen-md-min) { width: 90%; }
 }
 
 .container {
-  @include respond-to($ipad_portrait) {
+  @include respond-to($screen-md-min) {
     padding-left: 3em; // FIXME
   }
 }
@@ -399,7 +402,7 @@ figure#deff {
 div.intro { margin-bottom: .5em; }
 
 div.chart {
- @include respond-to($ipad_portrait) {
+ @include respond-to($screen-md-min) {
     margin-bottom: 7em; // TODO
   }
 }
@@ -451,3 +454,5 @@ div.oa-chart-container {
 
 div.statistics-nav-container { margin-bottom: 3em; }
 div.statistics-row { margin-bottom: 2em; }
+
+ul.nav-tabs a { font-size: calc-em(16px); }

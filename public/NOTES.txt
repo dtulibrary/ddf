@@ -521,3 +521,11 @@ http://stackoverflow.com/questions/14028959/why-does-jquery-or-a-dom-method-such
 SMOOTH SCROLLING WITH JQUERY:
 https://css-tricks.com/snippets/jquery/smooth-scrolling/
 (Used on /statistics)
+
+PRINT STYLESHEETS:
+https://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/
+https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/
+https://css-tricks.com/print-stylesheet-approaches-blacklist-vs-whitelist/
+http://www.webcredible.com/blog/print-stylesheet-definitive-guide/
+
+
