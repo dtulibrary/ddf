@@ -647,18 +647,25 @@ ul.collaborator-logos-list li img {
   vertical-align: bottom;
 }
 
-ul.icon-labels > li > a { color: $link-color; }
+ul.icon-labels,
+ul.icon-labels > li { margin: 0; }
+ul.icon-labels > li { display: inline-block; }
+
+ul.icon-labels > li > a {
+  font-size: calc-em(15px);
+  color: $link-color;
+}
 ul.icon-labels > li > i {
   position: relative;
-  font-size: calc-em(25px);
-  top: 4px;
-  padding-left: 2px;
+  font-size: calc-em(19px);
+  vertical-align: -5%;
+  padding-right: 2px;
   color: $link-color-auxiliary;
 }
 ul.icon-labels__topnav > li > a { color: #fff; }
 ul.icon-labels__topnav>li > i {
-  font-size: calc-em(21px);
-  top: 3px;
+  // font-size: calc-em(21px);
+  // top: 3px;
   color: $blue-3;
 }
 
@@ -1051,12 +1058,12 @@ h1.selected-documents__heading span.number {
 ol.selected-documents__list { font-size: .9em; }
 
 ul.icon-labels--selected i.glyphicon {
-  font-size: calc-em(22px);
+  // font-size: calc-em(22px);
   vertical-align: 6%;
 }
 
 ul.selected-documents__actions-list {
-  font-size: calc-em(16px);
+  // font-size: calc-em(16px);
   margin: 1em 0;
 }
 ul.selected-documents__actions-list li { list-style-type: none; }
@@ -1766,3 +1773,5 @@ div#document[itemtype$=Person] {
 
 // Overrides Bootstrap default:
 ul.nav-tabs { border-bottom: 0; }
+
+ul.serp-actions { margin-bottom: .5em; }

@@ -1,5 +1,17 @@
-<nav class="index-view">
+<nav class="index-view group">
   <%= render 'did_you_mean' %>
   <%= render 'constraints' %>
   <%# render 'sort_and_per_page' %>
+
+
+    <%- unless @document_list.blank? -%>
+      <ul class="serp-actions icon-labels align-right">
+        <li>
+          <i class="glyphicon glyphicon-print"></i>
+          <a href="#" id="print-selected">Print results</a>
+        </li>
+      </ul>
+    <%- end -%>
+
+
 </nav>

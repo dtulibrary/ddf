@@ -474,3 +474,9 @@ ul.nav-tabs a { font-size: calc-em(16px); }
 // div.no-print,
 // ul.no-print,
 // nav.no-print { display: none; }
+
+button.print {
+  display: block;
+  width: 8em;
+  margin: 2em auto;
+}
