@@ -410,6 +410,20 @@ module CatalogHelper
       images.join.html_safe
     end
 
+    def render_backlinks(document)
+      backlinks = collect_backlinks(document)
+      codes = backlinks.map { |backlink| get_backlink_origin(backlink) }
+      image_names = codes.map { |code| PROVIDER_CODES[code.to_sym] }
+      zipped = image_names.zip backlinks
+      links_by_image = Hash[*zipped.flatten]
+      images = image_names.map do |name|
+        content_tag(:li, class: name) do
+          link_to(render_logo_from(name), links_by_image[name])
+        end
+      end
+      images.join.html_safe
+    end
+
     # Not using semantic names for the partials, OK?
     def render_provider_cards
       return unless providers_params.present?
@@ -429,11 +443,16 @@ module CatalogHelper
   end
 
   def small_logo_path(image_name)
-    path_with_locale    = "data-providers/small/#{image_name}.#{I18n.locale}.png"
-    path_without_locale = "data-providers/small/#{image_name}.png"
-    static_asset = Rails.application.assets.find_asset(path_with_locale) || Rails.application.assets.find_asset(path_without_locale)
-    static_asset.logical_path
-    # TODO: Handle exception(s)
+    begin
+      raise ArgumentError, 'No such file' if image_name.eql?(nil)
+      path_with_locale    = "data-providers/small/#{image_name}.#{I18n.locale}.png"
+      path_without_locale = "data-providers/small/#{image_name}.png"
+      static_asset = Rails.application.assets.find_asset(path_with_locale) || Rails.application.assets.find_asset(path_without_locale)
+      static_asset.logical_path
+    rescue
+      # TODO: Handle exception(s)
+      ""
+    end
   end
 
     SELECTED_SORT_FIELDS = ['year', 'title']

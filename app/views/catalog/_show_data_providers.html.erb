@@ -1,17 +1,13 @@
 <div class="panel__block data-providers data-providers-show">
-  <h2 class="panel__block-heading"><%= t('ddf.tools.at_institutions') %></h2>
+  <h2 class="panel__block-heading">
+    <%= t('ddf.tools.at_institutions') %>
+    <i class="fa fa-external-link-square"></i>
+  </h2>
 
   <div class="panel__block-contents">
     <ul>
-      <% collect_backlinks(document).each do |backlink| %>
-        <% origin = get_backlink_origin(backlink)  %>
-        <%= content_tag :li, class: [origin, document.format, document.status] do %>
-          <%= link_to source_label(origin), backlink,
-                      :target => '_blank',
-                      :title  => t('ddf.links.backlink_hover', :source => source_label(origin)) %>
-          <i class="fa fa-external-link-square"></i>
-        <% end %>
-      <% end %>
+      <%= render_backlinks(document) %>
     </ul>
   </div>
 </div>
+

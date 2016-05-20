@@ -236,16 +236,16 @@ div.availability-panel ul.institutions-list li {
 }
 div.availability-panel--show ul.institutions-list li { margin-bottom: .3em; }
 
-.fulltext-access, .data-providers {
-  img { height: 1em; }
+// .fulltext-access, .data-providers {
+//   img { height: 1em; }
 
-  i.fa-external-link-square {
-    vertical-align: super;
-    font-size: 0.8em;
-    margin-left: 0.25em;
-    color: $blue-2;
-  }
-}
+//   i.fa-external-link-square {
+//     vertical-align: super;
+//     font-size: 0.8em;
+//     margin-left: 0.25em;
+//     color: $blue-2;
+//   }
+// }
 
 .fulltext-access-index {
   background-color: $blue-4;
@@ -287,11 +287,8 @@ div.docdetails h2.panel__block-heading {
 }
 
 div.docdetails h2.panel__block-heading i {
-  font-size: calc-em(27px);
-  position: absolute;
-  top: 25%;
-  right: 10px;
-  color: rgba(0,0,0, .6);
+  font-size: .85em;
+  vertical-align: text-top;
   color: $blue-2;
 }
 
