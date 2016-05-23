@@ -213,7 +213,6 @@ module Blacklight::UrlHelperBehavior
     end
 
     p[:f][field].push(value)
-    p[:f] = Hash[p[:f].map { |k, v| [k, [v.join(' OR ')]] }]
 
     if item and item.respond_to?(:fq) and item.fq
       item.fq.each do |f,v|
