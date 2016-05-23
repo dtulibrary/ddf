@@ -36,34 +36,6 @@ module CatalogHelper
     t "mxd_type_labels.review_status_labels.#{value}"
   end
 
-  def render_affiliated_authors(args)
-    document = args[:document]
-    numbered_contributors_list(document.authors_with_affiliations, '; ')
-  end
-
-  def render_affiliated_editors(args)
-    document = args[:document]
-    numbered_contributors_list(document.editors_with_affiliations, ', ')
-  end
-
-  def numbered_contributors_list(contributors_hash, join_str)
-    output = []
-    contributors_hash.collect do |contributor, aff_num|
-      linked_num = "<sup><a href='#affil#{aff_num}'>#{aff_num+1}</a></sup>" if aff_num
-      output << "#{contributor}#{linked_num}"
-    end
-    output.join(join_str).html_safe
-  end
-
-  def render_numbered_affiliations(args)
-    output = []
-    document = args[:document]
-    document.affiliations.each_with_index do |aff, i|
-      output << "<sup id='affil#{i}'>#{i+1}</sup> #{aff}"
-    end
-    output.join('<hr style="margin:0.2em 0em">').html_safe
-  end
-
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end

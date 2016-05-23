@@ -95,19 +95,19 @@ class CatalogController < ApplicationController
 
     # ALL SHOW FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_show_field 'author_ts', helper_method: :render_affiliated_authors
+    config.add_show_field 'author_ts', :separator => ' ; '
     config.add_show_field 'subtitle_ts'
     config.add_show_field 'doi_ss'
     config.add_show_field 'abstract_ts'
     config.add_show_field 'isbn_ss'
     config.add_show_field 'format_orig_s', :helper_method => :render_type
     # NOTE: Toshokan uses a helper method here to render affiliations
-    config.add_show_field 'affiliation_ts', helper_method: :render_numbered_affiliations
+    config.add_show_field 'affiliation_ts', :separator => '<hr style="margin:0.2em 0em">'.html_safe
     config.add_show_field 'language_ss', :helper_method => :render_language
     # NOTE: Toshokan uses a somewhat different helper method
     config.add_show_field 'journal_title_ts', :helper_method => :render_journal_info
     # NOTE: Toshokan uses the author link helper method here
-    config.add_show_field 'editor_ts', helper_method: :render_affiliated_editors
+    config.add_show_field 'editor_ts'
     # NOTE: Toshokan uses a helper method here to create keyword links
     config.add_show_field 'keywords_ts', :separator => '; '
     config.add_show_field 'research_area_ss'
