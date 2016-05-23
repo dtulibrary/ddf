@@ -41,4 +41,14 @@ describe PersonPresenter do
       end
     end
   end
+
+  describe 'publications_link' do
+    subject { presenter.publications_link }
+    context 'when there are less than 10 publications' do
+      it 'should return a blank string' do
+        allow_any_instance_of(described_class).to receive(:publications).and_return({size: 2})
+        expect(subject).to eql ''
+      end
+    end
+  end
 end

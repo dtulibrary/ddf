@@ -17,7 +17,7 @@ class PersonPresenter < Dtu::DocumentPresenter
 
 
   def publications_link
-    return unless publications[:size] > 10
+    return '' unless publications[:size] > 10
     link_to t('ddf.people.all_publications', number: publications[:size]),
       catalog_index_path('f[cris_id_ss][]' => SolrService.cris_search(document.cris_ids),
       sort: 'pub_date_tsort desc')
