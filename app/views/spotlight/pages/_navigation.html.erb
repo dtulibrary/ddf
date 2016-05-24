@@ -6,9 +6,13 @@
         <li class="<%= "active" if current_page?(current_exhibit) %>">
           <%= link_to t(:'spotlight.curation.nav.home'), current_exhibit %>
         </li>
-        <% current_exhibit.main_navigations.displayable.each do |navigation| %>
-        <%= render partial: "shared/#{navigation.nav_type}_navbar", locals: { navigation: navigation } %>
-        <% end %>
+        <%# Spotlight per default shows these pages in a dropdown - we don't want this  %>
+        <% published_top_level_feature_pages = current_exhibit.feature_pages.published.at_top_level %>
+        <% published_top_level_feature_pages.each do |page|  %>
+            <li class="<%= "active" if current_page?(url_for([spotlight, page.exhibit, page])) %>">
+              <%= link_to page.title, [spotlight, page.exhibit, page] %>
+            </li>
+        <% end  %>
       </ul>
       <% end %>
     </div>
