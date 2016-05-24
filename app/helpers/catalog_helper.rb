@@ -70,6 +70,12 @@ def render_research_area_field args
   args[:document]['research_area_ss'].collect {|s| t "research_area_labels.#{s}"}.join ' ; '
 end
 
+def render_authors args
+  authors = args[:document][args[:field]]
+  sep = args[:separator] || '; '
+  authors.map { |au| "<span class='author'>#{au}</span>" }.join("<span>#{sep}</span>").html_safe
+end
+
 def render_publishing_status(opts)
   field = opts[:document][opts[:field]]
   if field.is_a? Array

@@ -95,7 +95,7 @@ class CatalogController < ApplicationController
 
     # ALL SHOW FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_show_field 'author_ts', :separator => ' ; '
+    config.add_show_field 'author_ts', :separator => '; ', :helper_method => :render_authors
     config.add_show_field 'subtitle_ts'
     config.add_show_field 'doi_ss'
     config.add_show_field 'abstract_ts'

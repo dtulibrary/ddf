@@ -1557,3 +1557,23 @@ p.more-link { text-align: center; }
 p.more-link--oa { margin-top: 4em; }
 p.more-link a { text-decoration: underline; }
 
+// TEST shorten_list in utilities.js
+// #document dd.blacklight-author_ts > span.author { text-transform: uppercase; }
+
+
+dd.blacklight-author_ts span.et-al { font-style: italic; }
+dd.blacklight-author_ts span.show-all a,
+dd.blacklight-author_ts span.hide-last a {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+dd.blacklight-author_ts span.show-all a:hover,
+dd.blacklight-author_ts span.hide-last a:hover,
+
+dd.blacklight-author_ts span.show-all a:visited:hover,
+dd.blacklight-author_ts span.hide-last a:visited:hover,
+
+dd.blacklight-author_ts span.show-all a:active,
+dd.blacklight-author_ts span.hide-last a:active { color: $orange; }
+

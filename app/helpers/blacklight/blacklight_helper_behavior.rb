@@ -268,7 +268,6 @@ module Blacklight::BlacklightHelperBehavior
   def render_document_show_field_value *args
     options = args.extract_options!
     document = args.shift || options[:document]
-
     field = args.shift || options[:field]
     presenter(document).render_document_show_field_value field, options
   end

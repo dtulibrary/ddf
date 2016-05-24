@@ -111,6 +111,10 @@ en:
           conf_title_ts: Conference
           submission_year_tis: Submission year
           cluster_id_ss: ID
+          shortened_list:
+            show_all: 'Show all'
+            hide_last: 'Hide last'
+            et_al: 'et al.'
 
       form:
         logo_label: Danish National Research Database
