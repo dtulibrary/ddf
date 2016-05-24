@@ -109,3 +109,5 @@ body.blacklight-exhibits-index li#elite-home a {
     display: inline-block;
   }
 }
+.exhibit-card a:hover { color: darken($bluewood, 10%); }
+
