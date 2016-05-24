@@ -42,6 +42,11 @@ h1.elite {
     text-align: left;
     width: 200px;
   }
+  @media screen and (min-width: 768px) {
+    dd {
+      margin-left: 200px;
+    }
+  }
 }
 #exhibit-navigation {
   height: 50px;
