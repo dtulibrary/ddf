@@ -995,16 +995,16 @@ button.list-toggle .glyphicon {
 }
 // TOGGLING CLASSES
 
-dd.icon-label  { line-height: 1.6em; }
-dd.icon-label img {
-  font-size: calc-em(23px);
-  vertical-align: text-bottom;
-}
-dd.icon-label a {}
 
-dd.icon-label--doi {
+// For icons that use image files:
+dd.icon-label--doi img {
+  height: 1.5em;
+  vertical-align: -30%;
+}
+dd.icon-label--oa img {
+  height: 1.5em;
   position: relative;
-  left: -4px;
+  top: -5px;
 }
 
 img.sidepanel-icon {

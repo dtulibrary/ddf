@@ -1,6 +1,7 @@
 <div class="fulltext-access fulltext-access-index">
   <dt><%= t 'blacklight.search.fields.index.fulltext_access' %>:</dt>
   <%# TODO: Export to helpers, align links in CSS %>
+
   <% collect_fulltexts(document).each do |fulltext| %>
     <dd class="icon-label icon-label--oa">
       <%= image_tag image_url('openaccess.png') %>
@@ -10,6 +11,7 @@
       <i class="fa fa-external-link-square"></i>
     </dd>
   <% end %>
+
   <% collect_doi_links(document).each do |link| %>
     <dd class="icon-label icon-label--doi">
       <%= image_tag image_url('doi.png') %>
