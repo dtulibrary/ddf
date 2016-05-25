@@ -3,8 +3,9 @@
 
   <div class="panel__block-contents">
     <ul>
+
       <% collect_fulltexts(document).each do |fulltext| %>
-        <li>
+        <li class="icon-label icon-label--oa">
           <%= image_tag image_url('openaccess.png'), class: 'sidepanel-icon' %>
           <%= link_to source_label(fulltext['source']), fulltext['url'],
                       :target => '_blank',
@@ -12,8 +13,9 @@
           <i class="fa fa-external-link-square"></i>
         </li>
       <% end %>
+
       <% collect_doi_links(document).each do |link| %>
-        <li>
+        <li class="icon-label icon-label--doi">
           <%= image_tag image_url('doi.png'), class: 'sidepanel-icon' %>
           <%= link_to t('ddf.links.resolve_via_doi'), link,
                       :target => '_blank',
