@@ -24,16 +24,4 @@ describe ExhibitOverview do
     }.not_to raise_error
     expect(subject.contact_details).to eql 'Telefon +45 35 32 44 12'
   end
-
-  describe 'deletion' do
-    let(:exhibit) { Spotlight::Exhibit.create(title: 'bla', slug: 'bla') }
-    let(:overview) { described_class.create(exhibit: exhibit) }
-    it 'should be deleted when its exhibit is deleted' do
-      expect(overview).to be_valid
-      expect { exhibit.destroy }.to change { ExhibitOverview.count }.by(-1)
-    end
-    it 'should use the monkey patched version' do
-      expect(exhibit.patched?).to eql true
-    end
-  end
 end
