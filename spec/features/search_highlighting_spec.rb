@@ -36,12 +36,12 @@ feature 'Catalog search' do
   feature 'abstract highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: 'central greenland'
+      fill_in 'Search...', with: 'gamle lossepladser'
       click_button 'Search'
     end
 
     it 'contains a highlighted abstract' do
-      expect(page.find_all('em', text: 'Greenland').first).not_to be_nil
+      expect(page.find_all('em', text: 'lossepladser').first).not_to be_nil
     end
   end
 
