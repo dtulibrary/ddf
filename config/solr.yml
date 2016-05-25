@@ -13,7 +13,7 @@
 development:
   url: <%= ENV['SOLR_URL'] || 'http://lb.production.metastore.cvt.dk/solr/metastore' %>
 test: &test
-  url: http://lb.production.metastore.cvt.dk/solr/metastore
+  url: http://127.0.0.1:8983/solr
 production:
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr" %>
 
