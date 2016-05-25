@@ -71,15 +71,20 @@ $(document).ready(function() {
     }
   }
 
-  // shorten author and affiliation lists to at most 3 items in catalog#show
+  // Shorten author and affiliation lists to at most 3 items:
+  // on catalog#show
   shorten_list($('#document dd.blacklight-author_ts > span.author'), 3, ', <%= I18n.t("blacklight.search.fields.show.shortened_list.et_al") %>');
+  // on catalog#index
+  $('.document').each(function() {
+    var authors = $(this).find('dd.blacklight-author_ts > span.author');
+    shorten_list(authors, 3, ', <%= I18n.t("blacklight.search.fields.show.shortened_list.et_al") %>')
+  });
+
   // not used in DDF:
   // shorten_list($('#document dd.blacklight-affiliation_ts > span'), 3, '');
-
-
-
 
 // doc ready end
 });
 
 
+// $(".myClass").each(function() {});

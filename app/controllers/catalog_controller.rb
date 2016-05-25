@@ -78,7 +78,7 @@ class CatalogController < ApplicationController
 
     # ALL INDEX FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_index_field 'author_ts', :separator => ' ; ', highlight: true, :helper_method => :render_highlight_field
+    config.add_index_field 'author_ts', :separator => '; ', highlight: true, :helper_method => :render_authors
     config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
     # NOTE: Toshokan uses a somewhat different helper method
     config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info, highlight: true
