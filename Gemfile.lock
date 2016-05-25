@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: git://github.com/dtulibrary/metastore-test_data.git
-  revision: e59dd2849999195b516cf0b35ed76a4e96f73ad9
+  revision: d66ec9665e7c1adaadf0cdd83798b75c90216f69
   specs:
     metastore-test_data (0.0.1)
       highline
@@ -395,6 +395,3 @@ DEPENDENCIES
   turbolinks
   uglifier
   xray-rails
-
-BUNDLED WITH
-   1.11.2
