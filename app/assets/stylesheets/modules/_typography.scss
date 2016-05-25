@@ -1102,42 +1102,23 @@ ul.data-provider-logos-list {
   margin: 0;
   text-align: right;
 }
-
 ul.data-provider-logos-list li {
-  margin: 0;
   display: inline-block;
-  padding: .2em;
-  border-radius: 5px;
-  transition: all .2s ease-in-out;
   position: relative;
+  margin: 0 1.25em .7em 0;
 }
-ul.data-provider-logos-list li:not(:last-child) { margin: 0 1.25em 0 0; }
-
-ul.data-provider-logos-list li:hover {
-  -webkit-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
-  background: inherit;
-  border: 0;
+ul.data-provider-logos-list li:last-child { margin-right: 0; }
+ul.data-provider-logos-list li a img {
+  padding: .5em;
+  border: 2px solid #eee;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
 }
-ul.data-provider-logos-list li:active { background: inherit; }
-
-ul.data-provider-logos-list li a { display: block; }
-ul.data-provider-logos-list li a:hover,
-ul.data-provider-logos-list li a:visited,
-ul.data-provider-logos-list li a:active {
-  border: 0;
-  background: inherit;
+ul.data-provider-logos-list li a img:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
-
-ul.data-provider-logos-list li a img,
-ul.data-provider-logos-list li a:hover img,
-ul.data-provider-logos-list li a:visited img,
-ul.data-provider-logos-list li a:active img {
-  border: 0;
-  background: inherit;
-}
-
 ul.data-provider-logos-list li i.glyphicon {
   position: absolute;
   top: -7px;
@@ -1147,6 +1128,7 @@ ul.data-provider-logos-list li i.glyphicon {
   background: #fff;
   display: none;
 }
+ul.data-provider-logos-list li.logo-clicked i.glyphicon { display: block; }
 
 dl.provider-details-list { margin-bottom: 1em; }
 dl.provider-details-list dt {
@@ -1185,7 +1167,6 @@ ul.data-provider-cards-list h2.data-provider-heading {
   line-height: calc-em(20px);
   margin: 0 0 1em 0;
   color: $bluewood;
-
 }
 
 ul.data-providers-list li:target {
@@ -1257,9 +1238,6 @@ ul.data-provider-cards-list > li {
   margin: 1em 0;
   display: none;
 }
-
-.logo-clicked { background: #ccc; }
-ul.data-provider-logos-list li.logo-clicked i.glyphicon { display: block; }
 
 h1.centered { text-align: center; }
 h1.feature-heading {
@@ -1783,3 +1761,19 @@ div#document[itemtype$=Person] {
 ul.nav-tabs { border-bottom: 0; }
 
 ul.serp-actions { margin-bottom: .5em; }
+
+ul.fulltext-sources-list {}
+ul.fulltext-sources-list li {}
+ul.fulltext-sources-list li a { }
+ul.fulltext-sources-list li a img {
+  padding: .5em;
+  border: 2px solid #eee;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+}
+ul.fulltext-sources-list li a img:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
