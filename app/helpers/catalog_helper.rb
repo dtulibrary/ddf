@@ -40,7 +40,7 @@ module CatalogHelper
   def current_search_field
     @search_field ||= if params[:search_field].present?
       params[:search_field]
-    elsif (defined? current_search_session) && (current_search_session.query_params['search_field'])
+    elsif (defined? current_search_session) && (current_search_session.present?) && (current_search_session.query_params['search_field'])
       current_search_session.query_params['search_field']
     else
       'publications' # default search field

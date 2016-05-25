@@ -1,41 +1,48 @@
 Capybara.javascript_driver = :selenium
 feature 'Document show' do
   include_context 'common'
+  describe 'searching' do
 
-  background do
-    visit root_path
-    fill_in I18n.t('ddf.search.form.placeholder.publications'), with: 'constant'
-    click_button 'search.publications'
-    first('h5.doctitle').find('a').click
-  end
-
-  scenario 'retrieving a citation' do
-    click_link 'citeLink'
-    expect(page).to have_content 'Modern Language Association'
-    expect(page).to have_content 'APA'
-    expect(page).to have_content 'Chicago Author Date'
-  end
-
-  context 'exporting', js: true  do
-    scenario 'clicking on the export button makes options visible' do
-      expect(page).not_to have_content 'Save to Mendeley'
-      expect(page).not_to have_content 'Export to BibTeX'
-      expect(page).not_to have_content 'Export to RIS'
-      expect(page).not_to have_content 'Email citation'
-      click_link 'Save and export'
-      expect(page).to have_content 'Save to Mendeley'
-      expect(page).to have_content 'Export to BibTeX'
-      expect(page).to have_content 'Export to RIS'
-      expect(page).to have_content 'Email citation'
+    background do
+      visit root_path
+      fill_in I18n.t('ddf.search.form.placeholder.publications'), with: 'constant'
+      click_button 'search.publications'
+      first('h5.doctitle').find('a').click
     end
 
-    scenario 'Email citation', js: true do
-      click_link 'Save and export'
-      click_link 'Email citation'
-      fill_in 'To', with: 'tester@sample.com'
-      select('APA', from: 'style')
-      click_button 'Preview'
-      expect(page).to have_content 'Preview citations'
+    scenario 'retrieving a citation' do
+      click_link 'citeLink'
+      expect(page).to have_content 'Modern Language Association'
+      expect(page).to have_content 'APA'
+      expect(page).to have_content 'Chicago Author Date'
     end
+
+    context 'exporting', js: true  do
+      scenario 'clicking on the export button makes options visible' do
+        expect(page).not_to have_content 'Save to Mendeley'
+        expect(page).not_to have_content 'Export to BibTeX'
+        expect(page).not_to have_content 'Export to RIS'
+        expect(page).not_to have_content 'Email citation'
+        click_link 'Save and export'
+        expect(page).to have_content 'Save to Mendeley'
+        expect(page).to have_content 'Export to BibTeX'
+        expect(page).to have_content 'Export to RIS'
+        expect(page).to have_content 'Email citation'
+      end
+
+      scenario 'Email citation', js: true do
+        click_link 'Save and export'
+        click_link 'Email citation'
+        fill_in 'To', with: 'tester@sample.com'
+        select('APA', from: 'style')
+        click_button 'Preview'
+        expect(page).to have_content 'Preview citations'
+      end
+    end
+  end
+
+  scenario 'visiting without a search context' do
+    visit catalog_path(id: '2292493726')
+    expect(page).to have_content 'Danmarks børn'
   end
 end
