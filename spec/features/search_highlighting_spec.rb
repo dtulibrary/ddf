@@ -36,24 +36,24 @@ feature 'Catalog search' do
   feature 'abstract highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: 'fish'
+      fill_in 'Search...', with: 'central greenland'
       click_button 'Search'
     end
 
     it 'contains a highlighted abstract' do
-      expect(page.find_all('em', text: 'fish').first).not_to be_nil
+      expect(page.find_all('em', text: 'Greenland').first).not_to be_nil
     end
   end
 
   feature 'publisher highlighting' do
     background do
       visit root_path
-      fill_in 'Search...', with: 'Blackwell'
+      fill_in 'Search...', with: 'Occasional Papers'
       click_button 'Search'
     end
 
     it 'contains a highlighted publisher' do
-      expect(page.find_all('em', text: 'Blackwell').first).not_to be_nil
+      expect(page.find_all('em', text: 'Occasional').first).not_to be_nil
     end
   end
 
