@@ -36,6 +36,34 @@ module CatalogHelper
     t "mxd_type_labels.review_status_labels.#{value}"
   end
 
+  def render_affiliated_authors(args)
+    document = args[:document]
+    numbered_contributors_list(document.authors_with_affiliations, '; ', 'author')
+  end
+
+  def render_affiliated_editors(args)
+    document = args[:document]
+    numbered_contributors_list(document.editors_with_affiliations, ', ', 'editor')
+  end
+
+  def numbered_contributors_list(contributors_hash, join_str, span_class)
+    output = []
+    contributors_hash.collect do |contributor, aff_num|
+      linked_num = "<sup><a href='#affil#{aff_num}'>#{aff_num+1}</a></sup>" if aff_num
+      output << "<span class=\"#{span_class}\">#{contributor}#{linked_num}</span>"
+    end
+    output.join("<span>#{join_str} </span>").html_safe
+  end
+
+  def render_numbered_affiliations(args)
+    output = []
+    document = args[:document]
+    document.affiliations.each_with_index do |aff, i|
+      output << "<sup id='affil#{i}'>#{i+1}</sup> #{aff}"
+    end
+    output.join('<hr style="margin:0.2em 0em">').html_safe
+  end
+
   # In the perfect world...
   # def render_journal_title_facet(value)
   # end
@@ -284,15 +312,6 @@ end
   def render_author_list authors
     list = (document['author_ts']).first
     return list.join(authors || content_tag(:span, '; ')).html_safe
-  end
-
-  def snip_abstract args
-    render_abstract_snippet args[:document]
-  end
-
-  def render_abstract_snippet document
-    snippet = (document['abstract_ts'] || ['No abstract']).first
-    return snippet.size > 500 ? snippet.slice(0, 500) + '...' : snippet
   end
 
   def snip_abstract args
