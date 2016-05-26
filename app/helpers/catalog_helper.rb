@@ -98,10 +98,12 @@ def render_research_area_field args
   args[:document]['research_area_ss'].collect {|s| t "research_area_labels.#{s}"}.join ' ; '
 end
 
-def render_authors args
-  authors = args[:document][args[:field]]
+# This combines the highlight functionality from the common gem
+# and wraps results in the span necessary for "see more..." functionality
+def render_highlighted_authors args
   sep = args[:separator] || '; '
-  authors.map { |au| "<span class='author'>#{au}</span>" }.join("<span>#{sep}</span>").html_safe
+  highlighted_authors = render_highlight_field args
+  highlighted_authors.map { |au| "<span class='author'>#{au}</span>" }.join("<span>#{sep}</span>").html_safe
 end
 
 def render_publishing_status(opts)
