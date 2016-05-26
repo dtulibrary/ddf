@@ -23,6 +23,7 @@ vendor/bundle
 /jetty/solr/toc/data
 /solr/
 
+.byebug_history
 
 /config/*.local.yml
 /config/*.local.rb
