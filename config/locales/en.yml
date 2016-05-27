@@ -93,6 +93,7 @@ en:
           person_affiliations_ssf: Affiliations
           cris_id_ss: Research Database ID
           email_ssf: Email
+          person_address_ssf: Address
         facet: *LABELS
         show: *LABELS
       form:

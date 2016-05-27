@@ -10,7 +10,7 @@
     <dl class="dl-horizontal  dl-invert">
 
       <% presenter.affiliations.each do |type, affiliation_list| %>
-        <dt><%= t("ddf.researchers.affiliations.#{type}") %></dt>
+        <dt><%= t("ddf.researchers.affiliations.#{type}") %>:</dt>
         <%= content_tag :dd, id: type, class: 'affiliations' do %>
           <%= affiliation_list %>
         <% end %>

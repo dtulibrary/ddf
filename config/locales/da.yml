@@ -110,6 +110,7 @@ da:
           person_affiliations_ssf: Tilhørsforhold
           cris_id_ss: Forskningsdatabase ID
           email_ssf: Email
+          person_address_ssf: Adress
         facet: *LABELS
         show: *LABELS
 
