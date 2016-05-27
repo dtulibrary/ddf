@@ -6,7 +6,7 @@
         <h1>
           <%= t 'ddf.elite.nav.theme' %>
         </h1>
-        <% if current_exhibit && current_exhibit.searchable? %>
+        <% if defined?(current_exhibit) && current_exhibit && current_exhibit.searchable? %>
           <%= render_search_bar %>
         <% end %>
       </div>

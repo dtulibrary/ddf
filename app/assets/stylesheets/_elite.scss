@@ -96,10 +96,11 @@ h1.elite {
     background: #6789ab;
   }
 }
-// Display the actove
+// Mark the active nav link
 body.blacklight-feature_pages li#elite-home a,
 body.blacklight-home_pages li#elite-home a,
-body.blacklight-exhibits-index li#elite-home a {
+body.blacklight-exhibits-index li#elite-home a,
+body.blacklight-pages-eliteforsk_award li#elite-about a {
   background: lighten($bluewood, 25%);
   color: #fff;
 }
