@@ -431,21 +431,30 @@ section.secondary-data {
   padding: 1em;
 }
 
-div.document-actions-container  {
-  // display: table-cell;
-  // width: 70px;
-  // min-width: 70px;
-  display: inline-block;
-  @include respond-to($iphone_landscape) {
+div.document-header {
+  display: flex;
+  padding: 0 1em;
+  margin-bottom: .5em;
+  @include respond-to($screen-md-min) {
     display: block;
-    margin: 1em 0;
+    margin-bottom: 1em;
+  }
+}
+div.document-header--show { margin-bottom: 1em; }
+
+div.document-actions-container  {
+  padding-left: 1em;
+  @include respond-to($screen-md-min) {
+    padding-left: 0;
+    margin: 1em 0 .5em 0;
   }
 }
 
-div.bookmark_document {
-  //background: #eee;
+// Override BS default:
+form.form-horizontal div.checkbox {
+  padding: 0;
+  min-height: unset;
 }
-
 label.toggle_bookmark { display: inline; }
 
 div.bookmark_document input.toggle_bookmark {
