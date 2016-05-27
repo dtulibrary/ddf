@@ -152,12 +152,13 @@ module CatalogHelper
   def display_phone(args)
     document = args[:document]
     field = args[:field]
-    # whitespace between every two digits
     space_separated_number(document[field].first)
   end
 
+  # whitespace between every two digits
   def space_separated_number(number)
-    number.gsub('-', '').scan(/(\+*\d\d)/).flatten.join(' ')
+    cleaned = number.gsub(/[^0-9\+]/, '') # get rid of anything except digits and +
+    cleaned.scan(/(\+*\d\d)/).flatten.join(' ') # reformat as groups of two digits
   end
 
   def render_scientific_level(opts)

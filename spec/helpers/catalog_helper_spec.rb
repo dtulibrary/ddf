@@ -72,5 +72,9 @@ describe CatalogHelper do
       let(:number) { '353-89034' }
       it { should eql '35 38 90 34'}
     end
+    context 'with loads of mess' do
+      let(:number) { '+45 3A5 36_ 37 38-'}
+      it { should eql '+45 35 36 37 38'}
+    end
   end
 end
