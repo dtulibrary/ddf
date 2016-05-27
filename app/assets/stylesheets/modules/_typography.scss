@@ -115,19 +115,29 @@ h1.facet-heading span.close { font-size: 1.4em; }
 
 #document { margin-bottom: 3em; }
 
-h5.index {
+// TODO
+.doctitle {
   font-family: $headline;
-  font-size: calc-em(20px);
-  line-height: calc-em(22px);
-  margin: .25em 0 .7em 0;
-  @include respond-to($screen-md-min) { margin: .25em 0 0 0; }
+  color: $bluewood;
 }
-h5.index a:link {
+.doctitle--index {
+  font-size: calc-em(22px);
+  line-height: calc-em(22px);
+  margin: 0 0 .7em 0;
+}
+.doctitle--show {
+  font-weight: 400;
+  font-size: calc-em(25px);
+  line-height: calc-em(22px);
+  margin: 0 0 .7em 0;
+}
+
+.doctitle--index a:link {
   text-decoration: underline;
   padding: .1em .3em .3em .3em;
   color: $link-color;
 }
-h5.index a:hover {
+.doctitle--index a:hover {
   text-decoration: none;
   background: #EFEFEF;
   color: #FF530D;
@@ -247,16 +257,6 @@ nav.global > ul li a:link { color: $blue-4; }
 nav.global > ul li a:visited { color: $blue-4; }
 nav.global > ul li a:hover { color: $orange; }
 nav.global > ul li a:active { color: $orange; }
-
-div.document h1[itemprop="name"],
-div.document h1.show {
-  font-family: $headline;
-  font-weight: 400;
-  font-size: calc-em(23px);
-  line-height: calc-em(22px);
-  margin: .5em 0;
-  color: $bluewood;
-}
 
 h1.static-page-heading {
   font-family: $headline;
@@ -380,21 +380,19 @@ ul.search-widgets-list > li a.btn:visited:hover,
 ul.search-widgets-list > li a.btn:active { color: $link-color; }
 
 ul.document-actions-list {
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
-  padding: .2em 0 .2em 0;
+  padding: .3em .5em;
   font-size: calc-em(15px);
   background: #eceff1;
   text-align: center;
   border-radius: 3px;
 }
 ul.document-actions-list li {
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
-  padding: 0 .2em;
+  padding: 0 .5em;
 }
-ul.document-actions-list > li:first-child { padding-left: .7em; }
-ul.document-actions-list > li:last-child { padding-right: .7em; }
 ul.document-actions-list li a { color: $blue-1; }
 ul.document-actions-list li a:hover { color: $orange; }
 ul.document-actions-list li a:active { color: $orange; }
@@ -436,23 +434,6 @@ ul.institutions-list i.fa-external-link-square {
 }
 
 div.docdetails ul.institutions-list { font-size: .9em; }
-
-div.documentHeader {
-  display: table;
-  padding: 0 1em;
-  margin-bottom: .5em;
-  @include respond-to($iphone_landscape) { margin-bottom: 0; }
-}
-div.documentHeader--show { margin-bottom: 1em; }
-
-div.documentHeader .doctitle {
-  display: table-cell;
-  padding-right: .5em;
-  @include respond-to($iphone_landscape) {
-    display: block;
-    padding-right: 0;
-  }
-}
 
 ul[class$="__resets"] li:not(:last-child) { margin-right: .5em; }
 ul[class$="__resets"] li i {

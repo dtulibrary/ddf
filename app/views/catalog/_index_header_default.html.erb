@@ -1,12 +1,12 @@
 <% # header bar for doc items in index view -%>
 
-<div class="documentHeader row">
+<div class="document-header row">
   <%# main title container for doc partial view
   How many bootstrap columns need to be reserved
   for bookmarks control depends on size.
   -%>
 
-  <h5 class="doctitle index index_title">
+  <h5 class="doctitle doctitle--index">
     <% counter = document_counter_with_offset(document_counter) %>
     <span class="document-counter">
       <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
@@ -20,4 +20,3 @@
 
   <%# render_bookmark_toggle document, wrapping_class: "bookmark_document" %>
 </div>
-
