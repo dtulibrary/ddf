@@ -32,19 +32,21 @@
   </div>
 </div>
 <% if presenter.publications[:size] > 0  %>
-<div class="recent-publications col-md-12">
-  <h2>
-    <%= t 'ddf.people.recent_publications' %>
-  </h2>
-  <ol>
-    <% presenter.publications[:docs].each do |doc| %>
-      <li>
-        <%= link_to doc.title.html_safe, solr_document_path(doc.id) %>
-        (<%= doc.year_published %>)
-      </li>
-    <% end  %>
-  </ol>
-  <%= presenter.publications_link %>
-</div>
+  <div class="row">
+    <div class="recent-publications">
+      <h2>
+        <%= t 'ddf.people.recent_publications' %>
+      </h2>
+      <ol>
+        <% presenter.publications[:docs].each do |doc| %>
+            <li>
+              <%= link_to doc.title.html_safe, solr_document_path(doc.id) %>
+              (<%= doc.year_published %>)
+            </li>
+        <% end  %>
+      </ol>
+      <%= presenter.publications_link %>
+    </div>
+  </div>
 <% end  %>
 </div>
