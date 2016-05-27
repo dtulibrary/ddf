@@ -56,7 +56,7 @@ module CatalogHelper
   end
 
   def person_doc?(*args)
-    args.last.person?
+    @person_doc ||= args.last.person?
   end
 
   def email_link(args)

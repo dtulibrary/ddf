@@ -140,18 +140,24 @@ class CatalogController < ApplicationController
     ################################
     ######## Researchers  ##########
     ################################
+    # SEARCH
     config.add_index_field 'orcid_ss', highlight: true, label: 'ORCID'
     config.add_index_field 'is_active_b', helper_method: :render_status_index
+
+    # SHOW
     config.add_show_field 'person_address_ssf', if: :person_doc?
     config.add_show_field 'orcid_ss'
     config.add_show_field 'is_active_b', helper_method: :render_status_index
-    config.add_facet_field 'has_orcid_b', helper_method: :render_orcid_status
-    config.add_facet_field 'is_active_b', helper_method: :render_active_status
-
     config.add_show_field 'cluster_id_ss', unless: :person_doc?
     config.add_show_field 'email_ssf', if: :person_doc?, helper_method: :email_link
 
-    # SORTING
+    # FACETS
+    config.add_facet_field 'is_active_b', helper_method: :render_active_status
+    config.add_facet_field 'has_orcid_b', helper_method: :render_orcid_status
+
+    ######################################
+    ######### SORTING  ###################
+    ######################################
 
     relevance_ordering = [
         'score desc',
