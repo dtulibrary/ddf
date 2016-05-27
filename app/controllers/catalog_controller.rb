@@ -217,7 +217,8 @@ class CatalogController < ApplicationController
       }
       field.solr_parameters = {
         fq: 'format:person AND NOT source_ss:rdb_ucviden AND has_publications_b:true',
-        'hl.fl' => 'orcid_ss'
+        'hl.fl' => 'name_ts orcid_ss',
+        bf: 'pure_pub_count_i^10'
       }
     end
 
