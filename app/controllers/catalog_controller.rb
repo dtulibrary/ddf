@@ -18,6 +18,17 @@ class CatalogController < ApplicationController
     # Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
 
+    config.default_solr_params = {
+        :q => '*:*',
+        :rows => 10,
+        :hl => true,
+        'hl.snippets' => 3,
+        'hl.usePhraseHighlighter' => true,
+        'hl.fl' => 'title_ts, author_ts, name_ts, orcid_ss, journal_title_ts, conf_title_ts, abstract_ts, publisher_ts',
+        'hl.fragsize' => 300
+    }
+
+
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
      :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
@@ -78,13 +89,13 @@ class CatalogController < ApplicationController
 
     # ALL INDEX FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_index_field 'author_ts', :separator => '; ', highlight: true, :helper_method => :render_authors
+    config.add_index_field 'author_ts', :separator => '; ', highlight: true, :helper_method => :render_highlighted_authors
     config.add_index_field 'format_orig_s', :helper_method => :render_format_field_index
     # NOTE: Toshokan uses a somewhat different helper method
     config.add_index_field 'journal_title_ts', :helper_method => :render_journal_info, highlight: true
     config.add_index_field 'editor_ts'
     # NOTE: Toshokan has a method here to render highlighting in the abstract
-    config.add_index_field 'abstract_ts', :helper_method => :render_highlighted_abstract, :highlight => true, separator: ''
+    config.add_index_field 'abstract_ts', :helper_method => :render_highlighted_abstract, highlight: true, separator: ''
     config.add_index_field 'research_area_ss'
     config.add_index_field 'series_title_ts'
     # NOTE: Toshokan does the same here but with highlighting
@@ -95,19 +106,17 @@ class CatalogController < ApplicationController
 
     # ALL SHOW FIELDS:
     # NOTE: Toshokan uses a helper method here to create author links
-    config.add_show_field 'author_ts', :separator => '; ', :helper_method => :render_authors
+    config.add_show_field 'author_ts', helper_method: :render_affiliated_authors
+    config.add_show_field 'editor_ts', helper_method: :render_affiliated_editors
+    config.add_show_field 'affiliation_ts', helper_method: :render_numbered_affiliations
     config.add_show_field 'subtitle_ts'
     config.add_show_field 'doi_ss'
     config.add_show_field 'abstract_ts'
     config.add_show_field 'isbn_ss'
     config.add_show_field 'format_orig_s', :helper_method => :render_type
-    # NOTE: Toshokan uses a helper method here to render affiliations
-    config.add_show_field 'affiliation_ts', :separator => '<hr style="margin:0.2em 0em">'.html_safe
     config.add_show_field 'language_ss', :helper_method => :render_language
     # NOTE: Toshokan uses a somewhat different helper method
     config.add_show_field 'journal_title_ts', :helper_method => :render_journal_info
-    # NOTE: Toshokan uses the author link helper method here
-    config.add_show_field 'editor_ts'
     # NOTE: Toshokan uses a helper method here to create keyword links
     config.add_show_field 'keywords_ts', :separator => '; '
     config.add_show_field 'research_area_ss'
@@ -123,6 +132,34 @@ class CatalogController < ApplicationController
     config.add_show_field 'pub_date_tis', if: :show_publication_year?
     config.add_show_field 'scientific_level_s', :helper_method => :render_scientific_level
     config.add_show_field 'cluster_id_ss'
+
+    # SORTING
+
+    relevance_ordering = [
+        'score desc',
+        'pub_date_tsort desc',
+        'journal_vol_tsort desc',
+        'journal_issue_tsort desc',
+        'journal_page_start_tsort asc',
+        'title_sort asc'
+    ]
+    year_ordering = [
+        'pub_date_tsort desc',
+        'journal_vol_tsort desc',
+        'journal_issue_tsort desc',
+        'journal_page_start_tsort asc',
+        'title_sort asc'
+    ]
+    title_ordering = [
+        'title_sort asc',
+        'pub_date_tsort desc'
+    ]
+
+    config.add_sort_field relevance_ordering.join(', '), :label => 'relevance'
+    config.add_sort_field year_ordering.join(', '), :label => 'year'
+    config.add_sort_field title_ordering.join(', '), :label => 'title'
+
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
