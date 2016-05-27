@@ -43,7 +43,7 @@ $(document).ready(function() {
 
   /*
   ADAPTED FROM:
-  GH SOURCE
+  https://github.com/dtulibrary/toshokan/blob/master/app/assets/javascripts/documents.js.erb
 
   This function will shorten a list of e.g. author or affiliation links
   down to an expandable list of at most N elements. It expects to be passed
@@ -72,9 +72,11 @@ $(document).ready(function() {
   };
 
   // Shorten author and affiliation lists to at most 3 items:
+  //
   // on catalog#show
   shorten_list($('#document dd.blacklight-author_ts > span.author'), 3, ', <%= I18n.t("blacklight.search.fields.show.shortened_list.et_al") %>');
-  // on catalog#index
+
+  // on catalog#index (DDF uses catalog_helper#render_highlighted_authors instead):
   // $('.document').each(function() {
   //   var authors = $(this).find('dd.blacklight-author_ts > span.author');
   //   shorten_list(authors, 3, ', <%= I18n.t("blacklight.search.fields.show.shortened_list.et_al") %>')
@@ -83,5 +85,3 @@ $(document).ready(function() {
 // doc ready end
 });
 
-
-// $(".myClass").each(function() {});

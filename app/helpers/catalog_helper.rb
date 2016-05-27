@@ -103,7 +103,14 @@ end
 def render_highlighted_authors args
   sep = args[:separator] || '; '
   highlighted_authors = render_highlight_field args
-  highlighted_authors.map { |au| "<span class='author'>#{au}</span>" }.join("<span>#{sep}</span>").html_safe
+  formatted = highlighted_authors.map { |au| "<span class='author'>#{au}</span>" }
+  if action_name.eql? 'index'
+    first_three = formatted.take(3).join("<span>#{sep}</span>").html_safe
+    et_al = "; <span class='et-al'>et al.</span>".html_safe
+    first_three + et_al
+  elsif action_name.eql? 'show'
+    formatted.join("<span>#{sep}</span>").html_safe
+  end
 end
 
 def render_publishing_status(opts)
