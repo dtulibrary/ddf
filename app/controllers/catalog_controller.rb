@@ -150,6 +150,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'is_active_b', helper_method: :render_status_index
     config.add_show_field 'cluster_id_ss', unless: :person_doc?
     config.add_show_field 'email_ssf', if: :person_doc?, helper_method: :email_link
+    config.add_show_field 'phone_number_ssf', if: :person_doc?, helper_method: :display_phone
+    config.add_show_field 'mobile_number_ssf', if: :person_doc?, helper_method: :display_phone
 
     # FACETS
     config.add_facet_field 'is_active_b', helper_method: :render_active_status

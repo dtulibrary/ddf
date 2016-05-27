@@ -57,4 +57,20 @@ describe CatalogHelper do
       it { should include '<meta name="citation_author" content="Another Author"' }
     end
   end
+
+  describe 'space_separated_number' do
+    subject { space_separated_number(number) }
+    context 'normal number' do
+      let(:number) {'12345678'}
+      it { should eql '12 34 56 78'}
+    end
+    context 'with international code' do
+      let(:number) { '+45268903'}
+      it { should eql '+45 26 89 03'}
+    end
+    context 'with random dash' do
+      let(:number) { '353-89034' }
+      it { should eql '35 38 90 34'}
+    end
+  end
 end

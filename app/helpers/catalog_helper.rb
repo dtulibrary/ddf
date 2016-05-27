@@ -149,6 +149,17 @@ module CatalogHelper
     end
   end
 
+  def display_phone(args)
+    document = args[:document]
+    field = args[:field]
+    # whitespace between every two digits
+    space_separated_number(document[field].first)
+  end
+
+  def space_separated_number(number)
+    number.gsub('-', '').scan(/(\+*\d\d)/).flatten.join(' ')
+  end
+
   def render_scientific_level(opts)
     field = opts[:document][opts[:field]]
     # binding.pry
