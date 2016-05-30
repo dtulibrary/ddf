@@ -111,6 +111,8 @@ da:
           cris_id_ss: Forskningsdatabase ID
           email_ssf: Email
           person_address_ssf: Adress
+          phone_number_ssf: "Tlf. nr."
+          mobile_number_ssf: Mobil
         facet: *LABELS
         show: *LABELS
 

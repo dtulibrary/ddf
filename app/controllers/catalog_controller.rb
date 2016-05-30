@@ -150,6 +150,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'is_active_b', helper_method: :render_status_index
     config.add_show_field 'cluster_id_ss', unless: :person_doc?
     config.add_show_field 'email_ssf', if: :person_doc?, helper_method: :email_link
+    config.add_show_field 'phone_number_ssf', if: :person_doc?, helper_method: :display_phone
+    config.add_show_field 'mobile_number_ssf', if: :person_doc?, helper_method: :display_phone
 
     # FACETS
     config.add_facet_field 'is_active_b', helper_method: :render_active_status
@@ -217,7 +219,8 @@ class CatalogController < ApplicationController
       }
       field.solr_parameters = {
         fq: 'format:person AND NOT source_ss:rdb_ucviden AND has_publications_b:true',
-        'hl.fl' => 'orcid_ss'
+        'hl.fl' => 'name_ts orcid_ss',
+        bf: 'pure_pub_count_i^10'
       }
     end
 

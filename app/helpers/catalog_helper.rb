@@ -149,6 +149,18 @@ module CatalogHelper
     end
   end
 
+  def display_phone(args)
+    document = args[:document]
+    field = args[:field]
+    space_separated_number(document[field].first)
+  end
+
+  # whitespace between every two digits
+  def space_separated_number(number)
+    cleaned = number.gsub(/[^0-9\+]/, '') # get rid of anything except digits and +
+    cleaned.scan(/(\+*\d\d)/).flatten.join(' ') # reformat as groups of two digits
+  end
+
   def render_scientific_level(opts)
     field = opts[:document][opts[:field]]
     # binding.pry

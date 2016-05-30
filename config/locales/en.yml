@@ -94,6 +94,8 @@ en:
           cris_id_ss: Research Database ID
           email_ssf: Email
           person_address_ssf: Address
+          phone_number_ssf: Phone
+          mobile_number_ssf: Mobile
         facet: *LABELS
         show: *LABELS
       form:
