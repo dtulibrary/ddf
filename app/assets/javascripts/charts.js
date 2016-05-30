@@ -65,7 +65,8 @@ $(document).ready(function() {
   var sciLevelChart = drawSegments("scientific-level");
   var resAreaChart = drawSegments("research-area");
   var pubStatusChart = drawSegments("publication-status");
-  var publicationTimelineChart = drawPlot("publication-timeline");
+  var publicationYearChart = drawPlot("publication-year");
+  var submissionYearChart = drawPlot("submission-year");
 
   var charts = {}
   charts["review_status_s"]    = reviewChart;
@@ -87,25 +88,33 @@ $(document).ready(function() {
   });
 
   // Make bar charts behave like facets when clicked
-  $("canvas.plot").click(function(evt) {
-    var locale = window.location.pathname.split('/')[1];
-    var activePoints = publicationTimelineChart.getBarsAtEvent(evt);
-    var label = activePoints[0].label;
-    years = label.split("-");
-    if (years.length == 1) {
-      var startYear = label;
-      var endYear   = label;
-    } else {
-      var startYear = years[0];
-      var endYear   = years[1];
+  $.each([publicationYearChart, submissionYearChart], function() {
+    if (typeof this.chart != "undefined") {
+      var chart = this;
+      var canvas = this.chart.canvas;
+      var facet_frag = canvas.dataset.facet;
+
+      $(canvas).click(function(evt) {
+        var locale = window.location.pathname.split('/')[1];
+        var activePoints = chart.getBarsAtEvent(evt);
+        var label = activePoints[0].label;
+        years = label.split("-");
+        if (years.length == 1) {
+          var startYear = label;
+          var endYear   = label;
+        } else {
+          var startYear = years[0];
+          var endYear   = years[1];
+        }
+        // Create an URL from all the fragments
+        var queryParams = "range[" +facet_frag+ "][begin]=" +startYear+ "&range[" +facet_frag+ "][end]=" +endYear
+        var url = "/" +locale+ "/catalog?" +queryParams+ "&q=*:*";
+        window.location = url;
+      });
     }
-    // We create an URL containing both datasets, not the clicked one
-    var pubYearParams = "range[pub_date_tsort][begin]=" +startYear+ "&range[pub_date_tsort][end]=" +endYear
-    var subYearParams = "range[submission_year_tis][begin]=" +startYear+ "&range[submission_year_tis][end]=" +endYear
-    var url = "/" +locale+ "/catalog?" +pubYearParams+ "&" +subYearParams+ "&q=*:*";
-    window.location = url;
   });
 
+// doc ready end
 });
 
 //

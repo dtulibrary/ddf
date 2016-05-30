@@ -97,8 +97,12 @@
           <%= t("blacklight.data_visualization.submission_year") %>
         </a>
       </h2>
-      <canvas id="publication-timeline" class="plot" height="160" data-facets="access_condition_s;submission_year_tis">
-        <%= @by_year %>
+      <canvas id="publication-year" class="plot" height="160" data-facet="pub_date_tsort">
+        <%= @by_publication_year %>
+      </canvas>
+
+      <canvas id="submission-year" class="plot" height="160" data-facet="submission_year_tis">
+        <%= @by_submission_year %>
       </canvas>
     </div>
 

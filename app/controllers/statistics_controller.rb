@@ -10,8 +10,9 @@ class StatisticsController < ApplicationController
     @by_publication_status = Charts::Segments.new('access_condition_s').values.to_json
 
     # Chart JS bar / line
-    facets = ['pub_date_tsort', 'submission_year_tis']
-    @by_year = Charts::Plot.new(facets).from(1960).to(DateTime.now.year + 2).interval(5).values.to_json
+    two_years_ahead = DateTime.now.year + 2
+    @by_publication_year = Charts::Plot.new(['pub_date_tsort']).from(1955).to(two_years_ahead).interval(5).values.to_json
+    @by_submission_year  = Charts::Plot.new(['submission_year_tis']).from(1955).to(two_years_ahead).interval(5).values.to_json
 
     # No JS charts
     @by_type = Charts::CSSBars.new('format_orig_s').values
