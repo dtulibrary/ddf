@@ -39,8 +39,8 @@ en:
       indicator: Indicator
       publications: Publications
       national: National
-      by: "by"
-      type: "Type"
+      by: by
+      type: Type
       by_institution: By Institution
       by_university: By University
       status: Status
@@ -48,6 +48,7 @@ en:
       scientific_level: Scientific Level
       main_research_area: Main Research Area
       publication_status: Publication Status
+      year: Year
       institution: Institution
       language: Language
       journal_title: Journal Title

@@ -46,8 +46,8 @@ da:
       indicator: Indikator
       publications: Publikationer
       national: Nationalt
-      by: "efter"
-      type: "Type"
+      by: efter
+      type: Type
       by_institution: Efter Forskningsinstitution
       by_university: Efter Universitet
       status: Status
@@ -55,6 +55,7 @@ da:
       scientific_level: Videnskabeligt niveau
       main_research_area: Hovedforskningsområde
       publication_status: Publikationsstatus
+      year: År
       institution: Institution
       language: Sprog
       journal_title: Tidskriftens Titel

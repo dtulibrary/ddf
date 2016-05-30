@@ -1528,13 +1528,14 @@ h1.facet-visualization-group {
   color: $bluewood;
 }
 
-h2.facet-visualization-heading {
+h3.facet-visualization-heading {
   text-align: center;
   // font-family: $headline;
   font-size: calc-em(17px);
   font-weight: 500;
   margin: 1em 0 2em 0;
 }
+h3.facet-visualization-heading--plot { margin: 1.5em 0 1.25em 0; }
 
 // LOCALE SWITCHER
 ul.locales-list {

@@ -44,33 +44,33 @@
       </h2>
 
       <div class="col-md-3">
-        <h2 class="facet-visualization-heading">
+        <h3 class="facet-visualization-heading">
           <%= t("blacklight.data_visualization.review_type") %>
-        </h2>
+        </h3>
         <canvas id="review-type" class="segments" height="235" data-facet="review_status_s">
           <%= @by_review_type %>
         </canvas>
       </div>
       <div class="col-md-3">
-        <h2 class="facet-visualization-heading">
+        <h3 class="facet-visualization-heading">
           <%= t("blacklight.data_visualization.scientific_level") %>
-        </h2>
+        </h3>
         <canvas id="scientific-level" class="segments" height="235" data-facet="scientific_level_s">
           <%= @by_sci_level %>
         </canvas>
       </div>
       <div class="col-md-3">
-        <h2 class="facet-visualization-heading">
+        <h3 class="facet-visualization-heading">
           <%= t("blacklight.data_visualization.main_research_area") %>
-        </h2>
+        </h3>
         <canvas id="research-area" class="segments" height="235" data-facet="research_area_ss">
           <%= @by_research_area %>
         </canvas>
       </div>
       <div class="col-md-3">
-        <h2 class="facet-visualization-heading">
+        <h3 class="facet-visualization-heading">
           <%= t("blacklight.data_visualization.publication_status") %>
-        </h2>
+        </h3>
         <canvas id="publication-status" class="segments" height="235" data-facet="access_condition_s">
           <%= @by_publication_status %>
         </canvas>
@@ -90,17 +90,20 @@
     <div class="row statistics-row">
       <h2 class="chart-heading">
         <a name="years">
-          <%# t("blacklight.data_visualization.publications") %>
           <em><%= t("blacklight.data_visualization.by") %></em>
-          <%= t("blacklight.data_visualization.publication_year") %>
-          <em><%= t("blacklight.data_visualization.and") %></em>
-          <%= t("blacklight.data_visualization.submission_year") %>
+          <%= t("blacklight.data_visualization.year") %>
         </a>
       </h2>
+
+      <h3 class="facet-visualization-heading facet-visualization-heading--plot">
+        <%= t("blacklight.data_visualization.publication_year") %>
+      </h3>
       <canvas id="publication-year" class="plot" height="160" data-facet="pub_date_tsort">
         <%= @by_publication_year %>
       </canvas>
-
+      <h3 class="facet-visualization-heading facet-visualization-heading--plot">
+        <%= t("blacklight.data_visualization.submission_year") %>
+      </h3>
       <canvas id="submission-year" class="plot" height="160" data-facet="submission_year_tis">
         <%= @by_submission_year %>
       </canvas>
