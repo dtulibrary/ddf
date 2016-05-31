@@ -3,31 +3,29 @@ CHART LISTS
 by Wilson Miner, ALA #256:
 http://alistapart.com/article/accessibledatavisualization
 */
-.chartlist {
+.cssbars {
   float: left;
   border-top: 1px solid #EEE;
-
   width: 100%; //modified
 }
-.chartlist li {
+.cssbars li {
   position: relative;
   display: block;
   border-bottom: 1px solid #EEE;
   _zoom: 1;
-
   margin: 0; //added
 }
-.chartlist li:hover { background: #EFEFEF; }
+.cssbars li:hover { background: #EFEFEF; }
 
-.chartlist li a {
+.cssbars li a {
   display: block;
   padding: 0.4em 4.5em 0.4em 0.5em;
   position: relative;
   z-index: 2;
 }
-.chartlist li a:hover { text-decoration: none; } //added
+.cssbars li a:hover { text-decoration: none; } //added
 
-.chartlist .count {
+.cssbars .count {
   display: block;
   position: absolute;
   top: 15%; //modified
@@ -38,10 +36,9 @@ http://alistapart.com/article/accessibledatavisualization
   font-weight: bold;
   font-size: 0.875em;
   line-height: 2em;
-
   z-index: 2; //added
 }
-.chartlist .pct {
+.cssbars .pct {
   display: block;
   position: absolute;
   top: 0;
@@ -55,14 +52,14 @@ http://alistapart.com/article/accessibledatavisualization
 }
 
 //ADDED:
-// .chartlist li:hover .pct { background: lighten($chart-blue, 25%); }
+// .cssbars li:hover .pct { background: lighten($chart-blue, 25%); }
 
-.chartlist li a:visited { color: #666; }
-.chartlist li a:hover,
-.chartlist li a:visited:hover { color: $orange; }
+.cssbars li a:visited { color: #666; }
+.cssbars li a:hover,
+.cssbars li a:visited:hover { color: $orange; }
 
 //ADDED FOR THE OA OVERVIEW CHARTS:
-.chartlist li a.muted-link {
+.cssbars li a.muted-link {
   cursor: auto;
   // color: #fff;
   font-weight: 700;
@@ -72,7 +69,7 @@ http://alistapart.com/article/accessibledatavisualization
 }
 
 // TODO: TEST
-.chartlist li.projected { margin-bottom: 1em; }
+.cssbars li.projected { margin-bottom: 1em; }
 
 // Make Chart.js segments appear like links
 .statistics-row canvas[data-facet],

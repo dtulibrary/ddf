@@ -1,6 +1,6 @@
 // CHARTS on /index
 $(document).ready(function() {
-  rest = $(".chartlist.types li")
+  rest = $(".cssbars-types li")
   .filter(function(index) {
     return index >= 13;
   })

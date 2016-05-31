@@ -124,12 +124,11 @@
         <section>
           <h2 class="chart-heading">
             <a name="types">
-              <%# t("blacklight.data_visualization.publications") %>
               <em><%= t("blacklight.data_visualization.by") %></em>
               <%= t("blacklight.data_visualization.type") %>
             </a>
           </h2>
-          <ul class="chartlist types">
+          <ul class="cssbars cssbars-types">
             <% @by_type.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
@@ -158,7 +157,7 @@
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.language") %>
           </h2>
-          <ul class="chartlist languages">
+          <ul class="cssbars cssbars-languages">
             <% @by_language.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
@@ -186,12 +185,11 @@
         <section>
           <h1 class="chart-heading">
             <a name="institutions">
-              <%# t("blacklight.data_visualization.publications") %>
               <em><%= t("blacklight.data_visualization.by") %></em>
               <%= t("blacklight.data_visualization.institution") %>
             </a>
           </h1>
-          <ul class="chartlist institutions">
+          <ul class="cssbars cssbars-institutions">
             <% @by_institution.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
@@ -206,11 +204,10 @@
       <div class="col-md-4 chart">
         <section>
           <h2 class="chart-heading">
-            <%# t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.journal_title") %>
           </h2>
-          <ul class="chartlist languages">
+          <ul class="cssbars cssbars-journals">
             <% @by_journal_title.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
@@ -225,11 +222,10 @@
       <div class="col-md-4 chart">
         <section>
           <h2 class="chart-heading">
-            <%# t("blacklight.data_visualization.publications") %>
             <em><%= t("blacklight.data_visualization.by") %></em>
             <%= t("blacklight.data_visualization.author") %>
           </h2>
-          <ul class="chartlist languages">
+          <ul class="cssbars cssbars-authors">
             <% @by_author.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
