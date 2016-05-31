@@ -8,7 +8,7 @@
             <%= t("blacklight.data_visualization.publication_statistics") %>
           </h1>
           <h2 class="chart-heading"><%= t("blacklight.data_visualization.by_institution") %></h2>
-          <ul class="chartlist institutions">
+          <ul class="cssbars cssbars-institutions">
             <% @institutions.each do |facet| %>
             <li>
               <%= render_facet_link(facet) %>
@@ -17,7 +17,9 @@
             </li>
             <% end %>
           </ul>
-          <p class="more-link"><%= link_to(t("blacklight.data_visualization.more_statistics"), search_statistics_path) %></p>
+          <p class="more-link">
+            <%= link_to(t("blacklight.data_visualization.more_statistics"), search_statistics_path) %>
+          </p>
         </section>
       </div>
 
@@ -29,7 +31,7 @@
           </h1>
 
           <h2 class="chart-heading"><%= t("blacklight.data_visualization.national") %></h2>
-          <ul class="chartlist types">
+          <ul class="cssbars cssbars-national">
             <% @national_segments.each do |segment| %>
             <li>
               <%= render_segment_link(segment) %>
@@ -39,8 +41,10 @@
             <% end %>
           </ul>
 
-          <h2 class="chart-heading"><%= t("blacklight.data_visualization.by_university") %></h2>
-          <ul class="chartlist types">
+          <h2 class="chart-heading chart-heading--universities">
+            <%= t("blacklight.data_visualization.by_university") %>
+          </h2>
+          <ul class="cssbars cssbars-universities">
             <% @university_segments.each do |segment| %>
             <li>
               <%= render_segment_link(segment) %>
@@ -49,7 +53,9 @@
             </li>
             <% end %>
           </ul>
-          <p class="more-link more-link--oa"><%= link_to(t("blacklight.data_visualization.more_oa"), open_access_path) %></p>
+          <p class="more-link more-link--oa">
+            <%= link_to(t("blacklight.data_visualization.more_oa"), open_access_path) %>
+          </p>
         </section>
       </div>
 

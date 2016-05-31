@@ -897,11 +897,6 @@ ul.subnav-items-list li a:hover {
   }
 }
 
-footer.intro {
-  text-align: center;
-  margin: 4em 0 -5em 0;
-}
-
 p.pitch {
   font-family: $serif;
   font-size: calc-em(26px);
@@ -927,22 +922,23 @@ em.news-tag {
   font-family: $serif;
   font-weight: 600;
   font-size: calc-em(17px);
+  line-height: calc-em(20px);
   letter-spacing: .1em;
   color: $blue-2;
   margin: 1em 0 1.5em 0;
-  // $screen-md-min
-  @include respond-to($ipad_landscape) {
-    margin: 1em 0 .5em 0;
-  }
 }
 .chart-heading em {
  text-transform: none;
  letter-spacing: .05em;
 }
+.chart-heading--universities {
+  margin: 8.3em 0 1.5em 0;
+  @include respond-to($screen-md-min) { margin: 6em 0 1.5em 0; }
+}
 
 div.oa-chart-container .chart-heading {
   margin: .5em 0 1em 0;
-  @include respond-to($ipad_landscape) {
+  @include respond-to($screen-md-min) {
     margin: 1em 0 .5em 0;
   }
 }

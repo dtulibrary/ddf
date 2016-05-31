@@ -84,6 +84,12 @@ body > footer .sticky {
   border-radius: 3px;
 }
 
+footer.intro {
+  text-align: center;
+  margin: 4em 0 -5em 0;
+  @include respond-to($screen-md-min) { margin: 1em 0 -5em 0; }
+}
+
 form.search-query-form {
   padding-left: 0;
   @include respond-to($screen-md-min) { padding-top: 0; }
@@ -400,7 +406,7 @@ div.intro { margin-bottom: .5em; }
 
 div.chart {
  @include respond-to($screen-md-min) {
-    margin-bottom: 7em; // TODO
+    margin-bottom: 3em; // TODO
   }
 }
 
