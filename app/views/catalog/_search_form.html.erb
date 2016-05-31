@@ -11,6 +11,9 @@
     <% field_name = field.last  %>
     <%= content_tag :div, class: ['tab-pane', active_field?(field)], id: field_name, role: 'tab-panel' do %>
       <%= form_tag search_action_url(controller: :catalog), :method => :get, :class => 'search-query-form form-inline clearfix navbar-form' do %>
+
+          <%# binding.pry %>
+
           <%= render_hash_as_hidden_fields(
                   params_for_search()
                       .except(:q, :qt, :page, :utf8)
