@@ -9,14 +9,60 @@ drawSegments = function(container) {
   }
 }
 
+// http://stackoverflow.com/questions/20371867/chart-js-formatting-y-axis
+// http://stackoverflow.com/questions/661562/how-to-format-a-float-in-javascript
+// https://github.com/chartjs/Chart.js/issues/68#issuecomment-20918194
+var plotOptions = {
+  scaleLabel : "<%= thousandSeparator(value) %>"
+};
+
+function thousandSeparator(input) {
+  var number = input.split('.');
+  num = number[0];
+  num = num.split("").reverse().join("");
+  var numpoint = '';
+  for (var i = 0; i < num.length; i++) {
+    numpoint += num.substr(i,1);
+    if (((i+1)%3 == 0) && i != num.length-1) {
+      numpoint += ',';
+    }
+  }
+  num = numpoint.split("").reverse().join("");
+  if (number[1] != undefined) {
+    num = num+'.'+number[1];
+  }
+  return num;
+}
+
 drawPlot = function(container) {
   if (document.getElementById(container)) {
     var ctx = document.getElementById(container).getContext("2d");
     var data = document.getElementById(container).innerHTML;
     var json = JSON.parse(data);
-    return new Chart(ctx).Bar(json);
+    return new Chart(ctx).Bar(json, plotOptions);
+
+    // http://stackoverflow.com/questions/35366513/adding-decimal-points-to-data-values-chartjs
+    // var plot = new Chart(ctx).Bar(json, {
+    //   onAnimationComplete: function() {
+
+    //     this.datasets.forEach(function(dataset) {
+    //       dataset.bars.forEach(function(bar) {
+    //         // console.log(bar.value);
+    //         bar.value = numberWithCommas(bar.value);
+    //         // console.log(bar.value);
+    //       });
+    //     })
+
+    //   }
+    // });
+
+    // return plot;
   }
 }
+
+var numberWithCommas = function(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
 
 var translations = {}
 // REVIEW TYPE
@@ -116,33 +162,3 @@ $(document).ready(function() {
 
 // doc ready end
 });
-
-//
-// HOW TO ADD CLICK EVENTS:
-// http://stackoverflow.com/questions/26257268/click-events-on-pie-charts-in-chart-js
-//
-// $("#myChart").click(
-//     function(evt){
-//         var activePoints = myNewChart.getSegmentsAtEvent(evt);
-//         var url = "http://example.com/?label=" + activePoints[0].label + "&value=" + activePoints[0].value;
-//         alert(url);
-//     }
-// );
-//
-//
-// OLD, HARD-CODED PER-CHART CLICK HANDLER:
-// $("#review-type").click(
-//   function(evt) {
-
-//     var locale = window.location.pathname.split('/')[1];
-//     var canvas = document.getElementById("review-type");
-//     var facet_frag = canvas.dataset.facet;
-//     var activePoints = reviewChart.getSegmentsAtEvent(evt);
-//     var segment = translations[activePoints[0].label];
-
-//     var url = "/" +locale+ "/catalog?f[" +facet_frag+ "][]=" +segment+ "&q=*:*";
-//     window.location = url;
-//   }
-// );
-//
-
