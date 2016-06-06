@@ -9,13 +9,10 @@ drawSegments = function(container) {
   }
 }
 
-// http://stackoverflow.com/questions/20371867/chart-js-formatting-y-axis
-// http://stackoverflow.com/questions/661562/how-to-format-a-float-in-javascript
-// https://github.com/chartjs/Chart.js/issues/68#issuecomment-20918194
-var plotOptions = {
-  scaleLabel : "<%= thousandSeparator(value) %>"
-};
-
+/*
+  A function to manually format numbers in JS, as in:
+  https://github.com/chartjs/Chart.js/issues/68#issuecomment-20918194
+*/
 function thousandSeparator(input) {
   var number = input.split('.');
   num = number[0];
@@ -34,29 +31,50 @@ function thousandSeparator(input) {
   return num;
 }
 
+var plotOptions = { scaleLabel : "<%= thousandSeparator(value) %>" };
+
+// Uses tooltips to show Y-values on bars
 drawPlot = function(container) {
   if (document.getElementById(container)) {
     var ctx = document.getElementById(container).getContext("2d");
     var data = document.getElementById(container).innerHTML;
     var json = JSON.parse(data);
     return new Chart(ctx).Bar(json, plotOptions);
+  }
+}
 
-    // http://stackoverflow.com/questions/35366513/adding-decimal-points-to-data-values-chartjs
-    // var plot = new Chart(ctx).Bar(json, {
-    //   onAnimationComplete: function() {
+/*
+  Displays Y-values above bars, instead of inside tooltips.
+  This variation allows to format the Y-values with decimal points, as in:
+  http://stackoverflow.com/questions/35366513/adding-decimal-points-to-data-values-chartjs
+*/
+drawPlotWithValues = function(container) {
+  if (document.getElementById(container)) {
 
-    //     this.datasets.forEach(function(dataset) {
-    //       dataset.bars.forEach(function(bar) {
-    //         // console.log(bar.value);
-    //         bar.value = numberWithCommas(bar.value);
-    //         // console.log(bar.value);
-    //       });
-    //     })
+    var ctx = document.getElementById(container).getContext("2d");
+    var data = document.getElementById(container).innerHTML;
+    var json = JSON.parse(data);
 
-    //   }
-    // });
+    var plot = new Chart(ctx).Bar(json, {
+      scaleLabel : "<%= thousandSeparator(value) %>",
+      showTooltips: false,
+      onAnimationComplete: function () {
 
-    // return plot;
+        var ctx = this.chart.ctx;
+        ctx.font = this.scale.font;
+        ctx.fillStyle = this.scale.textColor
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+
+        this.datasets.forEach(function (dataset) {
+          dataset.bars.forEach(function (bar) {
+            bar.value = numberWithCommas(bar.value);
+            ctx.fillText(bar.value, bar.x, bar.y - 5);
+          });
+        })
+      }
+    });
+    return plot;
   }
 }
 
@@ -111,8 +129,10 @@ $(document).ready(function() {
   var sciLevelChart = drawSegments("scientific-level");
   var resAreaChart = drawSegments("research-area");
   var pubStatusChart = drawSegments("publication-status");
-  var publicationYearChart = drawPlot("publication-year");
-  var submissionYearChart = drawPlot("submission-year");
+  // var publicationYearChart = drawPlot("publication-year");
+  // var submissionYearChart = drawPlot("submission-year");
+  var publicationYearChart = drawPlotWithValues("publication-year");
+  var submissionYearChart = drawPlotWithValues("submission-year");
 
   var charts = {}
   charts["review_status_s"]    = reviewChart;
