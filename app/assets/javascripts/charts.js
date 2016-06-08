@@ -129,10 +129,10 @@ $(document).ready(function() {
   var sciLevelChart = drawSegments("scientific-level");
   var resAreaChart = drawSegments("research-area");
   var pubStatusChart = drawSegments("publication-status");
-  // var publicationYearChart = drawPlot("publication-year");
-  // var submissionYearChart = drawPlot("submission-year");
-  var publicationYearChart = drawPlotWithValues("publication-year");
-  var submissionYearChart = drawPlotWithValues("submission-year");
+  var publicationYearChart = drawPlot("publication-year");
+  var submissionYearChart = drawPlot("submission-year");
+  // var publicationYearChart = drawPlotWithValues("publication-year");
+  // var submissionYearChart = drawPlotWithValues("submission-year");
 
   var charts = {}
   charts["review_status_s"]    = reviewChart;
