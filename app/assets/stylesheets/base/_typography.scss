@@ -1,0 +1,45 @@
+/* fonts & sizes
+--------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext);
+
+$sans:      'Open Sans', 'Helvetica Neue', sans-serif;
+$serif:     'Crimson Text', Georgia, serif;
+$headline:  'Exo 2', sans-serif;
+
+$base__font-size:   17px;
+$base__line-height: 27px;
+
+$em: $base__font-size / 1em;  // Shorthand for outputting ems
+
+@function calc-em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}
+
+body { font-family: $sans; }
+
+/* vertical rhythm
+--------------------------------------------- */
+p, ul, ol {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+article[role="main"] { margin-bottom: 6em; }
+
+/* lists
+--------------------------------------------- */
+ul, ol { padding-left: 0; }
+ul li, ol li { margin-bottom: .7em; }
+ul li { list-style-type: circle; }
+
+/* links
+http://www.smashingmagazine.com/2010/02/13/the-definitive-guide-to-styling-web-links/
+--------------------------------------------- */
+a:link    { color: #000; }
+a:visited { color: #555; }
+a:hover,
+a:visited:hover,
+a:focus,
+a:active { color: red; }

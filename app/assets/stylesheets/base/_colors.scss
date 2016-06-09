@@ -1,0 +1,27 @@
+$body-background:  #fdfdfd;
+$crimson: #D23F43;
+$action-red: #d9534f; // for destructive actions, etc
+
+$label-light: #eceff1;
+$label-dark: #cfd8dc;
+
+$bluewood: rgba(52, 73, 94, 1); //Pickled Bluewood
+$button-blue: #2e6da4;
+
+// The rest relies on this scheme:
+// https://color.adobe.com/Birdfolio-Blues-color-theme-1945976/
+$blue-1: #2B3A42;
+$blue-2: #3F5765;
+$blue-3: #BDD4DE;
+$blue-4: #EFEFEF;
+$orange: #FF530D;
+$link-color: #1A3873;
+$link-color-auxiliary: #757575;
+
+
+body {
+  background: $body-background;
+  color: #333333;
+  border-top: 3px solid $orange;
+  border-bottom: 3px solid $orange;
+}
