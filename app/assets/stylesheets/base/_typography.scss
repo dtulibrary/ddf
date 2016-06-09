@@ -17,13 +17,11 @@ $em: $base__font-size / 1em;  // Shorthand for outputting ems
   @return ($target / $context) * 1em;
 }
 
-body { font-family: $sans; }
-
 /* vertical rhythm
 --------------------------------------------- */
 p, ul, ol {
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 article[role="main"] { margin-bottom: 6em; }

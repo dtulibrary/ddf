@@ -6,16 +6,12 @@ html {
 } //https://css-tricks.com/rems-ems/
 
 body {
-  background: $body-bg;
   font-family: $sans;
   font-size: 1rem;
   line-height: 1.5; // 27/18
 } //http://webtypography.net/2.2.1
 
-dt, dd {
-  //line-height: 1.42857;
-  line-height: inherit;
-}
+dt, dd { line-height: inherit; }
 
 #documents .document {
   border-bottom: 2px dotted #ccc;
@@ -24,6 +20,7 @@ dt, dd {
 #documents .document:first-child { padding-top: .4em; }
 #documents .document:last-child { border-bottom: 0; }
 
+// Nothing modified here — imported for visual debugging:
 .container {
   @include container-fixed;
 
@@ -40,6 +37,8 @@ dt, dd {
     //background: #eee;
   }
 }
+
+
 
 /* vertical rhythm
 --------------------------------------------- */
