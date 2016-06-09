@@ -1,0 +1,125 @@
+div.top-panel-heading h4 {
+  font-weight: 600;
+  color: $blue-1;
+  text-transform: uppercase;
+  font-size: calc-em(18px);
+  letter-spacing: .07em;
+}
+
+// FACETS
+div#facets { padding-bottom: 0; }
+
+#sidebar .panel-default > .panel-heading {
+  background-color: $blue-4;
+  border-color: #ddd;
+  color: #333333;
+}
+
+#sidebar .panel-default > .panel-heading:hover,
+#sidebar .panel-default > .panel-heading:active {
+  background-color: darken($blue-4, 5%);
+}
+
+div.panel-heading h5.panel-title { font-weight: 600; }
+div.panel-heading h5.panel-title a:hover,
+div.panel-heading h5.panel-title a:active,
+div.panel-heading h5.panel-title a:visited { text-decoration: none; }
+
+span.facet-label span.selected {
+  background: $label-dark;
+  color: #000;
+}
+
+span.selected+a.remove {
+  background: $label-dark;
+  color: $action-red;
+}
+span.selected+a.remove:hover {
+  background: $action-red;
+  color: #fff;
+}
+span.selected+a.remove .glyphicon {
+  right: 5px;
+  top: 2px;
+  font-size: .9em;
+}
+
+ul.facet-values { margin: .25em 0 .5em 0; }
+
+#sidebar ul.facet-values li {
+  font-size: calc-em(15px);
+  //display: block; //must do this because it's set to display: table in the original
+  margin-bottom: .3em;
+}
+
+ul.facet-values li span.facet-label a.facet_select {
+  display: block;
+  text-decoration: underline;
+  line-height: 1.25em;
+}
+
+ul.facet-values li:hover,
+ul.facet-values li:hover span.facet-label a.facet_select,
+ul.facet-values li:hover span.facet-count {
+  background: $label-light;
+  color: $link-color;
+  //text-decoration: underline;
+}
+
+ul.facet-values span.facet-count {
+  font-style: italic;
+  color: #888;
+}
+
+ul.facets-list>li { list-style-type: none; }
+
+ul.facet-items-list { margin: 0 .5em 0 1em; }
+
+ul.facet-items-list>li {
+  font-size: .9em;
+  list-style-type: none;
+  padding: .1em .3em;
+  margin: 0.25em 0;
+}
+ul.facet-items-list>li:last-child { margin-bottom: 1em; }
+ul.facet-items-list>li:hover { background: #eee; }
+
+ul.facet-items-list>li a {
+  display: block;
+  text-decoration: none;
+}
+
+// 'GO TO STATISTICS' BUTTON
+button.goto-section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: inherit;
+  // All of the above just to reset Bootstrap's defaults!
+  margin: 1em;
+}
+button.goto-section a:link {
+  display: block;
+  background: #B276B2;
+  color: #fff;
+  padding: 6px 7px;
+  text-align: center;
+  font-size: calc-em(15px);
+  text-decoration: none;
+  font-weight: 600px;
+  border-radius: 3px;
+}
+button.goto-section a:hover,
+button.goto-section a:visited:hover {
+  background: darken(#B276B2, 10%);
+  text-decoration: none;
+  color: #fff;
+}
+button.goto-section a:visited {
+  background: #B276B2;
+  text-decoration: none;
+  color: #fff;
+}
+button.goto-section a:active { text-decoration: none; }
+button.goto-section i { font-size: 1.2em; }
+button.goto-section-statistics { @include respond-to($screen-md-min) { display: none; } }

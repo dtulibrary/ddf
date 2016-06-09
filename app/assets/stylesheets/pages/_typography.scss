@@ -5,31 +5,6 @@ ol.text { @include respond-to($iphone_landscape) { margin-left: 1em; } }
 
 nav.upper { font-size: .9em; }
 
-h1.logo {
-  display: inline-block;
-  font-family: $headline;
-  font-size: calc-em(22px);
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 1.1em;
-  letter-spacing: .125em;
-  color: $bluewood;
-  color: #fff;
-  margin: 1.4em 0 0 0;
-  @include respond-to($screen-md-min) {
-    // margin: 1em 0 -2em 0;
-  }
-}
-
-h1.logo em {
-  font-size: calc-em(20px);
-  display: block;
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: normal;
-  font-family: $serif;
-  color: lighten($orange, 15%);
-}
 
 em.number-of-items { color: #777; }
 
@@ -86,48 +61,6 @@ ul.admin .glyphicon-flag {
   color: $blue-4;
 }
 
-div.top-panel-heading h4 {
-  font-weight: 600;
-  color: $blue-1;
-  text-transform: uppercase;
-  font-size: calc-em(18px);
-  letter-spacing: .07em;
-}
-
-#sidebar .panel-default > .panel-heading {
-  background-color: $blue-4;
-  border-color: #ddd;
-  color: #333333;
-}
-
-#sidebar .panel-default > .panel-heading:hover,
-#sidebar .panel-default > .panel-heading:active {
-  background-color: darken($blue-4, 5%);
-}
-
-div.panel-heading h5.panel-title { font-weight: 600; }
-div.panel-heading h5.panel-title a:hover,
-div.panel-heading h5.panel-title a:active,
-div.panel-heading h5.panel-title a:visited { text-decoration: none; }
-
-span.facet-label span.selected {
-  background: $label-dark;
-  color: #000;
-}
-
-span.selected+a.remove {
-  background: $label-dark;
-  color: $action-red;
-}
-span.selected+a.remove:hover {
-  background: $action-red;
-  color: #fff;
-}
-span.selected+a.remove .glyphicon {
-  right: 5px;
-  top: 2px;
-  font-size: .9em;
-}
 
 h3.search-help {
   font-size: calc-em(16px);
@@ -203,68 +136,8 @@ a.details-link:visited { color: $link-color-auxiliary; }
 ul.institutions-list a:hover,
 ul.institutions-list a:visited:hover { color: $orange; }
 
-ul.sitemap { margin-bottom: 1em; }
-ul.sitemap li {
-  list-style-type: none;
-  margin-bottom: .1em;
-}
 
-ul.sitemap a {
-  display: block;
-  color: #fff;
-  padding: .3em;
-  border-bottom: 1px dashed $blue-1;
-}
-ul.sitemap a:hover {
-  background: lighten($bluewood, 10%);
-  color: #fff;
-  border-bottom: 1px dashed $orange;
-  text-decoration: none;
-}
-li.sitemap__section {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 2em;
-  @include respond-to($screen-md-min) { display: block; }
-}
-li.sitemap__section a.index { font-weight: bold; }
-li.sitemap__section a.index i.glyphicon,
-li.sitemap__section a.index i.ai {
-  color: #fff;
-  display: inline-block;
-}
-li.sitemap__section a.index i.glyphicon {
-  vertical-align: -7%;
-  font-size: calc-em(19px);
-  padding-right: .3em;
-}
-li.sitemap__section a.index i.ai {
-  vertical-align: 5%;
-  font-size: calc-em(22px);
-  font-weight: 900;
-  // padding-right: .5em;
-}
 
-li.sitemap__section > ul {
-  margin-top: .1em;
-  margin-left: 1.5em;
-  margin-bottom: .7em;
-}
-
-h1.footer-heading {
-  font-family: $headline;
-  font-size: calc-em(20px);
-  //font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  color: #fff;
-  margin: 0 0 .7em 0;
-}
-h1.footer-heading i {
-  color: $blue-3;
-  position: relative;
-  top: 1px;
-}
 
 strong.ddf { font-weight: 600; }
 
@@ -853,9 +726,7 @@ h1.chart-segment-heading i {
   color: $orange;
 }
 
-li.sitemap__section i.ai-open-access { font-size: inherit; }
 
-ul.sitemap i.fa { margin-right: .3em; }
 
 h2.oa-legend-heading {
   text-align: center;
@@ -914,33 +785,7 @@ h3.facet-visualization-heading {
 }
 h3.facet-visualization-heading--plot { margin: 1.5em 0 1.25em 0; }
 
-// LOCALE SWITCHER
-ul.locales-list {
-  float: right;
-  margin-top: 5px;
-  margin-bottom: 0;
-  @include respond-to($screen-md-min) {
-    margin-bottom: -1em;
-  }
-}
-ul.locales-list li {
-  font-style: normal;
-  margin-bottom: 0;
-}
-ul.locales-list li.locale:not(:last-child):after {
-  content: "|";
-  color: #eee;
-}
-ul.locales-list li a {
-  // background: #eee;
-  font-family: $headline;
-  padding: .3em .1em;
-  text-decoration: none;
-  font-size: .85em;
-  letter-spacing: .05em;
-  font-weight: 500;
-}
-ul.locales-list li.current a { color: #fff; }
+
 
 // STATISTICS PAGE
 h1.statistics-headline {
@@ -1028,39 +873,7 @@ a.to-the-top:visited,
 a.to-the-top:visited:hover { color: $blue-3; }
 a.to-the-top:active { color: $orange; }
 
-button.goto-section {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: inherit;
-  // All of the above just to reset Bootstrap's defaults!
-  margin: 1em;
-}
-button.goto-section a:link {
-  display: block;
-  background: #B276B2;
-  color: #fff;
-  padding: 6px 7px;
-  text-align: center;
-  font-size: calc-em(15px);
-  text-decoration: none;
-  font-weight: 600px;
-  border-radius: 3px;
-}
-button.goto-section a:hover,
-button.goto-section a:visited:hover {
-  background: darken(#B276B2, 10%);
-  text-decoration: none;
-  color: #fff;
-}
-button.goto-section a:visited {
-  background: #B276B2;
-  text-decoration: none;
-  color: #fff;
-}
-button.goto-section a:active { text-decoration: none; }
-button.goto-section i { font-size: 1.2em; }
-button.goto-section-statistics { @include respond-to($screen-md-min) { display: none; } }
+
 
 .orcid-metric a {
   &, &:hover, &:active, &:focus { text-decoration: none; }

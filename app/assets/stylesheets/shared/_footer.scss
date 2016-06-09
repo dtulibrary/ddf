@@ -1,0 +1,115 @@
+body > footer {
+  clear: both;
+  background: $bluewood;
+  padding: 2em 0 0 0;
+  font-size: .9rem;
+  margin-top: 1em;
+  position: relative;
+}
+
+h1.footer-heading {
+  font-family: $headline;
+  font-size: calc-em(20px);
+  //font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: .125em;
+  color: #fff;
+  margin: 0 0 .7em 0;
+}
+h1.footer-heading i {
+  color: $blue-3;
+  position: relative;
+  top: 1px;
+}
+
+// SITEMAP
+ul.sitemap { margin-bottom: 1em; }
+ul.sitemap li {
+  list-style-type: none;
+  margin-bottom: .1em;
+}
+ul.sitemap a {
+  display: block;
+  color: #fff;
+  padding: .3em;
+  border-bottom: 1px dashed $blue-1;
+}
+ul.sitemap a:hover {
+  background: lighten($bluewood, 10%);
+  color: #fff;
+  border-bottom: 1px dashed $orange;
+  text-decoration: none;
+}
+li.sitemap__section {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2em;
+  @include respond-to($screen-md-min) { display: block; }
+}
+li.sitemap__section a.index { font-weight: bold; }
+li.sitemap__section a.index i.glyphicon,
+li.sitemap__section a.index i.ai {
+  color: #fff;
+  display: inline-block;
+}
+li.sitemap__section a.index i.glyphicon {
+  vertical-align: -7%;
+  font-size: calc-em(19px);
+  padding-right: .3em;
+}
+li.sitemap__section a.index i.ai {
+  vertical-align: 5%;
+  font-size: calc-em(22px);
+  font-weight: 900;
+  // padding-right: .5em;
+}
+li.sitemap__section > ul {
+  margin-top: .1em;
+  margin-left: 1.5em;
+  margin-bottom: .7em;
+}
+li.sitemap__section i.ai-open-access { font-size: inherit; }
+ul.sitemap i.fa { margin-right: .3em; }
+
+// CONTENTINFO AND STAKEHOLDER LOGOS
+div[role="contentinfo"] {
+  background: $blue-4;
+  padding: 1.5em 0 0 0;
+  color: $blue-1;
+}
+
+div.separator div[class^="col-"]:not(:last-child) {
+  border-right: 2px dashed rgba(0,0,0, .3);
+  @include respond-to($screen-md-min) {
+    border-right: 0;
+    border-bottom: 2px dashed rgba(0,0,0, .3);
+  }
+}
+div.separator div[class^="col-"]:not(:first-child) {
+  @include respond-to($screen-md-min) {
+    padding-top: 1.5em;
+  }
+}
+
+ul.collaborator-logos-list {
+  margin: -1.5em 0 0 0;
+  @include respond-to($screen-sm-min) { margin: 1em 0; }
+}
+ul.collaborator-logos-list li {
+  display: inline-block;
+  width: 25%;
+  margin: 0 2em 2em 0;
+  //@include respond-to($screen-md-min) { width: 30%; }
+  @include respond-to($screen-sm-min) {
+    width: $cols4;
+    display: block;
+  }
+}
+ul.collaborator-logos-list li img {
+  width: 100%;
+  vertical-align: bottom;
+}
+figure#deff {
+  width: 70%;
+  @include respond-to($screen-md-min) { width: $cols4; }
+}

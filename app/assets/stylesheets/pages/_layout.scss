@@ -45,29 +45,13 @@ ul.horizontal li { display: inline-block; }
 .align-left  { float: left; }
 .align-right { float: right; }
 
-body > header {
-  background: $bluewood;
-  padding: 0;
-  margin-bottom: 1.5em;
-}
-.header__wrapper {
-  background: $blue-4;
-  padding: .5em 0;
-}
+
 
 body#data-providers .header__wrapper {
   border-bottom: 1px solid $blue-3;
 }
 
-// TODO
-body > footer {
-  clear: both;
-  background: $bluewood;
-  padding: 2em 0 0 0;
-  font-size: .9rem;
-  margin-top: 1em;
-  position: relative;
-}
+
 
 .sticky a {
   display: block;
@@ -100,15 +84,6 @@ div.applied-filters-container {
   padding: .5em 0;
 }
 
-form.search-query-form {
-  padding-left: 0;
-  @include respond-to($screen-md-min) { padding-top: 0; }
-}
-
-form.search-query-form div.input-group {
-  width: 80%;
-  @include respond-to($screen-md-min) { width: 100%; }
-}
 
 input.form-control {
   display: block;
@@ -176,64 +151,8 @@ form.range_limit input.submit {
 }
 form.range_limit input.submit:hover { background: darken(#2e6da4, 7%); }
 
-div.search-options-container {
-  padding-top: 2.6em;
-  @include respond-to($screen-md-min) { padding: .3em 0 0 0; }
-}
-ul.search-extras-list {
-  @include respond-to($screen-md-min) {
-    float: none;
-    text-align: center;
-  }
-}
 
-ul.facet-values { margin: .25em 0 .5em 0; }
 
-#sidebar ul.facet-values li {
-  font-size: calc-em(15px);
-  //display: block; //must do this because it's set to display: table in the original
-  margin-bottom: .3em;
-}
-
-ul.facet-values li span.facet-label a.facet_select {
-  display: block;
-  text-decoration: underline;
-  line-height: 1.25em;
-}
-
-ul.facet-values li:hover,
-ul.facet-values li:hover span.facet-label a.facet_select,
-ul.facet-values li:hover span.facet-count {
-  background: $label-light;
-  color: $link-color;
-  //text-decoration: underline;
-}
-
-ul.facet-values span.facet-count {
-  font-style: italic;
-  color: #888;
-}
-
-ul.facets-list>li { list-style-type: none; }
-
-ul.facet-items-list { margin: 0 .5em 0 1em; }
-
-ul.facet-items-list>li {
-  font-size: .9em;
-  list-style-type: none;
-  padding: .1em .3em;
-  margin: 0.25em 0;
-}
-ul.facet-items-list>li:last-child { margin-bottom: 1em; }
-ul.facet-items-list>li:hover { background: #eee; }
-
-ul.facet-items-list>li a {
-  display: block;
-  text-decoration: none;
-}
-
-ul.search-extras-list li { display: inline-block; }
-ul.search-extras-list li:not(:last-child) { margin-right: 1em; }
 
 ul.search-widgets-list {
   margin: 0;
@@ -411,31 +330,7 @@ ul.search-queries-list li i {
   right: 15px;
 }
 
-div[role="contentinfo"] {
-  background: $blue-4;
-  padding: 1.5em 0 0 0;
-  color: $blue-1;
-}
 
-ul.collaborator-logos-list {
-  margin: -1.5em 0 0 0;
-  @include respond-to($screen-sm-min) { margin: 1em 0; }
-}
-
-ul.collaborator-logos-list li {
-  display: inline-block;
-  width: 25%;
-  margin: 0 2em 2em 0;
-  //@include respond-to($screen-md-min) { width: 30%; }
-  @include respond-to($screen-sm-min) {
-    width: $cols4;
-    display: block;
-  }
-}
-ul.collaborator-logos-list li img {
-  width: 100%;
-  vertical-align: bottom;
-}
 
 ul.icon-labels,
 ul.icon-labels > li { margin: 0; }
@@ -459,78 +354,7 @@ ul.icon-labels__topnav>li > i {
   color: $blue-3;
 }
 
-ul.site-sections-list, ul.open-access-menu {
-  float: right;
-  margin: 0;
-  @include respond-to($iphone_landscape) {
-    float: none;
-    text-align: center;
-  }
-}
 
-ul.site-sections-list li, ul.open-access-menu li {
-  display: inline-block;
-  margin: 0;
-}
-ul.site-sections-list li:not(:last-child) {
-  @include respond-to($iphone_landscape) {
-    margin-right: .5em;
-  }
-}
-ul.site-sections-list li:hover { background: lighten($bluewood, 15%); }
-ul.site-sections-list li a {
-  display: block;
-  height: 100%;
-  padding: .7em;
-  font-family: $headline;
-  line-height: 1.25em;
-  color: $blue-3;
-  text-decoration: none;
-  @include respond-to($iphone_landscape) {
-    padding: 1em;
-  }
-}
-ul.site-sections-list li:hover a {
-  color: #fff;
-  text-decoration: none;
-}
-ul.open-access-menu li a {
-  padding-top: 0.5em;
-  color: $blue-1;
-  font-weight: 550;
-}
-ul.open-access-menu { margin-top: 23px; }
-ul.open-access-menu li:hover a {
-  text-decoration: none;
-  color: $blue-2;
-}
-ul.open-access-menu li:not(:last-child) { margin-right: 1.5em; }
-ul.site-sections-list li i {
-  font-size: calc-em(21px);
-  display: block;
-  margin-bottom: .3em;
-  text-align: center;
-  text-shadow: 1px 1px 2px #222;
-  @include respond-to($iphone_landscape) {
-    font-size: calc-em(25px);
-    margin-bottom: 0;
-  }
-}
-div.menu-item {
-  text-shadow: 1px 1px 2px #222;
-  @include respond-to($iphone_landscape) {
-    display: none;
-  }
-}
-div.menu-item span {
-  display: block;
-  text-align: center;
-}
-div.menu-item span.menu-item__title {
-  text-transform: uppercase;
-  letter-spacing: .07em;
-}
-div.menu-item span.menu-item__subtitle {}
 
 table.one-col-emphasis {
   text-align: left;
@@ -556,7 +380,7 @@ table.one-col-emphasis tr:hover td {
   background: #eff2ff;
 }
 
-div.upper-panel { margin-bottom: 1em; }
+
 
 ul.subnav-items-list li {
   margin: 0;
@@ -687,15 +511,6 @@ figure.provider-logo { margin-bottom: 1em; }
   padding-right: 15px;
 }
 
-.container--searchbox {
-  @include respond-to($screen-md-min) { width: 90%; }
-}
-
-.container {
-  @include respond-to($screen-md-min) {
-    padding-left: 3em; // FIXME
-  }
-}
 
 [class^="multicol-"] {
   margin-bottom: 2em;
@@ -917,24 +732,8 @@ div.pagination {
 
 article.static { margin-bottom: 3em; }
 
-div.separator div[class^="col-"]:not(:last-child) {
-  border-right: 2px dashed rgba(0,0,0, .3);
-  @include respond-to($screen-md-min) {
-    border-right: 0;
-    border-bottom: 2px dashed rgba(0,0,0, .3);
-  }
-}
 
-div.separator div[class^="col-"]:not(:first-child) {
-  @include respond-to($screen-md-min) {
-    padding-top: 1.5em;
-  }
-}
 
-figure#deff {
-  width: 70%;
-  @include respond-to($screen-md-min) { width: $cols4; }
-}
 
 #chart { text-align: center; }
 
@@ -1006,8 +805,6 @@ div.bookmark_document input.toggle_bookmark {
   //top: 3px;
 }
 
-div#facets { padding-bottom: 0; }
-
 div.oa-chart-container {
   // margin: 6em 0 3em 0;
   margin-bottom: 2em;
@@ -1016,7 +813,7 @@ div.oa-chart-container {
 div.statistics-nav-container { margin-bottom: 3em; }
 div.statistics-row { margin-bottom: 2em; }
 
-ul.nav-tabs a { font-size: calc-em(16px); }
+
 
 // TESTING PRINT STYLESHEET
 // div.no-print,
