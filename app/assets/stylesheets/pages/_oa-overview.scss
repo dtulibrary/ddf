@@ -1,0 +1,164 @@
+
+div.oa-chart-container {
+  // margin: 6em 0 3em 0;
+  margin-bottom: 2em;
+}
+div.oa-chart-container .chart-heading {
+  margin: .5em 0 1em 0;
+  @include respond-to($screen-md-min) {
+    margin: 1em 0 .5em 0;
+  }
+}
+
+h1.oa-headline {
+  text-align: center;
+  font-family: $headline;
+  font-weight: 500;
+  font-size: calc-em(22px);
+  line-height: calc-em(20px);
+  margin: 0 0 1em 0;
+  color: $blue-2;
+}
+h1.oa-headline span.development-segment { font-weight: 300; }
+
+h1.oa-headline--overview {
+  font-size: calc-em(24px);
+  font-weight: 400;
+}
+
+// OA FORM
+form.centered { text-align: center; }
+
+div.oa-inputs-wrapper {
+  text-align: center;
+  // margin: 0 0 1em 0;
+  margin-bottom: 2em;
+}
+div.oa-inputs-wrapper > form {
+  display: inline-block;
+  background: lighten($bluewood, 65%);
+  padding: .5em 1em;
+  border-radius: 5px;
+}
+
+ul.oa-filtering-inputs {
+  margin: 0;
+  padding: 0;
+}
+
+ul.oa-filtering-inputs li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  @include respond-to($screen-md-min) { display: block; }
+  @include respond-to($iphone_landscape) {}
+}
+
+ul.oa-filtering-inputs li:not(:last-child) {
+  margin-right: 1.5em;
+  @include respond-to($screen-md-min) { margin-bottom: .5em; }
+}
+
+button.view-oa {
+  background: $blue-1;
+  color: #fff;
+  padding: 2px 7px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+button.view-oa:hover {
+  background: $orange;
+  color: #fff;
+}
+
+// OA LEGEND
+h2.oa-legend-heading {
+  text-align: center;
+  font-size: calc-em(16px);
+  font-weight: 700;
+  color: #666;
+  margin: 0 0 .5em 0;
+}
+
+div.oa-legend-container {
+  border-top: 1px solid $blue-3;
+  border-bottom: 1px solid $blue-3;
+  padding: .7em;
+  margin-bottom: .3em;
+}
+
+div.oa-legend-description { margin-bottom: 2em; }
+
+ul.oa-terms-list {
+  margin: .5em 0 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: calc-em(15px);
+}
+ul.oa-terms-list li {
+  display: inline-block;
+  margin: 0;
+}
+ul.oa-terms-list li:not(:last-child) { margin-right: .5em; }
+ul.oa-terms-list li.description {
+  font-weight: 600;
+}
+
+ul.oa-terms-list a { text-decoration: underline; }
+
+// LINKS TO OA-DEVELOPMENT
+p.more-link { text-align: center; }
+p.more-link--oa { margin-top: 4em; }
+p.more-link a { text-decoration: underline; }
+
+// DOWLOADS
+div.indicator-downloads {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 2px solid $blue-3;
+}
+
+h2.indicator-downloads-heading {
+  font-size: calc-em(16px);
+  line-height: calc-em(23px);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-weight: 600;
+  margin: 0 0 1em 0;
+  color: $blue-2;
+}
+h2.indicator-downloads-heading span {
+  display: block;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 700;
+  font-size: calc-em(17px);
+}
+
+ul.indicator-downloads-list li {
+  list-style-type: none;
+  // background: #eee;
+  padding: .5em 0;
+  margin-bottom: 0;
+}
+ul.indicator-downloads-list li:hover { background: rgba(0,0,0, .03); }
+ul.indicator-downloads-list li a:link.download-link {
+  display: block;
+  color: $link-color;
+  text-decoration: underline;
+}
+ul.indicator-downloads-list li:hover a:link.download-link {
+  color: $orange;
+  text-decoration: none;
+}
+
+ul.indicator-downloads-list li div.file-title { font-weight: 600; }
+
+.fa-3x { font-size: calc-em(19px); }
+
+h1.site-section i.ai-3x { font-size: 1em; }
+
+ul.oa-filtering-inputs label { color: $link-color-auxiliary; }
+
