@@ -1,0 +1,38 @@
+p.pitch {
+  font-family: $serif;
+  font-size: calc-em(26px);
+  line-height: 1.4em;
+  color: $blue-2;
+  margin-bottom: .7em;
+  @include respond-to($screen-md-min) {
+    line-height: 1.3em;
+  }
+  @include respond-to($iphone_landscape) {
+    line-height: 1.2em;
+  }
+}
+
+em.news-tag {
+  color: $orange;
+  font-weight: 700;
+}
+
+.chart-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $serif;
+  font-weight: 600;
+  font-size: calc-em(17px);
+  line-height: calc-em(20px);
+  letter-spacing: .1em;
+  color: $blue-2;
+  margin: 1em 0 1.5em 0;
+}
+.chart-heading em {
+ text-transform: none;
+ letter-spacing: .05em;
+}
+.chart-heading--universities {
+  margin: 8.3em 0 1.5em 0;
+  @include respond-to($screen-md-min) { margin: 6em 0 1.5em 0; }
+}

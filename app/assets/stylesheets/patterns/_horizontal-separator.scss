@@ -1,0 +1,31 @@
+// Stolen from:
+// http://practice.typekit.com/reference/
+div.contain {
+  overflow: hidden;
+  // width: 20%;
+  // margin: 0 auto;
+}
+div.contain > span.divider {
+    color: #bf0000;
+    display: table;
+    margin: 2em auto;
+    padding: 0 1em;
+    position: relative;
+    text-shadow: -0.03em 0.03em #aaa;
+}
+div.contain > span.divider:before { left: -9999%; }
+div.contain > span.divider::after { right: -9999%; }
+div.contain > span.divider:before,
+div.contain > span.divider:after {
+    background: #ccc;
+    content: " ";
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 9999%;
+}
+div.contain-bottom > span.divider:before,
+div.contain-bottom > span.divider:after { background: inherit; }
+div.contain-bottom > span.divider { margin: 1em auto 0 auto; }
