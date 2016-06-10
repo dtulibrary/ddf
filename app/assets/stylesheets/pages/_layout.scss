@@ -76,13 +76,6 @@ footer.intro {
 
 div#document { margin-bottom: 3em; }
 
-div.applied-filters-container {
-  background: #fff;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0;
-  padding: .5em 0;
-}
 
 
 input.form-control {
@@ -194,23 +187,6 @@ ul.search-widgets-list > li a.btn:hover,
 ul.search-widgets-list > li a.btn:visited:hover,
 ul.search-widgets-list > li a.btn:active { color: $link-color; }
 
-ul.document-actions-list {
-  display: inline-flex;
-  margin: 0;
-  padding: .3em .5em;
-  font-size: calc-em(15px);
-  background: #eceff1;
-  text-align: center;
-  border-radius: 3px;
-}
-ul.document-actions-list li {
-  display: inline-flex;
-  margin: 0;
-  padding: 0 .5em;
-}
-ul.document-actions-list li a { color: $blue-1; }
-ul.document-actions-list li a:hover { color: $orange; }
-ul.document-actions-list li a:active { color: $orange; }
 
 span.export_dropdown { position: relative; }
 span.export_dropdown ul.export_menu {
@@ -260,37 +236,7 @@ ul[class$="__resets"] li i {
 }
 li.destructive i { color: $action-red; }
 
-ul.applied-filters-list {
-  margin: 1em 0 0 .2em;
-  padding: 0;
-}
 
-ul.applied-filters-list li { padding: 0; }
-ul.applied-filters-list li { margin-bottom: 1em; }
-ul.applied-filters-list li:not(:last-child) { margin-right: .5em; }
-
-li.applied-filter { font-size: calc-em(14px); }
-
-li.applied-filter span.constraint {
-  background: $label-light;
-  color: $blue-1;
-  border: 1px solid $blue-3;
-  padding: 5px 7px;
-  font-size: inherit;
-}
-li.applied-filter a.remove {
- background: $label-dark;
- color: $action-red;
- border: 1px solid $blue-3;
- font-size: inherit;
- padding: 6px 7px 3px 7px;
-}
-
-li.applied-filter a.remove:hover {
- background: $action-red;
- border: 1px solid $action-red;
- color: #fff;
-}
 
 div.page-leadin--search { margin-top: -.75em; }
 div.page-leadin--search nav { margin-top: 1em; }
@@ -656,79 +602,12 @@ div.docdetails div.panel__block-contents { padding: .3em .3em .7em .3em; }
 div.availability-panel--show ul.institutions-list a:hover,
 div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
 
-//nav[class$="-view"]
-nav.show-view,
-nav.index-view {
-  margin-bottom: 1em;
-  border-bottom: 1px solid $blue-3;
-  padding: 0 .5em 1em .5em;
-}
 
-nav.index-view {
-  margin-bottom: 1em;
-  border-bottom: 2px solid #eee;
-  padding: 0 .5em 0 .5em;
-}
 
-nav.show-view ul {
-  @include respond-to($iphone_landscape) {
-    display: block;
-    margin-bottom: 1em;
-    float: none;
-  }
-}
 
-div#sortAndPerPage {
-  margin: 0 0 1em 0;
-  padding: 0;
-  border: 0;
-}
 
-ul[class$="__pagination"],
-ul[class$="__pagination"] li,
-ul[class$="__resets"],
-ul[class$="__resets"] li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  font-size: calc-em(16px);
-}
-ul.index-view__pagination {
 
-}
 
-ul.pagination-list {
-  margin: 0;
-  padding: 0;
-  font-size: calc-em(16px);
-}
-ul.pagination-list--index {
-  margin-top: .3em;
-  float: left;
-}
-ul.pagination-list li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  color: $link-color-auxiliary;
-}
-ul.pagination-list li a {
-  text-decoration: underline;
-  color: $link-color-auxiliary;
-}
-
-ul[class$="__pagination"] li { color: $link-color-auxiliary; }
-ul[class$="__pagination"] li a,
-ul[class$="__resets"] li a {
-  text-decoration: underline;
-  color: $link-color-auxiliary;
-}
-
-div.panel { border: 0; }
-div.pagination {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
 
 article.static { margin-bottom: 3em; }
 
@@ -772,24 +651,10 @@ section.secondary-data {
   padding: 1em;
 }
 
-div.document-header {
-  display: flex;
-  padding: 0 1em;
-  margin-bottom: .5em;
-  @include respond-to($screen-md-min) {
-    display: block;
-    margin-bottom: 1em;
-  }
-}
+
 div.document-header--show { margin-bottom: 1em; }
 
-div.document-actions-container  {
-  padding-left: 1em;
-  @include respond-to($screen-md-min) {
-    padding-left: 0;
-    margin: 1em 0 .5em 0;
-  }
-}
+
 
 // Override BS default:
 form.form-horizontal div.checkbox {

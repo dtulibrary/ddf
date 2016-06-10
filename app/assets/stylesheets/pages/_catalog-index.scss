@@ -1,0 +1,219 @@
+//nav[class$="-view"]
+nav.show-view,
+nav.index-view {
+  margin-bottom: 1em;
+  border-bottom: 1px solid $blue-3;
+  padding: 0 .5em 1em .5em;
+}
+
+nav.index-view {
+  margin-bottom: 1em;
+  border-bottom: 2px solid #eee;
+  padding: 0 .5em 0 .5em;
+}
+
+nav.show-view ul {
+  @include respond-to($iphone_landscape) {
+    display: block;
+    margin-bottom: 1em;
+    float: none;
+  }
+}
+
+div.applied-filters-container {
+  background: #fff;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0;
+  padding: .5em 0;
+}
+
+ul.serp-actions { margin-bottom: .5em; }
+
+h3.search-help {
+  font-size: calc-em(16px);
+  font-weight: bold;
+  margin: 0 0 1em 0;
+  font-style: italic;
+  color: $blue-2;
+}
+h3.search-help--large { font-size: calc-em(18px); }
+
+ul.applied-filters-list {
+  margin: 1em 0 0 .2em;
+  padding: 0;
+}
+
+ul.applied-filters-list li { padding: 0; }
+ul.applied-filters-list li { margin-bottom: 1em; }
+ul.applied-filters-list li:not(:last-child) { margin-right: .5em; }
+
+li.applied-filter { font-size: calc-em(14px); }
+
+li.applied-filter span.constraint {
+  background: $label-light;
+  color: $blue-1;
+  border: 1px solid $blue-3;
+  padding: 5px 7px;
+  font-size: inherit;
+}
+li.applied-filter a.remove {
+ background: $label-dark;
+ color: $action-red;
+ border: 1px solid $blue-3;
+ font-size: inherit;
+ padding: 6px 7px 3px 7px;
+}
+
+li.applied-filter a.remove:hover {
+ background: $action-red;
+ border: 1px solid $action-red;
+ color: #fff;
+}
+
+div#sortAndPerPage {
+  margin: 0 0 1em 0;
+  padding: 0;
+  border: 0;
+}
+
+ul[class$="__pagination"],
+ul[class$="__pagination"] li,
+ul[class$="__resets"],
+ul[class$="__resets"] li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: calc-em(16px);
+}
+ul.index-view__pagination {
+
+}
+
+ul.pagination-list {
+  margin: 0;
+  padding: 0;
+  font-size: calc-em(16px);
+}
+ul.pagination-list--index {
+  margin-top: .3em;
+  float: left;
+}
+ul.pagination-list li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: $link-color-auxiliary;
+}
+ul.pagination-list li a {
+  text-decoration: underline;
+  color: $link-color-auxiliary;
+}
+
+ul[class$="__pagination"] li { color: $link-color-auxiliary; }
+ul[class$="__pagination"] li a,
+ul[class$="__resets"] li a {
+  text-decoration: underline;
+  color: $link-color-auxiliary;
+}
+
+ul.search-widgets-list .dropdown-toggle .glyphicon {
+  vertical-align: -4%;
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(1) {
+  font-size: calc-em(18px);
+  @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
+ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(2) {
+  font-size: calc-em(13px);
+  @include respond-to($iphone_landscape) {
+    font-size: calc-em(20px);
+  }
+}
+
+ul.search-widgets-list .btn-default:hover { background: lighten(#eceff1, 3%); }
+ul.search-widgets-list .btn-default:active,
+.open > .btn-default.dropdown-toggle:focus,
+.open > .btn-default.dropdown-toggle:hover,
+.open > button.btn-default.dropdown-toggle { background: #eceff1; }
+
+#documents .profile-picture object {
+  max-height: 120px;
+  margin-top: -40px;
+  margin-left: 20px;
+}
+
+div.document-header {
+  display: flex;
+  padding: 0 1em;
+  margin-bottom: .5em;
+  @include respond-to($screen-md-min) {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+
+.doctitle {
+  font-family: $headline;
+  color: $bluewood;
+}
+.doctitle--index {
+  font-size: calc-em(22px);
+  line-height: calc-em(22px);
+  margin: 0 0 .7em 0;
+}
+.doctitle--show {
+  font-weight: 400;
+  font-size: calc-em(25px);
+  line-height: calc-em(22px);
+  margin: 0 0 .7em 0;
+}
+
+.doctitle--index a:link {
+  text-decoration: underline;
+  padding: .1em .3em .3em .3em;
+  color: $link-color;
+}
+.doctitle--index a:hover {
+  text-decoration: none;
+  background: #EFEFEF;
+  color: #FF530D;
+}
+
+
+div.document-actions-container  {
+  padding-left: 1em;
+  @include respond-to($screen-md-min) {
+    padding-left: 0;
+    margin: 1em 0 .5em 0;
+  }
+}
+
+ul.document-actions-list {
+  display: inline-flex;
+  margin: 0;
+  padding: .3em .5em;
+  font-size: calc-em(15px);
+  background: #eceff1;
+  text-align: center;
+  border-radius: 3px;
+}
+ul.document-actions-list li {
+  display: inline-flex;
+  margin: 0;
+  padding: 0 .5em;
+}
+ul.document-actions-list li a { color: $blue-1; }
+ul.document-actions-list li a:hover { color: $orange; }
+ul.document-actions-list li a:active { color: $orange; }
+
+div.panel { border: 0; }
+div.pagination {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+

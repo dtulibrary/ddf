@@ -18,32 +18,7 @@ h1.facet-heading {
 
 h1.facet-heading span.close { font-size: 1.4em; }
 
-.doctitle {
-  font-family: $headline;
-  color: $bluewood;
-}
-.doctitle--index {
-  font-size: calc-em(22px);
-  line-height: calc-em(22px);
-  margin: 0 0 .7em 0;
-}
-.doctitle--show {
-  font-weight: 400;
-  font-size: calc-em(25px);
-  line-height: calc-em(22px);
-  margin: 0 0 .7em 0;
-}
 
-.doctitle--index a:link {
-  text-decoration: underline;
-  padding: .1em .3em .3em .3em;
-  color: $link-color;
-}
-.doctitle--index a:hover {
-  text-decoration: none;
-  background: #EFEFEF;
-  color: #FF530D;
-}
 
 ul.admin a {
   padding: 0;
@@ -61,15 +36,6 @@ ul.admin .glyphicon-flag {
   color: $blue-4;
 }
 
-
-h3.search-help {
-  font-size: calc-em(16px);
-  font-weight: bold;
-  margin: 0 0 1em 0;
-  font-style: italic;
-  color: $blue-2;
-}
-h3.search-help--large { font-size: calc-em(18px); }
 
 nav.global > ul { color: $blue-3; }
 nav.global > ul li a:link { color: $blue-4; }
@@ -543,27 +509,6 @@ li.learn-more i.glyphicon {
 ul.data-provider-cards-list .hide-on-serp,
 ul.data-providers-list .hide-on-dp { display: none; }
 
-ul.search-widgets-list .dropdown-toggle .glyphicon {
-  vertical-align: -4%;
-}
-ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(1) {
-  font-size: calc-em(18px);
-  @include respond-to($iphone_landscape) {
-    font-size: calc-em(20px);
-  }
-}
-ul.search-widgets-list .dropdown-toggle .glyphicon:nth-of-type(2) {
-  font-size: calc-em(13px);
-  @include respond-to($iphone_landscape) {
-    font-size: calc-em(20px);
-  }
-}
-
-ul.search-widgets-list .btn-default:hover { background: lighten(#eceff1, 3%); }
-ul.search-widgets-list .btn-default:active,
-.open > .btn-default.dropdown-toggle:focus,
-.open > .btn-default.dropdown-toggle:hover,
-.open > button.btn-default.dropdown-toggle { background: #eceff1; }
 
 hr.offset-3 {
    // height: .3em;
@@ -901,11 +846,7 @@ a.to-the-top:active { color: $orange; }
   max-width: 200px;
 }
 
-#documents .profile-picture object {
-  max-height: 120px;
-  margin-top: -40px;
-  margin-left: 20px;
-}
+
 
 .affiliations ol {
   margin-bottom: 0;
@@ -941,7 +882,7 @@ div#document[itemtype$=Person] {
 // Overrides Bootstrap default:
 ul.nav-tabs { border-bottom: 0; }
 
-ul.serp-actions { margin-bottom: .5em; }
+
 
 ul.fulltext-sources-list {}
 ul.fulltext-sources-list li {}

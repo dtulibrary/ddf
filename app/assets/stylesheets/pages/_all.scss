@@ -1,5 +1,5 @@
-@import "typography";
-@import "layout";
+@import "catalog-index";
+
 @import "navigation";
 @import "search_help";
 @import "search_options";
@@ -11,3 +11,7 @@
 @import "charts/all";
 
 @import 'print';
+
+// EXTRACT PAGE COMPONENTS FROM THESE, AND REMOVE:
+@import "typography";
+@import "layout";
