@@ -1,3 +1,4 @@
+// NAV CONTAINING SELECTED FACETS AND PROVIDERS
 //nav[class$="-view"]
 nav.show-view,
 nav.index-view {
@@ -20,6 +21,56 @@ nav.show-view ul {
   }
 }
 
+// SELECTED PROVIDER LOGOS
+ul.data-provider-logos-list {
+  margin: 0;
+  text-align: right;
+}
+ul.data-provider-logos-list li {
+  display: inline-block;
+  position: relative;
+  margin: 0 1.25em .7em 0;
+}
+ul.data-provider-logos-list li:last-child { margin-right: 0; }
+ul.data-provider-logos-list li a img {
+  padding: .5em;
+  border: 2px solid #eee;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+}
+ul.data-provider-logos-list li a img:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+ul.data-provider-logos-list li i.glyphicon {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  font-size: calc-em(18px);
+  color: $orange;
+  background: #fff;
+  display: none;
+}
+ul.data-provider-logos-list li.logo-clicked i.glyphicon { display: block; }
+
+figure.provider-logo { margin-bottom: 1em; }
+
+// SELECTED PROVIDER CARDS
+ul.data-provider-cards-list {
+  margin: 0;
+  font-size: .97em;
+}
+ul.data-provider-cards-list > li {
+  list-style-type: none;
+  background: lighten($bluewood, 65%);
+  padding: .5em;
+  border-radius: 5px;
+  margin: 1em 0;
+  display: none;
+}
+
+// SELECTED FACETS
 div.applied-filters-container {
   background: #fff;
   border: 0;
@@ -43,13 +94,11 @@ ul.applied-filters-list {
   margin: 1em 0 0 .2em;
   padding: 0;
 }
-
 ul.applied-filters-list li { padding: 0; }
 ul.applied-filters-list li { margin-bottom: 1em; }
 ul.applied-filters-list li:not(:last-child) { margin-right: .5em; }
 
 li.applied-filter { font-size: calc-em(14px); }
-
 li.applied-filter span.constraint {
   background: $label-light;
   color: $blue-1;
@@ -71,6 +120,7 @@ li.applied-filter a.remove:hover {
  color: #fff;
 }
 
+// DOCUMENT PAGINATION AND ACTIONS ON SERP LIST
 div#sortAndPerPage {
   margin: 0 0 1em 0;
   padding: 0;
@@ -86,9 +136,7 @@ ul[class$="__resets"] li {
   display: inline-block;
   font-size: calc-em(16px);
 }
-ul.index-view__pagination {
-
-}
+ul.index-view__pagination {}
 
 ul.pagination-list {
   margin: 0;
@@ -155,7 +203,7 @@ div.document-header {
   }
 }
 
-
+// DOCUMENT
 .doctitle {
   font-family: $headline;
   color: $bluewood;
@@ -183,7 +231,7 @@ div.document-header {
   color: #FF530D;
 }
 
-
+// PER-DOCUMENT ACTIONS
 div.document-actions-container  {
   padding-left: 1em;
   @include respond-to($screen-md-min) {
@@ -216,4 +264,20 @@ div.pagination {
   margin-bottom: 1em;
 }
 
+// .fulltext-access, .data-providers {
+//   img { height: 1em; }
 
+//   i.fa-external-link-square {
+//     vertical-align: super;
+//     font-size: 0.8em;
+//     margin-left: 0.25em;
+//     color: $blue-2;
+//   }
+// }
+
+.fulltext-access-index {
+  background-color: $blue-4;
+  border-radius: 5px;
+  padding: 0.7em 0em 0.3em 0em;
+  margin: 0.5em 0em;
+}

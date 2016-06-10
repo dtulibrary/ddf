@@ -423,18 +423,7 @@ ul.data-provider-list__leaves li i {
   vertical-align: super;
 }
 
-ul.data-provider-cards-list {
-  margin: 0;
-  font-size: .97em;
-}
-ul.data-provider-cards-list > li {
-  list-style-type: none;
-  background: lighten($bluewood, 65%);
-  padding: .5em;
-  border-radius: 5px;
-  margin: 1em 0;
-  display: none;
-}
+
 
 h1.centered { text-align: center; }
 h1.feature-heading {
@@ -820,24 +809,6 @@ a.to-the-top:active { color: $orange; }
 
 
 
-.orcid-metric a {
-  &, &:hover, &:active, &:focus { text-decoration: none; }
-}
-.orcid-metric img { margin-right: 5px; }
-.recent-publications {
-  h2 {
-    font-family: $headline;
-    font-weight: 400;
-    font-size: calc-em(23px);
-    line-height: calc-em(22px);
-    margin: .5em 0;
-    color: $bluewood;
-  }
-  ol { padding-left: 20px; }
-  a { color: $link-color; }
-  a:hover { color: red; }
-}
-
 .profile-picture { padding-left: 2px !important;}
 
 .profile-picture object {
@@ -870,32 +841,9 @@ a.to-the-top:active { color: $orange; }
    }
 }
 
-// overwrite BL default styling for Person pages
-div#document[itemtype$=Person] {
-  dt {
-    text-align: left;
-    width: auto;
-  }
-  dd { margin-left: 110px; }
-}
+
 
 // Overrides Bootstrap default:
 ul.nav-tabs { border-bottom: 0; }
 
-
-
-ul.fulltext-sources-list {}
-ul.fulltext-sources-list li {}
-ul.fulltext-sources-list li a { }
-ul.fulltext-sources-list li a img {
-  padding: .5em;
-  border: 2px solid #eee;
-  border-radius: 3px;
-  transition: all .2s ease-in-out;
-}
-ul.fulltext-sources-list li a img:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
 
