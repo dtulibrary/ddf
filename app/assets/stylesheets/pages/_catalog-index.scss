@@ -165,6 +165,47 @@ ul[class$="__resets"] li a {
   color: $link-color-auxiliary;
 }
 
+
+ul.search-widgets-list {
+  margin: 0;
+  display: inline-block;
+  float: right;
+  @include respond-to($iphone_landscape) {
+    margin-top: 1em;
+    float: none;
+    text-align: center;
+  }
+}
+ul.search-widgets-list > li {
+  display: inline-block;
+  @include respond-to($iphone_landscape) {
+    text-align: center;
+    // display: block;
+    // margin-top: .125em;
+  }
+}
+ul.search-widgets-list > li a {
+  @include respond-to($ipad_landscape) {
+    display: none;
+    // margin-top: .125em;
+  }
+}
+
+ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
+ul.search-widgets-list ul.dropdown-menu li { display: block; }
+
+ul.search-widgets-list > li a { color: $link-color; }
+ul.search-widgets-list > li a.btn,
+ul.search-widgets-list > li a.btn:hover,
+ul.search-widgets-list > li button,
+ul.search-widgets-list > li button:hover { border: 0; }
+
+ul.search-widgets-list > li a.btn,
+ul.search-widgets-list > li a.btn:visited,
+ul.search-widgets-list > li a.btn:hover,
+ul.search-widgets-list > li a.btn:visited:hover,
+ul.search-widgets-list > li a.btn:active { color: $link-color; }
+
 ul.search-widgets-list .dropdown-toggle .glyphicon {
   vertical-align: -4%;
 }
@@ -186,6 +227,47 @@ ul.search-widgets-list .btn-default:active,
 .open > .btn-default.dropdown-toggle:focus,
 .open > .btn-default.dropdown-toggle:hover,
 .open > button.btn-default.dropdown-toggle { background: #eceff1; }
+
+span.export_dropdown { position: relative; }
+span.export_dropdown ul.export_menu {
+  position: absolute;
+  left: 5px;
+  top: 17px;
+  font-family: $sans;
+}
+ul.export_menu li {
+  display: block;
+  margin: .3em 0;
+}
+ul.export_menu li a {
+  display: block;
+  padding: .2em .3em;
+}
+
+div[id$="-dropdown"] ul.dropdown-menu > li {
+  display: block;
+  margin: .3em 0;
+}
+div[id$="-dropdown"] ul.dropdown-menu > li > a {
+  display: block;
+  padding: .3em .5em .3em .9em;
+}
+div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
+
+table#search-syntax tr.info a { text-decoration: underline; }
+
+// Not used:
+ul[class$="__resets"] li:not(:last-child) { margin-right: .5em; }
+ul[class$="__resets"] li i {
+  display: inline-block;
+  //display: none;
+  font-size: calc-em(18px);
+  position: relative;
+  top: 3px;
+  left: -1px;
+}
+li.destructive i { color: $action-red; }
+
 
 #documents .profile-picture object {
   max-height: 120px;
@@ -280,4 +362,60 @@ div.pagination {
   border-radius: 5px;
   padding: 0.7em 0em 0.3em 0em;
   margin: 0.5em 0em;
+}
+
+// For icons that use image files:
+dd.icon-label--doi img {
+  height: 1.5em;
+  vertical-align: -30%;
+}
+dd.icon-label--oa img {
+  height: 1.5em;
+  position: relative;
+  top: -5px;
+}
+li.icon-label--doi img {
+  font-size: calc-em(16px);
+  height: 1.5em;
+  vertical-align: -30%;
+}
+li.icon-label--oa img {
+  font-size: calc-em(16px);
+  height: 1.5em;
+}
+
+img.sidepanel-icon {
+  display: inline-block;
+  font-size: calc-em(23px);
+  vertical-align: text-bottom;
+}
+
+// RESEARCHERS
+.profile-picture { padding-left: 2px !important;}
+
+.profile-picture object {
+  border: 1px solid #e3e3e3;
+  max-height: 160px;
+  max-width: 200px;
+}
+
+.affiliations ol {
+  margin-bottom: 0;
+  li {
+    list-style-type: none;
+    margin-bottom: 0.1em;
+    .affiliation-dates { color: #666; }
+  }
+}
+
+.more-link a {
+  color: $link-color;
+  &:hover {
+    color: red;
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+   }
 }

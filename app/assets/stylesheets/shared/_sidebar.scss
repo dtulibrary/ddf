@@ -123,3 +123,33 @@ button.goto-section a:visited {
 button.goto-section a:active { text-decoration: none; }
 button.goto-section i { font-size: 1.2em; }
 button.goto-section-statistics { @include respond-to($screen-md-min) { display: none; } }
+
+// FACETS USING THE 'BLACKLIGHT RANGE LIMIT' GEM
+form.range_limit input.form-control {
+  border: 1px solid $blue-2;
+  border-radius: 0;
+  //background: lighten($blue-4, 3%);
+  color: $blue-1;
+  font-weight: 600;
+  font-size: 15px;
+  height: auto;
+  padding: 5px 0;
+  width: 3.5em;
+  -moz-box-shadow:     inset 0 0 3px $blue-3;
+  -webkit-box-shadow:  inset 0 0 3px $blue-3;
+  box-shadow:          inset 0 0 3px $blue-3;
+}
+form.range_limit input.form-control:focus {
+  //background: lighten($blue-4, 3%);
+  border: 2px solid #2e6da4;
+}
+form.range_limit input.range_begin,
+form.range_limit input.range_end { text-align: center; }
+form.range_limit input.submit {
+  border: 1px solid #2e6da4;
+  background: #337ab7;
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+}
+form.range_limit input.submit:hover { background: darken(#2e6da4, 7%); }

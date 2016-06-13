@@ -13,6 +13,16 @@ h1.feature-heading {
   margin: .2em 0 1.5em 0em;
 }
 
+h1.data-provider-heading {
+  font-family: $headline;
+  font-size: calc-em(20px);
+  line-height: calc-em(20px);
+  margin: .5em 0;
+  color: $bluewood;
+  font-weight: 700;
+  //letter-spacing: .07em;
+}
+
 ul.data-providers-list {
   -moz-column-gap: 2.5em;
   -webkit-column-gap: 2.5em;

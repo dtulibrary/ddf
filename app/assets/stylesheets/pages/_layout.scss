@@ -13,405 +13,40 @@ body#data-providers .header__wrapper {
 
 
 
-.sticky a {
-  display: block;
-  padding: 1em 2em;
-  color: $blue-1;
-}
-.sticky a:hover { color: $orange; }
 
-body > footer .sticky {
-  position: absolute;
-  top: -26px;
-  right: 50px;
-  background: $blue-3;
-  border-radius: 3px;
-}
+// div.availability-panel {
+//   background: lighten($blue-3, 17%);
+//   margin-top: 1em;
+//   padding: .6em 2em .4em 0;
+//   border-radius: 4px;
+//   position: relative;
+// }
+// div.availability-panel--show {
+//   background: inherit;
+//   margin-top: 0;
+//   padding: 0;
+//   border-radius: 0;
+// }
 
-footer.intro {
-  text-align: center;
-  margin: 4em 0 -5em 0;
-  @include respond-to($screen-md-min) { margin: 1em 0 -5em 0; }
-}
+// div.availability-panel ul.institutions-list {
+//   display: inline-block;
+//   margin: 0;
+//   padding: 0;
+//   @include respond-to($iphone_landscape) { display: block; }
+// }
 
+// div.availability-panel ul.institutions-list li {
+//   display: inline-block;
+//   margin: 0;
+//   padding: 0;
+//   @include respond-to($iphone_landscape) { margin: .1em 0 .1em .1em; }
+// }
+// div.availability-panel--show ul.institutions-list li { margin-bottom: .3em; }
 
+// //div.availability-panel--show ul.institutions-list i { color: $blue-2; }
 
-
-
-input.form-control {
-  display: block;
-  font-size: 1em;
-  width: 100%;
-  height: auto;
-  line-height: auto;
-  color: #333333;
-  padding: 10px 12px;
-  border: 1px solid #2e6da4; // same border color as adjacent button
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-  // -webkit-border-radius: 4px;
-  // -moz-border-radius: 4px;
-  // border-radius: 4px;
-  border-radius: 0;
-}
-
-button[id^=search] {
-  margin-left: -5px;
-  font-size: 18px;
-  height: auto;
-  line-height: auto;
-  padding: 8.5px 12px;
-  @include respond-to($screen-md-min) {
-    font-size: 17px;
-    display: block;
-    margin: 1em auto -.5em auto;
-  }
-  @include respond-to($iphone_landscape) { font-size: 16px; }
-
-  @include above-viewport($screen-md-min) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
-}
-
-form.range_limit input.form-control {
-  border: 1px solid $blue-2;
-  border-radius: 0;
-  //background: lighten($blue-4, 3%);
-  color: $blue-1;
-  font-weight: 600;
-  font-size: 15px;
-  height: auto;
-  padding: 5px 0;
-  width: 3.5em;
-  -moz-box-shadow:     inset 0 0 3px $blue-3;
-  -webkit-box-shadow:  inset 0 0 3px $blue-3;
-  box-shadow:          inset 0 0 3px $blue-3;
-}
-form.range_limit input.form-control:focus {
-  //background: lighten($blue-4, 3%);
-  border: 2px solid #2e6da4;
-}
-form.range_limit input.range_begin,
-form.range_limit input.range_end { text-align: center; }
-form.range_limit input.submit {
-  border: 1px solid #2e6da4;
-  background: #337ab7;
-  color: #fff;
-  font-weight: bold;
-  display: inline-block;
-}
-form.range_limit input.submit:hover { background: darken(#2e6da4, 7%); }
-
-
-
-
-ul.search-widgets-list {
-  margin: 0;
-  display: inline-block;
-  float: right;
-  @include respond-to($iphone_landscape) {
-    margin-top: 1em;
-    float: none;
-    text-align: center;
-  }
-}
-ul.search-widgets-list > li {
-  display: inline-block;
-  @include respond-to($iphone_landscape) {
-    text-align: center;
-    // display: block;
-    // margin-top: .125em;
-  }
-}
-ul.search-widgets-list > li a {
-  @include respond-to($ipad_landscape) {
-    display: none;
-    // margin-top: .125em;
-  }
-}
-
-ul.search-widgets-list > li:not(:last-child) { margin-right: .25em; }
-ul.search-widgets-list ul.dropdown-menu li { display: block; }
-
-ul.search-widgets-list > li a { color: $link-color; }
-ul.search-widgets-list > li a.btn,
-ul.search-widgets-list > li a.btn:hover,
-ul.search-widgets-list > li button,
-ul.search-widgets-list > li button:hover { border: 0; }
-
-ul.search-widgets-list > li a.btn,
-ul.search-widgets-list > li a.btn:visited,
-ul.search-widgets-list > li a.btn:hover,
-ul.search-widgets-list > li a.btn:visited:hover,
-ul.search-widgets-list > li a.btn:active { color: $link-color; }
-
-
-span.export_dropdown { position: relative; }
-span.export_dropdown ul.export_menu {
-  position: absolute;
-  left: 5px;
-  top: 17px;
-  font-family: $sans;
-}
-ul.export_menu li {
-  display: block;
-  margin: .3em 0;
-}
-ul.export_menu li a {
-  display: block;
-  padding: .2em .3em;
-}
-
-div[id$="-dropdown"] ul.dropdown-menu > li {
-  display: block;
-  margin: .3em 0;
-}
-div[id$="-dropdown"] ul.dropdown-menu > li > a {
-  display: block;
-  padding: .3em .5em .3em .9em;
-}
-div[id$="-dropdown"] ul.dropdown-menu > li > a:hover { color: $orange; }
-
-table#search-syntax tr.info a { text-decoration: underline; }
-
-
-
-ul[class$="__resets"] li:not(:last-child) { margin-right: .5em; }
-ul[class$="__resets"] li i {
-  display: inline-block;
-  //display: none;
-  font-size: calc-em(18px);
-  position: relative;
-  top: 3px;
-  left: -1px;
-}
-li.destructive i { color: $action-red; }
-
-
-
-div.page-leadin--search { margin-top: -.75em; }
-div.page-leadin--search nav { margin-top: 1em; }
-
-ul.search-queries-list {}
-ul.search-queries-list li {
-  list-style-type: none;
-  border-bottom: 1px dashed $blue-3;
-  margin: 0;
-  position: relative;
-}
-ul.search-queries-list li:hover { background: $blue-4; }
-
-ul.search-queries-list li span.constraint {
-  display: block;
-  margin-bottom: .1em;
-}
-ul.search-queries-list li span.filterName {
-  font-weight: 600;
-  font-style: italic;
-  color: $link-color-auxiliary;
-}
-ul.search-queries-list li span.filterName:after { content: " "; }
-
-ul.search-queries-list li a {
-  padding: .7em .5em;
-  display: inline-block;
-  text-decoration: underline;
-  color: $link-color;
-}
-ul.search-queries-list li a:hover { color: $orange; }
-ul.search-queries-list li a:hover span.filterName { color: $orange; }
-
-ul.search-queries-list li i {
-  position: absolute;
-  top: 35%;
-  right: 15px;
-}
-
-
-
-
-
-
-
-
-
-ul.subnav-items-list li {
-  margin: 0;
-  display: inline-block;
-  @include respond-to($iphone_landscape) { display: block; }
-  //border-radius: 4px;
-}
-ul.subnav-items-list li:not(:last-child) {
-  margin-right: .5em;
-  @include respond-to($iphone_landscape) { margin-right: 0; }
-}
-ul.subnav-items-list li a {
-  vertical-align: middle;
-  padding: .1em .5em .2em .5em;
-  border-radius: 3px;
-  text-decoration: none;
-  @include respond-to($iphone_landscape) {
-    display: block;
-  }
-}
-ul.subnav-items-list li a:hover {
-  background: rgba(0,0,0, .1);
-  color: $orange;
-  text-decoration: none;
-  @include respond-to($iphone_landscape) {
-    text-decoration: none;
-  }
-}
-
-section.segmented-chart ul.chartlist:not(:last-child) { margin-bottom: 2em; }
-
-// TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
-button.toggle-visibility span.h { display: none; }
-button.toggle-visibility span.s { display: block; }
-button.toggle-rest span.h { display: none; }
-button.toggle-rest span.s { display: block; }
-button.show span.h { display: block; }
-button.show span.s { display: none; }
-
-button.list-toggle {
-  font-size: calc-em(16px);
-  color: $link-color;
-  background: #fff;
-  border: 1px solid $blue-3;
-  padding: .1em .4em;
-  border-radius: 3px;
-}
-button.list-toggle:hover { background: #eee; }
-button.list-toggle:active {
-  background: #eee;
-  color: $orange;
-}
-button.list-toggle .glyphicon {
-  font-size: calc-em(15px);
-  vertical-align: -8%;
-}
-// TOGGLING CLASSES
-
-// For icons that use image files:
-dd.icon-label--doi img {
-  height: 1.5em;
-  vertical-align: -30%;
-}
-dd.icon-label--oa img {
-  height: 1.5em;
-  position: relative;
-  top: -5px;
-}
-li.icon-label--doi img {
-  font-size: calc-em(16px);
-  height: 1.5em;
-  vertical-align: -30%;
-}
-li.icon-label--oa img {
-  font-size: calc-em(16px);
-  height: 1.5em;
-}
-
-img.sidepanel-icon {
-  display: inline-block;
-  font-size: calc-em(23px);
-  vertical-align: text-bottom;
-}
-
-div.selected-documents { border: 1px solid $blue-4; }
-div.selected-documents__container { padding: 0 .8em; }
-
-div.selected-documents ul,
-div.selected-documents ol { margin-left: .5em; }
-
-
-
-.snap-to-grid {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-
-[class^="multicol-"] {
-  margin-bottom: 2em;
-  margin: 0 auto;
-}
-.multicol-3 {
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
-}
-.multicol-2 {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-}
-.multicol-1 {
-  @include respond-to($screen-md-min) {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-  }
-}
-.multicol-2 {
-  @include respond-to($screen-md-min) {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-  }
-}
-
-
-figure.logo-container {
-  width: 15em;
-  position: relative;
-  top: -20px;
-  left: -10px;
-  z-index: 3;
-}
-
-ul.search-icons-list {
-  background: inherit;
-  z-index: 3;
-  border-radius: 5px 0 0 5px;
-  display: inline-block;
-  float: none;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-ul.search-icons-list li { display: inline-block; }
-
-ul.search-icons-list a { color: $link-color-auxiliary; }
-
-div.availability-panel {
-  background: lighten($blue-3, 17%);
-  margin-top: 1em;
-  padding: .6em 2em .4em 0;
-  border-radius: 4px;
-  position: relative;
-}
-div.availability-panel--show {
-  background: inherit;
-  margin-top: 0;
-  padding: 0;
-  border-radius: 0;
-}
-
-div.availability-panel ul.institutions-list {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  @include respond-to($iphone_landscape) { display: block; }
-}
-
-div.availability-panel ul.institutions-list li {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  @include respond-to($iphone_landscape) { margin: .1em 0 .1em .1em; }
-}
-div.availability-panel--show ul.institutions-list li { margin-bottom: .3em; }
-
-
+// div.availability-panel--show ul.institutions-list a:hover,
+// div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
 
 
 
@@ -427,20 +62,6 @@ a.details-link {
 //dl.document-metadata dd[class^="ddf-index"] a.details-link:hover { color: $orange; }
 
 
-
-//div.availability-panel--show ul.institutions-list i { color: $blue-2; }
-
-div.availability-panel--show ul.institutions-list a:hover,
-div.availability-panel--show ul.institutions-list a:hover i { color: $orange; }
-
-
-
-
-
-
-
-
-article.static { margin-bottom: 3em; }
 
 
 
@@ -458,9 +79,6 @@ div.chart {
 div.bookmark_document {}
 
 body#data-providers { background: $blue-4; }
-
-
-
 
 div.document-header--show { margin-bottom: 1em; }
 
@@ -480,18 +98,5 @@ div.bookmark_document input.toggle_bookmark {
   //top: 3px;
 }
 
-div.statistics-nav-container { margin-bottom: 3em; }
-div.statistics-row { margin-bottom: 2em; }
 
 
-
-// TESTING PRINT STYLESHEET
-// div.no-print,
-// ul.no-print,
-// nav.no-print { display: none; }
-
-button.print {
-  display: block;
-  width: 8em;
-  margin: 2em auto;
-}

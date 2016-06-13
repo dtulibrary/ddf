@@ -1,5 +1,10 @@
-@media print {
+button.print {
+  display: block;
+  width: 8em;
+  margin: 2em auto;
+}
 
+@media print {
     div.no-print,
     ul.no-print,
     nav.no-print { display: none; }
@@ -8,5 +13,7 @@
     div#sidebar { width: 100%; }
 
     div.documentHeader .doctitle { display: block; }
-
 }
+
+
+

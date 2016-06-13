@@ -37,6 +37,24 @@ em.news-tag {
   @include respond-to($screen-md-min) { margin: 6em 0 1.5em 0; }
 }
 
+h1.chart-segment-heading {
+  font-family: $headline;
+  font-size: calc-em(23px);
+  font-weight: 300;
+
+  color: $blue-1;
+  text-align: center;
+  margin: .5em 0 1.5em 0;
+}
+
+// h1.chart-segment-heading i.ai-open-access { font-size: inherit; }
+
+h1.chart-segment-heading i {
+  font-size: .9em;
+  vertical-align: text-top;
+  color: $orange;
+}
+
 // TABS FOR SEARCH FORM
 ul.search-nav {
   li {
@@ -83,5 +101,90 @@ table#search-syntax {
 
     thead, tbody { background-color: #fff; }
     td { cursor: pointer; }
+}
+
+// MAIN SEARCH FORM
+input.form-control {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  height: auto;
+  line-height: auto;
+  color: #333333;
+  padding: 10px 12px;
+  border: 1px solid #2e6da4; // same border color as adjacent button
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+  // -webkit-border-radius: 4px;
+  // -moz-border-radius: 4px;
+  // border-radius: 4px;
+  border-radius: 0;
+}
+
+button[id^=search] {
+  margin-left: -5px;
+  font-size: 18px;
+  height: auto;
+  line-height: auto;
+  padding: 8.5px 12px;
+  @include respond-to($screen-md-min) {
+    font-size: 17px;
+    display: block;
+    margin: 1em auto -.5em auto;
+  }
+  @include respond-to($iphone_landscape) { font-size: 16px; }
+
+  @include above-viewport($screen-md-min) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+// TOGGLING CLASSES — DO NOT MODIFY; EXTEND LIKE BELOW
+button.toggle-visibility span.h { display: none; }
+button.toggle-visibility span.s { display: block; }
+button.toggle-rest span.h { display: none; }
+button.toggle-rest span.s { display: block; }
+button.show span.h { display: block; }
+button.show span.s { display: none; }
+
+button.list-toggle {
+  font-size: calc-em(16px);
+  color: $link-color;
+  background: #fff;
+  border: 1px solid $blue-3;
+  padding: .1em .4em;
+  border-radius: 3px;
+}
+button.list-toggle:hover { background: #eee; }
+button.list-toggle:active {
+  background: #eee;
+  color: $orange;
+}
+button.list-toggle .glyphicon {
+  font-size: calc-em(15px);
+  vertical-align: -8%;
+}
+// TOGGLING CLASSES
+
+ul.search-icons-list {
+  background: inherit;
+  z-index: 3;
+  border-radius: 5px 0 0 5px;
+  display: inline-block;
+  float: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+ul.search-icons-list li { display: inline-block; }
+
+ul.search-icons-list a { color: $link-color-auxiliary; }
+
+footer.intro {
+  text-align: center;
+  margin: 4em 0 -5em 0;
+  @include respond-to($screen-md-min) { margin: 1em 0 -5em 0; }
 }
 

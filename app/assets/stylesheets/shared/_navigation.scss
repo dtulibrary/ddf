@@ -69,6 +69,33 @@ body[class~="blacklight-open_access_indicator-development"] li#oa-development a 
 body[class~="blacklight-open_access_indicator-development"] li#oa-development i,
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { color: #fff; }
 
+ul.subnav-items-list li {
+  margin: 0;
+  display: inline-block;
+  @include respond-to($iphone_landscape) { display: block; }
+  //border-radius: 4px;
+}
+ul.subnav-items-list li:not(:last-child) {
+  margin-right: .5em;
+  @include respond-to($iphone_landscape) { margin-right: 0; }
+}
+ul.subnav-items-list li a {
+  vertical-align: middle;
+  padding: .1em .5em .2em .5em;
+  border-radius: 3px;
+  text-decoration: none;
+  @include respond-to($iphone_landscape) {
+    display: block;
+  }
+}
+ul.subnav-items-list li a:hover {
+  background: rgba(0,0,0, .1);
+  color: $orange;
+  text-decoration: none;
+  @include respond-to($iphone_landscape) {
+    text-decoration: none;
+  }
+}
 
 nav.mobile .mobile-show {
   float: right;

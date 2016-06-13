@@ -1,43 +1,14 @@
-.feedback {
-  position: fixed;
-  top: 50%;
-  z-index: 500;
-  left: 0px;
-  border: 0px;
-  background-image: image_url('feedback.png');
-  width: 34px;
-  height: 97px;
-  margin-top: -48px;
-
+div.sticky a {
+  display: block;
+  padding: 1em 2em;
+  color: $blue-1;
 }
+div.sticky a:hover { color: $orange; }
 
-#feedback-modal {
-
-  input, label, textarea {
-    display: block;
-  }
-
-  input, label {
-    width: 50%;
-
-    &:last-child {
-      margin-bottom: 0px;
-    }
-  }
-
-  button {
-  }
-
-  textarea {
-    height: 10em;
-    width: 100%;
-
-    &:active {
-      border-color: $orange;
-    }
-  }
-
-  form {
-    margin: 0px;
-  }
+body > footer div.sticky {
+  position: absolute;
+  top: -26px;
+  right: 50px;
+  background: $blue-3;
+  border-radius: 3px;
 }

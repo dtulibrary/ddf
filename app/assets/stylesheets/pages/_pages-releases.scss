@@ -1,0 +1,4 @@
+ol.release-list { list-style-type: none; }
+ol.release-list time { font-weight: 600; }
+ol.release-details { margin: -.5em 0 1em 2em; }
+ol.release-details li:not(:last-child) { margin-bottom: .5em; }
