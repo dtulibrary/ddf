@@ -36,3 +36,52 @@ em.news-tag {
   margin: 8.3em 0 1.5em 0;
   @include respond-to($screen-md-min) { margin: 6em 0 1.5em 0; }
 }
+
+// TABS FOR SEARCH FORM
+ul.search-nav {
+  li {
+    a {
+      padding: 5px 10px;
+      background-color: $blue-3;
+      color: $blue-1;
+      margin-right: 0;
+      border: none;
+      &:hover {
+        background-color: $blue-3;
+        color: $orange;
+        border-color: $blue-3;
+      }
+      &:focus { outline: none; }
+
+    }
+    &.active > a {
+      background-color: $button-blue;
+      color: $blue-4;
+      border: none;
+      &:hover, &:focus {
+        background-color: $button-blue;
+        color: $blue-4;
+        border: none;
+      }
+    }
+  }
+}
+
+form.navbar-form { margin-top: 0; }
+
+// SEARCH SYNTAX DROPDOWN
+table#search-syntax {
+  border: 1px solid #d4d4d4;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 2000;
+  display: none;
+  //margin: 44px 25px 5px 0px;
+  padding: 5px 2px;
+
+    thead, tbody { background-color: #fff; }
+    td { cursor: pointer; }
+}
+
