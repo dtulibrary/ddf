@@ -10,6 +10,22 @@ div.header__wrapper {
 
 div.upper-panel { margin-bottom: 1em; }
 
+ul.admin a {
+  padding: 0;
+  margin: 0;
+}
+ul.admin a:link    { color: lighten($bluewood, 45%); }
+ul.admin a:visited { color: lighten($bluewood, 45%); }
+ul.admin a:hover,
+ul.admin a:visited:hover,
+ul.admin a:focus,
+ul.admin a:active  { color:  $orange; }
+
+ul.admin .glyphicon-flag {
+  padding-right: .3em;
+  color: $blue-4;
+}
+
 .container {
   @include respond-to($screen-md-min) {
     padding-left: 3em; // FIXME

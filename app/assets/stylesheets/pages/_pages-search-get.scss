@@ -1,0 +1,47 @@
+article.search-docs p.search-example {
+  border: 1px solid $blue-3;
+  padding: .5em;
+  position: relative;
+}
+
+article.search-docs p.search-example i.glyphicon {
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  color: $blue-2;
+}
+
+article.search-docs span.search-example {
+  border: 1px solid $blue-3;
+  padding: 0 .5em .2em .5em;
+}
+
+article.search-docs span.search-result { font-weight: bold; }
+article.search-docs span.operator { font-weight: 600; }
+article.search-docs p.search-explanation { margin: .5em 0 0 0; }
+
+// SEARCH OPTIONS TABLE
+table.one-col-emphasis {
+  text-align: left;
+  border-collapse: collapse;
+  margin-bottom: 2em;
+}
+table.one-col-emphasis th {
+  padding: 12px 15px;
+  color: #039;
+}
+table.one-col-emphasis td {
+  padding: 10px 15px;
+  color: #669;
+  border-top: 1px solid #e8edff;
+}
+.oce-first {
+  background: #d0dafd;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+table.one-col-emphasis tr:hover td {
+  color: #339;
+  background: #eff2ff;
+}
+

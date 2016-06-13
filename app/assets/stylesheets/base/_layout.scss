@@ -1,0 +1,48 @@
+@import "grid";
+@import "viewports";
+
+.wrapper {
+  width: $cols15;
+  @include centered;
+  @include respond-to($cols13+$cols4) { width: 85%; }
+  @include respond-to($screen-md-min) { width: 90%; }
+}
+.measure {
+  width: $cols10;
+  @include centered;
+  @include respond-to($cols12) { width: 85%; }
+  @include respond-to($iphone_landscape) { width: 90%; }
+}
+.measure-large {
+  width: $cols13;
+  @include centered;
+  @include respond-to($cols15) { width: 90%; }
+  @include respond-to($iphone_landscape) { width: 90%; }
+}
+
+/*
+Some examples of classes for responsive breakpoints */
+.tablet-l > *[class^="col"] {
+  @include respond-to($ipad_landscape) {
+    float: none;
+    width: 100%;
+  }
+}
+.tablet-p > *[class^="col"] {
+  @include respond-to($screen-md-min) {
+    float: none;
+    width: 100%;
+  }
+}
+.mobile-l > *[class^="col"] {
+  @include respond-to($iphone_landscape) {
+    float: none;
+    width: 100%;
+  }
+}
+
+// Alternative to Bootstrap's pull-right / -left,
+// which carry some extraneous styling
+.align-left  { float: left; }
+.align-right { float: right; }
+

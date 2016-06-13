@@ -20,21 +20,6 @@ h1.facet-heading span.close { font-size: 1.4em; }
 
 
 
-ul.admin a {
-  padding: 0;
-  margin: 0;
-}
-ul.admin a:link    { color: lighten($bluewood, 45%); }
-ul.admin a:visited { color: lighten($bluewood, 45%); }
-ul.admin a:hover,
-ul.admin a:visited:hover,
-ul.admin a:focus,
-ul.admin a:active  { color:  $orange; }
-
-ul.admin .glyphicon-flag {
-  padding-right: .3em;
-  color: $blue-4;
-}
 
 
 nav.global > ul { color: $blue-3; }
@@ -65,7 +50,7 @@ a.btn-info:hover,
 a.btn-info:visited:hover { color: #fff; }
 a.btn-info:active        { color: #eee; }
 
-ul.data-providers-list li { list-style-type: none; }
+
 
 h1.data-provider-heading {
   font-family: $headline;
@@ -107,70 +92,6 @@ ul.institutions-list a:visited:hover { color: $orange; }
 
 strong.ddf { font-weight: 600; }
 
-article.static h1 {
-  font-family: $headline;
-  font-size: calc-em(30px);
-  margin: .3em 0 .7em 0;
-  font-weight: 400;
-  color: $bluewood;
-}
-
-article.static h2 {
-  font-family: $headline;
-  font-size: calc-em(23px);
-  margin: .1em 0 .3em 0;
-  font-weight: 400;
-  color: $bluewood;
-}
-article.static h2 a:hover {
-  background: inherit;
-  color: inherit;
-}
-
-article.static h3 {
-  font-family: $headline;
-  font-size: calc-em(20px);
-  margin: .1em 0 .3em 0;
-  font-weight: 500;
-  color: $bluewood;
-}
-
-article.search-docs p.search-example {
-  border: 1px solid $blue-3;
-  padding: .5em;
-  position: relative;
-}
-
-article.search-docs p.search-example i.glyphicon {
-  position: absolute;
-  top: 35%;
-  right: 15px;
-  color: $blue-2;
-}
-
-article.search-docs span.search-example {
-  border: 1px solid $blue-3;
-  padding: 0 .5em .2em .5em;
-}
-
-article.search-docs span.search-result { font-weight: bold; }
-
-article.search-docs span.operator { font-weight: 600; }
-
-article.search-docs p.search-explanation { margin: .5em 0 0 0; }
-
-article.static a:link {
-  color: $link-color;
-  //text-decoration: underline;
-  border-bottom: 1px dotted $blue-2;
-}
-article.static a:hover,
-article.static a:visited:hover {
-  color: $orange;
-  text-decoration: none;
-  background: $blue-4;
-}
-article.static a:visited { color: inherit; }
 
 ul.faq-list { margin: 1.5em 0 2em 0; }
 
@@ -284,175 +205,6 @@ ol.selected-documents__list li a {
   color: $link-color-auxiliary;
   //font-size: calc-em(17px);
 }
-
-dl.provider-details-list { margin-bottom: 1em; }
-dl.provider-details-list dt {
-  float: left;
-  clear: left;
-  // width: 250px;
-  // text-align: right;
-  font-weight: 600;
-  padding-right: 5px;
-  color: $blue-2;
-}
-dl.provider-details-list dt:after { content: ":"; }
-dl.provider-details-list dd {
-  // margin: 0 0 0 255px;
-  // padding: 0 0 0.5em 0;
-  margin-bottom: .4em;
-}
-
-dl.provider-details-list dd i {
-  color: $blue-2;
-  font-size: 0.8em;
-  margin-left: 0.25em;
-  vertical-align: super;
-}
-
-// TODO: article.static h1 overrides second rule
-ul.data-providers-list h2.data-provider-heading,
-ul.data-provider-cards-list h2.data-provider-heading {
-  font-family: $headline;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-weight: 500;
-  font-size: calc-em(18px);
-  line-height: calc-em(20px);
-  margin: 0 0 1em 0;
-  color: $bluewood;
-}
-
-ul.data-providers-list li:target {
-  // background: lighten($blue-3, 17%);
-  border: 1px solid $link-color-auxiliary;
-  -webkit-animation: target-fade 3s 1;
-  -moz-animation: target-fade 3s 1;
-}
-@-webkit-keyframes target-fade {
-  0% { background-color: rgba(0,0,0,.1); }
-  100% { background-color: rgba(0,0,0,0); }
-}
-@-moz-keyframes target-fade {
-  0% { background-color: rgba(0,0,0,.1); }
-  100% { background-color: rgba(0,0,0,0); }
-}
-
-ul.data-providers-list h3.data-provider-list__sub__heading {
-  font-family: $headline;
-  font-size: calc-em(18px);
-  line-height: calc-em(20px);
-  margin: 0 0 .7em 0;
-  color: $bluewood;
-  font-weight: 500;
-}
-ul.data-providers-list h3.data-provider-list__sub__heading:last-child { margin-bottom: 0; }
-
-ul.data-providers-list h4.data-provider-list__leaves-heading {
-  font-family: $sans;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: calc-em(15px);
-  line-height: calc-em(20px);
-  // font-style: italic;
-  margin: .5em 0 .7em 0;
-  color: $bluewood;
-  font-weight: 600;
-}
-
-ul.data-provider-list__sub li {
-  margin-bottom: .5em;
-  padding: 0 0 0 1em;
-}
-ul.data-provider-list__sub li:last-child { margin-bottom: 0; }
-
-ul.data-provider-list__leaves { margin-bottom: 1.5em; }
-
-ul.data-provider-list__leaves li {
-  margin-bottom: .3em;
-  padding: 0 0 0 1em;
-}
-
-ul.data-provider-list__leaves li i {
-  color: $blue-2;
-  font-size: 0.8em;
-  margin-left: 0.25em;
-  vertical-align: super;
-}
-
-
-
-h1.centered { text-align: center; }
-h1.feature-heading {
-  font-family: $sans;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-}
-
-article.static h1.feature-heading {
-  font-family: $sans;
-  font-size: calc-em(20px);
-  font-weight: 600;
-  letter-spacing: .07em;
-  margin: .2em 0 1.5em 0em;
-}
-
-button.card-toggle {
-  font-size: calc-em(25px);
-  color: $link-color;
-  padding: 0;
-  border: 0;
-  background: inherit;
-  // margin-left: 95%;
-  // margin: 0 0 .3em 95%;
-}
-button.card-toggle:hover {
-  background: inherit;
-}
-button.card-toggle:active {
-  color: $orange;
-  border: 0;
-}
-button.card-toggle .glyphicon {
-  font-size: calc-em(15px);
-  vertical-align: -8%;
-}
-
-ul.card-info-actions-list {
-  margin: 0 1em 1em 0;
-  text-align: right;
-}
-ul.card-info-actions-list li {
-  margin: 0;
-  display: inline-block;
-  text-align: right;
-}
-ul.card-info-actions-list li:not(:last-child) { margin-right: .5em; }
-ul.card-info-actions-list li.learn-more {
-  font-family: $serif;
-  font-style: italic;
-  font-size: calc-em(20px);
-  text-decoration: none;
-}
-ul.card-info-actions-list li.learn-more a {
-  text-decoration: none;
-  border: 0;
-  padding: .3em .4em .1em .4em;
-  border-radius: 3px;
-  transition: all .2s ease-in-out;
-}
-ul.card-info-actions-list li.learn-more a:after { content: " \02192"; }
-ul.card-info-actions-list li.learn-more a:hover {
-  background: lighten($bluewood, 60%);
-  color: $orange;
-}
-
-li.learn-more i.glyphicon {
-  font-size: .9em;
-  vertical-align: -5%;
-}
-
-ul.data-provider-cards-list .hide-on-serp,
-ul.data-providers-list .hide-on-dp { display: none; }
 
 
 hr.offset-3 {

@@ -2,5 +2,19 @@
 @import "typography";
 @import "grid";
 @import "viewports";
+@import "layout";
 @import "colors";
 @import "debug";
+
+/*
+Layout depends on 1) grid and 2) viewports. Grid depends on typography.
+
+So the whole layout is driven by typography: Letters compose to different
+measures (line widths), measures compose to layout blocks, which compose
+to page templates.
+
+HOWEVER the core of typography is overriden in "../bootstrap/overrides.scss",
+BECAUSE Bootstrap imposes its own typographic defaults.
+
+Keep this in mind when modifying or adding styles.
+*/
