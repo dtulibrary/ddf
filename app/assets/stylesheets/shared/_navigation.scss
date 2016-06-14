@@ -69,6 +69,15 @@ body[class~="blacklight-open_access_indicator-development"] li#oa-development a 
 body[class~="blacklight-open_access_indicator-development"] li#oa-development i,
 body[class~="blacklight-open_access_indicator-development"] li#oa-development a { color: #fff; }
 
+ul.subnav-items-list {
+  margin: 0;
+  font-family: $headline;
+  font-weight: 500;
+  //text-align: right;
+  @include above-viewport($iphone_landscape) {
+    float: right;
+  }
+}
 ul.subnav-items-list li {
   margin: 0;
   display: inline-block;
@@ -113,4 +122,27 @@ nav.mobile .mobile-hide {
   @include respond-to($screen-md-min) {
     display: none;
   }
+}
+
+
+h1.site-section {
+  font-family: $headline;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-size: calc-em(18px);
+  font-weight: 500;
+  //font-style: italic;
+  margin: .1em 0 0 0;
+  color: $blue-1;
+  float: left;
+  @include respond-to($iphone_landscape) {
+    margin-bottom: .25em;
+    float: none;
+  }
+}
+h1.site-section .glyphicon {
+  //font-size: .8em;
+  color: rgba(0,0,0, .5);
+  color: $blue-2;
+  padding-right: .125em;
 }

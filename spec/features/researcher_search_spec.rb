@@ -3,7 +3,7 @@ feature 'Researcher search' do
   background do
     visit root_path
     fill_in I18n.t('ddf.search.form.placeholder.researchers'), with: search_term
-    click_button 'search.researchers'
+    click_button 'search-researchers'
   end
 
   scenario 'name search' do

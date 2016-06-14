@@ -1,5 +1,6 @@
 // DOCUMENT
 div#document { margin-bottom: 3em; }
+div.document-header--show { margin-bottom: 1em; }
 
 // overwrite BL default styling for Person pages
 div#document[itemtype$=Person] {
@@ -80,4 +81,21 @@ ul.fulltext-sources-list li a img:hover {
   ol { padding-left: 20px; }
   a { color: $link-color; }
   a:hover { color: red; }
+}
+
+// SELECT / BOOKMARK A RECORD
+div.bookmark_document {}
+
+// Override BS default:
+form.form-horizontal div.checkbox {
+  padding: 0;
+  min-height: unset;
+}
+label.toggle_bookmark { display: inline; }
+
+div.bookmark_document input.toggle_bookmark {
+  // display: inline-block;
+  position: relative;
+  vertical-align: 5%;
+  //top: 3px;
 }

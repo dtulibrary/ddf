@@ -32,6 +32,8 @@ ul, ol { padding-left: 0; }
 ul li, ol li { margin-bottom: .7em; }
 ul li { list-style-type: circle; }
 
+ul.horizontal li { display: inline-block; }
+
 /* links
 http://www.smashingmagazine.com/2010/02/13/the-definitive-guide-to-styling-web-links/
 --------------------------------------------- */

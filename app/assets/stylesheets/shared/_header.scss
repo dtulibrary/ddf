@@ -60,6 +60,15 @@ ul.locales-list li a {
 }
 ul.locales-list li.current a { color: #fff; }
 
+h1.logo a:link,
+h1.logo a:hover,
+h1.logo a:visited,
+h1.logo a:visited:hover,
+h1.logo a:visited:active {
+  text-decoration: none;
+  color: #fff;
+}
+
 // MAIN NAV
 ul.site-sections-list, ul.open-access-menu {
   float: right;
@@ -166,6 +175,8 @@ h1.logo em {
 }
 
 // MAIN SEARCH FORM
+// Overrides Bootstrap default:
+ul.nav-tabs { border-bottom: 0; }
 ul.nav-tabs a { font-size: calc-em(16px); }
 
 form.search-query-form {

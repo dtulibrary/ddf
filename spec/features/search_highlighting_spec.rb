@@ -8,7 +8,7 @@ feature 'Catalog search' do
       # stub out the default response with our fixture
       expect_any_instance_of(Net::HTTPResponse).to receive(:body).at_least(:once)
       .and_return(response_with_highlighting)
-      click_button 'search.publications'
+      click_button 'search-publications'
     end
 
     it 'contains the highlighted journal title' do
@@ -25,7 +25,7 @@ feature 'Catalog search' do
     background do
       visit root_path
       fill_in I18n.t('ddf.search.form.placeholder.publications'), with: search_term
-      click_button 'search.publications'
+      click_button 'search-publications'
     end
 
     feature 'author highlighting' do

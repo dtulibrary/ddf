@@ -4,7 +4,7 @@ feature 'Catalog search' do
     background do
       visit root_path
       fill_in I18n.t('ddf.search.form.placeholder.publications'), with: search_term
-      click_button 'search.publications'
+      click_button 'search-publications'
     end
 
     scenario 'Checking per page toggle' do

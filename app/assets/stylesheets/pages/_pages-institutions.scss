@@ -201,3 +201,19 @@ li.learn-more i.glyphicon {
   vertical-align: -5%;
 }
 
+body#data-providers { background: $blue-4; }
+body#data-providers .header__wrapper { border-bottom: 1px solid $blue-3; }
+
+// disable the backlink for inactive Aarhus researchers (index and show pages)
+.data-providers .rdb_au.person.inactive {
+  a { pointer-events: none;  }
+  i { display: none; }
+}
+/// just show page
+.data-providers li.rdb_au.person.inactive {
+  a:after {
+    content: ' \00a0\00a0\00a0\00a0\00a0 Unavailable at provider';
+    color: #777777;
+  }
+}
+

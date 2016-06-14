@@ -419,3 +419,15 @@ img.sidepanel-icon {
     outline: none;
    }
 }
+
+// SOME BLACKLIGHT / BOOTSTRAP OVERRIDESS
+a.btn-info:link,
+a.btn-info:visited,
+a.btn-info:hover,
+a.btn-info:visited:hover { color: #fff; }
+a.btn-info:active        { color: #eee; }
+
+a.btn-danger:link,
+a.btn-danger:hover,
+a.btn-danger:visited:hover,
+a.btn-danger:active { color: #fff; }

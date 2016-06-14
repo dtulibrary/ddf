@@ -103,6 +103,10 @@ table#search-syntax {
     td { cursor: pointer; }
 }
 
+p.more-link { text-align: center; }
+p.more-link--oa { margin-top: 4em; }
+p.more-link a { text-decoration: underline; }
+
 // MAIN SEARCH FORM
 input.form-control {
   display: block;

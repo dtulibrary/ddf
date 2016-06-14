@@ -42,3 +42,18 @@ article.static a:visited:hover {
   background: $blue-4;
 }
 article.static a:visited { color: inherit; }
+
+// MISCELLANEOUS STATIC PAGE STYLES
+// (too small to merit dedicated stylesheets)
+strong.ddf { font-weight: 600; }
+
+ul.faq-list { margin: 1.5em 0 2em 0; }
+
+span.p-intro {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .07em;
+}
+
+strong.name { font-weight: 600; }
+address.adr { margin-left: 1em; }
