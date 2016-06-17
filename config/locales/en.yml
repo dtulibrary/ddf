@@ -210,6 +210,7 @@ en:
       rdb_fak: Royal Danish Defence College
       rdb_ka: Ministry of Culture
       rdb_aarch: "Research Institutions in Architecture, Design and Conservation"
+      rdb_ucviden: University Colleges Denmark
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES

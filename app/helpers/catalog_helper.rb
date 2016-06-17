@@ -220,6 +220,8 @@ end
       # This is a pseudo source name that only exists here
       # to handle two sources packed into one Pure backend.
       'rdb_aarch'
+    when /.+ucviden\.dk/
+      'rdb_ucviden'
     else
       raise "Couldn't find data provider for the url: #{link}"
     end
@@ -386,7 +388,8 @@ end
     orbit:   'technical-university-of-dk',
     rdb_vbn: 'aalborg-university',
     rdb_au:  'aarhus-university',
-    rdb_ark: 'architecture-design-conservation'
+    rdb_ark: 'architecture-design-conservation',
+    rdb_ucviden: 'ucviden'
   }
 
   def render_provider_logos

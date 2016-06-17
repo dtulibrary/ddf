@@ -231,6 +231,7 @@ da:
       rdb_fak: Forsvarsakademiet
       rdb_ka: Kulturministeriet
       rdb_aarch: "Forskningsinstitutioner i Arkitektur, Design og Konservering"
+      rdb_ucviden: Danske Professionshøjskoler
     # copy from source labels but overwrite architecture institute
     facet_source_labels:
       <<: *SOURCES

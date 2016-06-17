@@ -12,7 +12,10 @@ module StatService
         :q => '*:*',
         :facet => 'true',
         'facet.field' => facet,
-        :rows => 0 })
+        :rows => 0,
+        fq: 'NOT format:person'
+      }
+    )
     publ['facet_counts']['facet_fields'][facet]
   end
 
@@ -45,7 +48,7 @@ module StatService
     facet_list.select { |hash| !BLACKLISTED_CODES.include? hash[:code] }
   end
 
-  BLACKLISTED_CODES = ['do', 'rdb_ucviden']
+  BLACKLISTED_CODES = ['do']
 
   def translate(facet, code)
     t([LABEL_TRANSLATIONS[facet], '.', code].join)

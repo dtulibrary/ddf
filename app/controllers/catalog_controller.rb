@@ -25,7 +25,8 @@ class CatalogController < ApplicationController
         'hl.snippets' => 3,
         'hl.usePhraseHighlighter' => true,
         'hl.fl' => 'title_ts, author_ts, name_ts, orcid_ss, journal_title_ts, conf_title_ts, abstract_ts, publisher_ts',
-        'hl.fragsize' => 300
+        'hl.fragsize' => 300,
+        fq: 'NOT format:person'
     }
 
 
@@ -177,11 +178,7 @@ class CatalogController < ApplicationController
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
-    config.add_search_field 'all_fields', :label => 'Title' do |field|
-      field.solr_parameters = {
-        fq: 'NOT source_ss:rdb_ucviden'
-      }
-    end
+    config.add_search_field 'all_fields', :label => 'Title'
 
 
     # "sort results by" select (pulldown)
