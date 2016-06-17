@@ -104,11 +104,11 @@ def render_highlighted_authors args
   sep = args[:separator] || '; '
   highlighted_authors = render_highlight_field args
   formatted = highlighted_authors.map { |au| "<span class='author'>#{au}</span>" }
-  if action_name.eql? 'index'
+  if action_name.eql?('index') && (formatted.size > 3)
     first_three = formatted.take(3).join("<span>#{sep}</span>").html_safe
     et_al = "; <span class='et-al'>et al.</span>".html_safe
     first_three + et_al
-  elsif action_name.eql? 'show'
+  else
     formatted.join("<span>#{sep}</span>").html_safe
   end
 end
