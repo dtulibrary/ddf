@@ -1112,9 +1112,6 @@ ul.data-provider-logos-list li {
 ul.data-provider-logos-list li:not(:last-child) { margin: 0 1.25em 0 0; }
 
 ul.data-provider-logos-list li:hover {
-  -webkit-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
   // background: lighten($bluewood, 65%);
   background: #ccc;
 }
