@@ -45,6 +45,8 @@ module Ddf
       :dedup_source_url => '',
     }
 
+    config.log_tags = [:remote_ip]
+
     config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/%{profile}'
     config.x.open_access.status_api = 'http://oa-indicator.cvt.dk/oa-indicator/ws/status'
     config.x.open_access.api_profile = 'prod'
