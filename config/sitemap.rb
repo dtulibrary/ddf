@@ -17,7 +17,7 @@ SitemapGenerator::Sitemap.create do
     response = Blacklight.solr.get('/solr/metastore/ddf_publ', :params => {
       'q'          => '*:*',
       'fl'         => 'cluster_id_ss',
-      'fq'         => 'NOT format:person AND NOT source_ss:rdb_ucviden',
+      'fq'         => 'NOT format:person',
       'cursorMark' => cursorMark,
       'rows'       => ENV['BATCH_SIZE'] || 1000,
       'sort'       => 'id asc'
