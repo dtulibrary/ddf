@@ -7,6 +7,7 @@ class CatalogController < ApplicationController
   include Dtu::CatalogBehavior
 
   before_filter :set_locale
+  after_filter :monitor_response, only: [:index]
 
   configure_blacklight do |config|
     # Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
@@ -191,5 +192,12 @@ class CatalogController < ApplicationController
   def show
     super()
     # binding.pry
+  end
+
+  def monitor_response
+    return unless Rails.application.config.x.monitoring_id.present?
+    return unless @response.present?
+    return unless @response.respond_to? :to_json
+    DtuMonitoring::BlacklightResponse.monitor(Rails.application.config.x.monitoring_id, @response.to_json, Time.now.to_i)
   end
 end
