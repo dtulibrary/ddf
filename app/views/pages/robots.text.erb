@@ -1,3 +1,7 @@
 <%- if File.exists? "#{Rails.root}/public/sitemap.xml.gz" -%>
 Sitemap: <%= "#{root_url :locale => nil}sitemap.xml.gz" %>
 <%- end -%>
+# Try to decrease server load by disallowing crawling of search urls
+# (all documents should already be linked to in the sitemap)
+Disallow: /en/catalog?
+Disallow: /da/catalog?
