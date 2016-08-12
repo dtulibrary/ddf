@@ -3,5 +3,8 @@ Sitemap: <%= "#{root_url :locale => nil}sitemap.xml.gz" %>
 <%- end -%>
 # Try to decrease server load by disallowing crawling of search urls
 # (all documents should already be linked to in the sitemap)
+User-agent: *
 Disallow: /en/catalog?
 Disallow: /da/catalog?
+# Maybe this is from the old site? Gets trawled very frequently by AhrefsBot
+Disallow: /Search.external
