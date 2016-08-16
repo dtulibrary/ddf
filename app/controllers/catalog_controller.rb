@@ -191,7 +191,9 @@ class CatalogController < ApplicationController
 
   def show
     super()
-    # binding.pry
+    # For harvesting purposes - some crawlers keep trying to access these docs
+    # A 400 tells them to forget about them
+    render nothing: true, status: 400 if @document.person?  
   end
 
   def monitor_response
