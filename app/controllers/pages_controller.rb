@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @institutions = publications_by_facet('source_ss', limit: 50)
     @national_segments = OpenAccessIndicator.segment_attrs('national', OpenAccessIndicator::LAST_YEAR)
     @university_segments = OpenAccessIndicator.segment_attrs('universities', OpenAccessIndicator::LAST_YEAR)
+  rescue OpenAccessIndicator::ServiceUnavailableException
+    flash[:error] = "Open Access Indicator is temporarily unavailable."
+    @national_segments = []
+    @university_segments = []
   end
 
   # SEARCH

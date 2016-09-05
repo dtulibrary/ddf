@@ -65,7 +65,7 @@ class OpenAccessIndicator
   def self.fetch(resource, year, view = 'relative')
     response = self.get_resource(year, resource)
     if response.nil?
-      nil
+      nil  
     else
       Response.values(response, resource, view)
     end
@@ -79,7 +79,6 @@ class OpenAccessIndicator
         timeline[key][year.to_s] = Response.timeline_values(response, resource, key)
       end
     end
-    # binding.pry
     timeline
   end
 
@@ -140,7 +139,8 @@ class OpenAccessIndicator
     Rails.logger.info "OpenAccessIndicator: Getting #{url.to_s}"
     response = Net::HTTP.get_response(url) rescue nil
     if response.nil? || !(response.is_a? Net::HTTPSuccess)
-      nil
+      Rails.logger.error "OpenAccessIndicator: Error Service Unavailable"
+      raise OpenAccessIndicator::ServiceUnavailableException 
     elsif !Response.ok?(response.body)
       Rails.logger.error "OpenAccessIndicator: Error #{Response.error_message(response)}"
       nil
@@ -149,6 +149,7 @@ class OpenAccessIndicator
     end
   end
 
+  class ServiceUnavailableException < StandardError; end
   class LocalCache
     def self.update_needed?
       status = OpenAccessIndicator.get(OpenAccessIndicator.status_url)

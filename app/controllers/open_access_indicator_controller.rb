@@ -16,6 +16,8 @@ class OpenAccessIndicatorController < ApplicationController
     OpenAccessIndicator::RESOURCES.keys.each do |resource|
       @overview[resource] = OpenAccessIndicator.fetch(resource, @year, @view)
     end
+  rescue OpenAccessIndicator::ServiceUnavailableException
+    render 'error', status: 502
   end
 
   def development
@@ -24,6 +26,8 @@ class OpenAccessIndicatorController < ApplicationController
     @resource = OpenAccessIndicator::RESOURCES.select {|k,v| @key.in? v}.keys.first
     @timeline = OpenAccessIndicator.timeline(@resource, @key) #used only once
     @years = OpenAccessIndicator::TOTAL_YEARS
+  rescue OpenAccessIndicator::ServiceUnavailableException
+    render 'error', status: 502
   end
 
   def reports
