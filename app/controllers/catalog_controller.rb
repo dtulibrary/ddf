@@ -27,13 +27,14 @@ class CatalogController < ApplicationController
         'hl.usePhraseHighlighter' => true,
         'hl.fl' => 'title_ts, author_ts, name_ts, orcid_ss, journal_title_ts, conf_title_ts, abstract_ts, publisher_ts',
         'hl.fragsize' => 300,
-        fq: 'NOT format:person'
+        fq: 'superformat_s:bib'
     }
 
 
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
-     :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
+     :q => "{!raw f=#{SolrDocument.unique_key} v=$id}",
+     fq: 'superformat_s:bib'
       # These are hard-coded in the blacklight 'document' requestHandler
       # :fl => '*',
       # :rows => 1
