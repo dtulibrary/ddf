@@ -21,6 +21,7 @@ module Charts
           :q => '*:*',
           :facet => 'true',
           'facet.field' => facet,
+          fq: 'superformat_s:bib',
           :rows => 0 })
       publ['facet_counts']['facet_fields'][facet]
     end
