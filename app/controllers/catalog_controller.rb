@@ -30,8 +30,7 @@ class CatalogController < ApplicationController
 
     config.default_document_solr_params = {
      :qt => '/ddf_publ_document',
-     :q => "{!raw f=#{SolrDocument.unique_key} v=$id}",
-      fq: 'superformat_s:bib'
+     :q => "{!raw f=#{SolrDocument.unique_key} v=$id}"
       # These are hard-coded in the blacklight 'document' requestHandler
       # :fl => '*',
       # :rows => 1
