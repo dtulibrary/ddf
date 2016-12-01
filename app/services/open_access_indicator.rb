@@ -11,7 +11,7 @@ class OpenAccessIndicator
   }
 
   CLASSIFICATIONS = ['realized'.freeze, 'unused'.freeze, 'unclear'.freeze]
-  REPORTS = [ 'summary'.freeze, 'publications'.freeze, 'records'.freeze ]
+  REPORTS = [ 'summary'.freeze, 'publications'.freeze, 'records'.freeze, 'blacklist'.freeze, 'whitelist'.freeze ]
   LANGUAGES = { da: 'dan', en: 'eng' }
 
   PROJECTED_YEARS = { 2016 => '80', 2021 => '100' }
@@ -65,7 +65,7 @@ class OpenAccessIndicator
   def self.fetch(resource, year, view = 'relative')
     response = self.get_resource(year, resource)
     if response.nil?
-      nil  
+      nil
     else
       Response.values(response, resource, view)
     end

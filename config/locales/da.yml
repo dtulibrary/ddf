@@ -301,6 +301,13 @@ da:
           title: Genstandsfeltet - poster
           description: Alle publikationer (inkl. dubletter) i genstandsfeltet.
             Grundlaget for summeringerne per universitet.
+        whitelist:
+          title: Repositorier
+          description: Godkente repositorier for accepteret Grøn Open Access udgaver af publikationer.
+        blacklist:
+          title: Tidsskrifter med lange embargoer
+          description: List over tidsskrifter med forlænget embargo perioder,
+              brugte til reklassificering fra uudnyttet til uklart.
       legend:
         overview:
           potential: "Open Access Potentiale:"

@@ -40,7 +40,7 @@ class OpenAccessIndicatorController < ApplicationController
     report = open(report_url)
     send_file report, filename: filename, type: 'application/vnd.ms-excel'
   rescue # catch 404s and send back to the overview
-    redirect_to open_access_overview_path, alert: 'File not found!'
+    redirect_to :back, status: 307, alert: 'File not found!'
   end
 
   # This overwrites the default lookup view folder
