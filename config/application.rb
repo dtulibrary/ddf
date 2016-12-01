@@ -49,8 +49,8 @@ module Ddf
 
     config.x.open_access.url = 'http://oa-indicator.cvt.dk/oa-indicator/ws/%{resource}.%{format}/%{year}/%{profile}'
     config.x.open_access.status_api = 'http://oa-indicator.cvt.dk/oa-indicator/ws/status'
-    config.x.open_access.api_profile = 'prod'
-    config.x.open_access.last_available_year = 2014
+    config.x.open_access.api_profile = 'devel'
+    config.x.open_access.last_available_year = 2015
     config.x.open_access.total_years = (2013..2021)
     config.x.open_access.report_url = 'http://oa-indicator.cvt.dk/oa-indicator-runs/%{year}.%{profile}/spreadsheets/%{lang}/%{filename}'
     config.x.open_access.report_name = 'OA-Indicator_%{year}_%{lang}_%{report}.xlsx'
