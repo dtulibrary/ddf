@@ -83,12 +83,6 @@ describe OpenAccessIndicator do
       let(:params){['national', '2029']}
       it { should eql nil }
     end
-    context 'with valid parameters' do
-      let(:params){ ['national', '2013'] }
-      context 'when there is an invalid cache' do
-        it 'makes a new request to the resource url'
-      end
-    end
   end
   describe 'timeline' do
     subject { OpenAccessIndicator.timeline('national', 'national') }

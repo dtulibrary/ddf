@@ -137,7 +137,6 @@ class OpenAccessIndicator
     Rails.configuration.x.open_access.api_profile
   end
 
-  # Check to see if we have a cached copy before calling Open Access API
   def self.get_resource(year, resource)
     response = self.get(self.resource_url(year, resource))
   end
@@ -158,30 +157,6 @@ class OpenAccessIndicator
   end
 
   class ServiceUnavailableException < StandardError; end
-  class LocalCache
-    def self.update_needed?
-      status = OpenAccessIndicator.get(OpenAccessIndicator.status_url)
-      return if status.nil?
-      values = StatusResponse.values(status, OpenAccessIndicator.profile)
-      values.each do |year, tstamp|
-        path = self.path(year, tstamp)
-        return true unless File.exist? path
-      end
-      false
-    end
-
-    def self.read_latest(year)
-      latest = Dir.entries(self.path(year))
-      .reject { |x| x.include? '.' }
-      .sort
-      .last
-      File.open(self.path(year, latest)).read
-    end
-
-    def self.path(*args)
-      Rails.root.join('tmp', 'open_access', *args)
-    end
-  end
   # For handling the status API
   # We use XML parsing here because the JSON API is not well structured
   class StatusResponse
