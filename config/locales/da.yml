@@ -302,7 +302,7 @@ da:
           description: Alle publikationer (inkl. dubletter) i genstandsfeltet.
             Grundlaget for summeringerne per universitet.
         whitelist:
-          title: Repositorier
+          title: Arkiver
           description: Arkiver, godkendt til deponering af grøn open access versioner af publikationer.
         blacklist:
           title: Tidsskrifter med lange embargoer
