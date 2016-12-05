@@ -282,11 +282,11 @@ en:
             The basis of the summations and aggregations at the university level.
         whitelist:
           title: Repositories
-          description: Accepted repositories for accepting Green Open Access versions of publications.
+          description: Repositories accepted for depositing Green Open Access versions of publications.
         blacklist:
           title: Journals with long embargo
-          description: List of journals with extended embargo periods,
-            used to reclassify from unused to unclear.
+          description: List of journals with embargo periods of more than 12 months,
+            used to reclassify from Unused to Unclear.
       legend:
         overview:
           potential: "Open Access Potential:"

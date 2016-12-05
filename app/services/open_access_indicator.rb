@@ -99,10 +99,18 @@ class OpenAccessIndicator
   def self.report_urls(year, lang)
     urls = {}
     lang_code = LANGUAGES[lang]
-    REPORTS.each do |report|
+    reports_available(year).each do |report|
       urls[report] = self.proxy_url(year, lang_code, report)
     end
     urls
+  end
+
+  def self.reports_available(year)
+    if year.to_i < 2015
+      REPORTS - ['whitelist', 'blacklist']
+    else
+      REPORTS
+    end
   end
 
   def self.proxy_url(year, lang, report)

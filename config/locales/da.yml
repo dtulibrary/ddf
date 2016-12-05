@@ -303,11 +303,11 @@ da:
             Grundlaget for summeringerne per universitet.
         whitelist:
           title: Repositorier
-          description: Godkente repositorier for accepteret Grøn Open Access udgaver af publikationer.
+          description: Arkiver, godkendt til deponering af grøn open access versioner af publikationer.
         blacklist:
           title: Tidsskrifter med lange embargoer
-          description: List over tidsskrifter med forlænget embargo perioder,
-              brugte til reklassificering fra uudnyttet til uklart.
+          description: Liste af tidsskrifter med embargo-periode på over 12 måneder,
+              anvendes til at omklassificere fra Uudnyttet til Uklart OA potentiale.
       legend:
         overview:
           potential: "Open Access Potentiale:"

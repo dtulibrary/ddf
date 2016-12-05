@@ -47,14 +47,29 @@ describe OpenAccessIndicator do
     let(:year) { '2014' }
     let (:lang) { I18n.default_locale }
     it { should be_a Hash }
-    it 'should have values eql to the report types' do
-      expect(subject.keys).to eql OpenAccessIndicator::REPORTS
-    end
     it 'should contain urls with the correct year, language and profile' do
       expect(subject.values.first).to include 'open_access/reports'
       expect(subject.values.first).to include year
       expect(subject.values.first).to include 'eng'
       expect(subject.values.first).to include OpenAccessIndicator.profile
+    end
+    context 'when the year is 2015' do
+      let(:year) { '2015' }
+      it 'should show the whitelist' do
+        expect(subject.keys).to include 'whitelist'
+      end
+      it 'should show the blacklist' do
+        expect(subject.keys).to include 'blacklist'
+      end
+    end
+    context 'when the year is before 2015' do
+      let(:year) { '2014' }
+      it 'should not show the whitelist' do
+        expect(subject.keys).not_to include 'whitelist'
+      end
+      it 'should not show the blacklist' do
+        expect(subject.keys).not_to include 'blacklist'
+      end
     end
   end
 
@@ -65,7 +80,7 @@ describe OpenAccessIndicator do
       it { should eql nil }
     end
     context 'with an out of range year' do
-      let(:params){['national', '2015']}
+      let(:params){['national', '2029']}
       it { should eql nil }
     end
     context 'with valid parameters' do
