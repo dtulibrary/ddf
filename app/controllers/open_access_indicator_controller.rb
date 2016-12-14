@@ -37,9 +37,23 @@ class OpenAccessIndicatorController < ApplicationController
     filename = OpenAccessIndicator.report_name(
       params[:year], params[:lang], params[:report]
     )
-    report = open(report_url)
-    send_file report, filename: filename, type: 'application/vnd.ms-excel'
-  rescue # catch 404s and send back to the overview
+    tmp_file = nil
+    # open-uri will either gives us a StringIO or a TempFile
+    # depending on file size (I think)
+    # In order to make sure that the methods are consistent,
+    # we write to a TempFile before sending this.
+    open(report_url) do |data|
+      encoding = data.read.encoding
+      data.rewind # need to move pointer back to start of buffer
+      tmp_file = Tempfile.new(filename, encoding: encoding)
+      tmp_file.write(data.read)
+    end
+    if tmp_file.present?
+      send_file tmp_file, filename: filename, type: 'application/vnd.ms-excel'
+    else
+      redirect_to :back, status: 501, alert: 'Error getting report! Please contact us for support.'
+    end
+  rescue OpenURI::HTTPError # catch 404s and send back to the overview
     redirect_to :back, status: 307, alert: 'File not found!'
   end
 
